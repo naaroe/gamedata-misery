@@ -1,0 +1,18 @@
+[smart_terrain]
+squad_id = 29
+max_population = 2
+
+respawn_params = respawn@jupiter_smarter_sim_1
+
+[respawn@jupiter_smarter_sim_1]
+spawn_monolith@master_sentry
+spawn_monolith
+
+[spawn_monolith@master_sentry]
+spawn_squads = monolith_sim_squad_veteran_jupiter_smrter_sim_1_sentry
+spawn_num = 1
+
+[spawn_monolith]
+spawn_squads = monolith_sim_squad_novice
+spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+zat_b40_merc_gone} 0, {+jup_b8_heli_4_searched +zat_b101_both_heli_info} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+

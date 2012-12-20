@@ -1,0 +1,318 @@
+[wpn_fnfallelcan]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn						= "weapons\sig550"                ; option for Level Editor
+$npc                    = on                                ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_AK74
+description             = st_wpn_fnfalll_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 6
+
+default_to_ruck         = false
+sprint_allowed       	= true
+
+;-------------------------------------------------------------------------------
+cost                    = 22820
+weapon_class            = assault_rifle        ; Type of the weapon
+inv_weight              = 4.48
+
+upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_l85
+
+;-------TTX-----------------------------------------------------------------------
+hit_power           		= 0.47, 0.47, 0.47, 0.47
+hit_impulse				= 37
+hit_type				= fire_wound
+fire_distance           = 960
+bullet_speed            = 870         ;начальная скорость пули
+rpm                     = 610
+rpm_empty_click         = 200
+
+grenade_vel 			= 50 ;76
+
+use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 3.0
+
+hud                     = wpn_fnfallelcan_hud
+
+misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.6
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.1
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.003
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.045
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= 0.007
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= 0.009
+
+ammo_elapsed            = 20
+ammo_mag_size           = 20
+
+ammo_class		= ammo_7.62x51_fmj, ammo_7.62x51_ap
+grenade_class           = ammo_m209
+fire_modes              = 1, -1
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;-дисперсия-----------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base    = 0.25        ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.5f
+crosshair_inertion		= 7.25
+
+;отдача
+cam_return				= 0 ;				= 0
+cam_relax_speed         = 5		; скорость возврата в исходное положение
+cam_relax_speed_ai      = 360	; скорость возврата в исходное положение для AI
+cam_dispersion          = 0.5       ; увеличения угла (в градусах) при первом выстреле
+cam_dispersion_inc      = 0.25       ; увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac     = 1.0       ; frac * angle + rand(-1,1)*(1-frac) * angle
+cam_max_angle           = 50.0       ; максимальный угол отдачи
+cam_max_angle_horz      = 50.0       ; (degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5       ; (degree) size of step camera moved in horizontal position while shooting
+
+PDM_disp_base 				= 1.0
+PDM_disp_vel_factor 		= 2.5
+PDM_disp_accel_factor 		= 2.5
+PDM_disp_crouch	 			= 0.6
+PDM_disp_crouch_no_acc 		= 0.4
+
+zoom_cam_relax_speed         = 5     ; scope & ironsight
+zoom_cam_relax_speed_ai      = 360
+zoom_cam_dispersion          = 0.4
+zoom_cam_dispersion_inc      = 0.2
+zoom_cam_dispersion_frac     = 0.7
+zoom_cam_max_angle           = 50.0
+zoom_cam_max_angle_horz      = 50.0
+zoom_cam_step_angle_horz     = 1.3
+
+fire_dispersion_condition_factor = 7        ;увеличение дисперсии в процентах при максимальном износе
+;---DOF-------------------------------------------------------------------------
+zoom_dof				= 0.5, 1.0, 180
+reload_dof				= 0.0, 0.5, 5, 2
+
+;-------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0              ; во сколько раз увеличивается eye_fov
+
+min_radius              = 30
+max_radius              = 100
+
+hit_probability_gd_novice  = 0.80
+hit_probability_gd_stalker = 0.80
+hit_probability_gd_veteran = 0.80
+hit_probability_gd_master  = 0.80
+;------------------------------------------------------------------------------
+slot                    = 2                ; // secondary
+animation_slot          = 2                ; type of the animation that will be used
+
+inv_name                = st_wpn_fnfalll
+inv_name_short          = st_wpn_fnfalll
+
+inv_grid_width          = 5
+inv_grid_height         = 2
+inv_grid_x              = 0
+inv_grid_y              = 42
+
+upgr_icon_x			= 1321
+upgr_icon_y			= 1109
+upgr_icon_width		= 334
+upgr_icon_height   	= 114
+
+kill_msg_x              = 80
+kill_msg_y              = 59
+kill_msg_width          = 87
+kill_msg_height         = 24
+
+;-------------------------------------------------------------------------------
+;---normal                  = 0, 1, 0
+;---direction               = 0, 0, 1
+
+position                = -0.026, -0.097, 0.0
+orientation             = 0, 0, 0
+
+fire_point              = 0.000000,0.137000,0.649000
+fire_point2             = 0.0, 0.097, 0.722
+
+flame_particles         = weapons\generic_weapon05
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point             = -0.020000,0.167000,0.082000
+shell_dir               = 0.0, 0.0, 0.4
+shell_particles         = weapons\generic_shells
+
+;--STRAP PARAMETERS-----------------------------------------------------------------
+;под мишкой
+strap_position          = -0.26,-0.11,0.25                        	; position (offset) and orientation of the weapon when it is strapped
+strap_orientation       = -15,-9,110                                	; (3rd person view in degrees)
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelcan.ogf
+
+light_disabled		= false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 4
+
+;addons
+scope_status            = 2
+silencer_status         = 2
+grenade_launcher_status = 2
+scope_texture		= wpn_crosshair_elcan
+
+zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
+zoom_rotate_time		= 0.25
+scope_zoom_factor       = 72                                                ; fov for zoom mode
+
+silencer_name           = wpn_addon_silencer_762x51
+silencer_x              = 258
+silencer_y              = 18
+grenade_launcher_name   = wpn_addon_grenade_launcher_m203
+grenade_launcher_x      = 135
+grenade_launcher_y      = 33
+
+scopes_sect				   = scope_susat_fal, scope_susat_x1.6_fal, scope_susat_custom_fal, scope_susat_dusk_fal, scope_susat_night_fal
+
+;звуки
+snd_draw		= weapons\generic\rifle_draw
+snd_holster		= weapons\generic\rifle_holster
+snd_shoot		= weapons\fnfallelcan\fallelcan_shot
+snd_empty               = weapons\generic\rifle_modern_empty, 0.5
+snd_reload              = weapons\fnfallelcan\fallelcan_reload
+snd_shoot_grenade       = weapons\explo\grenade_launch_explo
+snd_reload_grenade      = weapons\sig550_grenload
+snd_switch              = weapons\groza_switch, 1.0, 0.5
+snd_bore		= weapons\draw_silent
+snd_bore1		= weapons\mp5_bore
+
+;настройки для глушителя
+silencer_hit_power      = 0.33, 0.33, 0.33, 0.33
+silencer_hit_impulse    = 10
+silencer_fire_distance  = 500
+silencer_bullet_speed   = 600
+
+;silencer_flame_particles  = weapons\generic_weapon01
+silencer_smoke_particles   = weapons\generic_shoot_00
+
+snd_silncer_shot        = weapons\silencers\silencer_762x51
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+
+[wpn_fnfallelcan_hud]:hud_base
+zoom_hide_crosshair	= true
+attach_place_idx	= 0
+item_visual		= dynamics\weapons\wpn_fnfallelcan\wpn_fnfallelcan_hud
+
+hands_position			= -0.094000,-0.156000,0.100000
+hands_orientation		= -0.500000,1.000000,-2.000000
+
+hands_position_16x9     = -0.094000,-0.156000,0.100000
+hands_orientation_16x9  = -0.500000,1.000000,-2.000000
+
+item_position		= 0.002866,-0.006395,0.000780
+item_orientation	= 0.642900,0.520562,361.843872
+
+shell_point		= 0.028,0.075,0.156
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone		= wpn_body
+
+fire_point		= 0,0.056,0.746
+fire_bone      	      	= wpn_body
+fire_point2		= 0.0,-0.028,0.678
+fire_bone2		= wpn_body
+
+anm_show             	= sig550_draw
+anm_hide             	= sig550_holster
+anm_idle             	= sig550_idle
+;anm_idle_sprint         = sig550_idle_sprint
+anm_idle_sprint		= m1891_idle_sprint
+anm_idle_moving 	= sig550_idle_moving
+anm_shots               = sig550_shoot
+anm_reload              = sig550_reload
+anm_idle_aim           	= sig550_idle_aim
+
+anm_switch              = sig550_switch_off
+anm_switch_g            = sig550_switch_on
+anm_bore		= sig550_idle_bore
+
+anm_hide_w_gl           = sig550_holster_w_gl
+anm_show_w_gl           = sig550_draw_w_gl
+anm_idle_w_gl           = sig550_idle_w_gl
+anm_shots_w_gl          = sig550_shoot_w_gl
+anm_reload_w_gl         = sig550_reload_w_gl
+anm_idle_w_gl_aim       = sig550_idle_w_gl_aim
+anm_idle_sprint_w_gl	= sig550_idle_sprint_w_gl
+anm_idle_moving_w_gl	= sig550_idle_moving_w_gl
+anm_bore_w_gl		= sig550_idle_bore_w_gl
+
+anm_show_g         	= sig550_draw_grenade
+anm_hide_g         	= sig550_holster_grenade
+anm_idle_g         	= sig550_idle_grenade
+anm_reload_g       	= sig550_reload_grenade
+anm_idle_g_aim     	= sig550_idle_grenade
+anm_shots_g        	= sig550_shoot_grenade
+anm_idle_sprint_g	= sig550_idle_sprint_grenade
+anm_idle_moving_g	= sig550_idle_moving_grenade
+anm_bore_g		= sig550_idle_bore_grenade
+
+aim_hud_offset_pos				= -0.0620200,0.02070000,-0.000500
+aim_hud_offset_rot				= 0.0145000,0.002500,-0.010000
+
+
+aim_hud_offset_pos_16x9				= -0.062750000,0.04970000,-0.000500
+aim_hud_offset_rot_16x9				= 0.0255000,0.001600,-0.010000
+
+gl_hud_offset_pos	= -0.112000,0.027000,0.000500
+gl_hud_offset_rot	= 0.0145000,0.002500,-0.010000
+
+gl_hud_offset_pos_16x9            = -0.046500,-0.091000,0.000000
+gl_hud_offset_rot_16x9            = -0.162500,-0.040000,0.000000
+
+lean_hud_offset_pos	= 0,0,0
+lean_hud_offset_rot	= 0,0,0
+
+[scope_susat_fal]
+scope_name 					= wpn_addon_scope_susat
+scope_x 					= 83
+scope_y 					= 9
+
+[scope_susat_x1.6_fal]
+scope_name 					= wpn_addon_scope_susat_x1.6
+scope_x 					= 83
+scope_y 					= 9
+
+[scope_susat_custom_fal]
+scope_name 					= wpn_addon_scope_susat_custom
+scope_x 					= 83
+scope_y 					= 9
+
+[scope_susat_dusk_fal]
+scope_name 					= wpn_addon_scope_susat_dusk
+scope_x 					= 83
+scope_y 					= 9
+
+[scope_susat_night_fal]
+scope_name 					= wpn_addon_scope_susat_night
+scope_x 					= 83
+scope_y 					= 9

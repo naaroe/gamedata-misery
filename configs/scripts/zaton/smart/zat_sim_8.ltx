@@ -1,0 +1,21 @@
+[smart_terrain];zat_sim_8
+squad_id = 3
+max_population = 1
+respawn_params = respawn@zat_sim_8  
+
+[respawn@zat_sim_8]
+spawn_dog
+spawn_pseudodog
+spawn_bloodsucker
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker_zat_sim_8
+spawn_num = {+zat_b38_failed} 1, {+zat_b57_bloodsucker_lair_clear} 0, 1
+
+[spawn_pseudodog]
+spawn_squads = simulation_dog, simulation_pseudodog, simulation_dog, simulation_pseudodog, simulation_pseudodog, simulation_gigant_zat_sim_8, simulation_chimera_zat_sim_8, simulation_psy_dog_zat_sim_8, simulation_snork
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 1, 0
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 4, 0

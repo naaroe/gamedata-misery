@@ -1,0 +1,42 @@
+[smart_terrain];pri_a21
+squad_id = 23
+max_population = 2
+;arrive_dist = 100
+
+respawn_params = respawn@pri_a21
+
+[respawn@pri_a21]
+spawn_bloodsucker
+
+spawn_bandit
+spawn_bandit@hostile
+
+spawn_killer
+
+spawn_bandit@hostile_2
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker_pri_a21_mart_terrain
+spawn_num = 1
+
+;;; unused
+
+[spawn_bandit]
+spawn_squads = bandit_sim_squad_veteran
+spawn_num = 0	; {+kingpin_gained +jup_b47_actor_pick_docs} 1, {+kingpin_gained +jup_a12_task_done} 1, {+kingpin_gained +zat_b40_merc_gone} 1, {+kingpin_gained +zat_b103_merc_gone} 1, {+kingpin_gained +zat_b5_task_end} 1, {+kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile_elite
+spawn_num = 0 	;{-kingpin_gained +jup_b47_actor_pick_docs} 1, {-kingpin_gained +jup_a12_task_done} 1, {-kingpin_gained +zat_b40_merc_gone} 1, {-kingpin_gained +zat_b103_merc_gone} 1, {-kingpin_gained +zat_b5_task_end} 1, {-kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+[spawn_killer]
+spawn_squads = merc_sim_squad_veteran
+spawn_num = 0	; {+jup_b47_actor_pick_docs} 1, {+jup_a12_task_done} 1, {+zat_b40_merc_gone} 1, {+zat_b103_merc_gone} 1, {+zat_b5_task_end} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+[spawn_bandit@hostile_2]
+spawn_squads = bandit_sim_squad_hostile_elite
+spawn_num = 0
+
+[exclusive]
+pri_a21_chasovoi = pripyat\pri_a21_chasovoi.ltx
+pri_a21_kontroler = pripyat\pri_a21_kontroler.ltx

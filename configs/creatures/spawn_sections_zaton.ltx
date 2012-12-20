@@ -1,0 +1,1004 @@
+;-------------------------B14------------------
+
+[zat_b14_stalker_1]:stalker
+$spawn                     = "respawn\zat_b14_stalker_1"
+character_profile     = zat_b14_stalker_1
+spec_rank = regular
+community = stalker
+story_id = zat_b14_stalker_1
+
+[zat_b14_stalker_2]:stalker
+$spawn                     = "respawn\zat_b14_stalker_2"
+character_profile     = sim_default_stalker_1
+spec_rank = regular
+community = stalker
+story_id = zat_stalker_friend_1_id
+
+[zat_b14_stalker_3]:stalker
+$spawn                     = "respawn\zat_b14_stalker_3"
+character_profile     = sim_default_stalker_1
+spec_rank = regular
+community = stalker
+story_id = zat_stalker_friend_2_id
+
+[zat_a2_stalker_nimble]:stalker_master
+$spawn                     = "respawn\zat_a2_stalker_nimble"
+character_profile     = zat_a2_stalker_nimble
+spec_rank = novice
+community = stalker
+story_id = zat_a2_stalker_nimble_id
+
+[zat_b30_owl_stalker_trader]:stalker_master
+$spawn                     = "respawn\zat_b30_owl_stalker_trader"
+character_profile     = zat_b30_owl_stalker_trader
+spec_rank = master
+community = stalker
+story_id = zat_b30_owl_stalker_trader_id
+
+[zat_stalker_medic]:stalker
+$spawn            = "respawn\zat_stalker_medic"
+character_profile = zat_stalker_medic
+spec_rank         = regular
+community         = stalker
+story_id          = zat_stalker_medic
+can_be_wounded    = false
+custom_data       = scripts\zaton\zat_stalker_medic.ltx
+
+;-------------------------B38------------------
+
+[zat_b38_stalker_cop]:stalker_silent_veteran
+$spawn                     = "respawn\zat_b38_stalker_cop"
+character_profile     = zat_b38_stalker_cop
+spec_rank = veteran
+community = stalker
+story_id = zat_cop_id
+sound_enemy_killed_or_wounded = 
+sound_enemy_critically_wounded = 
+sound_hit = 
+
+[zat_b38_stalker_cop_dead]:stalker_silent_veteran
+$spawn                     = "respawn\zat_b38_stalker_cop_dead"
+character_profile     = zat_b38_stalker_cop
+spec_rank = veteran
+community = stalker
+story_id = zat_b38_stalker_cop_dead
+custom_data = scripts\zaton\zat_b22_stalker_cop_body.ltx
+sound_death	=
+
+; *** Трупы в подвале ***
+[zat_b38_stalker_corpse_1]:stalker
+$spawn                     = "respawn\zat_b38_stalker_corpse_1"
+story_id = zat_b38_stalker_corpse_1
+character_profile = zat_b38_stalker_corpse_1
+
+[zat_b38_stalker_corpse_2]:stalker
+$spawn                     = "respawn\zat_b38_stalker_corpse_2"
+story_id = zat_b38_stalker_corpse_2
+character_profile = zat_b38_stalker_corpse_2
+
+[zat_b38_stalker_corpse_3]:stalker
+$spawn                     = "respawn\zat_b38_stalker_corpse_3"
+story_id = zat_b38_stalker_corpse_3
+character_profile = zat_b38_stalker_corpse_3
+
+[zat_b38_tasty_corpse]:stalker
+$spawn                     = "respawn\zat_b38_tasty_corpse"
+story_id = zat_b38_tasty_corpse
+character_profile = sim_default_stalker_2
+set_visual = actors\stalker_neutral\stalker_neutral_2
+custom_data = scripts\zaton\zat_dont_spawn_loot.ltx
+
+[zat_b38_bloodsucker_1]:bloodsucker_weak
+$spawn                     = "respawn\zat_b38_bloodsucker_1"
+story_id = zat_b38_bloodsucker_1
+
+[zat_b38_bloodsucker_2]:bloodsucker_strong
+$spawn                     = "respawn\zat_b38_bloodsucker_2"
+story_id = zat_b38_bloodsucker_2
+
+[zat_b38_bloodsucker_corpse]:bloodsucker_weak
+$spawn                     = "respawn\zat_b38_bloodsucker_corpse"
+story_id = zat_b38_bloodsucker_corpse
+
+;-------------------------B5------------------
+
+;--Долговский торговец
+[zat_b7_duty_illicit_dealer]:stalker_duty_veteran
+$spawn                     = "respawn\zat_b7_duty_illicit_dealer"
+character_profile     = zat_b7_duty_illicit_dealer
+spec_rank = experienced
+community = dolg
+;custom_data = scripts\zaton\zat_b7_duty_illicit_dealer_b5_link.ltx
+story_id = zat_b7_duty_illicit_dealer
+ 
+sound_death						= ;fight\death\death_
+sound_anomaly_death				= ;fight\death\anomaly_
+;sound_hit						= ;fight\hit\hit_
+sound_humming					= ;states\idle\idle_
+sound_alarm						= ;fight\enemy\enemy_
+sound_backup					= ;fight\backup\backup_,fight\threat\threat_close_
+sound_detour					= ;fight\detour\detour_,fight\fire\fire_,fight\threat\threat_close_
+sound_friendly_fire				= ;fight\friendly_fire\friendly_fire_
+;sound_;panic_human				= ;states\;panic_human\;panic_human_
+;sound_;panic_monster				= ;states\;panic_monster\;panic_monster_
+sound_tolls						= ;fight\tolls\tolls_
+;sound_grenade_alarm				= ;fight\grenade\grenade_
+;sound_friendly_grenade_alarm	= ;fight\friendly_grenade\friendly_grenade_
+sound_need_backup				= ;fight\cover_fire\cover_fire_
+sound_running_in_danger			= ;states\breath\breath_1
+sound_walking_in_danger			= ;states\breath\breath_2
+sound_kill_wounded				= ;help\wounded\kill_wounded_
+sound_enemy_critically_wounded	= ;fight\enemy_hit\enemy_hit_
+sound_enemy_killed_or_wounded	= ;fight\enemy_down\enemy_down_
+
+sound_attack_no_allies				= ;fight\fire\fire_,fight\threat\threat_distant_
+;sound_attack_allies_single_enemy	= ;fight\attack\attack_,fight\attack\attack_one_,fight\fire\fire_
+sound_attack_allies_several_enemies	= ;fight\attack\attack_,fight\attack\attack_many_,fight\fire\fire_
+sound_search1_no_allies				= ;fight\threat\threat_distant_
+sound_search1_with_allies			= ;fight\searching_enemy\search_,fight\searching_enemy\enemy_lost_
+sound_throw_grenade					= ;fight\grenade\grenade_ready_ 
+
+;---------------------------------------------------
+
+;[DUTY_VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_dealer_assistant_1]:stalker_duty_veteran
+$spawn                     = "respawn\zat_b5_dealer_assistant_1"
+character_profile     = zat_b5_dealer_assistant_1
+spec_rank = experienced
+community = dolg
+story_id = zat_b5_dealer_assistant_1
+
+sound_death						= ;fight\death\death_
+sound_anomaly_death				= ;fight\death\anomaly_
+;sound_hit						= ;fight\hit\hit_
+sound_humming					= ;states\idle\idle_
+sound_alarm						= ;fight\enemy\enemy_
+sound_backup					= ;fight\backup\backup_,fight\threat\threat_close_
+sound_detour					= ;fight\detour\detour_,fight\fire\fire_,fight\threat\threat_close_
+sound_friendly_fire				= ;fight\friendly_fire\friendly_fire_
+sound_;panic_human				= ;states\;panic_human\;panic_human_
+;sound_;panic_monster				= ;states\;panic_monster\;panic_monster_
+sound_tolls						= ;fight\tolls\tolls_
+;sound_grenade_alarm				= ;fight\grenade\grenade_
+;sound_friendly_grenade_alarm	= ;fight\friendly_grenade\friendly_grenade_
+sound_need_backup				= ;fight\cover_fire\cover_fire_
+sound_running_in_danger			= ;states\breath\breath_1
+sound_walking_in_danger			= ;states\breath\breath_2
+sound_kill_wounded				= ;help\wounded\kill_wounded_
+sound_enemy_critically_wounded	= ;fight\enemy_hit\enemy_hit_
+sound_enemy_killed_or_wounded	= ;fight\enemy_down\enemy_down_
+
+sound_attack_no_allies				= ;fight\fire\fire_,fight\threat\threat_distant_
+sound_attack_allies_single_enemy	= ;fight\attack\attack_,fight\attack\attack_one_,fight\fire\fire_
+sound_attack_allies_several_enemies	= ;fight\attack\attack_,fight\attack\attack_many_,fight\fire\fire_
+sound_search1_no_allies				= ;fight\threat\threat_distant_
+sound_search1_with_allies			= ;fight\searching_enemy\search_,fight\searching_enemy\enemy_lost_
+sound_throw_grenade					= ;fight\grenade\grenade_ready_
+
+;---------------------------------------------------
+
+;[DUTY_VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_dealer_assistant_2]:stalker_duty_experienced
+$spawn                     = "respawn\zat_b5_dealer_assistant_2"
+character_profile     = zat_b5_dealer_assistant_2
+spec_rank = experienced
+community = dolg
+story_id = zat_b5_dealer_assistant_2
+
+sound_death						= ;fight\death\death_
+sound_anomaly_death				= ;fight\death\anomaly_
+;sound_hit						= ;fight\hit\hit_
+sound_humming					= ;states\idle\idle_
+sound_alarm						= ;fight\enemy\enemy_
+sound_backup					= ;fight\backup\backup_,fight\threat\threat_close_
+sound_detour					= ;fight\detour\detour_,fight\fire\fire_,fight\threat\threat_close_
+sound_friendly_fire				= ;fight\friendly_fire\friendly_fire_
+sound_;panic_human				= ;states\;panic_human\;panic_human_
+;sound_;panic_monster				= ;states\;panic_monster\;panic_monster_
+sound_tolls						= ;fight\tolls\tolls_
+;sound_grenade_alarm				= ;fight\grenade\grenade_
+;sound_friendly_grenade_alarm	= ;fight\friendly_grenade\friendly_grenade_
+sound_need_backup				= ;fight\cover_fire\cover_fire_
+sound_running_in_danger			= ;states\breath\breath_1
+sound_walking_in_danger			= ;states\breath\breath_2
+sound_kill_wounded				= ;help\wounded\kill_wounded_
+sound_enemy_critically_wounded	= ;fight\enemy_hit\enemy_hit_
+sound_enemy_killed_or_wounded	= ;fight\enemy_down\enemy_down_
+
+sound_attack_no_allies				= ;fight\fire\fire_,fight\threat\threat_distant_
+sound_attack_allies_single_enemy	= ;fight\attack\attack_,fight\attack\attack_one_,fight\fire\fire_
+sound_attack_allies_several_enemies	= ;fight\attack\attack_,fight\attack\attack_many_,fight\fire\fire_
+sound_search1_no_allies				= ;fight\threat\threat_distant_
+sound_search1_with_allies			= ;fight\searching_enemy\search_,fight\searching_enemy\enemy_lost_
+sound_throw_grenade					= ;fight\grenade\grenade_ready_
+
+;---------------------------------------------------
+
+;[DUTY_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;--бандиты
+[zat_b5_stalker_raider_1]:bandit_stalker_experienced
+$spawn                     = "respawn\zat_b5_stalker_raider_1"
+character_profile     = zat_b5_stalker_raider_1
+spec_rank = experienced
+community = bandit
+;custom_data = scripts\zaton\zat_b5_stalker_raider_1_link.ltx
+
+;---------------------------------------------------
+
+;[BANDIT_REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_raider_2]:bandit_stalker_reg
+$spawn                     = "respawn\zat_b5_stalker_raider_2"
+character_profile     = zat_b5_stalker_raider_2
+spec_rank = regular
+community = bandit
+;custom_data = scripts\zaton\zat_b5_stalker_raider_2_link.ltx
+
+;---------------------------------------------------
+
+;[BANDIT_REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_raider_3]:bandit_stalker_reg
+$spawn                     = "respawn\zat_b5_stalker_raider_3"
+character_profile     = zat_b5_stalker_raider_3
+spec_rank = regular
+community = bandit
+;custom_data = scripts\zaton\zat_b5_stalker_raider_3_link.ltx
+
+;---------------------------------------------------
+
+;[BANDIT_REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_raider_4]:bandit_stalker_novice
+$spawn                     = "respawn\zat_b5_stalker_raider_4"
+character_profile     = zat_b5_stalker_raider_4
+spec_rank = novice
+community = bandit
+;custom_data = scripts\zaton\zat_b5_stalker_raider_4_link.ltx
+
+;---------------------------------------------------
+
+;[BANDIT_EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+;--Бандит Султан
+
+[zat_b5_stalker_raider_leader]:bandit_stalker_veteran
+$spawn                     = "respawn\zat_b5_stalker_raider_leader"
+character_profile     = zat_b5_stalker_raider_leader
+spec_rank = experienced
+community = bandit
+story_id = zat_b5_talk_to_sultan_id
+
+;---------------------------------------------------
+
+;[BANDIT_VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_bandit_boss_dead]:bandit_stalker_master
+$spawn                     = "respawn\zat_b7_bandit_boss_dead"
+character_profile     = zat_b7_bandit_boss_dead
+spec_rank = experienced
+community = bandit
+story_id = zat_b7_bandit_boss_dead
+
+;---------------------------------------------------
+
+;[BANDIT_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_bandit_boss_sultan]:bandit_stalker_master
+$spawn                     = "respawn\zat_b7_bandit_boss_sultan"
+character_profile     = zat_b7_bandit_boss_sultan
+spec_rank = experienced
+community = bandit
+;custom_data = scripts\zaton\zat_b7_bandit_boss_sultan_fake_b5_link.ltx
+story_id = zat_b7_bandit_boss_sultan
+
+;---------------------------------------------------
+
+;[BANDIT_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;--командир сталкеров
+
+[zat_b5_stalker_commander]:stalker_veteran
+$spawn                     = "respawn\zat_b5_stalker_commander"
+character_profile     = zat_b5_stalker_commander
+spec_rank = experienced
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_commander_link.ltx
+story_id = zat_b5_stalker_commander_id
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_commander_b7]:stalker_veteran
+$spawn                     = "respawn\zat_b5_stalker_commander_b7"
+character_profile     = zat_b5_stalker_commander_b7
+spec_rank = experienced
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_commander_link.ltx
+story_id = zat_b5_stalker_commander_b7_id
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_1]:stalker_regular
+$spawn                     = "respawn\zat_b5_stalker_1"
+character_profile     = zat_b5_stalker_1
+spec_rank = regular
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_1_link.ltx
+
+;---------------------------------------------------
+
+;[REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_2]:stalker_novice
+$spawn                     = "respawn\zat_b5_stalker_2"
+character_profile     = zat_b5_stalker_2
+spec_rank = novice
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_2_link.ltx
+
+;---------------------------------------------------
+
+;[NOVICE_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_3]:stalker_experienced
+$spawn                     = "respawn\zat_b5_stalker_3"
+character_profile     = zat_b5_stalker_3
+spec_rank = experienced
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_3_link.ltx
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b5_stalker_4]:stalker_experienced
+$spawn                     = "respawn\zat_b5_stalker_4"
+character_profile     = zat_b5_stalker_4
+spec_rank = experienced
+community = stalker
+;custom_data = scripts\zaton\zat_b5_stalker_4_link.ltx
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+;-------------------A2-------------------
+
+[zat_a2_stalker_barmen]:stalker_master
+$spawn                     = "respawn\zat_a2_stalker_barmen"
+character_profile     = zat_a2_stalker_barmen
+story_id = zat_a2_stalker_barmen
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_a2_stalker_mechanic]:stalker_veteran
+$spawn                     = "respawn\zat_a2_stalker_mechanic"
+character_profile     = zat_a2_stalker_mechanic
+story_id = zat_a2_stalker_mechanic
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;--------------------B22--------------------
+[zat_b22_stalker_medic]:stalker_silent_veteran
+$spawn                     = "respawn\zat_b22_stalker_medic"
+character_profile     = zat_b22_stalker_medic
+spec_rank = veteran
+community = stalker
+story_id = zat_b22_stalker_medic
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b22_stalker_hunter_dead]:stalker_silent_master
+$spawn                     = "respawn\zat_b22_stalker_hunter_dead"
+character_profile     = zat_b38_stalker_hunter
+spec_rank = experienced
+community = stalker
+story_id = zat_b22_stalker_hunter_dead
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;--------------------B103--------------------
+[zat_b103_lost_merc_leader]:stalker_veteran
+$spawn                     = "respawn\zat_b103_lost_merc_leader"
+character_profile     = zat_b103_lost_merc_leader
+story_id = zat_b103_lost_merc_leader
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_1]:bandit_stalker_veteran
+$spawn                     = "respawn\zat_b103_lost_merc_1"
+character_profile     = zat_b103_lost_merc_1
+story_id = zat_b103_lost_merc_1
+
+;---------------------------------------------------
+
+;[BANDIT_VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_2]:stalker_experienced
+$spawn                     = "respawn\zat_b103_lost_merc_2"
+character_profile     = zat_b103_lost_merc_2
+story_id = zat_b103_lost_merc_2
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_3]:stalker_duty_experienced
+$spawn                     = "respawn\zat_b103_lost_merc_3"
+character_profile     = zat_b103_lost_merc_3
+story_id = zat_b103_lost_merc_3
+
+;---------------------------------------------------
+
+;[DUTY_EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_4]:stalker_freedom_exp
+$spawn                     = "respawn\zat_b103_lost_merc_4"
+character_profile     = zat_b103_lost_merc_4
+story_id = zat_b103_lost_merc_4
+
+;---------------------------------------------------
+
+;[FREEDOM_EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_5]:stalker_duty_regular
+$spawn                     = "respawn\zat_b103_lost_merc_5"
+character_profile     = zat_b103_lost_merc_5
+story_id = zat_b103_lost_merc_5
+
+;---------------------------------------------------
+
+;[DUTY_REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_6]:stalker_experienced
+$spawn                     = "respawn\zat_b103_lost_merc_6"
+character_profile     = zat_b103_lost_merc_6
+story_id = zat_b103_lost_merc_6
+
+;---------------------------------------------------
+
+;[BANDIT_REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b103_lost_merc_7]:stalker_duty_experienced
+$spawn                     = "respawn\zat_b103_lost_merc_7"
+character_profile     = zat_b103_lost_merc_7
+story_id = zat_b103_lost_merc_7
+
+;---------------------------------------------------
+
+;[BANDIT_NOVICE_PROFILE]
+
+;---------------------------------------------------
+
+;-----------------------------------------------------------------
+;	Zaton B7
+;-----------------------------------------------------------------
+
+[zat_b7_stalker_raider_leader]:bandit_stalker_veteran
+$spawn                     = "respawn\zat_b7_stalker_raider_leader"
+character_profile     = zat_b7_stalker_raider_leader
+spec_rank = experienced
+community = stalker
+story_id = zat_b7_stalker_raider_leader
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_stalker_raider_1]:stalker_experienced
+$spawn                     = "respawn\zat_b7_stalker_raider_1"
+character_profile     = zat_b7_stalker_raider_1
+spec_rank = experienced
+community = stalker
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_stalker_raider_2]:stalker_experienced
+$spawn                     = "respawn\zat_b7_stalker_raider_2"
+character_profile     = zat_b7_stalker_raider_2
+spec_rank = experienced
+community = stalker
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_stalker_raider_3]:stalker_regular
+$spawn                     = "respawn\zat_b7_stalker_raider_3"
+character_profile     = zat_b7_stalker_raider_3
+spec_rank = regular
+community = stalker
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b7_stalker_victim_1]:stalker_veteran
+$spawn                     = "respawn\zat_b7_stalker_victim_1"
+character_profile     = zat_b7_stalker_victim_1
+spec_rank = experienced
+community = stalker
+story_id = zat_b7_stalker_victim_1
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+;---------------------------------------------------------------------
+;                     B33
+;---------------------------------------------------------------------
+
+[zat_b33_stalker_snag]:stalker_silent_master
+$spawn                     = "respawn\zat_b33_stalker_snag"
+character_profile     = zat_b33_stalker_snag
+spec_rank = master
+community = stalker
+;custom_data = scripts\zaton\zat_b33_stalker_snag.ltx
+story_id = zat_b33_stalker_snag
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;-----------------------------------------------------------------
+;	Zaton B106
+;-----------------------------------------------------------------
+
+[zat_b106_stalker_gonta]:stalker_master
+$spawn                     = "respawn\zat_b106_stalker_gonta"
+character_profile     = zat_b106_stalker_gonta
+spec_rank = master
+community = stalker
+story_id = zat_b106_stalker_gonta
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;-----------------------------------------------------------------
+;	Zaton B29
+;-----------------------------------------------------------------
+
+[zat_b29_stalker_rival_1]:stalker_veteran
+$spawn                     = "respawn\zat_b29_stalker_rival_1"
+character_profile     = zat_b29_stalker_rival_1
+spec_rank = veteran
+community = stalker
+story_id = zat_b29_stalker_rival_1
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b29_stalker_rival_2]:stalker_veteran
+$spawn                     = "respawn\zat_b29_stalker_rival_2"
+character_profile     = zat_b29_stalker_rival_2
+spec_rank = veteran
+community = stalker
+story_id = zat_b29_stalker_rival_2
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b29_stalker_rival_default_1]:stalker_veteran
+$spawn                     = "respawn\zat_b29_stalker_rival_default_1"
+character_profile     = zat_b29_stalker_rival_default_1
+spec_rank = experienced
+community = stalker
+story_id = zat_b29_stalker_rival_default_1
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b29_stalker_rival_default_2]:stalker_regular
+$spawn                     = "respawn\zat_b29_stalker_rival_default_2"
+character_profile     = zat_b29_stalker_rival_default_2
+spec_rank = regular
+community = stalker
+story_id = zat_b29_stalker_rival_default_2
+
+;---------------------------------------------------
+
+;[REGULAR_PROFILE]
+
+;---------------------------------------------------
+
+;-------------------------b18---------------------------------------
+
+[zat_b18_noah]:bandit_stalker_silent_master
+$spawn                     = "respawn\zat_b18_noah"
+character_profile     = zat_b18_noah
+spec_rank = master
+community = stalker
+story_id = zat_b18_noah
+
+;---------------------------------------------------
+
+;[BANDIT_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b18_dog_noah]:zat_b18_dog
+$spawn                     = "respawn\zat_b18_dog_noah"
+custom_data = scripts\zaton\zat_b18_physics_dog.ltx
+
+;---------------------------------------------------------------------
+;                     B52
+;---------------------------------------------------------------------
+
+[zat_b52_port_bandit_1]:bandit_stalker_veteran
+$spawn                     = "respawn\zat_b52_port_bandit_1"
+character_profile     = zat_b52_port_bandit_leader
+spec_rank = experienced
+community = bandit
+story_id = port_bandit_1_leader_id
+
+;---------------------------------------------------
+
+;[BANDIT_VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+;---------------------------------------------------------------------
+;                     B 215
+;---------------------------------------------------------------------
+[zat_b215_stalker_guide_zaton]:stalker_master
+$spawn                     = "respawn\zat_b215_stalker_guide_zaton"
+character_profile     = zat_b215_stalker_guide
+spec_rank = master
+community = stalker
+story_id = zat_b215_stalker_guide_zaton
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b215_stalker_guide_jupiter]:stalker_master
+$spawn                     = "respawn\zat_b215_stalker_guide_jupiter"
+character_profile     = zat_b215_stalker_guide
+spec_rank = master
+community = stalker
+story_id = zat_b215_stalker_guide_jupiter
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+;-------------------------b101---------------------------------------
+[zat_b101_actor_visual_stalker]:actor_visual_stalker
+$spawn				= "respawn\zat_b101_actor_visual_stalker"
+set_visual 			= actor_visual
+custom_data			= scripts\zaton\zat_b101_actor_visual_stalker.ltx
+
+;-------------------------b28---------------------------------------
+[zat_b28_actor_visual_stalker]:actor_visual_stalker
+$spawn				= "respawn\zat_b28_actor_visual_stalker"
+set_visual 			= actor_visual
+custom_data			= scripts\zaton\zat_b28_actor_visual_stalker.ltx
+
+[zat_b28_draper]:stalker_veteran
+$spawn                     = "respawn\zat_b28_draper"
+character_profile     = zat_b28_draper
+custom_data			= scripts\zaton\zat_b28_draper.ltx
+
+[zat_b28_umerov]:stalker_veteran
+$spawn                     = "respawn\zat_b28_umerov"
+character_profile     = zat_b28_umerov
+custom_data			= scripts\zaton\zat_b28_umerov.ltx
+
+[zat_b28_smoliak]:stalker
+$spawn                     = "respawn\zat_b28_smoliak"
+character_profile     = zat_b28_smoliak
+custom_data			= scripts\zaton\zat_b28_smoliak.ltx
+
+[zat_b100_military_1]:stalker_veteran
+$spawn                     = "respawn\zat_b100_military_1"
+character_profile     = zat_b100_military_1
+custom_data			= scripts\zaton\zat_b100_military_1.ltx
+
+[zat_b100_military_2]:stalker_veteran
+$spawn                     = "respawn\zat_b100_military_2"
+character_profile     = zat_b100_military_2
+custom_data			= scripts\zaton\zat_b100_military_2.ltx
+
+[zat_b100_military_3]:stalker_veteran
+$spawn                     = "respawn\zat_b100_military_3"
+character_profile     = zat_b100_military_3
+custom_data			= scripts\zaton\zat_b100_military_3.ltx
+
+;-------------------------b42---------------------------------------
+[zat_b42_mayron]:stalker
+$spawn                     = "respawn\zat_b42_mayron"
+character_profile     = zat_b42_mayron
+custom_data			= scripts\zaton\zat_b42_mayron.ltx
+
+;-------------------------b40---------------------------------------
+[zat_b40_merc_squad_leader_1]:stalker_duty_master_exo
+$spawn                     = "respawn\zat_b40_merc_squad_leader_1"
+character_profile     = zat_b40_merc_squad_leader_1
+community = killer
+
+;---------------------------------------------------
+
+;[DUTY_MASTER_EXO_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b40_merc_squad_leader_2]:stalker_duty_master_exo
+$spawn                     = "respawn\zat_b40_merc_squad_leader_2"
+character_profile     = zat_b40_merc_squad_leader_2
+community = killer
+
+;---------------------------------------------------
+
+;[DUTY_MASTER_EXO_PROFILE]
+
+;---------------------------------------------------
+
+;-------------------------b20---------------------------------------
+[zat_b20_noah_teleport]:bandit_stalker_silent_master
+$spawn                     = "respawn\zat_b20_noah_teleport"
+character_profile     = zat_b20_noah_teleport
+spec_rank = novice
+community = stalker
+story_id = zat_b20_noah_teleport
+
+;---------------------------------------------------
+
+;[BANDIT_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b20_actor]:actor_visual_stalker
+$spawn				= "respawn\zat_b20_actor"
+custom_data			= scripts\zaton\zat_b20_actor.ltx
+story_id = zat_b20_actor
+set_visual 			= actor_visual
+
+;-------------------------b44---------------------------------------
+[zat_b44_stalker_barge]:stalker
+$spawn                     = "respawn\zat_b44_stalker_barge"
+character_profile     = zat_b44_stalker_barge
+spec_rank = novice
+community = stalker
+story_id = zat_b44_stalker_barge
+custom_data = scripts\zaton\zat_dont_spawn_loot.ltx
+
+;------------------------- b53 ---------------------------------------
+[zat_b53_artefact_hunter_1]:stalker_veteran
+$spawn                     = "respawn\zat_b53_artefact_hunter_1"
+character_profile     = zat_b53_artefact_hunter_1
+spec_rank = experienced
+story_id = zat_b53_artefact_hunter_1
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b53_artefact_hunter_2]:stalker_veteran
+$spawn                     = "respawn\zat_b53_artefact_hunter_2"
+character_profile     = zat_b53_artefact_hunter_2
+spec_rank = experienced
+story_id = zat_b53_artefact_hunter_2
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+;-------------------------b106---------------------------------------
+[zat_b106_stalker_crab]:stalker_master
+$spawn                     = "respawn\zat_b106_stalker_crab"
+character_profile     = zat_b106_stalker_crab
+;spec_rank = novice
+;community = stalker
+story_id = zat_b106_stalker_crab
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b106_stalker_garmata]:stalker_veteran
+$spawn                     = "respawn\zat_b106_stalker_garmata"
+character_profile     = zat_b106_stalker_garmata
+;spec_rank = novice
+;community = stalker
+story_id = zat_b106_stalker_garmata
+
+;---------------------------------------------------
+
+;[VETERAN_PROFILE]
+
+;---------------------------------------------------
+
+[zat_b106_chimera]:chimera_normal
+$spawn                     = "respawn\zat_b106_chimera"
+rank        	= 17
+story_id = zat_b106_chimera
+
+panic_threshold = 0.3
+immunities_sect = chimera_immunities_wounded
+
+;--------------------------------------------------------------------------
+; Jump parameters
+;--------------------------------------------------------------------------
+jump_delay						= 0
+jump_factor						= 1.7
+jump_ground_trace_range			= 1.5
+jump_hit_trace_range			= 2
+jump_build_line_distance		= 12.0
+jump_min_distance				= 4
+jump_max_distance				= 10.0
+jump_max_angle					= 3.15 ;0.8
+jump_max_height					= 3.5
+
+[chimera_immunities_wounded]
+burn_immunity     	= 0.5 				;коэффициенты иммунитета 
+strike_immunity     	= 0.0
+shock_immunity      	= 0.1
+wound_immunity      	= 0.35
+radiation_immunity   	= 0.0
+telepatic_immunity    	= 0.0
+chemical_burn_immunity  = 0.45
+explosion_immunity    	= 0.6
+fire_wound_immunity   	= 0.4
+
+[zat_b100_actor]:actor_visual_stalker
+$spawn				= "respawn\zat_b100_actor"
+;character_profile 		= actor_visual_stalker
+set_visual 				= actor_visual
+story_id = zat_b100_actor
+custom_data = scripts\zaton\zat_b100_actor.ltx
+
+[zat_b5_actor_with_bandits]:actor_visual_stalker
+$spawn				= "respawn\zat_b5_actor_with_bandits"
+custom_data			= scripts\zaton\zat_b5_actor_with_bandits.ltx
+story_id = zat_b5_actor_with_bandits
+set_visual 			= actor_visual
+
+[zat_b5_actor_with_dealer]:actor_visual_stalker
+$spawn				= "respawn\zat_b5_actor_with_dealer"
+custom_data			= scripts\zaton\zat_b5_actor_with_dealer.ltx
+story_id = zat_b5_actor_with_dealer
+set_visual 			= actor_visual
+
+;*********************потом удалить!*********
+[test_body_1]:stalker
+$spawn                     = "respawn\test_body_1"
+;character_profile     = zat_b22_stalker_medic
+community = stalker
+;story_id = test_body_1
+custom_data = scripts\test_cfg1.ltx
+
+[test_body_2]:stalker
+$spawn                     = "respawn\test_body_2"
+;character_profile     = zat_b38_stalker_cop
+community = stalker
+;story_id = test_body_2
+custom_data = scripts\test_cfg2.ltx
+
+[test_body_3]:stalker
+$spawn                     = "respawn\test_body_3"
+;character_profile     = zat_b33_stalker_snag
+community = stalker
+;story_id = test_body_3
+custom_data = scripts\test_cfg3.ltx
+
+[test_body_4]:stalker
+$spawn                     = "respawn\test_body_4"
+;character_profile     = zat_b7_duty_illicit_dealer
+community = stalker
+;story_id = test_body_4
+custom_data = scripts\test_cfg4.ltx
+
+[test_body_5]:stalker
+$spawn                     = "respawn\test_body_5"
+;character_profile     = zat_a2_stalker_mechanic
+community = stalker
+;story_id = test_body_5
+custom_data = scripts\test_cfg5.ltx
+

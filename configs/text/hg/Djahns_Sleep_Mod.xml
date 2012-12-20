@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_sleep_bag_descr">
+		<text>A light sleeping bag, that will keep you warm at night.</text>
+	</string>
+	<string id="st_sleep_bag">
+		<text>Sleeping Bag</text>
+	</string>
+	<string id="sleep_warning_blowout">
+		<text>It's not safe to sleep!</text>
+	</string>
+</string_table>

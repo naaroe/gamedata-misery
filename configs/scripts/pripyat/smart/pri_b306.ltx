@@ -1,0 +1,64 @@
+[smart_terrain]
+squad_id = 15
+max_population = 3
+respawn_params = respawn@pri_b306   
+
+[respawn@pri_b306]
+sim_chimera
+sim_poltergeist
+
+spawn_monolith
+spawn_bloodsucker
+
+[sim_chimera]
+spawn_squads = simulation_chimera_pri_b306, simulation_gigant_pri_b306, simulation_gigant_pri_b306, simulation_psy_dog_pri_b306, simulation_controller_pri_b306
+spawn_num = {+pri_b306_task_end} 1, 0
+
+[sim_poltergeist]
+spawn_squads = simulation_poltergeist_tele_pri_b306, simulation_poltergeist_flame_pri_b306, simulation_zombied_1_pri_b306
+spawn_num = {+pri_b306_task_end} 2, 0
+
+;;; unused
+
+[spawn_monolith]
+spawn_squads = monolith_sim_squad_advanced_pripyat, monolith_sim_squad_veteran_pripyat
+spawn_num = 0	; {+pri_b306_task_end} 2, 0
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker, simulation_bloodsucker, simulation_bloodsucker, simulation_snork
+spawn_num = 0 ; {+pri_b306_task_end} 2, 0
+
+[exclusive]
+pri_b306_monolith_5_1 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_5_2 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_5_3 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_5_4 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_4_1 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_4_2 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_4_3 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_4_4 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_4_1 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_3_1 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_3_2 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_3_3 = pripyat\pri_b306_logic.ltx
+pri_b306_monolith_3_4 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_3_1 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_3_2 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_3_3 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_3_4 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_3_5 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_1 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_2 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_3 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_4 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_5 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_6 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_7 = pripyat\pri_b306_logic.ltx
+pri_b306_zombied_2_8 = pripyat\pri_b306_logic.ltx
+;b306 attack after lab from b35
+pri_b306_merc_1 = pripyat\pri_b306_mercs_logic.ltx
+pri_b306_merc_2 = pripyat\pri_b306_mercs_logic.ltx
+pri_b306_merc_3 = pripyat\pri_b306_mercs_logic.ltx
+pri_b306_merc_4 = pripyat\pri_b306_mercs_logic.ltx
+pri_b306_merc_5 = pripyat\pri_b306_mercs_logic.ltx
+pri_b306_merc_6 = pripyat\pri_b306_mercs_logic.ltx

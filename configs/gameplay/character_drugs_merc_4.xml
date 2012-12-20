@@ -1,0 +1,20 @@
+shovel_mili		= 1, prob=0.030 \n
+ied_rpg			= 2, prob=0.045 \n
+ied			= 1, prob=0.024 \n
+maps_kit		= 1, prob=0.05 \n
+drugs_kit		= 1, prob=0.03 \n
+
+radio2			= 1, prob=0.072 \n
+
+cocaine					= 2, prob=0.06 \n
+tetanus					= 1, prob=0.06 \n
+adrenalin				= 1, prob=0.048 \n
+
+tarpaulin		= 2, prob=0.054 \n
+synthrope		= 1, prob=0.064 \n
+underwear		= 1, prob=0.075 \n
+cutlery			= 1, prob=0.075 \n
+fieldcooker		= 1, prob=0.054 \n
+swiss			= 1, prob=0.060 \n
+
+mili_maps		= 1, prob=0.065 \n

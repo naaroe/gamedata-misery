@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_credits">
+		<text>::::::::::::: Credits :::::::::::::</text>
+	</string>
+	<string id="st_ceano">
+		<text>I "Ceano" give thanks to you all.</text>
+	</string>
+	<string id="st_alundaio">
+		<text>Alundaio</text>
+	</string>
+	<string id="st_cromm_cruac">
+		<text>Cromm Cruac</text>
+	</string>
+	<string id="st_neilmc">
+		<text>NeilMC</text>
+	</string>
+	<string id="st_indigosc">
+		<text>IndigoSC</text>
+	</string>
+	<string id="st_stooe">
+		<text>stooe</text>
+	</string>
+	<string id="st_smrtphoneusr">
+		<text>smrtphoneusr</text>
+	</string>
+	<string id="st_koobze">
+		<text>Koobze</text>
+	</string>
+	<string id="st_slevin_kelevra">
+		<text>Slevin Kelevra</text>
+	</string>
+	<string id="st_gnomus">
+		<text>Gnomus</text>
+	</string>
+	<string id="st_djahns">
+		<text>Djahns</text>
+	</string>
+	<string id="st_rulix">
+		<text>Rulix</text>
+	</string>
+	<string id="st_zombiedance">
+		<text>zombiedance</text>
+	</string>
+	<string id="st_russo">
+		<text>Russo</text>
+	</string>
+	<string id="st_decane">
+		<text>Decane</text>
+	</string>
+	<string id="st_barin">
+		<text>Barin</text>
+	</string>
+	<string id="st_mnn">
+		<text>mnn</text>
+	</string>
+	<string id="st_testers_stalker">
+		<text>Ewe, ExoStalker (Play Testing)</text>
+	</string>
+	<string id="st_credits_end">
+		<text>::::::::::::::: End :::::::::::::::</text>
+	</string>
+</string_table>

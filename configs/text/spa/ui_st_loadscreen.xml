@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ls_header">
+		<text>THE STALKERS JOURNAL</text>
+	</string>
+	<string id="ls_mp_tip_16">
+		<text>If it's hostile, observe it. Not every hostile thing is worth wasting valuable ammo on.</text>
+	</string>
+	<string id="ls_mp_tip_19">
+		<text>It takes a week for starvation to kill you. It only takes a few seconds for a bullet to kill you. Always make sure your armour is well maintained and ready to go.</text>
+	</string>
+	<string id="ls_mp_tip_21">
+		<text>Ran into a Controller today. Learned to keep stuff between me and it.</text>
+	</string>
+	<string id="ls_mp_tip_25">
+		<text>Don't underestimate pistols. They provide considerable stopping power and can be very effective against poorly armoured targets.</text>
+	</string>
+	<string id="ls_mp_tip_32">
+		<text>Mess with Duty, Freedoms loves you. Mess with Freedom, Duty loves you.</text>
+	</string>
+	<string id="ls_mp_tip_33">
+		<text>Firing on the move is considerably less accurate than when you are standing still or crouching.</text>
+	</string>
+	<string id="ls_mp_tip_34">
+		<text>Weapons and protective suits will wear out quickly in the harsh conditions of the Zone. Worn-out weapons are less accurate and prone to misfire, while suits will not protect you as well.</text>
+	</string>
+	<string id="ls_mp_tip_54">
+		<text>Let the mutants kill each other and let the Bandits do the same. Relax and enjoy the show.</text>
+	</string>
+	<string id="ls_mp_tip_9">
+		<text>Take every single bullet regardless of the type and stash it, maybe tomorrow you'll need it.</text>
+	</string>
+	<string id="ls_tip_37">
+		<text>Ask Stalkers if they need grenades. You might get a better price.</text>
+	</string>
+	<string id="ls_tip_39">
+		<text>Go out with as little as possible, and bring back as much as possible!</text>
+	</string>
+	<string id="ls_tip_43">
+		<text>Don't be a hero!</text>
+	</string>
+	<string id="ls_tip_50">
+		<text>Don't be deceived, Stalker. In The Zone, dogs are no longer 'man's best friend'.</text>
+	</string>
+	<string id="ls_tip_52">
+		<text>Instead of carrying a thousand rounds, carry 150 if you're just heading out and 210 if you're thinking you'll be in a firefight. Conserve it.</text>
+	</string>
+	<string id="ls_tip_56">
+		<text>Some medical products have unique properties. For example, Hercules pills allow you to temporarily carry more weight, while psy-blocking drugs help you resist psy-emissions.</text>
+	</string>
+	<string id="ls_tip_83">
+		<text>Grenades can work wonders; keep one or two around for when the shit hits the fan.</text>
+	</string>
+	<string id="ls_tip_number">
+		<text>Page #</text>
+	</string>
+	<string id="ls_tip_1">
+		<text>Vodka, a cheap alternative to antirad meds, thus a cheaper way to reduce the effects of radiation on the body.</text>
+	</string>
+	<string id="ls_tip_10">
+		<text>A Stalker may stab you in the back, a Bandit most certainly will; but a good rifle will never let you down. Take care of it and it'll take care of you.</text>
+	</string>
+	<string id="ls_tip_13">
+		<text>You need a detector to search for artifacts. The best detectors make searching easier and may even detect more valuable artifacts.</text>
+	</string>
+	<string id="ls_tip_14">
+		<text>Stalkers don’t let people with their weapons out into their camps. Respect the common rules.</text>
+	</string>
+	<string id="ls_tip_15">
+		<text>You can locate the edges of an anomaly by throwing bolts. Use them.</text>
+	</string>
+	<string id="ls_tip_17">
+		<text>Like a wise man said, there are paths that you shouldn't take and terrains on which you shouldn't fight. Evaluate your chances before starting a skirmish.</text>
+	</string>
+	<string id="ls_tip_18">
+		<text>Boars are charging beasts with bony and muscular front sides. Shoot them in the rear or in the pelvis.</text>
+	</string>
+	<string id="ls_tip_20">
+		<text>Low endurance can make you immobile and vulnerable to enemy attacks at crucial moments.</text>
+	</string>
+	<string id="ls_tip_21">
+		<text>The food of the Zone is hard to swallow, but even harder to find. Conserve it, and use it wisely.</text>
+	</string>
+	<string id="ls_tip_22">
+		<text>Always be prepared. Having a detector in one hand doesn’t stop you from using a knife, pistol or bolt with your other hand.</text>
+	</string>
+	<string id="ls_tip_23">
+		<text>Some medical products increase the body’s resistance to harmful effects. Using such products can save your life during missions into anomalous areas.</text>
+	</string>
+	<string id="ls_tip_27">
+		<text>Take the high ground in a fight. Even a rock may help protect you from a pack of dogs.</text>
+	</string>
+	<string id="ls_tip_28">
+		<text>In addition to their useful effects, artifacts are also radioactive. This can be compensated for by using artifact containers.</text>
+	</string>
+	<string id="ls_tip_29">
+		<text>Your knife is ineffective against enemies with firearms. Use it in close combat or for a stealthy kill.</text>
+	</string>
+	<string id="ls_tip_3">
+		<text>The weight you are carrying reduces your endurance. Excess weight will restrict your mobility, while being completely overloaded will stop you from moving altogether.</text>
+	</string>
+	<string id="ls_tip_30">
+		<text>A detector is the only reliable way of checking anomalous areas for artifacts.</text>
+	</string>
+	<string id="ls_tip_31">
+		<text>Most artifacts will remain invisible as they move around in the anomalous area, until they are identified by your detector.</text>
+	</string>
+	<string id="ls_tip_32">
+		<text>Mutants are more active come night time, which explains why Stalkers prefer to wait for sunlight before venturing into the Zone.</text>
+	</string>
+	<string id="ls_tip_33">
+		<text>If you have suffered serious radiation exposure, use anti-radiation drugs. If you don't have any, use medkits to deal with the initial symptoms and until you make it to a medic.</text>
+	</string>
+	<string id="ls_tip_34">
+		<text>Most Stalkers can take you to nearby locations, but only an experienced guide can lead you safely and quickly to distant areas. Despite this, they will all charge you an arm and a leg for the service.</text>
+	</string>
+	<string id="ls_tip_35">
+		<text>Selling artifacts isn’t the only way to make some cash: offloading unneeded equipment can be a profitable business, too. Keep in mind that traders aren’t usually interested in items that are seriously damaged.</text>
+	</string>
+	<string id="ls_tip_38">
+		<text>If you survive the Zone but your conscience is dead, you are no better than a mutant to be hunted down and destroyed.</text>
+	</string>
+	<string id="ls_tip_40">
+		<text>The nature of the Zone is a mirror, that reflects the nature of its creators and their species.</text>
+	</string>
+	<string id="ls_tip_41">
+		<text>The night is a beast in and of itself. If you have to leave shelter after dark, make sure you always have the stars (and the moon) to guide you.</text>
+	</string>
+	<string id="ls_tip_42">
+		<text>When taking cover from small arms fire, make sure to hide behind something solid. Unlike concrete walls, wooden boards and sheet metal don't make for very safe cover.</text>
+	</string>
+	<string id="ls_tip_44">
+		<text>Just because you haven't been specially trained with it, every weapon still has its purpose. Ammo is scarce, and even the greatest sniper will need to make a hasty escape once in a while.</text>
+	</string>
+	<string id="ls_tip_45">
+		<text>Each type of mutant in the Zone has its own combat traits. If you take these into account, you will be far more likely to survive.</text>
+	</string>
+	<string id="ls_tip_46">
+		<text>Trust your ears. Sound carries over hills and through dense brush. A faint but familiar sound may be all you need to brace yourself for an unseen attack.</text>
+	</string>
+	<string id="ls_tip_47">
+		<text>Keep a small pistol and cartridge in your backpack as backup. You never know when you'll need it.</text>
+	</string>
+	<string id="ls_tip_48">
+		<text>Hoard ammo. It is invaluable in the Zone and it's also a good source of money.</text>
+	</string>
+	<string id="ls_tip_49">
+		<text>Always keep one eye on the sky. If you see a flare, don't wait, find cover IMMEDIATELY.</text>
+	</string>
+	<string id="ls_tip_53">
+		<text>When in a fight, the only rule is to win. Cheat if you have to. Being fair is secondary to being alive.</text>
+	</string>
+	<string id="ls_tip_54">
+		<text>Stay alert in the Zone and don’t rely on old information. When you return to an anomalous area you’ve already explored, you may find that the old discovered path is no longer available.</text>
+	</string>
+	<string id="ls_tip_58">
+		<text>Talking to regular Stalkers may yield useful information about new areas or recent events.</text>
+	</string>
+	<string id="ls_tip_60">
+		<text>Controllers love cooked grenades thrown at them almost as much as I love them dead.</text>
+	</string>
+	<string id="ls_tip_61">
+		<text>Every trader you encounter in various Stalker camps offers his own, unique range of goods. As an example, medics are bound to have the best selection of medical goods.</text>
+	</string>
+	<string id="ls_tip_62">
+		<text>If you get to a Stalker camp wounded or with radiation poisoning, you can make use of assistance from the local medic.</text>
+	</string>
+	<string id="ls_tip_63">
+		<text>You can leave your things in your personal box at the camp to avoid dragging around unnecessary stuff.</text>
+	</string>
+	<string id="ls_tip_64">
+		<text>If you confront a controller try to get an object to block your line of site (tree, rock, wall). If you don't see it, then it can't control you.</text>
+	</string>
+	<string id="ls_tip_65">
+		<text>The night vision device in your helmet can be upgraded to a next-generation device. This will expand its coverage range.</text>
+	</string>
+	<string id="ls_tip_67">
+		<text>When out in the Zone, keep a couple of spare magazines on you - they’re bound to come in handy.</text>
+	</string>
+	<string id="ls_tip_68">
+		<text>If you hear a Bloodsucker and feel lucky, stand still and don't move. Turn towards the sound, locate it, and jump to the side when it gets close. Then fire at will.</text>
+	</string>
+	<string id="ls_tip_69">
+		<text>To use drugs appropriately it helps to know what they do. Consult drug descriptions to find out the effects of certain drugs.</text>
+	</string>
+	<string id="ls_tip_70">
+		<text>Use grenades to attack enemies in cover. Keep in mind the grenade’s blast radius to avoid hurting your fellow Stalkers.</text>
+	</string>
+	<string id="ls_tip_71">
+		<text>Never trust the bandits. Even friendly ones only want your artifacts, trust only yourself. There is no such thing as innocence.</text>
+	</string>
+	<string id="ls_tip_72">
+		<text>The military is NOT here to protect you from the Zone.</text>
+	</string>
+	<string id="ls_tip_73">
+		<text>When you return to camp you should repair your equipment, sell unneeded loot and restock on ammo and medical supplies.</text>
+	</string>
+	<string id="ls_tip_75">
+		<text>To reduce the harmful effects of anomalous areas during raids into the Zone, use a protective suit, artifacts, or take appropriate drugs.</text>
+	</string>
+	<string id="ls_tip_77">
+		<text>In addition to weapons and ammo, enemy bodies may contain valuable items like PDAs with information on them that can be sold.</text>
+	</string>
+	<string id="ls_tip_78">
+		<text>Artifacts aren’t just valuable loot: in addition to being light and expensive, they can often have extremely useful properties.</text>
+	</string>
+	<string id="ls_tip_79">
+		<text>Due to the Zone’s environment, many mutants are radioactive. Approaching them without adequate radiation protection is extremely dangerous.</text>
+	</string>
+	<string id="ls_tip_8">
+		<text>If the condition of your equipment drops below 50% it is often cheaper to buy new gear instead of having it undergo an extreme repair.</text>
+	</string>
+	<string id="ls_tip_80">
+		<text>Listen for the sound of anomalies - The volume of their presence is often a better indicator of their distance than your eyes could offer.</text>
+	</string>
+	<string id="ls_tip_82">
+		<text>Make sure your shooter is always loaded.</text>
+	</string>
+	<string id="ls_tip_84">
+		<text>Always carry drugs, so you can stay outside if caught by an emission with no shelter nearby.</text>
+	</string>
+	<string id="ls_tip_85">
+		<text>Start collecting ammo for your favourite shooter as soon as you get cash, even if you know it's going to be a long wait.</text>
+	</string>
+	<string id="ls_tip_86">
+		<text>Carry as little as possible when going out, so you can carry much more gear to sell to the traders on your return.</text>
+	</string>
+	<string id="ls_tip_87">
+		<text>Run around as much as possible with your Artifact detector out. Sometimes Artifacts appear after psi storms.</text>
+	</string>
+	<string id="ls_tip_88">
+		<text>Wearing helmets and masks reduces your sprinting capabilities.</text>
+	</string>
+	<string id="ls_tip_89">
+		<text>Never advance through hostile territory with direct sunlight in your eyes.</text>
+	</string>
+	<string id="ls_tip_9">
+		<text>Drugs don’t take effect immediately and some last for quite a long time.</text>
+	</string>
+	<string id="ls_tip_90">
+		<text>Never be afraid to run from an enemy. Run away to live another day.</text>
+	</string>
+	<string id="ls_tip_91">
+		<text>Remember, there is no need to be on your moral high horse in the Zone, here men will kill each other over a diet sausage, so if you hear someone in distress, unless you want to risk your life, keep on walking.</text>
+	</string>
+	<string id="ls_tip_92">
+		<text>Know your mutant cries. Knowing what's creeping up on you makes it easier to kill, and easier for you to adapt to the situation.</text>
+	</string>
+	<string id="ls_tip_93">
+		<text>Always carry a clip of Armour-Piercing rounds for whatever gun you have. Mutants might not wear armour, but hostile Stalkers do.</text>
+	</string>
+	<string id="ls_tip_94">
+		<text>Carry at least ONE shot of vodka at all times. When you run out of radiation meds in the middle of an anomaly patch, you'll thank yourself.</text>
+	</string>
+	<string id="ls_tip_95">
+		<text>A pack of cigarettes a day keeps the hunger at bay.</text>
+	</string>
+	<string id="ls_tip_96">
+		<text>When trying to sneak up on someone or something, remember to turn of the flash light.</text>
+	</string>
+	<string id="ls_tip_97">
+		<text>Healthy living is essential. Avoid drugs if not necessary, eat clean food if you can and sleep regularly.</text>
+	</string>
+	<string id="ls_tip_98">
+		<text>Control your mental state or you'll look too much and you won't see.</text>
+	</string>
+	<string id="ls_tip_99">
+		<text>Scout an area before you pass through. Spotting a bloodsucker before it spots you may save your life.</text>
+	</string>
+	<string id="ls_tip_6">
+		<text>To wait out an emission, take cover in a reliable building or underground. When an emission is approaching, the nearest cover will be marked on your PDA.</text>
+	</string>
+	<string id="ls_tip_12">
+		<text>Get some distance between you and the enemy, you might take some hits, but not as many as if you were up close.</text>
+	</string>
+	<string id="ls_tip_24">
+		<text>Foolish are those who fear nothing, yet claim to know everything.</text>
+	</string>
+	<string id="ls_tip_25">
+		<text>Never underestimate the famished dog. When there's one, there's always more!.</text>
+	</string>
+	<string id="ls_tip_4">
+		<text>Be careful when approaching a fellow man. Men's hearts hold shadows darker than any mutant.</text>
+	</string>
+	<string id="ls_tip_55">
+		<text>Artifacts are not usually static: they tend to move within an anomalous area. Gun ho attempts to chase down an artifact will lead you into an anomaly in no time.</text>
+	</string>
+	<string id="ls_tip_57">
+		<text>Some Stalkers may offer you services, such as information, exclusive goods, or give you orders for specific artifacts.</text>
+	</string>
+	<string id="ls_tip_59">
+		<text>After an emission, new artifacts may appear in anomalous areas that you may have already explored.</text>
+	</string>
+	<string id="ls_tip_74">
+		<text>Whenever you feel depressed, stay at a campfire and listen to the guitar.</text>
+	</string>
+	<string id="ls_tip_2">
+		<text>When reparing heavily damaged weapons technicians will not only charge you for the spare parts, but his salary and the equipment that he has to discard to get the spare parts. It's really not worth it.</text>
+	</string>
+	<string id="ls_tip_66">
+		<text>If you want to survive, always keep track of the crackling noise made by the Geiger counter, which warns you of radiation and the anomaly danger signal, that lets you know you’re close to an anomaly.</text>
+	</string>
+	<string id="ls_tip_26">
+		<text>Your relations with people directly affect the prices of goods and services you may wish to purchase. If your relationship is sour, don’t expect a discount. If you’re getting along well, then the trader might even be inclined to offer you something special.</text>
+	</string>
+	<string id="ls_tip_11">
+		<text>When putting your head down for the night, always keep your pistol within arm's reach.</text>
+	</string>
+	<string id="ls_mp_tip_1">
+		<text>Always explore every nook and cranny... you never know what someone may have stashed there.</text>
+	</string>
+	<string id="ls_mp_tip_11">
+		<text>Stay sharp Stalker, Death is always nearby. If you see him go for the headshot.</text>
+	</string>
+	<string id="ls_mp_tip_13">
+		<text>The left part of the buy menu contains five tabs, from the top down: pistols, main weapons, equipment, ammunition and medical supplies. Selecting the required tab shows you the range of items available at your rank.</text>
+	</string>
+	<string id="ls_mp_tip_14">
+		<text>The buy menu on the right-hand side of the screen contains four quick buy slots. Pressing the disk icon saves the loadout, while pressing the relevant number will load that loadout. The fourth slot is used to automatically save the last loadout purchased.</text>
+	</string>
+	<string id="ls_mp_tip_15">
+		<text>If you have more than one weapon, you can switch between them by repeatedly pressing "$$ACTION_WPN_3$$".</text>
+	</string>
+	<string id="ls_mp_tip_17">
+		<text>An artifact can be activated to create an anomaly. To do this take the artifact out by pressing "$$ACTION_ARTEFACT$$" and holding "$$ACTION_WPN_FIRE$$". The anomaly which appears is equally dangerous to enemies and the player who created it.</text>
+	</string>
+	<string id="ls_mp_tip_18">
+		<text>A scientific suit will help you survive in anomalies and radioactive areas.</text>
+	</string>
+	<string id="ls_mp_tip_2">
+		<text>ARTIFACT HUNT: In order to win, you must bring a certain number of artifacts to your base.</text>
+	</string>
+	<string id="ls_mp_tip_20">
+		<text>To detach a silencer, scope or underbarrel grenade launcher from your weapon, right-click on the weapon in your backpack and select the appropriate action from the context menu.</text>
+	</string>
+	<string id="ls_mp_tip_22">
+		<text>If you want to move with minimal noise, press "$$ACTION_ACCEL$$" to walk or "$$ACTION_CROUCH$$" to crouch.</text>
+	</string>
+	<string id="ls_mp_tip_23">
+		<text>Shotguns are close-combat weapons. The further your enemy is from you, the less effective they are.</text>
+	</string>
+	<string id="ls_mp_tip_24">
+		<text>When taking cover from small arms fire, make sure to get behind something solid. Unlike concrete walls, wooden boards and sheet metal don't make for very safe cover.</text>
+	</string>
+	<string id="ls_mp_tip_26">
+		<text>Headshots do critical damage and are fatal for most enemies.</text>
+	</string>
+	<string id="ls_mp_tip_27">
+		<text>Accelerated movement, jumping and wounds significantly reduce your endurance.</text>
+	</string>
+	<string id="ls_mp_tip_28">
+		<text>You can adjust how far you throw a grenade by holding "$$ACTION_WPN_ZOOM$$".</text>
+	</string>
+	<string id="ls_mp_tip_29">
+		<text>Enemies can and will use grenades. When you see the grenade indicator, leave the kill zone immediately.</text>
+	</string>
+	<string id="ls_mp_tip_3">
+		<text>DEATHMATCH: Get the most kill points to win.</text>
+	</string>
+	<string id="ls_mp_tip_30">
+		<text>Speeding up before you jump allows you to leap over big gaps and cracks.</text>
+	</string>
+	<string id="ls_mp_tip_31">
+		<text>Key indicators that show your health and endurance are located in the bottom right-hand corner of the screen.</text>
+	</string>
+	<string id="ls_mp_tip_35">
+		<text>The minimap shows the direction of the artifact. If the arrow is pointing up, the artifact is above your current position; if the arrow is pointing down, it is below you.</text>
+	</string>
+	<string id="ls_mp_tip_36">
+		<text>You can collect enemy backpacks to gain additional cash. Excess equipment can be sold at the base.</text>
+	</string>
+	<string id="ls_mp_tip_37">
+		<text>You should cover the artifact-carrying member of your team at all costs.</text>
+	</string>
+	<string id="ls_mp_tip_38">
+		<text>Use grenades to attack enemies in cover. Keep in mind the grenade’s blast radius to avoid hurting your fellow Stalkers.</text>
+	</string>
+	<string id="ls_mp_tip_39">
+		<text>You can communicate with your team using voice messages. To access the voice message menu, press "$$ACTION_SPEECH_MENU_0$$" or "$$ACTION_SPEECH_MENU_1$$".</text>
+	</string>
+	<string id="ls_mp_tip_4">
+		<text>TEAM DEATHMATCH: In order to win, your team needs to get more kill points than the enemy.</text>
+	</string>
+	<string id="ls_mp_tip_40">
+		<text>A vote can be started by pressing "$$ACTION_VOTE_BEGIN$$".</text>
+	</string>
+	<string id="ls_mp_tip_41">
+		<text>To see game scores, press "$$ACTION_SCORES$$".</text>
+	</string>
+	<string id="ls_mp_tip_42">
+		<text>To respawn press "$$ACTION_JUMP$$" once the waiting period has ended.</text>
+	</string>
+	<string id="ls_mp_tip_43">
+		<text>To open the buy menu, press "$$ACTION_BUY_MENU$$" while inside your base.</text>
+	</string>
+	<string id="ls_mp_tip_44">
+		<text>You can open general chat by pressing "$$ACTION_CHAT$$". To communicate with your team only using text chat, press "$$ACTION_CHAT_TEAM$$".</text>
+	</string>
+	<string id="ls_mp_tip_45">
+		<text>Running is the fastest way of moving, but also the most tiring. Press "$$ACTION_SPRINT_TOGGLE$$" to run.</text>
+	</string>
+	<string id="ls_mp_tip_46">
+		<text>Firing while aiming is more accurate than shooting from the hip. To aim, press "$$ACTION_WPN_ZOOM$$".</text>
+	</string>
+	<string id="ls_mp_tip_47">
+		<text>If you have an underbarrel grenade launcher, you can switch between it and the normal firing mode by pressing "$$ACTION_WPN_FUNC$$".</text>
+	</string>
+	<string id="ls_mp_tip_48">
+		<text>If you have several types of ammo for your current weapon, you can switch between them by pressing "$$ACTION_WPN_NEXT$$".</text>
+	</string>
+	<string id="ls_mp_tip_49">
+		<text>To reload your weapon before your magazine is empty, press "$$ACTION_WPN_RELOAD$$".</text>
+	</string>
+	<string id="ls_mp_tip_5">
+		<text>CAPTURE THE ARTIFACT: In order to win, you must bring a certain number of enemy artifacts to your base.</text>
+	</string>
+	<string id="ls_mp_tip_50">
+		<text>To discard your current weapon, press "$$ACTION_DROP$$".</text>
+	</string>
+	<string id="ls_mp_tip_51">
+		<text>To look in your backpack, press "$$ACTION_INVENTORY$$".</text>
+	</string>
+	<string id="ls_mp_tip_52">
+		<text>Most weapons have several firing modes. To switch between firing modes, press "$$ACTION_WPN_FIREMODE_NEXT$$" or "$$ACTION_WPN_FIREMODE_PREV$$".</text>
+	</string>
+	<string id="ls_mp_tip_53">
+		<text>Some places are impossible to pass through even when crouching. To crouch as low as you can, press and hold "$$ACTION_CROUCH$$" and "$$ACTION_ACCEL$$" simultaneously.</text>
+	</string>
+	<string id="ls_mp_tip_55">
+		<text>To look around a corner, press "$$ACTION_LLOOKOUT$$" or "$$ACTION_RLOOKOUT$$". You cannot fire while looking around a corner.</text>
+	</string>
+	<string id="ls_mp_tip_6">
+		<text>CAPTURE THE ARTIFACT: To return a stolen artifact to your base, you need to kill the enemy carrying it and pick it up by pressing "$$ACTION_USE$$".</text>
+	</string>
+	<string id="ls_mp_tip_7">
+		<text>ARTIFACT HUNT: You can destroy the artifact by activating it. To do this, take the artifact out by pressing "$$ACTION_ARTEFACT$$" and hold "$$ACTION_WPN_FIRE$$".</text>
+	</string>
+	<string id="ls_mp_tip_8">
+		<text>You cannot run while carrying the artifact.</text>
+	</string>
+	<string id="ls_tip_100">
+		<text>The chimera's face reflects his mind: two faced. He will flee, only to return mercilessly and murder you. He will assault you without recompense, just to leap into the darkness once again.</text>
+	</string>
+	<string id="ls_tip_36">
+		<text>Bloodsuckers are masters of the shadow; you do not want to find them in the muzzle flash of your gun.</text>
+	</string>
+	<string id="ls_tip_81">
+		<text>Only venture into Monolith and Merc territories at night - patrols leave them at this time and their bases are less occupied.</text>
+	</string>
+	<string id="ls_tip_7">
+		<text>Weapon flatness affects bullet trajectory, while handling determines the time it takes the sight to return to its original position after firing.</text>
+	</string>
+	<string id="ls_tip_5">
+		<text>Some suits have integrated helmets. It is not possible to use other helmets with such suits.</text>
+	</string>
+	<string id="ls_tip_76">
+		<text>Each weapon has unique accuracy, handling, damage and rate of fire characteristics, allowing you to pick one that’s right for you from a large selection.</text>
+	</string>
+	<string id="ls_tip_51">
+		<text>Firing accuracy suffers considerably when you’re on the move. Stand still or crouch to improve it.</text>
+	</string>
+	<string id="ls_mp_tip_10">
+		<text>Energy drinks temporarily speed up energy recovery, allowing you to sprint for longer.</text>
+	</string>
+	<string id="ls_mp_tip_12">
+		<text>You have unlimited ammo when playing in Deathmatch mode.</text>
+	</string>
+	<string id="ls_tip_16">
+		<text>One of the most common threats in the Zone is radiation. Serious exposure will harm your health and can be terminal if not treated adequately.</text>
+	</string>
+	<string id="ls_tip_19">
+		<text>Take some food with you when going out on a long raid. If you get really hungry, your endurance recovery will suffer greatly.</text>
+	</string>
+</string_table>

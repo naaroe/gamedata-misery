@@ -1,0 +1,133 @@
+[smart_terrain];zat_b101
+squad_id = 51
+max_population = 2
+
+respawn_params = respawn@zat_b101
+
+[respawn@zat_b101]
+spawn_duty@advanced
+spawn_duty@veteran
+
+spawn_duty@advanced_hostile
+spawn_duty@veteran_hostile
+
+spawn_duty@veteran_assault
+
+spawn_stalker@advanced
+spawn_stalker@veteran
+
+spawn_stalker@advanced_hostile
+spawn_stalker@veteran_hostile
+
+spawn_duty@veteran_assault_hostile
+
+;;; unused
+
+spawn_duty@hunter_day
+spawn_duty@hunter_night
+
+spawn_duty@hunter_day_hostile
+spawn_duty@hunter_night_hostile
+
+spawn_duty@advanced_guard
+spawn_duty@veteran_guard
+
+spawn_duty@advanced_guard_hostile
+spawn_duty@veteran_guard_hostile
+
+; Duty squads
+
+[spawn_duty@advanced]
+spawn_squads = duty_sim_squad_novice, duty_hunter_day_simulation_squad_novice, duty_hunter_day_simulation_squad_novice
+spawn_num = {+sim_freedom_help_harder} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@veteran]
+spawn_squads = duty_sim_squad_advanced_veteran, duty_hunter_day_simulation_squad, duty_hunter_night_simulation_squad
+spawn_num = {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty assault squads
+
+[spawn_duty@veteran_assault]
+spawn_squads = duty_sim_squad_veteran_zat_b5_smart_terrain_assault, duty_sim_squad_veteran_zat_b40_assault, duty_sim_squad_veteran_zat_b103_merc_smart_assault
+spawn_num = {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty hostile squads
+
+[spawn_duty@advanced_hostile]
+spawn_squads = duty_sim_squad_novice_hostile, duty_hunter_day_simulation_squad_novice_hostile, duty_hunter_day_simulation_squad_novice_hostile
+spawn_num = {-sim_freedom_help_harder} 0, {+sim_freedom_help_harder +jup_b207_task_end} 0, {+sim_freedom_help_harder +jup_a12_task_done} 0, {+sim_freedom_help_harder +jup_b46_task_done} 0, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 0, {+sim_freedom_help_harder +jup_b209_task_done} 0, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@veteran_hostile]
+spawn_squads = duty_sim_squad_advanced_veteran_hostile, duty_sim_squad_veteran_hostile, duty_sim_squad_advanced_veteran_hostile, duty_sim_squad_veteran_hostile, duty_hunter_day_simulation_squad_hostile, duty_hunter_night_simulation_squad_hostile
+spawn_num = {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty assault hostile squads
+
+[spawn_duty@veteran_assault_hostile]
+spawn_squads = duty_sim_squad_veteran_zat_b5_smart_terrain_assault_hostile, duty_sim_squad_veteran_zat_b40_assault_hostile, duty_sim_squad_veteran_zat_b103_merc_smart_assault_hostile
+spawn_num = {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Stalker squads
+
+[spawn_stalker@advanced]
+spawn_squads = stalker_sim_squad_novice, stalker_hunter_day_simulation_squad, stalker_sim_squad_novice, stalker_hunter_day_simulation_squad, stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad
+spawn_num = {+kingpin_gained} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@veteran]
+spawn_squads = stalker_sim_squad_advanced_veteran, stalker_sim_squad_veteran, stalker_sim_squad_advanced_veteran, stalker_sim_squad_veteran, stalker_hunter_day_simulation_squad, stalker_hunter_night_simulation_squad, stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad
+spawn_num = {-kingpin_gained +jup_b207_task_end} 2, {-kingpin_gained +jup_a12_task_done} 2, {-kingpin_gained +jup_b46_task_done} 2, {-kingpin_gained +jup_b8_heli_4_searched} 2, {-kingpin_gained +jup_b209_task_done} 2, {-kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+; Stalker hostile squads
+
+[spawn_stalker@advanced_hostile]
+spawn_squads = stalker_sim_squad_novice_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_day_zaton_smrter_sim_8_assault_simulation_squad_hostile
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +jup_b46_task_done} 0, {+kingpin_gained +jup_b8_heli_4_searched} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 2
+
+[spawn_stalker@veteran_hostile]
+spawn_squads = stalker_sim_squad_advanced_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_night_simulation_squad_hostile, stalker_hunter_night_zaton_smrter_sim_8_assault_simulation_squad_hostile, stalker_hunter_night_zaton_smrter_sim_11_assault_simulation_squad_hostile
+spawn_num = {+kingpin_gained +jup_b207_task_end} 2, {+kingpin_gained +jup_a12_task_done} 2, {+kingpin_gained +jup_b46_task_done} 2, {+kingpin_gained +jup_b8_heli_4_searched} 2, {+kingpin_gained +jup_b209_task_done} 2, {+kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+;;; unused
+
+; Duty guard squads
+
+[spawn_duty@advanced_guard]
+spawn_squads = duty_sim_squad_advanced_zat_b101
+spawn_num = 0	; {+sim_freedom_help_harder} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@veteran_guard]
+spawn_squads = duty_sim_squad_advanced_veteran_zat_b101
+spawn_num = 0	; {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty guard hostile squads
+
+[spawn_duty@advanced_guard_hostile]
+spawn_squads = duty_sim_squad_advanced_zat_b101_hostile
+spawn_num = 0    ; {+sim_freedom_help_harder} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@veteran_guard_hostile]
+spawn_squads = duty_sim_squad_advanced_veteran_zat_b101_hostile
+spawn_num = 0    ; {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+
+; Duty hunter squads
+
+[spawn_duty@hunter_day]
+spawn_squads = duty_hunter_day_simulation_squad
+spawn_num = 0	; {+sim_freedom_help_harder} 0, {-sim_freedom_help_harder +jup_b207_task_end} 0, {-sim_freedom_help_harder +jup_a12_task_done} 0, {-sim_freedom_help_harder +jup_b46_task_done} 0, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 0, {-sim_freedom_help_harder +jup_b209_task_done} 0, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@hunter_night]
+spawn_squads = duty_hunter_day_simulation_squad, duty_hunter_night_simulation_squad
+spawn_num = 0	; {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty hunter hostile squads
+
+[spawn_duty@hunter_day_hostile]
+spawn_squads = duty_hunter_day_simulation_squad_hostile
+spawn_num = 0	; {-sim_freedom_help_harder} 0 ,{+sim_freedom_help_harder +jup_b207_task_end} 0, {+sim_freedom_help_harder +jup_a12_task_done} 0, {+sim_freedom_help_harder +jup_b46_task_done} 0, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 0, {+sim_freedom_help_harder +jup_b209_task_done} 0, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@hunter_night_hostile]
+spawn_squads = duty_hunter_day_simulation_squad_hostile, duty_hunter_night_simulation_squad_hostile
+spawn_num = 0	; {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+[exclusive]

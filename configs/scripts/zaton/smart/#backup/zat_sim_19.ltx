@@ -1,0 +1,33 @@
+[smart_terrain];zat_sim_19
+squad_id = 17
+max_population = 1
+respawn_params = respawn@zat_sim_19
+
+[respawn@zat_sim_19]
+spawn_snork
+spawn_dog
+spawn_pseudodog
+;spawn_boar
+;spawn_flesh
+
+[spawn_snork]
+spawn_squads = simulation_snork, simulation_pseudodog, simulation_dog, simulation_dog
+spawn_num = 1
+
+[spawn_pseudodog]
+spawn_squads = simulation_pseudodog, simulation_dog
+spawn_num = 2
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog
+spawn_num = 3
+
+;;;unused
+
+[spawn_boar]
+spawn_squads = simulation_boar
+spawn_num = 0
+
+[spawn_flesh]
+spawn_squads = simulation_flesh
+spawn_num = 0

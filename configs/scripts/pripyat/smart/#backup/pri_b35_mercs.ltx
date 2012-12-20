@@ -1,0 +1,54 @@
+[smart_terrain];pri_b35_mercs
+squad_id = 12
+max_population = 1
+;arrive_dist = 100
+
+respawn_params = respawn@pri_b35_mercs
+
+[respawn@pri_b35_mercs]
+spawn_duty@advanced
+spawn_duty@advanced_hostile
+
+spawn_duty@hunter_day
+
+;;; unused
+
+[spawn_duty@advanced]
+spawn_squads = duty_sim_squad_veteran, duty_hunter_night_simulation_squad
+spawn_num = 0 ;		{-sim_freedom_help_harder +jup_b47_actor_pick_docs} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +zat_b40_merc_gone} 1, {-sim_freedom_help_harder +zat_b103_merc_gone} 1, {-sim_freedom_help_harder +zat_b5_task_end} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+[spawn_duty@advanced_hostile]
+spawn_squads = duty_sim_squad_veteran_hostile, duty_hunter_night_simulation_squad_hostile
+spawn_num = 0 ;		{+sim_freedom_help_harder +jup_b47_actor_pick_docs} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +zat_b40_merc_gone} 1, {+sim_freedom_help_harder +zat_b103_merc_gone} 1, {+sim_freedom_help_harder +zat_b5_task_end} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+[spawn_duty@hunter_day]
+spawn_squads = duty_hunter_day_simulation_squad
+spawn_num = 0
+
+[exclusive]
+pri_b35_merc_leader = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_1  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_2  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_3  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_4  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_5  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_merc_6  = pripyat\pri_b35_mercs_logic.ltx
+pri_b35_envoy = pripyat\pri_b35_envoy_logic.ltx
+pri_b35_envoy_1 = pripyat\pri_b35_envoy_logic.ltx
+pri_b35_envoy_2 = pripyat\pri_b35_envoy_logic.ltx
+
+pri_a18_vano = pripyat\pri_a18_vano.ltx
+pri_a18_sokolov = pripyat\pri_a18_sokolov.ltx
+pri_a18_merkulov = pripyat\pri_a18_merkulov.ltx
+pri_a18_skelja = pripyat\pri_a18_skelja.ltx
+
+pri_a18_vano_surge = pripyat\pri_a18_reinf_surge_works.ltx
+pri_a18_sokolov_surge = pripyat\pri_a18_reinf_surge_works.ltx
+pri_a18_merkulov_surge = pripyat\pri_a18_reinf_surge_works.ltx
+pri_a18_skelja_surge = pripyat\pri_a18_reinf_surge_works.ltx
+
+pri_a20_missing_military_recon_leader = pripyat\pri_a20_military_missing_squad_ex_works.ltx
+pri_a20_missing_military_recon_1 = pripyat\pri_a20_military_missing_squad_ex_works.ltx
+pri_a20_missing_military_recon_2 = pripyat\pri_a20_military_missing_squad_ex_works.ltx
+pri_a20_missing_military_recon_3 = pripyat\pri_a20_military_missing_squad_ex_works.ltx
+

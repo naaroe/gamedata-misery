@@ -1,0 +1,16 @@
+[smart_terrain]
+squad_id = 27
+max_population = 1
+respawn_params = respawn@zat_sim_11 
+
+[respawn@zat_sim_11]
+spawn_bloodsucker
+spawn_mutant_psi
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker_zaton_smrter_sim_11 
+spawn_num = {+zat_b38_failed} 1, 0
+
+[spawn_mutant_psi]
+spawn_squads =  simulation_zombied_1_zaton_smrter_sim_11, simulation_zombied_1_zaton_smrter_sim_11, simulation_controller_zaton_smrter_sim_11, simulation_poltergeist_tele_zaton_smrter_sim_11, simulation_snork_zaton_smrter_sim_11, simulation_snork_zaton_smrter_sim_11
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 1, 0

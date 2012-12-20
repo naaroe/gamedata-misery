@@ -1,0 +1,197 @@
+-- axr_quest_master
+-- Alundaio
+
+
+function on_game_start()
+	callback_register("actor_on_item_take",on_item_take)
+end
+
+function alun_stashes()
+	-- Stash 1
+	local pos = vector():set(434.29071044922,42.37015914917,1.3976941108704)
+	local box1_pos = vector():set(412.80319213867,43.936130523682,1.6001467704773)
+	local stash = alife():create("inv_backpack",pos,1677080,293)
+	alife():create("box_wood_01",box1_pos,1642352,293)
+	create_items("medkit",2,stash.id)
+	create_items("stimpack",2,stash.id)
+	create_items("water_drink",1,stash.id)
+	create_items("itm_alun_journal_1",1,stash.id)
+
+	--[[
+	-- scare 1
+	-- create animpoint
+	alun_utils.spawn_smart_cover("animpoint_sit_low","axr_sc_zat_b38_scare_1",vector():set(-431.53381347656,2.9206054210663,5.7939853668213),133074,14)
+
+	-- create NPC and give logic
+	local se_npc = alife():create("sim_default_zombied_4",vector():set(-431.53381347656,2.9206054210663,5.7939853668213),133074,14)
+	data = alun_utils.get_stalker_data(se_npc)
+	data.custom_data = "[logic]\n cfg = scripts\\alun\\zaton\\zat_b38_scare.ltx"
+	alun_utils.set_stalker_data(data,se_npc)
+	create_items("wpn_pm",1,se_npc.id)
+	create_ammunition("ammo_9x18_fmj",1,se_npc.id)
+	--]]
+end
+
+function on_item_take(item)
+	if (item:section() == "itm_alun_journal_1") then
+		if not (has_alife_info("alun_riddle_begin")) then--doc
+			give_info("alun_riddle_begin")
+			task_manager.get_task_manager():give_task("alun_riddle_1")
+
+			alife():create("itm_alun_journal_2",vector():set(62.007720947266,-1.5662006139755,452.41647338867),1069958,41)
+			alife():create("itm_alun_journal_2",vector():set(118.51746368408,-3.8533968925476,191.03785705566),1169348,316)
+
+			local se_cover = alife():create("test_sc",vector():set(469.06042480469,37.1,41.552244567871),1729876,293)
+			se_cover.last_description = "animpoint_sit_high"
+			se_cover.loopholes["animpoint_sit_high"] = 1
+			local data = alun_utils.get_smart_cover_data(se_cover)
+			data.description = "animpoint_sit_high"
+			data.last_description = "animpoint_sit_high"
+			data.loopholes["animpoint_sit_high"] = 1
+			alun_utils.set_smart_cover_data(data,se_cover)
+
+			local se_npc = alife():create("sim_default_stalker_1",vector():set(469.44943237305,36.999774932861,41.651809692383),1730886,293)
+			data = alun_utils.get_stalker_data(se_npc)
+			data.custom_data = "[logic]\n cfg = scripts\\alun\\zaton\\zat_test_sc.ltx"
+			alun_utils.set_stalker_data(data,se_npc)
+		end
+	elseif (item:section() == "itm_alun_journal_2") then--river
+		if not (has_alife_info("alun_riddle_1")) then
+			give_info("alun_riddle_1")
+			task_manager.get_task_manager():give_task("alun_riddle_2")
+
+			local stash = alife():create("inv_backpack",vector():set(566.39813232422,-7.3773126602173,-195.25889587402),1836814,220)
+			create_items("itm_alun_journal_3",1,stash.id)
+			create_items("medkit",2,stash.id)
+			create_items("antirad",2,stash.id)
+			create_items("wpn_addon_silencer",1,stash.id)
+		end
+	elseif (item:section() == "itm_alun_journal_3") then--fire
+		if not (has_alife_info("alun_riddle_2")) then
+			give_info("alun_riddle_2")
+			task_manager.get_task_manager():give_task("alun_riddle_3")
+
+			alife():create("itm_alun_journal_4",vector():set(13.152874946594,9.0864534378052,-394.25241088867),970504,8)
+		end
+	elseif (item:section() == "itm_alun_journal_4") then--dam
+		if not (has_alife_info("alun_riddle_3")) then
+			give_info("alun_riddle_3")
+			task_manager.get_task_manager():give_task("alun_riddle_4")
+
+			local stash = alife():create("inv_backpack",vector():set(372.59381103516,28.16738319397,-331.74893188477),1734850,258)
+			create_items("itm_alun_journal_5",1,stash.id)
+			create_items("antirad",2,stash.id)
+			create_items("medkit",1,stash.id)
+			create_items("grenade_f1",1,stash.id)
+		end
+	elseif (item:section() == "itm_alun_journal_5") then--ship
+		if not (has_alife_info("alun_riddle_4")) then
+			give_info("alun_riddle_4")
+			task_manager.get_task_manager():give_task("alun_riddle_5")
+
+			local stash = alife():create("inv_backpack",vector():set(165.67411804199,-3.479465007782,-140.53729248047),1258566,13)
+			create_items("itm_alun_journal_6",1,stash.id)
+			create_items("bread",1,stash.id)
+
+
+			if (axr_misery.ActorClass == "assaulter") then
+				create_items("wpn_ak47m_alun",1,stash.id)
+				create_ammunition("ammo_7.62x39_ap",2,stash.id)
+			elseif (axr_misery.ActorClass == "sniper") then
+				create_items("wpn_m1891_alun",1,stash.id)
+				create_ammunition("ammo_7.62x39_ap",2,stash.id)
+			else
+				create_items("wpn_ak47m_alun",1,stash.id)
+				create_ammunition("ammo_7.62x39_ap",2,stash.id)
+			end
+		end
+	elseif (item:section() == "itm_alun_journal_6") then --electricity
+		if not (has_alife_info("alun_riddle_5")) then
+			give_info("alun_riddle_5")
+			task_manager.get_task_manager():give_task("alun_riddle_6")
+
+			local stash = alife():create("inv_backpack",vector():set(-336.76156616211,40.072235107422,-398.68731689453),278578,29)
+			create_items("itm_alun_journal_7",1,stash.id)
+		end
+	elseif (item:section() == "itm_alun_journal_7") then--bloodsuckerlair
+		if not (has_alife_info("alun_riddle_6")) then
+			give_info("alun_riddle_6")
+			task_manager.get_task_manager():give_task("alun_riddle_7")
+
+			-- create boxes
+			if (has_alife_info("zat_b38_stalker_cop_about_lair_bloodsucker_done")) then
+				alife():create("box_wood_01",vector():set(-454.55334472656,0.51891541481018,58.439933776855),107429,14)
+				alife():create("box_wood_01",vector():set(-454.55334472656,1.31891541481018,58.439933776855),107429,14)
+				alife():create("box_wood_01",vector():set(-454.55334472656,2.11891541481018,58.439933776855),107429,14)
+				alife():create("box_wood_01",vector():set(-454.82073974609,0.62284994125366,57.355250549316),107429,14)
+				alife():create("box_wood_01",vector():set(-454.82073974609,1.42284994125366,57.355250549316),106606,14)
+				alife():create("box_wood_01",vector():set(-455.60592651367,0.50336897373199,57.815029144287),105810,14)
+			end
+
+			-- create animpoint
+			local se_cover = alife():create("axr_sc_zat_b38_stalker_1",vector():set(-440.99615478516,4.99871301651,47.874130249023),122126,14)
+			se_cover.last_description = "animpoint_sit_low"
+			se_cover.loopholes["animpoint_sit_low"] = 1
+			local data = alun_utils.get_smart_cover_data(se_cover)
+			data.description = "animpoint_sit_low"
+			data.last_description = "animpoint_sit_low"
+			data.loopholes["animpoint_sit_low"] = 1
+			alun_utils.set_smart_cover_data(data,se_cover)
+
+
+			-- create NPC and give logic
+			local se_npc = alife():create("sim_default_stalker_1",vector():set(-440.99615478516,4.99871301651,47.874130249023),122126,14)
+			data = alun_utils.get_stalker_data(se_npc)
+			data.custom_data = "[logic]\n cfg = scripts\\alun\\zaton\\zat_riddle_b38.ltx"
+			alun_utils.set_stalker_data(data,se_npc)
+
+			create_items("itm_alun_journal_8",1,se_npc.id)
+		end
+	elseif (item:section() == "itm_alun_journal_8") then--bridge
+		if not (has_alife_info("alun_riddle_7")) then
+			give_info("alun_riddle_7")
+			task_manager.get_task_manager():give_task("alun_riddle_8")
+
+			alife():create("itm_alun_journal_9",vector():set(432.5026550293,29.048379898071,-277.16079711914),1674415,258)
+		end
+	elseif (item:section() == "itm_alun_journal_9") then--crane
+		if not (has_alife_info("alun_riddle_8")) then
+			give_info("alun_riddle_8")
+			task_manager.get_task_manager():give_task("alun_riddle_9")
+
+			local stash = alife():create("inv_backpack",vector():set(192.27871704102,6.5809636116028,3.2830765247345),1293074,55)
+			create_items("itm_alun_journal_10",1,stash.id)
+			create_items("helm_respirator",1,stash.id)
+			create_items("stalker_outfit_alun",1,stash.id)
+			create_items("medkit",1,stash.id)
+			create_items("vodka",1,stash.id)
+			create_items("bandage",1,stash.id)
+		end
+	elseif (item:section() == "itm_alun_journal_10") then
+		if not (has_alife_info("alun_riddle_9")) then
+			give_info("alun_riddle_9")
+			give_info("riddle_master_zaton")
+			news_manager.send_tip(db.actor, "st_sp_achievement_22_descr", nil, "riddle_master_zaton", nil, nil)
+		end
+	end
+end
+
+function create_items(sec,amt,id)
+	local se_obj = id and alife():object(id) or alife():object(db.actor:id())
+	if (se_obj) then
+		amt = amt or 1
+		for i=1,amt do
+			alife():create(sec,se_obj.position,se_obj.m_level_vertex_id, se_obj.m_game_vertex_id,se_obj.id)
+		end
+	end
+end
+
+function create_ammunition(sec,amt,id)
+	local se_obj = id and alife():object(id) or alife():object(db.actor:id())
+	if (se_obj) then
+	local num_in_box = system_ini():r_u32(sec, "box_size")
+	amt = amt or 1
+	amt = num_in_box and amt*num_in_box
+	alife():create_ammo(sec,se_obj.position,se_obj.m_level_vertex_id, se_obj.m_game_vertex_id,se_obj.id,amt)
+	end
+end

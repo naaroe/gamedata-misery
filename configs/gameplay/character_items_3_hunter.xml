@@ -1,0 +1,22 @@
+mutant_part_boar_leg = 2, prob=0.08 \n
+mutant_part_dog_tail = 2, prob=0.08 \n
+mutant_part_flesh_eye = 2, prob=0.08 \n
+mutant_part_psevdodog_tail = 2, prob=0.04 \n
+mutant_part_snork_leg = 1, prob=0.04 \n
+mutant_part_tushkano_head = 1, prob=0.016 \n
+mutant_part_krovosos_jaw = 1, prob=0.014 \n
+
+mutant_part_flesh_meat = 3, prob=0.08 \n
+mutant_part_boar_chop = 2, prob=0.08 \n
+mutant_part_dog_meat = 3, prob=0.08 \n
+mutant_part_psevdodog_meat = 2, prob=0.04 \n
+mutant_part_krovosos_meat = 1, prob=0.014 \n
+mutant_part_snork_hand = 2, prob=0.04 \n
+mutant_part_tushkano_meat = 2, prob=0.016 \n
+
+wpn_knife = 1, prob=0.75 \n
+swiss		= 1, prob=0.25 \n
+kit_hunt		= 1, prob=0.33 \n
+rope		= 1, prob=0.15 \n
+synthrope		= 1, prob=0.02 \n
+fieldcooker		= 1, prob=0.01 \n

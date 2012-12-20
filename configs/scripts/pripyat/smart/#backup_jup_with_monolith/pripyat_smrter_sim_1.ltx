@@ -1,0 +1,21 @@
+[smart_terrain];pripyat_smrter_sim_1
+squad_id = 5
+max_population = 1
+respawn_params = respawn@pripyat_smrter_sim_1   
+
+[respawn@pripyat_smrter_sim_1]
+spawn_dog
+spawn_pseudodog
+spawn_snork
+
+[spawn_pseudodog]
+spawn_squads = simulation_pseudodog, simulation_pseudodog, simulation_pseudodog, simulation_pseudodog, simulation_bloodsucker, simulation_cat_pripyat
+spawn_num = 1
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_cat_pripyat
+spawn_num = 2
+
+[spawn_snork]
+spawn_squads = simulation_pseudodog, simulation_snork, simulation_bloodsucker, simulation_gigant, simulation_cat_pripyat
+spawn_num = 1

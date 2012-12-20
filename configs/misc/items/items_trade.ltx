@@ -1,0 +1,1618 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; USABLE ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[sleep_bag]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn    		= "devices\sleep_bag"
+$prefetch   	= 32
+class		 	= II_ANTIR
+cform           = skeleton
+visual          = dynamics\equipments\sumka7.ogf
+radius			= 1
+description  	= st_sleep_bag_descr
+inv_name   		= st_sleep_bag
+inv_name_short  = st_sleep_bag
+inv_weight   	= 0.75
+quest_item		= false
+inv_grid_width		= 3
+inv_grid_height		= 2
+inv_grid_x		= 12
+inv_grid_y		= 25
+cost    		= 760
+default_to_ruck		= true
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+animation_slot  = 4
+
+[compression_bag]:identity_immunities
+GroupControlSection = spawn_group
+discovery_dependency =
+$spawn    		= "devices\sleep_bag"
+$prefetch   	= 32
+class		 	= II_ANTIR
+cform           = skeleton
+visual          = dynamics\equipments\sumka2.ogf
+radius			= 1
+description  	= st_compression_bag_descr
+inv_name   		= st_compression_bag
+inv_name_short  = st_compression_bag
+inv_weight   	= 0.25
+quest_item		= false
+inv_grid_width		= 2
+inv_grid_height		= 2
+inv_grid_x		= 12
+inv_grid_y		= 22
+cost    		= 2260
+default_to_ruck		= true
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+animation_slot  = 4
+
+[repair_kit]:booster
+$spawn 				= "devices\repair_kit_10"
+description			= st_repair_kit_descr
+inv_name			= st_repair_kit
+inv_name_short			= st_repair_kit
+can_trade			= true
+quest_item      		= false
+cost				= 5800
+inv_weight			= 3.65
+visual				= dynamics\devices\dev_instrument_1\dev_instrument_1.ogf
+inv_grid_width			= 2
+inv_grid_height			= 2
+inv_grid_x			= 10
+inv_grid_y			= 25
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; TRADE ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[shovel_old]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\shovel.ogf
+radius				= 68; 50
+
+description			= st_shovel_old_descr
+inv_name			= st_shovel_old
+inv_name_short			= st_shovel_old
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 8
+inv_grid_y			= 43
+
+cost				= 460
+
+;box_size			= 1
+
+inv_weight			= 1.54
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[shovel_mili]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\shovel.ogf
+radius				= 68; 50
+
+description			= st_shovel_mili_descr
+inv_name			= st_shovel_mili
+inv_name_short			= st_shovel_mili
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 7
+inv_grid_y			= 43
+
+cost				= 730
+
+;box_size			= 1
+
+inv_weight			= 1.36
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[hammer_inv]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\hammer.ogf
+radius				= 68; 50
+
+description			= st_hammer_descr
+inv_name			= st_hammer
+inv_name_short		= st_hammer
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 7
+inv_grid_y			= 47
+
+cost				= 490
+
+;box_size			= 1
+
+inv_weight			= 1.8
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[ied_rpg]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\quest\explosive_charge.ogf
+radius				= 68; 50
+
+description			= st_ied_rpg_descr
+inv_name			= st_ied_rpg
+inv_name_short			= st_ied_rpg
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 6
+inv_grid_y			= 43
+
+cost				= 1390
+
+;box_size			= 1
+
+inv_weight			= 2.4
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[ied]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\bomb_c4.ogf
+radius				= 68; 50
+
+description			= st_ied_descr
+inv_name			= st_ied
+inv_name_short			= st_ied
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 5
+inv_grid_y			= 43
+
+cost				= 1690
+
+;box_size			= 1
+
+inv_weight			= 2.165
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[meinkampf]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\meinkampf.ogf
+radius				= 68; 50
+
+description			= st_meinkampf_descr
+inv_name			= st_meinkampf
+inv_name_short			= st_meinkampf
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 4
+inv_grid_y			= 44
+
+cost				= 660
+
+;box_size			= 1
+
+inv_weight			= 0.224
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[jar]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\jar.ogf
+radius				= 68; 50
+
+description			= st_jar_descr
+inv_name			= st_jar
+inv_name_short			= st_jar
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 3
+inv_grid_y			= 44
+
+cost				= 1860
+
+;box_size			= 1
+
+inv_weight			= 0.58
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[crowbar]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\crowbar.ogf
+radius				= 68; 50
+
+description			= st_crowbar_descr
+inv_name			= st_crowbar
+inv_name_short			= st_crowbar
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 6
+inv_grid_y			= 47
+
+cost				= 490
+
+;box_size			= 1
+
+inv_weight			= 1.35
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[grooming]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\grooming.ogf
+radius				= 68; 50
+
+description			= st_grooming_descr
+inv_name			= st_grooming
+inv_name_short			= st_grooming
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 2
+inv_grid_y			= 44
+
+cost				= 690
+
+;box_size			= 1
+
+inv_weight			= 0.13
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[spareparts]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\parts.ogf
+radius				= 68; 50
+
+description			= st_spareparts_descr
+inv_name			= st_spareparts
+inv_name_short			= st_spareparts
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 2
+inv_grid_y			= 52
+
+cost				= 1040
+
+;box_size			= 1
+
+inv_weight			= 2.33
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[beadspread]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\bedspread.ogf
+radius				= 68; 50
+
+description			= st_beadspread_descr
+inv_name			= st_beadspread
+inv_name_short			= st_beadspread
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 4
+inv_grid_y			= 51
+
+cost				= 760
+
+;box_size			= 1
+
+inv_weight			= 0.75
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[walkie]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual              = dynamics\devices\dev_fmradio\dev_fmradio.ogf
+radius				= 68; 50
+
+description			= st_walkie_descr
+inv_name			= st_walkie
+inv_name_short			= st_walkie
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 6
+inv_grid_y			= 51
+
+cost				= 1030
+
+;box_size			= 1
+
+inv_weight			= 0.42
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[cards]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\cards.ogf
+radius				= 68; 50
+
+description			= st_cards_descr
+inv_name			= st_cards
+inv_name_short			= st_cards
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 10
+inv_grid_y			= 52
+
+cost				= 390
+
+;box_size			= 1
+
+inv_weight			= 0.11
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[ammo_bad]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\ammo.ogf
+radius				= 68; 50
+
+description			= st_ammo_bad_descr
+inv_name			= st_ammo_bad
+inv_name_short			= st_ammo_bad
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 10
+inv_grid_y			= 51
+
+cost				= 28
+
+;box_size			= 1
+
+inv_weight			= 0.05
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[journal]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\quest\notes_writing_book_2.ogf
+radius				= 68; 50
+
+description			= st_journal_descr
+inv_name			= st_journal
+inv_name_short			= st_journal
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 1
+inv_grid_y			= 44
+
+cost				= 360
+
+;box_size			= 1
+
+inv_weight			= 0.07
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[boots]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\boots.ogf
+radius				= 68; 50
+
+description			= st_boots_descr
+inv_name			= st_boots
+inv_name_short			= st_boots
+
+inv_grid_width			= 2
+inv_grid_height			= 2
+inv_grid_x			= 6
+inv_grid_y			= 49
+
+cost				= 890
+
+;box_size			= 1
+
+inv_weight			= 1.68
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[maps_kit]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\maps.ogf
+radius				= 68; 50
+
+description			= st_maps_kit_descr
+inv_name			= st_maps_kit
+inv_name_short			= st_maps_kit
+
+inv_grid_width			= 1
+inv_grid_height			= 2
+inv_grid_x			= 0
+inv_grid_y			= 44
+
+cost				= 3240
+
+;box_size			= 1
+
+inv_weight			= 0.145
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[mili_maps]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\mili_maps.ogf
+radius				= 68; 50
+
+description			= st_mili_maps_descr
+inv_name			= st_mili_maps
+inv_name_short			= st_mili_maps
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 4
+inv_grid_y			= 48
+
+cost				= 1790
+
+;box_size			= 1
+
+inv_weight			= 0.2
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[swiss]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\swiss.ogf
+radius				= 68; 50
+
+description			= st_swiss_descr
+inv_name			= st_swiss
+inv_name_short			= st_swiss
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 51
+
+cost				= 780
+
+;box_size			= 1
+
+inv_weight			= 0.1
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[headlamp]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\devices\dev_torch_light\dev_torch_light.ogf
+radius				= 68; 50
+
+description			= st_headlamp_descr
+inv_name			= st_headlamp
+inv_name_short			= st_headlamp
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 4
+inv_grid_y			= 52
+
+cost				= 960
+
+;box_size			= 1
+
+inv_weight			= 0.2
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[mirror]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\mirror.ogf
+radius				= 68; 50
+
+description			= st_mirror_descr
+inv_name			= st_mirror
+inv_name_short			= st_mirror
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 11
+inv_grid_y			= 51
+
+cost				= 380
+
+;box_size			= 1
+
+inv_weight			= 0.09
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[kit_hunt]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\kit_hunt.ogf
+radius				= 68; 50
+
+description			= st_kit_hunt_descr
+inv_name			= st_kit_hunt
+inv_name_short			= st_kit_hunt
+
+inv_grid_width			= 2
+inv_grid_height			= 2
+inv_grid_x			= 0
+inv_grid_y			= 49
+
+cost				= 980
+
+;box_size			= 1
+
+inv_weight			= 1.145
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[geiger_dead]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\devices\dev_datchik_2\dev_datchik_2.ogf
+radius				= 68; 50
+
+description			= st_geiger_dead_descr
+inv_name			= st_geiger_dead
+inv_name_short			= st_geiger_dead
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 52
+
+cost				= 1290
+
+;box_size			= 1
+
+inv_weight			= 0.484
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[welding_goggles]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\goggles.ogf
+radius				= 68; 50
+
+description			= st_welding_goggles_descr
+inv_name			= st_welding_goggles
+inv_name_short			= st_welding_goggles
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 7
+inv_grid_y			= 42
+
+cost				= 790
+
+;box_size			= 1
+
+inv_weight			= 0.382
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[jewelry_box]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\jbox.ogf
+radius				= 68; 50
+
+description			= st_jewelry_box_descr
+inv_name			= st_jewelry_box
+inv_name_short			= st_jewelry_box
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 2
+inv_grid_y			= 45
+
+cost				= 2360
+
+;box_size			= 1
+
+inv_weight			= 0.36
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[cooking]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\ckit.ogf
+radius				= 68; 50
+
+description			= st_cooking_descr
+inv_name			= st_cooking
+inv_name_short			= st_cooking
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 3
+inv_grid_y			= 45
+
+cost				= 860
+
+;box_size			= 1
+
+inv_weight			= 0.564
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[book1]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\book1.ogf
+radius				= 68; 50
+
+description			= st_book1_descr
+inv_name			= st_book1
+inv_name_short			= st_book1
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 5
+inv_grid_y			= 45
+
+cost				= 720
+
+;box_size			= 1
+
+inv_weight			= 0.18
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[book2]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\book2.ogf
+radius				= 68; 50
+
+description			= st_book2_descr
+inv_name			= st_book2
+inv_name_short			= st_book2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 6
+inv_grid_y			= 45
+
+cost				= 780
+
+;box_size			= 1
+
+inv_weight			= 0.22
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[book3]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\book3.ogf
+radius				= 68; 50
+
+description			= st_drugnotes_descr
+inv_name			= st_drugnotes
+inv_name_short			= st_drugnotes
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 7
+inv_grid_y			= 45
+
+cost				= 860
+
+;box_size			= 1
+
+inv_weight			= 0.17
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[picture_woman]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\photo.ogf
+radius				= 68; 50
+
+description			= st_picture_woman_descr
+inv_name			= st_picture_woman
+inv_name_short			= st_picture_woman
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 45
+
+cost				= 160
+
+;box_size			= 1
+
+inv_weight			= 0.02
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[drugs_kit]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\drugskit.ogf
+radius				= 68; 50
+
+description			= st_drugs_kit_descr
+inv_name			= st_drugs_kit
+inv_name_short			= st_drugs_kit
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 46
+
+cost				= 2120
+
+;box_size			= 1
+
+inv_weight			= 0.268
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[flashlight_old]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\torch.ogf
+radius				= 68; 50
+
+description			= st_flashlight_old_descr
+inv_name			= st_flashlight_old
+inv_name_short			= st_flashlight_old
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 50
+
+cost				= 1060
+
+;box_size			= 1
+
+inv_weight			= 0.4
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[flashlight_broken]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\torch.ogf
+radius				= 68; 50
+
+description			= st_flashlight_broken_descr
+inv_name			= st_flashlight_broken
+inv_name_short			= st_flashlight_broken
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 49
+
+cost				= 660
+
+;box_size			= 1
+
+inv_weight			= 0.4
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[underwear]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\sumka1.ogf
+radius				= 68; 50
+
+description			= st_underwear_descr
+inv_name			= st_underwear
+inv_name_short			= st_underwear
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x			= 0
+inv_grid_y			= 52
+
+cost				= 390
+
+;box_size			= 1
+
+inv_weight			= 0.04
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[roubles]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\dev_money.ogf
+radius				= 68; 50
+
+description			= st_roubles_descr
+inv_name			= st_roubles
+inv_name_short			= st_roubles
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 42
+
+cost				= 100
+
+;box_size		= 5
+
+inv_weight			= 0.004
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+[device_identity_card]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency=
+$spawn 				= "devices\pda"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\quest\identity_card.ogf
+description			= st_identity_card_descr
+radius				= 68; 50
+slot				= 7
+default_to_ruck		= true
+sprint_allowed		= true
+control_inertion_factor = 1
+script_binding      = bind_physic_object.init
+
+inv_name			= st_identity_card
+inv_name_short			= st_identity_card
+inv_weight			= 0.05
+
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 14
+inv_grid_y			= 8
+cost				= 50
+quest_item     			= true
+
+attach_angle_offset		= -1.303,0.107,-1.702   ;устанавливается в радианах Angle*PI/180
+attach_position_offset	= 0.14,0.001,0.02
+attach_bone_name		= bip01_l_hand
+auto_attach			= false
+
+[identity_card_assaulter]:device_identity_card
+description				= st_identity_card_assaulter_descr
+inv_name				= st_identity_card
+inv_name_short			= st_identity_card
+
+[identity_card_sniper]:device_identity_card
+description				= st_identity_card_sniper_descr
+inv_name				= st_identity_card
+inv_name_short			= st_identity_card
+
+[identity_card_recon]:device_identity_card
+description				= st_identity_card_recon_descr
+inv_name				= st_identity_card
+inv_name_short			= st_identity_card
+
+
+[porn]:identity_immunities
+$spawn 				= "food and drugs\bread"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\porn.ogf
+description			= st_porn_descr
+
+radius				= 68; 50
+inv_name			= st_porn
+inv_name_short			= st_porn
+inv_weight			= 0.22	;0.2
+
+inv_grid_width     = 1
+inv_grid_height    = 2
+inv_grid_x         = 2
+inv_grid_y         = 49
+cost				= 760
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+[porn2]:identity_immunities
+$spawn 				= "food and drugs\bread"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\porn2.ogf
+description			= st_porn2_descr
+
+radius				= 68; 50
+inv_name			= st_porn2
+inv_name_short			= st_porn2
+inv_weight			= 0.22	;0.2
+
+inv_grid_width     = 1
+inv_grid_height    = 2
+inv_grid_x         = 3
+inv_grid_y         = 49
+cost				= 840
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+[survivalguide]:identity_immunities
+$spawn 				= "devices\pda"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\survivalguide.ogf
+description			= st_survivalguide_descr
+
+radius				= 68; 50
+inv_name			= st_survivalguide
+inv_name_short			= st_survivalguide
+inv_weight			= 0.23	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 18
+inv_grid_y			= 6
+cost				= 2690
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_close
+
+[batteries]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_name
+inv_name_short			= st_batteries_name
+inv_weight			= 0.162
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+cost				= 665
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt
+
+[batteries_dead]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_dead_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_dead
+inv_name_short			= st_batteries_dead
+inv_weight			= 0.19
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 48
+cost				= 260
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt
+
+[batteries_ccell]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_ccell_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_ccell
+inv_name_short			= st_batteries_ccell
+inv_weight			= 0.1
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 48
+cost				= 820
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt
+
+[guitar_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\guitar_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = dynamics\devices\dev_guitar\dev_guitar.ogf
+cost					= 1590
+inv_name				= st_guitar_name
+inv_name_short			= st_guitar_name
+description				= st_guitar_descr
+inv_weight				= 1.67
+inv_grid_width			= 2
+inv_grid_height			= 2
+inv_grid_x			= 10
+inv_grid_y			= 19
+attach_angle_offset		= -0.415, -1.262, 0.808
+;-1.512, -1.392, -0.242
+attach_position_offset	= -0.014, 0.010, 0.020
+;0.010, -0.090, 0.000
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[harmonica_a]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = dynamics\devices\dev_harmonica\dev_harmonica.ogf
+cost					= 965
+inv_name				= st_harmonica_name
+inv_name_short				= st_harmonica_name
+description				= st_harmonica_descr
+inv_weight				= 0.22
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 11
+inv_grid_y				= 2
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[tarpaulin]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual					= dynamics\equipments\trade\tarp.ogf
+cost					= 1060
+inv_name				= st_tarpaulin
+inv_name_short				= st_tarpaulin
+description				= st_tarpaulin_descr
+inv_weight				= 1.2
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 51
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[rope]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual					= dynamics\equipments\trade\rope.ogf
+cost					= 890
+inv_name				= st_rope
+inv_name_short				= st_rope
+description				= st_rope_descr
+inv_weight				= 1.4
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 4
+inv_grid_y				= 47
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[synthrope]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual					= dynamics\equipments\trade\rops.ogf
+cost					= 1680
+inv_name				= st_synthrope
+inv_name_short				= st_synthrope
+description				= st_synthrope_descr
+inv_weight				= 1.4
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 2
+inv_grid_y				= 51
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[cutlery]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual					= dynamics\equipments\trade\cutlery.ogf
+cost					= 530
+inv_name				= st_cutlery
+inv_name_short				= st_cutlery
+description				= st_cutlery_descr
+inv_weight				= 0.2
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 8
+inv_grid_y				= 47
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[radio]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = dynamics\equipments\trade\radio.ogf
+cost					= 1270
+inv_name				= st_radio
+inv_name_short				= st_radio
+description				= st_radio_descr
+inv_weight				= 0.4
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 11
+inv_grid_y				= 52
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[radio2]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual                  = dynamics\equipments\trade\radio.ogf
+cost					= 1455
+inv_name				= st_radio2
+inv_name_short				= st_radio2
+description				= st_radio2_descr
+inv_weight				= 0.33
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 9
+inv_grid_y				= 52
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+[fieldcooker]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\harmonica_a"
+cform                   = skeleton
+class					= II_ATTCH
+visual					= dynamics\equipments\trade\cooker.ogf
+cost					= 1980
+inv_name				= st_fieldcooker
+inv_name_short				= st_fieldcooker
+description				= st_fieldcooker_descr
+inv_weight				= 0.46
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 8
+inv_grid_y				= 48
+attach_angle_offset		= 0.000000, -1.204452, -1.262921
+attach_position_offset	= 0.081856, -0.035081, 0.011694
+attach_bone_name		= bip01_l_hand
+auto_attach				= false
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; DEVICES ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[device_pda]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency=
+$spawn 				= "devices\pda"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\devices\dev_pda\dev_pda.ogf
+description			= st_pda_descr
+radius				= 68; 50
+slot				= 7
+default_to_ruck		= false
+sprint_allowed		= true
+control_inertion_factor = 1
+script_binding      = bind_physic_object.init
+
+inv_name			= st_pda_name
+inv_name_short		= st_pda_name
+inv_weight			= 0.1	;0.2
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 13
+cost				= 1840
+quest_item     			= false
+
+attach_angle_offset		= -1.303,0.107,-1.702   ;устанавливается в радианах Angle*PI/180
+attach_position_offset	= 0.14,0.001,0.02
+attach_bone_name		= bip01_l_hand
+auto_attach			= false
+
+[dev_flash_1]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency=
+$spawn 				= "devices\dev_flash_1"
+$prefetch 			= 16
+class				= D_PDA
+cform				= skeleton
+visual				= dynamics\devices\dev_flash_1\dev_flash_1.ogf
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 11
+inv_grid_y			= 22
+
+slot				= 7
+radius				= 50
+default_to_ruck		= false
+inv_weight			= 0.05
+
+inv_name			= st_pda_name
+inv_name_short		= st_pda_name
+description			= st_pda_descr
+cost				= 940
+can_trade			= false
+
+[dev_flash_2]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency=
+$spawn 				= "devices\dev_flash_2"
+$prefetch 			= 16
+class				= D_PDA
+cform				= skeleton
+visual				= dynamics\devices\dev_flash_2\dev_flash_2.ogf
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 11
+inv_grid_y			= 23
+
+slot				= 7
+radius				= 50
+default_to_ruck		= false
+inv_weight			= 0.05
+
+inv_name			= st_pda_name
+inv_name_short		= st_pda_name
+description			= st_pda_descr
+cost				= 1120
+can_trade			= false
+
+[device_torch]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn				= "devices\torch"
+$prefetch 			= 32
+class				= TORCH_S
+cform				= skeleton
+visual				= dynamics\devices\dev_torch_light\dev_torch_light.ogf
+description			= st_device_torch_descr
+cost				= 1360
+inv_name			= st_device_torch_name
+inv_name_short		= st_device_torch_name
+inv_weight			= 0.0
+inv_grid_width		= 2
+inv_grid_height		= 1
+inv_grid_x			= 16
+inv_grid_y			= 12
+
+;вещью нельзя торговать
+can_trade			= true
+
+position			= 0.35,0.25,0.0
+light_trace_bone		= lights_bone
+
+attach_angle_offset		= 3.062, 0.008, -1.532
+attach_position_offset		= 0.134, -0.007, 0.09
+
+attach_bone_name		= bip01_head
+auto_attach			= false
+
+night_vision				= on
+night_vision_texture		= wpn\wpn_night
+night_vision_effector		= postprocess_night
+
+snd_night_vision_on			= weapons\nv_start
+snd_night_vision_off		= weapons\nv_off
+snd_night_vision_idle		= weapons\nv_loop
+snd_night_vision_broken		= weapons\nv_off
+
+night_vision_recharge_time			= 6		;(c) время зарядки аккамулятора
+night_vision_recharge_time_min		= 2		;(c) мин. время зарядки аккамулятора, после которого уст-во уже может работать
+night_vision_discharge_time			= 20	;(c) время разрядки (работы) устройства после полной зарядки
+slot								= 9
+default_to_ruck						= false
+sprint_allowed						= true
+control_inertion_factor				= 1
+disabled_maps						= ai_test,ai_test2, andy_test_
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

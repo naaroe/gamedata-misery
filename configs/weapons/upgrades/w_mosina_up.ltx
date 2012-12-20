@@ -1,0 +1,401 @@
+[up_sect_firsta_mosina]
+;Удобство(1)10%
+;--------------
+cost		      		= 4200
+value				= +10
+crosshair_inertion		= -1
+PDM_disp_base 			= -0.2
+PDM_disp_vel_factor 		= -0.5
+PDM_disp_accel_factor 		= -0.5
+
+[up_sect_firstc_mosina]
+;Точность(2)20%
+;---------------
+cost		      		= 5600
+value				= +20
+fire_dispersion_base            = -0.02
+fire_dispersion_condition_factor = -1
+
+[up_sect_firstd_mosina]
+;Удобство(2)15%
+;--------------
+cost		      		= 5600
+value				= +20
+crosshair_inertion		= -1
+PDM_disp_base 			= -0.5
+PDM_disp_vel_factor 		= -1.2
+PDM_disp_accel_factor 		= -1.2
+
+
+[up_sect_firste_mosina]
+;Настильность(3)30%
+;------------------ 
+cost		      		= 6600
+value					= +30
+
+bullet_speed			= +200
+fire_dispersion_base    = -0.01  	;0.15
+
+[up_sect_firstf_mosina]
+;Скорострельность(3)25%
+;----------------------
+cost		      		= 6600
+value					= +25
+
+rpm						= +35
+
+[up_sect_secona_mosina]
+;Надежность(1)10%
+;---------------
+cost		      		= 4200
+value					= +15
+
+;увеличение дисперсии в процентах при максимальном износе
+fire_dispersion_condition_factor    = -1.5 ;15
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= -0.0007 ;0.0013
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= -0.0007 ;0.0011
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= -0.0007
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= -0.007 ;0.03
+
+[up_sect_seconc_mosina]
+;Отдача(2)-20%
+;------------
+cost		      		= 5600
+value					= -20
+
+zoom_cam_dispersion         = -0.18		;1.8
+zoom_cam_dispersion_inc     = -0.18		;1.8
+zoom_cam_step_angle_horz    = -0.05		;0.25
+zoom_cam_relax_speed        = +0.035
+
+[up_sect_second_mosina]
+;Точность(2)20%
+;---------------
+cost		      		= 5600
+value					= +20
+fire_dispersion_base    = -0.02
+fire_dispersion_condition_factor    = -1
+
+[up_sect_thirda_mosina]
+;Отдача(1)-10%
+;------------
+cost		      	= 4200
+value			= -10
+zoom_cam_dispersion         = -0.12		;1.8
+zoom_cam_dispersion_inc     = -0.12		;1.8
+zoom_cam_step_angle_horz    = -0.03		;0.25
+zoom_cam_relax_speed        = +0.02
+
+[up_sect_thirdc_mosina]
+;Удобство(2)15%
+;--------------
+cost		      		= 5600
+value				= +15
+crosshair_inertion		= -1
+PDM_disp_base 			= -0.5
+PDM_disp_vel_factor 		= -1.2
+PDM_disp_accel_factor 		= -1.2
+
+
+[up_sect_thirde_mosina]
+;Отдача(3)-30%
+;------------
+cost		      	= 6600
+value			= -30
+zoom_cam_dispersion         = -0.25
+zoom_cam_dispersion_inc     = -0.25
+zoom_cam_step_angle_horz    = -0.1
+zoom_cam_relax_speed        = +0.05
+
+
+
+[up_firsta_mosina]
+scheme_index            = 0, 0
+known                   = 1
+effects                 = 
+section                 = up_sect_firsta_mosina
+property                = prop_inertion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = on_weapon_upgrade_something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_auts_a1_name
+description             = st_up_auts_a1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_1
+
+[up_firstc_mosina]
+scheme_index            = 1, 0
+known                   = 1
+effects                 = 
+section                 = up_sect_firstc_mosina
+property                = prop_dispersion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auts_b1_name
+description             = st_up_auts_b1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_2
+
+[up_firstd_mosina]
+scheme_index            = 1, 1
+known                   = 1
+effects                 = 
+section                 = up_sect_firstd_mosina
+property                = prop_inertion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auts_b2_name
+description             = st_up_auts_b2_descr
+icon                    = ui_inGame2_upgrade_SVDm2_3
+
+[up_firste_mosina]
+scheme_index            = 2, 0
+known                   = 1
+effects                 =
+section                 = up_sect_firste_mosina
+property                = prop_bullet_speed
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auts_c1_name
+description             = st_up_auts_c1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_4
+
+[up_firstf_mosina]
+scheme_index            = 2, 1
+known                   = 1
+effects                 =
+section                 = up_sect_firstf_mosina
+property                = prop_rpm
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_auts_c2_name
+description             = st_up_auts_c2_descr
+icon                    = ui_inGame2_upgrade_SVDm2_5
+
+
+[up_secona_mosina]
+scheme_index            = 0, 1
+known                   = 1
+effects                 = 
+section                 = up_sect_secona_mosina
+property                = prop_reliability
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = on_weapon_upgrade_something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_stvs_a1_name
+description             = st_up_stvs_a1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_6
+
+[up_seconc_mosina]
+scheme_index            = 1, 2
+known                   = 1
+effects                 = 
+section                 = up_sect_seconc_mosina
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_stvs_b1_name
+description             = st_up_stvs_b1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_7
+
+[up_second_mosina]
+scheme_index            = 1, 3
+known                   = 1
+effects                 = 
+section                 = up_sect_second_mosina
+property                = prop_dispersion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_stvs_b2_name
+description             = st_up_stvs_b2_descr
+icon                    = ui_inGame2_upgrade_SVDm2_8
+
+
+[up_thirda_mosina]
+scheme_index            = 0, 2
+known                   = 1
+effects                 = 
+section                 = up_sect_thirda_mosina
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = on_weapon_upgrade_something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_pris_a1_name
+description             = st_up_pris_a1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_10
+
+[up_thirdc_mosina]
+scheme_index            = 1, 4
+known                   = 1
+effects                 = 
+section                 = up_sect_thirdc_mosina
+property                = prop_inertion
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_pris_b1_name
+description             = st_up_pris_b1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_11
+
+[up_thirde_mosina]
+scheme_index            = 2, 2
+known                   = 1
+effects                 =
+section                 = up_sect_thirde_mosina
+property                = prop_recoil
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+; ui
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_pris_c1_name
+description             = st_up_pris_c1_descr
+icon                    = ui_inGame2_upgrade_SVDm2_12
+
+[up_sect_change_components_mosina]
+cost 		           = 23000
+condition_queue_shot_dec   = -0.0001
+condition_shot_dec         = -0.0001
+misfire_start_prob	   = -0.0007
+misfire_end_prob	   = -0.002
+fire_dispersion_base       = -0.02
+rpm                        = +25
+bullet_speed		   = +150
+ammo_mag_size	           = +2
+crosshair_inertion	   = -1
+
+[up_change_components_mosina]
+scheme_index            = 2, 3
+effects                 =
+section                 = up_sect_change_components_mosina
+property                = prop_mod_weapon
+known                   = 1
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           = 
+name                    = st_up_change_components_name
+description             = st_up_change_components_descr
+icon                    = ui_mod_up_instant_weapon
+
+[up_gr_change_components_mosina]
+elements                = up_change_components_mosina
+
+[up_gr_firstab_mosina]
+elements                = up_firsta_mosina
+[up_gr_firstc_mosina]
+elements                = up_firstc_mosina
+[up_gr_firstd_mosina]
+elements                = up_firstd_mosina
+[up_gr_firste_mosina]
+elements                = up_firste_mosina
+[up_gr_firstf_mosina]
+elements                = up_firstf_mosina
+[up_gr_seconab_mosina]
+elements                = up_secona_mosina
+[up_gr_seconc_mosina]
+elements                = up_seconc_mosina
+[up_gr_second_mosina]
+elements                = up_second_mosina
+[up_gr_thirdab_mosina]
+elements                = up_thirda_mosina
+[up_gr_thirdcd_mosina]
+elements                = up_thirdc_mosina
+[up_gr_thirdef_mosina]
+elements                = up_thirde_mosina
+

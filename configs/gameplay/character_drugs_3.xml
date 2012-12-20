@@ -1,0 +1,146 @@
+wpn_knife_inv					= 1, prob=0.001 \n
+wpn_knife_inv_2					= 1, prob=0.066 \n
+wpn_knife_inv_5					= 1, prob=0.033 \n
+wpn_knife_inv_3					= 1, prob=0.025 \n
+wpn_knife_inv_4					= 1, prob=0.01 \n
+
+bandage					= 2, prob=0.75 \n
+medkit					= 3, prob=0.75 \n
+medkit_army				= 2, prob=0.33 \n
+medkit_scientic			= 1, prob=0.05 \n
+
+stimpack					= 3, prob=0.75 \n
+stimpack_army					= 2, prob=0.45 \n
+stimpack_scientic					= 1, prob=0.1 \n
+
+antirad					= 1, prob=0.008 \n
+
+survival_kit		= 1, prob=0.005 \n
+
+drug_booster			= 1, prob=0.004 \n
+drug_coagulant			= 1, prob=0.010 \n
+drug_psy_blockade		= 1, prob=0.004 \n
+drug_antidot			= 1, prob=0.004 \n
+drug_radioprotector		= 1, prob=0.006 \n
+drug_anabiotic			= 1, prob=0.002 \n
+
+roubles					= 4, prob=0.5 \n
+
+bread					= 2, prob=0.003 \n
+breadold				= 2, prob=0.003 \n
+kolbasa					= 1, prob=0.003 \n
+conserva				= 1, prob=0.002 \n
+
+vodka					= 1, prob=0.010 \n
+tea						= 1, prob=0.020 \n
+
+bottle_metal			= 3, prob=0.020 \n
+
+energy_drink			= 1, prob=0.004 \n
+
+water_drink				= 1, prob=0.007 \n
+
+vodka_quality			= 1, prob=0.007 \n
+cocaine					= 1, prob=0.005 \n
+tetanus					= 1, prob=0.003 \n
+adrenalin				= 1, prob=0.002 \n
+
+salicidic_acid			= 1, prob=0.009 \n
+morphine				= 1, prob=0.006 \n
+
+meat_tushkano			= 2, prob=0.006 \n
+meat_dog				= 2, prob=0.006 \n
+meat_pseudodog			= 1, prob=0.004 \n
+meat_flesh				= 2, prob=0.006 \n
+meat_boar				= 2, prob=0.005 \n
+meat_bloodsucker		= 1, prob=0.002 \n
+meat_snork				= 1, prob=0.003 \n
+meat_chimera			= 1, prob=0.002 \n
+
+itm_sleepbag = 1, prob=0.006 \n
+
+wpn_knife = 1, prob=0.05 \n
+
+marijuana			= 2, prob=0.02 \n
+tobacco			= 3, prob=0.02 \n
+
+joint = 3, prob=0.025 \n
+cigarettes = 1, prob=0.02 \n
+cigar1			= 1, prob=0.02 \n
+cigar2			= 1, prob=0.02 \n
+cigar3			= 1, prob=0.02 \n
+
+porn = 1, prob=0.018 \n
+porn2 = 1, prob=0.018 \n
+
+shovel_old		= 1, prob=0.007 \n
+ied_rpg			= 1, prob=0.003 \n
+ied			= 1, prob=0.002 \n
+grooming		= 1, prob=0.007 \n
+journal			= 1, prob=0.007 \n
+geiger_dead		= 1, prob=0.007 \n
+cooking			= 1, prob=0.007 \n
+book1			= 1, prob=0.008 \n
+book2			= 1, prob=0.008 \n
+book3			= 1, prob=0.008 \n
+picture_woman		= 1, prob=0.009 \n
+
+hammer_inv		= 1, prob=0.009 \n
+crowbar		= 1, prob=0.009 \n
+spareparts		= 1, prob=0.007 \n
+beadspread		= 1, prob=0.008 \n
+walkie		= 1, prob=0.005 \n
+cards		= 2, prob=0.008 \n
+ammo_bad		= 15, prob=0.005 \n
+boots		= 1, prob=0.006 \n
+mili_maps		= 1, prob=0.002 \n
+swiss		= 1, prob=0.009 \n
+headlamp		= 1, prob=0.005 \n
+mirror		= 1, prob=0.008 \n
+
+flashlight_old		= 1, prob=0.006 \n
+flashlight_broken		= 1, prob=0.006 \n
+underwear		= 1, prob=0.007 \n
+porn2		= 1, prob=0.012 \n
+batteries_dead		= 5, prob=0.008 \n
+batteries_ccell		= 3, prob=0.005 \n
+tarpaulin		= 3, prob=0.006 \n
+rope		= 2, prob=0.009 \n
+synthrope		= 1, prob=0.006 \n
+cutlery		= 1, prob=0.012 \n
+radio		= 1, prob=0.007 \n
+radio2		= 1, prob=0.007 \n
+fieldcooker		= 1, prob=0.009 \n
+
+af_frames = 1, prob=0.001 \n
+af_plates = 1, prob=0.001 \n
+
+af_cristall = 1, prob=0.001 \n
+af_fireball = 1, prob=0.001 \n
+af_medusa = 1, prob=0.001 \n
+af_cristall_flower = 1, prob=0.001 \n
+af_gold_fish = 1, prob=0.001 \n
+af_blood = 1, prob=0.001 \n
+af_mincer_meat = 1, prob=0.001 \n
+af_soul = 1, prob=0.001 \n
+af_fuzz_kolobok = 1, prob=0.001 \n
+af_electra_sparkler = 1, prob=0.001 \n
+af_electra_flash = 1, prob=0.001 \n
+af_dummy_battery = 1, prob=0.001 \n
+af_dummy_dummy = 1, prob=0.001 \n
+
+mutant_part_boar_leg = 2, prob=0.02 \n
+mutant_part_dog_tail = 2, prob=0.02 \n
+mutant_part_flesh_eye = 2, prob=0.02 \n
+mutant_part_psevdodog_tail = 2, prob=0.01 \n
+mutant_part_snork_leg = 1, prob=0.01 \n
+mutant_part_tushkano_head = 1, prob=0.004 \n
+mutant_part_krovosos_jaw = 1, prob=0.003 \n
+
+mutant_part_flesh_meat = 3, prob=0.02 \n
+mutant_part_boar_chop = 2, prob=0.02 \n
+mutant_part_dog_meat = 3, prob=0.02 \n
+mutant_part_psevdodog_meat = 2, prob=0.01 \n
+mutant_part_krovosos_meat = 1, prob=0.003 \n
+mutant_part_snork_hand = 2, prob=0.01 \n
+mutant_part_tushkano_meat = 2, prob=0.004 \n

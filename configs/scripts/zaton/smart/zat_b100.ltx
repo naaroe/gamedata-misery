@@ -1,0 +1,59 @@
+[smart_terrain]; zat_b100
+squad_id = 52
+max_population = 2
+
+respawn_params = respawn@zat_b100
+
+[respawn@zat_b100]
+spawn_bandit@novice
+spawn_bandit@veteran
+spawn_bandit@hostile
+spawn_bandit@veteran_hostile
+
+spawn_merc@novice
+spawn_merc@veteran
+
+spawn_duty@veteran
+spawn_duty@hunter_night
+
+; Bandit squads
+
+[spawn_bandit@novice]
+spawn_squads = bandit_sim_squad_novice, bandit_sim_squad_advanced
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +jup_b46_task_done} 0, {+kingpin_gained +jup_b8_heli_4_searched} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 2
+
+[spawn_bandit@veteran]
+spawn_squads = bandit_sim_squad_novice, bandit_sim_squad_advanced, bandit_sim_squad_veteran
+spawn_num = {+kingpin_gained +jup_b207_task_end} 2, {+kingpin_gained +jup_a12_task_done} 2, {+kingpin_gained +jup_b46_task_done} 2, {+kingpin_gained +jup_b8_heli_4_searched} 2, {+kingpin_gained +jup_b209_task_done} 2, {+kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+; Bandit hostile squads
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile
+spawn_num = {+kingpin_gained} 0, {-kingpin_gained +jup_b207_task_end} 0, {-kingpin_gained +jup_a12_task_done} 0, {-kingpin_gained +jup_b46_task_done} 0, {-kingpin_gained +jup_b8_heli_4_searched} 0, {-kingpin_gained +jup_b209_task_done} 0, {-kingpin_gained +jup_b218_gather_squad_complete} 0, 2
+
+[spawn_bandit@veteran_hostile]
+spawn_squads = bandit_sim_squad_hostile, bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite
+spawn_num = {-kingpin_gained +jup_b207_task_end} 2, {-kingpin_gained +jup_a12_task_done} 2, {-kingpin_gained +jup_b46_task_done} 2, {-kingpin_gained +jup_b8_heli_4_searched} 2, {-kingpin_gained +jup_b209_task_done} 2, {-kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+;;; unused
+
+[spawn_merc@novice]
+spawn_squads = merc_sim_squad_novice
+spawn_num = 0 ;		{+zat_b100_heli_2_searched +jup_b207_task_end} 0, {+zat_b100_heli_2_searched +jup_a12_task_done} 0, {+zat_b100_heli_2_searched +jup_b46_task_done} 0, {+zat_b100_heli_2_searched +zat_b103_merc_task_done} 0, {+zat_b100_heli_2_searched +jup_b209_task_done} 0, {+zat_b100_heli_2_searched +jup_b218_gather_squad_complete} 0, {+zat_b100_heli_2_searched} 2, 0
+
+[spawn_merc@veteran]
+spawn_squads = merc_sim_squad_veteran
+spawn_num = 0 ; 	{+zat_b100_heli_2_searched +jup_b207_task_end} 2, {+zat_b100_heli_2_searched +jup_a12_task_done} 2, {+zat_b100_heli_2_searched +jup_b46_task_done} 2, {+zat_b100_heli_2_searched +zat_b103_merc_task_done} 2, {+zat_b100_heli_2_searched +jup_b209_task_done} 2, {+zat_b100_heli_2_searched +jup_b218_gather_squad_complete} 2, 0
+
+[spawn_duty@veteran]
+spawn_squads = duty_sim_squad_veteran
+spawn_num = 0
+
+[spawn_duty@hunter_night]
+spawn_squads = duty_hunter_night_simulation_squad
+spawn_num = 0
+
+[exclusive]
+zat_b100_poltergeist_01 = zaton\zat_b100_poltergeist_normal_tele.ltx
+zat_b100_poltergeist_02 = zaton\zat_b100_poltergeist_normal_tele.ltx

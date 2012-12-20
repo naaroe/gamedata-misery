@@ -1,0 +1,673 @@
+<w>
+	<background width="1024" height="768">
+
+	    <auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_atmosfear_left_widepanel</texture>
+	    </auto_static>
+		<auto_static x="102" y="0" width="819" height="768" stretch="1">
+	      <texture>ui_inGame2_atmosfear_background</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_inGame2_atmosfear_right_widepanel</texture>
+	    </auto_static>
+
+  </background>
+
+  <main_dialog>
+
+        <dialog x="296" y="318" width="499" height="411" stretch="1">
+	        <texture>ui_inGame2_screen_4</texture>
+		</dialog>
+		<btn_accept x="164" y="382" width="86" height="24" stretch="1">
+            <text align="c" font="letterica16">ui_mm_apply</text>
+            <texture>ui_inGame2_button</texture>
+			<text_color>
+
+				<e r="210" g="210" b="210"/>
+			</text_color>
+        </btn_accept>
+		<btn_cancel x="259" y="382" width="86" height="24" stretch="1">
+            <text align="c" font="letterica16">ui_mm_cancel</text>
+            <texture>ui_inGame2_button</texture>
+			<text_color>
+				<e r="210" g="210" b="210"/>
+
+			</text_color>
+        </btn_cancel>
+        <cap_af_options x="10" y="6" width="86" height="24" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti22" align="c" vert_align="c">st_cap_af_options_small</text>
+        </cap_af_options>
+		<btn_weather_options x="24" y="38" width="108" height="26" stretch="1">
+			<text font="letterica18" align="c">st_cap_af_weather_options</text>
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+            </text_color>
+		</btn_weather_options>
+		<btn_event_options x="141" y="38" width="108" height="26" stretch="1">
+			<text font="letterica18" align="c">st_cap_af_event_options</text>
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+            </text_color>
+		</btn_event_options>
+		<btn_moon_options x="258" y="38" width="108" height="26" stretch="1">
+			<text font="letterica18" align="c">st_cap_af_moon_options</text>
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+            </text_color>
+		</btn_moon_options>
+		<btn_default_options x="374" y="38" width="108" height="26" stretch="1">
+			<text font="letterica18" align="c">st_cap_af_default_options</text>
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+            <text_color>
+
+                <e r="170" g="170" b="170"/>
+            </text_color>
+		</btn_default_options>
+	</main_dialog>
+
+	<tab_size x="0" y="0" width="499" height="411"/>
+
+	<event_dialog>
+		<div_1 x="32" y="167" width="443" height="16"  stretch="1">
+	        <texture>ui_inGame2_opt_slider_bar_back</texture>
+
+        </div_1>
+		
+        <div_2 x="32" y="267" width="443" height="16" stretch="1">
+	        <texture>ui_inGame2_opt_slider_bar_back</texture>
+        </div_2>
+
+        <cap_af_blowout x="32" y="82" width="240" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_blowout</text>
+        </cap_af_blowout>
+
+        <cap_af_fallout x="32" y="182" width="240" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_fallout</text>
+        </cap_af_fallout>
+        <cap_af_psi_storm x="32" y="282" width="240" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_psi_storm</text>
+        </cap_af_psi_storm>
+
+        <check_enable_blowout x="21" y="112" width="35" height="29" stretch="1">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="opt_enable_blowout" group="mm_opt_atmosfear"/>
+        </check_enable_blowout>
+        <cap_check_enable_blowout x="51" y="115" width="108" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_check_enable_blowout</text>
+        </cap_check_enable_blowout>
+
+        <check_enable_fallout x="21" y="212" width="35" height="29" stretch="1">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="opt_enable_fallout" group="mm_opt_atmosfear"/>
+        </check_enable_fallout>
+        <cap_check_enable_fallout x="51" y="215" width="108" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_check_enable_fallout</text>
+        </cap_check_enable_fallout>
+
+        <check_enable_psi_storm x="21" y="312" width="35" height="29" stretch="1">
+	        <texture>ui_inGame2_checkbox</texture>
+            <options_item entry="opt_enable_psi_storm" group="mm_opt_atmosfear"/>
+        </check_enable_psi_storm>
+        <cap_check_enable_psi_storm x="51" y="315" width="108" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_check_enable_psi_storm</text>
+        </cap_check_enable_psi_storm>
+
+        <cap_blowout_freq x="32" y="145" width="80" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_freq</text>
+        </cap_blowout_freq>
+        <list_blowout_freq x="112" y="145" width="120" height="20">
+            <options_item entry="opt_blowout_freq" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_blowout_freq>
+
+        <cap_blowout_fate x="184" y="85" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_fate</text>
+        </cap_blowout_fate>
+        <list_blowout_fate x="320" y="85" width="156" height="20" stretch="1">
+            <options_item entry="opt_blowout_fate" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+
+            </text_color>
+        </list_blowout_fate>
+
+        <cap_blowout_warning x="184" y="115" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_warning</text>
+        </cap_blowout_warning>
+        <list_blowout_warning x="320" y="115" width="156" height="20" stretch="1">
+            <options_item entry="opt_blowout_warning" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_blowout_warning>
+
+        <cap_blowout_task x="184" y="145" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_task</text>
+        </cap_blowout_task>
+
+        <list_blowout_task x="320" y="145" width="156" height="20" stretch="1">
+            <options_item entry="opt_blowout_task" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_blowout_task>
+
+		<cap_fallout_freq x="32" y="245" width="80" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_freq</text>
+        </cap_fallout_freq>
+        <list_fallout_freq x="112" y="245" width="120" height="20">
+            <options_item entry="opt_fallout_freq" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_fallout_freq>
+
+        <cap_fallout_fate x="184" y="185" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_fate</text>
+        </cap_fallout_fate>
+        <list_fallout_fate x="320" y="185" width="156" height="20" stretch="1">
+            <options_item entry="opt_fallout_fate" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_fallout_fate>
+
+        <cap_fallout_warning x="184" y="215" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_warning</text>
+        </cap_fallout_warning>
+        <list_fallout_warning x="320" y="215" width="156" height="20" stretch="1">
+            <options_item entry="opt_fallout_warning" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_fallout_warning>
+
+        <cap_fallout_task x="184" y="245" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_task</text>
+        </cap_fallout_task>
+        <list_fallout_task x="320" y="245" width="156" height="20" stretch="1">
+            <options_item entry="opt_fallout_task" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_fallout_task>
+
+		<cap_psi_storm_freq x="32" y="345" width="80" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_freq</text>
+        </cap_psi_storm_freq>
+        <list_psi_storm_freq x="112" y="345" width="120" height="20">
+            <options_item entry="opt_psi_storm_freq" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_psi_storm_freq>
+
+        <cap_psi_storm_fate x="184" y="285" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_fate</text>
+        </cap_psi_storm_fate>
+        <list_psi_storm_fate x="320" y="285" width="156" height="20" stretch="1">
+            <options_item entry="opt_psi_storm_fate" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_psi_storm_fate>
+
+        <cap_psi_storm_warning x="184" y="315" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_warning</text>
+        </cap_psi_storm_warning>
+        <list_psi_storm_warning x="320" y="315" width="156" height="20" stretch="1">
+            <options_item entry="opt_psi_storm_warning" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_psi_storm_warning>
+
+        <cap_psi_storm_task x="184" y="345" width="128" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_task</text>
+        </cap_psi_storm_task>
+        <list_psi_storm_task x="320" y="345" width="156" height="20" stretch="1">
+            <options_item entry="opt_psi_storm_task" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_psi_storm_task>
+
+	</event_dialog>
+	
+	<weather_dialog>
+
+        <cap_weather_presets x="32" y="85" width="108" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_weather_presets</text>
+        </cap_weather_presets>
+        <!--list_weather_presets x="90" y="85" width="383" height="20">
+            <options_item entry="opt_weather_presets" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_weather_presets-->
+
+		<cap_weather_balance_presets x="90" y="85" width="40" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_weather_balance_presets</text>
+        </cap_weather_balance_presets>
+        <list_weather_balance_presets x="130" y="85" width="140" height="20" stretch="1">
+            <options_item entry="opt_weather_balance_presets" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_weather_balance_presets>
+	
+        <cap_weather_length_presets x="294" y="85" width="40" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_weather_length_presets</text>
+        </cap_weather_length_presets>
+        <list_weather_length_presets x="334" y="85" width="140" height="20" stretch="1">
+            <options_item entry="opt_weather_balance_presets" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_weather_length_presets>
+
+        <div_1 x="32" y="110" width="443" height="16" stretch="1">
+	        <texture>ui_inGame2_opt_slider_bar_back</texture>
+        </div_1>
+
+        <cap_af_zaton x="32" y="131" width="56" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_zaton</text>
+        </cap_af_zaton>
+        <list_zaton_period_good x="90" y="131" width="180" height="20" stretch="1">
+            <options_item entry="opt_zaton_period_good" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_zaton_period_good>
+        <list_zaton_period_bad x="294" y="131" width="180" height="20" stretch="1">
+            <options_item entry="opt_zaton_period_bad" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_zaton_period_bad>
+
+        <track_zaton_period_good_length x="90" y="158" width="180" height="16" stretch="1">
+            <options_item entry="opt_zaton_period_good_length" group="mm_opt_atmosfear"  depend="runtime"/>
+        </track_zaton_period_good_length>
+        <track_zaton_period_bad_length x="294" y="158" width="180" height="16" stretch="1">
+            <options_item entry="opt_zaton_period_bad_length" group="mm_opt_atmosfear"  depend="runtime"/>
+        </track_zaton_period_bad_length>
+
+		<radio_zaton_period_good_length x="90" y="158" width="180" height="28" radio="1" stretch="1">
+			<options_item entry="opt_zaton_period_good_length" group="mm_opt_atmosfear"/>
+			<button x="-6" y="0" width="19" height="14" id="3" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_3h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+
+	            </text_color>
+			</button>
+			<button x="14" y="0" width="19" height="14" id="4" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_4h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+
+			</button>
+			<button x="33" y="0" width="19" height="14" id="5" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_5h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+
+			<button x="52" y="0" width="19" height="14" id="6" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_6h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="71" y="0" width="19" height="14" id="7" stretch="1">
+
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_7h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="90" y="0" width="19" height="14" id="8" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_8h</text>
+
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="110" y="0" width="19" height="14" id="9" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_9h</text>
+	            <text_color>
+
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="129" y="0" width="19" height="14" id="10" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_10h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="148" y="0" width="19" height="14" id="11" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_11h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+
+	            </text_color>
+			</button>
+			<button x="167" y="0" width="19" height="14" id="12" stretch="1">
+				<text font="letterica16" vert_align="c" x="0" y="14" align="c" width="19" height="20" >st_period_length_12h</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+
+			</button>
+		</radio_zaton_period_good_length>		
+		
+        <cap_zaton_period_good_length_2h x="90" y="175" width="24" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_zaton_period_good_length_2h>
+        <cap_zaton_period_good_length x="114" y="175" width="132" height="20" stretch="1">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+        </cap_zaton_period_good_length>
+
+        <cap_zaton_period_good_length_12h x="246" y="175" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_zaton_period_good_length_12h>
+        <cap_zaton_period_bad_length_2h x="294" y="175" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_zaton_period_bad_length_2h>
+        <cap_zaton_period_bad_length x="318" y="175" width="132" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+
+        </cap_zaton_period_bad_length>
+        <cap_zaton_period_bad_length_12h x="450" y="175" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_zaton_period_bad_length_12h>
+
+        <div_2 x="32" y="198" width="443" height="16" stretch="1">
+	        <texture>ui_inGame2_opt_slider_bar_back</texture>
+        </div_2>
+
+        <cap_af_jupiter x="32" y="218" width="56" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_jupiter</text>
+        </cap_af_jupiter>
+        <list_jupiter_period_good x="90" y="218" width="180" height="20" stretch="1">
+            <options_item entry="opt_jupiter_period_good" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_jupiter_period_good>
+        <list_jupiter_period_bad x="294" y="218" width="180" height="20" stretch="1">
+            <options_item entry="opt_jupiter_period_bad" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_jupiter_period_bad>
+
+        <track_jupiter_period_good_length x="90" y="245" width="180" height="16" stretch="1">
+            <options_item entry="opt_jupiter_period_good_length" group="mm_opt_atmosfear"/>
+        </track_jupiter_period_good_length>
+        <track_jupiter_period_bad_length x="294" y="245" width="180" height="16" stretch="1">
+            <options_item entry="opt_jupiter_period_bad_length" group="mm_opt_atmosfear"/>
+        </track_jupiter_period_bad_length>
+
+        <cap_jupiter_period_good_length_2h x="90" y="262" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_jupiter_period_good_length_2h>
+        <cap_jupiter_period_good_length x="114" y="262" width="132" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+        </cap_jupiter_period_good_length>
+
+        <cap_jupiter_period_good_length_12h x="246" y="262" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_jupiter_period_good_length_12h>
+        <cap_jupiter_period_bad_length_2h x="294" y="262" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_jupiter_period_bad_length_2h>
+        <cap_jupiter_period_bad_length x="318" y="262" width="132" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+
+        </cap_jupiter_period_bad_length>
+        <cap_jupiter_period_bad_length_12h x="450" y="262" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_jupiter_period_bad_length_12h>
+
+        <div_3 x="32" y="285" width="443" height="16" stretch="1">
+	        <texture>ui_inGame2_opt_slider_bar_back</texture>
+        </div_3>
+
+        <cap_af_pripyat x="32" y="305" width="56" height="31" stretch="1">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_af_pripyat</text>
+        </cap_af_pripyat>
+
+        <list_pripyat_period_good x="90" y="305" width="180" height="20" stretch="1">
+            <options_item entry="opt_pripyat_period_good" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_pripyat_period_good>
+        <list_pripyat_period_bad x="294" y="305" width="180" height="20" stretch="1">
+            <options_item entry="opt_pripyat_period_bad" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_pripyat_period_bad>
+
+        <track_pripyat_period_good_length x="90" y="332" width="180" height="16">
+            <options_item entry="opt_pripyat_period_good_length" group="mm_opt_atmosfear"/>
+        </track_pripyat_period_good_length>
+        <track_pripyat_period_bad_length x="294" y="332" width="180" height="16">
+            <options_item entry="opt_pripyat_period_bad_length" group="mm_opt_atmosfear"/>
+
+        </track_pripyat_period_bad_length>
+
+        <cap_pripyat_period_good_length_2h x="90" y="349" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_pripyat_period_good_length_2h>
+        <cap_pripyat_period_good_length x="114" y="349" width="132" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+        </cap_pripyat_period_good_length>
+
+        <cap_pripyat_period_good_length_12h x="246" y="349" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_pripyat_period_good_length_12h>
+        <cap_pripyat_period_bad_length_2h x="294" y="349" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_period_length_2h</text>
+        </cap_pripyat_period_bad_length_2h>
+        <cap_pripyat_period_bad_length x="318" y="349" width="132" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="c" vert_align="c">st_period_length</text>
+
+        </cap_pripyat_period_bad_length>
+        <cap_pripyat_period_bad_length_12h x="450" y="349" width="24" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_period_length_12h</text>
+        </cap_pripyat_period_bad_length_12h>
+	</weather_dialog>
+	
+	<moon_dialog>
+        <cap_moon_phases x="32" y="82" width="80" height="31">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_moon_phases</text>
+
+        </cap_moon_phases>
+        <cap_moon_frequency x="32" y="120" width="160" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="l" vert_align="c">st_cap_moon_cycle_length</text>
+        </cap_moon_frequency>
+        <cap_moon_static x="192" y="120" width="120" height="20">
+            <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">st_cap_moon_static</text>
+        </cap_moon_static>
+
+		<radio_moon_phase x="21" y="117" width="464" height="260" radio="1">
+			<options_item entry="opt_moon_phase" group="mm_opt_atmosfear"/>
+			<button x="0" y="30" width="38" height="28" id="8days" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_cycle_length_8</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+
+			</button>
+			<button x="0" y="60" width="38" height="28" id="28days" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_cycle_length_28</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+
+			<button x="320" y="0" width="38" height="28" id="moon0" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_0</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="320" y="30" width="38" height="28" id="moon1" stretch="1">
+
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_1</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="320" y="60" width="38" height="28" id="moon2" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_2</text>
+
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="320" y="90" width="38" height="28" id="moon3" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_3</text>
+	            <text_color>
+
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="320" y="120" width="38" height="28" id="moon4" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_4</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+			<button x="320" y="150" width="38" height="28" id="moon5" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_5</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+
+	            </text_color>
+			</button>
+			<button x="320" y="180" width="38" height="28" id="moon6" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_6</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+
+			</button>
+			<button x="320" y="210" width="38" height="28" id="moon7" stretch="1">
+				<text font="letterica16" vert_align="c" x="32" y="3" width="120" height="20" align="l" >st_cap_moon_phase_7</text>
+	            <text_color>
+	                <e r="170" g="170" b="170"/>
+	                <d r="70" g="70" b="70"/>
+	            </text_color>
+			</button>
+
+		</radio_moon_phase>
+        <cap_night_brightness x="32" y="295" width="240" height="31">
+            <text r="170" g="170" b="170" font="graffiti19" align="l" vert_align="t">st_cap_night_brightness</text>
+        </cap_night_brightness>
+
+        <list_night_brightness x="32" y="330" width="240" height="20">
+            <options_item entry="opt_night_brightness" group="mm_opt_atmosfear"/>
+            <list_font r="170" g="170" b="170" font="letterica16"/>
+            <text_color>
+	            <e r="170" g="170" b="170"/>
+	            <d r="70" g="70" b="70"/>
+            </text_color>
+        </list_night_brightness>
+	</moon_dialog>
+	<defaults_dialog>
+		<btn_load_color_balance x="48" y="140" width="411" height="24">
+			<text font="graffiti22" align="c">st_btn_load_color_balance</text>
+			<texture>ui_inGame2_big_inventory_button</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+
+            </text_color>
+		</btn_load_color_balance>
+		<btn_load_default_settings x="48" y="240" width="411" height="24">
+			<text font="graffiti22" align="c">st_btn_load_default_settings</text>
+			<texture>ui_inGame2_big_inventory_button</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+            </text_color>
+
+		</btn_load_default_settings>
+	</defaults_dialog>
+
+</w>

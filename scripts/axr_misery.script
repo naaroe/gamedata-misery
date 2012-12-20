@@ -1,0 +1,387 @@
+----------------------
+-- Misery Main Content
+-- Alundaio
+
+ActorClass = alun_utils.read_from_ini(nil,"actor","actor_class","string","assaulter")
+MiseryBlackRoad = false
+MiseryBlackRoadEnableReducedRewards = true
+
+local REPAIR_TEST = false
+
+function on_game_start()
+	callback_register("on_game_load",on_game_load)
+	callback_register("actor_on_update",on_update)
+	callback_register("actor_on_item_take",on_item_take)
+end
+
+local class_ui
+function main_menu_on_init(menu)
+	local function OnButton_select_class()
+		if not (class_ui) then
+			class_ui = ui_class_selector and ui_class_selector.class_ui(menu)
+		end
+
+		if (class_ui) then
+			class_ui:ShowDialog(true)
+			menu:HideDialog()
+			menu:Show(false)
+		end
+	end
+	menu:AddCallback("btn_novice",ui_events.BUTTON_CLICKED,OnButton_select_class,menu)
+end
+
+function on_update()
+	-- medic_wow
+	if (has_alife_info("zat_b22_stalker_medic_death") and level.name() =="zaton" and not has_alife_info("zat_stalker_medic_spawn")) then
+		alife():create("zat_stalker_medic",vector():set(110.023,-3.936,185.844),1155265,316)
+        give_info("zat_stalker_medic_spawn")
+	end
+
+	if (not has_alife_info("dynamic_actor_spawn_position") and level.name() =="zaton") then
+		-- MiseryBlackRoad
+		local gd = level.get_game_difficulty()
+		if (gd == 3) then
+			give_info("misery_info_black_road")
+			MiseryBlackRoad = true
+		else
+			get_console():execute("g_game_difficulty gd_master") -- hack
+		end
+
+		dynamic_actor_spawn()
+		dynamic_actor_loadout()
+
+		give_info("dynamic_actor_spawn_position")
+
+		set_stage(0)
+		set_timer(5000)
+	end
+
+	local stage = get_stage()
+	local timer = get_timer()
+	if (stage == 0) then
+		if (timer and time_global() > timer) then
+			set_stage(nil)
+
+			if (REPAIR_TEST) then
+				local function itr(actor,wpn)
+					if (wpn) and (alun_utils.item_is_fa(wpn) or alun_utils.item_is_outfit(wpn) or wpn:clsid() == 69) then
+						wpn:set_condition(math.random())
+					end
+				end
+				db.actor:iterate_inventory(itr,db.actor)
+			end
+
+			if (MiseryBlackRoad) then
+				db.actor:activate_slot(1)
+				db.actor:give_money(-1)
+			else
+				db.actor:activate_slot(3)
+				db.actor:give_money(4999)
+			end
+
+			-- Quest extras by Alundaio
+			if (axr_quest_master) then axr_quest_master.alun_stashes() end
+		end
+	elseif (stage == 1) then
+		if (timer and time_global() > timer) then
+			set_stage(nil)
+
+			if not (db.actor:object("identity_card_"..ActorClass)) then
+				if (ui_dyn_msg_box) then
+					local function game_quit()
+						local console = get_console()
+						console:execute("disconnect")
+					end
+					ui_dyn_msg_box.msg_box_ui("message_box_ok",true,"This save game requires the "..ActorClass..". Your game will be forced to quit.",game_quit)
+				end
+			end
+		end
+	end
+end
+
+function on_game_load()
+	if (has_alife_info("misery_info_black_road")) then
+		MiseryBlackRoad = true
+	end
+
+	if (has_alife_info("dynamic_actor_spawn_position")) then
+		set_stage(1)
+		set_timer(10000)
+	end
+end
+
+function dynamic_actor_spawn()
+	local pos
+	local dir
+
+	if (ActorClass == "assaulter") then
+		if (MiseryBlackRoad) then
+			level.change_game_time(0,18,0)
+			level_weathers.get_weather_manager():forced_weather_change()
+			pos = vector():set(-316.45,11.44,426.26)
+			dir = 3.2
+		else
+			pos = vector():set(472.95452880859,36.698554992676,-69.10285949707)
+			dir = -1.3
+
+			local box1_pos = vector():set(460,37,-66.66)
+			local box2_pos = vector():set(460,37.8,-66.66)
+			local box3_pos = vector():set(461,37,-67.7)
+			alife():create("box_wood_01",box1_pos,1716749,222)
+			alife():create("box_wood_01",box2_pos,1716749,222)
+			alife():create("box_wood_01",box3_pos,1716749,222)
+		end
+	elseif (ActorClass == "sniper") then
+		if (MiseryBlackRoad) then
+			level.change_game_time(0,18,0)
+			level_weathers.get_weather_manager():forced_weather_change()
+			pos = vector():set(-316.45,11.44,426.26)
+			dir = 3.2
+		else
+			pos = vector():set(-83.52,5.75,743.34)
+			dir = 3
+		end
+	elseif (ActorClass == "recon") then
+		if (MiseryBlackRoad) then
+			level.change_game_time(0,18,0)
+			level_weathers.get_weather_manager():forced_weather_change()
+			pos = vector():set(-316.45,11.44,426.26)
+			dir = 3.2
+		else
+			pos = vector():set(260.97579956055,27.684192657471,-461.89776611328)
+			--pos = vector():set(275.23883056641,27.686254501343,-468.93121337891)
+			dir = -1.3
+
+			--[[
+			local box1_pos = vector():set(257,27,-476)
+			local box2_pos = vector():set(257,27.8,-476)
+			local box3_pos = vector():set(258,27,-474)
+			alife():create("box_wood_01",box1_pos,1400133,17)
+			alife():create("box_wood_01",box2_pos,1400133,17)
+			alife():create("box_wood_01",box3_pos,1400133,17)
+			--]]
+		end
+	end
+
+	if (pos) then db.actor:set_actor_position(pos) end
+	if (dir) then db.actor:set_actor_direction(dir) end
+end
+
+function dynamic_actor_loadout()
+	if (REPAIR_TEST) then
+		create_items("wpn_ak47m",4)
+		create_items("wpn_pm",4)
+		create_items("wpn_fort",4)
+		create_items("wpn_lr300",4)
+		create_items("itm_gunsmith_toolkit",4)
+	end
+
+	if (ActorClass == "assaulter") then
+		create_items("identity_card_assaulter")
+		if (MiseryBlackRoad) then
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("wpn_knife_inv_5")
+		else
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("roubles")
+			create_items("novice_outfit")
+			create_items("wpn_knife_inv_5")
+
+			create_items("flask",3)
+			create_items("breadold",2)
+			create_items("conserva")
+
+			create_items("bandage",2)
+			create_items("antirad")
+			create_items("drug_coagulant")
+			create_items("medkit_army")
+			create_items("stimpack_army")
+
+			create_items("wpn_stg44")
+			create_items("wpn_aps")
+            create_ammunition("ammo_9x18_fmj",2)
+            create_ammunition("ammo_9x18_pmm",2)
+			create_ammunition("ammo_7.92x33_fmj",2)
+			create_ammunition("ammo_7.92x33_ap")
+
+			create_items("helm_hardhat")
+			create_items("af_kevlar")
+			create_items("grenade_f1")
+			create_items("grenade_rgd5")
+		end
+	elseif (ActorClass == "sniper") then
+		create_items("identity_card_sniper")
+		if (MiseryBlackRoad) then
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("wpn_knife_inv_3")
+		else
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("roubles")
+			create_items("novice_outfit")
+			create_items("wpn_knife_inv_3")
+
+			create_items("flask",3)
+			create_items("bread",2)
+			create_items("conserva",2)
+
+			create_items("bandage",2)
+			create_items("tetanus")
+			create_items("drug_coagulant")
+			create_items("medkit")
+			create_items("stimpack")
+
+			create_items("wpn_m1891")
+			create_items("wpn_fort")
+           	create_ammunition("ammo_9x18_fmj")
+            create_ammunition("ammo_9x18_pmm")
+			create_ammunition("ammo_7.62x39_fmj")
+
+			create_items("itm_sleepbag")
+			create_items("itm_backpack")
+			create_items("wpn_addon_scope_ww2")
+			create_items("detector_simple")
+		end
+	elseif (ActorClass == "recon") then
+		create_items("identity_card_recon")
+		if (MiseryBlackRoad) then
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("wpn_knife_inv_4")
+		else
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+			create_items("device_torch")
+			create_items("roubles")
+			create_items("novice_outfit")
+			create_items("wpn_knife_inv_4")
+
+			create_items("flask",2)
+			create_items("breadold",2)
+			create_items("kolbasa")
+
+			create_items("bandage",2)
+			create_items("antirad",2)
+			create_items("drug_coagulant",2)
+			create_items("medkit_army",2)
+			create_items("stimpack_army",2)
+
+			create_items("wpn_scorpion")
+			create_items("wpn_pm_actor")
+            create_ammunition("ammo_9x18_fmj",2)
+           	create_ammunition("ammo_9x18_pmm")
+
+			create_items("wpn_addon_silencer_9x18")
+			create_items("helm_respirator")
+			create_items("detector_advanced")
+		end
+	end
+end
+
+function create_items(sec,amt,id)
+	if not (system_ini():section_exist(sec)) then
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		return
+	end
+	local se_obj = id and alife():object(id) or alife():object(db.actor:id())
+	if (se_obj) then
+		amt = amt or 1
+		for i=1,amt do
+			alife():create(sec,se_obj.position,se_obj.m_level_vertex_id, se_obj.m_game_vertex_id,se_obj.id)
+		end
+	end
+end
+
+function create_ammunition(sec,amt)
+	if not (system_ini():section_exist(sec)) then
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		return
+	end
+	local num_in_box = system_ini():r_u32(sec, "box_size")
+	amt = amt or 1
+	amt = num_in_box and amt*num_in_box
+	alife():create_ammo(sec,db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id(),db.actor:id(),amt)
+end
+
+function write_file(text,...)
+	if not text then return end
+	local debug_file = io.open("axr_misery_debug.txt","a+")
+
+	if ( debug_file == nil ) then
+		debug_mode = false
+		return
+	end
+
+	local i = 0
+	local p = {...}
+	local function sr(a)
+		i = i + 1
+		return tostring(p[i])
+	end
+	local output = string.gsub(text,"%%s",sr)
+
+	debug_file:write(output.."\n")
+
+	debug_file:close()
+end
+
+function copy_class_file(filename,class)
+	local ext = string.sub(filename,string.find(filename,"."))
+	local class_file = io.open("gamedata\\class_diversity\\"..class.."\\"..filename,"rb")
+	if not (class_file) then
+		return write_file("error in copy_class_file: no class_file for filename=%s ext=%s class=%s",filename,ext,class)
+	end
+
+	local data = class_file:read("*all")
+	class_file:close()
+
+	local actor_file = io.open(filename,"wb+")
+	if not (actor_file) then
+		return write_file("error in copy_class_file: no actor_file for filename=%s ext=%s class=%s",filename,ext,class)
+	end
+
+	actor_file:write(data)
+	actor_file:close()
+end
+
+function set_actor_class(class)
+	local f = getFS()
+	local flist = f:file_list_open("$game_class_"..class.."$",1)
+	local f_cnt = flist:Size()
+
+	for	it=0, f_cnt-1 do
+		local file = flist:GetAt(it)
+		copy_class_file(file,class)
+	end
+end
+
+local update_step
+function set_stage(n)
+	if not (update_step) then
+		update_step = {}
+	end
+	update_step.s = n
+end
+
+function get_stage()
+	return update_step and update_step.s
+end
+
+function get_timer()
+	return update_step and update_step.t
+end
+
+function set_timer(n)
+	if not (update_step) then
+		update_step = {}
+	end
+	update_step.t = time_global() + n
+end

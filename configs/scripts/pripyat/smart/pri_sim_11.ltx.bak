@@ -1,0 +1,30 @@
+[smart_terrain]
+squad_id = 33
+max_population = 1
+;respawn_only_smart = true
+respawn_params = respawn@pri_sim_11
+
+[respawn@pri_sim_11]
+apawn_bloodsucker
+
+spawn_boar
+spawn_flesh
+spawn_snork
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker_pri_sim_11
+spawn_num = 1
+
+;;; unused
+
+[spawn_boar]
+spawn_squads = simulation_boar, simulation_boar, simulation_boar, simulation_boar, simulation_boar, simulation_bloodsucker
+spawn_num = 0
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_flesh, simulation_flesh, simulation_flesh, simulation_flesh, simulation_gigant
+spawn_num = 0
+
+[spawn_snork]
+spawn_squads = simulation_snork
+spawn_num = 0

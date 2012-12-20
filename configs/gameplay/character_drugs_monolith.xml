@@ -1,0 +1,42 @@
+shovel_old		= 1, prob=0.009 \n
+shovel_mili		= 1, prob=0.003 \n
+ied_rpg			= 1, prob=0.006 \n
+ied			= 1, prob=0.003 \n
+meinkampf		= 1, prob=0.009 \n
+jar			= 1, prob=0.012 \n
+grooming		= 1, prob=0.012 \n
+journal			= 1, prob=0.015 \n
+maps_kit		= 1, prob=0.009 \n
+geiger_dead		= 1, prob=0.012 \n
+welding_goggles		= 1, prob=0.009 \n
+jewelry_box		= 1, prob=0.003 \n
+cooking			= 1, prob=0.012 \n
+book1			= 1, prob=0.015 \n
+book2			= 1, prob=0.015 \n
+book3			= 1, prob=0.015 \n
+drugs_kit		= 1, prob=0.006 \n
+
+hammer_inv		= 1, prob=0.009 \n
+crowbar		= 1, prob=0.009 \n
+spareparts		= 1, prob=0.006 \n
+beadspread		= 1, prob=0.012 \n
+walkie		= 1, prob=0.006 \n
+cards		= 2, prob=0.018 \n
+ammo_bad		= 10, prob=0.003 \n
+boots		= 1, prob=0.009 \n
+swiss		= 1, prob=0.018 \n
+headlamp		= 1, prob=0.006 \n
+mirror		= 1, prob=0.018 \n
+flashlight_old		= 1, prob=0.006 \n
+flashlight_broken		= 1, prob=0.006 \n
+underwear		= 1, prob=0.018 \n
+
+batteries_dead		= 3, prob=0.006 \n
+tarpaulin		= 2, prob=0.009 \n
+rope		= 2, prob=0.012 \n
+cutlery		= 1, prob=0.021 \n
+fieldcooker		= 1, prob=0.012 \n
+
+cocaine					= 1, prob=0.004 \n
+tetanus					= 1, prob=0.004 \n
+adrenalin				= 1, prob=0.002 \n

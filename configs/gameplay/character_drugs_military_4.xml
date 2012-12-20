@@ -1,0 +1,22 @@
+shovel_mili		= 1, prob=0.068 \n
+ied_rpg			= 2, prob=0.045 \n
+ied				= 1, prob=0.027 \n
+grooming		= 1, prob=0.084 \n
+maps_kit		= 1, prob=0.066 \n
+cooking			= 1, prob=0.12 \n
+
+radio			= 1, prob=0.095 \n
+
+underwear		= 1, prob=0.095 \n
+tarpaulin		= 2, prob=0.095 \n
+rope		= 1, prob=0.095 \n
+cutlery		= 1, prob=0.12 \n
+synthrope		= 1, prob=0.078 \n
+boots		= 1, prob=0.036 \n
+mili_maps		= 1, prob=0.090 \n
+fieldcooker		= 1, prob=0.078 \n
+
+tetanus		= 3, prob=0.095 \n
+adrenalin		= 2, prob=0.15 \n
+
+morphine				= 2, prob=0.20 \n

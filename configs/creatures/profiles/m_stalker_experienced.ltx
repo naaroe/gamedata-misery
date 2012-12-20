@@ -1,0 +1,299 @@
+[stalker_experienced]:stalker
+;---SOUND PLAYER------------------------------------------------------
+sound_death						= fight\death\death_
+sound_anomaly_death				= fight\death\anomaly_
+sound_hit						= fight\hit\hit_
+sound_humming					= states\idle\idle_
+sound_alarm						= ; fight\enemy\enemy_
+sound_backup					= ; fight\backup\backup_,fight\threat\threat_close_
+sound_detour					= ; fight\detour\detour_,fight\fire\fire_,fight\threat\threat_close_
+sound_friendly_fire				= fight\friendly_fire\friendly_fire_
+sound_panic_human				= ;states\panic_human\panic_human_
+sound_panic_monster				= ;states\panic_monster\panic_monster_
+sound_tolls						= fight\tolls\tolls_
+sound_wounded					= ; fight\friend_hitted\hit_friend_
+sound_grenade_alarm				= fight\grenade\grenade_1
+sound_friendly_grenade_alarm	= fight\friendly_grenade\friendly_grenade_1
+sound_need_backup				= fight\cover_fire\cover_fire_
+sound_running_in_danger			= ; states\breath\breath_1
+sound_walking_in_danger			= ; states\breath\breath_2
+sound_kill_wounded				= help\wounded\kill_wounded_
+sound_enemy_critically_wounded	= fight\enemy_hit\enemy_hit_
+sound_enemy_killed_or_wounded	= fight\enemy_down\enemy_down_
+
+sound_attack_no_allies				= ; fight\fire\fire_,fight\threat\threat_distant_
+sound_attack_allies_single_enemy	= fight\attack\attack_,fight\attack\attack_one_,fight\fire\fire_
+sound_attack_allies_several_enemies	= fight\attack\attack_,fight\attack\attack_many_,fight\fire\fire_
+sound_search1_no_allies				= ; fight\threat\threat_distant_
+sound_search1_with_allies			= fight\searching_enemy\search_
+sound_enemy_lost_no_allies			=
+sound_enemy_lost_with_allies		= fight\searching_enemy\enemy_lost_
+sound_throw_grenade					= fight\grenade\grenade_ready_1
+
+;---------------------------------------------------
+
+;[EXPERIENCED_PROFILE]
+
+movement_speeds					= stalker_experienced_movement_speeds
+
+fire_queue_section 				= fire_queue_params_experienced
+
+;panic_threshold					= 0.1
+
+condition_sect					= stalker_experienced_condition
+
+;---ENEMY------------------------------------------------------------
+ignore_monster_threshold			= 0.0		;0.6	;0.8
+max_ignore_distance				= 55.0
+
+;---FIRE DISPERSIONS--------------------------------------------------
+disp_walk_stand					= 5.1 	;8 ;6
+disp_walk_crouch				= 3.6  	;4 ;3
+disp_run_stand					= 6.3 	;14 ;12;8
+disp_run_crouch					= 4.8 	;6  ;4
+disp_stand_stand				= 2  	;4
+disp_stand_crouch				= 1.5	; 2
+disp_stand_stand_zoom				= 0.44	;1.5 ;1
+disp_stand_crouch_zoom				= 0.28 	;1.25;1
+
+FireRandomMin 		 =     	1
+FireRandomMax 		 =     	12
+NoFireTimeMin 		 =    	3.2
+NoFireTimeMax 		 =    	14
+MinMissDistance		 =     	1
+MinMissFactor		 =     	0.0
+MaxMissDistance		 =    	6
+MaxMissFactor		 =     	0.0
+
+step_params					= stalker_experienced_step_manager
+
+;---------------------------------------------------
+
+;vision_danger_section			= stalker_experienced_vision_danger
+;vision_free_section				= stalker_experienced_vision_free
+
+;eye_fov							= 170 ;110;120
+;eye_range						= 100
+
+;---------------------------------------------------
+
+[stalker_experienced_vision_free]:stalker_vision_free
+min_view_distance   		= 0.35				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.85; коэффициент, который множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.05
+time_quant					= 0.0035
+decrease_value				= 0.004;0.004				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
+velocity_factor		     	= 0.42 ;0.5
+luminocity_factor			= 0.45;0.8 ;0.5 				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.87 ; 0.96		; 0.25
+
+[stalker_experienced_vision_danger]:stalker_vision_danger
+min_view_distance   		= 0.35				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.85; коэффициент, который множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 150.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.05
+time_quant					= 0.0035
+decrease_value				= 0.004;0.004				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
+velocity_factor		     	= 0.42 ;0.5
+luminocity_factor			= 0.45;0.8 ;0.5 				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.87 ; 0.96		; 0.25
+
+;---SECTIONS----------------------------------------------------------
+damage						= stalker_experienced_damage
+condition_sect					= stalker_experienced_condition
+
+[stalker_experienced_condition]:stalker_condition
+;satiety_v					= 0.00001				;скорость уменьшения сытости со временем
+;radiation_v					= 0.0001				;скорость уменьшения радиации
+;satiety_power_v				= 0.0005				;увеличение силы при уменьшении сытости
+;satiety_health_v			= 0.1 ;0.0001				;увеличение здоровья при уменьшении сытости
+;satiety_critical			= 0.0					;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+;radiation_health_v			= 0.001					;уменьшение здоровья при воздействии радиации
+morale_v					= 0.85				;скорость восстановления морали
+;health_hit_part				= 1.0					;процент хита, уходящий на отнимание здоровья
+;power_hit_part				= 0.0					;процент хита, уходящий на отнимание силы
+;psy_health_v				= 0.01					; скорость восстановления psy-здоровья
+
+;sleep_health				= 1.0					;коэффициенты скоростей изменения параметров во время сна
+;sleep_power					= 1.0
+;sleep_satiety				= 1.0
+;sleep_radiation 			= 1.0
+;sleep_psy_health			= 1.0
+
+;---LIMPING STATE-----------------------------------------------------
+;use_limping_state			= on ;off
+;limping_threshold			= 0.3
+
+;открытые раны
+;bleeding_v					= 0.0035						;потеря крови при номинальной ране в секунду
+;wound_incarnation_v			= 0.003				;крутизна кривой заживления (какой процент раны останется после заживления в игровую секунду)
+;min_wound_size				= 0.009
+
+;---MOVEMENT----------------------------------------------------------
+movement_speeds					= stalker_movement_speeds ; stalker_experienced_movement_speeds ;
+
+;---STEP MANAGER------------------------------------------------------
+step_params						= stalker_experienced_step_manager
+
+[stalker_experienced_movement_speeds]
+	; danger
+	;; crouch
+	;;; walk
+	danger_crouch_walk_forward 	= 1.1
+	danger_crouch_walk_backward	= 1.05
+	danger_crouch_walk_left		= 1.07
+	danger_crouch_walk_right 	= 1.07
+	;;; run
+	danger_crouch_run_forward   	= 2.2
+	danger_crouch_run_backward	= 2.0
+	danger_crouch_run_left		= 2.1
+	danger_crouch_run_right		= 2.1
+	;; stand
+	;;; walk
+	danger_stand_walk_forward	= 2.2
+	danger_stand_walk_backward	= 2.1
+	danger_stand_walk_left		= 2.15
+	danger_stand_walk_right		= 2.15
+	;;; run
+	danger_stand_run_forward	= 3.25
+	danger_stand_run_backward	= 2.52
+	danger_stand_run_left		= 2.66
+	danger_stand_run_right		= 2.66
+	; free
+	;; stand
+	;;; forward
+	free_stand_walk_forward		= 1.15
+	free_stand_run_forward		= 3.2
+	; panic
+	;; stand
+	;;; run
+	;;;; forward
+	panic_stand_run_forward		= 5.4
+
+[stalker_experienced_step_manager]:stalker_step_manager
+
+;--------------------------------------------------------------------------
+[stalker_experienced_damage]:stalker_damage
+;--------------------------------------------------------------------------
+
+[fire_queue_params_experienced]  ; min < 15 < medium < 30 < max
+pstl_min_queue_size_far			= 0
+pstl_max_queue_size_far			= 1
+pstl_min_queue_interval_far		= 800
+pstl_max_queue_interval_far		= 1130
+
+pstl_min_queue_size_medium		= 1
+pstl_max_queue_size_medium		= 1
+pstl_min_queue_interval_medium	= 260
+pstl_max_queue_interval_medium	= 320
+
+pstl_min_queue_size_close		= 1
+pstl_max_queue_size_close		= 1
+pstl_min_queue_interval_close	= 190
+pstl_max_queue_interval_close	= 220
+
+;-------------------------------
+
+shtg_min_queue_size_far			= 0
+shtg_max_queue_size_far			= 1
+shtg_min_queue_interval_far		= 720
+shtg_max_queue_interval_far		= 980
+
+shtg_min_queue_size_medium		= 1
+shtg_max_queue_size_medium		= 2
+shtg_min_queue_interval_medium	= 210
+shtg_max_queue_interval_medium	= 250
+
+shtg_min_queue_size_close		= 1
+shtg_max_queue_size_close		= 8
+shtg_min_queue_interval_close	= 195
+shtg_max_queue_interval_close	= 210
+
+;-------------------------------
+
+snp_min_queue_size_far			= 1
+snp_max_queue_size_far			= 1
+snp_min_queue_interval_far		= 500
+snp_max_queue_interval_far		= 650
+
+snp_min_queue_size_medium		= 1
+snp_max_queue_size_medium		= 1
+snp_min_queue_interval_medium	= 400
+snp_max_queue_interval_medium	= 550
+
+snp_min_queue_size_close		= 1
+snp_max_queue_size_close		= 1
+snp_min_queue_interval_close	= 300
+snp_max_queue_interval_close	= 500
+
+;-------------------------------
+
+auto_min_queue_size_far			= 2
+auto_max_queue_size_far			= 4
+auto_min_queue_interval_far		= 290
+auto_max_queue_interval_far		= 500
+
+auto_min_queue_size_medium		= 3
+auto_max_queue_size_medium		= 6
+auto_min_queue_interval_medium	= 220
+auto_max_queue_interval_medium	= 350
+
+auto_min_queue_size_close		= 4
+auto_max_queue_size_close		= 8
+auto_min_queue_interval_close	= 200
+auto_max_queue_interval_close	= 240
+
+;-------------------------------
+
+mchg_min_queue_size_far			= 3
+mchg_max_queue_size_far			= 8
+mchg_min_queue_interval_far		= 290
+mchg_max_queue_interval_far		= 500
+
+mchg_min_queue_size_medium		= 5
+mchg_max_queue_size_medium		= 12
+mchg_min_queue_interval_medium	= 220
+mchg_max_queue_interval_medium	= 350
+
+mchg_min_queue_size_close		= 7
+mchg_max_queue_size_close		= 16
+mchg_min_queue_interval_close	= 200
+mchg_max_queue_interval_close	= 240
+
+;-------------------------------
+
+[stalker_silent_experienced]:stalker_experienced
+$spawn        = "respawn\stalker_silent"
+character_profile = sim_default_stalker_0
+
+sound_death					=
+sound_anomaly_death				=
+sound_hit					=
+
+sound_humming					=
+sound_alarm					=
+sound_backup					=
+sound_detour					=
+sound_friendly_fire				=
+sound_;panic_human				=
+sound_;panic_monster				=
+sound_tolls					=
+sound_wounded					=
+sound_grenade_alarm				=
+sound_friendly_grenade_alarm			=
+sound_need_backup				=
+sound_running_in_danger				=
+sound_walking_in_danger				=
+sound_kill_wounded				=
+sound_enemy_critically_wounded			=
+sound_enemy_killed_or_wounded			=
+
+sound_attack_no_allies				=
+sound_attack_allies_single_enemy		=
+sound_attack_allies_several_enemies		=
+sound_search1_no_allies				=
+sound_search1_with_allies			=
+sound_enemy_lost_no_allies			=
+sound_enemy_lost_with_allies			=
+sound_throw_grenade				=

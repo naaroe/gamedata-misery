@@ -1,0 +1,17 @@
+[smart_terrain];jup_sim_4
+squad_id = 42
+max_population = 1
+
+respawn_params = respawn@jup_sim_4
+
+[respawn@jup_sim_4]
+spawn_dog
+spawn_boar
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog
+spawn_num = 3
+
+[spawn_boar]
+spawn_squads = simulation_dog, simulation_pseudodog
+spawn_num = 3

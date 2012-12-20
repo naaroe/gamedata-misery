@@ -1,0 +1,55 @@
+<!-- medkit_scientic = 1, prob=0.7 \n -->
+medkit_scientic = 1, prob=1 \n
+stimpack_scientic = 1, prob=1 \n
+detector_advanced = 1, prob=1 \n
+detector_elite = 1, prob=0.002 \n
+
+af_cristall = 1, prob=0.010 \n
+af_fireball = 1, prob=0.006 \n
+af_dummy_glassbeads = 1, prob=0.004 \n
+af_eye = 1, prob=0.002 \n
+af_fire = 1, prob=0.002 \n
+af_medusa = 1, prob=0.010 \n
+af_cristall_flower = 1, prob=0.008 \n
+af_night_star = 1, prob=0.006 \n
+af_vyvert = 1, prob=0.004 \n
+af_gravi = 1, prob=0.004 \n
+af_gold_fish = 1, prob=0.002 \n
+af_blood = 1, prob=0.010 \n
+af_mincer_meat = 1, prob=0.006 \n
+af_soul = 1, prob=0.004 \n
+af_fuzz_kolobok = 1, prob=0.002 \n
+af_baloon = 1, prob=0.002 \n
+af_glass = 1, prob=0.002 \n
+af_electra_sparkler = 1, prob=0.010 \n
+af_electra_flash = 1, prob=0.006 \n
+af_electra_moonlight = 1, prob=0.004 \n
+af_dummy_battery = 1, prob=0.004 \n
+af_dummy_dummy = 1, prob=0.002 \n
+af_ice = 1, prob=0.002 \n
+
+roubles					= 2, prob=0.5 \n
+
+bandage					= 1, prob=0.05 \n
+medkit					= 1, prob=0.66 \n
+medkit_army				= 1, prob=0.030 \n
+medkit_scientic			= 1, prob=0.010 \n
+antirad					= 1, prob=0.06 \n
+
+drug_booster			= 1, prob=0.016 \n
+drug_coagulant			= 1, prob=0.040 \n
+drug_psy_blockade		= 1, prob=0.016 \n
+drug_antidot			= 1, prob=0.016 \n
+drug_radioprotector		= 1, prob=0.024 \n
+drug_anabiotic			= 1, prob=0.008 \n
+
+rebirth			= 1, prob=0.02 \n
+
+af_camelbak = 1, prob=0.002 \n
+af_cooler = 1, prob=0.002 \n
+af_surge = 1, prob=0.002 \n
+af_iam = 1, prob=0.002 \n
+af_aac = 1, prob=0.001 \n
+
+geiger_dead		= 1, prob=0.025 \n
+batteries_ccell		= 5, prob=0.025 \n

@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="Btn_Cancel">
+<text> Cancel </text>
+</string>
+<string id="Btn_No">
+<text>No</text>
+</string>
+<string id="Btn_OK">
+<text> OK </text>
+</string>
+<string id="Btn_Yes">
+<text> Yes </text>
+</string>
+<string id="bad">
+<text> Poor </text>
+</string>
+<string id="enemy">
+<text> Enemy </text>
+</string>
+<string id="excellent">
+<text> Excellent </text>
+</string>
+<string id="experienced">
+<text> Experienced </text>
+</string>
+<string id="friendly">
+<text> Friendly </text>
+</string>
+<string id="global_map">
+<text> Zone Map </text>
+</string>
+<string id="good">
+<text> Good </text>
+</string>
+<string id="indifferent">
+<text> Indifferent </text>
+</string>
+<string id="master">
+<text> Master </text>
+</string>
+<string id="mm_mp_pda_hunt">
+<text> Bonus PDA </text>
+</string>
+<string id="mp_only_one_voting">
+<text> Only one active vote per player </text>
+</string>
+<string id="neutral">
+<text> Neutral </text>
+</string>
+<string id="novice">
+<text> Beginner </text>
+</string>
+<string id="st_game">
+<text> Game </text>
+</string>
+<string id="st_item_used">
+<text> Used </text>
+</string>
+<string id="st_level">
+<text> Level </text>
+</string>
+<string id="st_loading_ai_objects">
+<text> Loading AI objects </text>
+</string>
+<string id="st_loading_alife_simulator">
+<text> Server: Load a simulation of life </text>
+</string>
+<string id="st_loading_cform">
+<text> Loading CForms </text>
+</string>
+<string id="st_loading_details">
+<text> Loading detailed objects </text>
+</string>
+<string id="st_loading_geometry">
+<text> Loading geometry </text>
+</string>
+<string id="st_loading_saved_game">
+<text> Loading Game </text>
+</string>
+<string id="st_loading_sectors_portals">
+<text> Loading sectors and portals </text>
+</string>
+<string id="st_loading_shaders">
+<text> Loading shaders </text>
+</string>
+<string id="st_loading_spatial_db">
+<text> Loading spatial database </text>
+</string>
+<string id="st_loading_textures">
+<text> Loading textures </text>
+</string>
+<string id="st_mp_direct_ip">
+<text> Direct IP </text>
+</string>
+<string id="st_no_active_task">
+<text> No active job </text>
+</string>
+<string id="st_not_enough_money">
+<text> Not enough money </text>
+</string>
+<string id="st_not_enough_money_npc">
+<text> NPC doesn't have enough money </text>
+</string>
+<string id="st_opening_stream">
+<text> Opening stream </text>
+</string>
+<string id="st_prefetching_objects">
+<text> Object Caching </text>
+</string>
+<string id="st_rubles">
+<text> Rubles </text>
+</string>
+<string id="st_server_connecting">
+<text> Server: Connection </text>
+</string>
+<string id="st_server_starting">
+<text> Server: Start </text>
+</string>
+<string id="st_validating_cdkey">
+<text> Validating CD key</text>
+</string>
+<string id="st_video">
+<text> Video </text>
+</string>
+<string id="terrible">
+<text> Awful </text>
+</string>
+<string id="ui_inv_repair">
+<text> Repair </text>
+</string>
+<string id="ui_st_cant_run_r2">
+<text> You can't run the dynamic lighting renderer on your computer </text>
+</string>
+<string id="ui_st_community">
+<text> Grouping </text>
+</string>
+<string id="ui_st_conn_cdkey_disabled">
+<text> Connection error: Your CD-key is blocked. Please contact support. </text>
+</string>
+<string id="ui_st_conn_cdkey_in_use">
+<text> Connection error: a CD-key is already in use </text>
+</string>
+<string id="ui_st_conn_cdkey_invalid">
+<text> Connection error: invalid CD-key </text>
+</string>
+<string id="ui_st_conn_invalid_host">
+<text> Connection Error: invalid host </text>
+</string>
+<string id="ui_st_conn_invalid_pass">
+<text> Connection Error: invalid password </text>
+</string>
+<string id="ui_st_conn_new_patch">
+<text> A new patch is available. \n Version:% s \n% s \n Do you want to download it now? </text>
+</string>
+<string id="ui_st_conn_no_new_patch">
+<text> No new patches </text>
+</string>
+<string id="ui_st_conn_rejected_server">
+<text> Connection failed: Connection closed by server </text>
+</string>
+<string id="ui_st_conn_sess_full">
+<text> Connection failed: Server is full</text>
+</string>
+<string id="ui_st_conn_version_differs">
+<text> Connection error: Different versions </text>
+</string>
+<string id="ui_st_connecting_to_masterserver">
+<text> Connecting to master server </text>
+</string>
+<string id="ui_st_days">
+<text> days. </text>
+</string>
+<string id="ui_st_error">
+<text> Error </text>
+</string>
+<string id="ui_st_error_loading">
+<text> Error loading </text>
+</string>
+<string id="ui_st_file_exist_owerwrite_q">
+<text> File with this name already exists. Overwrite? </text>
+</string>
+<string id="ui_st_file_name_is_empty">
+<text> Filename empty </text>
+</string>
+<string id="ui_st_hours">
+<text> Hours </text>
+</string>
+<string id="ui_st_kicked_by_battleye">
+<text> Disconnected due by BattlEye: </text>
+</string>
+<string id="ui_st_kicked_by_server">
+<text> You were kicked. Rationale: </text>
+</string>
+<string id="ui_st_leave">
+<text> Leave </text>
+</string>
+<string id="ui_st_load_game_confirm">
+<text> Loading a game will result in loss of unsaved data. Would you like to continue? </text>
+</string>
+<string id="ui_st_mins">
+<text> Mins </text>
+</string>
+<string id="ui_st_months">
+<text> Months </text>
+</string>
+<string id="ui_st_opponent_items">
+<text> Backpack </text>
+</string>
+<string id="ui_st_params">
+<text> Settings </text>
+</string>
+<string id="ui_st_patch_Load_error">
+<text> Cannot download the patch. </text>
+</string>
+<string id="ui_st_patch_Load_success">
+<text> Patch successfully downloaded. Would you like to install? </text>
+</string>
+<string id="ui_st_price">
+<text> Price </text>
+</string>
+<string id="ui_st_rank">
+<text> Rank </text>
+</string>
+<string id="ui_st_relation">
+<text> Attitude </text>
+</string>
+<string id="ui_st_reputation">
+<text> Reputation </text>
+</string>
+<string id="ui_st_secs">
+<text> Secs </text>
+</string>
+<string id="ui_st_select_one_map">
+<text> Please select at least one card </text>
+</string>
+<string id="ui_st_take_all">
+<text> Take All </text>
+</string>
+<string id="ui_st_time_remains">
+<text> left </text>
+</string>
+<string id="ui_st_voting_disabled">
+<text> Voting disabled </text>
+</string>
+<string id="ui_st_want_to_leave_game_q">
+<text> Do you really want to leave the game? </text>
+</string>
+<string id="ui_total_price">
+<text> Total </text>
+</string>
+<string id="very_bad">
+<text> Pts. very bad </text>
+</string>
+<string id="very_good">
+<text> Pts. very good </text>
+</string>
+<string id="veteran">
+<text> Veteran </text>
+</string>
+<string id="ui_st_inv_repair">
+<text> Repair </text>
+</string>
+<string id="ui_repair_button_hint">
+<text> Repair selected item </text>
+</string>
+<string id="st_key_notbinded">
+<text> ...</text>
+</string>
+<string id="st_save_uni_travel_generic">
+<text> Jump to location </text>
+</string>
+<string id="st_save_uni_travel_zat_to_jup">
+<text> Transfer from Creek to Yanovo </text>
+</string>
+<string id="st_save_uni_travel_zat_to_pri">
+<text> Transfer from Creek to Pripyat </text>
+</string>
+<string id="st_save_uni_travel_jup_to_zat">
+<text> Transfer from Yanovo" at the Creek </text>
+</string>
+<string id="st_save_uni_travel_jup_to_pri">
+<text> Transfer from Yanovo to Pripyat </text>
+</string>
+<string id="st_save_uni_travel_pri_to_zat">
+<text> Transfer from Pripyat to Creek </text>
+</string>
+<string id="st_save_uni_travel_pri_to_jup">
+<text> Transfer from Pripyat to Yanovo </text>
+</string>
+<string id="st_save_uni_pri_to_labx8">
+<text> Transfer from Pripyat to X8 </text>
+</string>
+<string id="st_save_uni_labx8_to_pri">
+<text> Transfer from X8 to Pripyat </text>
+</string>
+<string id="st_save_uni_surge_start">
+<text> Blowout </text>
+</string>
+<string id="st_save_zat_a1_game_start">
+<text> Starting the game </text>
+</string>
+<string id="st_save_zat_a2_reached_skadovsk">
+<text> Arrival at Skadovsk </text>
+</string>
+<string id="st_save_jup_b9_searched_heli_1">
+<text> Investigated Stingray-1 »</text>
+</string>
+<string id="st_save_zat_b100_searched_heli_2">
+<text> Investigated Stingray-2 »</text>
+</string>
+<string id="st_save_zat_b28_searched_heli_3">
+<text> Investigated Stingray-3 »</text>
+</string>
+<string id="st_save_jup_b8_searched_heli_4">
+<text> Investigated Stingray-4 »</text>
+</string>
+<string id="st_save_zat_b101_searched_heli_5">
+<text> Investigated Stingray-5 »</text>
+</string>
+<string id="st_save_zat_b18_noah_showed_teleport">
+<text> Found a way to the plateau </text>
+</string>
+<string id="st_save_jup_b217_arrived_to_jup">
+<text> Arrived at Yanov </text>
+</string>
+<string id="st_save_jup_a9_got_underpass_docs">
+<text> Found a way to Pripyat </text>
+</string>
+<string id="st_save_jup_b15_drunk_with_zulu">
+<text> Reruited Zulu </text>
+</string>
+<string id="st_save_jup_a10_gonna_return_debt">
+<text> Settled Vano's debt Vano </text>
+</string>
+<string id="st_save_jup_b218_vano_in_squad">
+<text> Recruited Vano </text>
+</string>
+<string id="st_save_jup_b206_got_anomalous_plant">
+<text> Took anomalous plant </text>
+</string>
+<string id="st_save_jup_b218_sokolov_in_squad">
+<text> Recruited Sokolov </text>
+</string>
+<string id="st_save_jup_b218_strider_in_squad">
+<text> Recruited Rogue </text>
+</string>
+<string id="st_save_jup_b218_travel_jup_to_pas">
+<text> Squad assembled </text>
+</string>
+<string id="st_save_pas_b400_underpass_start">
+<text> Arrived in the underpass </text>
+</string>
+<string id="st_save_uni_travel_pas_to_pri">
+<text> Out in Pripyat </text>
+</string>
+<string id="st_save_pri_a16_arrived_to_pri">
+<text> Found the military </text>
+</string>
+<string id="st_save_pri_a17_hospital_start">
+<text> Seized unknown weapon </text>
+</string>
+<string id="st_save_pri_a20_found_dead_recon">
+<text> Found dead recon squad </text>
+</string>
+<string id="st_save_pri_a18_met_reinforcement">
+<text> Reinforcements </text>
+</string>
+<string id="st_save_pri_a18_searched_antenna">
+<text> Investigated the Antenna </text>
+</string>
+<string id="st_save_pri_a21_approached_mad_sentry">
+<text> Found the missing sentry </text>
+</string>
+<string id="st_save_pri_a21_killed_controller">
+<text> Killed the clock controller </text>
+</string>
+<string id="st_save_zat_a23_entered_test_center">
+<text> Entered the test department </text>
+</string>
+<string id="st_save_zat_a23_got_gauss_docs">
+<text> Found documentation on the Gauss gun </text>
+</string>
+<string id="st_save_pri_a22_found_dead_squad">
+<text> Found dead soldier </text>
+</string>
+<string id="st_save_pri_a25_gonna_place_explosive">
+<text> Entrance to kindergarten </text>
+</string>
+<string id="st_save_pri_a25_freed_medic">
+<text> Rescued by a military doctor </text>
+</string>
+<string id="st_save_pri_a28_talked_with_ssu">
+<text> Established contact with command </text>
+</string>
+<string id="st_save_pri_a28_evacutaion_start">
+<text> Started the evacuation of Pripyat </text>
+</string>
+<string id="st_save_pri_a28_evacuation_end">
+<text> Evacuation complete </text>
+</string>
+<string id="st_save_uni_zone_to_reality">
+<text> Return to the Zone </text>
+</string>
+<string id="st_save_jup_b209_placed_mutant_scanner">
+<text> Placed mutant sensor </text>
+</string>
+<string id="st_save_jup_a12_gave_artefact_for_hostage">
+<text> Bartered for the hostage </text>
+</string>
+<string id="st_save_jup_a12_met_with_liberators">
+<text> Release of the hostage </text>
+</string>
+<string id="st_save_jup_b6_arrived_to_ash_heap">
+<text> Analyze Ashes anomaly </text>
+</string>
+<string id="st_save_jup_b6_arrived_to_fen">
+<text> Analyzed Plavni anomaly </text>
+</string>
+<string id="st_save_zat_b38_met_with_grouse">
+<text> Bloodsucker den </text>
+</string>
+<string id="st_save_jup_b19_arrived_to_kopachy">
+<text> Arrived in Kopachi </text>
+</string>
+<string id="st_save_zat_b40_warned_by_mercs">
+<text> Approach to the station, waste recycling </text>
+</string>
+<string id="st_save_zat_b7_met_with_robbers">
+<text> Met with robbers</text>
+</string>
+<string id="st_save_zat_b33_got_container">
+<text> Container found in a secret compartment </text>
+</string>
+<string id="st_save_zat_b106_arrived_to_chimera_lair">
+<text> Hunt for the chimera </text>
+</string>
+<string id="st_save_jup_b16_passed_labyrinth">
+<text> Found the Oasis </text>
+</string>
+<string id="st_save_pri_b35_ready_to_snipe">
+<text> Beginning of operation One Shot </text>
+</string>
+<string id="st_save_jup_b1_entered_railroad_tunnel">
+<text> Find the source of psy-radiation </text>
+</string>
+<string id="st_save_jup_b47_got_admin_docs">
+<text> Administrative documents </text>
+</string>
+<string id="st_save_zat_b103_warned_by_mercs">
+<text> Approach to the shops substation </text>
+</string>
+<string id="st_save_zat_b5_met_with_others">
+<text> Deal near the forest </text>
+</string>
+<string id="st_save_jup_b207_arrived_to_duty_depot">
+<text> Duty depot </text>
+</string>
+<string id="st_save_zat_b14_got_altered_wheel">
+<text> Found the source of the strange glow </text>
+</string>
+<string id="st_save_pri_b301_arrived_to_help_zulu">
+<text> Found Zulus </text>
+</string>
+<string id="st_save_zat_b42_arrived_to_controler_lair">
+<text> Dangerous cave </text>
+</string>
+<string id="ui_st_upgrade">
+<text> Repair / modification </text>
+</string>
+<string id="ui_st_buy">
+<text> Buy </text>
+</string>
+<string id="ui_st_sell">
+<text> Sell </text>
+</string>
+<string id="ui_st_trade">
+<text> Trade </text>
+</string>
+<string id="ui_st_exit_hint">
+<text> Close window ($$ACTION_USE$$)</text>
+</string>
+<string id="ui_st_trade_hint">
+<text> Open trade window ($$ACTION_SPRINT_TOGGLE$$)</text>
+</string>
+<string id="ui_st_upgrade_hint">
+<text> View repairs and modifications ($$ACTION_SPRINT_TOGGLE$$)</text>
+</string>
+<string id="ui_st_take_all_hint">
+<text> Move all the things to your backpack ($$ACTION_SPRINT_TOGGLE$$)</text>
+</string>
+<string id="ui_st_buy_hint">
+<text> Buy selected items </text>
+</string>
+<string id="ui_st_sell_hint">
+<text> Sell selected items </text>
+</string>
+<string id="st_save_pri_a28_evacuation_heli">
+<text> Helicopter evacuation complete</text>
+</string>
+</string_table> 

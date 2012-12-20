@@ -1,0 +1,34 @@
+[smart_terrain]
+squad_id = 66
+max_population = 1
+
+respawn_params = respawn@jup_smrter_sim_11
+
+[respawn@jup_smrter_sim_11]
+spawn_duty@advanced_sentry
+spawn_duty@master_sentry
+
+spawn_duty@advanced_sentry_hostile
+spawn_duty@master_sentry_hostile
+
+;;; unused
+
+; Duty sentry squads
+
+[spawn_duty@advanced_sentry]
+spawn_squads = duty_sim_squad_advanced_jup_b46_sentry
+spawn_num = 0	; {+sim_freedom_help_harder} 0, {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@master_sentry]
+spawn_squads = duty_sim_squad_advanced_veteran_jup_b46_sentry
+spawn_num = 0	; {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty sentry hostile squads
+
+[spawn_duty@advanced_sentry_hostile]
+spawn_squads = duty_sim_squad_advanced_jup_b46_sentry_hostile
+spawn_num = 0	; {-sim_freedom_help_harder} 0, {+sim_freedom_help_harder +jup_b207_task_end} 0, {+sim_freedom_help_harder +jup_a12_task_done} 0, {+sim_freedom_help_harder +jup_b46_task_done} 0, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 0, {+sim_freedom_help_harder +jup_b209_task_done} 0, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_duty@master_sentry_hostile]
+spawn_squads = duty_sim_squad_advanced_veteran_jup_b46_sentry_hostile
+spawn_num = 0	; {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0

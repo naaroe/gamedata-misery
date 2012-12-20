@@ -1,0 +1,63 @@
+[inventory_box]
+GroupControlSection	= spawn_group
+discovery_dependency =
+$spawn 				= "devices\inventory box"
+class				= S_INVBOX
+cform				= skeleton
+visual				= dynamics\equipment_cache\equipment_box_01_case.ogf
+script_binding      = bind_physic_object.init
+
+[device_flare]:identity_immunities
+class                   = D_FLARE
+visual					= dynamics\devices\dev_flare\dev_flare
+description             = enc_weapons1_wpn_flare
+
+inv_weight				= 0.2
+inv_name				= device_flare
+inv_name_short			= device_flare_short
+
+inv_grid_width				= 2
+inv_grid_height				= 1
+inv_grid_x					= 12
+inv_grid_y					= 7
+
+slot					= 11
+cost					= 50
+default_to_ruck         = true
+sprint_allowed			= true
+control_inertion_factor = 1.0
+work_time_sec			= 10000
+hud                     = device_flare_hud
+animation_slot			= 7
+
+working_particles		= weapons\dev_flare_flame
+
+[device_flare_hud]:hud_base
+hands_position				= 0.361999,-0.164000,0.106000
+hands_orientation			= 21.000044,-1.700000,0.000000
+hands_position_16x9             = 0,0,0
+hands_orientation_16x9          = 0,0,0
+
+aim_hud_offset_pos				= 0,0,0
+aim_hud_offset_rot				= 0,0,0
+
+gl_hud_offset_pos				= 0,0,0
+gl_hud_offset_rot				= 0,0,0
+
+lean_hud_offset_pos				= 0,0,0
+lean_hud_offset_rot				= 0,0,0
+
+item_position				= -0.031455,0.017528,0.136259
+item_orientation			= 62.783558,75.663406,-79.665085
+
+item_visual                   	= dynamics\devices\dev_flare\dev_flare
+attach_place_idx				= 1
+
+fire_point						= 0.279000,-0.143000,-0.009000
+fire_bone                		= flare_point
+
+
+anm_show						= flare_draw
+anm_hide						= flare_holster
+anm_idle						= flare_idle
+anm_drop						= flare_holster

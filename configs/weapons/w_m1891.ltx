@@ -1,0 +1,201 @@
+[wpn_m1891]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection	= spawn_group
+$spawn                  = "weapons\wpn_m1891snip"
+$npc			        = on
+$prefetch 		        = 8
+scheduled               = off
+cform                   = skeleton
+class                   = WP_SVD
+ef_main_weapon_type	    = 3
+ef_weapon_type		    = 11
+default_to_ruck         = false
+sprint_allowed       	= true
+weapon_class		    = sniper_rifle
+;-----------[Главные параметры]----------------;
+cost					= 12120
+inv_weight		        = 4.2 
+inv_name		        = st_wpn_m1891snip
+inv_name_short		    = st_wpn_m1891snip
+description		        = st_wpn_m1891snip_descr
+
+inv_grid_width		    = 6
+inv_grid_height		    = 1
+inv_grid_x		    = 14
+inv_grid_y		    = 27
+
+upgr_icon_x			= 1214
+upgr_icon_y		= 0
+upgr_icon_width		    = 296
+upgr_icon_height   	    = 149
+
+ammo_elapsed	        = 5
+ammo_mag_size		= 5
+fire_modes		        = 1
+ammo_class		        = ammo_7.62x39_fmj, ammo_7.62x39_ap
+grenade_class		    = ammo_vog-25
+;-------------[Модернизация]-------------------;
+upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_svd
+scope_status		    = 2
+silencer_status		    = 0
+grenade_launcher_status	    = 0
+zoom_enabled		    = true
+zoom_rotate_time	    = 0.25
+scope_zoom_factor       = 58.6 ; 	    = 85
+scope_name 		        = wpn_addon_scope_ww2
+scope_texture	        	= wpn_crosshair_ww2
+scope_x 		        = 116
+scope_y 		        = -24
+--------------[Убойность]---------------------;
+hit_power           	= 0.59, 0.59, 0.59, 0.59
+hit_impulse		        = 44
+hit_type 		        = fire_wound
+fire_distance           = 790
+bullet_speed		    = 865
+rpm                     = 25
+rpm_empty_click         = 200
+launch_speed            = 0
+;---------------[Озвучка]----------------------;
+snd_draw		        = weapons\generic\rifle_historic_draw
+snd_holster		        = weapons\generic\rifle_historic_holster
+snd_shoot		        = weapons\m1891\m1891_shot
+snd_empty		        = weapons\generic\rifle_historic_empty, 0.7
+snd_reload		        = weapons\m1891\m1891_reload
+snd_shoot_duplet		= weapons\m1891\m1891_shoot_both
+snd_open_weapon			= weapons\m1891_open		;
+snd_add_cartridge		= weapons\m1891_load		;was gen_grenload
+snd_close_weapon		= weapons\m1891_close		;
+;-------------------------------------------------------------------------------
+;базовая дисперсия
+fire_dispersion_base	= 0.18  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor	= 2.06f
+crosshair_inertion      = 8.9
+cam_return				= 0 ;				= 1
+cam_relax_speed         = 4.5	;скорость возврата в исходное положение
+cam_relax_speed_ai      = 360	;скорость возврата в исходное положение
+cam_dispersion          = 2.5	;увеличения угла (в градусах) с каждым выстрелом
+cam_dispersion_inc		= 2.5	;увеличениe cam_dispersion с каждым выстрелом
+cam_dispersion_frac		= 1.0	;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle			= 15.0	;максимальный угол отдачи
+cam_max_angle_horz		= 3.0	;(degree) maximum shot horizontal degree
+cam_step_angle_horz		= 0.25	;(degree) size of step camera moved in horizontal position while shooting
+zoom_cam_relax_speed    = 0.75    ; scope & ironsight
+zoom_cam_relax_speed_ai = 120.75
+zoom_cam_dispersion     = 1.8
+zoom_cam_dispersion_inc = 1.8
+zoom_cam_dispersion_frac= 1.0
+zoom_cam_max_angle      = 10.0
+zoom_cam_max_angle_horz = 5.0
+zoom_cam_step_angle_horz= 0.25
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 8
+;--------[Держания ствола в руках НПС]---------;
+strap_position         	= -0.15,-0.15,0.45
+strap_orientation      	= -25,-189,65
+strap_bone0		        = bip01_spine2
+strap_bone1		        = bip01_spine1
+position                = -0.026, -0.077, 0.00
+orientation             = 0, 0, 0
+;-----------[Другие параметры]-----------------;
+use_aim_bullet		    = false		
+time_to_aim		        = 1.0
+hud                     = wpn_m1891snip_hud
+
+misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.8
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.1
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.0055
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.055
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= 0.0016
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= 0.0010
+
+hand_dependence         = 1
+single_handed           = 0
+PDM_disp_base 			= 2.0
+PDM_disp_vel_factor 	= 4.0
+PDM_disp_accel_factor 	= 4.0
+PDM_disp_crouch	 	    = 1.0
+PDM_disp_crouch_no_acc 	= 1.0
+reload_dof		        = 0.0, 0.5, 5, 2.2
+holder_range_modifier	= 2.15              
+holder_fov_modifier	    = 1.0
+min_radius = 0 ;              = 0
+max_radius = 500 ; = 250 ;              = 100
+hit_probability_gd_novice = 1.00 ;  = 1
+hit_probability_gd_stalker = 1.00 ; = 1
+hit_probability_gd_veteran = 1.00 ; = 1
+hit_probability_gd_master = 1.00 ;  = 1
+slot                    = 2
+animation_slot          = 2
+kill_msg_x		        = 0
+kill_msg_y		        = 0
+kill_msg_width	        = 98
+kill_msg_height		    = 23
+fire_point           	= 0.0, 0.129, 0.942
+fire_point2             = 0.0, 0.129, 0.942
+flame_particles         = weapons\generic_weapon06
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+rpm_empty_click 	    = 200
+shell_point		        = 0.0, 0.129, 0.192
+shell_dir		        = 0.0, 0.0, 0.4
+shell_particles         = ;weapons\generic_shells
+startup_ammo            = 10
+visual                  = dynamics\weapons\wpn_m1891_30\wpn_m1891.ogf
+light_disabled		    = false
+light_color		        = 0.6,0.5,0.3
+light_range		        = 4.0
+light_var_color		    = 0.05
+light_var_range		    = 0.5
+light_time 		        = 0.2
+ph_mass			        = 3
+silencer_light_color	= 0.6,0.5,0.3
+silencer_light_range	= 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time 	= 0.2
+
+[wpn_m1891snip_hud]:hud_base
+zoom_hide_crosshair	    = true
+attach_place_idx	    = 0
+item_visual		        = dynamics\weapons\wpn_m1891_30\wpn_m1891_hud.ogf
+hands_position		    = -0.063500,-0.15099,0.125
+hands_orientation	    = 0.0,0.0,0.0
+
+hands_position_16x9	    = -0.072000,-0.15099,0.125
+hands_orientation_16x9		= -0.28,-0.17,0.0 
+
+item_position		    = 0.0,0,0
+item_orientation	    = 0,0,0
+shell_point		        = 0.025,0.055,0.221
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone		        = wpn_body
+fire_point		        = 0,0.07204,1.02;0,0.043,1.002
+fire_bone               = wpn_body
+aim_hud_offset_pos	    = -0.09068,0.0508,-0.105000
+aim_hud_offset_rot	    = 0.0,0.0,0.0
+
+aim_hud_offset_pos_16x9	= -0.08100,0.0507,-0.150000
+aim_hud_offset_rot_16x9	= -0.0025,-0.005,0.0
+
+gl_hud_offset_pos	    = 0,0,0
+gl_hud_offset_rot	    = 0,0,0
+
+lean_hud_offset_pos	    = 0,0,0
+lean_hud_offset_rot	    = 0,0,0
+
+anm_show		        = m1891_draw
+anm_hide             	= m1891_holster
+anm_shots		        = m1891_shoot;svd_shoot
+anm_reload		        = m1891_reload
+anm_bore		        = m1891_idle
+anm_idle             	= m1891_idle
+anm_idle_aim		    = m1891_idle_aim
+anm_idle_moving 	    = m1891_idle_moving
+anm_idle_sprint		    = m1891_idle_sprint

@@ -1,0 +1,29 @@
+[smart_terrain]
+squad_id = 40
+max_population = 1
+respawn_params = respawn@jup_a9
+
+[respawn@jup_a9]
+spawn_monolith
+spawn_mutants
+spawn_monolith@master
+
+spawn_a9_dogs
+
+[spawn_mutants]
+spawn_squads = simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_snork_jupiter
+spawn_num = {+pas_b400_way_button_pressed} 0, 1 ; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+[spawn_monolith@master]
+spawn_squads = monolith_sim_squad_advanced, monolith_sim_squad_veteran
+spawn_num = {+pas_b400_way_button_pressed} 1, 0 ; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+[spawn_a9_dogs]
+spawn_squads = jup_a9_dogs_normal
+spawn_num = 0	; {+jup_b207_task_end} 0, 1
+
+[spawn_monolith]
+spawn_squads = monolith_sim_squad_novice
+spawn_num = 0	; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1

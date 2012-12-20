@@ -1,0 +1,49 @@
+[smart_terrain];jup_a10
+squad_id = 1
+max_population = 3
+respawn_params = respawn@jup_a10
+arrive_dist = 150
+
+[respawn@jup_a10]
+
+;;; unused
+
+spawn_bandit
+spawn_bandit@elite
+
+spawn_bandit@hostile
+spawn_bandit@hostile_elite
+
+spawn_killer
+
+;;; unused
+
+; Bandit squads
+
+[spawn_bandit]
+spawn_squads = bandit_sim_squad_novice
+spawn_num = 0	; {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +jup_b46_task_done} 0, {+kingpin_gained +jup_b8_heli_4_searched} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_bandit@elite]
+spawn_squads = bandit_sim_squad_advanced, bandit_sim_squad_advanced, bandit_sim_squad_veteran
+spawn_num = 0	; {+kingpin_gained +jup_b207_task_end} 1, {+kingpin_gained +jup_a12_task_done} 1, {+kingpin_gained +jup_b46_task_done} 1, {+kingpin_gained +jup_b8_heli_4_searched} 1, {+kingpin_gained +jup_b209_task_done} 1, {+kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+; Bandit hostile squads
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile
+spawn_num = 0	; {+kingpin_gained} 0, {-kingpin_gained +jup_b207_task_end} 0, {-kingpin_gained +jup_a12_task_done} 0, {-kingpin_gained +jup_b46_task_done} 0, {-kingpin_gained +jup_b8_heli_4_searched} 0, {-kingpin_gained +jup_b209_task_done} 0, {-kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_bandit@hostile_elite]
+spawn_squads = bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile, bandit_sim_squad_hostile_elite
+spawn_num = 0	; {-kingpin_gained +jup_b207_task_end} 1, {-kingpin_gained +jup_a12_task_done} 1, {-kingpin_gained +jup_b46_task_done} 1, {-kingpin_gained +jup_b8_heli_4_searched} 1, {-kingpin_gained +jup_b209_task_done} 1, {-kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+[spawn_killer]
+spawn_squads = simulation_killer
+spawn_num = 0
+
+[exclusive]
+jup_a10_bandit_guard_1 = jupiter\jup_a10_bandit_guard_1.ltx
+jup_a10_bandit_guard_2 = jupiter\jup_a10_bandit_guard_2.ltx
+jup_a10_bandit_guard_3 = jupiter\jup_a10_bandit_guard_3.ltx
+jup_a10_bandit_leader  = jupiter\jup_a10_bandit_leader.ltx

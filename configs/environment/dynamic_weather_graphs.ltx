@@ -1,0 +1,97 @@
+;dynamic weather graphs
+;AtmosFear 3 by Cromm Cruac
+
+; When editing probablility graphs don't mix good (clear, partly) and bad (rain, storm) weather cycles in one section. 
+; It will produce effect of rain from the clear sky if for instance clear=0.5 and rain=0.5
+
+[atmosfear_clear]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+[atmosfear_clear_foggy]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+[atmosfear_foggy]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+[atmosfear_foggy_rainy]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+[atmosfear_rainy]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+[atmosfear_stormy]
+clear 		= 0.1
+partly 		= 0.25
+foggy 		= 0.1
+veryfoggy 	= 0
+cloudy 		= 0.25
+rain 		= 0.15
+storm 		= 0.15
+
+; Don't add more cycles to next 2 sections. 
+; It is important that they have only those specified to keep the sun from rapidly change the position when blowout and psi storm happen or prevents the rain from the clear sky.
+; You can alter the probability though.
+
+[atmosfear_transition]
+;transition used between the godd and bad periods. Prevents the rain falling from blue sky.
+veryfoggy		 	= 0.1
+cloudy		 		= 0.9
+
+[atmosfear_pre_blowout]
+;transition period before blowout and psi storm. Prevents the sun from rapid position change.
+foggy_no_sun 		= 0.3
+veryfoggy_no_sun 	= 0.1
+cloudy_no_sun 		= 0.6
+
+[dof_kernels]
+clear 			= 2
+partly 			= 2
+foggy 			= 6
+veryfoggy 		= 10
+cloudy 			= 3
+rain 			= 4
+storm 			= 4
+foggy_no_sun 		= 6
+veryfoggy_no_sun 	= 10
+cloudy_no_sun 		= 3
+
+
+[dynamic_default]
+; not used anymore. Left here just in case someone adds new map and forget to set the weather for it.
+clear = 0.2
+partly = 0.2
+foggy = 0.1
+veryfoggy = 0.1
+cloudy = 0.2
+rain = 0.1
+thunder = 0.1

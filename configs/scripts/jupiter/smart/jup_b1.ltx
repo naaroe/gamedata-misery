@@ -1,0 +1,59 @@
+[smart_terrain]
+squad_id = 5
+max_population = 2
+;respawn_only_smart = true
+respawn_params = respawn@jup_b1
+arrive_dist = 75
+
+[respawn@jup_b1]
+
+;;; unused
+
+spawn_duty@veteran_assault
+spawn_duty@veteran_assault_hostile
+
+spawn_controller
+spawn_sim_controller
+
+;;; unused
+
+; Duty assault squads
+
+[spawn_duty@veteran_assault]
+spawn_squads = duty_sim_squad_veteran_jup_a12_assault, duty_sim_squad_veteran_jup_b47_assault
+spawn_num = 0	; {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty assault hostile squads
+
+[spawn_duty@veteran_assault_hostile]
+spawn_squads = duty_sim_squad_veteran_jup_a12_assault_hostile, duty_sim_squad_veteran_jup_b47_assault_hostile
+spawn_num = 0	; {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+[spawn_controller]
+spawn_squads = stalker_hunter_night_simulation_squad
+spawn_num = 0
+
+[spawn_sim_controller]
+spawn_squads = duty_hunter_night_simulation_squad, duty_sim_squad_veteran
+spawn_num = 0
+
+[exclusive]
+jup_b1_stalker_1= jupiter\jup_b1_stalker_1.ltx
+jup_b1_stalker_2= jupiter\jup_b1_stalker_2.ltx
+jup_b1_stalker_3= jupiter\jup_b1_stalker_3.ltx
+jup_b1_stalker_4= jupiter\jup_b1_stalker_4.ltx
+jup_b1_zomb_stalker_1= jupiter\jup_b1_stalker_1.ltx
+jup_b1_zomb_stalker_2= jupiter\jup_b1_stalker_2.ltx
+jup_b1_zomb_stalker_3= jupiter\jup_b1_stalker_3.ltx
+jup_b1_zomb_stalker_4= jupiter\jup_b1_stalker_4.ltx
+jup_b1_zombie_1 = jupiter\jup_b1_zombie.ltx
+jup_b1_zombie_2 = jupiter\jup_b1_zombie.ltx
+jup_b1_zombie_3 = jupiter\jup_b1_zombie.ltx
+jup_b1_controller = jupiter\jup_b1_controller.ltx
+jup_b1_tushkano_1 = jupiter\jup_b1_tushkano.ltx
+jup_b1_tushkano_2 = jupiter\jup_b1_tushkano.ltx
+jup_b1_tushkano_3 = jupiter\jup_b1_tushkano.ltx
+jup_b1_tushkano_4 = jupiter\jup_b1_tushkano.ltx
+jup_b1_tushkano_5 = jupiter\jup_b1_tushkano.ltx

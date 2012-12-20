@@ -1,0 +1,29 @@
+[smart_terrain];zat_b54
+squad_id = 33
+max_population = 1
+respawn_params = respawn@zat_b54 
+
+[respawn@zat_b54]
+spawn@zombied
+spawn_boar
+spawn_flesh
+
+[spawn@zombied]
+spawn_squads = simulation_boar, simulation_flesh, simulation_boar, simulation_flesh, simulation_zombied_1, simulation_zombied_1, simulation_snork
+spawn_num = 1
+
+;;; unused
+
+[spawn_flesh]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = 0
+
+[spawn_boar]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = 0
+
+[exclusive]
+;please leave this for sim - stalkers only
+zat_b29_stalker_rival_leader = zaton\zat_b29_stalkers_rivals.ltx
+zat_b29_stalker_rival_2 = zaton\zat_b29_stalkers_rivals.ltx
+zat_b29_stalker_rival_3 = zaton\zat_b29_stalkers_rivals.ltx

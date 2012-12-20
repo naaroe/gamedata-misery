@@ -1,0 +1,266 @@
+[wpn_ppsh41]:identity_immunities,weapon_probability,default_weapon_params
+GroupControlSection     = spawn_group
+$spawn                  = "weapons\ppsh41"               ; option for Level Editor
+$npc                    = on                             ; option for Level Editor
+$prefetch               = 8
+scheduled               = off                                ; option for ALife Simulator
+cform                   = skeleton
+class                   = WP_LR300
+description          	= st_wpn_ppsh41_descr
+
+ef_main_weapon_type     = 2
+ef_weapon_type          = 6
+
+default_to_ruck         = false
+sprint_allowed          = true
+control_inertion_factor = 1.0
+
+;-----------------------------------------------------------------------------------------
+cost                    = 7420 
+weapon_class            = assault_rifle
+inv_weight              = 3.63
+
+upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_mp5
+
+;-----------------------------------------------------------------------------------------
+hit_power           	= 0.26, 0.26, 0.26, 0.26
+hit_impulse             = 110
+hit_type                = fire_wound 
+fire_distance           = 590      
+bullet_speed            = 490
+rpm                     = 900
+rpm_empty_click         = 200
+
+use_aim_bullet          = false                ;Поддерживается ли первая суппер пуля
+time_to_aim             = 3.0
+
+hud                     = wpn_ppsh41_hud
+
+misfire_probability        = 0.005 ;вероятность осечки при максимальном износе  !!!old - now not working
+;изношенность, при которой появляется шанс осечки
+misfire_start_condition		= 0.6
+;изношеность при которой шанс осечки становится константным
+misfire_end_condition		= 0.1
+;шанс осечки при изношености больше чем misfireStartCondition
+misfire_start_prob	     	= 0.004
+;шанс осечки при изношености больше чем misfireEndCondition
+misfire_end_prob	     	= 0.057
+;увеличение изношености при одиночном выстреле
+condition_shot_dec      	= 0.0004
+;увеличение изношености при выстреле очередью
+condition_queue_shot_dec	= 0.0005
+
+;silencer_hit_power      = 0.54, 0.54, 0.54, 0.54
+;silencer_hit_impulse    = 140
+;silencer_fire_distance  = 130  
+;silencer_bullet_speed   = 490
+
+ammo_elapsed            = 71
+ammo_mag_size           = 71 
+fire_modes	        	= 1, -1
+ammo_class	            = ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
+grenade_class           = ammo_vog-25
+
+launch_speed            = 0
+hand_dependence         = 1
+single_handed           = 0
+
+;-----------------------------------------------------------------------------------------
+zoom_dof                = 0.5, 1.0, 180
+reload_dof              = 0.0, 0.5, 5, 2
+
+;-----------------------------------------------------------------------------------------
+fire_dispersion_base    = 0.57  ;угол (в градусах) базовой дисперсии оружия (оружия зажатого в тисках)
+control_inertion_factor = 1.38f
+crosshair_inertion   	= 5.45
+
+cam_return				= 0 ;	        = 0
+cam_relax_speed         = 5		;скорость возврата в исходное положение
+cam_relax_speed_ai      = 120.75
+cam_dispersion	         	= 1.5
+cam_dispersion_inc         	= 1.2
+cam_dispersion_frac     = 0.8		;ствол будет подыматься на cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
+cam_max_angle           = 30.0		;максимальный угол отдачи
+cam_max_angle_horz      = 30.0		;(degree) maximum shot horizontal degree
+cam_step_angle_horz     = 1.5
+
+PDM_disp_base 				= 0.7
+PDM_disp_vel_factor 		= 2.2
+PDM_disp_accel_factor 		= 2.2
+PDM_disp_crouch	 			= 0.6
+PDM_disp_crouch_no_acc 		= 0.4
+
+zoom_cam_relax_speed    = 10
+zoom_cam_relax_speed_ai = 120.75
+zoom_cam_dispersion          	= 1.3
+zoom_cam_dispersion_inc      	= 0.8
+zoom_cam_dispersion_frac= 0.7
+zoom_cam_max_angle      = 20.0
+zoom_cam_max_angle_horz = 20.0
+zoom_cam_step_angle_horz= 1.5
+
+fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 9
+
+;-----------------------------------------------------------------------------------------
+holder_range_modifier   = 1.0                       ; во сколько раз увеличивается eye_range
+holder_fov_modifier     = 1.0
+
+min_radius = 0 ;              = 0
+max_radius = 500 ; = 250 ;              = 50
+
+hit_probability_gd_novice = 1.00 ;  = 0.80
+hit_probability_gd_stalker = 1.00 ; = 0.80
+hit_probability_gd_veteran = 1.00 ; = 0.80
+hit_probability_gd_master = 1.00 ;  = 0.80
+
+;-----------------------------------------------------------------------------------------
+slot                    = 2 
+animation_slot          = 8
+
+position                = -0.026, -0.175, -0.03
+orientation             = 0, 0, 0
+
+fire_point              = 0.0, 0.25, 0.570
+fire_point2             = 0.0, 0.188, 0.392
+
+flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
+smoke_particles         = weapons\generic_shoot_00
+grenade_flame_particles = weapons\generic_weapon01
+
+shell_point             = 0.0, 0.188, 0.082
+shell_particles         = weapons\generic_shells 
+shell_particles         = weapons\generic_shells
+
+;-----------------------------------------------------------------------------------------
+inv_name                = st_wpn_ppsh41
+inv_name_short          = st_wpn_ppsh41
+
+inv_grid_width          = 4
+inv_grid_height         = 1
+inv_grid_x              = 15
+inv_grid_y              = 4
+
+upgr_icon_x	        	= 1030
+upgr_icon_y	         	= 970
+upgr_icon_width	    	= 280
+upgr_icon_height     	= 100
+
+kill_msg_x         	= 72
+kill_msg_y         	= 82
+kill_msg_width     	= 56
+kill_msg_height    	= 23
+
+;------------------------------------------------------------------------------------
+strap_position         	= -0.2,-0.42,0.05	;смещение (от спины/к спине, вправо/влево, вверх/вниз)
+strap_orientation      	= -10,-5,10				
+strap_bone0             = bip01_spine2
+strap_bone1             = bip01_spine1
+
+startup_ammo            = 90
+visual                  = dynamics\weapons\wpn_ppsh41\wpn_ppsh41.ogf
+
+light_disabled          = false
+light_color             = 0.6,0.5,0.3
+light_range             = 5
+light_var_color         = 0.05
+light_var_range         = 0.5
+light_time              = 0.2
+
+ph_mass                 = 3
+
+scope_status            = 0 
+silencer_status         = 2
+grenade_launcher_status = 0
+
+zoom_enabled            = true  
+zoom_rotate_time        = 0.25
+scope_zoom_factor       = 58.6 ;        = 85
+
+scope_name              = wpn_addon_scope       ; section name for the attachable scope
+scope_x                 = 47                 ; offset in inventory icon
+scope_y                 = 0
+silencer_name           = wpn_addon_silencer_9x19    ; section name for the attachable silencer
+silencer_x              = 170                ; offset in inventory icon
+silencer_y              = -12
+grenade_launcher_name   = wpn_addon_grenade_launcher
+grenade_launcher_x      = 126
+grenade_launcher_y      = 24
+
+silencer_light_color    = 0.6,0.5,0.3
+silencer_light_range    = 0.01
+silencer_light_var_color= 0.05
+silencer_light_var_range= 0.5
+silencer_light_time     = 0.2
+
+snd_draw                = weapons\generic\rifle_historic_draw
+snd_holster             = weapons\ppsh41\ppsh41_holster
+snd_shoot               = weapons\ppsh41\ppsh41_shoot
+snd_silncer_shot        = weapons\silencers\silencer_9x19
+snd_empty               = weapons\generic\rifle_historic_empty, 0.5
+snd_reload              = weapons\ppsh41\ppsh41_reload
+snd_bore		= weapons\ppsh41\ppsh41_draw_silent
+snd_bore1		= weapons\ppsh41\ppsh41_bore
+
+;-------------------------------------------------------------------------------------
+[wpn_ppsh41_hud]
+zoom_hide_crosshair     = true
+attach_place_idx        = 0
+item_visual             = dynamics\weapons\wpn_ppsh41\wpn_ppsh41_hud.ogf
+
+hands_position	    	= -0.1065,-0.102,0.113
+hands_orientation   	= -6.7,-0.8,-0.4
+hands_position_16x9 	= -0.0865,-0.102,0.113 
+hands_orientation_16x9	= -6.7,-0.8,-0.4        
+
+item_position	     	= 0.0242,-0.0216,0.01451
+item_orientation    	= 4.9,5.08,-90 
+
+shell_point             = 0.021,0.099,0.286
+shell_dir               = 0.0, 1.0, 0.0
+shell_bone              = wpn_body
+
+fire_point	        	= 0,-0.0,0.839
+fire_bone               = wpn_body
+fire_point2	        	= -0.03,0.0745,-0.037
+fire_bone2              = wpn_body
+
+anm_show                = ppsh_draw
+anm_hide                = ppsh_holster
+anm_idle                = ppsh_idle
+anm_idle_sprint         = ppsh_idle_sprint
+anm_idle_moving         = ppsh_idle
+anm_shots               = ppsh_shoot
+anm_reload              = ppsh_reload
+anm_idle_aim            = ppsh_idle_aim
+anm_bore                = ppsh_idle  ;ppsh_idle_bore
+
+aim_hud_offset_pos    = -0.0925,0.053,-0.018
+aim_hud_offset_rot   = 0.035,-0.03125,0.01
+aim_hud_offset_pos_16x9	= -0.111,0.04,-0.018 
+aim_hud_offset_rot_16x9	= 0.02,-0.0325,0.01  
+
+gl_hud_offset_pos       = 0,0,0
+gl_hud_offset_rot       = 0,0,0
+gl_hud_offset_pos_16x9  = 0,0,0
+gl_hud_offset_rot_16x9  = 0,0,0
+
+lean_hud_offset_pos     = 0,0,0
+lean_hud_offset_rot     = 0,0,0
+
+;---------------------------
+;AP Weapon Section for NPCs
+;---------------------------
+
+[wpn_ppsh41_ap]:wpn_ppsh41
+
+ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
+
+;---------------------------
+;End of AP section
+;---------------------------
+
+upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_mp5

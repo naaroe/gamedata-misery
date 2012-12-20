@@ -1,0 +1,25 @@
+[smart_terrain];zat_sim_11
+squad_id = 25
+max_population = 1
+spawn_point = zat_sim_11_spawn_point
+respawn_params = respawn@zat_sim_11
+
+[respawn@zat_sim_11]
+spawn_stalker@advanced
+;spawn_bandit@hostile
+
+spawn_flesh
+
+[spawn_flesh]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = 1
+
+;;; unused
+
+[spawn_stalker@advanced]
+spawn_squads = stalker_hunter_night_simulation_squad
+spawn_num = 0
+
+;[spawn_bandit@hostile]
+;spawn_squads = bandit_sim_squad_hostile
+;spawn_num = 1

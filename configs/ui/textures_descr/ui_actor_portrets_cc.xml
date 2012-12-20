@@ -1,0 +1,16 @@
+<w>
+    <file name="ui\ui_actor_portrets_cc">
+
+	<texture id="ui_inGame2_ssu_radio" x="0" y="0" width="123" height="87" />
+	<texture id="ui_inGame2_error_pic1" x="123" y="0" width="123" height="87" />
+	<texture id="ui_inGame2_error_pic2" x="0" y="87" width="123" height="87" />
+	<texture id="ui_inGame2_error_pic3" x="123" y="87" width="123" height="87" />
+
+    </file>
+
+    <file name="ui\ui_icons_npc">
+
+	<texture id="ui_inGame_no_data" x="512" y="0" width="128" height="128" />
+
+    </file>
+</w>

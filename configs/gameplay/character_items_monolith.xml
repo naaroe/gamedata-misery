@@ -1,0 +1,21 @@
+wpn_binoc = 1, prob=1 \n
+detector_advanced = 1, prob=0.95 \n
+detector_elite = 1, prob=0.005 \n
+
+bread					= 3, prob=0.009 \n
+breadold				= 3, prob=0.009 \n
+kolbasa					= 2, prob=0.009 \n
+conserva				= 1, prob=0.008 \n
+
+bandage					= 1, prob=0.025 \n
+medkit					= 1, prob=0.33 \n
+medkit_army				= 1, prob=0.015 \n
+medkit_scientic			= 1, prob=0.005 \n
+antirad					= 1, prob=0.03 \n
+
+drug_booster			= 1, prob=0.008 \n
+drug_coagulant			= 1, prob=0.020 \n
+drug_psy_blockade		= 1, prob=0.008 \n
+drug_antidot			= 1, prob=0.008 \n
+drug_radioprotector		= 1, prob=0.012 \n
+drug_anabiotic			= 1, prob=0.004 \n

@@ -1,0 +1,35 @@
+[smart_terrain]
+squad_id = 29
+max_population = 2
+
+respawn_params = respawn@jupiter_smarter_sim_1
+
+[respawn@jupiter_smarter_sim_1]
+spawn_monolith@master_sentry
+spawn_mutants_boss
+spawn_mutants_poltergeists
+
+spawn_monolith
+spawn_zombied
+
+[spawn_mutants_boss]
+spawn_squads = simulation_controller_jupiter_smrter_sim_1_tele, simulation_controller_jupiter_smrter_sim_1_flame, simulation_controller_jupiter_smrter_sim_1_tele, simulation_controller_jupiter_smrter_sim_1_flame, simulation_burer_jupiter_smrter_sim_1_tele, simulation_burer_jupiter_smrter_sim_1_flame
+spawn_num = {+pas_b400_way_button_pressed} 0, 1
+
+[spawn_mutants_poltergeists]
+spawn_squads = simulation_poltergeist_tele_jupiter_smrter_sim_1, simulation_poltergeist_flame_jupiter_smrter_sim_1
+spawn_num = {+pas_b400_way_button_pressed} 0, 1
+
+[spawn_monolith@master_sentry]
+spawn_squads = monolith_sim_squad_veteran_jupiter_smrter_sim_1_sentry
+spawn_num = {+pas_b400_way_button_pressed} 1, 0
+
+;;; unused
+
+[spawn_monolith]
+spawn_squads = monolith_sim_squad_novice
+spawn_num = 0	; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_zombied]
+spawn_squads = simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_snork_jupiter
+spawn_num = 0	; {+pri_a17_actor_has_gauss_rifle} 0, 1

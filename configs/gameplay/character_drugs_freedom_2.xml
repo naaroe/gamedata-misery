@@ -1,0 +1,24 @@
+journal			= 1, prob=0.012 \n
+geiger_dead		= 1, prob=0.015 \n
+welding_goggles		= 1, prob=0.012 \n
+cooking			= 1, prob=0.015 \n
+book1			= 1, prob=0.018 \n
+book2			= 1, prob=0.018 \n
+book3			= 1, prob=0.018 \n
+drugs_kit		= 1, prob=0.012 \n
+
+hammer_inv		= 1, prob=0.015 \n
+spareparts		= 1, prob=0.012 \n
+beadspread		= 1, prob=0.018 \n
+cards		= 2, prob=0.024 \n
+ammo_bad		= 15, prob=0.006 \n
+swiss		= 1, prob=0.027 \n
+mirror		= 1, prob=0.027 \n
+fieldcooker		= 1, prob=0.018 \n
+
+cocaine					= 1, prob=0.003 \n
+tetanus					= 1, prob=0.002 \n
+adrenalin				= 1, prob=0.002 \n
+
+salicidic_acid			= 1, prob=0.007 \n
+morphine				= 1, prob=0.005 \n

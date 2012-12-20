@@ -1,0 +1,20 @@
+<w>
+    <file name="ui\ui_class_selection_loadout">
+	    <texture id="ui_class_selection_loadout" x="0" y="0" width="1024" height="1000" />
+   </file>
+    <file name="ui\ui_class_selection_assaulter">
+	    <texture id="ui_class_selection_assaulter" x="0" y="0" width="1024" height="1000" />
+   </file>
+	<file name="ui\ui_class_selection_sniper">
+	    <texture id="ui_class_selection_sniper" x="0" y="0" width="1024" height="1000"/>
+   </file>
+	<file name="ui\ui_class_selection_recon">
+	    <texture id="ui_class_selection_recon" x="0" y="0" width="1024" height="1000"/>
+   </file>
+   <file name="ui\ui_class_selection_sidepanel_left">
+	    <texture id="ui_class_selection_sidepanel_left" x="0" y="0" width="128" height="1000" />
+   </file>
+   <file name="ui\ui_class_selection_sidepanel_right">
+	    <texture id="ui_class_selection_sidepanel_right" x="0" y="0" width="128" height="1000" />
+   </file>
+</w>

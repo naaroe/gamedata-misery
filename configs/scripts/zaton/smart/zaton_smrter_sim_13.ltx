@@ -1,0 +1,25 @@
+[smart_terrain]
+squad_id = 29
+max_population = 1
+
+respawn_params = respawn@zaton_smrter_sim_13
+
+[respawn@zaton_smrter_sim_13]
+spawn_zombied_zat_b100
+spawn_zombied_zaton_smrter_sim_13
+spawn_controller_zat_b100
+
+[spawn_zombied_zat_b100]
+spawn_squads = simulation_zombied_1_zat_b100
+spawn_num = {+zat_b100_heli_2_searched} 0, 1
+
+[spawn_controller_zat_b100]
+spawn_squads = simulation_controller_zat_b100
+spawn_num = {+zat_b100_heli_2_searched} 0, 1
+
+;;; unused
+
+[spawn_zombied_zaton_smrter_sim_13]
+spawn_squads = simulation_zombied_1_zaton_smrter_sim_13
+spawn_num = 0	; {+zat_b100_heli_2_searched} 1, 0
+

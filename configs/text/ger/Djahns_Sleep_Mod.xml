@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_sleep_bag_descr">
+		<text>Schlafsack, zum schlafen wo und wann du willst</text>
+	</string>
+	<string id="st_sleep_bag">
+		<text>Schlafsack</text>
+	</string>
+	<string id="sleep_warning_blowout">
+		<text>Sie kцnnen nicht schlafen! Wollen sie allen ernstes bei einer Emission schlafen?</text>
+	</string>
+</string_table>

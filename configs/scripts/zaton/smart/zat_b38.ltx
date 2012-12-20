@@ -1,0 +1,31 @@
+[smart_terrain];zat_b38
+squad_id = 41
+max_population = 3
+
+respawn_params = respawn@zat_b38
+
+[respawn@zat_b38]
+sim_burer
+sim_poltergeist
+sim_bloodsucker
+
+[sim_poltergeist]
+spawn_squads = simulation_poltergeist_tele_zat_b38, simulation_poltergeist_flame_zat_b38
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 2, 0
+
+[sim_burer]
+spawn_squads = simulation_burer_zat_b38, simulation_controller_zat_b38, simulation_zombied_1_zat_b38
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 1, 0
+
+[sim_bloodsucker]
+spawn_squads = simulation_bloodsucker_zat_b38
+spawn_num = {+zat_b38_failed} 2, 0
+
+[exclusive]
+bloodsucker_1 = zaton\zat_b38_bloodsuckers.ltx
+bloodsucker_2 = zaton\zat_b38_bloodsuckers.ltx
+zat_b38_stalker_cop_in_lair = zaton\zat_b38_stalker_cop.ltx
+gas_bloodsucker_1 = zaton\zat_b57_gas_bloodsuckers.ltx
+gas_bloodsucker_2 = zaton\zat_b57_gas_bloodsuckers.ltx
+
+

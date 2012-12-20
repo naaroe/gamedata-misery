@@ -1,0 +1,40 @@
+[smart_terrain];jup_b47
+squad_id = 26
+max_population = 1
+arrive_dist = 100
+
+respawn_params = respawn@jup_b47
+
+[respawn@jup_b47]
+spawn_monolith@advanced
+spawn_monolith@master
+
+spawn_snork
+
+[spawn_monolith@advanced]
+spawn_squads = monolith_sim_squad_novice
+spawn_num = 1	; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+zat_b40_merc_gone} 0, {+jup_b8_heli_4_searched +zat_b101_both_heli_info} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+;;; unused
+
+[spawn_monolith@master]
+spawn_squads = monolith_sim_squad_advanced, monolith_sim_squad_veteran, monolith_sci_simulation_squad
+spawn_num = 0	; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+zat_b40_merc_gone} 1, {+jup_b8_heli_4_searched +zat_b101_both_heli_info} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+[spawn_snork]
+spawn_squads = simulation_snork
+spawn_num = 0
+
+[exclusive]
+jup_b47_merc_attack_01 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_02 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_03 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_04 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_05 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_06 = jupiter\jup_b47_merc.ltx
+jup_b47_merc_attack_07 = jupiter\jup_b47_merc.ltx
+jup_a9_dog_01 = jupiter\jup_a9_dogs.ltx
+jup_a9_dog_02 = jupiter\jup_a9_dogs.ltx
+jup_a9_dog_03 = jupiter\jup_a9_dogs.ltx
+jup_a9_dog_04 = jupiter\jup_a9_dogs.ltx
+jup_a9_dog_05 = jupiter\jup_a9_dogs.ltx

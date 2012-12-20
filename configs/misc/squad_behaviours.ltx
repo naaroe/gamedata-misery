@@ -1,0 +1,379 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; M.S.O. (Massive Simulation Overhaul) MISERY v2 Edition ;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[default_behaviour]
+actor 				= 1
+resource 			= 1
+resource_hard 		= 0
+surge				= 2
+base				= 1
+base_hostile		= 0
+base_freedom		= 0
+base_duty			= 0
+base_monolith		= 0
+base_safe			= 0
+base_hostile_safe	= 0
+base_freedom_safe	= 0
+base_duty_safe		= 0
+base_monolith		= 0
+territory			= 1
+territory_hostile	= 0
+territory_monolith	= 0
+territory_zombied	= 0
+lair				= 0
+lair_night			= 0
+squad				= 0
+hunting_ground 		= 0
+
+[ecolog]:default_behaviour
+
+[stalker]:default_behaviour
+resource 			= 2
+base_safe			= 1
+territory			= 1
+;squad				= 0
+
+[stalker_hostile]:default_behaviour
+resource 			= 2
+base_safe			= 1
+territory			= 1
+;squad				= 0
+
+[stalker_sci]:default_behaviour
+base_safe			= 2
+territory			= 1
+resource 			= 2
+resource_hard 		= 2
+surge				= 0
+
+[stalker_sci_hostile]:default_behaviour
+base_safe			= 2
+territory			= 1
+resource 			= 2
+resource_hard 		= 2
+surge				= 0
+
+[stalker_hunter_day]:default_behaviour
+resource 			= 0
+base_safe			= 2
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[stalker_hunter_day_hostile]:default_behaviour
+resource 			= 0
+base_safe			= 2
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[stalker_hunter_night]:default_behaviour
+resource 			= 0
+base				= 2
+base_freedom		= 1
+base_duty			= 1
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[stalker_hunter_night_hostile]:default_behaviour
+resource 			= 0
+base				= 2
+base_freedom		= 1
+base_duty			= 1
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[stalker_elite]:default_behaviour
+resource 			= 0
+base				= 2
+base_freedom		= 1
+base_duty			= 1
+base_hostile		= 1
+base_monolith		= 1
+territory			= 1
+territory_hostile	= 2
+territory_monolith	= 1
+squad				= 1
+
+[stalker_elite_hostile]:default_behaviour
+resource 			= 0
+base				= 2
+base_freedom		= 1
+base_duty			= 1
+base_hostile		= 1
+base_monolith		= 1
+territory			= 1
+territory_hostile	= 2
+territory_monolith	= 1
+squad				= 1
+actor				= 1
+
+[stalker_guide]:default_behaviour
+base				= 2
+base_freedom_safe	= 2
+base_duty			= 2
+
+[freedom]:default_behaviour
+resource 			= 2
+base_freedom_safe	= 2
+base 				= 1
+territory_hostile	= 1
+territory			= 2
+;squad				= 1
+
+[freedom_hostile]:default_behaviour
+resource 			= 2
+base_freedom_safe	= 2
+base 				= 1
+territory_hostile	= 1
+territory			= 2
+;squad				= 1
+
+[freedom_sci]:default_behaviour
+base_freedom_safe	= 2
+territory_hostile	= 0
+territory			= 1
+;squad				= 0
+resource_hard 		= 2
+resource 			= 2
+surge				= 0
+
+[freedom_sci_hostile]:default_behaviour
+base_freedom_safe	= 2
+territory_hostile	= 0
+territory			= 1
+;squad				= 0
+resource_hard 		= 2
+resource 			= 2
+surge				= 0
+
+[freedom_elite]:default_behaviour
+base_freedom		= 2
+resource 			= 1
+base_hostile		= 1
+base_monolith		= 1
+territory			= 0
+territory_hostile	= 1
+territory_monolith	= 2
+squad				= 1
+
+[freedom_elite_hostile]:default_behaviour
+base_freedom		= 2
+resource 			= 1
+base_hostile		= 1
+base_monolith		= 1
+territory			= 0
+territory_hostile	= 1
+territory_monolith	= 2
+squad				= 1
+actor				= 1
+
+[dolg]:default_behaviour
+base_duty_safe		= 2
+base				= 1
+territory			= 2
+territory_hostile	= 1
+;squad				= 1
+resource 			= 1
+
+[dolg_hostile]:default_behaviour
+base_duty_safe		= 2
+territory			= 2
+territory_hostile	= 1
+;squad				= 1
+resource 			= 1
+
+[dolg_hunter_day]:default_behaviour
+base_duty_safe		= 2
+resource 			= 0
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 1
+hunting_ground 		= 2
+
+[dolg_hunter_day_hostile]:default_behaviour
+base_duty_safe		= 2
+resource 			= 0
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 1
+hunting_ground 		= 2
+
+[dolg_hunter_night]:default_behaviour
+base_duty			= 2
+resource 			= 0
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[dolg_hunter_night_hostile]:default_behaviour
+base_duty			= 2
+resource 			= 0
+territory			= 0
+lair				= 0
+lair_night			= 0
+squad				= 2
+hunting_ground 		= 2
+
+[dolg_elite]:default_behaviour
+base_duty			= 2
+resource 			= 0
+base_hostile		= 2
+base_monolith		= 2
+territory			= 0
+territory_hostile	= 2
+territory_monolith	= 2
+squad				= 1
+
+[dolg_elite_hostile]:default_behaviour
+base_duty			= 2
+resource 			= 0
+base_hostile		= 2
+base_monolith		= 2
+territory			= 0
+territory_hostile	= 2
+territory_monolith	= 2
+squad				= 1
+actor				= 2
+
+[bandit]:default_behaviour
+base_hostile_safe	= 2
+territory			= 1
+territory_hostile	= 2
+;squad				= 2
+resource 			= 0
+
+[bandit_elite]:default_behaviour
+base_hostile		= 2
+territory			= 1
+territory_hostile	= 2
+squad				= 1
+resource 			= 0
+actor				= 1
+
+[killer]:default_behaviour
+base				= 0
+base_hostile		= 2
+territory			= 2
+territory_hostile	= 2
+;squad				= 2
+resource 			= 0
+actor				= 2
+
+[army]:default_behaviour
+base_hostile		= 1
+territory_hostile	= 2
+territory			= 0
+;squad				= 2
+resource 			= 0
+
+[monolith]:default_behaviour
+base				= 0
+base_monolith		= 2
+territory			= 0
+territory_monolith 	= 2
+squad				= 2
+;resource 			= 0
+;resource_monolith 	= 0
+surge				= 0
+actor				= 2
+
+[monolith_sci]:default_behaviour
+base				= 0
+base_monolith		= 2
+territory			= 0
+territory_monolith 	= 0
+;squad				= 1
+resource_monolith 	= 2
+surge				= 0
+
+[monolith_pripyat]:default_behaviour
+base				= 0
+base_monolith		= 2
+territory			= 0
+territory_monolith 	= 2
+;squad				= 1
+;resource 			= 0
+;resource_monolith 	= 0
+surge				= 0
+
+[monolith_sci_pripyat]:default_behaviour
+base				= 0
+base_monolith		= 2
+territory			= 0
+territory_monolith 	= 0
+;squad				= 1
+resource_monolith 	= 2
+surge				= 0
+
+[zombied]:default_behaviour
+territory			= 0
+territory_hostile	= 0
+territory_monolith 	= 0
+lair				= 2
+lair_night  		= 2
+resource   			= 0
+resource_hard   	= 0
+;squad				= 0
+base				= 0
+surge				= 0
+territory_zombied	= 2
+
+[zoo_monster]:default_behaviour
+lair		= 2
+lair_night  = 2
+territory			= 0
+territory_hostile	= 0
+;squad				= 1
+base				= 0
+
+[monster]:default_behaviour
+lair				= 1
+lair_night  		= 1
+territory			= 0
+territory_hostile	= 0
+base				= 0
+resource   			= 0
+surge				= 0
+
+[monster_predatory_day]:monster
+lair				= 1
+lair_night  		= 1
+territory			= 0
+territory_hostile	= 0
+squad				= 1
+base				= 0
+surge				= 0
+
+[monster_predatory_night]:monster
+lair				= 1
+lair_night  		= 1
+lair_night_rest  	= 2
+territory			= 0
+territory_hostile	= 0
+squad				= 1
+base				= 0
+surge				= 0
+
+[monster_vegetarian]:monster
+
+[monster_zombied_day]:monster
+
+[monster_zombied_night]:monster
+
+[monster_special]:monster

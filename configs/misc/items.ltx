@@ -1,0 +1,61 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	Scaner B6
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[anomaly_scaner]:identity_immunities
+GroupControlSection   	= spawn_group
+discovery_dependency  	=
+$spawn          		= "equipment\anomaly_scaner"
+cform                   = skeleton
+class         			= II_ATTCH
+visual                  = dynamics\devices\dev_datchik_2\dev_datchik_2.ogf
+cost          			= 0
+inv_name        		= "hand_radio"
+inv_name_short      	= "hand_radio"
+inv_weight        		= 0.5
+inv_grid_width      	= 2
+inv_grid_height     	= 1
+inv_grid_x        		= 16
+inv_grid_y        		= 12
+attach_angle_offset   	= -1.571,-1.308,-1.458    ;устанавливаетсљ в радианах Angle*PI/180
+attach_position_offset  = 0.105, -0.004, 0.003
+attach_bone_name    	= bip01_l_hand
+auto_attach       		= false
+
+;boosters
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	OTHERS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+[wpn_vodka_hud]:identity_immunities,hud_base
+fire_point               = 0.0, 0.0, 0.06
+fire_bone                = bip01_head
+orientation              = 0, 0, 0
+position                 = 0, 0, 0
+visual                   = dynamics\devices\dev_vodka\dev_vodka.ogf
+
+anim_idle			= vodka_2
+anim_show			= vodka_1
+anim_hide			= vodka_4
+anim_play			= vodka_5
+anim_prepare		= vodka_5
+anim_eat			= vodka_3
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	INCLUDE
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+#include "items\items_drugs.ltx"
+#include "items\items_food.ltx"
+#include "items\items_drink.ltx"
+#include "items\items_medical.ltx"
+#include "items\items_trade.ltx"
+#include "items\items_faction_badges.ltx"
+#include "items\items_detectors.ltx"
+#include "items\items_monster.ltx"
+#include "items\items_helmets.ltx"
+#include "items\items_outfit.ltx"
+#include "items\items_artefacts.ltx"
+#include "items\items_armour_attachments.ltx"
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

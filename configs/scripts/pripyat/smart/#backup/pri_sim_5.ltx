@@ -1,0 +1,29 @@
+[smart_terrain];pri_sim_5
+squad_id = 6
+max_population = 1
+respawn_params = respawn@pri_sim_5
+
+[respawn@pri_sim_5]
+spawn_boar
+spawn_flesh
+
+spawn_dog
+spawn_pseudodog
+
+[spawn_boar]
+spawn_squads = simulation_boar, simulation_boar, simulation_boar, simulation_boar, simulation_snork
+spawn_num = 2
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_flesh, simulation_flesh, simulation_flesh, simulation_bloodsucker
+spawn_num = 1
+
+;;; unused
+
+[spawn_pseudodog]
+spawn_squads = simulation_pseudodog
+spawn_num = 0
+
+[spawn_dog]
+spawn_squads = simulation_dog
+spawn_num = 0

@@ -1,0 +1,29 @@
+[smart_terrain];zat_b40_smart_terrain
+squad_id = 38
+max_population = 4
+respawn_params = respawn@zat_b40_smart_terrain
+
+[respawn@zat_b40_smart_terrain]
+sim_monolith
+sim_monolith@sci
+
+[sim_monolith]
+spawn_squads = monolith_sim_squad_advanced_1, monolith_sim_squad_veteran_2
+spawn_num = {-jup_b218_gather_squad_complete} 3, 2
+
+[sim_monolith@sci]
+spawn_squads = monolith_sci_simulation_squad_zat_b40
+spawn_num = {+jup_b218_gather_squad_complete} 1, 0
+
+[exclusive]
+zat_b40_guard_leader_01 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_leader_02 = zaton\zat_b40_mercs.ltx
+;leave this for sim - killers only
+zat_b40_guard_01 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_02 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_03 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_04 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_05 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_06 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_07 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_08 = zaton\zat_b40_mercs.ltx

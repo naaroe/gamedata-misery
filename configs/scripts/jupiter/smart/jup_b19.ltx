@@ -1,0 +1,66 @@
+[smart_terrain]
+squad_id = 6
+max_population = 1
+respawn_params = respawn@jup_b19
+
+[respawn@jup_b19]
+spawn_duty@veteran_assault
+spawn_duty@veteran_assault_hostile
+
+;;; unused
+
+spawn_zombied
+spawn_mutants
+
+; Duty assault squads
+
+[spawn_duty@veteran_assault]
+spawn_squads = duty_sim_squad_veteran_jup_a12_assault, duty_sim_squad_veteran_jup_b47_assault
+spawn_num = {-sim_freedom_help_harder +jup_b207_task_end} 1, {-sim_freedom_help_harder +jup_a12_task_done} 1, {-sim_freedom_help_harder +jup_b46_task_done} 1, {-sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {-sim_freedom_help_harder +jup_b209_task_done} 1, {-sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Duty assault hostile squads
+
+[spawn_duty@veteran_assault_hostile]
+spawn_squads = duty_sim_squad_veteran_jup_a12_assault_hostile, duty_sim_squad_veteran_jup_b47_assault_hostile
+spawn_num = {+sim_freedom_help_harder +jup_b207_task_end} 1, {+sim_freedom_help_harder +jup_a12_task_done} 1, {+sim_freedom_help_harder +jup_b46_task_done} 1, {+sim_freedom_help_harder +jup_b8_heli_4_searched} 1, {+sim_freedom_help_harder +jup_b209_task_done} 1, {+sim_freedom_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+[spawn_zombied]
+spawn_squads = simulation_zombied_1
+spawn_num = 0	; {-jup_b19_agreed_to_go} 1, {+jup_b19_complete} 1, {+jup_b19_yar_enemy_or_dead} 1, 0
+
+[spawn_mutants]
+spawn_squads = simulation_zombied_1_jupiter, simulation_snork, simulation_dog, simulation_dog, simulation_pseudodog, simulation_cat_strong
+spawn_num = 0	; {-jup_b19_agreed_to_go} 2, {+jup_b19_complete} 2, {+jup_b19_yar_enemy_or_dead} 2, 0
+
+[exclusive]
+work1 = jupiter\jup_b19_zombied.ltx
+work2 = jupiter\jup_b19_zombied.ltx
+work3 = jupiter\jup_b19_zombied.ltx
+work4 = jupiter\jup_b19_zombied.ltx
+work5 = jupiter\jup_b19_zombied.ltx
+work6 = jupiter\jup_b19_zombied.ltx
+work7 = jupiter\jup_b19_zombied.ltx
+work8 = jupiter\jup_b19_zombied.ltx
+work9 = jupiter\jup_b19_zombied.ltx
+work10 = jupiter\jup_b19_zombied.ltx
+
+freedom_yar = jupiter\jup_b19_freedom_yar_kopatci.ltx
+
+work_killer_1 = jupiter\jup_b19_killer_logic_1.ltx
+work_killer_2 = jupiter\jup_b19_killer_logic_2.ltx
+work_killer_3 = jupiter\jup_b19_killer_logic_3.ltx
+work_killer_4 = jupiter\jup_b19_killer_logic_4.ltx
+work_killer_5 = jupiter\jup_b19_killer_logic_5.ltx
+
+jup_b6_zombie_1_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_2_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_3_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_4_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_5_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_6_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_7_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_8_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_9_anom_2 = jupiter\jup_b6_zombie_logic.ltx
+jup_b6_zombie_10_anom_2 = jupiter\jup_b6_zombie_logic.ltx

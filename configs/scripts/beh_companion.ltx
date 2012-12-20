@@ -1,0 +1,42 @@
+[logic]
+active = beh@base
+on_combat = combat
+post_combat_time = 0,0
+
+[beh@base]
+combat_ignore_keep_when_attacked = true
+combat_ignore_cond = {=check_enemy_name(actor)} true, {-npcx_beh_ignore_combat -npcx_beh_ignore_actor_enemies}  false, {+npcx_beh_ignore_combat +npcx_beh_ignore_actor_enemies} true, {+npcx_beh_ignore_combat -npcx_beh_ignore_actor_enemies =is_enemy_fighting_actor} false, true
+meet = meet
+gather_items_enabled = false
+corpse_detection_enabled = false
+actor_dialogs = actor_dialogs
+on_combat = combat
+behavior = behavior
+
+[behavior]
+behavior_state = {+npcx_beh_wait} beh_wait, beh_move
+goto_target = {!is_squad_commander} commander, {=is_squad_commander +npcx_beh_patrol_mode} waypoint, actor
+walk_dist = {+npcx_beh_patrol_mode} 90, 5
+jog_dist = {+npcx_beh_patrol_mode} 150, 15
+run_dist = {+npcx_beh_patrol_mode} 250, {-npcx_beh_patrol_mode +npcx_beh_substate_stealth} 40, 30
+keep_distance = {+npcx_beh_distance_far} far, near
+near_desired_dist = {+npcx_beh_patrol_mode =is_squad_commander} 1, {!is_squad_commander} 4, 2
+far_desired_dist = {+npcx_beh_patrol_mode =is_squad_commander} 1, {!is_squad_commander} 4, 8
+wait_anim = {=is_wounded} nil, {+npcx_beh_substate_stealth} hide, guard
+walk_anim = {=is_wounded} nil, {+npcx_beh_patrol_mode -npcx_beh_substate_stealth} patrol,{+npcx_beh_substate_stealth} sneak, patrol
+jog_anim = {=is_wounded} nil, {+npcx_beh_substate_stealth} sneak_run, rush
+run_anim = {=is_wounded} nil, {+npcx_beh_substate_stealth} assault, assault
+sprint_anim = {=is_wounded} nil, {+npcx_beh_substate_stealth} sprint, sprint
+delay_anim = {=is_wounded} nil, {+npcx_beh_substate_stealth} hide, random_animation
+
+[combat]
+combat_type = {+npcx_beh_combat_tactics_camper} camper, {+npcx_beh_combat_tactics_smart} monolith
+
+[meet]
+reset_distance = 2
+abuse = false
+close_anim = {+npcx_beh_substate_stealth -npcx_beh_substate_relax} hide, guard_na
+use = {=is_wounded} false, {!is_squad_commander} false
+
+[actor_dialogs]
+disable = dm_traveler_dialog, dm_actor_become_guide_to_companion_dialog, dm_universal_dialog, about_quests_dialog_dolg, about_quests_dialog_freedom, about_quests_dialog_bandit, about_quests_dialog_stalkers,

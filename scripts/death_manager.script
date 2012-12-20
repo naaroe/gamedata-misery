@@ -1,0 +1,455 @@
+--' RevampedNpcLoot
+-- 06/mar/2011: v1.0b by jci_pt
+
+--' Rebuild by ScarabParamit
+-- 7/07/2012
+
+--' Eë?÷ai yâëyaony a?óiie?îâea ia?nîíaaa. Çía÷aíeai yâëyaony oaáëeöa, nîäa?aaoay eiaía naeöeé i?aäiaoîâ.
+local item_by_community = {}
+
+--' Çaâeneiînoe â niaóía i?aäiaoîâ. I?aäiao niaóíeoüny oîëüeî anëe anoü oîoy áu îäeí eç çaâeneiuo.
+local item_dependence = {}
+
+--' I?aäiaou, eîoî?ua íaëüçy óäaëyoü (eâanoîâua íai?eia?)
+local always_keep_item = {}
+
+--' Ïğåäìåòû, îòíîñÿùèåñÿ ê ïàòğîíàì. Èõ íàäî ñïàóíèòü äğóãèì ìåòîäîì.
+ammo_sections = {}
+
+
+local death_ini = ini_file("misc\\death_generic.ltx")
+
+local item_drop_counts = {}
+local item_create_factor = 1.0
+local ammo_drop_counts = {}
+local ammo_count_factor = 1.0
+local random_ammo_factor = {}
+
+	--' unload on death
+	--' Set do You want weapon to be unloaded on NPC's death (true/false)
+local unload_on_death = true
+
+local item_survival_factor = {}
+local multiple_weapons_survival = {}
+
+local weapon_condition_factor = {}
+local weapon_condition_avg_by_community = {}
+local weapon_condition_avg_by_rank = {}
+
+local spawn_outfit_chance = 0.0
+
+
+function init_drop_settings()
+	local community_list = { "stalker", "dolg", "freedom", "bandit", "army", "zombied", "ecolog", "killer", "monolith" }
+
+	local player_lvl_s = "level_" .. level.get_game_difficulty()
+
+	--' multiplier for item spawn chance, per player level (<= 1.0).
+	item_create_factor = death_ini:r_float("item_create_factor", player_lvl_s)
+
+	-- ' item drop chances by community
+	for k,name in pairs(community_list) do
+		item_by_community[name] = load_section(death_ini, name)
+
+		for id,value in pairs(item_by_community[name]) do
+			item_by_community[name][id] = tonumber(value) * 100 * item_create_factor
+		end
+	end
+
+
+	--' item survive chance factors by community and rank
+	community_item_survive_chance = load_section(death_ini, "community_item_survive_chance")
+	rank_item_survive_chance = load_section(death_ini, "rank_item_survive_chance")
+
+	--' item create chance factors by community and rank
+	community_item_create_chance = load_section(death_ini, "community_item_create_chance")
+	rank_item_create_chance = load_section(death_ini, "rank_item_create_chance")
+
+	--' item create chance factors by community and rank
+	community_item_create_ammounth = load_section(death_ini, "community_item_create_ammounth")
+	rank_item_create_ammounth = load_section(death_ini, "rank_item_create_ammounth")
+
+	--' spawned ammo ammounth factors by community and rank
+	community_ammo_count_ammounth = load_section(death_ini, "community_ammo_count_ammounth")
+	rank_ammo_count_ammounth = load_section(death_ini, "rank_ammo_count_ammounth")
+
+	--' weapon condition factors by community and rank
+	community_weapon_condition_max = load_section(death_ini, "community_weapon_condition_max")
+	community_weapon_condition_min = load_section(death_ini, "community_weapon_condition_min")
+	rank_weapon_condition_max = load_section(death_ini, "rank_weapon_condition_max")
+	rank_weapon_condition_min = load_section(death_ini, "rank_weapon_condition_min")
+
+
+	--' multiplier for ammo spawn count, per player level (<= 1.0).
+	local result,id,val = death_ini:r_line("ammo_count_factor", player_lvl_s)
+	local ammov = parse_nums(val)
+	ammo_count_factor = { min = tonumber(ammov[1]), max = tonumber(ammov[2]) }
+
+
+	--' ammo_sections
+	ammo_sections = load_section(death_ini, "ammo_sections", true)
+
+	-- ' ammo drop counts
+	ammo_drop_counts = load_section(death_ini, "ammo_drop_counts")
+
+	-- ' item drop counts
+	item_drop_counts = load_section(death_ini, "item_drop_counts")
+
+	for id,value in pairs(ammo_drop_counts) do
+
+		local t = parse_nums(value)
+
+			if t[1] == nil then
+				abort("Error on [death_ini] declaration. Section [%s], line [%s]", item_count_section, tostring(id))
+			end
+			if t[2] == nil then
+				t[2] = t[1]
+			end
+
+		--' ammo
+		ammo_drop_counts[id] = {
+			min = math.ceil(tonumber(t[1]) * math.random(ammo_count_factor.min, 1)),
+			max = math.ceil(tonumber(t[2]) * math.random(1, ammo_count_factor.max))
+		}
+	end
+
+	for id,value in pairs(item_drop_counts) do
+
+		local it = parse_nums(value)
+
+		--' item
+		item_drop_counts[id] = {
+			min = math.ceil(tonumber(it[1]) ),
+			max = math.ceil(tonumber(it[2]) )
+		}
+	end
+
+	for id,value in pairs(item_by_community["stalker"]) do
+		if ammo_drop_counts[id] == nil then
+			ammo_drop_counts[id] = { min = 0.1, max = 0.1 }
+		end
+		if item_drop_counts[id] == nil then
+			item_drop_counts[id] = { min = 0.1, max = 0.1 }
+		end
+	end
+
+	--' dependance - ammunition
+	item_dependence = load_section(death_ini, "item_dependence")
+	for id,value in pairs(item_dependence) do
+		deps = {}
+		local vvv = parse_names(value)
+		for k,v in pairs(vvv) do
+			deps[v] = true
+		end
+		item_dependence[id] = deps
+	end
+
+	--' items to always keep (missions,etc)
+	always_keep_item = load_section(death_ini, "keep_items", false)
+	for id,value in pairs(always_keep_item) do
+		if value == "true" then
+			always_keep_item[id] = true
+		end
+	end
+
+	--' percent chance that some items from loot survive
+	item_survival_factor = load_section(death_ini, "item_survival_factor")
+	for id,value in pairs(item_survival_factor) do
+		item_survival_factor[id] = tonumber(value) * 100
+	end
+
+	--' part of weapon condition Settings
+	local result,id,val = death_ini:r_line("weapon_condition_factor", player_lvl_s)
+	local v = parse_nums(val)
+	weapon_condition_factor = { min = tonumber(v[1]), max = tonumber(v[2]) }
+
+	--' multiple_weapons_survival
+	local result,id,val = death_ini:r_line("multiple_weapons_survival", player_lvl_s)
+	local s = parse_nums(val)
+	multiple_weapons_survival = { start = tonumber(s[1]), chance = tonumber(s[2]) }
+
+	--' chance to spawn outfit
+	spawn_outfit_chance = death_ini:r_float("spawn_outfit_chance", player_lvl_s)
+
+end
+
+
+class "drop_manager"
+function drop_manager:__init(npc)
+	self.npc = npc
+end
+function drop_manager:create_release_item()
+	--' Ni?aoeâaai ó na?âa?íîaî îáúaeoa aaía?eëenü ëe i?aäiaou
+
+	-- Alundaio [ Need to avoid using packet death_droped for se_stalker, fixes a bug where stalkers sometimes drop everything ]
+	local death_dropped = xr_logic.pstor_retrieve(self.npc,"death_dropped",false)
+	if (death_dropped) then
+		return
+	end
+	xr_logic.pstor_store(self.npc,"death_dropped",true)
+	-- Alundaio
+
+	set_outfit_drop_condition(self.npc)
+
+	--' Çaióneaai eoa?aoî? ía óäaëaíea i?aäiaoîâ
+	self.npc.weapons_count = 0
+	self.npc:iterate_inventory(keep_item, self.npc)
+
+	--' I?îâa?ea ía îonóonoâea niaóía ëóoa
+	local ini = self.npc:spawn_ini()
+
+	if ini and ini:section_exist("dont_spawn_loot") then
+		return
+	end
+	local st		= db.storage[self.npc:id()]
+	local st_ini 	= st and st.ini
+	if st_ini and st_ini:line_exist(st.section_logic , "dont_spawn_loot") then
+		return
+	end
+
+	--' Äîniaâíeâaai íaîáoîäeiîa eîëe÷anoâî eoaiîâ:
+	--' Íaîáoîäeiî nînoaâeoü nienîe îáúaeoîâ eîoî?ua iîaóo áuoü çaniaâíaíu äëy ia?nîíaaa
+
+	local spawn_ammo = item_by_community[character_community(self.npc)]
+	if spawn_ammo == nil then
+		return
+	end
+	for k,v in pairs(spawn_ammo) do
+
+		if check_item_dependence(self.npc, k) == true then
+
+			local number = (math.random(ammo_drop_counts[k].min, ammo_drop_counts[k].max))
+			create_items(self.npc, k, number, v)
+
+		end
+	end
+	local spawn_item = item_by_community[character_community(self.npc)]
+	if spawn_item == nil then
+		return
+	end
+	for k,v in pairs(spawn_item) do
+
+		local number = (math.random(item_drop_counts[k].min, item_drop_counts[k].max))
+		create_items(self.npc, k, number, v)
+
+	end
+
+end
+
+--' Ôóíeöey âuçuâaaony äëy eaaäîaî i?aäiaoa, anëe âa?íao false oî i?aäiao óäaëeony.
+function keep_item(npc, item)
+	local section = item:section()
+	local ini = npc:spawn_ini()
+
+--'	if ini and ini:section_exist("keep_items")
+--'			and	section ~= "guitar_a"
+--'			and	section ~= "harmonica_a"
+--'			and section ~= "wpn_binoc"
+--'			and section ~= "device_torch"
+--'			and section ~= "device_pda" then
+--'		return
+--'	end
+
+	if isArtefact(item) then
+		return
+	end
+	if section == "bolt" then
+		return
+	end
+	if always_keep_item[section] == true then
+		return
+	end
+
+	--printf("item name [%s]", item:name())
+	if isWeapon(item) and not(get_clsid(item)==clsid.wpn_grenade_rgd5_s or get_clsid(item)==clsid.wpn_grenade_f1_s) then
+		--' weapons may be lost...
+		npc.weapons_count = npc.weapons_count+1
+		if (npc.weapons_count <= multiple_weapons_survival.start) or (multiple_weapons_survival.chance > math.random()) then
+			set_weapon_drop_condition(item, npc)
+		else
+			alife():release(alife():object(item:id()), true)
+		end
+		return
+	end
+
+	if xr_corpse_detection.lootable_table[section] == true and ammo_sections[section] == nil and item_survival_factor[section] == nil then
+		return
+	end
+
+	if item_survival_factor[section] ~= nil then
+
+		---' Papa ScarabParamit say's:
+		---' This part modify item survival by community/faction and rank
+			if (npc ~= nil) then
+
+				local NPC_community			= character_community(npc)
+				local NPC_rank				= ranks.get_obj_rank_name(npc)
+				local cisc					= community_item_survive_chance[NPC_community]
+				local risc					= rank_item_survive_chance[NPC_rank]
+
+				item_survival_modifier = (cisc * risc)
+			end
+		if ((item_survival_factor[section] * item_survival_modifier) > math.random(100)) then
+			return
+		end
+
+	end
+
+	alife():release(alife():object(item:id()), true)
+end
+
+
+
+function possibly_spawn_outfit(npc)
+	--' get chance factor from config
+	if ( spawn_outfit_chance > math.random()) then
+		local outfit = dm_npc_outfits.detect_npc_outfit(npc)
+		alife():create( outfit, npc:position(), npc:level_vertex_id(), npc:game_vertex_id(), npc:id() )
+		db.storage[npc:id()].spawned_outfit = outfit
+	end
+end
+
+function set_outfit_drop_condition(npc)
+	local spawned_outfit = db.storage[npc:id()].spawned_outfit
+
+	if (spawned_outfit ~= nil ) then
+		local item = npc:object(spawned_outfit)
+		--' TODO: condition by configuration
+		local condition = (math.random(25)+5)/100
+
+		item:set_condition( condition )
+	end
+end
+
+ ---' Papa ScarabParamit say's:
+ ---' Script for condition of looted items, don't change until You read "death_loot_settings_OVERALL.ltx"
+
+function set_weapon_drop_condition(item, npc)
+
+	if (npc ~= nil) then
+
+		local NPC_community        = character_community(npc)
+		local NPC_rank             = ranks.get_obj_rank_name(npc)
+		local cwc_max          = (community_weapon_condition_max[NPC_community] * 100)
+		local cwc_min          = (community_weapon_condition_min[NPC_community] * 100)
+		local rwc_max          = (rank_weapon_condition_max[NPC_rank] * 100)
+		local rwc_min          = (rank_weapon_condition_min[NPC_rank] * 100)
+		local wcf_max          =  weapon_condition_factor.max
+		local wcf_min          =  weapon_condition_factor.min
+
+		condition = (( (math.random(cwc_min, cwc_max) + math.random(rwc_min, rwc_max)) * math.random(wcf_min, wcf_max))/100)
+
+	end
+
+	item:set_condition(condition)
+
+	-- remove ammo from magazines in dropped weapons
+	if unload_on_death == true then
+		item:unload_magazine()
+	end
+
+end
+
+
+
+--' This part is a work-horse script for item and ammo create operations. To influance values add parts here.
+function create_items(npc, section, number, rnd)
+
+	---' Papa ScarabParamit say's:
+	---' This part enables faction/rank multiplyer for chances to create all items (ammo to).
+		if (npc ~= nil) then
+
+			local NPC_community			= character_community(npc)
+			local NPC_rank				= ranks.get_obj_rank_name(npc)
+			local cicc					= community_item_create_chance[NPC_community]
+			local ricc					= rank_item_create_chance[NPC_rank]
+
+			rnd = (rnd * cicc * ricc) * item_create_factor
+		end
+
+	--'printf("create %s of %s (%s)", tostring(number), tostring(section))
+	if ammo_sections[section] ~= nil then
+		if (number > 0) and (rnd > math.random(100)) then
+
+		---' Papa ScarabParamit say's:
+		---' This part enables faction/rank multiplyer for ammounth of created ammo, without affecting other items =]
+			if (npc ~= nil) then
+
+				local NPC_community			= character_community(npc)
+				local NPC_rank				= ranks.get_obj_rank_name(npc)
+				local caca					= community_ammo_count_ammounth[NPC_community]
+				local raca					= rank_ammo_count_ammounth[NPC_rank]
+
+				number = math.floor(number * caca * raca) * item_create_factor
+			end
+
+			create_ammo(section,
+			npc:position(),
+			npc:level_vertex_id(),
+			npc:game_vertex_id(),
+			npc:id(),
+			number)
+		end
+	else
+		if (number > 0) and (rnd > math.random(100)) then
+
+		---' Papa ScarabParamit say's:
+		---' This part enables faction/rank multiplyer ammounth for created items (ammo to).
+			if (npc ~= nil) then
+
+				local NPC_community			= character_community(npc)
+				local NPC_rank				= ranks.get_obj_rank_name(npc)
+				local cica					= community_item_create_ammounth[NPC_community]
+				local rica					= rank_item_create_ammounth[NPC_rank]
+
+				number = math.floor(number * cica * rica) * item_create_factor
+
+			end
+
+			for i=1,number do
+				alife():create(section,
+				npc:position(),
+				npc:level_vertex_id(),
+				npc:game_vertex_id(),
+				npc:id())
+			end
+		end
+
+
+	end
+end
+
+--' Ôóíêöèÿ ïğîâåğÿåò åñòü ëè õîòü îäèí èç çàâèñèìûõ îáúåêòîâ ó ïåğñîíàæà
+function check_item_dependence(npc, section)
+	if item_dependence[section] == nil then
+		return true
+	end
+
+		local d_flag = true
+		for k,v in pairs(item_dependence[section]) do
+				local obj = npc:object(k)
+				if obj ~= nil and npc:marked_dropped(obj) ~= true then
+						return true
+				end
+				d_flag = false
+		end
+
+		return d_flag
+end
+
+--' returns {data}, count
+function load_section(ini, section, default)
+	local res = {}
+	local n = 0
+	if ini:section_exist(section) then
+		n = ini:line_count(section)
+		for i = 0,n-1 do
+			local result,id,val = ini:r_line(section,i,"","")
+			if (val == nil) then
+				val = default
+			end
+			res[id] = val
+		end
+	end
+	return res, n
+end

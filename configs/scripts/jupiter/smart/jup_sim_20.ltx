@@ -1,0 +1,62 @@
+[smart_terrain]
+squad_id = 40
+max_population = 2
+;respawn_only_smart = true
+respawn_params = respawn@jup_sim_20
+
+[respawn@jup_sim_20]
+spawn_stalker@hunter_day_hostile
+spawn_stalker@hunter_night_hostile
+
+spawn_stalker@advanced_hostile
+spawn_stalker@master_hostile
+
+spawn_freedom@veteran_assault
+spawn_freedom@veteran_assault_hostile
+
+;;; unused
+
+spawn_bloodsucker
+spawn_chimera
+
+; Stalker hunter hostile squads
+
+[spawn_stalker@hunter_day_hostile]
+spawn_squads = stalker_hunter_day_simulation_squad_hostile
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +jup_b46_task_done} 0, {+kingpin_gained +jup_b8_heli_4_searched} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@hunter_night_hostile]
+spawn_squads = stalker_hunter_day_simulation_squad_hostile, stalker_hunter_night_simulation_squad_hostile
+spawn_num = {+kingpin_gained +jup_b207_task_end} 1, {+kingpin_gained +jup_a12_task_done} 1, {+kingpin_gained +jup_b46_task_done} 1, {+kingpin_gained +jup_b8_heli_4_searched} 1, {+kingpin_gained +jup_b209_task_done} 1, {+kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+; Stalker hostile squads
+
+[spawn_stalker@advanced_hostile]
+spawn_squads = stalker_sim_squad_novice_hostile
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +jup_b46_task_done} 0, {+kingpin_gained +jup_b8_heli_4_searched} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@master_hostile]
+spawn_squads = stalker_sim_squad_veteran_hostile, stalker_sim_squad_advanced_veteran_hostile, stalker_sci_simulation_squad_hostile
+spawn_num = {+kingpin_gained +jup_b207_task_end} 2, {+kingpin_gained +jup_a12_task_done} 2, {+kingpin_gained +jup_b46_task_done} 2, {+kingpin_gained +jup_b8_heli_4_searched} 2, {+kingpin_gained +jup_b209_task_done} 2, {+kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+; Freedom assault squads
+
+[spawn_freedom@veteran_assault]
+spawn_squads = freedom_sim_squad_veteran_jup_a12_assault, freedom_sim_squad_veteran_jup_b47_assault
+spawn_num = {-sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b207_task_end} 1, {-sim_duty_help_harder -jup_b218_gather_squad_complete +jup_a12_task_done} 1, {-sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b46_task_done} 1, {-sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b8_heli_4_searched} 1, {-sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b209_task_done} 1, {-sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Freedom assault hostile squads
+
+[spawn_freedom@veteran_assault_hostile]
+spawn_squads = freedom_sim_squad_veteran_jup_a12_assault_hostile, freedom_sim_squad_veteran_jup_b47_assault_hostile
+spawn_num = {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b207_task_end} 1, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_a12_task_done} 1, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b46_task_done} 1, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b8_heli_4_searched} 1, {+sim_duty_help_harder -jup_b218_gather_squad_complete +jup_b209_task_done} 1, {+sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+[spawn_bloodsucker]
+spawn_squads = simulation_cat_strong, simulation_bloodsucker_jup_sim_20, simulation_bloodsucker_jup_sim_20, simulation_snork_jup_sim_20, simulation_gigant_jup_sim_20
+spawn_num = 0	; {+jup_b212_jupiter_chimera_dead} 0, 1
+
+[spawn_chimera]
+spawn_squads = simulation_cat_strong, simulation_chimera_jup_sim_20, simulation_bloodsucker_jup_sim_20, simulation_bloodsucker_jup_sim_20, simulation_snork_jup_sim_20, simulation_gigant_jup_sim_20
+spawn_num = 0	; {+jup_b212_jupiter_chimera_dead} 1, 0

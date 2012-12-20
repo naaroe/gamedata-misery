@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="pri_a17_get_gauss_rifle_documentation_name">
+<text> Product No. 62: Find the documentation in the test shop </text>
+</string>
+<string id="pri_a17_get_gauss_rifle_documentation_text">
+<text> I need to find documentation on Product number 62. The documentation should confirm whether or not that weapon caused the crash. </text>
+</string>
+<string id="pri_a17_get_in_cover_name">
+<text> Mysterious Weapons: Take cover inside the building</text>
+</string>
+<string id="pri_a17_get_in_cover_text">
+<text> We need to hide in the building and repel the Monolith attack. </text>
+</string>
+<string id="pri_a17_get_info_name">
+<text> Mysterious Weapons: Get information </text>
+</string>
+<string id="pri_a17_get_info_text">
+<text> The weapon malfunctioned, but it's not clear how it works. I need to find information that will help me restore it to working order. </text>
+</string>
+<string id="pri_a17_kill_preacher_name">
+<text> Mysterious Weapons: Kill the Monolith Preacher </text>
+</string>
+<string id="pri_a17_kill_preacher_text">
+<text> I have to kill the Monolith commander/preacher, who is armed with the unknown rifle. </text>
+</string>
+<string id="pri_a17_maraud_name">
+<text> Mysterious Weapons: Search the bodies </text>
+</string>
+<string id="pri_a17_maraud_text">
+<text> I need to check the Monolithans, they might be carrying the weapon we are after. </text>
+</string>
+<string id="pri_a17_stalker_tech_produce_62_get_info_name">
+<text> Mysterious Weapons: Talk to Cardan </text>
+</string>
+<string id="pri_a17_stalker_tech_produce_62_get_info_text">
+<text> Cardan must've woken up by now. Time to talk him about this weapon. </text>
+</string>
+<string id="pri_a17_stalker_tech_produce_62_show_name">
+<text> Mysterious Weapons: Wait for Cardan to wake up </text>
+</string>
+<string id="pri_a17_stalker_tech_produce_62_show_text">
+<text> It seems Cardan knows something about this weapon. I'll have to talk to him when he wakes up. </text>
+</string>
+<string id="pri_a17_talk_with_kovalski_about_gauss_rifle_information_name">
+<text> Gauss Cannon: Tell Kowalski about the weapon </text>
+</string>
+<string id="pri_a17_talk_with_kovalski_about_gauss_rifle_information_text">
+<text> I must brief Colonel Kowalski on all the information I've gathered on Product number 62. </text>
+</string>
+<string id="pri_a17_task_find_gauss_rifle_name">
+<text> Mysterious Weapons: Hook up with the squad </text>
+</string>
+<string id="pri_a17_task_find_gauss_rifle_text">
+<text> I have to assist a special squad and conduct a joint operation to seize the unknown weapon weapon. </text>
+</string>
+<string id="pri_a17_task_get_gauss_rifle_from_preacher_name">
+<text> Mysterious Weapons: Retrieve the rifle from the Preacher </text>
+</string>
+<string id="pri_a17_task_get_gauss_rifle_from_preacher_text">
+<text> I need to retrieve the Preacher's rifle. </text>
+</string>
+<string id="pri_a17_task_give_gauss_rifle_to_kovalski_name">
+<text> Mysterious Weapons: Show the weapon to Kowalski </text>
+</string>
+<string id="pri_a17_task_give_gauss_rifle_to_kovalski_text">
+<text> I have the weapon, time to show it to Kowalski and find out whether it caused the helicopter crash. </text>
+</string>
+<string id="pri_a17_watch_recons_six_name">
+<text> Mysterious Weapons: Assist in ambushing the Monolith squad </text>
+</string>
+<string id="pri_a17_watch_recons_six_text">
+<text> A military recon team is organizing an ambush for a Monolith squad. I should take part in this operation. </text>
+</string>
+<string id="pri_a18_get_reinforcement_name">
+<text> Shattering The Monolith: Meet the reinforcements </text>
+</string>
+<string id="pri_a18_get_reinforcement_text">
+<text> Kowalski sent reinforcements to help destroy the Monolith squad entrenched at the bookstore. </text>
+</string>
+<string id="pri_a18_go_post_name">
+<text> Shattering The Monolith: Sweep the bookstore </text>
+</string>
+<string id="pri_a18_go_post_text">
+<text> We have to kill all Monolith fighters entrenched inside the building. This camp represents a clear threat to the military safehouse. </text>
+</string>
+<string id="pri_a18_use_idol_name">
+<text> Shattering The Monolith: Investigate the idol </text>
+</string>
+<string id="pri_a18_use_idol_text">
+<text> Inside the building, we found a strange contraption. I need to examine this structure. </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_name">
+<text> X8 Lab: Find documentation on the experiments </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_text">
+<text> All gathered information points to a central laboratory designated X8. It may hold information about secret experiments conducted within the Zone. </text>
+</string>
+<string id="pri_a20_check_recon_squad_task_name">
+<text> Failed Recon: Locate the squad </text>
+</string>
+<string id="pri_a20_check_recon_squad_task_text">
+<text> A recon team sent out by Kowalski dropped from the radar after sending a strange message. I need to find them and find out what happened. </text>
+</string>
+<string id="pri_a21_chasovoi_body_search_name">
+<text> Missing Watchman: Inspect the body  </text>
+</string>
+<string id="pri_a21_chasovoi_body_search_text">
+<text> The soldier behaved very strangely before shooting himself, I should look around and find the cause of his strange behaviour. </text>
+</string>
+<string id="pri_a21_find_chasovoi_name">
+<text> Missing Watchman: Find the sentry </text>
+</string>
+<string id="pri_a21_find_chasovoi_text">
+<text> One of the soldiers disappeared from his post, I need to find him and find out why did he abandon his duty. </text>
+</string>
+<string id="pri_a21_kill_kontroler_name">
+<text> Missing Watchman: Kill the Controller </text>
+</string>
+<string id="pri_a21_kill_kontroler_text">
+<text> There's a controller near the missing sentry, time to kill him. </text>
+</string>
+<string id="pri_a22_find_dead_squad_name">
+<text> Interference: Find the missing squad </text>
+</string>
+<string id="pri_a22_find_dead_squad_text">
+<text> A squad looking for the source of the interference has disappeared, I need to find it. </text>
+</string>
+<string id="pri_a22_search_bodys_name">
+<text> Interference: Search the dead soldiers </text>
+</string>
+<string id="pri_a22_search_bodys_text">
+<text> I have to inspect the bodies, maybe it will help me to identify the cause of their deaths. </text>
+</string>
+<string id="pri_a22_search_yarmoshuk_body_name">
+<text> Interference: Search the body of the deceased soldier </text>
+</string>
+<string id="pri_a22_search_yarmoshuk_body_text">
+<text> I have to inspect the body, perhaps it will help me establish the cause of his death. </text>
+</string>
+<string id="pri_a25_blow_up_door_name">
+<text> Interference: Blow up the door </text>
+</string>
+<string id="pri_a25_blow_up_door_text">
+<text> To enter the building, I need to place the explosives, and clear the way inside. </text>
+</string>
+<string id="pri_a25_check_freezer_knock_name">
+<text> Interference: Check the source of the knocking </text>
+</string>
+<string id="pri_a25_check_freezer_knock_text">
+<text> I can hear knocking come from the freezer, as if someone was locked inside. I have to check it. </text>
+</string>
+<string id="pri_a25_destroy_antenna_name">
+<text> Interference: Destroy the source of interference </text>
+</string>
+<string id="pri_a25_destroy_antenna_text">
+<text> I've found the jammer, time to wreck it. </text>
+</string>
+<string id="pri_a25_find_antenna_name">
+<text> Interference: Find the source of interference </text>
+</string>
+<string id="pri_a25_find_antenna_text">
+<text> Somewhere in this building is the source of interference, I need to find it. </text>
+</string>
+<string id="pri_a25_find_explosive_name">
+<text> Interference: Find the explosives </text>
+</string>
+<string id="pri_a25_find_explosive_text">
+<text> The squad that was looking for the source of interference also carried explosives. I need to find them, so that I can clear the entrance to the building. </text>
+</string>
+<string id="pri_a25_remove_source_of_hindrances_name">
+<text> Interference: Enter the kindergarten </text>
+</string>
+<string id="pri_a25_remove_source_of_hindrances_text">
+<text> The source of the jamming signal is located somewhere in the kindergarten, I have to recon the building. </text>
+</string>
+<string id="pri_a28_cover_militarys_name">
+<text> Evacuation: Cover the soldiers </text>
+</string>
+<string id="pri_a28_cover_militarys_text">
+<text> Despite the fact that Strelok was killed, I need to help the military reach the helicopters. </text>
+</string>
+<string id="pri_a28_cover_strelok_name">
+<text> Evacuation: Cover Strelok </text>
+</string>
+<string id="pri_a28_cover_strelok_text">
+<text> Command is interested in Strelok's information. I am ordered to deliver Strelok to the helicopters. </text>
+</string>
+<string id="pri_a28_go_hellis_name">
+<text> Evacuation: Get to the helicopters </text>
+</string>
+<string id="pri_a28_go_hellis_text">
+<text> My entire team was killed, I need to reach the helicopters alone. </text>
+</string>
+<string id="pri_a28_talk_with_kovalski_name">
+<text> Evacuation: Talk to Kowalski </text>
+</string>
+<string id="pri_a28_talk_with_kovalski_text">
+<text> I must talk to Kowalski before the evacuation. </text>
+</string>
+<string id="pri_a28_tell_kovalski_when_ready_name">
+<text> Evacuation: Tell Kowalski when you're ready to go </text>
+</string>
+<string id="pri_a28_tell_kovalski_when_ready_text">
+<text> The evacuation will start when I tell Kowalski that I'm ready. </text>
+</string>
+<string id="pri_a28_wait_surge_end_name">
+<text> Evacuation: Wait until the emission ends </text>
+</string>
+<string id="pri_a28_wait_surge_end_text">
+<text> I need to wait out the emission. </text>
+</string>
+<string id="pri_b305_check_unknown_signal_1_name">
+<text> Unknown: Check the signal source </text>
+</string>
+<string id="pri_b305_check_unknown_signal_1_text">
+<text> Kirilov picked up a strange signal near the base. It is necessary to verify its source. </text>
+</string>
+<string id="pri_b305_check_unknown_signal_2_name">
+<text> Unknown: Follow the signal </text>
+</string>
+<string id="pri_b305_check_unknown_signal_2_text">
+<text> Coordinates of the unknown signal are once again available for me to track. </text>
+</string>
+<string id="pri_b305_check_unknown_signal_3_name">
+<text> Unknown: Explore the last location of the signal </text>
+</string>
+<string id="pri_b305_check_unknown_signal_3_text">
+<text> The signal disappeared in the courtyard of the dormitories, I have to examine the location. </text>
+</string>
+<string id="pri_b305_check_unknown_signal_4_name">
+<text> Unknown: Prepare for an attack on the base </text>
+</string>
+<string id="pri_b305_check_unknown_signal_4_text">
+<text> I have to return to our base and prepare for a probable attack. </text>
+</string>
+<string id="pri_b305_kovalskiy_talk_name">
+<text> Interference: Talk to Kowalski </text>
+</string>
+<string id="pri_b305_kovalskiy_talk_text">
+<text> Colonel Kowalski asked me to come to him, he wants to talk. </text>
+</string>
+<string id="pri_b306_task_1_name">
+<text> X8 Lab: Find the elevator shaft </text>
+</string>
+<string id="pri_b306_task_1_text">
+<text> Under the Jubilee Palace of Arts lies the underground lab I need to get into. The only access point is through an elevator shaft. </text>
+</string>
+<string id="pri_b306_task_2_name">
+<text> X8 Lab: Find the generator </text>
+</string>
+<string id="pri_b306_task_2_text">
+<text> The elevator door is not powered. To open them, I must find and turn on the emergency generator. </text>
+</string>
+<string id="pri_b306_task_3_name">
+<text> X8 Lab: Down to the lab </text>
+</string>
+<string id="pri_b306_task_3_text">
+<text> I must take the elevator down to the X8 lab, located under the building of the Jubilee Palace of Arts. </text>
+</string>
+<string id="pri_b35_task_envoy_name">
+<text> One Shot: Eliminate the representative </text>
+</string>
+<string id="pri_b35_task_envoy_text">
+<text> I have to assassinate the representative. Without him, the mercenaries will not be able to find the laboratory. </text>
+</string>
+<string id="pri_b35_task_envoy_wait_name">
+<text> One Shot: Wait for the client's men</text>
+</string>
+<string id="pri_b35_task_envoy_wait_text">
+<text> I must wait for the client's representatives and eliminate their boss. Without him, the mercenaries will not be able to find the laboratory. </text>
+</string>
+<string id="pri_b35_task_merc_name">
+<text> One Shot: Eliminate the mercenary commander </text>
+</string>
+<string id="pri_b35_task_merc_text">
+<text> I need to eliminate the leader of the mercenaries. Without him, the mercenaries will be disorganized and no longer a threat. </text>
+</string>
+<string id="pri_b35_task_merc_wait_name">
+<text> One Shot: Wait for the mercenaries </text>
+</string>
+<string id="pri_b35_task_merc_wait_text">
+<text> I must wait for the appearance of the mercenaries and eliminate their leader. Without him, the mercenaries will be disorganized and no longer a threat. </text>
+</string>
+<string id="pri_b35_task_reward_name">
+<text> One shot: Talk to Kowalski </text>
+</string>
+<string id="pri_b35_task_reward_text">
+<text> I have to debrief Kowalski on the results of the operation. </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_1_name">
+<text> X8 Lab: Leave the underground complex or continue to search for documents </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_1_text">
+<text> I have found a document in the complex. However, more documents may remain within the complex.</text>
+</string>
+<string id="pri_a19_lab_x8_investigation_2_name">
+<text>X8 Lab: Leave the underground complex or continue to search for documents </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_2_text">
+<text> I have found several documents in the complex, should be enough. However, more documents may remain within the complex. </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_3_name">
+<text> X8 Lab: Leave the underground complex </text>
+</string>
+<string id="pri_a19_lab_x8_investigation_3_text">
+<text> Apparently, I've collected all of the documentation. I can leave the underground complex now. </text>
+</string>
+<string id="pri_a18_wait_reinf_name">
+<text> Shattering The Monolith: Wait for backup </text>
+</string>
+<string id="pri_a18_wait_reinf_text">
+<text> I need to wait for reinforcements sent by Kowalski to eliminate all Monolith members in the bookstore </text>
+</string>
+<string id="pri_a22_talk_with_kovalski_name">
+<text> Face To Face: Talk to Kowalski </text>
+</string>
+<string id="pri_a22_talk_with_kovalski_text">
+<text> I need to talk to Kowalski. Apparently, he wants to tell me something important. </text>
+</string>
+<string id="pri_a28_defend_helis_name">
+<text> Evacuation: Protect the helicopters </text>
+</string>
+<string id="pri_a28_defend_helis_text">
+<text> It's necessary to protect the helicopters from the advancing enemy until it can take off. </text>
+</string>
+<string id="pri_a28_save_medic_name">
+<text> Evacuation: Knock some sense into the medic </text>
+</string>
+<string id="pri_a28_save_medic_text">
+<text> It seems the medic has come again under that strange influence. I have to help him. </text>
+</string>
+<string id="pri_a28_return_to_helis_name">
+<text> Evacuation: Return to the helicopters </text>
+</string>
+<string id="pri_a28_return_to_helis_text">
+<text> I have to get back to the helicopters, so that we can get out of here. </text>
+</string>
+<string id="pri_a28_helis_gonna_fly_name">
+<text> Evacuation: Immediately return to the helicopters </text>
+</string>
+<string id="pri_a28_helis_gonna_fly_text">
+<text> The helicopters are ready to go. I need to get on board, as the pilots will not wait too long. </text>
+</string>
+</string_table> 
+

@@ -1,0 +1,21 @@
+[smart_terrain]
+squad_id = 66
+max_population = 1
+respawn_params = respawn@jupiter_smrter_sim_6
+
+[respawn@jupiter_smrter_sim_6]
+spawn_dog
+spawn_pseudodog
+spawn_snork
+
+[spawn_pseudodog]
+spawn_squads = simulation_pseudodog, simulation_dog, simulation_pseudodog, simulation_dog, simulation_bloodsucker, simulation_snork, simulation_psy_dog, simulation_cat, simulation_cat_strong
+spawn_num = 1
+
+[spawn_dog]
+spawn_squads = simulation_pseudodog, simulation_dog, simulation_dog
+spawn_num = 1
+
+[spawn_snork]
+spawn_squads = simulation_cat, simulation_cat_strong, simulation_pseudodog, simulation_dog, simulation_pseudodog, simulation_dog, simulation_snork
+spawn_num = 1

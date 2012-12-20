@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="about_quests_dialog_stalkers_alun_riddles">
+		<text>I heard there used to be Stalker who used to hang around the Ranger Station, rumors are he went insane and only talks in riddles. One of the guys said they saw him on the rooftops shooting at crows one night. Fucking nuts.</text>
+	</string>
+
+	<string id="st_sp_achievement_22_hint">
+		<text>Riddle Master</text>
+	</string>
+	<string id="st_sp_achievement_22_name">
+		<text>Riddle Master</text>
+	</string>
+	<string id="st_sp_achievement_22_descr">
+		<text>You've managed to solve every one of the Mad Stalker Alun's riddles.</text>
+	</string>
+</string_table>

@@ -1,0 +1,805 @@
+--' RevampedNpcLoot
+-- 06/mar/2011: v1.0b by jci_pt
+
+--' Rebuild by ScarabParamit
+-- 7/07/2012
+
+; --- Survival Chances ---------------------------------------------------------------------
+
+; Papa ScarabParamit say's: IMPORTANT !!!
+; All those settings concern items and ammo NPC possess in his inventory
+; in moment of his death, so everything he looted also, but not
+; items created upon his death.
+
+
+; when NPC have multiple weapons as loot,
+; after the initial [n] the remaining have only [x] chance of survival
+
+[multiple_weapons_survival]
+level_0				= 2, 0.05
+level_1				= 2, 0.05
+level_2				= 2, 0.05
+level_3				= 2, 0.05
+
+
+; Papa ScarabParamit say's:
+; Here you can set modificator which will change ammo and items
+; survive chance based on NPC's community, ranks and values set further on...
+; without changing their numbers one by one.
+; Use this to quickly balance, separate and diversify factions and ranks =)
+; Number equal 1 - No modificator = Same values
+; Number set to 0 - DON'T SET...trust me ^^'
+; Examp: 0.5 = divine by half, 1.5 = multiply by half
+
+[community_item_survive_chance]
+zombied					= 0.8
+bandit					= 0.9
+ecolog					= 1.0
+stalker					= 1.0
+freedom					= 1.0
+dolg					= 1.0
+army					= 1.2
+killer					= 1.2
+monolith				= 1.0
+[rank_item_survive_chance]
+novice					= 0.8
+experienced				= 1.0
+veteran					= 1.1
+master					= 1.2
+elite					= 1.4
+
+
+; Papa ScarabParamit say's:
+; Here You can set CHANCES of certain items to be DESTROYED upon NPC's death...
+; Settings DO NOT concerns items spawn on NPC death,
+; and will affect only those items and ammunition NPC gathered on his own, has been spawn with,
+; have to disposal and possess until his death.
+; So before balancing take a look on settings in "death_items_create_chances_by_communities.ltx"
+; For best realism and gameplay, same as economy take to consideration
+; usefullnes, price, durability and size (hit zone) of objects =]
+; 1.0 = 100%
+; 0.5 = 50%
+; 0.0 = 0%
+; Also important to mention is "keep_items" (death_generic.ltx) where we can force certain BASE items
+; ( NOT GATHERED but ones NPC is spawned with in the world ) to survive every time NPC is dying,
+; if you ask yourself why NPC always keep or have more items than you set, change TRUE to FALSE in death_generic.ltx
+; (Proved by veteran stalker constant Rgd-5 grenade spawn upon death,
+; easy...change RGD-5 spawn chances to 0 and start a new game...
+; kill first two stalkers in front where player has been spawned and the veteran always keep his RGD-5)
+; So it's not a bug of a script but an option that could bring little concern.
+
+[item_survival_factor]
+
+; --- Equipment ---
+sleep_bag			= 0.02
+
+wpn_knife			= 0.001
+wpn_knife_inv		= 0.25
+wpn_knife_inv_2		= 0.25
+wpn_knife_inv_3		= 0.25
+wpn_knife_inv_4		= 0.25
+wpn_knife_inv_5		= 0.25
+wpn_knife_m			= 0.25
+
+af_surge					= 1.0
+af_frames					= 1.0
+af_grid						= 1.0
+af_freon					= 1.0
+af_cooler					= 1.0
+af_kevlar					= 1.0
+af_plates					= 1.0
+af_camelbak					= 1.0
+af_iam					= 1.0
+af_aac					= 1.0
+af_aam					= 1.0
+
+wpn_binoc			= 0.01
+roubles				= 0.75
+porn				= 1.0
+batteries			= 1.0
+dev_flash_1			= 1.0
+dev_flash_2			= 1.0
+;repair_kit			= 1.0
+device_torch		= 0.01
+device_pda			= 0.02
+guitar_a			= 0.01
+harmonica_a			= 0.02
+;-- device_harmonica	= 0.0 ;-- Doesn't Exist?
+;-- device_guitar		= 0.0 ;-- Doesn't Exist?
+
+; --- Detectors ---
+detector_simple		= 0.2
+detector_advanced	= 0.1
+detector_elite		= 1.0
+
+; --- Food ---
+breadold			= 0.75
+bread				= 0.75
+kolbasa				= 0.75
+conserva			= 0.75
+protein				= 0.75
+energy_drink		= 0.75
+water_drink			= 0.75
+
+vodka				= 0.75
+vodka_quality		= 0.75
+
+; --- Mutant Fleash Consumables ---
+meat_tushkano		= 1.0
+meat_dog			= 1.0
+meat_pseudodog		= 1.0
+meat_flesh			= 1.0
+meat_boar			= 1.0
+meat_bloodsucker	= 1.0
+meat_snork			= 1.0
+meat_chimera		= 1.0
+
+; --- Medical Supplies ---
+bandage				= 0.01
+medkit				= 0.015
+medkit_army			= 0.015
+medkit_scientic		= 0.015
+antirad				= 0.015
+
+stimpack			= 0.015
+stimpack_army		= 0.015
+stimpack_scientic	= 0.015
+
+survival_kit		= 1.0
+
+; --- Drugs and Medicines ---
+drug_booster		= 1.0
+drug_coagulant		= 1.0
+drug_psy_blockade	= 1.0
+drug_antidot		= 1.0
+drug_radioprotector	= 1.0
+drug_anabiotic		= 1.0
+joint				= 1.0
+cigarettes			= 1.0
+cigar1					= 1.0
+cigar2					= 1.0
+cigar3					= 1.0
+
+tetanus				= 1.0
+adrenalin			= 1.0
+cocaine				= 1.0
+
+salicidic_acid		= 1.0
+morphine			= 1.0
+
+; --- Artifacts ---
+af_cristall					= 1.0
+af_fireball					= 1.0
+af_dummy_glassbeads			= 1.0
+af_eye						= 1.0
+af_fire						= 1.0
+af_medusa					= 1.0
+af_cristall_flower			= 1.0
+af_night_star				= 1.0
+af_vyvert 					= 1.0
+af_gravi					= 1.0
+af_gold_fish				= 1.0
+af_blood					= 1.0
+af_mincer_meat				= 1.0
+af_soul						= 1.0
+af_fuzz_kolobok				= 1.0
+af_baloon					= 1.0
+af_glass					= 1.0
+af_electra_sparkler			= 1.0
+af_electra_flash			= 1.0
+af_electra_moonlight		= 1.0
+af_dummy_battery			= 1.0
+af_dummy_dummy				= 1.0
+af_ice						= 1.0
+
+; --- Mutant Fleash ---
+mutant_part_flesh_eye				= 1.0
+mutant_part_tushkano_head			= 1.0
+mutant_part_pseudogigant_hand		= 1.0
+mutant_part_burer_hand				= 1.0
+mutant_part_snork_hand				= 1.0
+mutant_part_psevdodog_tail			= 1.0
+mutant_part_dog_tail				= 1.0
+mutant_part_boar_leg				= 1.0
+mutant_part_snork_leg				= 1.0
+mutant_part_controller_glass		= 1.0
+mutant_part_chimera_kogot			= 1.0
+mutant_part_boar_chop				= 1.0
+mutant_part_flesh_meat				= 1.0
+mutant_part_dog_meat				= 1.0
+mutant_part_psevdodog_meat			= 1.0
+mutant_part_krovosos_meat			= 1.0
+mutant_part_chimera_meat			= 1.0
+mutant_part_tushkano_meat			= 1.0
+
+; --- Factions Patches/Insignia/Ribbons
+csky_patch					= 1.0
+freedom_patch				= 1.0
+stalker_patch				= 1.0
+renegade_patch				= 1.0
+bandit_patch				= 1.0
+dolg_patch					= 1.0
+monolith_patch				= 1.0
+army_patch					= 1.0
+merc_patch					= 1.0
+
+; --- Findings/immersion stuff
+shovel_old				= 1.0
+shovel_mili				= 1.0
+ied_rpg					= 1.0
+ied						= 1.0
+meinkampf				= 1.0
+jar						= 1.0
+grooming				= 1.0
+journal					= 1.0
+maps_kit				= 1.0
+bottle_metal			= 1.0
+geiger_dead				= 1.0
+welding_goggles			= 1.0
+jewelry_box				= 1.0
+cooking					= 1.0
+book1					= 1.0
+book2					= 1.0
+book3					= 1.0
+picture_woman			= 1.0
+drugs_kit				= 1.0
+
+
+hammer_inv					= 1.0
+crowbar					= 1.0
+spareparts				= 1.0
+beadspread				= 1.0
+walkie					= 1.0
+cards					= 1.0
+ammo_bad				= 1.0
+boots					= 1.0
+mili_maps				= 1.0
+swiss					= 1.0
+headlamp				= 1.0
+mirror					= 1.0
+kit_hunt				= 1.0
+tobacco					= 1.0
+marijuana				= 1.0
+flashlight_old			= 1.0
+flashlight_broken		= 1.0
+underwear				= 1.0
+porn2					= 1.0
+batteries_dead			= 1.0
+batteries_ccell			= 1.0
+tarpaulin				= 1.0
+rope					= 1.0
+synthrope				= 1.0
+cutlery					= 1.0
+radio					= 1.0
+radio2					= 1.0
+fieldcooker				= 1.0
+
+; --- Ammunition ---
+ammo_9x18_fmj			= 0.33 ; Light Pistol Rounds
+ammo_9x18_pmm			= 0.15
+ammo_9x18_ap			= 0.15
+ammo_9x19_fmj			= 0.33 ; Pistol & SMG Rounds
+ammo_9x19_pbp			= 0.15
+ammo_9x19_ap			= 0.15
+ammo_11.43x23_fmj		= 0.33 ; 45 ACP Heavy Pistol Rounds
+ammo_11.43x23_hydro		= 0.15
+ammo_11.43x23_ap		= 0.15
+ammo_12x70_buck			= 0.33 ; Shotgun Shells
+ammo_12x76_zhekan		= 0.15
+ammo_5.45x39_fmj		= 0.33 ; Warsaw Pact Rifle Rounds
+ammo_5.45x39_ap			= 0.15
+ammo_5.56x45_ss190		= 0.33 ; NATO Assault Rifle Rounds
+ammo_5.56x45_ap			= 0.15
+ammo_9x39_pab9			= 0.33 ; Special Forces Subsonic Rounds
+ammo_9x39_ap			= 0.15
+ammo_7.62x39_fmj		= 0.33 ; Old Soviet WorldWar II Rounds
+ammo_7.62x39_ap			= 0.15
+ammo_7.92x33_fmj		= 0.75 ; Old German WorldWar II Rounds
+ammo_7.92x33_ap			= 0.25
+ammo_7.62x54_7h1		= 0.33 ; Warsaw Pact Sniper Rifle Rounds
+ammo_7.62x54_7h14		= 0.0 ; (???)
+ammo_7.62x54_ap			= 0.33
+ammo_7.62x51_fmj		= 0.15 ; NATO Sniper Rifle Rounds
+ammo_gauss				= 1.0 ; Electro-Magnetic Particle Cannon
+ammo_gauss_cardan		= 1.0
+ammo_pkm_100			= 0.33 ; Warsaw Pact Light Machine Gun
+ammo_7.62x51_ap			= 0.15
+ammo_357_hp_mag_ap		= 0.15
+ammo_357_hp_mag			= 0.15
+
+; --- Explosive Projectiles ---
+ammo_vog-25				= 1.0 ; Warsaw Pact ammo for Grenade Launcher
+ammo_m209				= 1.0 ; NATO ammo for Grenade Launcher
+ammo_og-7b				= 1.0 ; RPG-7 self-propelled Grenade
+
+; --- Explosives ---
+grenade_rgd5			= 0.5 ; Light Fragmentation Grenade
+grenade_f1				= 0.5 ; Fragmentation Grenade
+grenade_gd-05			= 0.5 ; Thermite Grenade
+
+
+
+; --- Ammunition ---> Weapon dependent/Weapon match rounds <--------------------------------
+
+; Papa ScarabParamit say's: IMPORTANT !!!
+; All of those settings works only for ammo created upon NPC's death which fits possessed weapons,
+; not ammo NPC gathered in his lifespan or additional ammo to weapon he does not possess !!!
+
+
+; Papa ScarabParamit say's:
+; Ammo overall multiplier for ammo spawn count, per player level.
+; Depending its above, under or same as 1.0 it multiply, divine or live unchanged
+; values set for ammo types in "ammo_count" section.
+; You can use this to quickly change overall center of lowest vs. higest ammo drop,
+; or rise diversity of looted ammo counts.
+; The higer values the higer unpredictability.
+; First number - Divine modificator (1.0 <...> OO)
+; Second number - Multiply modificator (0 <...> 1.0)
+
+[ammo_count_factor]
+level_0			= 0.8, 1.0
+level_1			= 0.8, 1.0
+level_2			= 0.8, 1.0
+level_3			= 0.8, 1.0
+
+
+; Ammunition factors works like overall "ammo_count_factor" based on difficulty level,
+; but can be set differently for every faction or rank of NPC's.
+; Use this to quickly balance, separate and diversify factions and ranks =)
+; Number equal 1 - No modificator = Same values
+; Number set to 0 - DON'T SET...trust me ^^'
+; Examp: 0.5 = divine by half, 1.5 = multiply by half
+
+[community_ammo_count_ammounth]
+zombied					= 0.1
+bandit					= 0.3
+ecolog					= 0.5
+stalker					= 0.55
+freedom					= 0.45
+dolg					= 0.45
+army					= 0.85
+killer					= 0.55
+monolith				= 0.55
+[rank_ammo_count_ammounth]
+novice					= 0.1
+experienced				= 0.15
+veteran					= 0.35
+master					= 0.55
+elite					= 0.65
+
+; Ammunition MIN/MAX counts. Values will be randomly set betwen first and second
+; .aka min/max number, and modified by "ammo_count_factor" further on.
+
+[ammo_drop_counts]
+ammo_9x18_fmj 			= 6, 12 ; Light Pistol Rounds
+ammo_9x18_pmm 			= 4, 8
+ammo_9x18_ap 			= 4, 8
+ammo_9x19_fmj 			= 5, 10 ; Pistol & SMG Rounds
+ammo_9x19_pbp 			= 3, 6
+ammo_9x19_ap 			= 3, 6
+ammo_11.43x23_fmj 		= 4, 8 ; 45 ACP Heavy Pistol Rounds
+ammo_11.43x23_hydro		= 2, 4
+ammo_11.43x23_ap 		= 2, 4
+ammo_12x70_buck 		= 3, 9 ; Shotgun Shells
+ammo_12x76_zhekan 		= 2, 6
+ammo_5.45x39_fmj 		= 4, 16 ; Warsaw Pact Rifle Rounds
+ammo_5.45x39_ap 		= 3, 9
+ammo_5.56x45_ss190 		= 3, 18 ; NATO Assault Rifle Rounds
+ammo_5.56x45_ap 		= 2, 8
+ammo_9x39_pab9 			= 2, 6 ; Special Forces Subsonic Rounds
+ammo_9x39_ap 			= 1, 5
+ammo_7.62x39_fmj 		= 4, 20 ; Old Soviet WorldWar II Rounds
+ammo_7.62x39_ap 		= 2, 10
+ammo_7.92x33_fmj 		= 3, 17 ; Old German WorldWar II Rounds
+ammo_7.92x33_ap 		= 1, 7
+ammo_7.62x54_7h1 		= 2, 8 ; Warsaw Pact Sniper Rifle Rounds
+ammo_7.62x54_7h14 		= 0, 0 ; (???)
+ammo_7.62x54_ap			= 1, 6
+ammo_7.62x51_fmj 		= 2, 6 ; NATO Sniper Rifle Rounds
+ammo_gauss				= 1, 3 ; Electro-Magnetic Particle Cannon
+ammo_gauss_cardan		= 0, 0
+ammo_pkm_100			= 18, 53 ; Warsaw Pact Light Machine Gun
+ammo_7.62x51_ap 		= 8, 29
+ammo_357_hp_mag_ap 			= 3, 7
+ammo_357_hp_mag 			= 2, 4
+
+; --- Explosive Projectiles ---
+ammo_vog-25				= 2, 4 ; Warsaw Pact ammo for Grenade Launcher
+ammo_m209				= 1, 3 ; NATO ammo for Grenade Launcher
+ammo_og-7b				= 1, 2 ; RPG-7 self-propelled Grenade
+
+
+
+; --- Items & Ammunition ---> All items/Weapon independent ammo <---------------------------
+
+; Papa ScarabParamit say's: IMPORTANT !!!
+; All of those settings works for all items and ammo created upon NPC's death without restrictions,
+; its not important if NPC possess weapons maching certain ammo or not,
+; but they don't influance ammo or items NPC gathered in his lifespan !!!
+
+; Multiplier for new item create chance, per player level. <= 1.0
+
+[item_create_factor]
+level_0				= 0.00
+level_1 			= 0.00
+level_2 			= 0.00
+level_3 			= 0.00
+
+
+; Papa ScarabParamit say's:
+; Here You can set CHANCES of items to be created upon NPC's death...
+; based on his community and rank. This settings ware made mostly for RANK,
+; as communities create chances can be set in death_items_create_chances_by_communities,
+; but finnaly...i decided to add this overall option for quick balance modifier.
+; Use this to quickly balance, separate and diversify factions and ranks =)
+; Number equal 1 - No modificator = Same values
+; Number set to 0 - DON'T SET...trust me ^^'
+; Examp: 0.5 = divine by half, 1.5 = multiply by half
+
+[community_item_create_chance]
+zombied					= 0.0 ; 0.8
+bandit					= 0.0 ; 0.9
+ecolog					= 0.0 ; 1.0
+stalker					= 0.0 ; 1.0
+freedom					= 0.0 ; 1.0
+dolg					= 0.0 ; 1.0
+army					= 0.0 ; 1.2
+killer					= 0.0 ; 1.2
+monolith				= 0.0 ; 1.0
+[rank_item_create_chance]
+novice					= 0.0 ; 0.8
+experienced				= 0.0 ; 1.0
+veteran					= 0.0 ; 1.1
+master					= 0.0 ; 1.2
+elite					= 0.0 ; 1.4
+
+
+; Papa ScarabParamit say's:
+; Here you can set modificators for Items AMMOUNTH created upon NPC's death,
+; Use this to quickly balance, separate and diversify factions and ranks =)
+; Number equal 1 - No modificator = Same values
+; Number set to 0 - DON'T SET...trust me ^^'
+; Examp: 0.5 = divine by half, 1.5 = multiply by half
+
+[community_item_create_ammounth]
+zombied					= 0.8
+bandit					= 0.9
+ecolog					= 1.0
+stalker					= 1.1
+freedom					= 1.2
+dolg					= 1.2
+army					= 1.3
+killer					= 1.4
+monolith				= 1.5
+[rank_item_create_ammounth]
+novice					= 1.0
+experienced				= 1.2
+veteran					= 1.4
+master					= 1.6
+elite					= 2.0
+
+
+; Papa ScarabParamit say's:
+; Here You can set MIN/MAX AMMOUNTH of particular item types created upon NPC's death...
+; Values will be randomised between min and max numbers.
+; Use this to modify ALL ITEMS, you can also add additional
+; BASE ammo even if NPC doesn't posses particular weapon type.
+; Please remember - certain ammo ammounth and other objects can be gathered by stalker during his lifespan,
+; take this under consideration while balancing. Gathered objects and ammo can be lowered/cleared upon death
+; using "item_survival_factor", "community_item_survive_chance"
+; and "rank_item_survive_chance" in death_loot_settings_OVERALL.ltx
+; Also important to mention is "keep_items" (death_generic.ltx) where we can force certain BASE items
+; ( NOT GATHERED but ones NPC is spawned with in the world ) to survive every time NPC is dying,
+; if you ask yourself why NPC always keep or have more items than you set, change TRUE to FALSE in death_generic.ltx
+; (Proved by veteran stalker constant Rgd-5 grenade spawn upon death,
+; easy...change RGD-5 spawn chances to 0 and start a new game...
+; kill first two stalkers in front where player has been spawned and the veteran always keep his RGD-5)
+; So it's not a bug of a script but an option that could bring little concern.
+; P.S. You can...but don't use this to control is particular item will be created at all,
+; consider this as a tool to set number of items in PACK if random CHANCES alowed them to spawn.
+; To change CHANCES of items/ammo to be created on NPC's death look at "death_items_create_chances_by_communities.ltx".
+
+[item_drop_counts]
+ammo_9x18_fmj			= 0, 0 ; Light Pistol Rounds
+ammo_9x18_pmm			= 0, 0
+ammo_9x18_ap 			= 0, 0
+ammo_9x19_fmj			= 0, 0 ; Pistol & SMG Rounds
+ammo_9x19_pbp			= 0, 0
+ammo_9x19_ap 			= 0, 0
+ammo_11.43x23_fmj		= 0, 0 ; 45 ACP Heavy Pistol Rounds
+ammo_11.43x23_hydro		= 0, 0
+ammo_11.43x23_ap 		= 0, 0
+ammo_12x70_buck			= 0, 0 ; Shotgun Shells
+ammo_12x76_zhekan		= 0, 0
+ammo_5.45x39_fmj		= 0, 0 ; Warsaw Pact Rifle Rounds
+ammo_5.45x39_ap			= 0, 0
+ammo_5.56x45_ss190		= 0, 0 ; NATO Assault Rifle Rounds
+ammo_5.56x45_ap			= 0, 0
+ammo_9x39_pab9			= 0, 0 ; Special Forces Subsonic Rounds
+ammo_9x39_ap			= 0, 0
+ammo_7.62x39_fmj		= 0, 0 ; Old Soviet WorldWar II Rounds
+ammo_7.62x39_ap			= 0, 0
+ammo_7.92x33_fmj		= 0, 0 ; Old German WorldWar II Rounds
+ammo_7.92x33_ap			= 0, 0
+ammo_7.62x54_7h1		= 0, 0 ; Warsaw Pact Sniper Rifle Rounds
+ammo_7.62x54_7h14		= 0, 0 ; (???)
+ammo_7.62x54_ap			= 0, 0
+ammo_7.62x51_fmj		= 0, 0 ; NATO Sniper Rifle Rounds
+ammo_7.62x51_ap			= 0, 0
+ammo_gauss				= 0, 0 ; Electro-Magnetic Particle Cannon
+ammo_gauss_cardan		= 0, 0
+ammo_pkm_100			= 0, 0 ; Warsaw Pact Light Machine Gun
+ammo_357_hp_mag_ap 		= 0, 0
+ammo_357_hp_mag 		= 0, 0
+
+; --- Explosive Projectiles ---
+ammo_vog-25				= 0, 0 ; Warsaw Pact ammo for Grenade Launcher
+ammo_m209				= 0, 0 ; NATO ammo for Grenade Launcher
+ammo_og-7b				= 0, 0 ; RPG-7 self-propelled Grenade
+
+; --- Explosives ---
+grenade_rgd5			= 1, 2 ; Light Fragmentation Grenade
+grenade_f1				= 0, 2 ; Fragmentation Grenade
+grenade_gd-05			= 0, 1 ; Thermite Grenade
+
+; --- Equipment ---
+sleep_bag			= 0, 1
+wpn_knife			= 0, 1
+wpn_binoc			= 0, 1
+roubles				= 0, 100
+porn				= 0, 1
+batteries			= 0, 2
+;repair_kit			= 0, 1
+device_torch		= 0, 1
+device_pda			= 0, 1
+guitar_a			= 0, 1
+harmonica_a			= 0, 1
+;-- device_harmonica	= 0, 0 ;-- Doesn't Exist?
+;-- device_guitar		= 0, 0 ;-- Doesn't Exist?
+
+; --- Detectors ---
+detector_simple		= 0, 1
+detector_advanced	= 0, 1
+detector_elite		= 0, 0
+
+; --- Food ---
+breadold			= 0, 3
+bread				= 0, 2
+kolbasa				= 0, 2
+conserva			= 0, 1
+protein				= 0, 1
+vodka				= 0, 2
+energy_drink		= 0, 1
+water_drink			= 0, 2
+
+; --- Medical Supplies ---
+bandage				= 1, 5
+medkit				= 0, 2
+medkit_army			= 0, 1
+medkit_scientic		= 0, 1
+antirad				= 0, 1
+
+stimpack			= 0, 3
+stimpack_army		= 0, 2
+stimpack_scientic	= 0, 1
+
+; --- Drugs and Medicines ---
+drug_booster			= 0, 1
+drug_coagulant			= 0, 3
+drug_psy_blockade		= 0, 1
+drug_antidot			= 0, 1
+drug_radioprotector		= 0, 2
+drug_anabiotic			= 0, 1
+joint					= 0, 2
+cigarettes				= 0, 1
+cigar1					= 1, 1
+cigar2					= 1, 1
+cigar3					= 1, 1
+
+tetanus					= 0, 1
+adrenalin				= 0, 1
+cocaine					= 0, 2
+
+salicidic_acid			= 0, 3
+morphine				= 0, 1
+
+; --- Artifacts ---
+af_cristall				= 0, 0
+af_fireball				= 0, 0
+af_dummy_glassbeads		= 0, 0
+af_eye					= 0, 0
+af_fire					= 0, 0
+af_medusa				= 0, 0
+af_cristall_flower		= 0, 0
+af_night_star			= 0, 0
+af_vyvert				= 0, 0
+af_gravi				= 0, 0
+af_gold_fish			= 0, 0
+af_blood				= 0, 0
+af_mincer_meat			= 0, 0
+af_soul					= 0, 0
+af_fuzz_kolobok			= 0, 0
+af_baloon				= 0, 0
+af_glass				= 0, 0
+af_electra_sparkler		= 0, 0
+af_electra_flash		= 0, 0
+af_electra_moonlight	= 0, 0
+af_dummy_battery		= 0, 0
+af_dummy_dummy			= 0, 0
+af_ice					= 0, 0
+
+; --- Findings/immersion stuff
+shovel_old				= 1, 1
+shovel_mili				= 1, 1
+ied_rpg					= 1, 1
+ied						= 1, 1
+meinkampf				= 1, 1
+jar						= 1, 1
+grooming				= 1, 1
+journal					= 1, 1
+maps_kit				= 1, 1
+bottle_metal			= 1, 1
+geiger_dead				= 1, 1
+welding_goggles			= 1, 1
+survival_kit			= 1, 1
+jewelry_box				= 1, 1
+cooking					= 1, 1
+book1					= 1, 1
+book2					= 1, 1
+book3					= 1, 1
+picture_woman			= 1, 1
+drugs_kit				= 1, 1
+
+
+
+; --- Random additional Ammo --- ( WIP ) ---------------------------------------------------
+
+; Papa ScarabParamit say's: ( not my part of script, so for now it's disabled = WIP )
+; On some occasions, NPC's will have additional ammo other than the type used by their weapon.
+; this defines a *relative* factor for each (<= 1.0), will be multiplied by several other factors.
+; Settings under works only for ammo spawnable upon death of NPC, not ammo NPC gathered in his lifespan !!!
+
+[random_ammo_factor]
+ammo_9x18_fmj			= 0.0 ; Light Pistol Rounds
+ammo_9x18_pmm			= 0.0
+ammo_9x18_ap 			= 0,0
+ammo_9x19_fmj			= 0.0 ; Pistol & SMG Rounds
+ammo_9x19_pbp			= 0.0
+ammo_9x19_ap 			= 0,0
+ammo_11.43x23_fmj		= 0.0 ; 45 ACP Heavy Pistol Rounds
+ammo_11.43x23_hydro		= 0.0
+ammo_11.43x23_ap 		= 0,0
+ammo_12x70_buck			= 0.0 ; Shotgun Shells
+ammo_12x76_zhekan		= 0.0
+ammo_5.45x39_fmj		= 0.0 ; Warsaw Pact Rifle Rounds
+ammo_5.45x39_ap			= 0.0
+ammo_5.56x45_ss190		= 0.0 ; NATO Assault Rifle Rounds
+ammo_5.56x45_ap			= 0.0
+ammo_9x39_pab9			= 0.0 ; Special Forces Subsonic Rounds
+ammo_9x39_ap			= 0.0
+ammo_7.62x39_fmj		= 0.0 ; Old Soviet WorldWar II Rounds
+ammo_7.62x39_ap			= 0.0
+ammo_7.92x33_fmj		= 0.0 ; Old German WorldWar II Rounds
+ammo_7.92x33_ap			= 0.0
+ammo_7.62x54_7h1		= 0.0 ; Warsaw Pact Sniper Rifle Rounds
+ammo_7.62x54_7h14		= 0.0 ; (???)
+ammo_7.62x54_ap			= 0.0
+ammo_7.62x51_fmj		= 0.0 ; NATO Sniper Rifle Rounds
+ammo_7.62x51_ap			= 0.0
+ammo_gauss				= 0.0 ; Electro-Magnetic Particle Cannon
+ammo_gauss_cardan		= 0.0
+ammo_pkm_100			= 0.0 ; Warsaw Pact Light Machine Gun
+ammo_357_hp_mag_ap 		= 0,0
+ammo_357_hp_mag 		= 0,0
+
+; --- Weapons ------------------------------------------------------------------------------
+
+; Papa ScarabParamit say's:
+; Weapon overall condition factor by player level.
+; WCF are now used not as a "minimal/maximal" base condition mod. but modificator,
+; which randomly set number between first & second value.
+; Depending its above, under or same as 1.0 it multiply, divine or live unchanged
+; values set for condition based on Community (faction) and Rank of NPC's.
+; You can use this to quickly change overall center of lowest vs. higest con.
+; aka 'average condition' or rise diversity of looted weapons condition.
+; The higer values in WCF & CWC & RWC the higer unpredictability.
+; First number - Divine modificator (1.0 <...> OO)
+; Second number - Multiply modificator (0 <...> 1.0)
+; Number equal 1 - No modificator = Same values
+; Number set to 0 - DON'T SET...trust me ^^'
+; Examp: 0.5 = divine by half, 1.5 = multiply by half
+
+; -- WCF
+[weapon_condition_factor]
+level_0			= 0.8, 1.2
+level_1			= 0.8, 1.2
+level_2			= 0.8, 1.2
+level_3			= 0.8, 1.2
+
+
+; Yeas i know how this sound - Weapon Condition Stage Stepping... =P
+; This one is WIP for now, might be used as a condition modificator
+; changing itself based on player progress in game story.
+
+; -- WC_SS --- ( WIP !!!! ) ---
+[weapon_condition_stage_stepping]
+stage1 = 1.0
+stage2 = 0.9
+stage3 = 0.8
+stage4 = 0.6
+
+
+; Papa ScarabParamit say's:
+; Those are values for BASE condition depending of 'self explantionary'
+; which gonna be sum together and modified (multiply or divine) further by WCF.
+; There is minimal and maximal value for easy balance =)
+; For easy of imagination: value * 100 = condition %
+; Values generated in the end by script can bypas 100 border,
+; game will still lower this to 100, but chance of high number
+; may be a good way if someone decide to promote certain faction,
+; to drop equipment in good condition more often.
+; Only equaly balanced values keep same 'average condition':
+; min=0% max=100% = 50% average
+; min=20% max=80% = 50% average
+; min=40% max=60% = 50% average
+; Remember, seriously disproportional min/max values in conjuction with WCF
+; can occasionally lead to thiner diversity of weapon conditions.
+; Example: 
+; Faction -> min=0.25 max=0.65 = 25-65%
+; Rank -> min=0.20 max=0.45 = 20-45%
+; 25-65 + 20-45 = 45-110%   110>100 = 100
+; So Army Veteran can posses weapon in condition between 45 nad 100% with average of 77.5%
+; If You want to greatly diversify random conditions use WCF, which i present in easy way:
+; 45-110 * WCF 0.5 = 22,5-55%
+; 45-110 * WCF 1 = same 45-110%
+; 45-110 * WCF 1.5 = 67,5-165%
+; So with WCF 0.5-1.5 our Army Veteran can end up with weapon in condition between 22,5 or 100 with average of 93.75%
+; ...which will lead to serious unpredictability same as high probability of ideal weapon condition.
+
+; -- CWC
+[community_weapon_condition_min]
+zombied 			= 0.00
+bandit				= 0.00
+ecolog				= 0.15
+stalker				= 0.02
+freedom				= 0.03
+dolg				= 0.03
+army				= 0.25
+killer				= 0.03
+monolith			= 0.03
+[community_weapon_condition_max]
+zombied 			= 0.05
+bandit				= 0.25
+ecolog				= 0.65
+stalker				= 0.30
+freedom				= 0.35
+dolg				= 0.35
+army				= 0.80
+killer				= 0.50
+monolith			= 0.50
+
+; -- RWC
+[rank_weapon_condition_min]
+novice				= 0.00
+experienced			= 0.02
+veteran				= 0.03
+master				= 0.15
+elite				= 0.25
+[rank_weapon_condition_max]
+novice				= 0.00
+experienced			= 0.05
+veteran				= 0.08
+master				= 0.15
+elite				= 0.25
+
+; --- Outfits ---
+
+[spawn_outfit_chance]
+level_0				= 0.0
+level_1				= 0.0
+level_2				= 0.0
+level_3				= 0.0
+
+
+
+; --- END of settings ---

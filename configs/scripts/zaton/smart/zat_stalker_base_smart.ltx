@@ -1,0 +1,169 @@
+[smart_terrain];zat_stalker_base_smart
+squad_id = 1
+def_restr = zat_a2_sr_noweap
+safe_restr = zat_a2_sr_light
+smart_control = smart_control
+respawn_params = respawn@zat_stalker_base_smart
+max_population = 6
+arrive_dist = 65
+
+[respawn@zat_stalker_base_smart]
+spawn_freedom@advanced
+spawn_freedom@veteran
+
+spawn_freedom@veteran_assault
+
+spawn_freedom@sci
+
+spawn_stalker@novice
+
+spawn_stalker@master
+
+spawn_stalker@advanced
+
+spawn_stalker@novice_base_guard
+spawn_stalker@advanced_base_guard
+
+spawn_stalker@novice_base_sentry
+spawn_stalker@advanced_base_sentry
+
+;;; unused
+
+spawn_stalker@sci
+
+spawn_stalker@hunter_day
+spawn_stalker@hunter_night
+
+; Freedom squads
+
+[spawn_freedom@advanced]
+spawn_squads = freedom_sim_squad_novice
+spawn_num = {+sim_duty_help_harder} 0, {+jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_freedom@veteran]
+spawn_squads = freedom_sim_squad_veteran, freedom_sci_simulation_squad, freedom_sci_simulation_squad
+spawn_num = {-sim_duty_help_harder +jup_b207_task_end} 1, {-sim_duty_help_harder +jup_a12_task_done} 1, {-sim_duty_help_harder +jup_b46_task_done} 1, {-sim_duty_help_harder +jup_b8_heli_4_searched} 1, {-sim_duty_help_harder +jup_b209_task_done} 1, {-sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Freedom_assault_squads
+
+[spawn_freedom@veteran_assault]
+spawn_squads = freedom_sim_squad_veteran_zat_b5_smart_terrain_assault, freedom_sim_squad_veteran_zat_b40_assault, freedom_sim_squad_veteran_zat_b103_merc_smart_assault
+spawn_num = {-sim_duty_help_harder +jup_b207_task_end} 1, {-sim_duty_help_harder +jup_a12_task_done} 1, {-sim_duty_help_harder +jup_b46_task_done} 1, {-sim_duty_help_harder +jup_b8_heli_4_searched} 1, {-sim_duty_help_harder +jup_b209_task_done} 1, {-sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Stalker squads
+
+[spawn_stalker@novice]
+spawn_squads = stalker_sim_squad_novice, stalker_sim_squad_novice_hostile, stalker_hunter_day_simulation_squad, stalker_hunter_day_zat_sim_10_assault_simulation_squad
+spawn_num = {+kingpin_gained } 0, {-kingpin_gained +jup_b207_task_end -jup_b218_gather_squad_complete} 0, {-kingpin_gained +jup_a12_task_done -jup_b218_gather_squad_complete} 0, {-kingpin_gained +jup_b46_task_done -jup_b218_gather_squad_complete} 0, {-kingpin_gained +jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {-kingpin_gained +jup_b209_task_done -jup_b218_gather_squad_complete} 0, {-kingpin_gained +jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@master]
+spawn_squads = stalker_sim_squad_advanced_veteran, stalker_sim_squad_veteran, stalker_sim_squad_advanced_veteran, stalker_sim_squad_veteran, stalker_hunter_day_simulation_squad, stalker_hunter_night_simulation_squad, stalker_hunter_night_zat_sim_10_assault_simulation_squad
+spawn_num = {+kingpin_gained } 0, {-kingpin_gained +jup_b207_task_end} 2, {-kingpin_gained +jup_a12_task_done} 2, {-kingpin_gained +jup_b46_task_done} 2, {-kingpin_gained +jup_b8_heli_4_searched} 2, {-kingpin_gained +jup_b209_task_done} 2, {-kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+; Stalker permament squads
+
+[spawn_stalker@advanced]
+spawn_squads = stalker_sim_squad_novice
+spawn_num = {+zat_b7_victims_disappeared} 0, {+zat_b7_task_end} 0, 1
+
+; Stalker base sentry squads
+
+[spawn_stalker@novice_base_sentry]
+spawn_squads = stalker_sim_squad_advanced_zat_stalker_base_smart_sentry
+spawn_num = {+jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@advanced_base_sentry]
+spawn_squads = stalker_sim_squad_advanced_veteran_zat_stalker_base_smart_sentry, stalker_sim_squad_veteran_zat_stalker_base_smart_sentry
+spawn_num = {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+; Stalker base guard squads
+
+[spawn_stalker@novice_base_guard]
+spawn_squads = stalker_sim_squad_advanced_zat_stalker_base_smart
+spawn_num = 0	; {+jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@advanced_base_guard]
+spawn_squads = stalker_sim_squad_advanced_veteran_zat_stalker_base_smart
+spawn_num = 0	; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+; Stalker sci squads
+
+[spawn_stalker@sci]
+spawn_squads = stalker_sci_simulation_squad
+spawn_num = 0	; {+jup_b218_gather_squad_complete} 1, 0
+
+; Stalker hunter day squads
+
+[spawn_stalker@hunter_day]
+spawn_squads = stalker_hunter_day_simulation_squad
+spawn_num = 0	; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+; Stalker hunter night squads
+
+[spawn_stalker@hunter_night]
+spawn_squads = stalker_hunter_day_simulation_squad, stalker_hunter_night_simulation_squad
+spawn_num = 0	; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+; Freedom sci squads
+
+[spawn_freedom@sci]
+spawn_squads = freedom_sci_simulation_squad
+spawn_num = 0	; {-sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+[smart_control]
+noweap_zone = zat_a2_sr_noweap
+ignore_zone = zat_a2_sr_light
+alarm_start_sound = zat_a2_base_alarm
+alarm_stop_sound = zat_a2_base_relax
+
+[exclusive]
+zat_a2_stalker_barmen = zaton\zat_a2_stalker_barmen.ltx
+zat_a2_stalker_mechanic = zaton\zat_a2_stalker_mechanic.ltx
+zat_b30_owl_stalker_trader = zaton\zat_b30_owl_stalker_trader.ltx
+zat_a2_stalker_nimble = zaton\zat_a2_stalker_nimble.ltx
+zat_b33_stalker_snag = zaton\zat_b33_stalker_snag.ltx
+zat_b38_stalker_medic = zaton\zat_b38_stalker_medic.ltx
+zat_b29_stalker_rival = zaton\zat_b29_stalkers_rivals.ltx
+zat_b7_bandit_boss_sultan = zaton\zat_b7_bandit_boss_sultan.ltx
+zat_b7_stalker_raider_leader = zaton\zat_b7_stalker_raider.ltx
+zat_b215_stalker_guide_zaton = zaton\zat_b215_stalker_guide_zaton.ltx
+zat_b38_stalker_cop = zaton\zat_b38_stalker_cop.ltx
+zat_b106_stalker_gonta = zaton\zat_b106_stalker_gonta.ltx
+zat_b106_stalker_garmata = zaton\zat_b106_stalker_garmata.ltx
+zat_b106_stalker_crab = zaton\zat_b106_stalker_crab.ltx
+zat_b7_stalker_victim_leader = zaton\zat_a2_logic.ltx
+zat_b14_stalker = zaton\zat_b14_stalker_1_base.ltx
+;generic jobs
+zat_a2_guarder_1 = zaton\zat_a2_logic.ltx
+zat_a2_guarder_2 = zaton\zat_a2_logic.ltx
+zat_a2_guarder_3 = zaton\zat_a2_logic.ltx
+zat_a2_guarder_4 = zaton\zat_a2_logic.ltx
+zat_a2_guarder_5 = zaton\zat_a2_logic.ltx
+zat_a2_guarder_6 = zaton\zat_a2_logic.ltx
+zat_a2_animp_1 = zaton\zat_a2_logic.ltx
+zat_a2_animp_2 = zaton\zat_a2_logic.ltx
+zat_a2_animp_3 = zaton\zat_a2_logic.ltx
+zat_a2_animp_4 = zaton\zat_a2_logic.ltx
+zat_a2_animp_5 = zaton\zat_a2_logic.ltx
+zat_a2_animp_6 = zaton\zat_a2_logic.ltx
+zat_a2_animp_7 = zaton\zat_a2_logic.ltx
+zat_a2_animp_8 = zaton\zat_a2_logic.ltx
+zat_a2_animp_9 = zaton\zat_a2_logic.ltx
+zat_a2_animp_10 = zaton\zat_a2_logic.ltx
+zat_a2_animp_11 = zaton\zat_a2_logic.ltx
+zat_a2_animp_12 = zaton\zat_a2_logic.ltx
+zat_a2_animp_13 = zaton\zat_a2_logic.ltx
+zat_a2_animp_14 = zaton\zat_a2_logic.ltx
+zat_a2_animp_15 = zaton\zat_a2_logic.ltx
+zat_a2_animp_16 = zaton\zat_a2_logic.ltx
+zat_a2_animp_17 = zaton\zat_a2_logic.ltx
+zat_a2_animp_18 = zaton\zat_a2_logic.ltx
+zat_a2_animp_19 = zaton\zat_a2_logic.ltx
+zat_a2_animp_20 = zaton\zat_a2_logic.ltx
+zat_a2_animp_21 = zaton\zat_a2_logic.ltx
+zat_a2_animp_22 = zaton\zat_a2_logic.ltx
+;test jobs
+zat_a2_barmen_trade = zaton\zat_a2_logic_addon.ltx
+zat_a2_mechanic_trade = zaton\zat_a2_logic_addon.ltx

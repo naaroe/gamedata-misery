@@ -1,0 +1,25 @@
+[smart_terrain]
+squad_id = 30
+max_population = 1
+;respawn_only_smart = true
+respawn_params = respawn@pri_sim_8
+
+[respawn@pri_sim_8]
+spawn_boar
+spawn_flesh
+
+spawn_bandit@hostile
+
+;;; unused
+
+[spawn_boar]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = 0
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 0
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile_elite
+spawn_num = 0

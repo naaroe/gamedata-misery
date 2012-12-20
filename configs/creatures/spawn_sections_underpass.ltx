@@ -1,0 +1,122 @@
+[pas_b400_vano]:stalker_silent_duty_master
+$spawn                     = "respawn\pas_b400_vano"
+character_profile     = pas_b400_vano
+spec_rank = master
+story_id = pas_b400_vano
+
+sound_death						= script\pas_b400_vano_on_death_
+sound_anomaly_death				= script\pas_b400_vano_on_death_
+
+;---------------------------------------------------
+
+;[DUTY_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_sokolov]:stalker_silent_master
+$spawn                     = "respawn\pas_b400_sokolov"
+character_profile     = pas_b400_sokolov
+spec_rank = master
+story_id = pas_b400_sokolov
+
+sound_death						= script\pas_b400_sokolov_on_death_
+sound_anomaly_death				= script\pas_b400_sokolov_on_death_
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_zulus]:stalker_silent_master
+$spawn                     = "respawn\pas_b400_zulus"
+character_profile     = pas_b400_zulus
+spec_rank = master
+story_id = pas_b400_zulus
+
+sound_death						= script\pas_b400_zulus_on_death_
+sound_anomaly_death				= script\pas_b400_zulus_on_death_
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_wanderer]:stalker_silent_master
+$spawn                     = "respawn\pas_b400_wanderer"
+character_profile     = pas_b400_wanderer
+spec_rank = novice
+story_id = pas_b400_wanderer
+
+sound_death						= script\pas_b400_wanderer_on_death_
+sound_anomaly_death				= script\pas_b400_wanderer_on_death_
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_monolith_sniper]:stalker_freedom_mas
+$spawn                     = "respawn\pas_b400_monolith_sniper"
+character_profile     = pas_b400_monolith_sniper
+spec_rank = master
+
+;---------------------------------------------------
+
+;[FREEDOM_MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_tushkano_smart]:tushkano_normal
+$spawn				= "monsters\tushkanos\pas_b400_tushkano_smart"
+;panic_threshold		= 0
+
+[pas_b400_vano_strong]:pas_b400_vano
+$spawn                     = "respawn\pas_b400_vano_strong"
+immunities_sect					= stalker_immunities_strong
+
+[pas_b400_sokolov_strong]:pas_b400_sokolov
+$spawn                     = "respawn\pas_b400_sokolov_strong"
+immunities_sect					= stalker_immunities_strong
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_zulus_strong]:pas_b400_zulus
+$spawn                     = "respawn\pas_b400_zulus_strong"
+immunities_sect					= stalker_immunities_strong
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[pas_b400_wanderer_strong]:pas_b400_wanderer
+$spawn                     = "respawn\pas_b400_wanderer_strong"
+immunities_sect					= stalker_immunities_strong
+
+[stalker_immunities_strong]
+burn_immunity 				= 0.3	;0.7		;0.3
+strike_immunity 			= 0.3	;0.7		;0.3
+shock_immunity 				= 0.3	;1.0		;0.3
+wound_immunity				= 0.1	;0.7		;0.3
+radiation_immunity 			= 0.3	;1.0		;0.3
+telepatic_immunity 			= 0.3	;1.0		;0.3
+chemical_burn_immunity 			= 0.3	;0.7		;0.3
+explosion_immunity 			= 0.3	;0.7		;0.3
+fire_wound_immunity  			= 0.8	;0.7		;1.0
+
+;---------------------------------------------------
+
+;[MASTER_PROFILE]
+
+;---------------------------------------------------
+
+[snork_weak_special]:snork_weak
+$spawn			= "monsters\snorks\snork_weak_special"

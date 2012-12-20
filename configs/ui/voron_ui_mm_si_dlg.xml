@@ -1,0 +1,87 @@
+<w>
+    <background width="1024" height="768">
+		<auto_static x="500" y="130" width="432" height="160" stretch="1">
+			<texture width="432" height="160">ui\video_voroni_crop</texture>
+		</auto_static>
+		<auto_static x="413" y="352" width="576" height="416" stretch="1">
+			<texture width="576" height="416">ui\video_water_crop</texture>
+		</auto_static>
+	    <auto_static width="1024" height="768">
+	      <texture>ui_inGame2_background</texture>
+	    </auto_static>
+		<auto_static x="41" y="278" width="288" height="428">
+			<texture>ui_save_load_back</texture>
+		</auto_static>
+	</background>
+	
+	 <form x="50" y="252" width="560" height="460">
+		<texture>ui_inGame2_opt_main_window</texture>
+		<caption x="105" y="5" width="500" height="25" complex_mode="0">
+			<text x="60" font="graffiti32">Voron Spawner</text>
+		</caption>
+	
+		<btn_weapons x="53" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Weapons</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_weapons>
+		<btn_addons x="113" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Addons</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_addons>
+		<btn_outfits x="173" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Outfits</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_outfits>
+		<btn_devices x="233" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Devices</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_devices>
+		<btn_ammos x="293" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Ammos</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_ammos>
+		<btn_artefacts x="353" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Artefacts</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_artefacts>
+		<btn_foods x="413" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Foods</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_foods>
+		<btn_infos x="473" y="285" width="60" height="18">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Infos</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_infos>
+	
+		<list_frame x="57" y="308" width="473" height="354">
+			<texture>ui_inGame2_servers_list_frame</texture>
+		</list_frame>
+	
+		<list x="60" y="308" width="470" height="352" item_height="22" can_select="1">
+			<font font="letterica18" r="210" g="210" b="210"/>
+		</list>
+	
+		<check_own_to_actor x="140" y="660" width="32" height="21" vert_align="c">
+			<texture>ui_inGame2_checkbox</texture>
+			<text font="letterica16" r="115" g="114" b="112">To Actor</text>
+		</check_own_to_actor>
+		<btn_create x="135" y="685" width="135" height="25">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Create</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_create>
+		<btn_close x="301" y="685" width="135" height="25">
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+			<text align="c" font="letterica18">Close</text>
+			<text_color><e r="210" g="210" b="210"/></text_color>
+		</btn_close>
+	</form>
+</w>

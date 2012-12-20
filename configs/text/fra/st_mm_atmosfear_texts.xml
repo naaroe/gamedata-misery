@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_cap_af_options">
+		<text>Options AtmosFear</text>
+	</string>
+	<string id="st_cap_af_options_small">
+		<text>AtmosFear</text>
+	</string>
+	<string id="st_cap_af_weather_options">
+		<text>Options Mйtйo</text>
+	</string>
+	<string id="st_cap_af_event_options">
+		<text>Options Evиnements</text>
+	</string>
+	<string id="st_cap_af_moon_options">
+		<text>Options Nuit</text>
+	</string>
+	<string id="st_cap_af_default_options">
+		<text>Divers</text>
+	</string>
+	<string id="st_cap_af_blowout">
+		<text>Emissions</text>
+	</string>
+	<string id="st_cap_af_fallout">
+		<text>Averses</text>
+	</string>
+	<string id="st_cap_af_psi_storm">
+		<text>Tempкtes Psy</text>
+	</string>
+	<string id="st_cap_check_enable_blowout">
+		<text>Emissions activйes</text>
+	</string>
+	<string id="st_cap_check_enable_fallout">
+		<text>Averses activйes</text>
+	</string>
+	<string id="st_cap_check_enable_psi_storm">
+		<text>Tempкtes Psy activйes</text>
+	</string>
+
+	<string id="st_cap_fate">
+		<text>Sort des PNJs:</text>
+	</string>
+	<string id="st_cap_warning">
+		<text>Avertissements:</text>
+	</string>
+	<string id="st_cap_task">
+		<text>Tвches:</text>
+	</string>
+	<string id="st_cap_freq">
+		<text>Frequence:</text>
+	</string>
+	
+	<string id="st_list_freq_12">
+		<text>toutes les 6 - 12 heures</text>
+	</string>
+	<string id="st_list_freq_24">
+		<text>toutes les  12 - 24 heures</text>
+	</string>
+	<string id="st_list_freq_48">
+		<text>tous les 1 - 2 jours</text>
+	</string>
+	<string id="st_list_freq_96">
+		<text>tous 2 - 4 jours</text>
+	</string>
+
+	<string id="st_list_fate_killatend">
+		<text>Tuer а la fin</text>
+	</string>
+	<string id="st_list_fate_killatwave">
+		<text>Tuer par la vague</text>
+	</string>
+	<string id="st_list_fate_turntozombie">
+		<text>Transformer en zombie</text>
+	</string>
+	<string id="st_list_fate_explode">
+		<text>Pulvйriser par la vague</text>
+	</string>
+	<string id="st_list_fate_poison">
+		<text>Empoisonnement radioactif/chimique</text>
+	</string>
+	<string id="st_list_fate_none">
+		<text>Ne rien faire</text>
+	</string>
+	<string id="st_list_fate_kill">
+		<text>Tuer а la dйcharge du vortex</text>
+	</string>
+	<string id="st_list_fate_killorturn">
+		<text>Tuer ou transformer en zombie</text>
+	</string>
+	<string id="st_list_warning_radio_siren">
+		<text>Radio et sirиne</text>
+	</string>
+	<string id="st_list_warning_radio">
+		<text>Radio</text>
+	</string>
+	<string id="st_list_warning_siren">
+		<text>Sirиne</text>
+	</string>
+	<string id="st_list_warning_none">
+		<text>Pas d'avertissement</text>
+	</string>
+	<string id="st_list_task_give">
+		<text>Donner une tвche</text>
+	</string>
+	<string id="st_list_task_none">
+		<text>Ne pas donner de tвche</text>
+	</string>
+	<string id="st_cap_moon_phases">
+		<text>Phases lunaires</text>
+	</string>
+	<string id="st_cap_night_brightness">
+		<text>Ambience lumineuse de nuit</text>
+	</string>
+	<string id="st_list_night_brightness_dark">
+		<text>Sombre</text>
+	</string>
+	<string id="st_list_night_brightness_slight">
+		<text>Lйgиrement йclairйe</text>
+	</string>
+	<string id="st_list_night_brightness_medium">
+		<text>Moyennement йclairйe</text>
+	</string>
+	<string id="st_list_night_brightness_bright">
+		<text>Trиs йclairйe</text>
+	</string>
+	<string id="st_cap_weather_presets">
+		<text>Prйrйglages:</text>
+	</string>
+	<string id="st_cap_weather_balance_presets">
+		<text>Balance:</text>
+	</string>
+	<string id="st_cap_weather_length_presets">
+		<text>Durйes:</text>
+	</string>
+	<string id="st_cap_af_zaton">
+		<text>Zaton</text>
+	</string>
+	<string id="st_cap_af_jupiter">
+		<text>Jupiter</text>
+	</string>
+	<string id="st_cap_af_pripyat">
+		<text>Pripyat</text>
+	</string>
+	<string id="st_period_length_2h">
+		<text>2h</text>
+	</string>
+	<string id="st_period_length_3h">
+		<text>3h</text>
+	</string>
+	<string id="st_period_length_4h">
+		<text>4h</text>
+	</string>
+	<string id="st_period_length_5h">
+		<text>5h</text>
+	</string>
+	<string id="st_period_length_6h">
+		<text>6h</text>
+	</string>
+	<string id="st_period_length_7h">
+		<text>7h</text>
+	</string>
+	<string id="st_period_length_8h">
+		<text>8h</text>
+	</string>
+	<string id="st_period_length_9h">
+		<text>9h</text>
+	</string>
+	<string id="st_period_length_10h">
+		<text>10h</text>
+	</string>
+	<string id="st_period_length_11h">
+		<text>11h</text>
+	</string>
+	<string id="st_period_length_12h">
+		<text>12h</text>
+	</string>
+	<string id="st_period_length">
+		<text>Durйe</text>
+	</string>
+	<string id="st_cap_moon_cycle_length">
+		<text>Durйe du cylce lunaire:</text>
+	</string>
+	<string id="st_cap_moon_cycle_length_8">
+		<text>8 jours</text>
+	</string>
+	<string id="st_cap_moon_cycle_length_28">
+		<text>28 jours</text>
+	</string>
+	<string id="st_cap_moon_static">
+		<text>Lune statique:</text>
+	</string>
+	<string id="st_cap_moon_phase_0">
+		<text>Nouvelle lune</text>
+	</string>
+	<string id="st_cap_moon_phase_1">
+		<text>Lune montante</text>
+	</string>
+	<string id="st_cap_moon_phase_2">
+		<text>1er quartier</text>
+	</string>
+	<string id="st_cap_moon_phase_3">
+		<text>Gibbeuse croissante</text>
+	</string>
+	<string id="st_cap_moon_phase_4">
+		<text>Pleine lune</text>
+	</string>
+	<string id="st_cap_moon_phase_5">
+		<text>Gibbeuse dйcroissante</text>
+	</string>
+	<string id="st_cap_moon_phase_6">
+		<text>3иme quartier</text>
+	</string>
+	<string id="st_cap_moon_phase_7">
+		<text>Lune descendante</text>
+	</string>
+	<string id="st_list_weather_balance_preset_default">
+		<text>Variable</text>
+	</string>
+	<string id="st_list_weather_balance_preset_good">
+		<text>Gйnйralement beau</text>
+	</string>
+	<string id="st_list_weather_balance_preset_bad">
+		<text>Gйnйralement mauvais</text>
+	</string>
+	<string id="st_list_weather_balance_preset_custom">
+		<text>Personnalisй</text>
+	</string>
+	<string id="st_list_weather_length_preset_default">
+		<text>Durйes diverses</text>
+	</string>
+	<string id="st_list_weather_length_preset_short">
+		<text>Court</text>
+	</string>
+	<string id="st_list_weather_length_preset_long">
+		<text>Long</text>
+	</string>
+	<string id="st_list_weather_length_preset_custom">
+		<text>Personnalisй</text>
+	</string>
+	<string id="st_list_periods_clear">
+		<text>Ensoleillй</text>
+	</string>
+	<string id="st_list_periods_clear_foggy">
+		<text>Ensoleillй / Brumeux</text>
+	</string>
+	<string id="st_list_periods_foggy">
+		<text>Brumeux</text>
+	</string>
+	<string id="st_list_periods_foggy_rainy">
+		<text>Brumeux / Pluvieux</text>
+	</string>
+	<string id="st_list_periods_rainy">
+		<text>Pluvieux</text>
+	</string>
+	<string id="st_list_periods_stormy">
+		<text>Orages</text>
+	</string>
+	<string id="st_btn_load_color_balance">
+		<text>Paramиtres par dйfaut de couleurs et de luminositй</text>
+	</string>
+	<string id="st_btn_load_default_settings">
+		<text>Paramиtres par dйfaut du temps, des йvиnements et de la lune</text>
+	</string>
+	<string id="st_msg_after_save">
+		<text>Les paramиtres seront enregistrйs lors de la prochaine sauvegarde</text>
+	</string>
+	<string id="st_msg_load_user">
+		<text>Voulez-vous charger les paramиtres par dйfaut de couleurs et de luminositй?</text>
+	</string>
+	<string id="st_msg_load_default_settings">
+		<text>Voulez-vous charger les paramиtres par dйfaut du temps, des йvиnements et de la lune?</text>
+	</string>
+	<string id="st_msg_load_user_done">
+		<text>Paramиtres par dйfaut du temps, des йvиnements et de la lune chargйes</text>
+	</string>
+	<string id="st_msg_load_default_settings_done">
+		<text>Paramиtres par dйfaut du temps, des йvиnements et de la lune restaurйs</text>
+	</string>
+</string_table>

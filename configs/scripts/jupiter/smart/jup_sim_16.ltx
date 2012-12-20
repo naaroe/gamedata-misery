@@ -1,0 +1,24 @@
+[smart_terrain]
+squad_id = 36
+max_population = 1
+respawn_only_smart = true
+respawn_params = respawn@jup_sim_16
+
+[respawn@jup_sim_16]
+spawn_zombied
+spawn_dog
+spawn_pseudodog
+
+;;; unused
+
+[spawn_zombied]
+spawn_squads = simulation_zombied_1_jup_sim_16
+spawn_num = 1
+
+[spawn_pseudodog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_cat_strong
+spawn_num = 1
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_dog, simulation_pseudodog, simulation_pseudodog, simulation_bloodsucker, simulation_snork, simulation_psy_dog, simulation_cat_strong, simulation_gigant
+spawn_num = 1

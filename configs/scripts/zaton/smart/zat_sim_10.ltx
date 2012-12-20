@@ -1,0 +1,17 @@
+[smart_terrain];zat_sim_10
+squad_id = 26
+max_population = 1
+
+respawn_params = respawn@zat_sim_10
+
+[respawn@zat_sim_10]
+spawn_gigant
+spawn_chimera
+
+[spawn_gigant]
+spawn_squads = simulation_gigant_zat_sim_10, simulation_bloodsucker_zat_sim_10, simulation_snork, simulation_pseudodog
+spawn_num = {+zat_b106_chimera_dead} 0, 1
+
+[spawn_chimera]
+spawn_squads = simulation_chimera_zat_sim_10, simulation_gigant_zat_sim_10, simulation_bloodsucker_zat_sim_10, simulation_pseudodog
+spawn_num = {+zat_b106_chimera_dead} 1, 0

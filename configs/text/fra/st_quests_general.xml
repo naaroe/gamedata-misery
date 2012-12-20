@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="hide_from_surge_message">
+		<text>Attention! Emission imminente!</text>
+	</string>
+	<string id="hide_from_surge_descr_1_a">
+		<text>Emission imminente, trouvez un abri immйdiatement!</text>
+	</string>
+	<string id="hide_from_surge_descr_2_a">
+		<text>Vous n'кtes pas autorisй а quitter l'abri durant une йmission.</text>
+	</string>
+	<string id="hide_from_surge_name_1">
+		<text>Emission: Trouvez un abri.</text>
+	</string>
+	<string id="hide_from_surge_name_2">
+		<text>Emission: Restez а couvert.</text>
+	</string>
+
+	<!-- AtmosFear Fallout -->
+	<string id="hide_from_fallout_rad_message_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="hide_from_fallout_rad_message">
+		<text>Dйbut d'averse radioactive.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_1_a">
+		<text>Niveau de radiations dangereux. Vous devriez йviter l'averse radioactive.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_2_a">
+		<text>Vous ne devriez pas quitter l'abri pendant une averse radioactive.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_1">
+		<text>Averse radioactive: Trouvez un abri.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_2">
+		<text>Averse radioactive: Restez а couvert.</text>
+	</string>
+	<string id="end_fallout_rad_message_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="end_fallout_rad_message">
+		<text>Fin de l'averse radioactive.</text>
+	</string>
+	
+	<string id="hide_from_fallout_acid_message_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="hide_from_fallout_acid_message">
+		<text>Dйbut d'averse chimique.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_1_a">
+		<text>Niveau de contamination dangereux. Vous devriez йviter l'averse chimique.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_2_a">
+		<text>Vous ne devriez pas quitter l'abri pendant une averse chimique.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_1">
+		<text>Averse chimique: Trouvez un abri.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_2">
+		<text>Averse chimique: Restez а couvert.</text>
+	</string>
+	<string id="end_fallout_acid_message_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="end_fallout_acid_message">
+		<text>Fin de l'averse chimique</text>
+	</string>
+
+	<!-- AtmosFear Psi Storm -->
+	<string id="hide_from_psi_storm_message_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="hide_from_psi_storm_message">
+		<text>Dйbut de tempкte Psy.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_1_a">
+		<text>Vous devriez йviter la tempкte Psy.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_2_a">
+		<text>Vous ne devriez pas quitter l'abri pendant une a tempкte Psy.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_1">
+		<text>tempкte Psy: Trouvez un abri.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_2">
+		<text>tempкte Psy: Restez а couvert</text>
+	</string>
+	<string id="end_psi_storm_caption">
+		<text>Attention!</text>
+	</string>
+	<string id="end_psi_storm_message">
+		<text>Fin de la tempкte Psy.</text>
+	</string>
+
+</string_table>

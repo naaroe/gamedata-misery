@@ -1,0 +1,17 @@
+grooming		= 1, prob=0.010 \n
+journal			= 1, prob=0.012 \n
+geiger_dead		= 1, prob=0.010 \n
+cooking			= 1, prob=0.010 \n
+picture_woman		= 1, prob=0.012 \n
+
+spareparts		= 1, prob=0.008 \n
+beadspread		= 1, prob=0.012 \n
+cards		= 2, prob=0.016 \n
+ammo_bad		= 10, prob=0.004 \n
+swiss		= 1, prob=0.018 \n
+headlamp		= 1, prob=0.010 \n
+mirror		= 1, prob=0.018 \n
+flashlight_old		= 1, prob=0.010 \n
+flashlight_broken		= 1, prob=0.010 \n
+cutlery		= 1, prob=0.018 \n
+fieldcooker		= 1, prob=0.014 \n

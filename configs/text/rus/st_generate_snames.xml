@@ -1,0 +1,6449 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+
+<string id="lname_bandit_0">
+<text> The Gray </text>
+</string>
+
+<string id="lname_bandit_1">
+<text> The Mad</text>
+</string>
+
+<string id="lname_bandit_10">
+<text> The Rotten </text>
+</string>
+
+<string id="lname_bandit_100">
+<text> The Cheburek </text>
+</string>
+
+<string id="lname_bandit_101">
+<text> The Spy </text>
+</string>
+
+<string id="lname_bandit_102">
+<text> The Bison </text>
+</string>
+
+<string id="lname_bandit_103">
+<text> The Beaver </text>
+</string>
+
+<string id="lname_bandit_104">
+<text> The Bulldog </text>
+</string>
+
+<string id="lname_bandit_105">
+<text> The Bull </text>
+</string>
+
+<string id="lname_bandit_106">
+<text> The Sparrow </text>
+</string>
+
+<string id="lname_bandit_107">
+<text> The Woodpecker </text>
+</string>
+
+<string id="lname_bandit_108">
+<text> The Beast </text>
+</string>
+
+<string id="lname_bandit_109">
+<text> The Wizard </text>
+</string>
+
+<string id="lname_bandit_11">
+<text> The Hunchback </text>
+</string>
+
+<string id="lname_bandit_110">
+<text> The Boar </text>
+</string>
+
+<string id="lname_bandit_111">
+<text> The Karas </text>
+</string>
+
+<string id="lname_bandit_112">
+<text> The Canary </text>
+</string>
+
+<string id="lname_bandit_113">
+<text> The Bedbug </text>
+</string>
+
+<string id="lname_bandit_114">
+<text> The Pointing </text>
+</string>
+
+<string id="lname_bandit_115">
+<text> The Moose </text>
+</string>
+
+<string id="lname_bandit_116">
+<text> The Patsyuk </text>
+</string>
+
+<string id="lname_bandit_117">
+<text> The Udav </text>
+</string>
+
+<string id="lname_bandit_118">
+<text> The Baton </text>
+</string>
+
+<string id="lname_bandit_119">
+<text> The Broken </text>
+</string>
+
+<string id="lname_bandit_12">
+<text> The Long </text>
+</string>
+
+<string id="lname_bandit_120">
+<text> The Lawlessness </text>
+</string>
+
+<string id="lname_bandit_121">
+<text> The Bolt </text>
+</string>
+
+<string id="lname_bandit_122">
+<text> The Razor </text>
+</string>
+
+<string id="lname_bandit_123">
+<text> The Tambourine </text>
+</string>
+
+<string id="lname_bandit_124">
+<text> The Rubbish </text>
+</string>
+
+<string id="lname_bandit_125">
+<text> The Screw </text>
+</string>
+
+<string id="lname_bandit_126">
+<text> The Dynamite </text>
+</string>
+
+<string id="lname_bandit_127">
+<text> The Hotspur </text>
+</string>
+
+<string id="lname_bandit_128">
+<text> The Spade </text>
+</string>
+
+<string id="lname_bandit_129">
+<text> The Cannot </text>
+</string>
+
+<string id="lname_bandit_13">
+<text> The Dead </text>
+</string>
+
+<string id="lname_bandit_130">
+<text> The Cross </text>
+</string>
+
+<string id="lname_bandit_131">
+<text> The Ruberoid </text>
+</string>
+
+<string id="lname_bandit_132">
+<text> The Lapot </text>
+</string>
+
+<string id="lname_bandit_133">
+<text> The Lom </text>
+</string>
+
+<string id="lname_bandit_134">
+<text> The Panadol </text>
+</string>
+
+<string id="lname_bandit_135">
+<text> The Perot </text>
+</string>
+
+<string id="lname_bandit_136">
+<text> The Pistone </text>
+</string>
+
+<string id="lname_bandit_137">
+<text> The Nickle </text>
+</string>
+
+<string id="lname_bandit_138">
+<text> The Tails </text>
+</string>
+
+<string id="lname_bandit_139">
+<text> The Death </text>
+</string>
+
+<string id="lname_bandit_14">
+<text> The Legger </text>
+</string>
+
+<string id="lname_bandit_140">
+<text> The Tochilo </text>
+</string>
+
+<string id="lname_bandit_141">
+<text> The Ace </text>
+</string>
+
+<string id="lname_bandit_142">
+<text> The Chekan </text>
+</string>
+
+<string id="lname_bandit_143">
+<text> The Scarecrow </text>
+</string>
+
+<string id="lname_bandit_144">
+<text> The Shket </text>
+</string>
+
+<string id="lname_bandit_145">
+<text> The Sleeper </text>
+</string>
+
+<string id="lname_bandit_146">
+<text> The Pin </text>
+</string>
+
+<string id="lname_bandit_147">
+<text> The Nix </text>
+</string>
+
+<string id="lname_bandit_148">
+<text> The Fist </text>
+</string>
+
+<string id="lname_bandit_149">
+<text> The Bruise </text>
+</string>
+
+<string id="lname_bandit_15">
+<text> The Dohlyak </text>
+</string>
+
+<string id="lname_bandit_150">
+<text> The Barmalei </text>
+</string>
+
+<string id="lname_bandit_151">
+<text> The Batu </text>
+</string>
+
+<string id="lname_bandit_152">
+<text> The Kashchei </text>
+</string>
+
+<string id="lname_bandit_153">
+<text> The Rambo </text>
+</string>
+
+<string id="lname_bandit_154">
+<text> The Susanin </text>
+</string>
+
+<string id="lname_bandit_155">
+<text> The Terminator </text>
+</string>
+
+<string id="lname_bandit_156">
+<text> The Chapay </text>
+</string>
+
+<string id="lname_bandit_157">
+<text> The Genghis </text>
+</string>
+
+<string id="lname_bandit_158">
+<text> The Banana </text>
+</string>
+
+<string id="lname_bandit_159">
+<text> The Baton </text>
+</string>
+
+<string id="lname_bandit_16">
+<text> The leaking </text>
+</string>
+
+<string id="lname_bandit_160">
+<text> The Dad </text>
+</string>
+
+<string id="lname_bandit_161">
+<text> The Bayan </text>
+</string>
+
+<string id="lname_bandit_162">
+<text> The Bratan </text>
+</string>
+
+<string id="lname_bandit_163">
+<text> The gangrene </text>
+</string>
+
+<string id="lname_bandit_164">
+<text> The Gluck </text>
+</string>
+
+<string id="lname_bandit_165">
+<text> The Degree </text>
+</string>
+
+<string id="lname_bandit_166">
+<text> The Saiga </text>
+</string>
+
+<string id="lname_bandit_167">
+<text> The Zvizdets </text>
+</string>
+
+<string id="lname_bandit_168">
+<text> The Outcast </text>
+</string>
+
+<string id="lname_bandit_169">
+<text> The Jelly </text>
+</string>
+
+<string id="lname_bandit_17">
+<text> The Burnt </text>
+</string>
+
+<string id="lname_bandit_170">
+<text> The Hotspur </text>
+</string>
+
+<string id="lname_bandit_171">
+<text> The Cannot </text>
+</string>
+
+<string id="lname_bandit_172">
+<text> The Lapot </text>
+</string>
+
+<string id="lname_bandit_173">
+<text> The Leshy </text>
+</string>
+
+<string id="lname_bandit_174">
+<text> The Moor </text>
+</string>
+
+<string id="lname_bandit_175">
+<text> The Nishtyak </text>
+</string>
+
+<string id="lname_bandit_176">
+<text> The Molding </text>
+</string>
+
+<string id="lname_bandit_177">
+<text> The Dumpling </text>
+</string>
+
+<string id="lname_bandit_178">
+<text> The Pepper </text>
+</string>
+
+<string id="lname_bandit_179">
+<text> The Fugly </text>
+</string>
+
+<string id="lname_bandit_18">
+<text> The Zhirdyay </text>
+</string>
+
+<string id="lname_bandit_180">
+<text> The Sukhar </text>
+</string>
+
+<string id="lname_bandit_181">
+<text> The Ghoul </text>
+</string>
+
+<string id="lname_bandit_19">
+<text> The Zhloba </text>
+</string>
+
+<string id="lname_bandit_2">
+<text> The Broken </text>
+</string>
+
+<string id="lname_bandit_20">
+<text> The Miser </text>
+</string>
+
+<string id="lname_bandit_21">
+<text> The Zhmur </text>
+</string>
+
+<string id="lname_bandit_22">
+<text> The Monster </text>
+</string>
+
+<string id="lname_bandit_23">
+<text> The Cripple </text>
+</string>
+
+<string id="lname_bandit_24">
+<text> The Kolotun </text>
+</string>
+
+<string id="lname_bandit_25">
+<text> The Oblique </text>
+</string>
+
+<string id="lname_bandit_26">
+<text> The Crooked </text>
+</string>
+
+<string id="lname_bandit_27">
+<text> The Tod </text>
+</string>
+
+<string id="lname_bandit_28">
+<text> The Bald </text>
+</string>
+
+<string id="lname_bandit_29">
+<text> The Lyutyi </text>
+</string>
+
+<string id="lname_bandit_3">
+<text> The Blatnoj </text>
+</string>
+
+<string id="lname_bandit_30">
+<text> The Local </text>
+</string>
+
+<string id="lname_bandit_31">
+<text> The Muddy </text>
+</string>
+
+<string id="lname_bandit_32">
+<text> The Crumpled </text>
+</string>
+
+<string id="lname_bandit_33">
+<text> The Eye </text>
+</string>
+
+<string id="lname_bandit_34">
+<text> The Scum </text>
+</string>
+
+<string id="lname_bandit_35">
+<text> The Parasite </text>
+</string>
+
+<string id="lname_bandit_36">
+<text> The Dandy </text>
+</string>
+
+<string id="lname_bandit_37">
+<text> The Scoundrel </text>
+</string>
+
+<string id="lname_bandit_38">
+<text> The Corpse </text>
+</string>
+
+<string id="lname_bandit_39">
+<text> The Mad Dog </text>
+</string>
+
+<string id="lname_bandit_4">
+<text> The Chatter </text>
+</string>
+
+<string id="lname_bandit_40">
+<text> The Torn </text>
+</string>
+
+<string id="lname_bandit_41">
+<text> The Grabber </text>
+</string>
+
+<string id="lname_bandit_42">
+<text> The Blind </text>
+</string>
+
+<string id="lname_bandit_43">
+<text> The Nozzle </text>
+</string>
+
+<string id="lname_bandit_44">
+<text> The Dude </text>
+</string>
+
+<string id="lname_bandit_45">
+<text> The Capital </text>
+</string>
+
+<string id="lname_bandit_46">
+<text> The Trupak </text>
+</string>
+
+<string id="lname_bandit_47">
+<text> The Ukhar </text>
+</string>
+
+<string id="lname_bandit_48">
+<text> The Ear </text>
+</string>
+
+<string id="lname_bandit_49">
+<text> The Hohmach </text>
+</string>
+
+<string id="lname_bandit_5">
+<text> The Borzoi </text>
+</string>
+
+<string id="lname_bandit_50">
+<text> The Lame </text>
+</string>
+
+<string id="lname_bandit_51">
+<text> The Chronicles </text>
+</string>
+
+<string id="lname_bandit_52">
+<text> The Mad </text>
+</string>
+
+<string id="lname_bandit_53">
+<text> The Aesthete </text>
+</string>
+
+<string id="lname_bandit_54">
+<text> The Juicy </text>
+</string>
+
+<string id="lname_bandit_55">
+<text> The Counsel </text>
+</string>
+
+<string id="lname_bandit_56">
+<text> The Aibolit </text>
+</string>
+
+<string id="lname_bandit_57">
+<text> The Actor </text>
+</string>
+
+<string id="lname_bandit_58">
+<text> The Rogue Trader </text>
+</string>
+
+<string id="lname_bandit_59">
+<text> The Banker </text>
+</string>
+
+<string id="lname_bandit_6">
+<text> The Bum </text>
+</string>
+
+<string id="lname_bandit_60">
+<text> The Baron </text>
+</string>
+
+<string id="lname_bandit_61">
+<text> The Baryga </text>
+</string>
+
+<string id="lname_bandit_62">
+<text> The Basurman </text>
+</string>
+
+<string id="lname_bandit_63">
+<text> The homeless </text>
+</string>
+
+<string id="lname_bandit_64">
+<text> The Boatswain </text>
+</string>
+
+<string id="lname_bandit_65">
+<text> The Pygmy </text>
+</string>
+
+<string id="lname_bandit_66">
+<text> The Bourbon </text>
+</string>
+
+<string id="lname_bandit_67">
+<text> The Bourgeois </text>
+</string>
+
+<string id="lname_bandit_68">
+<text> The Drove </text>
+</string>
+
+<string id="lname_bandit_69">
+<text> The Thief </text>
+</string>
+
+<string id="lname_bandit_7">
+<text> The shaven </text>
+</string>
+
+<string id="lname_bandit_70">
+<text> The Gangster </text>
+</string>
+
+<string id="lname_bandit_71">
+<text> The Messenger </text>
+</string>
+
+<string id="lname_bandit_72">
+<text> The Graph </text>
+</string>
+
+<string id="lname_bandit_73">
+<text> The Despot </text>
+</string>
+
+<string id="lname_bandit_74">
+<text> The Savage </text>
+</string>
+
+<string id="lname_bandit_75">
+<text> The Strangler </text>
+</string>
+
+<string id="lname_bandit_76">
+<text> The Lawyer </text>
+</string>
+
+<string id="lname_bandit_77">
+<text> The Player </text>
+</string>
+
+<string id="lname_bandit_78">
+<text> The Throw </text>
+</string>
+
+<string id="lname_bandit_79">
+<text> The GodfaTher </text>
+</string>
+
+<string id="lname_bandit_8">
+<text> The Experienced </text>
+</string>
+
+<string id="lname_bandit_80">
+<text> The Driver </text>
+</string>
+
+<string id="lname_bandit_81">
+<text> The Major </text>
+</string>
+
+<string id="lname_bandit_82">
+<text> The Maniac </text>
+</string>
+
+<string id="lname_bandit_83">
+<text> The Gravedigger </text>
+</string>
+
+<string id="lname_bandit_84">
+<text> The Butcher </text>
+</string>
+
+<string id="lname_bandit_85">
+<text> The Ninja </text>
+</string>
+
+<string id="lname_bandit_86">
+<text> The Executioner </text>
+</string>
+
+<string id="lname_bandit_87">
+<text> The Punk </text>
+</string>
+
+<string id="lname_bandit_88">
+<text> The Partizan </text>
+</string>
+
+<string id="lname_bandit_89">
+<text> The Pacifist </text>
+</string>
+
+<string id="lname_bandit_9">
+<text> The Chunk </text>
+</string>
+
+<string id="lname_bandit_90">
+<text> The Pirate </text>
+</string>
+
+<string id="lname_bandit_91">
+<text> The Pyro </text>
+</string>
+
+<string id="lname_bandit_92">
+<text> The Prince </text>
+</string>
+
+<string id="lname_bandit_93">
+<text> The Rogue </text>
+</string>
+
+<string id="lname_bandit_94">
+<text> The Kamikadze </text>
+</string>
+
+<string id="lname_bandit_95">
+<text> The Pimp </text>
+</string>
+
+<string id="lname_bandit_96">
+<text> The Tyrant </text>
+</string>
+
+<string id="lname_bandit_97">
+<text> The Killer </text>
+</string>
+
+<string id="lname_bandit_98">
+<text> The Bassoon </text>
+</string>
+
+<string id="lname_bandit_99">
+<text> The Chemist </text>
+</string>
+
+
+<string id="lname_captain_0">
+<text> Abdurhmanov </text>
+</string>
+
+<string id="lname_captain_1">
+<text> Altyns </text>
+</string>
+
+<string id="lname_captain_10">
+<text> Barsac </text>
+</string>
+
+<string id="lname_captain_100">
+<text> Kireev </text>
+</string>
+
+<string id="lname_captain_101">
+<text> Shcherbin </text>
+</string>
+
+<string id="lname_captain_102">
+<text> Kovalchuk </text>
+</string>
+
+<string id="lname_captain_103">
+<text> Koev </text>
+</string>
+
+<string id="lname_captain_104">
+<text> Kozlov </text>
+</string>
+
+<string id="lname_captain_105">
+<text> Kolontarev </text>
+</string>
+
+<string id="lname_captain_106">
+<text> Kolontar </text>
+</string>
+
+<string id="lname_captain_107">
+<text> Kondratenko </text>
+</string>
+
+<string id="lname_captain_108">
+<text> Korkin </text>
+</string>
+
+<string id="lname_captain_109">
+<text> Korneev </text>
+</string>
+
+<string id="lname_captain_11">
+<text> Baul </text>
+</string>
+
+<string id="lname_captain_110">
+<text> Kravchenko </text>
+</string>
+
+<string id="lname_captain_111">
+<text> Injustice </text>
+</string>
+
+<string id="lname_captain_112">
+<text> Krivokhatskiy </text>
+</string>
+
+<string id="lname_captain_113">
+<text> Kuznetsov </text>
+</string>
+
+<string id="lname_captain_114">
+<text> Kuzmich </text>
+</string>
+
+<string id="lname_captain_115">
+<text> Kuzyakin </text>
+</string>
+
+<string id="lname_captain_116">
+<text> Kulchitskaja </text>
+</string>
+
+<string id="lname_captain_117">
+<text> Kuntsev </text>
+</string>
+
+<string id="lname_captain_118">
+<text> Kurvits </text>
+</string>
+
+<string id="lname_captain_119">
+<text> Kucheruk </text>
+</string>
+
+<string id="lname_captain_12">
+<text> Bashakov </text>
+</string>
+
+<string id="lname_captain_120">
+<text> Kushnarev </text>
+</string>
+
+<string id="lname_captain_121">
+<text> Khaladze </text>
+</string>
+
+<string id="lname_captain_122">
+<text> Lavrik </text>
+</string>
+
+<string id="lname_captain_123">
+<text> Lavrov </text>
+</string>
+
+<string id="lname_captain_124">
+<text> Livshits </text>
+</string>
+
+<string id="lname_captain_125">
+<text> Lisichanskiy </text>
+</string>
+
+<string id="lname_captain_126">
+<text> Litvin </text>
+</string>
+
+<string id="lname_captain_127">
+<text> Lymarenko </text>
+</string>
+
+<string id="lname_captain_128">
+<text> Mazeppa </text>
+</string>
+
+<string id="lname_captain_129">
+<text> Makarenko </text>
+</string>
+
+<string id="lname_captain_13">
+<text> Bashmakov </text>
+</string>
+
+<string id="lname_captain_130">
+<text> Maltsev </text>
+</string>
+
+<string id="lname_captain_131">
+<text> Mamaev </text>
+</string>
+
+<string id="lname_captain_132">
+<text> Merzlyaev </text>
+</string>
+
+<string id="lname_captain_133">
+<text> Milchenko </text>
+</string>
+
+<string id="lname_captain_134">
+<text> Mironuk </text>
+</string>
+
+<string id="lname_captain_135">
+<text> Maurer </text>
+</string>
+
+<string id="lname_captain_136">
+<text> Kryga </text>
+</string>
+
+<string id="lname_captain_137">
+<text> Bridge </text>
+</string>
+
+<string id="lname_captain_138">
+<text> Muntean </text>
+</string>
+
+<string id="lname_captain_139">
+<text> Mukhamedov </text>
+</string>
+
+<string id="lname_captain_14">
+<text> Beshevly </text>
+</string>
+
+<string id="lname_captain_140">
+<text> Myskov </text>
+</string>
+
+<string id="lname_captain_141">
+<text> Navrotsky </text>
+</string>
+
+<string id="lname_captain_142">
+<text> Nepritsky </text>
+</string>
+
+<string id="lname_captain_143">
+<text> Nikanorov </text>
+</string>
+
+<string id="lname_captain_144">
+<text> Nikeshina </text>
+</string>
+
+<string id="lname_captain_145">
+<text> Nikulin </text>
+</string>
+
+<string id="lname_captain_146">
+<text> Futsin </text>
+</string>
+
+<string id="lname_captain_147">
+<text> Norden </text>
+</string>
+
+<string id="lname_captain_148">
+<text> Nosan </text>
+</string>
+
+<string id="lname_captain_149">
+<text> Opolev </text>
+</string>
+
+<string id="lname_captain_15">
+<text> Bino </text>
+</string>
+
+<string id="lname_captain_150">
+<text> Orlevich </text>
+</string>
+
+<string id="lname_captain_151">
+<text> Orlov </text>
+</string>
+
+<string id="lname_captain_152">
+<text> Piatkevich </text>
+</string>
+
+<string id="lname_captain_153">
+<text> Petrenko </text>
+</string>
+
+<string id="lname_captain_154">
+<text> Petrov </text>
+</string>
+
+<string id="lname_captain_155">
+<text> Plohenko </text>
+</string>
+
+<string id="lname_captain_156">
+<text> Podyachev </text>
+</string>
+
+<string id="lname_captain_157">
+<text> Polyanin </text>
+</string>
+
+<string id="lname_captain_158">
+<text> Poplavskii </text>
+</string>
+
+<string id="lname_captain_159">
+<text> Popov </text>
+</string>
+
+<string id="lname_captain_16">
+<text> Blinov </text>
+</string>
+
+<string id="lname_captain_160">
+<text> Portnykh </text>
+</string>
+
+<string id="lname_captain_161">
+<text> Prasolov </text>
+</string>
+
+<string id="lname_captain_162">
+<text> Prokopenko </text>
+</string>
+
+<string id="lname_captain_163">
+<text> Proskurin </text>
+</string>
+
+<string id="lname_captain_164">
+<text> Protsenko </text>
+</string>
+
+<string id="lname_captain_165">
+<text> Prudov </text>
+</string>
+
+<string id="lname_captain_166">
+<text> Pustovarov </text>
+</string>
+
+<string id="lname_captain_167">
+<text> Puchek </text>
+</string>
+
+<string id="lname_captain_168">
+<text> Rabinovich </text>
+</string>
+
+<string id="lname_captain_169">
+<text> Radkevich </text>
+</string>
+
+<string id="lname_captain_17">
+<text> Bobrov </text>
+</string>
+
+<string id="lname_captain_170">
+<text> Rezun </text>
+</string>
+
+<string id="lname_captain_171">
+<text> Rogoza </text>
+</string>
+
+<string id="lname_captain_172">
+<text> Rodnyanskii </text>
+</string>
+
+<string id="lname_captain_173">
+<text> Rotan </text>
+</string>
+
+<string id="lname_captain_174">
+<text> Rublev </text>
+</string>
+
+<string id="lname_captain_175">
+<text> Rudic </text>
+</string>
+
+<string id="lname_captain_176">
+<text> Rusanov </text>
+</string>
+
+<string id="lname_captain_177">
+<text> Rychagirsky </text>
+</string>
+
+<string id="lname_captain_178">
+<text> Savchenko </text>
+</string>
+
+<string id="lname_captain_179">
+<text> Savchuk </text>
+</string>
+
+<string id="lname_captain_18">
+<text> Bogdanov </text>
+</string>
+
+<string id="lname_captain_180">
+<text> Sagitov </text>
+</string>
+
+<string id="lname_captain_181">
+<text> Sviridov </text>
+</string>
+
+<string id="lname_captain_182">
+<text> Sedyh </text>
+</string>
+
+<string id="lname_captain_183">
+<text> Sereda </text>
+</string>
+
+<string id="lname_captain_184">
+<text> Sidorenko </text>
+</string>
+
+<string id="lname_captain_185">
+<text> Sidorov </text>
+</string>
+
+<string id="lname_captain_186">
+<text> Siniy </text>
+</string>
+
+<string id="lname_captain_187">
+<text> Sinitsyn </text>
+</string>
+
+<string id="lname_captain_188">
+<text> Bensh </text>
+</string>
+
+<string id="lname_captain_189">
+<text> Slutsky </text>
+</string>
+
+<string id="lname_captain_19">
+<text> Boyko </text>
+</string>
+
+<string id="lname_captain_190">
+<text> Smelov </text>
+</string>
+
+<string id="lname_captain_191">
+<text> Smoliy </text>
+</string>
+
+<string id="lname_captain_192">
+<text> Sorokin </text>
+</string>
+
+<string id="lname_captain_193">
+<text> Statsyura </text>
+</string>
+
+<string id="lname_captain_194">
+<text> Stepchin </text>
+</string>
+
+<string id="lname_captain_195">
+<text> Stychinsky </text>
+</string>
+
+<string id="lname_captain_196">
+<text> Sykula </text>
+</string>
+
+<string id="lname_captain_197">
+<text> Tarnavskii </text>
+</string>
+
+<string id="lname_captain_198">
+<text> Tatarchuk </text>
+</string>
+
+<string id="lname_captain_199">
+<text> Timchuk </text>
+</string>
+
+<string id="lname_captain_2">
+<text> Andreychuk </text>
+</string>
+
+<string id="lname_captain_20">
+<text> Boychenko </text>
+</string>
+
+<string id="lname_captain_21">
+<text> Boldeskul </text>
+</string>
+
+<string id="lname_captain_22">
+<text> Bondarev </text>
+</string>
+
+<string id="lname_captain_23">
+<text> Borisov </text>
+</string>
+
+<string id="lname_captain_24">
+<text> Breach </text>
+</string>
+
+<string id="lname_captain_25">
+<text> Bronstein </text>
+</string>
+
+<string id="lname_captain_26">
+<text> Buryak </text>
+</string>
+
+<string id="lname_captain_27">
+<text> Buturin </text>
+</string>
+
+<string id="lname_captain_28">
+<text> Byalo </text>
+</string>
+
+<string id="lname_captain_29">
+<text> Valentine </text>
+</string>
+
+<string id="lname_captain_3">
+<text> Andruschenko </text>
+</string>
+
+<string id="lname_captain_30">
+<text> Vasilyev </text>
+</string>
+
+<string id="lname_captain_31">
+<text> Veselov </text>
+</string>
+
+<string id="lname_captain_32">
+<text> Vinogradov </text>
+</string>
+
+<string id="lname_captain_33">
+<text> Vovnenko </text>
+</string>
+
+<string id="lname_captain_34">
+<text> Volanchuk </text>
+</string>
+
+<string id="lname_captain_35">
+<text> Volodar </text>
+</string>
+
+<string id="lname_captain_36">
+<text> Voloshin </text>
+</string>
+
+<string id="lname_captain_37">
+<text> Vorontsov </text>
+</string>
+
+<string id="lname_captain_38">
+<text> Vorohaev </text>
+</string>
+
+<string id="lname_captain_39">
+<text> Vyushinsky </text>
+</string>
+
+<string id="lname_captain_4">
+<text> Anissya </text>
+</string>
+
+<string id="lname_captain_40">
+<text> Galkin </text>
+</string>
+
+<string id="lname_captain_41">
+<text> Ganzyuk </text>
+</string>
+
+<string id="lname_captain_42">
+<text> Garkovenko </text>
+</string>
+
+<string id="lname_captain_43">
+<text> Garkusha </text>
+</string>
+
+<string id="lname_captain_44">
+<text> Georgov </text>
+</string>
+
+<string id="lname_captain_45">
+<text> Glebovsky </text>
+</string>
+
+<string id="lname_captain_46">
+<text> Hnatjuk </text>
+</string>
+
+<string id="lname_captain_47">
+<text> Goncharenko </text>
+</string>
+
+<string id="lname_captain_48">
+<text> Gordienko </text>
+</string>
+
+<string id="lname_captain_49">
+<text> Gorlevoy </text>
+</string>
+
+<string id="lname_captain_5">
+<text> Ardashev </text>
+</string>
+
+<string id="lname_captain_50">
+<text> Gorohin </text>
+</string>
+
+<string id="lname_captain_51">
+<text> Gorunov </text>
+</string>
+
+<string id="lname_captain_52">
+<text> Grebenyuk </text>
+</string>
+
+<string id="lname_captain_53">
+<text> Gritsaenko </text>
+</string>
+
+<string id="lname_captain_54">
+<text> Gritsay </text>
+</string>
+
+<string id="lname_captain_55">
+<text> Gritsenko </text>
+</string>
+
+<string id="lname_captain_56">
+<text> Grishachev </text>
+</string>
+
+<string id="lname_captain_57">
+<text> Grishuk </text>
+</string>
+
+<string id="lname_captain_58">
+<text> Gubar </text>
+</string>
+
+<string id="lname_captain_59">
+<text> Gunko </text>
+</string>
+
+<string id="lname_captain_6">
+<text> Babich </text>
+</string>
+
+<string id="lname_captain_60">
+<text> Gurevich </text>
+</string>
+
+<string id="lname_captain_61">
+<text> Denisenko </text>
+</string>
+
+<string id="lname_captain_62">
+<text> Dovgalyuk </text>
+</string>
+
+<string id="lname_captain_63">
+<text> Dombrik </text>
+</string>
+
+<string id="lname_captain_64">
+<text> Dotsenko </text>
+</string>
+
+<string id="lname_captain_65">
+<text> Drozdush </text>
+</string>
+
+<string id="lname_captain_66">
+<text> Dubenchuk </text>
+</string>
+
+<string id="lname_captain_67">
+<text> Dudorov </text>
+</string>
+
+<string id="lname_captain_68">
+<text> Duca </text>
+</string>
+
+<string id="lname_captain_69">
+<text> Daisy </text>
+</string>
+
+<string id="lname_captain_7">
+<text> Balan </text>
+</string>
+
+<string id="lname_captain_70">
+<text> Dunaev </text>
+</string>
+
+<string id="lname_captain_71">
+<text> Dyklov </text>
+</string>
+
+<string id="lname_captain_72">
+<text> Erofeev </text>
+</string>
+
+<string id="lname_captain_73">
+<text> Efremov </text>
+</string>
+
+<string id="lname_captain_74">
+<text> Zhabenko </text>
+</string>
+
+<string id="lname_captain_75">
+<text> Zhmyev </text>
+</string>
+
+<string id="lname_captain_76">
+<text> Zhurakovsky </text>
+</string>
+
+<string id="lname_captain_77">
+<text> Zabyyyagoda </text>
+</string>
+
+<string id="lname_captain_78">
+<text> Zagorodniuk </text>
+</string>
+
+<string id="lname_captain_79">
+<text> Zamosenchuk </text>
+</string>
+
+<string id="lname_captain_8">
+<text> Baranov </text>
+</string>
+
+<string id="lname_captain_80">
+<text> Zarubin </text>
+</string>
+
+<string id="lname_captain_81">
+<text> Zakharin </text>
+</string>
+
+<string id="lname_captain_82">
+<text> Zvonnitsky </text>
+</string>
+
+<string id="lname_captain_83">
+<text> Zinoviev </text>
+</string>
+
+<string id="lname_captain_84">
+<text> Zozo </text>
+</string>
+
+<string id="lname_captain_85">
+<text> Zolotar </text>
+</string>
+
+<string id="lname_captain_86">
+<text> Zubarev </text>
+</string>
+
+<string id="lname_captain_87">
+<text> Zubkov </text>
+</string>
+
+<string id="lname_captain_88">
+<text> Ivanov </text>
+</string>
+
+<string id="lname_captain_89">
+<text> Ignatenko </text>
+</string>
+
+<string id="lname_captain_9">
+<text> Baranowski </text>
+</string>
+
+<string id="lname_captain_90">
+<text> Izhenko </text>
+</string>
+
+<string id="lname_captain_91">
+<text> Ishchuk </text>
+</string>
+
+<string id="lname_captain_92">
+<text> Kazakov </text>
+</string>
+
+<string id="lname_captain_93">
+<text> Kazantsev </text>
+</string>
+
+<string id="lname_captain_94">
+<text> Kandybabko </text>
+</string>
+
+<string id="lname_captain_95">
+<text> Kapuka </text>
+</string>
+
+<string id="lname_captain_96">
+<text> Kapustyanko </text>
+</string>
+
+<string id="lname_captain_97">
+<text> Katz </text>
+</string>
+
+<string id="lname_captain_98">
+<text> Kikabidze </text>
+</string>
+
+<string id="lname_captain_99">
+<text> Gatsula </text>
+</string>
+
+<string id="lname_lieutenant_0">
+<text> Abdurhmanov </text>
+</string>
+
+<string id="lname_lieutenant_1">
+<text> Altyns </text>
+</string>
+
+<string id="lname_lieutenant_10">
+<text> Barsac </text>
+</string>
+
+<string id="lname_lieutenant_100">
+<text> Kireev </text>
+</string>
+
+<string id="lname_lieutenant_101">
+<text> Shcherbin </text>
+</string>
+
+<string id="lname_lieutenant_102">
+<text> Kovalchuk </text>
+</string>
+
+<string id="lname_lieutenant_103">
+<text> Koev </text>
+</string>
+
+<string id="lname_lieutenant_104">
+<text> Kozlov </text>
+</string>
+
+<string id="lname_lieutenant_105">
+<text> Kolontarev </text>
+</string>
+
+<string id="lname_lieutenant_106">
+<text> Kolontar </text>
+</string>
+
+<string id="lname_lieutenant_107">
+<text> Kondratenko </text>
+</string>
+
+<string id="lname_lieutenant_108">
+<text> Korkin </text>
+</string>
+
+<string id="lname_lieutenant_109">
+<text> Korneev </text>
+</string>
+
+<string id="lname_lieutenant_11">
+<text> Baul </text>
+</string>
+
+<string id="lname_lieutenant_110">
+<text> Kravchenko </text>
+</string>
+
+<string id="lname_lieutenant_111">
+<text> Injustice </text>
+</string>
+
+<string id="lname_lieutenant_112">
+<text> Krivokhatskiy </text>
+</string>
+
+<string id="lname_lieutenant_113">
+<text> Kuznetsov </text>
+</string>
+
+<string id="lname_lieutenant_114">
+<text> Kuzmich </text>
+</string>
+
+<string id="lname_lieutenant_115">
+<text> Kuzyakin </text>
+</string>
+
+<string id="lname_lieutenant_116">
+<text> Kulchitskaja </text>
+</string>
+
+<string id="lname_lieutenant_117">
+<text> Kuntsev </text>
+</string>
+
+<string id="lname_lieutenant_118">
+<text> Kurvits </text>
+</string>
+
+<string id="lname_lieutenant_119">
+<text> Kucheruk </text>
+</string>
+
+<string id="lname_lieutenant_12">
+<text> Bashakov </text>
+</string>
+
+<string id="lname_lieutenant_120">
+<text> Kushnarev </text>
+</string>
+
+<string id="lname_lieutenant_121">
+<text> Khaladze </text>
+</string>
+
+<string id="lname_lieutenant_122">
+<text> Lavrik </text>
+</string>
+
+<string id="lname_lieutenant_123">
+<text> Lavrov </text>
+</string>
+
+<string id="lname_lieutenant_124">
+<text> Livshits </text>
+</string>
+
+<string id="lname_lieutenant_125">
+<text> Lisichanskiy </text>
+</string>
+
+<string id="lname_lieutenant_126">
+<text> Litvin </text>
+</string>
+
+<string id="lname_lieutenant_127">
+<text> Lymarenko </text>
+</string>
+
+<string id="lname_lieutenant_128">
+<text> Mazeppa </text>
+</string>
+
+<string id="lname_lieutenant_129">
+<text> Makarenko </text>
+</string>
+
+<string id="lname_lieutenant_13">
+<text> Bashmakov </text>
+</string>
+
+<string id="lname_lieutenant_130">
+<text> Maltsev </text>
+</string>
+
+<string id="lname_lieutenant_131">
+<text> Mamaev </text>
+</string>
+
+<string id="lname_lieutenant_132">
+<text> Merzlyaev </text>
+</string>
+
+<string id="lname_lieutenant_133">
+<text> Milchenko </text>
+</string>
+
+<string id="lname_lieutenant_134">
+<text> Mironuk </text>
+</string>
+
+<string id="lname_lieutenant_135">
+<text> Maurer </text>
+</string>
+
+<string id="lname_lieutenant_136">
+<text> Kryga </text>
+</string>
+
+<string id="lname_lieutenant_137">
+<text> Bridge </text>
+</string>
+
+<string id="lname_lieutenant_138">
+<text> Muntean </text>
+</string>
+
+<string id="lname_lieutenant_139">
+<text> Mukhamedov </text>
+</string>
+
+<string id="lname_lieutenant_14">
+<text> Beshevly </text>
+</string>
+
+<string id="lname_lieutenant_140">
+<text> Myskov </text>
+</string>
+
+<string id="lname_lieutenant_141">
+<text> Navrotsky </text>
+</string>
+
+<string id="lname_lieutenant_142">
+<text> Nepritsky </text>
+</string>
+
+<string id="lname_lieutenant_143">
+<text> Nikanorov </text>
+</string>
+
+<string id="lname_lieutenant_144">
+<text> Nikeshina </text>
+</string>
+
+<string id="lname_lieutenant_145">
+<text> Nikulin </text>
+</string>
+
+<string id="lname_lieutenant_146">
+<text> Futsin </text>
+</string>
+
+<string id="lname_lieutenant_147">
+<text> Norden </text>
+</string>
+
+<string id="lname_lieutenant_148">
+<text> Nosan </text>
+</string>
+
+<string id="lname_lieutenant_149">
+<text> Opolev </text>
+</string>
+
+<string id="lname_lieutenant_15">
+<text> Bino </text>
+</string>
+
+<string id="lname_lieutenant_150">
+<text> Orlevich </text>
+</string>
+
+<string id="lname_lieutenant_151">
+<text> Orlov </text>
+</string>
+
+<string id="lname_lieutenant_152">
+<text> Piatkevich </text>
+</string>
+
+<string id="lname_lieutenant_153">
+<text> Petrenko </text>
+</string>
+
+<string id="lname_lieutenant_154">
+<text> Petrov </text>
+</string>
+
+<string id="lname_lieutenant_155">
+<text> Plohenko </text>
+</string>
+
+<string id="lname_lieutenant_156">
+<text> Podyachev </text>
+</string>
+
+<string id="lname_lieutenant_157">
+<text> Polyanin </text>
+</string>
+
+<string id="lname_lieutenant_158">
+<text> Poplavskii </text>
+</string>
+
+<string id="lname_lieutenant_159">
+<text> Popov </text>
+</string>
+
+<string id="lname_lieutenant_16">
+<text> Blinov </text>
+</string>
+
+<string id="lname_lieutenant_160">
+<text> Portnykh </text>
+</string>
+
+<string id="lname_lieutenant_161">
+<text> Prasolov </text>
+</string>
+
+<string id="lname_lieutenant_162">
+<text> Prokopenko </text>
+</string>
+
+<string id="lname_lieutenant_163">
+<text> Proskurin </text>
+</string>
+
+<string id="lname_lieutenant_164">
+<text> Protsenko </text>
+</string>
+
+<string id="lname_lieutenant_165">
+<text> Prudov </text>
+</string>
+
+<string id="lname_lieutenant_166">
+<text> Pustovarov </text>
+</string>
+
+<string id="lname_lieutenant_167">
+<text> Puchek </text>
+</string>
+
+<string id="lname_lieutenant_168">
+<text> Rabinovich </text>
+</string>
+
+<string id="lname_lieutenant_169">
+<text> Radkevich </text>
+</string>
+
+<string id="lname_lieutenant_17">
+<text> Bobrov </text>
+</string>
+
+<string id="lname_lieutenant_170">
+<text> Rezun </text>
+</string>
+
+<string id="lname_lieutenant_171">
+<text> Rogoza </text>
+</string>
+
+<string id="lname_lieutenant_172">
+<text> Rodnyanskii </text>
+</string>
+
+<string id="lname_lieutenant_173">
+<text> Rotan </text>
+</string>
+
+<string id="lname_lieutenant_174">
+<text> Rublev </text>
+</string>
+
+<string id="lname_lieutenant_175">
+<text> Rudic </text>
+</string>
+
+<string id="lname_lieutenant_176">
+<text> Rusanov </text>
+</string>
+
+<string id="lname_lieutenant_177">
+<text> Rychagirsky </text>
+</string>
+
+<string id="lname_lieutenant_178">
+<text> Savchenko </text>
+</string>
+
+<string id="lname_lieutenant_179">
+<text> Savchuk </text>
+</string>
+
+<string id="lname_lieutenant_18">
+<text> Bogdanov </text>
+</string>
+
+<string id="lname_lieutenant_180">
+<text> Sagitov </text>
+</string>
+
+<string id="lname_lieutenant_181">
+<text> Sviridov </text>
+</string>
+
+<string id="lname_lieutenant_182">
+<text> Sedyh </text>
+</string>
+
+<string id="lname_lieutenant_183">
+<text> Sereda </text>
+</string>
+
+<string id="lname_lieutenant_184">
+<text> Sidorenko </text>
+</string>
+
+<string id="lname_lieutenant_185">
+<text> Sidorov </text>
+</string>
+
+<string id="lname_lieutenant_186">
+<text> Siniy </text>
+</string>
+
+<string id="lname_lieutenant_187">
+<text> Sinitsyn </text>
+</string>
+
+<string id="lname_lieutenant_188">
+<text> Bench </text>
+</string>
+
+<string id="lname_lieutenant_189">
+<text> Slutsky </text>
+</string>
+
+<string id="lname_lieutenant_19">
+<text> Boyko </text>
+</string>
+
+<string id="lname_lieutenant_190">
+<text> Smelov </text>
+</string>
+
+<string id="lname_lieutenant_191">
+<text> Smoliy </text>
+</string>
+
+<string id="lname_lieutenant_192">
+<text> Sorokin </text>
+</string>
+
+<string id="lname_lieutenant_193">
+<text> Statsyura </text>
+</string>
+
+<string id="lname_lieutenant_194">
+<text> Stepchin </text>
+</string>
+
+<string id="lname_lieutenant_195">
+<text> Stychinsky </text>
+</string>
+
+<string id="lname_lieutenant_196">
+<text> Sykula </text>
+</string>
+
+<string id="lname_lieutenant_197">
+<text> Tarnavskii </text>
+</string>
+
+<string id="lname_lieutenant_198">
+<text> Tatarchuk </text>
+</string>
+
+<string id="lname_lieutenant_199">
+<text> Timchuk </text>
+</string>
+
+<string id="lname_lieutenant_2">
+<text> Andreychuk </text>
+</string>
+
+<string id="lname_lieutenant_20">
+<text> Boychenko </text>
+</string>
+
+<string id="lname_lieutenant_21">
+<text> Boldeskul </text>
+</string>
+
+<string id="lname_lieutenant_22">
+<text> Bondarev </text>
+</string>
+
+<string id="lname_lieutenant_23">
+<text> Borisov </text>
+</string>
+
+<string id="lname_lieutenant_24">
+<text> Breach </text>
+</string>
+
+<string id="lname_lieutenant_25">
+<text> Bronstein </text>
+</string>
+
+<string id="lname_lieutenant_26">
+<text> Buryak </text>
+</string>
+
+<string id="lname_lieutenant_27">
+<text> Buturin </text>
+</string>
+
+<string id="lname_lieutenant_28">
+<text> Byalo </text>
+</string>
+
+<string id="lname_lieutenant_29">
+<text> Valentine </text>
+</string>
+
+<string id="lname_lieutenant_3">
+<text> Andruschenko </text>
+</string>
+
+<string id="lname_lieutenant_30">
+<text> Vasilyev </text>
+</string>
+
+<string id="lname_lieutenant_31">
+<text> Veselov </text>
+</string>
+
+<string id="lname_lieutenant_32">
+<text> Vinogradov </text>
+</string>
+
+<string id="lname_lieutenant_33">
+<text> Vovnenko </text>
+</string>
+
+<string id="lname_lieutenant_34">
+<text> Volanchuk </text>
+</string>
+
+<string id="lname_lieutenant_35">
+<text> Volodar </text>
+</string>
+
+<string id="lname_lieutenant_36">
+<text> Voloshin </text>
+</string>
+
+<string id="lname_lieutenant_37">
+<text> Vorontsov </text>
+</string>
+
+<string id="lname_lieutenant_38">
+<text> Vorohaev </text>
+</string>
+
+<string id="lname_lieutenant_39">
+<text> Vyushinsky </text>
+</string>
+
+<string id="lname_lieutenant_4">
+<text> Anissya </text>
+</string>
+
+<string id="lname_lieutenant_40">
+<text> Galkin </text>
+</string>
+
+<string id="lname_lieutenant_41">
+<text> Ganzyuk </text>
+</string>
+
+<string id="lname_lieutenant_42">
+<text> Garkovenko </text>
+</string>
+
+<string id="lname_lieutenant_43">
+<text> Garkusha </text>
+</string>
+
+<string id="lname_lieutenant_44">
+<text> Georgov </text>
+</string>
+
+<string id="lname_lieutenant_45">
+<text> Glebovsky </text>
+</string>
+
+<string id="lname_lieutenant_46">
+<text> Hnatjuk </text>
+</string>
+
+<string id="lname_lieutenant_47">
+<text> Goncharenko </text>
+</string>
+
+<string id="lname_lieutenant_48">
+<text> Gordienko </text>
+</string>
+
+<string id="lname_lieutenant_49">
+<text> Gorlevoy </text>
+</string>
+
+<string id="lname_lieutenant_5">
+<text> Ardashev </text>
+</string>
+
+<string id="lname_lieutenant_50">
+<text> Gorohin </text>
+</string>
+
+<string id="lname_lieutenant_51">
+<text> Gorunov </text>
+</string>
+
+<string id="lname_lieutenant_52">
+<text> Grebenyuk </text>
+</string>
+
+<string id="lname_lieutenant_53">
+<text> Gritsaenko </text>
+</string>
+
+<string id="lname_lieutenant_54">
+<text> Gritsay </text>
+</string>
+
+<string id="lname_lieutenant_55">
+<text> Gritsenko </text>
+</string>
+
+<string id="lname_lieutenant_56">
+<text> Grishachev </text>
+</string>
+
+<string id="lname_lieutenant_57">
+<text> Grishuk </text>
+</string>
+
+<string id="lname_lieutenant_58">
+<text> Gubar </text>
+</string>
+
+<string id="lname_lieutenant_59">
+<text> Gunko </text>
+</string>
+
+<string id="lname_lieutenant_6">
+<text> Babich </text>
+</string>
+
+<string id="lname_lieutenant_60">
+<text> Gurevich </text>
+</string>
+
+<string id="lname_lieutenant_61">
+<text> Denisenko </text>
+</string>
+
+<string id="lname_lieutenant_62">
+<text> Dovgalyuk </text>
+</string>
+
+<string id="lname_lieutenant_63">
+<text> Dombrik </text>
+</string>
+
+<string id="lname_lieutenant_64">
+<text> Dotsenko </text>
+</string>
+
+<string id="lname_lieutenant_65">
+<text> Drozdush </text>
+</string>
+
+<string id="lname_lieutenant_66">
+<text> Dubenchuk </text>
+</string>
+
+<string id="lname_lieutenant_67">
+<text> Dudorov </text>
+</string>
+
+<string id="lname_lieutenant_68">
+<text> Duca </text>
+</string>
+
+<string id="lname_lieutenant_69">
+<text> Daisy </text>
+</string>
+
+<string id="lname_lieutenant_7">
+<text> Balan </text>
+</string>
+
+<string id="lname_lieutenant_70">
+<text> Dunaev </text>
+</string>
+
+<string id="lname_lieutenant_71">
+<text> Dyklov </text>
+</string>
+
+<string id="lname_lieutenant_72">
+<text> Erofeev </text>
+</string>
+
+<string id="lname_lieutenant_73">
+<text> Efremov </text>
+</string>
+
+<string id="lname_lieutenant_74">
+<text> Zhabenko </text>
+</string>
+
+<string id="lname_lieutenant_75">
+<text> Zhmyev </text>
+</string>
+
+<string id="lname_lieutenant_76">
+<text> Zhurakovsky </text>
+</string>
+
+<string id="lname_lieutenant_77">
+<text> Zabyyyagoda </text>
+</string>
+
+<string id="lname_lieutenant_78">
+<text> Zagorodniuk </text>
+</string>
+
+<string id="lname_lieutenant_79">
+<text> Zamosenchuk </text>
+</string>
+
+<string id="lname_lieutenant_8">
+<text> Baranov </text>
+</string>
+
+<string id="lname_lieutenant_80">
+<text> Zarubin </text>
+</string>
+
+<string id="lname_lieutenant_81">
+<text> Zakharin </text>
+</string>
+
+<string id="lname_lieutenant_82">
+<text> Zvonnitsky </text>
+</string>
+
+<string id="lname_lieutenant_83">
+<text> Zinoviev </text>
+</string>
+
+<string id="lname_lieutenant_84">
+<text> Zozo </text>
+</string>
+
+<string id="lname_lieutenant_85">
+<text> Zolotar </text>
+</string>
+
+<string id="lname_lieutenant_86">
+<text> Zubarev </text>
+</string>
+
+<string id="lname_lieutenant_87">
+<text> Zubkov </text>
+</string>
+
+<string id="lname_lieutenant_88">
+<text> Ivanov </text>
+</string>
+
+<string id="lname_lieutenant_89">
+<text> Ignatenko </text>
+</string>
+
+<string id="lname_lieutenant_9">
+<text> Baranowski </text>
+</string>
+
+<string id="lname_lieutenant_90">
+<text> Izhenko </text>
+</string>
+
+<string id="lname_lieutenant_91">
+<text> Ishchuk </text>
+</string>
+
+<string id="lname_lieutenant_92">
+<text> Kazakov </text>
+</string>
+
+<string id="lname_lieutenant_93">
+<text> Kazantsev </text>
+</string>
+
+<string id="lname_lieutenant_94">
+<text> Kandybabko </text>
+</string>
+
+<string id="lname_lieutenant_95">
+<text> Kapuka </text>
+</string>
+
+<string id="lname_lieutenant_96">
+<text> Kapustyanko </text>
+</string>
+
+<string id="lname_lieutenant_97">
+<text> Katz </text>
+</string>
+
+<string id="lname_lieutenant_98">
+<text> Kikabidze </text>
+</string>
+
+<string id="lname_lieutenant_99">
+<text> Gatsula </text>
+</string>
+
+<string id="lname_private_0">
+<text> Abdurhmanov </text>
+</string>
+
+<string id="lname_private_1">
+<text> Altyns </text>
+</string>
+
+<string id="lname_private_10">
+<text> Barsac </text>
+</string>
+
+<string id="lname_private_100">
+<text> Kireev </text>
+</string>
+
+<string id="lname_private_101">
+<text> Shcherbin </text>
+</string>
+
+<string id="lname_private_102">
+<text> Kovalchuk </text>
+</string>
+
+<string id="lname_private_103">
+<text> Koev </text>
+</string>
+
+<string id="lname_private_104">
+<text> Kozlov </text>
+</string>
+
+<string id="lname_private_105">
+<text> Kolontarev </text>
+</string>
+
+<string id="lname_private_106">
+<text> Kolontar </text>
+</string>
+
+<string id="lname_private_107">
+<text> Kondratenko </text>
+</string>
+
+<string id="lname_private_108">
+<text> Korkin </text>
+</string>
+
+<string id="lname_private_109">
+<text> Korneev </text>
+</string>
+
+<string id="lname_private_11">
+<text> Baul </text>
+</string>
+
+<string id="lname_private_110">
+<text> Kravchenko </text>
+</string>
+
+<string id="lname_private_111">
+<text> Injustice </text>
+</string>
+
+<string id="lname_private_112">
+<text> Krivokhatskiy </text>
+</string>
+
+<string id="lname_private_113">
+<text> Kuznetsov </text>
+</string>
+
+<string id="lname_private_114">
+<text> Kuzmich </text>
+</string>
+
+<string id="lname_private_115">
+<text> Kuzyakin </text>
+</string>
+
+<string id="lname_private_116">
+<text> Kulchitskaja </text>
+</string>
+
+<string id="lname_private_117">
+<text> Kuntsev </text>
+</string>
+
+<string id="lname_private_118">
+<text> Kurvits </text>
+</string>
+
+<string id="lname_private_119">
+<text> Kucheruk </text>
+</string>
+
+<string id="lname_private_12">
+<text> Bashakov </text>
+</string>
+
+<string id="lname_private_120">
+<text> Kushnarev </text>
+</string>
+
+<string id="lname_private_121">
+<text> Khaladze </text>
+</string>
+
+<string id="lname_private_122">
+<text> Lavrik </text>
+</string>
+
+<string id="lname_private_123">
+<text> Lavrov </text>
+</string>
+
+<string id="lname_private_124">
+<text> Livshits </text>
+</string>
+
+<string id="lname_private_125">
+<text> Lisichanskiy </text>
+</string>
+
+<string id="lname_private_126">
+<text> Litvin </text>
+</string>
+
+<string id="lname_private_127">
+<text> Lymarenko </text>
+</string>
+
+<string id="lname_private_128">
+<text> Mazeppa </text>
+</string>
+
+<string id="lname_private_129">
+<text> Makarenko </text>
+</string>
+
+<string id="lname_private_13">
+<text> Bashmakov </text>
+</string>
+
+<string id="lname_private_130">
+<text> Maltsev </text>
+</string>
+
+<string id="lname_private_131">
+<text> Mamaev </text>
+</string>
+
+<string id="lname_private_132">
+<text> Merzlyaev </text>
+</string>
+
+<string id="lname_private_133">
+<text> Milchenko </text>
+</string>
+
+<string id="lname_private_134">
+<text> Mironuk </text>
+</string>
+
+<string id="lname_private_135">
+<text> Maurer </text>
+</string>
+
+<string id="lname_private_136">
+<text> Kryga </text>
+</string>
+
+<string id="lname_private_137">
+<text> Bridge </text>
+</string>
+
+<string id="lname_private_138">
+<text> Muntean </text>
+</string>
+
+<string id="lname_private_139">
+<text> Mukhamedov </text>
+</string>
+
+<string id="lname_private_14">
+<text> Beshevly </text>
+</string>
+
+<string id="lname_private_140">
+<text> Myskov </text>
+</string>
+
+<string id="lname_private_141">
+<text> Navrotsky </text>
+</string>
+
+<string id="lname_private_142">
+<text> Nepritsky </text>
+</string>
+
+<string id="lname_private_143">
+<text> Nikanorov </text>
+</string>
+
+<string id="lname_private_144">
+<text> Nikeshina </text>
+</string>
+
+<string id="lname_private_145">
+<text> Nikulin </text>
+</string>
+
+<string id="lname_private_146">
+<text> Futsin </text>
+</string>
+
+<string id="lname_private_147">
+<text> Norden </text>
+</string>
+
+<string id="lname_private_148">
+<text> Nosan </text>
+</string>
+
+<string id="lname_private_149">
+<text> Opolev </text>
+</string>
+
+<string id="lname_private_15">
+<text> Bino </text>
+</string>
+
+<string id="lname_private_150">
+<text> Orlevich </text>
+</string>
+
+<string id="lname_private_151">
+<text> Orlov </text>
+</string>
+
+<string id="lname_private_152">
+<text> Piatkevich </text>
+</string>
+
+<string id="lname_private_153">
+<text> Petrenko </text>
+</string>
+
+<string id="lname_private_154">
+<text> Petrov </text>
+</string>
+
+<string id="lname_private_155">
+<text> Plohenko </text>
+</string>
+
+<string id="lname_private_156">
+<text> Podyachev </text>
+</string>
+
+<string id="lname_private_157">
+<text> Polyanin </text>
+</string>
+
+<string id="lname_private_158">
+<text> Poplavskii </text>
+</string>
+
+<string id="lname_private_159">
+<text> Popov </text>
+</string>
+
+<string id="lname_private_16">
+<text> Blinov </text>
+</string>
+
+<string id="lname_private_160">
+<text> Portnykh </text>
+</string>
+
+<string id="lname_private_161">
+<text> Prasolov </text>
+</string>
+
+<string id="lname_private_162">
+<text> Prokopenko </text>
+</string>
+
+<string id="lname_private_163">
+<text> Proskurin </text>
+</string>
+
+<string id="lname_private_164">
+<text> Protsenko </text>
+</string>
+
+<string id="lname_private_165">
+<text> Prudov </text>
+</string>
+
+<string id="lname_private_166">
+<text> Pustovarov </text>
+</string>
+
+<string id="lname_private_167">
+<text> Puchek </text>
+</string>
+
+<string id="lname_private_168">
+<text> Rabinovich </text>
+</string>
+
+<string id="lname_private_169">
+<text> Radkevich </text>
+</string>
+
+<string id="lname_private_17">
+<text> Bobrov </text>
+</string>
+
+<string id="lname_private_170">
+<text> Rezun </text>
+</string>
+
+<string id="lname_private_171">
+<text> Rogoza </text>
+</string>
+
+<string id="lname_private_172">
+<text> Rodnyanskii </text>
+</string>
+
+<string id="lname_private_173">
+<text> Rotan </text>
+</string>
+
+<string id="lname_private_174">
+<text> Rublev </text>
+</string>
+
+<string id="lname_private_175">
+<text> Rudic </text>
+</string>
+
+<string id="lname_private_176">
+<text> Rusanov </text>
+</string>
+
+<string id="lname_private_177">
+<text> Rychagirsky </text>
+</string>
+
+<string id="lname_private_178">
+<text> Savchenko </text>
+</string>
+
+<string id="lname_private_179">
+<text> Savchuk </text>
+</string>
+
+<string id="lname_private_18">
+<text> Bogdanov </text>
+</string>
+
+<string id="lname_private_180">
+<text> Sagitov </text>
+</string>
+
+<string id="lname_private_181">
+<text> Sviridov </text>
+</string>
+
+<string id="lname_private_182">
+<text> Sedyh </text>
+</string>
+
+<string id="lname_private_183">
+<text> Sereda </text>
+</string>
+
+<string id="lname_private_184">
+<text> Sidorenko </text>
+</string>
+
+<string id="lname_private_185">
+<text> Sidorov </text>
+</string>
+
+<string id="lname_private_186">
+<text> Siniy </text>
+</string>
+
+<string id="lname_private_187">
+<text> Sinitsyn </text>
+</string>
+
+<string id="lname_private_188">
+<text> Bench </text>
+</string>
+
+<string id="lname_private_189">
+<text> Slutsky </text>
+</string>
+
+<string id="lname_private_19">
+<text> Boyko </text>
+</string>
+
+<string id="lname_private_190">
+<text> Smelov </text>
+</string>
+
+<string id="lname_private_191">
+<text> Smoliy </text>
+</string>
+
+<string id="lname_private_192">
+<text> Sorokin </text>
+</string>
+
+<string id="lname_private_193">
+<text> Statsyura </text>
+</string>
+
+<string id="lname_private_194">
+<text> Stepchin </text>
+</string>
+
+<string id="lname_private_195">
+<text> Stychinsky </text>
+</string>
+
+<string id="lname_private_196">
+<text> Sykula </text>
+</string>
+
+<string id="lname_private_197">
+<text> Tarnavskii </text>
+</string>
+
+<string id="lname_private_198">
+<text> Tatarchuk </text>
+</string>
+
+<string id="lname_private_199">
+<text> Timchuk </text>
+</string>
+
+<string id="lname_private_2">
+<text> Andreychuk </text>
+</string>
+
+<string id="lname_private_20">
+<text> Boychenko </text>
+</string>
+
+<string id="lname_private_21">
+<text> Boldeskul </text>
+</string> 
+
+<string id="lname_private_22">
+<text> Bondarev </text>
+</string>
+
+<string id="lname_private_23">
+<text> Borisov </text>
+</string>
+
+<string id="lname_private_24">
+<text> Breach </text>
+</string>
+
+<string id="lname_private_25">
+<text> Bronstein </text>
+</string>
+
+<string id="lname_private_26">
+<text> Buryak </text>
+</string>
+
+<string id="lname_private_27">
+<text> Buturin </text>
+</string>
+
+<string id="lname_private_28">
+<text> Byalo </text>
+</string>
+
+<string id="lname_private_29">
+<text> Valentine </text>
+</string>
+
+<string id="lname_private_3">
+<text> Andruschenko </text>
+</string>
+
+<string id="lname_private_30">
+<text> Vasilyev </text>
+</string>
+
+<string id="lname_private_31">
+<text> Veselov </text>
+</string>
+
+<string id="lname_private_32">
+<text> Vinogradov </text>
+</string>
+
+<string id="lname_private_33">
+<text> Vovnenko </text>
+</string>
+
+<string id="lname_private_34">
+<text> Volanchuk </text>
+</string>
+
+<string id="lname_private_35">
+<text> Volodar </text>
+</string>
+
+<string id="lname_private_36">
+<text> Voloshin </text>
+</string>
+
+<string id="lname_private_37">
+<text> Vorontsov </text>
+</string>
+
+<string id="lname_private_38">
+<text> Vorohaev </text>
+</string>
+
+<string id="lname_private_39">
+<text> Vyushinsky </text>
+</string>
+
+<string id="lname_private_4">
+<text> Anissya </text>
+</string>
+
+<string id="lname_private_40">
+<text> Galkin </text>
+</string>
+
+<string id="lname_private_41">
+<text> Ganzyuk </text>
+</string>
+
+<string id="lname_private_42">
+<text> Garkovenko </text>
+</string>
+
+<string id="lname_private_43">
+<text> Garkusha </text>
+</string>
+
+<string id="lname_private_44">
+<text> Georgov </text>
+</string>
+
+<string id="lname_private_45">
+<text> Glebovsky </text>
+</string>
+
+<string id="lname_private_46">
+<text> Hnatjuk </text>
+</string>
+
+<string id="lname_private_47">
+<text> Goncharenko </text>
+</string>
+
+<string id="lname_private_48">
+<text> Gordienko </text>
+</string>
+
+<string id="lname_private_49">
+<text> Gorlevoy </text>
+</string>
+
+<string id="lname_private_5">
+<text> Ardashev </text>
+</string>
+
+<string id="lname_private_50">
+<text> Gorohin </text>
+</string>
+
+<string id="lname_private_51">
+<text> Gorunov </text>
+</string>
+
+<string id="lname_private_52">
+<text> Grebenyuk </text>
+</string>
+
+<string id="lname_private_53">
+<text> Gritsaenko </text>
+</string>
+
+<string id="lname_private_54">
+<text> Gritsay </text>
+</string>
+
+<string id="lname_private_55">
+<text> Gritsenko </text>
+</string>
+
+<string id="lname_private_56">
+<text> Grishachev </text>
+</string>
+
+<string id="lname_private_57">
+<text> Grishuk </text>
+</string>
+
+<string id="lname_private_58">
+<text> Gubar </text>
+</string>
+
+<string id="lname_private_59">
+<text> Gunko </text>
+</string>
+
+<string id="lname_private_6">
+<text> Babich </text>
+</string>
+
+<string id="lname_private_60">
+<text> Gurevich </text>
+</string>
+
+<string id="lname_private_61">
+<text> Denisenko </text>
+</string>
+
+<string id="lname_private_62">
+<text> Dovgalyuk </text>
+</string>
+
+<string id="lname_private_63">
+<text> Dombrik </text>
+</string>
+
+<string id="lname_private_64">
+<text> Dotsenko </text>
+</string>
+
+<string id="lname_private_65">
+<text> Drozdush </text>
+</string>
+
+<string id="lname_private_66">
+<text> Dubenchuk </text>
+</string>
+
+<string id="lname_private_67">
+<text> Dudorov </text>
+</string>
+
+<string id="lname_private_68">
+<text> Duca </text>
+</string>
+
+<string id="lname_private_69">
+<text> Daisy </text>
+</string>
+
+<string id="lname_private_7">
+<text> Balan </text>
+</string>
+
+<string id="lname_private_70">
+<text> Dunaev </text>
+</string>
+
+<string id="lname_private_71">
+<text> Dyklov </text>
+</string>
+
+<string id="lname_private_72">
+<text> Erofeev </text>
+</string>
+
+<string id="lname_private_73">
+<text> Efremov </text>
+</string>
+
+<string id="lname_private_74">
+<text> Zhabenko </text>
+</string>
+
+<string id="lname_private_75">
+<text> Zhmyev </text>
+</string>
+
+<string id="lname_private_76">
+<text> Zhurakovsky </text>
+</string>
+
+<string id="lname_private_77">
+<text> Zabyyyagoda </text>
+</string>
+
+<string id="lname_private_78">
+<text> Zagorodniuk </text>
+</string>
+
+<string id="lname_private_79">
+<text> Zamosenchuk </text>
+</string>
+
+<string id="lname_private_8">
+<text> Baranov </text>
+</string>
+
+<string id="lname_private_80">
+<text> Zarubin </text>
+</string>
+
+<string id="lname_private_81">
+<text> Zakharin </text>
+</string>
+
+<string id="lname_private_82">
+<text> Zvonnitsky </text>
+</string>
+
+<string id="lname_private_83">
+<text> Zinoviev </text>
+</string>
+
+<string id="lname_private_84">
+<text> Zozo </text>
+</string>
+
+<string id="lname_private_85">
+<text> Zolotar </text>
+</string>
+
+<string id="lname_private_86">
+<text> Zubarev </text>
+</string>
+
+<string id="lname_private_87">
+<text> Zubkov </text>
+</string>
+
+<string id="lname_private_88">
+<text> Ivanov </text>
+</string>
+
+<string id="lname_private_89">
+<text> Ignatenko </text>
+</string>
+
+<string id="lname_private_9">
+<text> Baranowski </text>
+</string>
+
+<string id="lname_private_90">
+<text> Izhenko </text>
+</string>
+
+<string id="lname_private_91">
+<text> Ishchuk </text>
+</string>
+
+<string id="lname_private_92">
+<text> Kazakov </text>
+</string>
+
+<string id="lname_private_93">
+<text> Kazantsev </text>
+</string>
+
+<string id="lname_private_94">
+<text> Kandybabko </text>
+</string>
+
+<string id="lname_private_95">
+<text> Kapuka </text>
+</string>
+
+<string id="lname_private_96">
+<text> Kapustyanko </text>
+</string>
+
+<string id="lname_private_97">
+<text> Katz </text>
+</string>
+
+<string id="lname_private_98">
+<text> Kikabidze </text>
+</string>
+
+<string id="lname_private_99">
+<text> Gatsula </text>
+</string>
+
+<string id="lname_science_0">
+<text> Sinai </text>
+</string>
+
+<string id="lname_science_1">
+<text> Feigelmann </text>
+</string>
+
+<string id="lname_science_10">
+<text> Scherer </text>
+</string>
+
+<string id="lname_science_11">
+<text> Alferov </text>
+</string>
+
+<string id="lname_science_12">
+<text> Antipin </text>
+</string>
+
+<string id="lname_science_13">
+<text> Blinov </text>
+</string>
+
+<string id="lname_science_14">
+<text> Bogomolov </text>
+</string>
+
+<string id="lname_science_15">
+<text> Vasilevich </text>
+</string>
+
+<string id="lname_science_16">
+<text> Geshkenbein </text>
+</string>
+
+<string id="lname_science_17">
+<text> Dyakonov </text>
+</string>
+
+<string id="lname_science_18">
+<text> Erokhin </text>
+</string>
+
+<string id="lname_science_19">
+<text> Zaikin </text>
+</string>
+
+<string id="lname_science_2">
+<text> Zakharov </text>
+</string>
+
+<string id="lname_science_20">
+<text> Ivchenko </text>
+</string>
+
+<string id="lname_science_21">
+<text> Kabanov </text>
+</string>
+
+<string id="lname_science_22">
+<text> Larin </text>
+</string>
+
+<string id="lname_science_23">
+<text> Manko </text>
+</string>
+
+<string id="lname_science_24">
+<text> Mironov </text>
+</string>
+
+<string id="lname_science_25">
+<text> Stepanenko </text>
+</string>
+
+<string id="lname_science_26">
+<text> Oganesyan </text>
+</string>
+
+<string id="lname_science_27">
+<text> Chernodub </text>
+</string>
+
+<string id="lname_science_28">
+<text> Shilov </text>
+</string>
+
+<string id="lname_science_3">
+<text> Chirikov </text>
+</string>
+
+<string id="lname_science_4">
+<text> Belyavin </text>
+</string>
+
+<string id="lname_science_5">
+<text> Fadeev </text>
+</string>
+
+<string id="lname_science_6">
+<text> Steklov </text>
+</string>
+
+<string id="lname_science_7">
+<text> Andreev </text>
+</string>
+
+<string id="lname_science_8">
+<text> Spirin </text>
+</string>
+
+<string id="lname_science_9">
+<text> Balitsky </text>
+</string>
+
+<string id="lname_sergeant_0">
+<text> Abdurhmanov </text>
+</string>
+
+<string id="lname_sergeant_1">
+<text> altyns </text>
+</string>
+
+<string id="lname_sergeant_10">
+<text> Barsac </text>
+</string>
+
+<string id="lname_sergeant_100">
+<text> Kireev </text>
+</string>
+
+<string id="lname_sergeant_101">
+<text> Shcherbin </text>
+</string>
+
+<string id="lname_sergeant_102">
+<text> Kovalchuk </text>
+</string>
+
+<string id="lname_sergeant_103">
+<text> Koev </text>
+</string>
+
+<string id="lname_sergeant_104">
+<text> Kozlov </text>
+</string>
+
+<string id="lname_sergeant_105">
+<text> Kolontarev </text>
+</string>
+
+<string id="lname_sergeant_106">
+<text> Kolontar </text>
+</string>
+
+<string id="lname_sergeant_107">
+<text> Kondratenko </text>
+</string>
+
+<string id="lname_sergeant_108">
+<text> Korkin </text>
+</string>
+
+<string id="lname_sergeant_109">
+<text> Korneev </text>
+</string>
+
+<string id="lname_sergeant_11">
+<text> Baul </text>
+</string>
+
+<string id="lname_sergeant_110">
+<text> Kravchenko </text>
+</string>
+
+<string id="lname_sergeant_111">
+<text> Injustice </text>
+</string>
+
+<string id="lname_sergeant_112">
+<text> Krivokhatskiy </text>
+</string>
+
+<string id="lname_sergeant_113">
+<text> Kuznetsov </text>
+</string>
+
+<string id="lname_sergeant_114">
+<text> Kuzmich </text>
+</string>
+
+<string id="lname_sergeant_115">
+<text> Kuzyakin </text>
+</string>
+
+<string id="lname_sergeant_116">
+<text> Kulchitskaja </text>
+</string>
+
+<string id="lname_sergeant_117">
+<text> Kuntsev </text>
+</string>
+
+<string id="lname_sergeant_118">
+<text> Kurvits </text>
+</string>
+
+<string id="lname_sergeant_119">
+<text> Kucheruk </text>
+</string>
+
+<string id="lname_sergeant_12">
+<text> Bashakov </text>
+</string>
+
+<string id="lname_sergeant_120">
+<text> Kushnarev </text>
+</string>
+
+<string id="lname_sergeant_121">
+<text> Khaladze </text>
+</string>
+
+<string id="lname_sergeant_122">
+<text> Lavrik </text>
+</string>
+
+<string id="lname_sergeant_123">
+<text> Lavrov </text>
+</string>
+
+<string id="lname_sergeant_124">
+<text> Livshits </text>
+</string>
+
+<string id="lname_sergeant_125">
+<text> Lisichanskiy </text>
+</string>
+
+<string id="lname_sergeant_126">
+<text> Litvin </text>
+</string>
+
+<string id="lname_sergeant_127">
+<text> Lymarenko </text>
+</string>
+
+<string id="lname_sergeant_128">
+<text> Mazeppa </text>
+</string>
+
+<string id="lname_sergeant_129">
+<text> Makarenko </text>
+</string>
+
+<string id="lname_sergeant_13">
+<text> Bashmakov </text>
+</string>
+
+<string id="lname_sergeant_130">
+<text> Maltsev </text>
+</string>
+
+<string id="lname_sergeant_131">
+<text> Mamaev </text>
+</string>
+
+<string id="lname_sergeant_132">
+<text> Merzlyaev </text>
+</string>
+
+<string id="lname_sergeant_133">
+<text> Milchenko </text>
+</string>
+
+<string id="lname_sergeant_134">
+<text> Mironuk </text>
+</string>
+
+<string id="lname_sergeant_135">
+<text> Maurer </text>
+</string>
+
+<string id="lname_sergeant_136">
+<text> Kryga </text>
+</string>
+
+<string id="lname_sergeant_137">
+<text> Briz </text>
+</string>
+
+<string id="lname_sergeant_138">
+<text> Muntean </text>
+</string>
+
+<string id="lname_sergeant_139">
+<text> Mukhamedov </text>
+</string>
+
+<string id="lname_sergeant_14">
+<text> Beshevly </text>
+</string>
+
+<string id="lname_sergeant_140">
+<text> Myskov </text>
+</string>
+
+<string id="lname_sergeant_141">
+<text> Navrotsky </text>
+</string>
+
+<string id="lname_sergeant_142">
+<text> Nepritsky </text>
+</string>
+
+<string id="lname_sergeant_143">
+<text> Nikanorov </text>
+</string>
+
+<string id="lname_sergeant_144">
+<text> Nikeshina </text>
+</string>
+
+<string id="lname_sergeant_145">
+<text> Nikulin </text>
+</string>
+
+<string id="lname_sergeant_146">
+<text> Futsin </text>
+</string>
+
+<string id="lname_sergeant_147">
+<text> Norden </text>
+</string>
+
+<string id="lname_sergeant_148">
+<text> Nosan </text>
+</string>
+
+<string id="lname_sergeant_149">
+<text> Opolev </text>
+</string>
+
+<string id="lname_sergeant_15">
+<text> Bino </text>
+</string>
+
+<string id="lname_sergeant_150">
+<text> Orlevich </text>
+</string>
+
+<string id="lname_sergeant_151">
+<text> Orlov </text>
+</string>
+
+<string id="lname_sergeant_152">
+<text> Piatkevich </text>
+</string>
+
+<string id="lname_sergeant_153">
+<text> Petrenko </text>
+</string>
+
+<string id="lname_sergeant_154">
+<text> Petrov </text>
+</string>
+
+<string id="lname_sergeant_155">
+<text> Plohenko </text>
+</string>
+
+<string id="lname_sergeant_156">
+<text> Podyachev </text>
+</string>
+
+<string id="lname_sergeant_157">
+<text> Polyanin </text>
+</string>
+
+<string id="lname_sergeant_158">
+<text> Poplavskii </text>
+</string>
+
+<string id="lname_sergeant_159">
+<text> Popov </text>
+</string>
+
+<string id="lname_sergeant_16">
+<text> Blinov </text>
+</string>
+
+<string id="lname_sergeant_160">
+<text> Portnykh </text>
+</string>
+
+<string id="lname_sergeant_161">
+<text> Prasolov </text>
+</string>
+
+<string id="lname_sergeant_162">
+<text> Prokopenko </text>
+</string>
+
+<string id="lname_sergeant_163">
+<text> Proskurin </text>
+</string>
+
+<string id="lname_sergeant_164">
+<text> Protsenko </text>
+</string>
+
+<string id="lname_sergeant_165">
+<text> Prudov </text>
+</string>
+
+<string id="lname_sergeant_166">
+<text> Pustovarov </text>
+</string>
+
+<string id="lname_sergeant_167">
+<text> Puchek </text>
+</string>
+
+<string id="lname_sergeant_168">
+<text> Rabinovich </text>
+</string>
+
+<string id="lname_sergeant_169">
+<text> Radkevich </text>
+</string>
+
+<string id="lname_sergeant_17">
+<text> Bobrov </text>
+</string>
+
+<string id="lname_sergeant_170">
+<text> Rezun </text>
+</string>
+
+<string id="lname_sergeant_171">
+<text> Rogoza </text>
+</string>
+
+<string id="lname_sergeant_172">
+<text> Rodnyanskii </text>
+</string>
+
+<string id="lname_sergeant_173">
+<text> Rotan </text>
+</string>
+
+<string id="lname_sergeant_174">
+<text> Rublev </text>
+</string>
+
+<string id="lname_sergeant_175">
+<text> Rudic </text>
+</string>
+
+<string id="lname_sergeant_176">
+<text> Rusanov </text>
+</string>
+
+<string id="lname_sergeant_177">
+<text> Rychagirsky </text>
+</string>
+
+<string id="lname_sergeant_178">
+<text> Savchenko </text>
+</string>
+
+<string id="lname_sergeant_179">
+<text> Savchuk </text>
+</string>
+
+<string id="lname_sergeant_18">
+<text> Bogdanov </text>
+</string>
+
+<string id="lname_sergeant_180">
+<text> Sagitov </text>
+</string>
+
+<string id="lname_sergeant_181">
+<text> Sviridov </text>
+</string>
+
+<string id="lname_sergeant_182">
+<text> Sedyh </text>
+</string>
+
+<string id="lname_sergeant_183">
+<text> Sereda </text>
+</string>
+
+<string id="lname_sergeant_184">
+<text> Sidorenko </text>
+</string>
+
+<string id="lname_sergeant_185">
+<text> Sidorov </text>
+</string>
+
+<string id="lname_sergeant_186">
+<text> Siniy </text>
+</string>
+
+<string id="lname_sergeant_187">
+<text> Sinitsyn </text>
+</string>
+
+<string id="lname_sergeant_188">
+<text> Bench </text>
+</string>
+
+<string id="lname_sergeant_189">
+<text> Slutsky </text>
+</string>
+
+<string id="lname_sergeant_19">
+<text> Boyko </text>
+</string>
+
+<string id="lname_sergeant_190">
+<text> Smelov </text>
+</string>
+
+<string id="lname_sergeant_191">
+<text> Smoliy </text>
+</string>
+
+<string id="lname_sergeant_192">
+<text> Sorokin </text>
+</string>
+
+<string id="lname_sergeant_193">
+<text> Statsyura </text>
+</string>
+
+<string id="lname_sergeant_194">
+<text> Stepchin </text>
+</string>
+
+<string id="lname_sergeant_195">
+<text> Stychinsky </text>
+</string>
+
+<string id="lname_sergeant_196">
+<text> Sykula </text>
+</string>
+
+<string id="lname_sergeant_197">
+<text> Tarnavskii </text>
+</string>
+
+<string id="lname_sergeant_198">
+<text> Tatarchuk </text>
+</string>
+
+<string id="lname_sergeant_199">
+<text> Timchuk </text>
+</string>
+
+<string id="lname_sergeant_2">
+<text> Andreychuk </text>
+</string>
+
+<string id="lname_sergeant_20">
+<text> Boychenko </text>
+</string>
+
+<string id="lname_sergeant_21">
+<text> Boldeskul </text>
+</string>
+
+<string id="lname_sergeant_22">
+<text> Bondarev </text>
+</string>
+
+<string id="lname_sergeant_23">
+<text> Borisov </text>
+</string>
+
+<string id="lname_sergeant_24">
+<text> Breach </text>
+</string>
+
+<string id="lname_sergeant_25">
+<text> Bronstein </text>
+</string>
+
+<string id="lname_sergeant_26">
+<text> Buryak </text>
+</string>
+
+<string id="lname_sergeant_27">
+<text> Buturin </text>
+</string>
+
+<string id="lname_sergeant_28">
+<text> Byalo </text>
+</string>
+
+<string id="lname_sergeant_29">
+<text> Valentine </text>
+</string>
+
+<string id="lname_sergeant_3">
+<text> Andruschenko </text>
+</string>
+
+<string id="lname_sergeant_30">
+<text> Vasilyev </text>
+</string>
+
+<string id="lname_sergeant_31">
+<text> Veselov </text>
+</string>
+
+<string id="lname_sergeant_32">
+<text> Vinogradov </text>
+</string>
+
+<string id="lname_sergeant_33">
+<text> Vovnenko </text>
+</string>
+
+<string id="lname_sergeant_34">
+<text> Volanchuk </text>
+</string>
+
+<string id="lname_sergeant_35">
+<text> Volodar </text>
+</string>
+
+<string id="lname_sergeant_36">
+<text> Voloshin </text>
+</string>
+
+<string id="lname_sergeant_37">
+<text> Vorontsov </text>
+</string>
+
+<string id="lname_sergeant_38">
+<text> Vorohaev </text>
+</string>
+
+<string id="lname_sergeant_39">
+<text> Vyushinsky </text>
+</string>
+
+<string id="lname_sergeant_4">
+<text> Anissya </text>
+</string>
+
+<string id="lname_sergeant_40">
+<text> Galkin </text>
+</string>
+
+<string id="lname_sergeant_41">
+<text> Ganzyuk </text>
+</string>
+
+<string id="lname_sergeant_42">
+<text> Garkovenko </text>
+</string>
+
+<string id="lname_sergeant_43">
+<text> Garkusha </text>
+</string>
+
+<string id="lname_sergeant_44">
+<text> Georgov </text>
+</string>
+
+<string id="lname_sergeant_45">
+<text> Glebovsky </text>
+</string>
+
+<string id="lname_sergeant_46">
+<text> Hnatjuk </text>
+</string>
+
+<string id="lname_sergeant_47">
+<text> Goncharenko </text>
+</string>
+
+<string id="lname_sergeant_48">
+<text> Gordienko </text>
+</string>
+
+<string id="lname_sergeant_49">
+<text> Gorlevoy </text>
+</string>
+
+<string id="lname_sergeant_5">
+<text> Ardashev </text>
+</string>
+
+<string id="lname_sergeant_50">
+<text> Gorohin </text>
+</string>
+
+<string id="lname_sergeant_51">
+<text> Gorunov </text>
+</string>
+
+<string id="lname_sergeant_52">
+<text> Grebenyuk </text>
+</string>
+
+<string id="lname_sergeant_53">
+<text> Gritsaenko </text>
+</string>
+
+<string id="lname_sergeant_54">
+<text> Gritsay </text>
+</string>
+
+<string id="lname_sergeant_55">
+<text> Gritsenko </text>
+</string>
+
+<string id="lname_sergeant_56">
+<text> Grishachev </text>
+</string>
+
+<string id="lname_sergeant_57">
+<text> Grishuk </text>
+</string>
+
+<string id="lname_sergeant_58">
+<text> Gubar </text>
+</string>
+
+<string id="lname_sergeant_59">
+<text> Gunko </text>
+</string>
+
+<string id="lname_sergeant_6">
+<text> Babich </text>
+</string>
+
+<string id="lname_sergeant_60">
+<text> Gurevich </text>
+</string>
+
+<string id="lname_sergeant_61">
+<text> Denisenko </text>
+</string>
+
+<string id="lname_sergeant_62">
+<text> Dovgalyuk </text>
+</string>
+
+<string id="lname_sergeant_63">
+<text> Dombrik </text>
+</string>
+
+<string id="lname_sergeant_64">
+<text> Dotsenko </text>
+</string>
+
+<string id="lname_sergeant_65">
+<text> Drozdush </text>
+</string>
+
+<string id="lname_sergeant_66">
+<text> Dubenchuk </text>
+</string>
+
+<string id="lname_sergeant_67">
+<text> Dudorov </text>
+</string>
+
+<string id="lname_sergeant_68">
+<text> Duca </text>
+</string>
+
+<string id="lname_sergeant_69">
+<text> Daisy </text>
+</string>
+
+<string id="lname_sergeant_7">
+<text> Balan </text>
+</string>
+
+<string id="lname_sergeant_70">
+<text> Dunaev </text>
+</string>
+
+<string id="lname_sergeant_71">
+<text> Dyklov </text>
+</string>
+
+<string id="lname_sergeant_72">
+<text> Erofeev </text>
+</string>
+
+<string id="lname_sergeant_73">
+<text> Efremov </text>
+</string>
+
+<string id="lname_sergeant_74">
+<text> Zhabenko </text>
+</string>
+
+<string id="lname_sergeant_75">
+<text> Zhmyev </text>
+</string>
+
+<string id="lname_sergeant_76">
+<text> Zhurakovsky </text>
+</string>
+
+<string id="lname_sergeant_77">
+<text> Zabyyyagoda </text>
+</string>
+
+<string id="lname_sergeant_78">
+<text> Zagorodniuk </text>
+</string>
+
+<string id="lname_sergeant_79">
+<text> Zamosenchuk </text>
+</string>
+
+<string id="lname_sergeant_8">
+<text> Baranov </text>
+</string>
+
+<string id="lname_sergeant_80">
+<text> Zarubin </text>
+</string>
+
+<string id="lname_sergeant_81">
+<text> Zakharin </text>
+</string>
+
+<string id="lname_sergeant_82">
+<text> Zvonnitsky </text>
+</string>
+
+<string id="lname_sergeant_83">
+<text> Zinoviev </text>
+</string>
+
+<string id="lname_sergeant_84">
+<text> Zozo </text>
+</string>
+
+<string id="lname_sergeant_85">
+<text> Zolotar </text>
+</string>
+
+<string id="lname_sergeant_86">
+<text> Zubarev </text>
+</string>
+
+<string id="lname_sergeant_87">
+<text> Zubkov </text>
+</string>
+
+<string id="lname_sergeant_88">
+<text> Ivanov </text>
+</string>
+
+<string id="lname_sergeant_89">
+<text> Ignatenko </text>
+</string>
+
+<string id="lname_sergeant_9">
+<text> Baranowski </text>
+</string>
+
+<string id="lname_sergeant_90">
+<text> Izhenko </text>
+</string>
+
+<string id="lname_sergeant_91">
+<text> Ishchuk </text>
+</string>
+
+<string id="lname_sergeant_92">
+<text> Kazakov </text>
+</string>
+
+<string id="lname_sergeant_93">
+<text> Kazantsev </text>
+</string>
+
+<string id="lname_sergeant_94">
+<text> Kandybabko </text>
+</string>
+
+<string id="lname_sergeant_95">
+<text> Kapuka </text>
+</string>
+
+<string id="lname_sergeant_96">
+<text> Kapustyanko </text>
+</string>
+
+<string id="lname_sergeant_97">
+<text> Katz </text>
+</string>
+
+<string id="lname_sergeant_98">
+<text> Kikabidze </text>
+</string>
+
+<string id="lname_sergeant_99">
+<text> Gatsula </text>
+</string>
+
+<string id="lname_stalker_0">
+<text> The White </text>
+</string>
+
+<string id="lname_stalker_1">
+<text> The Green </text>
+</string>
+
+<string id="lname_stalker_10">
+<text> The Immortal </text>
+</string>
+
+<string id="lname_stalker_100">
+<text> The Rusty </text>
+</string>
+
+<string id="lname_stalker_101">
+<text> The Romantic </text>
+</string>
+
+<string id="lname_stalker_102">
+<text> The Fierce </text>
+</string>
+
+<string id="lname_stalker_103">
+<text> The Husky </text>
+</string>
+
+<string id="lname_stalker_104">
+<text> The Storyteller </text>
+</string>
+
+<string id="lname_stalker_105">
+<text> The Blind </text>
+</string>
+
+<string id="lname_stalker_106">
+<text> The Bold </text>
+</string>
+
+<string id="lname_stalker_107">
+<text> The Nozzle </text>
+</string>
+
+<string id="lname_stalker_108">
+<text> The Admin </text>
+</string>
+
+<string id="lname_stalker_109">
+<text> The Elder </text>
+</string>
+
+<string id="lname_stalker_11">
+<text> The Mad </text>
+</string>
+
+<string id="lname_stalker_110">
+<text> The Dude </text>
+</string>
+
+<string id="lname_stalker_111">
+<text> The Capital </text>
+</string>
+
+<string id="lname_stalker_112">
+<text> The Severe </text>
+</string>
+
+<string id="lname_stalker_113">
+<text> The Stooping </text>
+</string>
+
+<string id="lname_stalker_114">
+<text> The Dry </text>
+</string>
+
+<string id="lname_stalker_115">
+<text> The Lucky </text>
+</string>
+
+<string id="lname_stalker_116">
+<text> The Chaly </text>
+</string>
+
+<string id="lname_stalker_117">
+<text> The Thick </text>
+</string>
+
+<string id="lname_stalker_118">
+<text> The Fat </text>
+</string>
+
+<string id="lname_stalker_119">
+<text> The Trupak </text>
+</string>
+
+<string id="lname_stalker_12">
+<text> The Broken </text>
+</string>
+
+<string id="lname_stalker_120">
+<text> The Smart </text>
+</string>
+
+<string id="lname_stalker_121">
+<text> The Ukhar </text>
+</string>
+
+<string id="lname_stalker_122">
+<text> The Ear </text>
+</string>
+
+<string id="lname_stalker_123">
+<text> The Zany </text>
+</string>
+
+<string id="lname_stalker_124">
+<text> The Hohmach </text>
+</string>
+
+<string id="lname_stalker_125">
+<text> The Lame </text>
+</string>
+
+<string id="lname_stalker_126">
+<text> The Chronicle </text>
+</string>
+
+<string id="lname_stalker_127">
+<text> The Thin </text>
+</string>
+
+<string id="lname_stalker_128">
+<text> The Cynic </text>
+</string>
+
+<string id="lname_stalker_129">
+<text> The Dude </text>
+</string>
+
+<string id="lname_stalker_13">
+<text> The Blessed </text>
+</string>
+
+<string id="lname_stalker_130">
+<text> The Mad </text>
+</string>
+
+<string id="lname_stalker_131">
+<text> The Slap </text>
+</string>
+
+<string id="lname_stalker_132">
+<text> The EsThete </text>
+</string>
+
+<string id="lname_stalker_133">
+<text> The Juicy </text>
+</string>
+
+<string id="lname_stalker_134">
+<text> The Admissions </text>
+</string>
+
+<string id="lname_stalker_135">
+<text> The Aboriginal </text>
+</string>
+
+<string id="lname_stalker_136">
+<text> The Aviator </text>
+</string>
+
+<string id="lname_stalker_137">
+<text> The Agent </text>
+</string>
+
+<string id="lname_stalker_138">
+<text> The Counsel </text>
+</string>
+
+<string id="lname_stalker_139">
+<text> The Aibolit </text>
+</string>
+
+<string id="lname_stalker_14">
+<text> The Blatnoj </text>
+</string>
+
+<string id="lname_stalker_140">
+<text> The Apostle </text>
+</string>
+
+<string id="lname_stalker_141">
+<text> The Actor </text>
+</string>
+
+<string id="lname_stalker_142">
+<text> The Ascetic </text>
+</string>
+
+<string id="lname_stalker_143">
+<text> The Rogue Trader </text>
+</string>
+
+<string id="lname_stalker_144">
+<text> The Banker </text>
+</string>
+
+<string id="lname_stalker_145">
+<text> The Bard </text>
+</string>
+
+<string id="lname_stalker_146">
+<text> The Baron </text>
+</string>
+
+<string id="lname_stalker_147">
+<text> The Baryga </text>
+</string>
+
+<string id="lname_stalker_148">
+<text> The Basurman </text>
+</string>
+
+<string id="lname_stalker_149">
+<text> The Begun </text>
+</string>
+
+<string id="lname_stalker_15">
+<text> The Bogatyr </text>
+</string>
+
+<string id="lname_stalker_150">
+<text> The Soldier </text>
+</string>
+
+<string id="lname_stalker_151">
+<text> The Homeless </text>
+</string>
+
+<string id="lname_stalker_152">
+<text> The Boatswain </text>
+</string>
+
+<string id="lname_stalker_153">
+<text> The Pygmy </text>
+</string>
+
+<string id="lname_stalker_154">
+<text> The Bourbon </text>
+</string>
+
+<string id="lname_stalker_155">
+<text> The Bourgeois </text>
+</string>
+
+<string id="lname_stalker_156">
+<text> The Lasers </text>
+</string>
+
+<string id="lname_stalker_157">
+<text> The Vandal </text>
+</string>
+
+<string id="lname_stalker_158">
+<text> The Barbarian </text>
+</string>
+
+<string id="lname_stalker_159">
+<text> The Porter </text>
+</string>
+
+<string id="lname_stalker_16">
+<text> The Bodryakov </text>
+</string>
+
+<string id="lname_stalker_160">
+<text> The Witcher </text>
+</string>
+
+<string id="lname_stalker_161">
+<text> The Visitor </text>
+</string>
+
+<string id="lname_stalker_162">
+<text> The Viking </text>
+</string>
+
+<string id="lname_stalker_163">
+<text> The Drove </text>
+</string>
+
+<string id="lname_stalker_164">
+<text> The Diver </text>
+</string>
+
+<string id="lname_stalker_165">
+<text> The Chief </text>
+</string>
+
+<string id="lname_stalker_166">
+<text> The Thief </text>
+</string>
+
+<string id="lname_stalker_167">
+<text> The Voyager </text>
+</string>
+
+<string id="lname_stalker_168">
+<text> The Doctor </text>
+</string>
+
+<string id="lname_stalker_169">
+<text> The Rider </text>
+</string>
+
+<string id="lname_stalker_17">
+<text> The Chatter </text>
+</string>
+
+<string id="lname_stalker_170">
+<text> The Gangster </text>
+</string>
+
+<string id="lname_stalker_171">
+<text> The Geologist </text>
+</string>
+
+<string id="lname_stalker_172">
+<text> The Gladiator </text>
+</string>
+
+<string id="lname_stalker_173">
+<text> The Messenger </text>
+</string>
+
+<string id="lname_stalker_174">
+<text> The Guest </text>
+</string>
+
+<string id="lname_stalker_175">
+<text> The Graph </text>
+</string>
+
+<string id="lname_stalker_176">
+<text> The Loader </text>
+</string>
+
+<string id="lname_stalker_177">
+<text> The GrandfaTher </text>
+</string>
+
+<string id="lname_stalker_178">
+<text> The Deserter </text>
+</string>
+
+<string id="lname_stalker_179">
+<text> The Businessman </text>
+</string>
+
+<string id="lname_stalker_18">
+<text> The Borzoi </text>
+</string>
+
+<string id="lname_stalker_180">
+<text> The Dandy </text>
+</string>
+
+<string id="lname_stalker_181">
+<text> The MP </text>
+</string>
+
+<string id="lname_stalker_182">
+<text> The Despot </text>
+</string>
+
+<string id="lname_stalker_183">
+<text> The Savage </text>
+</string>
+
+<string id="lname_stalker_184">
+<text> The Diplomat </text>
+</string>
+
+<string id="lname_stalker_185">
+<text> The Dock </text>
+</string>
+
+<string id="lname_stalker_186">
+<text> The MD </text>
+</string>
+
+<string id="lname_stalker_187">
+<text> The Associate </text>
+</string>
+
+<string id="lname_stalker_188">
+<text> The Strangler </text>
+</string>
+
+<string id="lname_stalker_189">
+<text> The Huntsman </text>
+</string>
+
+<string id="lname_stalker_19">
+<text> The Bum </text>
+</string>
+
+<string id="lname_stalker_190">
+<text> The Lawyer </text>
+</string>
+
+<string id="lname_stalker_191">
+<text> The Antiaircrafter </text>
+</string>
+
+<string id="lname_stalker_192">
+<text> The Witch-Doctor </text>
+</string>
+
+<string id="lname_stalker_193">
+<text> The Player </text>
+</string>
+
+<string id="lname_stalker_194">
+<text> The Injun </text>
+</string>
+
+<string id="lname_stalker_195">
+<text> The Mohawk </text>
+</string>
+
+<string id="lname_stalker_196">
+<text> The Captain </text>
+</string>
+
+<string id="lname_stalker_197">
+<text> The Throw </text>
+</string>
+
+<string id="lname_stalker_198">
+<text> The Clown </text>
+</string>
+
+<string id="lname_stalker_199">
+<text> The Prince </text>
+</string>
+
+<string id="lname_stalker_2">
+<text> The Red </text>
+</string>
+
+<string id="lname_stalker_20">
+<text> The Shaven </text>
+</string>
+
+<string id="lname_stalker_200">
+<text> The Kazak </text>
+</string>
+
+<string id="lname_stalker_201">
+<text> The Kok </text>
+</string>
+
+<string id="lname_stalker_202">
+<text> The Wizard </text>
+</string>
+
+<string id="lname_stalker_203">
+<text> The Comanche </text>
+</string>
+
+<string id="lname_stalker_204">
+<text> The King </text>
+</string>
+
+<string id="lname_stalker_205">
+<text> The GodfaTher </text>
+</string>
+
+<string id="lname_stalker_206">
+<text> The Merchant </text>
+</string>
+
+<string id="lname_stalker_207">
+<text> The Smoker </text>
+</string>
+
+<string id="lname_stalker_208">
+<text> The Courier </text>
+</string>
+
+<string id="lname_stalker_209">
+<text> The Driver </text>
+</string>
+
+<string id="lname_stalker_21">
+<text> The Experienced </text>
+</string>
+
+<string id="lname_stalker_210">
+<text> The Legionnaire </text>
+</string>
+
+<string id="lname_stalker_211">
+<text> The Doctor </text>
+</string>
+
+<string id="lname_stalker_212">
+<text> The Forester </text>
+</string>
+
+<string id="lname_stalker_213">
+<text> The Lord </text>
+</string>
+
+<string id="lname_stalker_214">
+<text> The Magnate </text>
+</string>
+
+<string id="lname_stalker_215">
+<text> The Major </text>
+</string>
+
+<string id="lname_stalker_216">
+<text> The Maniac </text>
+</string>
+
+<string id="lname_stalker_217">
+<text> The Martian </text>
+</string>
+
+<string id="lname_stalker_218">
+<text> The Mason </text>
+</string>
+
+<string id="lname_stalker_219">
+<text> The Engineer </text>
+</string>
+
+<string id="lname_stalker_22">
+<text> The VIP </text>
+</string>
+
+<string id="lname_stalker_220">
+<text> The Gravedigger </text>
+</string>
+
+<string id="lname_stalker_221">
+<text> The Moderator </text>
+</string>
+
+<string id="lname_stalker_222">
+<text> The Milkman </text>
+</string>
+
+<string id="lname_stalker_223">
+<text> The Butcher </text>
+</string>
+
+<string id="lname_stalker_224">
+<text> The Mercenary </text>
+</string>
+
+<string id="lname_stalker_225">
+<text> The Adjuster </text>
+</string>
+
+<string id="lname_stalker_226">
+<text> The Head </text>
+</string>
+
+<string id="lname_stalker_227">
+<text> The Ninja </text>
+</string>
+
+<string id="lname_stalker_228">
+<text> The Operator </text>
+</string>
+
+<string id="lname_stalker_229">
+<text> The Armorer </text>
+</string>
+
+<string id="lname_stalker_23">
+<text> The Lucky </text>
+</string>
+
+<string id="lname_stalker_230">
+<text> The Padishah </text>
+</string>
+
+<string id="lname_stalker_231">
+<text> The Executioner </text>
+</string>
+
+<string id="lname_stalker_232">
+<text> The Polkan </text>
+</string>
+
+<string id="lname_stalker_233">
+<text> The Punk </text>
+</string>
+
+<string id="lname_stalker_234">
+<text> The Pope </text>
+</string>
+
+<string id="lname_stalker_235">
+<text> The Partizan </text>
+</string>
+
+<string id="lname_stalker_236">
+<text> The Pastor </text>
+</string>
+
+<string id="lname_stalker_237">
+<text> The Shepherd </text>
+</string>
+
+<string id="lname_stalker_238">
+<text> The Shepherd </text>
+</string>
+
+<string id="lname_stalker_239">
+<text> The Plowman </text>
+</string>
+
+<string id="lname_stalker_24">
+<text> The Lucky </text>
+</string>
+
+<string id="lname_stalker_240">
+<text> The Pacifist </text>
+</string>
+
+<string id="lname_stalker_241">
+<text> The Carrier </text>
+</string>
+
+<string id="lname_stalker_242">
+<text> The Svistun </text>
+</string>
+
+<string id="lname_stalker_243">
+<text> The Pilot </text>
+</string>
+
+<string id="lname_stalker_244">
+<text> The Pioneer </text>
+</string>
+
+<string id="lname_stalker_245">
+<text> The Pirate </text>
+</string>
+
+<string id="lname_stalker_246">
+<text> The Carpenter </text>
+</string>
+
+<string id="lname_stalker_247">
+<text> The Pyro </text>
+</string>
+
+<string id="lname_stalker_248">
+<text> The Firefighter </text>
+</string>
+
+<string id="lname_stalker_249">
+<text> The Slide </text>
+</string>
+
+<string id="lname_stalker_25">
+<text> The Tall </text>
+</string>
+
+<string id="lname_stalker_250">
+<text> The Polarnik </text>
+</string>
+
+<string id="lname_stalker_251">
+<text> The Ambassador </text>
+</string>
+
+<string id="lname_stalker_252">
+<text> The Postman </text>
+</string>
+
+<string id="lname_stalker_253">
+<text> The Poet </text>
+</string>
+
+<string id="lname_stalker_254">
+<text> The Prince </text>
+</string>
+
+<string id="lname_stalker_255">
+<text> The Prophet </text>
+</string>
+
+<string id="lname_stalker_256">
+<text> The Professor </text>
+</string>
+
+<string id="lname_stalker_257">
+<text> The Jumper </text>
+</string>
+
+<string id="lname_stalker_258">
+<text> The Beekeeper </text>
+</string>
+
+<string id="lname_stalker_259">
+<text> The Hardworking </text>
+</string>
+
+<string id="lname_stalker_26">
+<text> The True </text>
+</string>
+
+<string id="lname_stalker_260">
+<text> The Rabbi </text>
+</string>
+
+<string id="lname_stalker_261">
+<text> The Radist </text>
+</string>
+
+<string id="lname_stalker_262">
+<text> The Rogue </text>
+</string>
+
+<string id="lname_stalker_263">
+<text> The Rastaman </text>
+</string>
+
+<string id="lname_stalker_264">
+<text> The Warrior </text>
+</string>
+
+<string id="lname_stalker_265">
+<text> The Rocker </text>
+</string>
+
+<string id="lname_stalker_266">
+<text> The Miner </text>
+</string>
+
+<string id="lname_stalker_267">
+<text> The Samurai </text>
+</string>
+
+<string id="lname_stalker_268">
+<text> The Minesweeper </text>
+</string>
+
+<string id="lname_stalker_269">
+<text> The Svyaznoy </text>
+</string>
+
+<string id="lname_stalker_27">
+<text> The Blip </text>
+</string>
+
+<string id="lname_stalker_270">
+<text> The Priest </text>
+</string>
+
+<string id="lname_stalker_271">
+<text> The Secretary </text>
+</string>
+
+<string id="lname_stalker_272">
+<text> The Heartbreaker </text>
+</string>
+
+<string id="lname_stalker_273">
+<text> The Pretender </text>
+</string>
+
+<string id="lname_stalker_274">
+<text> The Skiff </text>
+</string>
+
+<string id="lname_stalker_275">
+<text> The Pathfinder </text>
+</string>
+
+<string id="lname_stalker_276">
+<text> The Locksmith </text>
+</string>
+
+<string id="lname_stalker_277">
+<text> The Kamikadze </text>
+</string>
+
+<string id="lname_stalker_278">
+<text> The Kennel </text>
+</string>
+
+<string id="lname_stalker_279">
+<text> The Rescue </text>
+</string>
+
+<string id="lname_stalker_28">
+<text> The Chunk </text>
+</string>
+
+<string id="lname_stalker_280">
+<text> The Athlete </text>
+</string>
+
+<string id="lname_stalker_281">
+<text> The Wanderer </text>
+</string>
+
+<string id="lname_stalker_282">
+<text> The Student </text>
+</string>
+
+<string id="lname_stalker_283">
+<text> The Judge </text>
+</string>
+
+<string id="lname_stalker_284">
+<text> The Amanita </text>
+</string>
+
+<string id="lname_stalker_285">
+<text> The Pimp </text>
+</string>
+
+<string id="lname_stalker_286">
+<text> The Accountant </text>
+</string>
+
+<string id="lname_stalker_287">
+<text> The Tankman </text>
+</string>
+
+<string id="lname_stalker_288">
+<text> The Dancer </text>
+</string>
+
+<string id="lname_stalker_289">
+<text> The Tyrant </text>
+</string>
+
+<string id="lname_stalker_29">
+<text> The Rotten </text>
+</string>
+
+<string id="lname_stalker_290">
+<text> The Traders </text>
+</string>
+
+<string id="lname_stalker_291">
+<text> The Trofeyschik </text>
+</string>
+
+<string id="lname_stalker_292">
+<text> The Chimney </text>
+</string>
+
+<string id="lname_stalker_293">
+<text> The Native </text>
+</string>
+
+<string id="lname_stalker_294">
+<text> The Tourist </text>
+</string>
+
+<string id="lname_stalker_295">
+<text> The Killer </text>
+</string>
+
+<string id="lname_stalker_296">
+<text> The Bassoon </text>
+</string>
+
+<string id="lname_stalker_297">
+<text> The Footballer </text>
+</string>
+
+<string id="lname_stalker_298">
+<text> The Sniper </text>
+</string>
+
+<string id="lname_stalker_299">
+<text> The Chemist </text>
+</string>
+
+<string id="lname_stalker_3">
+<text> The Rusty </text>
+</string>
+
+<string id="lname_stalker_30">
+<text> The Govorun </text>
+</string>
+
+<string id="lname_stalker_300">
+<text> The Cheburek </text>
+</string>
+
+<string id="lname_stalker_301">
+<text> The Artist </text>
+</string>
+
+<string id="lname_stalker_302">
+<text> The Chaban </text>
+</string>
+
+<string id="lname_stalker_303">
+<text> The Shaman </text>
+</string>
+
+<string id="lname_stalker_304">
+<text> The Crank </text>
+</string>
+
+<string id="lname_stalker_305">
+<text> The Shakhtar </text>
+</string>
+
+<string id="lname_stalker_306">
+<text> The Sheriff </text>
+</string>
+
+<string id="lname_stalker_307">
+<text> The Chef </text>
+</string>
+
+<string id="lname_stalker_308">
+<text> The Shkolyar </text>
+</string>
+
+<string id="lname_stalker_309">
+<text> The Driver </text>
+</string>
+
+<string id="lname_stalker_31">
+<text> The Hunchback </text>
+</string>
+
+<string id="lname_stalker_310">
+<text> The Spy </text>
+</string>
+
+<string id="lname_stalker_311">
+<text> The Electric </text>
+</string>
+
+<string id="lname_stalker_312">
+<text> The Jung </text>
+</string>
+
+<string id="lname_stalker_313">
+<text> The Pagan </text>
+</string>
+
+<string id="lname_stalker_314">
+<text> The Alligator </text>
+</string>
+
+<string id="lname_stalker_315">
+<text> The Anaconda </text>
+</string>
+
+<string id="lname_stalker_316">
+<text> The Baboon </text>
+</string>
+
+<string id="lname_stalker_317">
+<text> The Bison </text>
+</string>
+
+<string id="lname_stalker_318">
+<text> The Beaver </text>
+</string>
+
+<string id="lname_stalker_319">
+<text> The Mantis </text>
+</string>
+
+<string id="lname_stalker_32">
+<text> The Proud </text>
+</string>
+
+<string id="lname_stalker_320">
+<text> The Bulldog </text>
+</string>
+
+<string id="lname_stalker_321">
+<text> The Chipmunk </text>
+</string>
+
+<string id="lname_stalker_322">
+<text> The Bull </text>
+</string>
+
+<string id="lname_stalker_323">
+<text> The Boar </text>
+</string>
+
+<string id="lname_stalker_324">
+<text> The Sparrow </text>
+</string>
+
+<string id="lname_stalker_325">
+<text> The Raven </text>
+</string>
+
+<string id="lname_stalker_326">
+<text> The Desman </text>
+</string>
+
+<string id="lname_stalker_327">
+<text> The Plantago </text>
+</string>
+
+<string id="lname_stalker_328">
+<text> The Janitor </text>
+</string>
+
+<string id="lname_stalker_329">
+<text> The Rook </text>
+</string>
+
+<string id="lname_stalker_33">
+<text> The Bitter </text>
+</string>
+
+<string id="lname_stalker_330">
+<text> The Pallas </text>
+</string>
+
+<string id="lname_stalker_331">
+<text> The Gus </text>
+</string>
+
+<string id="lname_stalker_332">
+<text> The Dolphin </text>
+</string>
+
+<string id="lname_stalker_333">
+<text> The Dinosaur </text>
+</string>
+
+<string id="lname_stalker_334">
+<text> The Drozd </text>
+</string>
+
+<string id="lname_stalker_335">
+<text> The Woodpecker </text>
+</string>
+
+<string id="lname_stalker_336">
+<text> The Hedgehog </text>
+</string>
+
+<string id="lname_stalker_337">
+<text> The Beetle </text>
+</string>
+
+<string id="lname_stalker_338">
+<text> The Hare </text>
+</string>
+
+<string id="lname_stalker_339">
+<text> The Beast </text>
+</string>
+
+<string id="lname_stalker_34">
+<text> The Terrible </text>
+</string>
+
+<string id="lname_stalker_340">
+<text> The Wizard </text>
+</string>
+
+<string id="lname_stalker_341">
+<text> The Bison </text>
+</string>
+
+<string id="lname_stalker_342">
+<text> The Turkey </text>
+</string>
+
+<string id="lname_stalker_343">
+<text> The Boar </text>
+</string>
+
+<string id="lname_stalker_344">
+<text> The Karas </text>
+</string>
+
+<string id="lname_stalker_345">
+<text> The Canary </text>
+</string>
+
+<string id="lname_stalker_346">
+<text> The Bedbug </text>
+</string>
+
+<string id="lname_stalker_347">
+<text> The Cobra </text>
+</string>
+
+<string id="lname_stalker_348">
+<text> The Komar </text>
+</string>
+
+<string id="lname_stalker_349">
+<text> The Horse </text>
+</string>
+
+<string id="lname_stalker_35">
+<text> The Rumble </text>
+</string>
+
+<string id="lname_stalker_350">
+<text> The Coyote </text>
+</string>
+
+<string id="lname_stalker_351">
+<text> The Crocodile </text>
+</string>
+
+<string id="lname_stalker_352">
+<text> The Grasshopper </text>
+</string>
+
+<string id="lname_stalker_353">
+<text> The Pointman </text>
+</string>
+
+<string id="lname_stalker_354">
+<text> The Moose </text>
+</string>
+
+<string id="lname_stalker_355">
+<text> The Mammoth </text>
+</string>
+
+<string id="lname_stalker_356">
+<text> The Elephant </text>
+</string>
+
+<string id="lname_stalker_357">
+<text> The Micro </text>
+</string>
+
+<string id="lname_stalker_358">
+<text> The Mosquito </text>
+</string>
+
+<string id="lname_stalker_359">
+<text> The Ant </text>
+</string>
+
+<string id="lname_stalker_36">
+<text> The Long </text>
+</string>
+
+<string id="lname_stalker_360">
+<text> The Gadfly </text>
+</string>
+
+<string id="lname_stalker_361">
+<text> The Spider </text>
+</string>
+
+<string id="lname_stalker_362">
+<text> The Patsyuk </text>
+</string>
+
+<string id="lname_stalker_363">
+<text> The Pilgrim </text>
+</string>
+
+<string id="lname_stalker_364">
+<text> The Piranha </text>
+</string>
+
+<string id="lname_stalker_365">
+<text> The Python </text>
+</string>
+
+<string id="lname_stalker_366">
+<text> The Rusak </text>
+</string>
+
+<string id="lname_stalker_367">
+<text> The Owl </text>
+</string>
+
+<string id="lname_stalker_368">
+<text> The Sokol </text>
+</string>
+
+<string id="lname_stalker_369">
+<text> The Marmot </text>
+</string>
+
+<string id="lname_stalker_37">
+<text> The Goodie </text>
+</string>
+
+<string id="lname_stalker_370">
+<text> The Gopher </text>
+</string>
+
+<string id="lname_stalker_371">
+<text> The Gobio </text>
+</string>
+
+<string id="lname_stalker_372">
+<text> The Cockroach </text>
+</string>
+
+<string id="lname_stalker_373">
+<text> The Tarantula </text>
+</string>
+
+<string id="lname_stalker_374">
+<text> The Jerboa </text>
+</string>
+
+<string id="lname_stalker_375">
+<text> The Udav </text>
+</string>
+
+<string id="lname_stalker_376">
+<text> The Owl </text>
+</string>
+
+<string id="lname_stalker_377">
+<text> The Weasel </text>
+</string>
+
+<string id="lname_stalker_378">
+<text> The Worm </text>
+</string>
+
+<string id="lname_stalker_379">
+<text> The Crank </text>
+</string>
+
+<string id="lname_stalker_38">
+<text> The Dead </text>
+</string>
+
+<string id="lname_stalker_380">
+<text> The Absolute </text>
+</string>
+
+<string id="lname_stalker_381">
+<text> The Anomaly </text>
+</string>
+
+<string id="lname_stalker_382">
+<text> The Bumper </text>
+</string>
+
+<string id="lname_stalker_383">
+<text> The Baton </text>
+</string>
+
+<string id="lname_stalker_384">
+<text> The Broken </text>
+</string>
+
+<string id="lname_stalker_385">
+<text> The Lawless </text>
+</string>
+
+<string id="lname_stalker_386">
+<text> The Car </text>
+</string>
+
+<string id="lname_stalker_387">
+<text> The Bolt </text>
+</string>
+
+<string id="lname_stalker_388">
+<text> The Razor </text>
+</string>
+
+<string id="lname_stalker_389">
+<text> The Tambourine </text>
+</string>
+
+<string id="lname_stalker_39">
+<text> The Bootlegger </text>
+</string>
+
+<string id="lname_stalker_390">
+<text> The Bagel </text>
+</string>
+
+<string id="lname_stalker_391">
+<text> The Vacuum </text>
+</string>
+
+<string id="lname_stalker_392">
+<text> The Rubbish </text>
+</string>
+
+<string id="lname_stalker_393">
+<text> The Boulder </text>
+</string>
+
+<string id="lname_stalker_394">
+<text> The Fan </text>
+</string>
+
+<string id="lname_stalker_395">
+<text> The Helicopter </text>
+</string>
+
+<string id="lname_stalker_396">
+<text> The Wind </text>
+</string>
+
+<string id="lname_stalker_397">
+<text> The Screw </text>
+</string>
+
+<string id="lname_stalker_398">
+<text> The Gate </text>
+</string>
+
+<string id="lname_stalker_399">
+<text> The Nail </text>
+</string>
+
+<string id="lname_stalker_4">
+<text> The Red </text>
+</string>
+
+<string id="lname_stalker_40">
+<text> The Dohlyak </text>
+</string>
+
+<string id="lname_stalker_400">
+<text> The Standoff </text>
+</string>
+
+<string id="lname_stalker_401">
+<text> The Globe </text>
+</string>
+
+<string id="lname_stalker_402">
+<text> The Chunk </text>
+</string>
+
+<string id="lname_stalker_403">
+<text> The Grenade </text>
+</string>
+
+<string id="lname_stalker_404">
+<text> The Fog </text>
+</string>
+
+<string id="lname_stalker_405">
+<text> The Coffin </text>
+</string>
+
+<string id="lname_stalker_406">
+<text> The Cottager </text>
+</string>
+
+<string id="lname_stalker_407">
+<text> The Engine </text>
+</string>
+
+<string id="lname_stalker_408">
+<text> The Dynamite </text>
+</string>
+
+<string id="lname_stalker_409">
+<text> The Dyrchik </text>
+</string>
+
+<string id="lname_stalker_41">
+<text> The Leaking </text>
+</string>
+
+<string id="lname_stalker_410">
+<text> The Law </text>
+</string>
+
+<string id="lname_stalker_411">
+<text> The Castle </text>
+</string>
+
+<string id="lname_stalker_412">
+ <text> The Shutter </text>
+</string>
+
+<string id="lname_stalker_413">
+<text> The Isotope </text>
+</string>
+
+<string id="lname_stalker_414">
+<text> The Stone </text>
+</string>
+
+<string id="lname_stalker_415">
+<text> The Trap </text>
+</string>
+
+<string id="lname_stalker_416">
+<text> The Vedun </text>
+</string>
+
+<string id="lname_stalker_417">
+<text> The Karma </text>
+</string>
+
+<string id="lname_stalker_418">
+<text> The Brick </text>
+</string>
+
+<string id="lname_stalker_419">
+<text> The Glue </text>
+</string>
+
+<string id="lname_stalker_42">
+<text> The Greedy </text>
+</string>
+
+<string id="lname_stalker_420">
+<text> The Key </text>
+</string>
+
+<string id="lname_stalker_421">
+<text> The Knut </text>
+</string>
+
+<string id="lname_stalker_422">
+<text> The Hotspur </text>
+</string>
+
+<string id="lname_stalker_423">
+<text> The Cap </text>
+</string>
+
+<string id="lname_stalker_424">
+<text> The Colun </text>
+</string>
+
+<string id="lname_stalker_425">
+<text> The Cognac </text>
+</string>
+
+<string id="lname_stalker_426">
+<text> The Root </text>
+</string>
+
+<string id="lname_stalker_427">
+<text> The Spit </text>
+</string>
+
+<string id="lname_stalker_428">
+<text> The Cosmos </text>
+</string>
+
+<string id="lname_stalker_429">
+<text> The Spade </text>
+</string>
+
+<string id="lname_stalker_43">
+<text> The Miserable </text>
+</string>
+
+<string id="lname_stalker_430">
+<text> The Cannot </text>
+</string>
+
+<string id="lname_stalker_431">
+<text> The Cross </text>
+</string>
+
+<string id="lname_stalker_432">
+<text> The Ruberoid </text>
+</string>
+
+<string id="lname_stalker_433">
+<text> The Trigger </text>
+</string>
+
+<string id="lname_stalker_434">
+<text> The Lapot </text>
+</string>
+
+<string id="lname_stalker_435">
+<text> The Crowbar </text>
+</string>
+
+<string id="lname_stalker_436">
+<text> The Machine </text>
+</string>
+
+<string id="lname_stalker_437">
+<text> The Target </text>
+</string>
+
+<string id="lname_stalker_438">
+<text> The Motor </text>
+</string>
+
+<string id="lname_stalker_439">
+<text> The Pump </text>
+</string>
+
+<string id="lname_stalker_44">
+<text> The Iron </text>
+</string>
+
+<string id="lname_stalker_440">
+<text> The Night </text>
+</string>
+
+<string id="lname_stalker_441">
+<text> The Trimmings </text>
+</string>
+
+<string id="lname_stalker_442">
+<text> The Panadol </text>
+</string>
+
+<string id="lname_stalker_443">
+<text> The Parachute </text>
+</string>
+
+<string id="lname_stalker_444">
+ <text> The Patron </text>
+</string>
+
+<string id="lname_stalker_445">
+<text> The Smoke </text>
+</string>
+
+<string id="lname_stalker_446">
+ <text> The Perot </text>
+</string>
+
+<string id="lname_stalker_447">
+<text> The Pistone </text>
+</string>
+
+<string id="lname_stalker_448">
+<text> The Plasticine </text>
+</string>
+
+<string id="lname_stalker_449">
+<text> The Gunpowder </text>
+</string>
+
+<string id="lname_stalker_45">
+<text> The Zhelezyachnik </text>
+</string>
+
+<string id="lname_stalker_450">
+<text> The Nickle </text>
+</string>
+
+<string id="lname_stalker_451">
+<text> The Rocket </text>
+</string>
+
+<string id="lname_stalker_452">
+<text> The Rama </text>
+</string>
+
+<string id="lname_stalker_453">
+<text> The Reactor </text>
+</string>
+
+<string id="lname_stalker_454">
+<text> The Cutter </text>
+</string>
+
+<string id="lname_stalker_455">
+<text> The Sieve </text>
+</string>
+
+<string id="lname_stalker_456">
+<text> The Tails </text>
+</string>
+
+<string id="lname_stalker_457">
+<text> The Robot </text>
+</string>
+
+<string id="lname_stalker_458">
+<text> The Rogach </text>
+</string>
+
+<string id="lname_stalker_459">
+<text> The Scoop </text>
+</string>
+
+<string id="lname_stalker_46">
+<text> The Burnt </text>
+</string>
+
+<string id="lname_stalker_460">
+<text> The Brew </text>
+</string>
+
+<string id="lname_stalker_461">
+<text> The Boot </text>
+</string>
+
+<string id="lname_stalker_462">
+<text> The Cider </text>
+</string>
+
+<string id="lname_stalker_463">
+<text> The Death </text>
+</string>
+
+<string id="lname_stalker_464">
+<text> The Alcohol </text>
+</string>
+
+<string id="lname_stalker_465">
+<text> The Chisel </text>
+</string>
+
+<string id="lname_stalker_466">
+<text> The Trunk </text>
+</string>
+
+<string id="lname_stalker_467">
+<text> The Chest </text>
+</string>
+
+<string id="lname_stalker_468">
+<text> The Ax </text>
+</string>
+
+<string id="lname_stalker_469">
+<text> The Butt </text>
+</string>
+
+<string id="lname_stalker_47">
+<text> The Daisy </text>
+</string>
+
+<string id="lname_stalker_470">
+<text> The Tochilo </text>
+</string>
+
+<string id="lname_stalker_471">
+<text> The Ace </text>
+</string>
+
+<string id="lname_stalker_472">
+<text> The Node </text>
+</string>
+
+<string id="lname_stalker_473">
+<text> The Factor </text>
+</string>
+
+<string id="lname_stalker_474">
+<text> The lantern </text>
+</string>
+
+<string id="lname_stalker_475">
+<text> The Chekan </text>
+</string>
+
+<string id="lname_stalker_476">
+<text> The Cserveny </text>
+</string>
+
+<string id="lname_stalker_477">
+<text> The Garlic </text>
+</string>
+
+<string id="lname_stalker_478">
+<text> The Scarecrow </text>
+</string>
+
+<string id="lname_stalker_479">
+<text> The Chance </text>
+</string>
+
+<string id="lname_stalker_48">
+<text> The Zhirdyay </text>
+</string>
+
+<string id="lname_stalker_480">
+<text> The Shket </text>
+</string>
+
+<string id="lname_stalker_481">
+<text> The Thorn </text>
+</string>
+
+<string id="lname_stalker_482">
+<text> The Cabinet </text>
+</string>
+
+<string id="lname_stalker_483">
+<text> The Sleeper </text>
+</string>
+
+<string id="lname_stalker_484">
+<text> The Shtaket </text>
+</string>
+
+<string id="lname_stalker_485">
+<text> The Socket </text>
+</string>
+
+<string id="lname_stalker_486">
+<text> The Bayonet </text>
+</string>
+
+<string id="lname_stalker_487">
+<text> The Pin </text>
+</string>
+
+<string id="lname_stalker_488">
+<text> The Screw </text>
+</string>
+
+<string id="lname_stalker_489">
+<text> The Nix </text>
+</string>
+
+<string id="lname_stalker_49">
+<text> The Zhloba </text>
+</string>
+
+<string id="lname_stalker_490">
+<text> The Head </text>
+</string>
+
+<string id="lname_stalker_491">
+<text> The Fang </text>
+</string>
+
+<string id="lname_stalker_492">
+<text> The Claw </text>
+</string>
+
+<string id="lname_stalker_493">
+<text> The Bone </text>
+</string>
+
+<string id="lname_stalker_494">
+<text> The Fist </text>
+</string>
+
+<string id="lname_stalker_495">
+<text> The Nerve </text>
+</string>
+
+<string id="lname_stalker_496">
+<text> The Skeleton </text>
+</string>
+
+<string id="lname_stalker_497">
+<text> The Tail </text>
+</string>
+
+<string id="lname_stalker_498">
+<text> The Mane </text>
+</string>
+
+<string id="lname_stalker_499">
+<text> The bruise </text>
+</string>
+
+<string id="lname_stalker_5">
+<text> The Gray </text>
+</string>
+
+<string id="lname_stalker_50">
+<text> The Miser </text>
+</string>
+
+<string id="lname_stalker_500">
+<text> The Barmalei </text>
+</string>
+
+<string id="lname_stalker_501">
+<text> The Batu </text>
+</string>
+
+<string id="lname_stalker_502">
+<text> The Bogatyr </text>
+</string>
+
+<string id="lname_stalker_503">
+<text> The Pinocchio </text>
+</string>
+
+<string id="lname_stalker_504">
+<text> The Witcher </text>
+</string>
+
+<string id="lname_stalker_505">
+ <text> The Woland </text>
+</string>
+
+<string id="lname_stalker_506">
+ <text> The Homer </text>
+</string>
+
+<string id="lname_stalker_507">
+<text> The Gorynych </text>
+</string>
+
+<string id="lname_stalker_508">
+<text> The Terrible </text>
+</string>
+
+<string id="lname_stalker_509">
+<text> The Gioconda </text>
+</string>
+
+<string id="lname_stalker_51">
+<text> The Zhmur </text>
+</string>
+
+<string id="lname_stalker_510">
+<text> The Duremar </text>
+</string>
+
+<string id="lname_stalker_511">
+<text> The Zheleznyak </text>
+</string>
+
+<string id="lname_stalker_512">
+<text> The Icarus </text>
+</string>
+
+<string id="lname_stalker_513">
+<text> The Casanova </text>
+</string>
+
+<string id="lname_stalker_514">
+<text> The Kashchei </text>
+</string>
+
+<string id="lname_stalker_515">
+<text> The Caesar </text>
+</string>
+
+<string id="lname_stalker_516">
+<text> The Gingerbread </text>
+</string>
+
+<string id="lname_stalker_517">
+<text> The Kutuzov </text>
+</string>
+
+<string id="lname_stalker_518">
+ <text> The Kid </text>
+</string>
+
+<string id="lname_stalker_519">
+<text> The Napoleon </text>
+</string>
+
+<string id="lname_stalker_52">
+<text> The Thoughtful </text>
+</string>
+
+<string id="lname_stalker_520">
+<text> The Nelson </text>
+</string>
+
+<string id="lname_stalker_521">
+<text> The Neptune </text>
+</string>
+
+<string id="lname_stalker_522">
+<text> The Oscar </text>
+</string>
+
+<string id="lname_stalker_523">
+<text> The PromeTheus </text>
+</string>
+
+<string id="lname_stalker_524">
+<text> The Pushkin </text>
+</string>
+
+<string id="lname_stalker_525">
+<text> The Friday </text>
+</string>
+
+<string id="lname_stalker_526">
+<text> The Rambo </text>
+</string>
+
+<string id="lname_stalker_527">
+<text> The Roquefort </text>
+</string>
+
+<string id="lname_stalker_528">
+<text> The Susanin </text>
+</string>
+
+<string id="lname_stalker_529">
+<text> The Terminator </text>
+</string>
+
+<string id="lname_stalker_53">
+<text> The Bore </text>
+</string>
+
+<string id="lname_stalker_530">
+<text> The Tangle-legs </text>
+</string>
+
+<string id="lname_stalker_531">
+<text> The Caesar </text>
+</string>
+
+<string id="lname_stalker_532">
+<text> The Chapaev </text>
+</string>
+
+<string id="lname_stalker_533">
+<text> The Chapay </text>
+</string>
+
+<string id="lname_stalker_534">
+<text> The Chebur </text>
+</string>
+
+<string id="lname_stalker_535">
+<text> The Cheburashka </text>
+</string>
+
+<string id="lname_stalker_536">
+<text> The Chingachgook </text>
+</string>
+
+<string id="lname_stalker_537">
+<text> The Genghis </text>
+</string>
+
+<string id="lname_stalker_538">
+<text> The Stirlitz </text>
+</string>
+
+<string id="lname_stalker_539">
+<text> The Banana </text>
+</string>
+
+<string id="lname_stalker_54">
+<text> The Zorkiy </text>
+</string>
+
+<string id="lname_stalker_540">
+<text> The Taps </text>
+</string>
+
+<string id="lname_stalker_541">
+<text> The Baton </text>
+</string>
+
+<string id="lname_stalker_542">
+<text> The Dad </text>
+</string>
+
+<string id="lname_stalker_543">
+<text> The Bayan </text>
+</string>
+
+<string id="lname_stalker_544">
+<text> The Bratan </text>
+</string>
+
+<string id="lname_stalker_545">
+<text> The Bulkin </text>
+</string>
+
+<string id="lname_stalker_546">
+<text> The Bulldozer </text>
+</string>
+
+<string id="lname_stalker_547">
+<text> The Buffer </text>
+</string>
+
+<string id="lname_stalker_548">
+<text> The Varenik </text>
+</string>
+
+<string id="lname_stalker_549">
+<text> The Vist </text>
+</string>
+
+<string id="lname_stalker_55">
+<text> The TooThed </text>
+</string>
+
+<string id="lname_stalker_550">
+<text> The Gangrene </text>
+</string>
+
+<string id="lname_stalker_551">
+<text> The Hybrid </text>
+</string>
+
+<string id="lname_stalker_552">
+<text> The Gluck </text>
+</string>
+
+<string id="lname_stalker_553">
+<text> The Drummer </text>
+</string>
+
+<string id="lname_stalker_554">
+<text> The Highlander </text>
+</string>
+
+<string id="lname_stalker_555">
+<text> The Degree </text>
+</string>
+
+<string id="lname_stalker_556">
+<text> The Gremlin </text>
+</string>
+
+<string id="lname_stalker_557">
+<text> The Saiga </text>
+</string>
+
+<string id="lname_stalker_558">
+<text> The Uncle </text>
+</string>
+
+<string id="lname_stalker_559">
+<text> The Zvizdets </text>
+</string>
+
+<string id="lname_stalker_56">
+<text> The Chilly </text>
+</string>
+
+<string id="lname_stalker_560">
+<text> The Outcast </text>
+</string>
+
+<string id="lname_stalker_561">
+<text> The Cahors </text>
+</string>
+
+<string id="lname_stalker_562">
+<text> The Cabbage </text>
+</string>
+
+<string id="lname_stalker_563">
+<text> The Carbide </text>
+</string>
+
+<string id="lname_stalker_564">
+<text> The Jelly </text>
+</string>
+
+<string id="lname_stalker_565">
+<text> The Hotspur </text>
+</string>
+
+<string id="lname_stalker_566">
+<text> The Commander </text>
+</string>
+
+<string id="lname_stalker_567">
+<text> The King </text>
+</string>
+
+<string id="lname_stalker_568">
+<text> The Cannot </text>
+</string>
+
+<string id="lname_stalker_569">
+<text> The Lapot </text>
+</string>
+
+<string id="lname_stalker_57">
+<text> The Monster </text>
+</string>
+
+<string id="lname_stalker_570">
+<text> The Ice </text>
+</string>
+
+<string id="lname_stalker_571">
+<text> The Leshy </text>
+</string>
+
+<string id="lname_stalker_572">
+<text> The Moor </text>
+</string>
+
+<string id="lname_stalker_573">
+<text> The Madera </text>
+</string>
+
+<string id="lname_stalker_574">
+<text> The Pasta </text>
+</string>
+
+<string id="lname_stalker_575">
+<text> The Wizard </text>
+</string>
+
+<string id="lname_stalker_576">
+<text> The Mutant </text>
+</string>
+
+<string id="lname_stalker_577">
+<text> The Nishtyak </text>
+</string>
+
+<string id="lname_stalker_578">
+<text> The Molding </text>
+</string>
+
+<string id="lname_stalker_579">
+<text> The Whirlpool </text>
+</string>
+
+<string id="lname_stalker_58">
+<text> The Invalid </text>
+</string>
+
+<string id="lname_stalker_580">
+<text> The Oper </text>
+</string>
+
+<string id="lname_stalker_581">
+<text> The Dumpling </text>
+</string>
+
+<string id="lname_stalker_582">
+<text> The Pepper </text>
+</string>
+
+<string id="lname_stalker_583">
+<text> The Epaulettes </text>
+</string>
+
+<string id="lname_stalker_584">
+<text> The Donut </text>
+</string>
+
+<string id="lname_stalker_585">
+<text> The Bubble </text>
+</string>
+
+<string id="lname_stalker_586">
+<text> The Fugly </text>
+</string>
+
+<string id="lname_stalker_587">
+<text> The Bur </text>
+</string>
+
+<string id="lname_stalker_588">
+<text> The Ryazanskiy </text>
+</string>
+
+<string id="lname_stalker_589">
+<text> The Brew </text>
+</string>
+
+<string id="lname_stalker_59">
+<text> The Cripple </text>
+</string>
+
+<string id="lname_stalker_590">
+<text> The Morel </text>
+</string>
+
+<string id="lname_stalker_591">
+<text> The Sugar </text>
+</string>
+
+<string id="lname_stalker_592">
+<text> The Tobacco </text>
+</string>
+
+<string id="lname_stalker_593">
+<text> The Table </text>
+</string>
+
+<string id="lname_stalker_594">
+<text> The Ace </text>
+</string>
+
+<string id="lname_stalker_595">
+<text> The Pumpkin </text>
+</string>
+
+<string id="lname_stalker_596">
+<text> The Ghoul </text>
+</string>
+
+<string id="lname_stalker_597">
+<text> The Bassoon </text>
+</string>
+
+<string id="lname_stalker_598">
+<text> The Phantom </text>
+</string>
+
+<string id="lname_stalker_599">
+<text> The Focus </text>
+</string>
+
+<string id="lname_stalker_6">
+<text> The Gray </text>
+</string>
+
+<string id="lname_stalker_60">
+<text> The Kolotun </text>
+</string>
+
+<string id="lname_stalker_61">
+<text> The Flatliners </text>
+</string>
+
+<string id="lname_stalker_62">
+ <text> The Oblique </text>
+</string>
+
+<string id="lname_stalker_63">
+<text> The Clumsy </text>
+</string>
+
+<string id="lname_stalker_64">
+<text> The Bony </text>
+</string>
+
+<string id="lname_stalker_65">
+<text> The Crooked </text>
+</string>
+
+<string id="lname_stalker_66">
+<text> The Krivonogov </text>
+</string>
+
+<string id="lname_stalker_67">
+<text> The Toad </text>
+</string>
+
+<string id="lname_stalker_68">
+<text> The Shaggy </text>
+</string>
+
+<string id="lname_stalker_69">
+<text> The Bald </text>
+</string>
+
+<string id="lname_stalker_7">
+<text> The Blue </text>
+</string>
+
+<string id="lname_stalker_70">
+<text> The Pet </text>
+</string>
+
+<string id="lname_stalker_71">
+<text> The Lyutyi </text>
+</string>
+
+<string id="lname_stalker_72">
+<text> The Kid </text>
+</string>
+
+<string id="lname_stalker_73">
+<text> The Dead </text>
+</string>
+
+<string id="lname_stalker_74">
+<text> The Dead </text>
+</string>
+
+<string id="lname_stalker_75">
+<text> The Local </text>
+</string>
+
+<string id="lname_stalker_76">
+<text> The Grim </text>
+</string>
+
+<string id="lname_stalker_77">
+<text> The Muddy </text>
+</string>
+
+<string id="lname_stalker_78">
+<text> The Crumpled </text>
+</string>
+
+<string id="lname_stalker_79">
+<text> The Narcissus </text>
+</string>
+
+<string id="lname_stalker_8">
+<text> The Black </text>
+</string>
+
+<string id="lname_stalker_80">
+<text> The Careless </text>
+</string>
+
+<string id="lname_stalker_81">
+<text> The Loser </text>
+</string>
+
+<string id="lname_stalker_82">
+<text> The Clumsy </text>
+</string>
+
+<string id="lname_stalker_83">
+<text> The Tedious </text>
+</string>
+
+<string id="lname_stalker_84">
+<text> The Moaner </text>
+</string>
+
+<string id="lname_stalker_85">
+<text> The Eye </text>
+</string>
+
+<string id="lname_stalker_86">
+<text> The Scum </text>
+</string>
+
+<string id="lname_stalker_87">
+<text> The Parasite </text>
+</string>
+
+<string id="lname_stalker_88">
+<text> The Paranoid </text>
+</string>
+
+<string id="lname_stalker_89">
+<text> The Dandy </text>
+</string>
+
+<string id="lname_stalker_9">
+<text> The Unbreakable </text>
+</string>
+
+<string id="lname_stalker_90">
+<text> The Dodger </text>
+</string>
+
+<string id="lname_stalker_91">
+<text> The Scoundrel </text>
+</string>
+
+<string id="lname_stalker_92">
+ <text> The Deceased </text>
+</string>
+
+<string id="lname_stalker_93">
+<text> The Righteous </text>
+</string>
+
+<string id="lname_stalker_94">
+<text> The Simpson </text>
+</string>
+
+<string id="lname_stalker_95">
+<text> The Mad Dog </text>
+</string>
+
+<string id="lname_stalker_96">
+<text> The Hardworking </text>
+</string>
+
+<string id="lname_stalker_97">
+<text> The Torn </text>
+</string>
+
+<string id="lname_stalker_98">
+<text> The Grabber </text>
+</string>
+
+<string id="lname_stalker_99">
+<text> The Sharp </text>
+	</string>
+
+</string_table>

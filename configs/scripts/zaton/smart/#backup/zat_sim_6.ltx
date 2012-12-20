@@ -1,0 +1,34 @@
+[smart_terrain];zat_sim_6
+squad_id = 5
+max_population = 1
+respawn_only_smart = true
+respawn_params = respawn@zat_sim_6   
+
+[respawn@zat_sim_6]
+spawn_bloodsucker
+spawn_boar
+spawn_flesh
+spawn_dog
+spawn_pseudodog
+
+[spawn_bloodsucker]
+spawn_squads = simulation_bloodsucker_zat_sim_6
+spawn_num = {+zat_b38_failed} 2, {+zat_b57_bloodsucker_lair_clear} 0, 1
+
+[spawn_pseudodog]
+spawn_squads = simulation_pseudodog, simulation_pseudodog, simulation_dog, simulation_gigant_zat_sim_6, simulation_snork
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 1, 0
+
+[spawn_dog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 3, 0
+
+;;; unused
+
+[spawn_boar]
+spawn_squads = simulation_boar
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 2, 0
+
+[spawn_flesh]
+spawn_squads = simulation_flesh
+spawn_num = {+zat_b57_bloodsucker_lair_clear} 2, 0

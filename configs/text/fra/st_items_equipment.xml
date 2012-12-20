@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_antirad">
+		<text>Anti-radiation drugs</text>
+	</string>
+	<string id="st_antirad_descr">
+		<text>Mexaminum radiation protection drugs are common in the Zone. When used, this drug induces contraction of peripheral blood vessels and oxygen deprivation, which serves to treat and prevent radiation exposure. The drug does not have severe side effects, although isolated cases of mild nausea, dizziness, cramps and stomach pain have been reported.</text>
+	</string>
+	<string id="st_bandage">
+		<text>Bandage</text>
+	</string>
+	<string id="st_bandage_descr">
+		<text>A normal elastic bandage used to stop bleeding and prevent infection of wounds. For regular bleeding, carefully apply the bandage to the wound. For arterial bleeding, urgently tie the bandage around the affected area.</text>
+	</string>
+	<string id="st_binocular_descr">
+		<text>Standard issue military binoculars with a maximum of x7.5 magnification. Useful in the Zone in that they allow its owner to observe things from a distance.</text>
+	</string>
+	<string id="st_binocular_name">
+		<text>Military Binoculars</text>
+	</string>
+	<string id="st_bread">
+		<text>Bread Loaf</text>
+	</string>
+	<string id="st_bread_descr">
+		<text>A fine bread loaf baked by Nimble's wife who lives outside the Zone, this was the first item Nimble started to sell in the Zone. Now days he provide the Bar keepers with this fine bread instead of selling it him self as in the past, after all he has bigger things on his mind now.</text>
+	</string>
+	<string id="st_breadold">
+		<text>Bread Loaf leftover</text>
+	</string>
+		<string id="st_breadold_descr">
+		<text>A bread loaf baked outside the Zone.</text>
+	</string>	
+	<string id="st_porn">
+		<text>Porn magazine</text>
+	</string>
+	<string id="st_porn_descr">
+		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment</text>
+	</string>
+	<string id="st_joint">
+		<text>Canabis joint</text>
+	</string>
+	<string id="st_joint_descr">
+		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.</text>
+	</string>
+	<string id="st_cigarettes">
+		<text>Pack of cigarettes (imported)</text>
+	</string>
+	<string id="st_cigarettes_descr">
+		<text>Cigarettes calms your nerves when you need to settle your mental state and fight your hunger in an alternative way. They are rare in The Zone and quite valuable.</text>
+	</string>
+	<string id="st_survivalguide">
+		<text>Ukranian Special Forces Survival Guide</text>
+	</string>
+	<string id="st_survivalguide_descr">
+		<text>You have studied this survival guide many times and believe that the only use now is some quick cash as stalkers might want to have this book when exploring this area.</text>
+	</string>
+	<string id="st_protein">
+		<text>Chocolate protein bar (imported)</text>
+	</string>
+	<string id="st_protein_descr">
+		<text>Protein bars of this type are healthy and good meals when your body is in a constant active state. You can keep them for many days before they loose their chewy consistency.</text>
+	</string>
+	<string id="st_rebirth">
+		<text>Axyltallisal "The Rebirth"</text>
+	</string>
+	<string id="st_rebirth_descr">
+		<text>Warning! Do not use in combination with ANY other drug. This powerful mixture packed in a small syringe knocks you down. But when you wake up (IF you wake up) you will feel reborn. Inject the syringe into your thigh when sitting down.</text>
+	</string>
+		<string id="st_conserva">
+		<text>Can of tuna fish (imported)</text>
+	</string>
+	<string id="st_conserva_descr">
+		<text>The date on the tin can indicates that you should except the tuna fish inside to be rather unappetizing.</text>
+	</string>
+<string id="st_meat_tushkano">
+		<text>Rat skewers</text>
+	</string>
+	<string id="st_meat_tushkano_descr">
+		<text>2 small skewers of flame grilled tushkano meat flavored with salt and chili pepper. This is the cheapest hot meal that is cooked in the The Zone. Served in a slice of thick brown paper.</text>
+	</string>
+		<string id="st_meat_dog">
+		<text>Dog chops</text>
+	</string>
+	<string id="st_meat_dog_descr">
+		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.</text>
+	</string>
+		<string id="st_meat_flesh">
+		<text>Fat bacon</text>
+	</string>
+	<string id="st_meat_flesh_descr">
+		<text>2 slices of fat and greasy bacon made from mutated pigs commonly known as Flesh. Served in a slice of thick brown paper.</text>
+	</string>
+		<string id="st_meat_boar">
+		<text>Boar beef</text>
+	</string>
+	<string id="st_meat_boar_descr">
+		<text>A small flame grilled beef with added salt and peppers. The most popular meal among stalkers. Served in brown paper.</text>
+	</string>
+		<string id="st_meat_bloodsucker">
+		<text>Bloodsucker Goulash</text>
+	</string>
+	<string id="st_meat_bloodsucker_descr">
+		<text>A small but hot meal made from bloodsucker flesh and chilis with added mushrooms. Served in a tin box.</text>
+	</string>	
+	<string id="st_meat_snork">
+		<text>Roasted Snork hand.</text>
+	</string>
+		<string id="st_meat_bloodsucker_descr">
+		<text>The cut Snork hand has been grilled over open fire. WARNING: Most men in The Zone consider it a cannibalistic and immoral act to eat any part of a Snork! In spite of this some bandits and mercenaries are actually eating roasted Snork hands to signal a baddass superiority among their faction members.</text>
+	</string>
+		<string id="st_meat_chimera">
+		<text>The Masculine Meal</text>
+	</string>
+	<string id="st_meat_chimera_descr">
+		<text>A portion of Chimera beef cooked with mushrooms and spices. An expensive meal that is eaten by veteran stalkers only to celebrate succes and survival in The Zone.</text>
+	</string>
+	<string id="st_detector1">
+		<text>Echo detector</text>
+	</string>
+	<string id="st_detector1_descr">
+		<text>This dated anomalous activity detector produces an alarm signal when anomalous particles enter a special chamber as you approach an anomaly. It can also register the presence of artifacts and measure the distance to the nearest one. The distance is indicated by the frequency of the sound the detector emits. To switch to artifact search mode, open the device's front cover. Due to its simple design, Echo can only be used to locate the most common artifacts.</text>
+	</string>
+	<string id="st_detector2">
+		<text>Detector "Bear"</text>
+	</string>
+	<string id="st_detector3">
+		<text>Veles detector</text>
+	</string>
+	<string id="st_detector3_descr">
+		<text>A next generation scientific detection scanner. Thanks to three modernized detection chambers, the position of artifacts is shown on a special display screen. When closed, the device registers only radiation and anomalies. To switch to artifact search mode, open the front LED display. When in search mode, the detector is capable of locating all artifacts known to science.</text>
+	</string>
+	<string id="st_detector4">
+		<text>Svarog detector prototype</text>
+	</string>
+	<string id="st_detector4_descr">
+		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.</text>
+	</string>
+	<string id="st_device_torch_descr">
+		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
+	</string>
+	<string id="st_device_torch_name">
+		<text>Flashlight</text>
+	</string>
+	<string id="st_drug_anabiotic">
+		<text>Anabiotics</text>
+	</string>
+	<string id="st_drug_antidot">
+		<text>Antidote</text>
+	</string>
+	<string id="st_drug_antidot_descr">
+		<text>The IP2 antitoxin is a complex drug comprising several antidotes, including metoclopramidum, pyridoxine, thiamine, riboxin and other pharmaceuticals. The drug is used to inject a range of antibiotics to neutralize natural poisons, together with synthetic poison absorbers, into the bloodstream. IP2 is not particularly popular in the Zone, as most stalkers rely on a gas mask and a protective suit, there are still those who have a pack of this antidote stashed away. The effects of the drug are long-lasting.</text>
+	</string>
+	<string id="st_drug_booster">
+		<text>Hercules</text>
+	</string>
+	<string id="st_drug_coagulant">
+		<text>Vinca</text>
+	</string>
+	<string id="st_drug_coagulant_descr">
+		<text>Ukrainian Vikasolum - an artificial equivalent of vitamin K. The main purpose of this drug is to increase blood coagulation speed. In great demand among stalkers who want slow-healing wounds and lacerations inflicted by mutants to close up faster. The effects of the drug are long-lasting.</text>
+	</string>
+	<string id="st_drug_psy_blockade">
+		<text>Psy-block</text>
+	</string>
+	<string id="st_drug_psy_blockade_descr">
+		<text>A drug that blocks avalanche-like nerve impulses. Consumption induces short-term loss of all emotion. Used exclusively in the Zone to counteract the effects of anomalous psy-fields. The effects of the drug are long-lasting.</text>
+	</string>
+	<string id="st_drug_radioprotector">
+		<text>Radioprotectant</text>
+	</string>
+	<string id="st_water_drink">
+		<text>Sparkling Water (imported)</text>
+	</string>
+	<string id="st_water_drink_descr">
+		<text>Sparkling water for the thirsty Stalker, it has some exhilarated effect when you are tired.</text>
+	</string>
+	<string id="st_energy_drink">
+		<text>Strong energy drink</text>
+	</string>
+	<string id="st_energy_drink_descr">
+		<text>Often used by stalkers on long trips, due to it's exhilarated effect when you are getting tired. The drink have also some "sobering up" effect if you have looked to deep in to the Vodka bottle as well it stimulate the release of adrenaline into the bloodstream. Do not overdose.</text>
+	</string>
+	<string id="st_guitar_descr">
+		<text>A trusty guitar.</text>
+	</string>
+	<string id="st_guitar_name">
+		<text>Guitar</text>
+	</string>
+	<string id="st_kolbasa">
+		<text>Pack of old meat</text>
+	</string>
+	<string id="st_kolbasa_descr">
+		<text>A package containing a mixture of old bread and some smelly pork meat wrapped in brown paper. The look and smell of this signals that some of it is rotten.</text>
+	</string>
+	<string id="st_medkit">
+		<text>First-aid kit</text>
+	</string>
+	<string id="st_medkit_army">
+		<text>Army medkit</text>
+	</string>
+	<string id="st_medkit_army_descr">
+		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued to army personnel as standard and is sometimes used by Duty forces.</text>
+	</string>
+	<string id="st_medkit_descr">
+		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical burns and various types of poisoning.</text>
+	</string>
+	<string id="st_medkit_science">
+		<text>Scientific medkit</text>
+	</string>
+	<string id="st_medkit_science_descr">
+		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.</text>
+	</string>
+	<string id="st_sleepingpills_descr">
+		<text>A package of small white sleeping pills that imediately will slow and ease your stressed mind. Eat 5 min before you want to rest and use water in combination for maximum effect.</text>
+	</string>
+	<string id="st_pda_descr">
+		<text>My PDA with vital information about the Zone, it also contains a detailed military map over the Zone and it's anomaly's.</text>
+	</string>
+	<string id="st_pda_name">
+		<text>PDA</text>
+	</string>
+	<string id="st_vodka">
+		<text>A shot of Vodka (imported)</text>
+	</string>
+	<string id="st_vodka_descr">
+		<text>Cossacks Vodka imported to the zone. Goes down easy and considerably lowers the effects of radiation. Should be enjoyed in moderation. The bottles are used to shots of vodka and a often either refilled or emptied completely at stalker camps.</text>
+	</string>
+	<string id="st_detector2_descr">
+		<text>This last generation anomalous activity detector can be used to locate anomalous formations and has a color diode panel, which not only indicates the direction of artifacts, but also measures the distance to them. To switch to artifact search mode, open the device's front cover. Unfortunately, the device is programmed with a somewhat outdated list of detectable artifacts.</text>
+	</string>
+	<string id="st_drug_anabiotic_descr">
+		<text>An experimental drug developed by Professor Ozersky for scientific research teams working in the Zone. At its core, the drug contains tetrodotoxin, known colloquially as "zombie powder," which causes a complete shutdown of the body's central nervous system that may allow people to survive emissions outside cover. The drug has not undergone clinical or field testing, which puts its effectiveness in doubt and raises the issue of possible side effects.</text>
+	</string>
+	<string id="st_bolt">
+		<text>Bolt</text>
+	</string>
+	<string id="st_drug_booster_descr">
+		<text>The main component of this product is an anabolic androgen, an artificial steroid, the chemical composition of which resembles testosterone. Often used by stalkers during long raids to reduce muscle fatigue. Significantly increases weight-carrying capacity. The effects of the drug are long-lasting.</text>
+	</string>
+	<string id="st_drug_radioprotector_descr">
+		<text>B190 Indraline radioprotectant, included in medkits issued to nuclear power plant personnel. Used in the Zone instead of the excessively toxic PC1 cystamine hydrochloride, repeated use of which often caused death. Reduces the effects of gamma radiation on live tissue. Best consumed before exposure, as effects are not instant. The effects of the drug are long-lasting.</text>
+	</string>
+	<string id="st_harmonica_name">
+		<text>Harmonica</text>
+	</string>
+	<string id="st_harmonica_descr">
+		<text>For blues and prison romance lovers.</text>
+	</string>
+	<string id="st_batteries_name">
+		<text>Battery pack</text>
+	</string>
+	<string id="st_batteries_descr">
+		<text>A pack of fully charged batteries for the use of your flashlight, pda, nightvision goggles and other electronic devices. Remember to change regularly.</text>
+	</string>
+	<string id="st_tea">
+		<text>Beards tea</text>
+	</string>
+	<string id="st_tea_descr">
+		<text>Beards popular hot tea made from a mixture of sugar, harmless dried mushrooms and boiled water that is said to be cleansed from radiation. Stalkers who are able to pay the price are buying this drink for long trips in The Zone. It's a good and healthy way to stay alert when you are getting tired or exploring during cold nights.</text>
+	</string>
+	<string id="st_repair_kit">
+		<text>Fixing kit</text>
+	</string>
+	<string id="st_repair_kit_descr">
+		<text>This kit contains oils, mechanical tools used for basic maintaining and some small weapon spare parts.
+All metal items required to fix a broken weapon or suit to a functioning condition if you know your way around weapon mechanics.
+It's a heavy kit but it can be very helpful when exploring deep into The Zone with basic equipment.
+1 use = +35% condition (but anything above 85% requires a real mechanic/workshop).</text>
+	</string>
+	<string id="st_identity_card_descr">
+		<text>This is your personal ID card which reveals your true identity (keep it hidden). As a USS Assaulter you are specialized in assault rifles, shotguns and heavy weapons. You are also specialized in the control of weapon recoil. Slow sprinting speed. </text>
+	</string>
+	<string id="st_roubles">
+		<text>10-rouble coins</text>
+	</string>
+	<string id="st_roubles_descr">
+		<text>Trade in The Zone is mainly done through electronic transactions for safety and managing reasons. But many stalkers keep at least a few coins on them to be able to buy smaller things like cigarettes off each other. This minimizes economy management and conserves battery life.</text>
+	</string>
+	<string id="st_clearsky_fp">
+		<text>Clear Sky faction patch</text>
+	</string>
+	<string id="st_clearsky_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_freedom_fp">
+		<text>Freedom faction patch</text>
+	</string>
+	<string id="st_freedom_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_stalker_fp">
+		<text>Stalker faction patch</text>
+	</string>
+	<string id="st_stalker_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_renegade_fp">
+		<text>Renegade faction patch</text>
+	</string>
+	<string id="st_renegade_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_bandit_fp">
+		<text>Bandit faction patch</text>
+	</string>
+	<string id="st_bandit_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_dolg_fp">
+		<text>Dolg faction patch</text>
+	</string>
+	<string id="st_dolg_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_monlith_fp">
+		<text>Monolith faction patch</text>
+	</string>
+	<string id="st_monolith_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_duty_fp">
+		<text>Duty faction patch</text>
+	</string>
+	<string id="st_duty_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_merc_fp">
+		<text>Mercenary faction patch</text>
+	</string>
+	<string id="st_merc_fp_descr">
+		<text>Faction patches are often used to determine the rank of faction members as a high count is a strong symbol of great survival skills within The Zone.
+They are proof that you are ready to take a life in achieving your goals.
+For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
+	</string>
+	<string id="st_flask">
+		<text>Cleansed zone water</text>
+	</string>
+	<string id="st_flask_descr">
+		<text>Military flasks are used for small zips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. But the water is impossible to clean perfectly so a slight radiation and fatigue slowly generates a grainy vision and a decrease in stamina. 
+Unless you throw a disinfecting Akvatab into the flask with every zip of water that you take in to neutralize this effect.</text>
+	</string>
+	<string id="st_akvatab">
+		<text>Akvatabs</text>
+	</string>
+	<string id="st_akvatab_descr">
+		<text>Small plastic bag with tablets for the use of zone water from wells, rivers and lakes all over The excluded Zone. Akvatabs tablets are intended for disinfecting water containing harmful bacteria and viruses.</text>
+	</string>
+	<string id="st_shovel_old">
+		<text>Metal shovel</text>
+	</string>
+	<string id="st_shovel_old_descr">
+		<text>An old metal shovel used for various field purposes. Few people actually keep shovels with them as they are a common found in The Zone. Especially around industrial areas.</text>
+	</string>
+	<string id="st_shovel_mili">
+		<text>Military field shovel</text>
+	</string>
+	<string id="st_shovel_mili_descr">
+		<text>Black military shovel of high quality used for numorous field purposes. Few people actually keep shovels with them as they are a common found in The Zone. Especially around industrial areas.</text>
+	</string>
+	<string id="st_ied_rpg">
+		<text>IED</text>
+	</string>
+	<string id="st_ied_rpg_descr">
+		<text>Improvised Explosive Device based on an RPG7 grenade and parts from a cars battery. It looks like it has been carried around for quite a while and could go off any second.</text>
+	</string>
+	<string id="st_ied">
+		<text>IED</text>
+	</string>
+	<string id="st_ied_descr">
+		<text>Improvised Explosive Device based on various chemical substances. It looks like it has been carried around for quite a while and could go off any second.</text>
+	</string>
+	<string id="st_meinkampf">
+		<text>Mein Kampf</text>
+	</string>
+	<string id="st_meinkampf_descr">
+		<text>Adolf Hitlers strategic memoires gathered in a single book. The book and all that it stands for is hated by many making this  an item og high symbolic value. Adolf Hitler (20 April 1889 – 30 April 1945) was an Austrian-born German politician and the leader of the National Socialist German Workers Party (German: Nationalsozialistische Deutsche Arbeiterpartei (NSDAP), commonly referred to as the Nazi Party). He was chancellor of Germany from 1933 to 1945 and dictator of Nazi Germany (as Fьhrer und Reichskanzler) from 1934 to 1945. Hitler was at the centre of the founding of Nazism, the start of World War II, and the Holocaust.</text>
+	</string>
+	<string id="st_jar">
+		<text>Plastic jar</text>
+	</string>
+	<string id="st_jar_descr">
+		<text>A handful of gold teeth in a small plastic jar filled with sand and leaves to make it silent when running with this special item.</text>
+	</string>
+	<string id="st_grooming">
+		<text>Grooming kit</text>
+	</string>
+	<string id="st_grooming_descr">
+		<text>Grooming kit that packs a ballistic nylon travel case with a beard & mustache comb and Detail Facial Scissors, constructed with man-sized finger rings, ultra-sharp Stainless Steel 420 cutting blades, non-slip rubberized grip, and a precision trimming tip.</text>
+	</string>
+	<string id="st_journal">
+		<text>Personal journal</text>
+	</string>
+	<string id="st_journal_descr">
+		<text>Personal journal with a few primitive maps and notations in leather binding. Simple survival tips for the common man and not of much value.</text>
+	</string>
+	<string id="st_maps_kit">
+		<text>Mapmaking kit</text>
+	</string>
+	<string id="st_maps_kit_descr">
+		<text>Mapmaking kit containing a collection of pens and measurement instruments. All wrapped up in a rainproof and camouflaged cover of high quality. Some maps have been started on but not yet completed. Your pda is a much better tool than any of this.</text>
+	</string>
+	<string id="st_bottle_metal">
+		<text>Metal bottle</text>
+	</string>
+	<string id="st_bottle_metal_descr">
+		<text>Metal bottle containing a small portion of what seems to be zone produced vodka. It doesn't smell right and the fumes are strong.</text>
+	</string>
+	<string id="st_geiger_dead">
+		<text>Dead Geiger Counter</text>
+	</string>
+	<string id="st_geiger_dead_descr">
+		<text>Dead geiger counter that may have served its purpose. A Geiger counter is a type of particle detector that measures ionizing radiation. They detect the emission of nuclear radiation: alpha particles, beta particles or gamma rays. A Geiger counter detects radiation by ionization produced in a low-pressure gas in a tube. Invented in 1908, Geiger counters remain popular instruments used for measurements in health, physics, industry, geology and other fields, because they can be made with simple electronic circuits.</text>
+	</string>
+	<string id="st_welding_goggles">
+		<text>Welding goggles</text>
+	</string>
+	<string id="st_welding_goggles_descr">
+		<text>Old and corroted pair of welding goggles with a broken leather band. Welding goggles are designed to provide protection for certain types of gas welding or oxygen cuttinge. But these are useless in their current state and of little or no value now.</text>
+	</string>
+	<string id="st_survival_kit">
+		<text>Small surviving kit</text>
+	</string>
+	<string id="st_survival_kit_descr">
+		<text>Survival kit containing some fabric, sewing needles and a few leather strips.</text>
+	</string>
+	<string id="st_jewelry_box">
+		<text>Decorated jewelry box</text>
+	</string>
+	<string id="st_jewelry_box_descr">
+		<text>Small box of some womans jewelry. It seems rather valuable but these items are not very popular among stalkers as they indicate a simple raiders moral.</text>
+	</string>
+	<string id="st_cooking">
+		<text>Field cooking kit</text>
+	</string>
+	<string id="st_cooking_descr">
+		<text>A field cooking travel kit for providing cooking accessories for use in camping and traveling situations. The field cooking travel kit comprises a plurality of cooking utensils. A noisy and large kit to carry for one person but very popular among larger groups of stalkers.</text>
+	</string>
+	<string id="st_book1">
+		<text>Book of mechanics</text>
+	</string>
+	<string id="st_book1_descr">
+		<text>Book about mechanical engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.</text>
+	</string>
+	<string id="st_book2">
+		<text>Book of engineering</text>
+	</string>
+	<string id="st_book2_descr">
+		<text>Book about industrial engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.</text>
+	</string>
+	<string id="st_book3">
+		<text>Book of industry</text>
+	</string>
+	<string id="st_book3_descr">
+		<text>Book about industrial business. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.</text>
+	</string>
+	<string id="st_picture_woman">
+		<text>Picture of a woman</text>
+	</string>
+	<string id="st_picture_woman_descr">
+		<text>The small picture wrapped in plastic displays a beautiful woman with black hair. At the bottom of the picture a name is crossed out.</text>
+	</string>
+	<string id="st_drugs_kit">
+		<text>Kit for making drugs</text>
+	</string>
+	<string id="st_drugs_kit_descr">
+		<text>Small cases and various metal items form a kit for managing and producing drugs. Some plastic bags contain pills and herbs.</text>
+	</string>
+	<string id="st_cigar">
+		<text>Sovjet cigarettes</text>
+	</string>
+	<string id="st_cigar_descr">
+		<text>A pack of strong cigarettes with only a few left.</text>
+	</string>
+</string_table>

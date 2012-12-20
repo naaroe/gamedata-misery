@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="hide_from_surge_message">
+		<text>ЎAtencion!ЎExplosion inminente!</text>
+	</string>
+	<string id="hide_from_surge_descr_1_a">
+		<text>ЎExplosion inminente, proceda al refugio inmediatamente!</text>
+	</string>
+	<string id="hide_from_surge_descr_2_a">
+		<text>No te esta permitido abandonar el refugion durante una explosion.</text>
+	</string>
+	<string id="hide_from_surge_name_1">
+		<text>Explosion: Busca refugio</text>
+	</string>
+	<string id="hide_from_surge_name_2">
+		<text>Explosion: Quedate refugiado</text>
+	</string>
+
+	<!-- AtmosFear Fallout -->
+	<string id="hide_from_fallout_rad_message_caption">
+		<text>ЎAtencion!</text>
+	</string>
+	<string id="hide_from_fallout_rad_message">
+		<text>La caida de polvo radiactivo a comenzado.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_1_a">
+		<text>Los niveles de radiacion son peligrosos. Deberias refugiarte del polvo radiactivo.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_2_a">
+		<text>No deberias abandonar el refugio durante la caida de polvo radiactivo.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_1">
+		<text>Caida de polvo radiactivo: Encuentra refugio</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_2">
+		<text>Caida de polvo radiactivo: Quedate refugiado</text>
+	</string>
+	<string id="end_fallout_rad_message_caption">
+		<text>ЎAttencion!</text>
+	</string>
+	<string id="end_fallout_rad_message">
+		<text>La caida de polvo radiactivo ha terminado</text>
+	</string>
+	
+	<string id="hide_from_fallout_acid_message_caption">
+		<text>ЎAttencion!</text>
+	</string>
+	<string id="hide_from_fallout_acid_message">
+		<text>La caida de productos quimicos ha comenzado.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_1_a">
+		<text>Los niveles de contaminacion son peligrosos. deberias refugiarte de la caida de productos quimicos.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_2_a">
+		<text>No deberias abandonar el refugio durante la caida de productos quimicos.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_1">
+		<text>Caida de productos quimicos: Busca refugio</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_2">
+		<text>Caida de productos quimicos: Quedate refugiado</text>
+	</string>
+	<string id="end_fallout_acid_message_caption">
+		<text>ЎAttention!</text>
+	</string>
+	<string id="end_fallout_acid_message">
+		<text>La caida de productos quimicos ha terminado</text>
+	</string>
+
+	<!-- AtmosFear Psi Storm -->
+	<string id="hide_from_psi_storm_message_caption">
+		<text>ЎAttention!</text>
+	</string>
+	<string id="hide_from_psi_storm_message">
+		<text>La tormenta psiquica ha comenzado.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_1_a">
+		<text>Deberias refugiarte de la tormenta psiquica.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_2_a">
+		<text>No deberias abandonar el refugio durante la tormenta psiquica.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_1">
+		<text>Tormenta psiquica: Busca refugio</text>
+	</string>
+	<string id="hide_from_psi_storm_name_2">
+		<text>Tormenta psiquica: Quedate refugiado</text>
+	</string>
+	<string id="end_psi_storm_caption">
+		<text>ЎAttention!</text>
+	</string>
+	<string id="end_psi_storm_message">
+		<text>La tormenta psiquica ha terminado</text>
+	</string>
+
+</string_table>

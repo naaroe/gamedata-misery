@@ -1,0 +1,301 @@
+local sleep_control = nil
+local wide = false
+class "sleep_dialog" (CUIScriptWnd)
+function sleep_dialog:__init() super()
+	self:SetWndRect(Frect():set(0,0,1024,768))
+	if(device().width/device().height>(1024/768+0.01)) then
+		wide = true
+	end
+
+	local xml = CScriptXmlInit()
+	xml:ParseFile("ui_sleep_dialog.xml")
+
+	self.back = xml:InitStatic("background", self)
+--	self.sleep_static = xml:InitSleepStatic("sleep_static", self.back)
+
+	self.sleep_static = xml:InitStatic("sleep_static", self.back)
+	self.sleep_static2 = xml:InitStatic("sleep_static", self.back)
+	self.static_cover = xml:InitStatic("static_cover", self.back)
+	self.st_marker = xml:InitStatic("st_marker", self.static_cover)
+
+	sleep_st_tbl = {}
+		for i = 1, 24 do
+		sleep_st_tbl[i] = xml:InitStatic("sleep_st_"..i, self.back)
+		end
+
+	self.time_track = xml:InitTrackBar("time_track", self.back)
+	self:Register(self.time_track, "time_track")
+
+	self.btn_sleep = xml:Init3tButton("btn_sleep", self.back)
+	self:Register(self.btn_sleep, "btn_sleep")
+
+	self.btn_cancel = xml:Init3tButton("btn_cancel", self.back)
+	self:Register(self.btn_cancel, "btn_cancel")
+
+	self.sleep_mb = CUIMessageBoxEx()
+	self:Register(self.sleep_mb, "sleep_mb")
+--------------------------------------------------------------------------------
+	self:AddCallback("btn_sleep", ui_events.BUTTON_CLICKED, self.OnButtonSleep, self)
+	self:AddCallback("btn_cancel", ui_events.BUTTON_CLICKED, self.OnButtonCancel, self)
+	self:AddCallback("sleep_mb", ui_events.MESSAGE_BOX_OK_CLICKED, self.OnMessageBoxOk, self)
+end
+
+function sleep_dialog:Initialize()
+	local cur_hours = level.get_time_hours()
+	for i = 1, 24 do
+	local hours = cur_hours + i
+	if(hours>=24) then
+		hours = hours - 24
+	end
+	sleep_st_tbl[i]:TextControl():SetText(hours..game.translate_string("st_sleep_hours"))
+	end
+
+	local delta = math.floor(591/24*cur_hours)
+	local r = Frect():set(delta,413,591,531)
+	self.sleep_static:SetTextureRect(r)
+	local width = 591-delta
+	if(wide) then
+		width = width*0.8
+	end
+	self.sleep_static:SetWndSize(vector2():set(width, 118))
+
+	r = Frect():set(0,413,delta,531)
+	self.sleep_static2:SetTextureRect(r)
+	local width = delta
+	if(wide) then
+		width = width*0.8
+	end
+	self.sleep_static2:SetWndSize(vector2():set(width, 118))
+
+	local pos = self.sleep_static2:GetWndPos()
+	pos.x = self.sleep_static:GetWndPos().x+self.sleep_static:GetWidth()
+	self.sleep_static2:SetWndPos(pos)
+end
+
+function sleep_dialog:TestAndShow()
+	if(db.actor.bleeding>0 or db.actor.radiation>0 or xr_conditions.surge_started() == true) then
+		self.sleep_mb:InitMessageBox("message_box_ok")
+		if(db.actor.bleeding>0 and db.actor.radiation>0) then
+			self.sleep_mb:SetText("Sleep well")
+		elseif(db.actor.bleeding>0) then
+			self.sleep_mb:SetText("You are hurt!")
+		elseif(surge_manager.get_surge_manager().started == true) then
+			self.sleep_mb:SetText("Blowout warning!")
+		else
+			self.sleep_mb:SetText("Radiation hazard!")
+		end
+		self.sleep_mb:ShowDialog(true)
+	elseif xr_logic.pstor_retrieve(db.actor,"drowse",0) < 0.2 then
+		self.sleep_mb:InitMessageBox("message_box_ok")
+		self.sleep_mb:SetText("You are not tired")
+		self.sleep_mb:ShowDialog(true)
+	else
+		self:Initialize()
+		self:ShowDialog(true)
+	end
+end
+
+function sleep_dialog:Update()
+	CUIScriptWnd.Update(self)
+	local sleep_time = self.time_track:GetIValue()-1
+	local x = math.floor(591/24*sleep_time)
+	if(x==0) then
+		x = 5
+	end
+	if(wide) then
+		x = x*0.8
+	end
+	self.st_marker:SetWndPos(vector2():set(x, 0))
+end
+
+function sleep_dialog:OnTrackButton()
+end
+
+function sleep_dialog:OnButtonSleep()
+	if (itms_manager and self.sleepbag) then
+		local sm = surge_manager.get_surge_manager()
+		local safe
+		local zone
+		for i=1,#sm.covers do
+			zone = sm.covers[i]
+			if (zone and zone:inside(db.actor:position())) then
+				safe = true
+				break
+			end
+		end
+
+		if not (safe) then
+			if (xr_conditions.surge_started()) then
+				local hud = get_hud()
+				hud:AddCustomStatic("can_use_weapon_now", true)
+				hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Not crazy enough to sleep during this shit")
+				itms_manager.ShowMessage = true
+				itms_manager.ShowMessageInit = game.get_game_time()
+				itms_manager.ShowMessageTime = 30
+				self:OnButtonCancel()
+				return
+			end
+
+			local t = {"zat_a2_sr_no_assault","jup_a6_sr_no_assault","jup_b41_sr_no_assault"}
+
+			for i=1,#t do
+				zone = db.zone_by_name[t[i]]
+				if (zone and zone:inside(db.actor:position())) then
+					safe = true
+					break
+				end
+			end
+			itms_manager.sleep_actor_safe = safe or nil
+		end
+	end
+	self:HideDialog()
+	xr_effects.disable_ui(db.actor, nil)
+	level.add_cam_effector("camera_effects\\sleep.anm", 10, false, "ui_sleep_dialog.dream_callback")
+	level.add_pp_effector("sleep_fade.ppe", 11, false)
+	_G.mus_vol = get_console():get_float("snd_volume_music")
+	_G.amb_vol = get_console():get_float("snd_volume_eff")
+	get_console():execute("snd_volume_music 0")
+	get_console():execute("snd_volume_eff 0")
+	if (itms_manager.sleep_actor_safe) then
+		surge_manager.resurrect_skip_message()
+	end
+	if sleep_control.forced then
+		level.add_cam_effector("camera_effects\\surge_02.anm", 10, false, "ui_sleep_dialog.dream_callback")
+	else
+		level.add_cam_effector("camera_effects\\sleep.anm", 10, false, "ui_sleep_dialog.dream_callback")
+		get_console():execute("snd_volume_music 0")
+		get_console():execute("snd_volume_eff 0")
+	end
+	level.add_pp_effector("surge_fade.ppe", 11, false) --sleep_fade.ppe
+	db.actor:give_info_portion("actor_is_sleeping")
+end
+
+function sleep_dialog:OnButtonCancel()
+	self:HideDialog()
+	db.actor:give_info_portion("tutorial_sleep")
+	disable_info("sleep_active")
+	if (itms_manager) then itms_manager.sleep_actor_not_safe = nil end
+	self.sleepbag = nil
+	if (self.ph_sleepbag_id and self.item_section) then
+		alife():create(self.item_section,db.actor:position(),0,0,0)
+		alife():release( alife():object(self.ph_sleepbag_id) )
+		self.ph_sleepbag_id = nil
+	end
+end
+
+function sleep_dialog:OnMessageBoxOk()
+	db.actor:give_info_portion("tutorial_sleep")
+	disable_info("sleep_active")
+	if (itms_manager) then itms_manager.sleep_actor_safe = nil end
+	self.sleepbag = nil
+	if (self.ph_sleepbag_id and self.item_section) then
+		alife():create(self.item_section,db.actor:position(),0,0,0)
+		alife():release( alife():object(self.ph_sleepbag_id) )
+		self.ph_sleepbag_id = nil
+	end
+end
+
+--------------------------------------------------------------------------------
+function dream_callback()
+	if sleep_control.forced then
+		level.add_cam_effector("camera_effects\\surge_01.anm", 10, false, "ui_sleep_dialog.dream_callback2")
+	else
+		level.add_cam_effector("camera_effects\\sleep.anm", 10, false, "ui_sleep_dialog.dream_callback2")
+	end
+	local in_cover = surge_manager.actor_in_cover()
+	local hours = sleep_control.forced or sleep_control.time_track:GetIValue()
+	local mins = 0
+--	rx_ai.printf("sleep %s: %s hours",tostring(in_cover),hours)
+	if not in_cover then
+		local sm = surge_manager.get_surge_manager()
+		local sde = game.get_game_time():diffSec(sm.last_surge_time)
+		local stime = sde+hours*3600+600-sm._delta
+		if stime > 0 then
+			hours = hours-math.ceil(stime/3600)
+--			rx_ai.printf("sleep:cut hours %s",hours)
+		end
+		if hours <= 0 then
+			hours = 0
+			mins = math.random(5,15)
+		end
+	end
+	level.change_game_time(0,hours,mins)
+	level_weathers.get_weather_manager():forced_weather_change()
+
+	if (itms_manager.sleep_actor_safe) then
+		surge_manager.get_surge_manager().time_forwarded = true
+		if(surge_manager.is_started() and level_weathers.get_weather_manager().weather_fx) then
+			level.stop_weather_fx()
+	--		level_weathers.get_weather_manager():select_weather(true)
+			level_weathers.get_weather_manager():forced_weather_change()
+		end
+	else
+		surge_manager.get_surge_manager().skip_message = true
+		if (math.random() < 0.025 * hours) then
+			sleep_control.force_surge = true
+		end
+	end
+	sleep_control.forced = nil
+	db.actor.power = 1
+    printf("dream_callback: time forwarded on [%d]", hours)
+	if postproces_mod then
+		postproces_mod.sleep_callback(hours,mins)
+	end
+end
+
+function dream_callback2()
+	xr_effects.enable_ui(db.actor, nil)
+	get_console():execute("snd_volume_music "..tostring(_G.mus_vol))
+	get_console():execute("snd_volume_eff "..tostring(_G.amb_vol))
+	_G.amb_vol = 0
+	_G.mus_vol = 0
+	db.actor:give_info_portion("tutorial_sleep")
+	disable_info("actor_is_sleeping")
+	disable_info("sleep_active")
+	if (itms_manager) then itms_manager.sleep_actor_safe = nil end
+	sleep_control.sleepbag = nil
+	if (sleep_control.force_surge) then
+		surge_manager.start_surge(true)
+		sleep_control.force_surge = nil
+	end
+	if (sleep_control.ph_sleepbag_id and sleep_control.item_section) then
+		alife():create(sleep_control.item_section,db.actor:position(),0,0,0)
+		alife():release( alife():object(sleep_control.ph_sleepbag_id) )
+		sleep_control.ph_sleepbag_id = nil
+	end
+end
+
+function sleep()
+	if(sleep_control==nil) then
+		sleep_control = ui_sleep_dialog.sleep_dialog()
+	end
+	sleep_control.forced = nil
+	sleep_control.time_track:SetCurrentValue()
+	sleep_control:TestAndShow()
+end
+
+function sleep_forced(hours)
+	if(sleep_control==nil) then
+		sleep_control = ui_sleep_dialog.sleep_dialog()
+	end
+	sleep_control.forced = hours or math.random(3,9)
+	sleep_control:OnButtonSleep()
+end
+
+function main()
+	sleep()
+end
+
+function sleep_bag(ph_sleepbag_id,sec)
+	if(sleep_control==nil) then
+		sleep_control = ui_sleep_dialog.sleep_dialog()
+		sleep_control:Initialize()
+	end
+	sleep_control.item_section = sec
+	sleep_control.sleepbag = true
+	sleep_control.ph_sleepbag_id = ph_sleepbag_id
+	sleep_control.time_track:SetCurrentValue()
+	sleep_control:TestAndShow()
+	give_info("sleep_active")
+	return sleep_control
+end

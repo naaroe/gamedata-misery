@@ -1,0 +1,25 @@
+[smart_terrain];jup_b25
+squad_id = 21
+max_population = 1
+
+respawn_params = respawn@jup_b25
+
+[respawn@jup_b25]
+spawn_boar
+spawn_flesh
+spawn_snork
+
+[spawn_boar]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 2
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 2
+
+[spawn_snork]
+spawn_squads = simulation_snork
+spawn_num = 1
+
+[exclusive]
+jup_b25_stalker_senya_wounded = jupiter\jup_b25_stalker_senya.ltx

@@ -1,0 +1,190 @@
+----------------------
+-- AI Tweaks
+-- Alundaio
+
+local ini = ini_file("ai_tweaks\\ai_tweaks.ltx")
+local InfiniteAmmoPrimary = alun_utils.read_from_ini(ini,"weapon_reload","infinite_ammo_primary","bool",true)
+local InfiniteAmmoSecondary = alun_utils.read_from_ini(ini,"weapon_reload","infinite_ammo_secondary","bool",true)
+local LIOSEnable = alun_utils.read_from_ini(ini,"lios","enable","bool",false)
+local LIOSRange = alun_utils.read_from_ini(ini,"lios","range_add","float",0.30)
+local LIOSFov = alun_utils.read_from_ini(ini,"lios","fov_add","float",-0.30)
+ini = nil
+
+
+
+local scope_flags = {	[1] = true,
+						[3] = true,
+						[5] = true,
+						[7] = true
+}
+
+local gl_flags = {	[2] = true,
+					[4] = true,
+					[6] = true,
+					[7] = true
+}
+
+local silencer_flags = { 	[4] = true,
+							[5] = true,
+							[6] = true,
+							[7] = true
+}
+
+------------------
+-- on_game_start()
+------------------
+function on_game_start()
+	callback_register("npc_on_weapon_sight",npc_on_weapon_sight)
+	callback_register("npc_on_weapon_unsight",npc_on_weapon_unsight)
+	callback_register("npc_on_weapon_no_ammo",npc_on_weapon_no_ammo)
+	callback_register("npc_on_weapon_unstrapped",npc_on_weapon_unstrapped)
+	callback_register("squad_can_help_actor",squad_can_help_actor)
+end
+
+-------------------
+-- npc_on_weapon_sight(npc,weapon,storage,sight_type)
+-------------------
+function npc_on_weapon_sight(npc,wpn,st,sight_type)
+	if not (LIOSEnable) then
+		return
+	end
+
+	if not (alun_utils.addon_attached(wpn,"sc")) then
+		return
+	end
+
+	local sec = wpn:section()
+	local scope = alun_utils.read_from_ini(nil,sec,"scope_status","string",nil) == 2 and alun_utils.read_from_ini(nil,sec,"scopes_sect","string",nil) or sec
+	local zoom = alun_utils.read_from_ini(nil,scope,"scope_zoom_factor","float",30)
+	local max_range = alun_utils.read_from_ini(nil,sec,"fire_distance","float",150)
+
+	if not (st.range) then
+		st.range = npc:range()
+	end
+
+	if not (st.fov) then
+		st.fov = npc:fov()
+	end
+
+	if (zoom < 80 and max_range > st.range) then
+		zoom = 30/zoom
+
+		local range = st.range + (st.range * LIOSRange * zoom)
+		if (range > max_range) then
+			range = max_range
+		end
+
+		local fov = st.fov + (st.fov * LIOSFov * zoom)
+		if (fov < 40) then
+			fov = 40
+		end
+
+		npc:set_range(range)
+		npc:set_fov(fov)
+	end
+end
+
+-------------------
+-- npc_on_weapon_unsight(npc,weapon,storage,sight_type)
+-------------------
+function npc_on_weapon_unsight(npc,wpn,st,sight_type)
+	if (st.range and st.fov) then
+		npc:set_range(st.range)
+		npc:set_fov(st.fov)
+		st.range = nil
+		st.fov = nil
+	end
+end
+
+------------------
+-- npc_on_weapon_no_ammo(npc,weapon,storage)
+-------------------
+function npc_on_weapon_no_ammo(npc,wpn,st)
+
+	local isPistol = alun_utils.isPistol(wpn)
+	if (isPistol and InfiniteAmmoSecondary) or (not isPistol and InfiniteAmmoPrimary) then
+		return
+	end
+
+	local ini = system_ini()
+	local sec = wpn:section()
+	local se_wpn = alife():object(wpn:id())
+	local data = alun_utils.get_weapon_data(se_wpn)
+	local ammos = alun_utils.parse_list(ini,sec,"ammo_class")
+
+	local box = data.ammo_type+1 == 1 and npc:object(ammos[1]) or npc:object(ammos[2])
+	if (box) then
+		alife():release( alife():object(box:id()), true)
+	end
+end
+
+-------------------
+-- npc_on_weapon_unstrapped(npc,weapon)
+-------------------
+function npc_on_weapon_unstrapped(npc,weapon)
+--[[
+	local id = weapon:id()
+	local se_wpn = alife():object(id)
+
+	local data = alun_utils.get_weapon_data(se_wpn)
+	if not (data) then
+		return
+	end
+
+	local sim = alife()
+
+	local sec = weapon:section()
+	local flag = data.addon_flags
+
+	if not (scope_flags[data.addon_flags]) then
+		local sc_status = alun_utils.read_from_ini(nil,sec,"scope_status","float",0)
+		local sc_name = sc_status == 2 and alun_utils.read_from_ini(nil,sec,"scope_name","string","")
+		local sc = sc_name and npc:object(sc_name)
+		if (sc) then
+			flag = flag + 1
+			sim:release(sim:object(sc:id()),true)
+		end
+	end
+
+	if not (gl_flags[data.addon_flags]) then
+		local gl_status = alun_utils.read_from_ini(nil,sec,"grenade_launcher_status","float",0)
+		local gl_name = gl_status == 2 and alun_utils.read_from_ini(nil,sec,"grenade_launcher_name","string","")
+		local gl = gl_name and npc:object(gl_name)
+		if (gl) then
+			flag = flag + 2
+			sim:release(sim:object(gl:id()),true)
+		end
+	end
+
+	if not (silencer_flags[data.addon_flags]) then
+		local si_status = alun_utils.read_from_ini(nil,sec,"silencer_status","float",0)
+		local si_name = si_status == 2 and alun_utils.read_from_ini(nil,sec,"silencer_name","string","")
+		local si = si_name and npc:object(si_name)
+		if (si) then
+			flag = flag + 4
+			sim:release(sim:object(si:id()),true)
+		end
+	end
+
+	if (data.addon_flags ~= flag) then
+		local function update_addon_flag(se_wpn,p)
+			if (se_wpn) then
+				local data = alun_utils.get_weapon_data(se_wpn)
+				data.addon_flags = flag
+				alun_utils.set_weapon_data(data,se_wpn)
+			end
+		end
+		alun_utils.switch_offline_execute(se_wpn.id,update_addon_flag,flag)
+	end
+--]]
+end
+
+-------------------
+-- squad_can_help_actor(squad)
+-------------------
+function squad_can_help_actor(squad)
+	if (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) == "friend") then
+		return true
+	end
+end
+

@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ammo-11.43x23-fmj">
+		<text>.45 ACP rounds</text>
+	</string>
+	<string id="ammo-11.43x23-fmj_descr">
+		<text>The .45 caliber full metal jacket round has enjoyed popularity for more than a hundred years thanks to its heavy bullet and a relatively small propelling charge. As a result, the bullet in this round is relatively slow but highly accurate and provides considerable stopping power.</text>
+	</string>
+	<string id="ammo-7.62x51_fmj">
+		<text>.7.62x51 NATO rounds</text>
+	</string>
+	<string id="ammo-7.62x51_fmj_descr">
+		<text>The 7.62x51mm NATO (official NATO nomenclature 7.62 NATO) is a rifle cartridge developed in the 1950s as a standard for small arms among NATO countries.</text>
+	</string>
+	<string id="ammo-11.43x23-fmj_s">
+		<text>.45 ACP</text>
+	</string>
+	<string id="ammo-11.43x23-hydro">
+		<text>.45 ACP Hydra-shock rounds</text>
+	</string>
+	<string id="ammo-11.43x23-hydro_descr">
+		<text>This unusual .45 ACP caliber round is comprised of a jacketed soft point bullet with an expanding hollow and a steel core.  It is a combination of jacketed expanding soft point and armor piercing bullets, benefiting, from the advantages of both and, suffering from their downsides.</text>
+	</string>
+  <string id="ammo-7.62x51_ap">
+    <text>7.62x51 NATO AP</text>
+  </string>
+  <string id="ammo_7.62x51_ap_descr">
+    <text>The 7.62x51mm NATO AP - Armour piersing ammunition for large caliber rifles.</text>
+  </string>
+	<string id="ammo-11.43x23-hydro_s">
+		<text>.45 Hydro</text>
+	</string>
+	<string id="ammo-12x70-buck">
+		<text>12x70 shot rounds</text>
+	</string>
+	<string id="ammo-12x70-buck_descr">
+		<text>Standard 12-caliber round filled with 6 mm shot. Highly lethal at close range. Only suitable for use with smoothbore weapons.</text>
+	</string>
+	<string id="ammo-12x70-buck_s">
+		<text>12x70 shot </text>
+	</string>
+	<string id="ammo-12x76-zhekan">
+		<text>12x76 slug rounds</text>
+	</string>
+	<string id="ammo-12x76-zhekan_descr">
+		<text>This heavy 12 caliber slug round is normally used for hunting big game, but is also good for other purposes. Instead of piercing, this hefty slug simply crushes through armor. </text>
+	</string>
+	<string id="ammo-12x76-zhekan_s">
+		<text>12x76 slug</text>
+	</string>
+	<string id="ammo-5.45x39-ap">
+		<text>5.45x39 mm AP rounds</text>
+	</string>
+	<string id="ammo-5.45x39-ap_descr">
+		<text>Military 5.45x39 7H22 caliber armor-piercing round for automatic rifles of Warsaw Pact countries. The bullet contains a hard-alloy armor piercing penetrator. Effective against body armor.</text>
+	</string>
+	<string id="ammo-5.45x39-ap_s">
+		<text>5.45x39 AP</text>
+	</string>
+	<string id="ammo-5.45x39-fmj">
+		<text>5.45x39 mm rounds</text>
+	</string>
+	<string id="ammo-5.45x39-fmj_descr">
+		<text>Military 5.45x39 7H10 caliber improved piercing round for automatic rifles of Warsaw Pact countries. Provides better accuracy than the 7.62 caliber round thanks to reduced recoil and a 100 meter increase in range.</text>
+	</string>
+	<string id="ammo-5.45x39-fmj_s">
+		<text>5.45x39</text>
+	</string>
+	<string id="ammo-5.56x45-ap">
+		<text>5.56x45 mm AP rounds</text>
+	</string>
+	<string id="ammo-5.56x45-ap_descr">
+		<text>A common NATO military 5.56x45 caliber armor piercing round, known under its SS190/M855 index, widely used by Western security agencies and special services. Effective against body armor.</text>
+	</string>
+	<string id="ammo-5.56x45-ap_s">
+		<text>5.56x45 mm AP</text>
+	</string>
+	<string id="ammo-5.56x45-ss190">
+		<text>5.56x45 mm rounds</text>
+	</string>
+	<string id="ammo-5.56x45-ss190_descr">
+		<text>A standard issue NATO 5.56x45 caliber round specially designed for accurate automatic fire. Provides good ballistic characteristics, having been designed on the basis of a hunting round. Widely known under its SS109 index.</text>
+	</string>
+	<string id="ammo-5.56x45-ss190_s">
+		<text>5.56x45</text>
+	</string>
+	<string id="ammo-7.62x54-7h14">
+		<text>7.62x54 mm 7H1 rounds</text>
+	</string>
+	<string id="ammo-7.62x54-7h14_descr">
+		<text>A 7.62 caliber sniper round with a steel penetrator specially designed for the SVD. Unlike the machine gun round, the 7H1 provides tight groupings and excellent penetration characteristics.</text>
+	</string>
+	<string id="ammo-7.62x54-7h14_s">
+		<text>7.62x54 7H1</text>
+	</string>
+	<string id="ammo-7.62x54-ap">
+		<text>7.62x54 mm PP rounds</text>
+	</string>
+	<string id="ammo-7.62x54-ap_descr">
+		<text>Cheap 7.62 caliber machine gun round. Its design makes it unsuitable for sniper rifles, so it is used only with the PKM machine gun.</text>
+	</string>
+	<string id="ammo-7.62x54-ap_s">
+		<text>7.62x54 PP</text>
+	</string>
+	<string id="ammo-9x18-fmj">
+		<text>9x18 mm rounds</text>
+	</string>
+	<string id="ammo-9x18-fmj_descr">
+		<text>A full metal jacket round with a steel penetrator and a lead core under a metal jacket. Provides good stopping power but is ineffective against body armor.</text>
+	</string>
+	<string id="ammo-9x18-fmj_s">
+		<text>9x18</text>
+	</string>
+	<string id="ammo-9x18-pmm">
+		<text>9x18 mm +P+ rounds</text>
+	</string>
+	<string id="ammo-9x18-pmm_descr">
+		<text>This round contains a bullet with enhanced stopping power, while its European +P+ designation indicates "overpressure ammunition" with a 30% increase in muzzle velocity. Ineffective against body armor.</text>
+	</string>
+	<string id="ammo-9x18-pmm_s">
+		<text>9x18 +P+ </text>
+	</string>
+	<string id="ammo-9x19-fmj">
+		<text>9x19 mm FMJ rounds</text>
+	</string>
+	<string id="ammo-9x19-fmj_descr">
+		<text>This basic 9x19 caliber round with a jacketed bullet has good characteristics while being simple to produce. The round is popular due to the fact that international conventions prohibit the use of expanding ammunition in combat. Ineffective against body armor.</text>
+	</string>
+	<string id="ammo-9x19-fmj_s">
+		<text>9x19 FMJ</text>
+	</string>
+	<string id="ammo-9x19-pbp">
+		<text>9x19 mm JHP rounds</text>
+	</string>
+	<string id="ammo-9x19-pbp_descr">
+		<text>This 9x19 caliber jacketed hollow point bullet with an expanding hollow provides high stopping power and low ricochet propensity. Used by police and for self-defense. Ineffective against body armor due to its low penetration potential.</text>
+	</string>
+	<string id="ammo-9x19-pbp_s">
+		<text>9x19 JHP</text>
+	</string>
+	<string id="ammo-9x39-ap">
+		<text>9x39 mm SP-6 rounds</text>
+	</string>
+	<string id="ammo-9x39-ap_descr">
+		<text>The SP-6 is a subsonic assault rifle round with a jacketed soft point bullet with a hard steel core that protrudes from the casing. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries. Effective against body armor.</text>
+	</string>
+	<string id="ammo-9x39-ap_s">
+		<text>9x39 SP-6</text>
+	</string>
+	<string id="ammo-9x39-pab9">
+		<text>9x39 mm SP-5 rounds</text>
+	</string>
+	<string id="ammo-9x39-pab9_descr">
+		<text>The SP-5 is a subsonic sniper round with a bimetallic casing. The round contains a steel core with a gap behind it that is filled with lead. Requires a silencer for stealth firing. Used by special services of Warsaw Pact countries.</text>
+	</string>
+	<string id="ammo-9x39-pab9_s">
+		<text>9x39 mm SP-5</text>
+	</string>
+	<string id="ammo-gauss">
+		<text>Batteries</text>
+	</string>
+	<string id="ammo-m209">
+		<text>M203 grenade</text>
+	</string>
+	<string id="ammo-m209_descr">
+		<text>40 mm grenade for the M203 underbarrel grenade launcher. This round has a 5 meter kill zone. Also suitable for use in the FN F2000 integrated grenade launcher.</text>
+	</string>
+	<string id="ammo-m209_s">
+		<text>M203</text>
+	</string>
+	<string id="ammo-og-7b">
+		<text>OG-7V warhead</text>
+	</string>
+	<string id="ammo-og-7b_descr">
+		<text>Fragmentation warhead for anti-personnel warfare used with the RPG-7 grenade launcher. The main purpose of the warhead is to kill enemies in cover outside the range of hand grenades using the RPG-7 launcher.</text>
+	</string>
+	<string id="ammo-og-7b_s">
+		<text>OG-7V</text>
+	</string>
+	<string id="ammo-vog-25">
+		<text>VOG-25 grenade</text>
+	</string>
+	<string id="ammo-vog-25_descr">
+		<text>Regular fragmentation grenade for the GP-25 Kastyor underbarrel grenade launcher. This round has a 5 meter kill zone. The VOG-25 grenade is also used in the OC-14 Groza complex and RG6 / 6G30 revolver-type grenade launcher.</text>
+	</string>
+	<string id="ammo-vog-25_s">
+		<text>VOG-25</text>
+	</string>
+  <string id="ammo-7.62x51_fmj">
+    <text>7.62x51 NATO FMJ</text>
+  </string>
+  <string id="ammo-7.62x51_fmj_s">
+    <text>7.62x51mm NATO</text>
+  </string>
+  <string id="ammo-7.62x51_ap">
+    <text>7.62x51 NATO AP</text>
+  </string>
+  <string id="ammo-7.62x51_ap_s">
+    <text>7.62x51 NATO AP</text>
+  </string>
+  <string id="ammo-7.62x51_fmj_descr">
+    <text>The 7.62x51mm NATO (official NATO nomenclature 7.62 NATO) is a rifle cartridge developed in the 1950s as a standard for small arms among NATO countries. Ammunition for HK-417 Sniper,  SR-25 and TRG-42.</text>
+  </string>
+  <string id="ammo-7.62x51_ap_descr">
+    <text>The 7.62x51mm NATO AP - Armour piersing ammunition for HK-417 Sniper, SAKO TRG-42 and SR-25.</text>
+  </string>
+  	<string id="ammo-7.62x39_ap"> 
+	 <text>7.62x39mm AP</text> 
+	 </string> 
+ 	<string id="ammo-7.62x39_ap_descr"> 
+ 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text> 
+	 </string> 
+ 	<string id="ammo-7.62x39_ap_s"> 
+ 		<text>7.62x39mm AP</text> 
+	 </string> 
+ 	<string id="ammo-7.62x39_fmj"> 
+ 		<text>7.62x39mm FMJ</text> 
+ 	</string> 
+ 	<string id="ammo-7.62x39_fmj_descr"> 
+ 		<text> The 7.62x39 mm rifle cartridge was designed during World War II and first used in the SKS carbine by the Soviet Union. Use of the cartridge is widespread by both militaries and civilians. This is due primarily to the proliferation of the SKS and AK-47 pattern rifles during the 20th century..</text> 
+	 </string> 
+ 	<string id="ammo-7.62x39_fmj_s"> 
+ 		<text>7.62x39mm</text> 
+ 	</string> 
+  <string id="st_addon_acog">
+    <text>ACOG Scope</text>
+  </string>
+  <string id="st_addon_acog_descr">
+    <text>Detachable optical scope made specifically for NATO rifles.</text>
+  </string>
+  <string id="st_addon_night_acog">
+    <text>ACOG Scope Nightvision</text>
+  </string>
+  <string id="st_addon_acog_night_descr">
+    <text>Detachable optical scope with night vision for NATO rifles.</text>
+  </string>
+  <string id="st_addon_custom_acog">
+    <text>ACOG Scope Custom</text>
+  </string>
+  <string id="st_addon_acog_custom_descr">
+    <text>Detachable optical scope with adjustable magnification for NATO rifles.</text>
+  </string>
+  <string id="st_addon_detect_acog">
+    <text>ACOG Scope Detector</text>
+  </string>
+  <string id="st_addon_acog_detect_descr">
+    <text>Detachable optical scope with thermal imaging capability for NATO rifles.</text>
+  </string>
+	<string id="st_addon_scope">
+		<text>PSO-1m scope</text>
+	</string>
+	<string id="st_addon_scope_descr">
+		<text>A common Soviet-made 5.0x fixed zoom optical scope with a range scale. Attached to weapons by means of a dovetail mount, which is standard in Warsaw Pact countries.</text>
+	</string>
+	<string id="st_addon_scope_detector">
+		<text>PSS-2x scope</text>
+	</string>
+	<string id="st_addon_scope_detector_descr">
+		<text>A 5.0x fixed zoom optical scope with a built-in heat visor used to identify heat sources typical of the human body. Designed for use by special forces. Attached to weapons by means of a dovetail mount.</text>
+	</string>
+	<string id="st_addon_scope_night_vision">
+		<text>NSPU-3 scope</text>
+	</string>
+	<string id="st_addon_scope_night_vision_descr">
+		<text>An image intensifier night vision 5.0x fixed zoom scope for combat in darkness. Attached to weapons by means of a dovetail mount.</text>
+	</string>
+	<string id="st_addon_scope_susat">
+		<text>SUSAT 4x scope</text>
+	</string>
+	<string id="st_addon_scope_susat_custom_descr">
+		<text>An adjustable long-range 1.6-4x zoom scope that can use automatic adjustment to provide greater fire effectiveness. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+	</string>
+	<string id="st_addon_scope_susat_descr">
+		<text>A 4x fixed zoom scope produced primarily in Western countries. Attached to weapons by means of the NATO-standard Picatinny rail. Often used for accurate fire from small arms at medium to long range.</text>
+	</string>
+	<string id="st_addon_scope_susat_dusk">
+		<text>SUSAT Twilight x1.6 scope</text>
+	</string>
+	<string id="st_addon_scope_susat_dusk_descr">
+		<text>An optical SUSAT 1.6x higher contrast scope for combat in reduced lighting conditions. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+	</string>
+	<string id="st_addon_scope_susat_night_vision">
+		<text>SUSAT Night x4 scope</text>
+	</string>
+	<string id="st_addon_scope_susat_night_vision_descr">
+		<text>A 4.0x fixed zoom scope with a night vision device for long range combat in darkness. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+	</string>
+	<string id="st_addon_scope_susat_x1.6">
+		<text>SUSAT 1.6x scope</text>
+	</string>
+	<string id="st_addon_scope_susat_x1.6_descr">
+		<text>An optical SUSAT 1.6x scope for combat at short to medium range. Attached to weapons by means of the NATO-standard Picatinny rail.</text>
+	</string>
+	<string id="st_addon_scope_x2.7">
+		<text>PSU-1 scope</text>
+	</string>
+	<string id="st_addon_scope_x2.7_descr">
+		<text>A 2.7x optical scope for urban combat at medium range. Attached to weapons by means of a dovetail mount.</text>
+	</string>
+	<string id="st_addon_scope_zf4">
+		<text>ZF-4 scope</text>
+	</string>
+	<string id="st_addon_scope_zf4_descr">
+		<text>An old and worn optic scope with 4x zoom used for specific weapon models of World War 2.</text>
+	</string>
+	<string id="st_addon_scope_ww2">
+		<text>PU Scope</text>
+	</string>
+	<string id="st_addon_scope_ww2_descr">
+		<text>An old and worn optic scope with 4x zoom used for specific weapon models of World War 2.</text>
+	</string>
+	<string id="st_addon_scope_vsk">
+		<text>VSK-94 scope</text>
+	</string>
+	<string id="st_addon_scope_vsk_descr">
+		<text>Special designed telescopic sight for the VSK-94 silenced firearm.</text>
+	</string>
+	<string id="st_addon_silencer">
+		<text>Silencer (5.56x45)</text>
+	</string>
+	<string id="st_addon_silencer_descr">
+		<text>An effective sound suppressor for caliber 5.56x45 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_9x18">
+		<text>Silencer (9x18)</text>
+	</string>
+	<string id="st_addon_silencer_9x18_descr">
+		<text>An effective sound suppressor for caliber 9x18 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_9x19">
+		<text>Silencer (9x19)</text>
+	</string>
+	<string id="st_addon_silencer_9x19_descr">
+		<text>An effective sound suppressor for caliber 9x19 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_9x39">
+		<text>Silencer (9x39)</text>
+	</string>
+	<string id="st_addon_silencer_9x39_descr">
+		<text>An effective sound suppressor for caliber 9x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_545x39">
+		<text>Silencer (5.45x39)</text>
+	</string>
+	<string id="st_addon_silencer_545x39_descr">
+		<text>An effective sound suppressor for caliber 5.45x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_556x45">
+		<text>Silencer (5.56x45)</text>
+	</string>
+	<string id="st_addon_silencer_556x45_descr">
+		<text>An effective sound suppressor for caliber 5.56x45 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_762x39">
+		<text>Silencer (7.62x39)</text>
+	</string>
+	<string id="st_addon_silencer_762x39_descr">
+		<text>An effective sound suppressor for caliber 7.62x39 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_762x51">
+		<text>Silencer (7.62x51)</text>
+	</string>
+	<string id="st_addon_silencer_762x51_descr">
+		<text>An effective sound suppressor for caliber 7.62x51 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_762x54">
+		<text>Silencer (7.62x54)</text>
+	</string>
+	<string id="st_addon_silencer_762x54_descr">
+		<text>An effective sound suppressor for caliber 7.62x54 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_addon_silencer_1143x23">
+		<text>Silencer (1143x23)</text>
+	</string>
+	<string id="st_addon_silencer_1143x23_descr">
+		<text>An effective sound suppressor for caliber 1143x23 weapons. The body of the silencer around the barrel contains a roll of fine brass mesh, while the front comprises a set of metal with holes for the bullet to pass through. Normally used to thin out enemy ranks without drawing attention.</text>
+	</string>
+	<string id="st_grenade_f1">
+		<text>F1 grenade</text>
+	</string>
+	<string id="st_grenade_f1_descr">
+		<text>A defensive hand grenade, with fragments capable of piercing medium level body armor. The grenade has a 7 meter kill radius. Stalkers get F1 grenades from trading with the military, who write them off as having been used for fighting mutants.</text>
+	</string>
+	<string id="st_grenade_launcher">
+		<text>GP-25 Kastyor</text>
+	</string>
+	<string id="st_grenade_launcher_descr">
+		<text>A single shot, front loaded, rifled underbarrel grenade launcher for assault rifles made in Warsaw Pact countries. The firing mechanism is self-cocking, with a manual safety catch and automatic shot prevention if incorrectly installed onto a rifle. Uses VOG-25 grenades.</text>
+	</string>
+	<string id="st_grenade_launcher_m203">
+		<text>M203</text>
+	</string>
+	<string id="st_grenade_launcher_m203_descr">
+		<text>A modified M203 grenade launcher that has been shortened by three inches, attached to weapons by means of a Picatinny Rail. Thanks to a changed mount, this grenade launcher is widely used around the world.</text>
+	</string>
+	<string id="st_grenade_rgd5">
+		<text>RGD-5 grenade</text>
+	</string>
+	<string id="st_grenade_rgd5_descr">
+		<text>An offensive hand grenade with a small kill zone of 5 meters. Often used by stalkers to "smoke out" mutants due to its relatively low cost.</text>
+	</string>
+	<string id="st_grenade_thermite">
+		<text>Thermite grenade</text>
+	</string>
+	<string id="st_grenade_thermite_descr">
+		<text>A incendiary grenade (or thermite grenade), that produce a intense heat by means of a chemical reaction. The filler is 600 to 800 grams of thermate, the chemical reaction that produces the heat is called a thermite reaction. In this reaction, powdered aluminium metal and iron oxide react to produce a stream of molten iron and aluminium oxide. This reaction produces a tremendous amount of heat, burning at 2,200 °C (3,992 °F).</text>
+	</string>
+	<string id="st_grenade_smoke">
+		<text>Smoke grenade</text>
+	</string>
+	<string id="st_grenade_smoke_descr">
+		<text>A hand smoke grenade. Used to put up smoke screens. Once the grenade is thrown it takes 10 seconds for the smoke screen to expand.</text>
+	</string>
+	<string id="st_wpn_abakan">
+		<text>Nikonov AN-94 Abakan</text>
+	</string>
+	<string id="st_wpn_ak74">
+		<text>AK-74</text>
+	</string>
+	<string id="st_wpn_ak74u">
+		<text>AKS-74U</text>
+	</string>
+	<string id="st_wpn_ak74us">
+		<text>AKS-74U Special</text>
+	</string>
+	<string id="st_wpn_beretta">
+		<text>Beretta M92F</text>
+	</string>
+	<string id="st_wpn_bm16">
+		<text>TOZ-BM16 (Sawn off)</text>
+	</string>
+	<string id="st_knife_h">
+		<text>Hunting Knife</text>
+	</string>
+	<string id="st_knife_m">
+		<text>Military Knife</text>
+	</string>
+	<string id="st_knife_h_descr">
+		<text>A hunting knife, preferred by stalkers in the zone.</text>
+	</string>
+	<string id="st_knife_m_descr">
+		<text>Standard issue military knife.</text>
+	</string>
+	<string id="st_wpn_bm16_descr">
+		<text>A sawed-off hunting shotgun with two side-by-side barrels, making it lighter and more compact than a full shotgun. One of the most popular weapons among bandits due to its combination of ease of concealment and extreme effectiveness in close combat.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_bm16_full">
+		<text>TOZ-BM16</text>
+	</string>
+	<string id="st_wpn_bm16_full_descr">
+		<text>A shotgun with two side-by-side barrels. One of the most popular weapons among bandits due to its extreme power in close combat situation.</text>
+	</string>
+	<string id="st_wpn_colt1911">
+		<text>Colt M1911</text>
+	</string>
+	<string id="st_wpn_desert_eagle_nimble">
+		<text>Steppe Eagle</text>
+	</string>
+	<string id="st_wpn_desert_eagle_nimble_descr">
+		<text>A hand-made pistol based on the Desert Eagle design. The components are finely tuned to achieve incredible accuracy for a handgun of this type.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_eagle">
+		<text>Desert Eagle</text>
+	</string>
+	<string id="st_wpn_fn2000">
+		<text>FN F2000</text>
+	</string>
+	<string id="st_wpn_fort">
+		<text>Fort 12</text>
+	</string>
+	<string id="st_wpn_famas3">
+		<text>FAMAS G2 Custom</text>
+	</string>	
+	<string id="st_wpn_famas3_descr">
+		<text>A very effective french assault rifle for close quarter battles. Very high rate of fire and a BullPop design that makes it accurate and handy at the same time. Very few samples are brought to The Zone and as of yet there are no spare parts that makes upgrades available. A Special FAMAS G2 made for the zone which has 100m more range and has very little recoil. There are also made some customization to the model frame.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>		
+		<string id="st_wpn_galil">
+		<text>IMI Galil</text>
+	</string>	
+	<string id="st_wpn_galil_descr">
+		<text>A well balanced and reliable Israelian rifle for medium to long range battles. Its light weight and accuracy are popular qualities among lone stalkers. Very few samples are brought to The Zone and as of yet there are no spare parts that makes upgrades available. The IMI Galil Is liked for its realibilty, low recoil, and being very soldier friendly but is so expensive that many countries have not adopted it.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x51\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_stg44">
+		<text>STG-44</text>
+	</string>	
+	<string id="st_wpn_stg44_descr">
+		<text>German SturmGewehr 44. Classic german design of World War 2 that still today makes a very respected short range assault rifle. Capable of handling most terrain conditions. Very few samples are brought to The Zone and as of yet there are no spare parts that makes upgrades available. The STG-44 is what is called the world's first assault rifle. This gun was made in 1943 and could have changed the tide of the war if it was released that year.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_m16a1">
+		<text>M16 A2</text>
+	</string>	
+	<string id="st_wpn_m16a1_descr">
+		<text>An american assault rifle well suited for long range targets and budget sniping. Light and slim design that makes attachments fast and easy to work with. Very few samples are brought to The Zone and as of yet there are no spare parts that makes upgrades available. The development of the M16A2 rifle was originally requested by the United States Marine Corps as a result of the USMC's combat experience in Vietnam with the XM16E1 and M16A1. The Marines were the first branch of the U.S. Armed Forces to adopt the M16A2 in the early/mid 1980s with the United States Army following suit in the late 1980s. Modifications to the M16A2 were extensive. In addition to the new rifling, the barrel was made with a greater thickness in front of the front sight post to resist bending in the field and to allow a longer period of sustained fire without overheating.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]M16 Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45</text>
+	</string>	
+	<string id="st_wpn_sig552">
+		<text>SIG SG552</text>
+	</string>	
+	<string id="st_wpn_sig552_descr">
+		<text>A new compact version of the SG550 assault rifle that has quickly found admirers around the world. Weapons of this series are one of the best in their class. This model manufactured with a permanent red dot sight for effective daylight close quarter battles. A Special Version of the SIG SG 550 made for closer engagements in urban enviroments like citys, villages, and buildings.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Dot sight (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203</text>
+	</string>
+	<string id="st_wpn_m24">
+		<text>M24 / Browning m1000</text>
+	</string>	
+	<string id="st_wpn_m24_descr">
+		<text>"The Green Dragon" is a powerful boltaction sniper rifle with an effective and valuable scope. The M24, Right now used in Afghanistan though is being replaced by the XM2010 and M110. The M24 is a Bolt-Action Rifle meant for long range Sniping, thanks to it being a bolt-action recoil is reduced and it is also lighter and easier to repair that a semi-auto would but comes at the sacrifice of RPM so use your shots carefully. This model has a dragon emblem designed on the side of the scope.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]M24 Sniper scope (permanent)</text>
+	</string>
+	<string id="st_wpn_m1891snip">
+		<text>Mosin Nagant M1891/30</text>
+	</string>	
+	<string id="st_wpn_m1891snip_descr">
+		<text>The Mosin–Nagant (Vintovka Mosina) is a bolt-action, internal magazine fed, military rifle used by the armed forces of the Russian Empire, the Soviet Union and various other nations. It gets its name from the Russian Artillery Colonel Sergei Ivanovich Mosin who designed the bolt and receiver, and the Belgian Emile Nagant, who designed the magazine system. Also known as the Three-Line Rifle (Trehlinejnaja vintovka), in reference to the 7.62 mm calibre, it was the first to use the 7.62x54mmR cartridge. A very realible rifle even to this day with its bolt action nature it has very little recoil enabling for an accurate one-shot kill at most ranges.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes</text>
+	</string>
+	<string id="st_wpn_obrez">
+		<text>Obrez</text>
+	</string>	
+	<string id="st_wpn_obrez_descr">
+		<text>The Obrez is a heavily modified Mosin Nagant rifle. The barrel has been cut off and so has the shoulder rest to make a very light weight close quarter weapon. This customization resemples a powerful inaccurate shotgun but fires a single bullet like the original Mosin rifle.</text>
+	</string>
+  <string id="st_wpn_aek973">
+    <text>AEK-973</text>
+  </string>
+  <string id="st_wpn_aek973_descr">
+    <text>AEK-973 is a Soviet / Russian fully automatic assault rifle made by the Kovrov Machinebuilding Plant, now called the Degtyarev Design Bureau - Degtyarev plant, and designed by Sergey I. Koksharov in the 1980s. AEK-973. The different model ( than the AEK-971) are most easily recognized by the different magazine curvature. The AEK-973 uses the magazines of the 7.62 mm. The AEK-973 is an AEK-971 but uses the 7.62x39mm round that the originak AK-47 used. The AEK-973 has less recoil then most 7.62x39mm rifles thanks to its counter-weight system which signifigantly reduces recoil of the gun by negating the pulse of the gas piston and bolt.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x39\n%c[255,238,153,26]• %c[default]Grenadelauncher\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_ak74cobra ">
+    <text>AKS-74 Cobra</text>
+  </string>
+  <string id="st_wpn_ak74_cobra_descr">
+    <text>A customized AKS-74 fitted with a Cobra RDS. It seems to have been modified to have a slower RPM by 25 RPM but has less recoil and also its barrel has been extended for a much longer range than the usual AKS-74.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Dot sight (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n%c[255,238,153,26]• %c[default]Grenadelauncher\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_fnfall">
+    <text>FN FAL "Paratrooper"</text>
+  </string>
+  <string id="st_wpn_fnfall_descr">
+    <text>The Fusil Automatique Lйger ("Light Automatic Rifle") or FAL is a self-loading, selective fire battle rifle produced by the Belgian armaments manufacturer Fabrique Nationale de Herstal (FN). During the Cold War it was adopted by many North Atlantic Treaty Organization (NATO) countries, with the notable exception of the United States. It is one of the most widely used rifles in history, having been used by over 90 countries. FN FAL "Paratrooper" model (also known as FAL 50.63) with shortened barrel and folding butt.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 7.62x51\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_fnfalll">
+    <text>FN FAL</text>
+  </string>
+  <string id="st_wpn_fnfalll_descr">
+    <text>The Fusil Automatique Lйger or FAL is a self-loading, selective fire battle rifle produced by the Belgian armaments manufacturer Fabrique Nationale de Herstal (FN). During the Cold War it was adopted by many North Atlantic Treaty Organization (NATO) countries, with the notable exception of the United States. It is one of the most widely used rifles in history, having been used by over 90 countries.\n\n%c[default]ATTACHMENTS:\n%c[255,144,50,26]• %c[default]Scopes\n%c[255,144,50,26]• %c[default]Grenadelauncher m203\n%c[255,144,50,26]• %c[default]Silencer 7.62x51\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_fr2000">
+    <text>FN FS 2000</text>
+  </string>
+  <string id="st_wpn_fr2000_descr">
+    <text>The FN FS2000 Tactical is a carbine model based on the proven FN F2000 Tactical bullpup design with a 17.4" civilian-legal barrel. The FS2000 Tactical offers the user a compact, reliable and accurate firearm suitable for security, personal defense, or competition. The gas-operated system utilizes a rotating bolt lock-up and fires a wide variety of 5.56x45mm ammunition fed from readily available standard M16-style magazines.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_m21">
+    <text>M14 DMR</text>
+  </string>
+  <string id="st_wpn_m21_descr">
+    <text>The United States Marine Corps Designated Marksman Rifle (DMR, NSN 1005-01-458-6235; more formally the United States Rifle, 7.62 mm, M14, DMR is a semi-automatic, gas-operated rifle chambered for the 7.62x51mm NATO cartridge. It is a modified version of the M14 rifle built and utilized by the United States Marine Corps (USMC). The M14 DMR is mostly a M14 that the Marine Corps modified for a DMR givin it a pistol grip, ability for a silencer, picatanny rails,and a cheek rest . This model has a classic and well kept wooden chasis.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scope (permanent)</text>
+  </string>
+  <string id="st_wpn_m1000">
+    <text>Muzgaran</text>
+  </string>
+  <string id="st_wpn_m1000_descr">
+    <text>Unknown sniper rifle with the sign "Muzgaran" on the muzzle.</text>
+  </string>
+  <string id="st_wpn_rpk74">
+    <text>RPK-74</text>
+  </string>
+  <string id="st_wpn_rpk74_descr">
+    <text>Introduced in 1974 together with the AK-74 assault rifle and chambered for the new 5.45x39mm high-velocity cartridge. The RPK-74 is derived from the AK-74 rifle, and the modifications implemented mirror those made to the AKM, while working on the RPK light machine gun. The RPK-74 also uses a longer and heavier chrome-plated barrel which has a new gas block with the gas channel drilled at a 90° angle to the bore axis, and a ring for the cleaning rod. The RPK-74 was also equipped with a folding bipod and a different type of front sight tower. The muzzle is threaded for a flash suppressor or blank-firing device. Like how HK made a LMG version of the G3, Kalashinov made a LMG version of his Famous AK-47 design by extending the barrel, increased firing duration, and a stronger receiver.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n%c[255,238,153,26]• %c[default]Scopes\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_scar">
+    <text>XM8 Guerilla Camo</text>
+  </string>
+  <string id="st_wpn_scar_descr">
+    <text>The XM8 was a developmental U.S. military designation and project name for a lightweight, assault rifle system that was under development by the United States Army from the late 1990s to early 2000s. The Army worked with the German small arms manufacturer Heckler & Koch (H&K) to develop the system to its requirements in the aftermath of the OICW contract, for which H&K had been a subcontractor to ATK.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_vsk94">
+    <text>VSK-94</text>
+  </string>
+  <string id="st_wpn_vsk94_descr">
+    <text>The VSK-94 is a 9 mm silenced fully automatic sub machinegun developed by the Russia KBP Instrument Design Bureau as a low-cost alternative to the VSS rifle. The weapon is based on the 9A-91 rifle. The VSK-94 was designed to accurately engage unarmored point targets at ranges up to 400 m. The VSK-94 can be equipped with a 4x optical sight and standard flip iron sights from the 9A-91. The threaded barrel is designed to use a specifically designed silencer. The VSK-94 is mostly a cheaper alternative to the VSS and uses the same low-velocity round witch adds stealth and massive penetration but at the cost of range. This model is worn and scratched in the camouflaged paintjob but seems to still function very well.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+  </string>
+	<string id="st_wpn_sks">
+		<text>SKS</text>
+	</string>
+	<string id="st_wpn_sks_descr">
+		<text>Designed in 1945 and officially adopted into the Soviet Army in 1949, the SKS was already obsolete compared to the incoming Kalashnikov. Gradually, SKS carbines in service were relegated primarily to non-infantry and to second-line troops. They remained in service in this fashion until the early 1990s. Today, it is still used by some ceremonial Russian honor guards.\nHowever, the SKS has been widely exported and produced by the former Eastern Bloc nations, as well as China, East Germany and North Korea. It is today popular on the civilian surplus market in many countries. The SKS may seem like an longer barrel version of the AK-47 but in reality it was made before the AK-47 went into service in Russia and is very much liked for its accuracy and stopping power making it a very useful DMR.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 7.62x39\n%c[255,238,153,26]• %c[default]Scopes</text>
+	</string>
+	<string id="st_wpn_mossberg">
+		<text>Mossberg 500 short</text>
+	</string>
+	<string id="st_wpn_mossberg_descr">
+		<text>The Mossberg 500 short is a Mossberg 500 with a smaller barrel for less weight and improved maneuverability though sacrifices the already short range of the Mossberg 500.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_m4a1">
+		<text>M4 Carbine</text>
+	</string>
+	<string id="st_wpn_m4a1_descr">
+		<text>The M4 carbine (M4A1) is a family of firearms tracing its lineage back to earlier carbine versions of the M16, all based on the original AR-15 made by ArmaLite. It is a shorter and lighter version of the M16A2 assault rifle, with 80% parts commonality.The M4 has selective fire options including semi-automatic and three-round burst (like the M16A2), while the M4A1 has a "full auto" option in place of the three-round burst. A Lighter, more compact version of the M16, the M4A1 is a very useful weapon at most ranges with a mild recoil is what has kept the M4A1 being used by many countries to this day. This model has a permanent lightweight grenadelauncher welded to the chasis.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_g43">
+		<text>Gewehr 43</text>
+	</string>
+	<string id="st_wpn_g43_descr">
+		<text>The G43 was created when Nazi Germany invaded the Soviet Union and captured SVT-40s, Walther then combined the simple gas system of the SVT-40 and the G41 and made the Gewer 43/G43. This model has a permanent sniper scope attached.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]G-43 sniper scope (permanent)</text>
+	</string>
+	<string id="st_wpn_gp100">
+		<text>Ruger GP100</text>
+	</string>
+	<string id="st_wpn_gp100_descr">
+		<text>The GP100 is a family/line of double action revolvers made by Ruger, manufactured in the United States of America, and in production since 1985. The GP100s are 6-shot design, and all-steel construction.</text>
+	</string>
+	<string id="st_wpn_far15">
+		<text>FAR-15</text>
+	</string>
+	<string id="st_wpn_far15_descr">
+		<text>The FAR-15 is a customized AR-15 made by Fulton Armory with a collapsible stock, more high quality parts, and a slightly farther range. This personalized model has camouflage texturing, dotsight and a permanent silencer attachment.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Dot sight (permanent)\n%c[255,238,153,26]• %c[default]Silencer (permanent)\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_scorpion">
+		<text>Skorpion vz. 61</text>
+	</string>
+	<string id="st_wpn_scorpion_descr">
+		<text>A very well known gun, the Skorpion vz. 61 was used in tank crews for Czechoslovakia and was very reliable for having very low recoil and a high rate of fire made the Skorpion vz. 61 a deadly weapon up close.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+	</string>
+	<string id="st_wpn_ppsh41">
+		<text>PPSh-41</text>
+	</string>
+	<string id="st_wpn_ppsh41_descr">
+		<text>The PPSh-41 is one of many Famous guns made by Russia, the PPSh-41 was liked for its great durability and ease of access to clean the gun. The gun also has a ludicrous RPM which is luckily countered by the low-recoil. A great weapon for stalkers who doesn't want to reload often.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 7.62x39</text>
+	</string>
+	<string id="st_wpn_ump45">
+		<text>UMP 45</text>
+	</string>
+	<string id="st_wpn_ump45_descr">
+		<text>German company Heckler & Koch wanted to make an SMG that had more stopping power than their MP5 and so the UMP-45 was made though a bigger round means more recoil so the RPM had to be drastictly reduced. Great weapon for urban combat.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_aps">
+		<text>APS Stechkin</text>
+	</string>
+		<string id="st_wpn_aps_descr">
+		<text>The Stechkin APS is a Russian selective fire machine pistol. It bears the name of its developer, Igor Stechkin. The Stechkin APS was the answer to the Russian Army's need for a Automatic weapon that could be fired in 3-round burst and automatic though was crictizied for being too big for a pistol and being uncontrollable without a stock.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
+	</string>
+	<string id="st_wpn_gsh18">
+		<text>GSh-18</text>
+	</string>
+		<string id="st_wpn_gsh18_descr">
+		<text>The GSh-18 is a 9mm semi-automatic pistol developed in the early 1990s at the KBP Instrument Design Bureau in Tula. The pistol's name is derived from its designers—Gryazev and Shipunov, and the number 18 denotes the magazine capacity. The GSh-18 is a pistol made by Russian company Gryazev and Shipunov and was made to have a short recoil system.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+	</string>
+	<string id="st_wpn_akm">
+		<text>AKM</text>
+	</string>
+		<string id="st_wpn_akm_descr">
+		<text>The AKM (Russian: Avtomat Kalashnikova Modernizirovanniy or "automatic rifle Kalashnikov modernized") is a 7.62mm assault rifle designed by Mikhail Kalashnikov. It is an upgraded version of the AK-47 rifle and was developed in the 1950s. Introduced into service with the Red Army in 1959, the AKM is the most ubiquitous variant of the entire AK series of firearms and it has found widespread use with most member states of the former Warsaw Pact and its many African and Asian allies. The production of these Soviet rifles was carried out at both the Tula Arsenal and Izhevsk Mechanical Works. It was officially replaced in Soviet service by the AK-74 in the late 70s, but remains in use worldwide.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 7.62x39\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Grenadelauncher\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+  <string id="st_wpn_saiga">
+    <text>Saiga 12K</text>
+  </string>
+  <string id="st_wpn_saiga_descr">
+    <text>This shotgun had been developed by the IZHMASH Russian State Arms company in the early 1990s as a member of the whole family of semi-automatic shotguns and rifles, based on the famous and time-proven Kalashnikov AK assault rifle design. All weapons in the Saiga family inherited the basic design of the AK, with long piston stroke gas system, rotating bolt with two massive lugs, and box magazine feeding. Very popular for close combat ability.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 12x70\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_tt33">
+    <text>TT-33</text>
+  </string>
+  <string id="wpn_tt33_descr">
+    <text>The Tokarev TT ("Tula, Tokarev") pistol was developed as a result of continuous trials, held by the Red Army in the mid- and late 1920s. Red Army looked for a new, modern semiautomatic pistol to replace obsolete Nagant M1895 revolvers and a variety of foreign semi-automatic pistols. For its time Tokarev TT was a formidable weapon, with good penetration and effective range. It was of good reliability and easy to maintain. What it lacked most was the manual safety, and its grip shape was not too comfortable.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+  </string>
+  <string id="st_wpn_oc33">
+    <text>OC-33 Pernatch</text>
+  </string>
+  <string id="st_wpn_oc33_descr">
+    <text>The OC-33 "Pernatch" Automatic Pistol was developed by the I.Stechkin. It was intended to replace the APS Automatic Pistol which was mainly used by special forces developed by the same weapon designer. The "Pernatch" outperforms the APS Automatic pistol in it's characteristics, simplified design and manufacture. Furthermore the "Pernatch" is more reliable. The OC-33 Automatic Pistol is a version of an OC-23 "Drotik" Automatic Pistol chambered for the 9 x 18 mm (PM, PMM) cartridge.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
+  </string>
+  <string id="st_wpn_ak105">
+    <text>AK-105</text>
+  </string>
+  <string id="st_wpn_ak105_descr">
+    <text>Assault rifle AK-105 was developed to change AKS-74U small size assault rifle. It is built on well recommended Kalashikov's assault rifles scheme, that inherited all the best qualities threw more than 50 years during AK assault rifle families modernization.\n\nThe AK-105 is intended to use by secondary units such as supply, communication, tanks and artillery crews, staff personnel. It's predecessor was successfully used by Russian Federation ministry of internal affairs special forces in anti-terrorist, criminal arrest or other operations which required ordinary assault rifle with a smaller dimensions. AK-105 is suitable to be used by anti-terrorist special forces or airborne troops.\n\nRifle's automatic works on gas returning principle, threw a holes in the barrels channel walls. Rifle executes single or automatic fire. Reloading handle is placed from the right side. It has three positions: safety-lock, automatic fire, and single fire.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n%c[255,238,153,26]• %c[default]Grenadelauncher\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+  </string>
+  <string id="st_wpn_k98">
+    <text>Karabiner 98 Kurz </text>
+  </string>
+  <string id="st_wpn_k98_descr">
+    <text>The Karabiner 98 Kurz (often abbreviated Kar98k or K98) is a bolt action precision rifle chambered for the large 7.62x54 cartridge and was originally adopted as the standard service rifle in 1935 by the German Wehrmacht. It was one of the final developments in the long line of Mauser military rifles. Although supplemented by semi- and fully automatic rifles during World War II, it remained the primary German sniper rifle until the end of World War II in 1945.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x54</text>
+  </string>
+	<string id="st_wpn_g36">
+		<text>H&K G36</text>
+	</string>
+	<string id="st_wpn_gauss">
+		<text>Gauss rifle</text>
+	</string>
+	<string id="st_wpn_groza">
+		<text>OC-14 Groza</text>
+	</string>
+	<string id="st_wpn_groza_descr">
+		<text>This assault rifle combined with a grenade launcher, which is similar to the AK series, was specially developed for rapid response units. The main differences are its 9x39 caliber ammunition, bullpup layout and extensive configuration options. This weapon is highly valued by military stalkers due to its ability to kill enemies wearing body armor behind improvised cover at a distance during urban combat, as well as its excellent stopping power.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x39\n%c[255,238,153,26]• %c[default]Grenadelauncher (permanent)\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_groza_nimble">
+		<text>Storm</text>
+	</string>
+	<string id="st_wpn_groza_nimble_descr">
+		<text>An experimental version of an assault rifle and grenade launcher system, a Russian modification of the standard OC-14 Groza, this weapon was specially designed for units operating in the Zone. Notable for its increased magazine capacity.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 7.62x39\n%c[255,238,153,26]• %c[default]Grenadelauncher (permanent)\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_hpsa">
+		<text>Inglis Hi Power</text>
+	</string>
+	<string id="st_wpn_hpsa_descr">
+		<text>A modified model of a pistol from the first half of the 20th century, which is as reliable, powerful and accurate as the original. Pistols of this series deserve their reputation as one of the best handguns of the 20th century and are in great demand in the Zone.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+	</string>
+	<string id="st_wpn_l85">
+		<text>L85A2</text>
+	</string>
+	<string id="st_wpn_lr300">
+		<text>Z-M Weapons LR300</text>
+	</string>
+	<string id="st_wpn_mp5">
+		<text>H&K MP5A3</text>
+	</string>
+	<string id="st_wpn_mp5_descr">
+		<text>This submachine gun has gained popularity around the world thanks to its reliability, ease of use and accuracy. Over the last few decades the H&K MP5A3 was in service with special armed forces and police units worldwide. Not surprisingly, having flooded the global black markets, it eventually made its way to the Zone.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+	</string>
+	<string id="st_wpn_mp5_nimble">
+		<text>Frasier</text>
+	</string>
+	<string id="st_wpn_mp5_nimble_descr">
+		<text>A submachine gun prototype based on the excellent H&K MP5A3 model. Designed as a next generation close quarter combat weapon, it benefits from a higher caliber, rate of fire and accuracy.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x19</text>
+	</string>
+	<string id="st_wpn_pb">
+		<text>PB / 6P9 silenced</text>
+	</string>
+	<string id="st_wpn_pkm_zulus">
+		<text>Zulu's RP-74</text>
+	</string>
+	<string id="st_wpn_pkm_zulus_descr">
+		<text>This weapon was previously owned by Zulu. Its special features include an enlarged ammo box and a particularly reliable retracting mechanism design. The modifications meant an increase in the weapon's weight, but that wasn't a problem for the last owner.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_pm">
+		<text>Makarov PM</text>
+	</string>
+	<string id="st_wpn_pm_actor">
+		<text>Honorary PMm</text>
+	</string>
+	<string id="st_wpn_pm_actor_descr">
+		<text>An ancient Makarov PM received by Degtyarev as a reward for "Successful execution of highly dangerous state orders, as well as valor and courage shown in the line of duty."\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
+	</string>
+	<string id="st_wpn_protecta">
+		<text>Armsel Protecta</text>
+	</string>
+	<string id="st_wpn_rg6">
+		<text>RG6 / 6G30</text>
+	</string>
+	<string id="st_wpn_rg6_descr">
+		<text>This revolver-type grenade launcher uses six rifled front-loading barrels, identical to underbarrel launcher attachments. The drum is also front-loading. Widely used for rapid suppression of enemy firing positions and, when in the open, attacking defended fixed targets or fighting particularly tough monsters.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_rp">
+		<text>PKM</text>
+	</string>
+	<string id="st_wpn_rp_descr">
+		<text>This belt-fed machine gun is a portable modification with a complex two-stage feeding system. Despite its weight and low precision, this LMG has found admirers in the Zone. Used primarily to fight off outnumbering enemy forces during faction conflicts and clear out mutant lairs.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_rpg7">
+		<text>RPG-7</text>
+	</string>
+	<string id="st_wpn_sig220">
+		<text>SIG-Sauer P220</text>
+	</string>
+	<string id="st_wpn_sig220_nimble">
+		<text>Alpine</text>
+	</string>
+	<string id="st_wpn_sig220_nimble_descr">
+		<text>A unique model of the SIG-Sauer P220 handgun. Part of a small limited edition made for an unidentified special forces unit. The model benefits from an increased magazine capacity, a high durability steel barrel and an ultradurable polymer receiver.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_sig550">
+		<text>SIG SG550</text>
+	</string>
+	<string id="st_wpn_sig550_descr">
+		<text>A relatively new assault rifle that has quickly found admirers around the world, despite lacking a "trendy" design. Weapons of this series are one of the best in their class, renowned for their reliability, accuracy and ease of use.  Despite being relatively difficult to obtain in the Zone, this assault rifle is often ordered by experienced stalkers at considerable expense.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_sig550_strelok">
+		<text>SIG SG550-(S)</text>
+	</string>
+	<string id="st_wpn_sig550_strelok_descr">
+		<text>A Swiss-made SIG SG550 assault rifle. Although it is hardly new, it is clear that the previous owner took good care of it: the weapon has been taken apart and put back together, with every component fine-tuned for optimum performance, increasing stopping power. The letter "S" has been carved into the stock, "this must be Strelok's customized SIG".\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_spas12">
+		<text>Franchi SPAS-12</text>
+	</string>
+	<string id="st_wpn_spas12_m2">
+		<text>SPSA-AUT</text>
+	</string>
+	<string id="st_wpn_spas12_m2_descr">
+		<text>The SPSA-AUT self-cocking shotgun is made only in Duty workshops. This weapon is intended for fighting large groups of mutants. Its improved feeding mechanism ensures a high rate of fire and the magazine capacity has been increased to 10 rounds. Uses 12x70 caliber rounds.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_spas12_nimble">
+		<text>Carabineer</text>
+	</string>
+	<string id="st_wpn_spas12_nimble_descr">
+		<text>An army shotgun designed specifically for assault units on the basis of the Franchi SPAS-12. Capable of automatic fire like its predecessor, but provides better recoil compensation thanks to a balanced shock free system.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_svd">
+		<text>SVD / Dragunov</text>
+	</string>
+	<string id="st_wpn_svd_descr">
+		<text>An army sniper rifle that has been on the market for more than fifty years and has earned its reputation for exceptional reliability and ease of use. The SVD / Dragunov is normally used by the army to improve the effective range of its units, but stalkers respect this weapon for its armor-piercing properties, which allow it to penetrate mutant hide and army body armor.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVD scope (permanent)</text>
+	</string>
+	<string id="st_wpn_svd_nimble">
+		<text>Lynx</text>
+	</string>
+	<string id="st_wpn_svd_nimble_descr">
+		<text>A hand-assembled version of the SVD / Dragunov sniper rifle. No different in appearance, it nonetheless provides an ideal combination of accuracy and stopping power.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVD scope (permanent)</text>
+	</string>
+	<string id="st_wpn_svu">
+		<text>SVU / Dragunov BP</text>
+	</string>
+	<string id="st_wpn_svu_nimble">
+		<text>SVU2-A</text>
+	</string>
+	<string id="st_wpn_svu_nimble_descr">
+		<text>This shortened sniper rifle with an increase rate of fire is the next step in the evolution of the SVU / Dragunov BP sniper rifle. This weapon used to belong to Max, the legendary guardian of Freedom.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVU scope (permanent)</text>
+	</string>
+	<string id="st_wpn_toz34">
+		<text>TOZ-34</text>
+	</string>
+	<string id="st_wpn_toz34_descr">
+		<text>This extremely common over-and-under hunting shotgun can offer better protection against mutants than a pistol, thanks to its accuracy and stopping power. Used mostly by rookies on the outskirts of the Zone.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_umirotvoritel">
+		<text>Unidentified weapon</text>
+	</string>
+	<string id="st_wpn_umirotvoritel_descr">
+		<text>An unknown weapon, the firing mechanism of which has not been established. The weapon appears faulty - squeezing the trigger doesn't do anything.</text>
+	</string>
+	<string id="st_wpn_usp">
+		<text>USP Compact</text>
+	</string>
+	<string id="st_wpn_usp_descr">
+		<text>Impeccable reliability and durability combined with excellent accuracy are the main noteworthy features of this weapon. Its minor drawbacks include its considerable size, relatively high center of gravity and massive bolt, which make it difficult to conceal but do not outweigh the weapon's positive features. The weapon is especially popular with the Zone's veterans.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_usp_nimble">
+		<text>March</text>
+	</string>
+	<string id="st_wpn_usp_nimble_descr">
+		<text>A compact, large caliber pistol with short bolt movement and lightweight bolt assembly. Used to belong to a mercenary called Wolfhound. Appears to be a modified USP Compact pistol.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_val">
+		<text>AS Val</text>
+	</string>
+	<string id="st_wpn_vintorez">
+		<text>VSS Vintorez</text>
+	</string>
+	<string id="st_wpn_vintorez_descr">
+		<text>A special military sniper rifle purpose-built for silent, flashless sniping during special operations where early detection of the shooter may be critical. The VSS Vintorez provides high armor-piercing capability and stopping power, as well as being equipped with an integrated sniper and optical scope. Highly rated by many stalkers despite its small magazine.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Vintorez scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+	</string>
+	<string id="st_wpn_vintorez_nimble">
+		<text>Tide</text>
+	</string>
+	<string id="st_wpn_vintorez_nimble_descr">
+		<text>A weapon made for military units on the basis of the silent sniper rifle. The rifle has higher stopping power than the VSS Vintorez, its predecessor, at the expense of its rate of fire, which allows the shooter to eliminate enemy forces one by one without revealing his position.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Vintorez scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+	</string>
+	<string id="st_wpn_walther">
+		<text>Walther P99</text>
+	</string>
+	<string id="st_wpn_wincheaster1300">
+		<text>Winchester 1300</text>
+	</string>
+	<string id="st_wpn_wincheaster1300_descr">
+		<text>A Western smoothbore shotgun that is extremely popular around the world thanks to its amazing reliability and faster reloading speed. Particularly valued for its functionality by the Zone's hunters. All of its parts are coated with an anticorrosion compound.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_wincheaster1300_trapper">
+		<text>Predator</text>
+	</string>
+	<string id="st_wpn_wincheaster1300_trapper_descr">
+		<text>A tailor-made pump-action shotgun which used to belong to Trapper. The hunter's only requirement in respect of his weapon was that it needed to kill predators in one shot. This philosophy was based on the belief that no matter how many people an animal had killed, it was still just an animal, and thus should not suffer.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="ammo-gauss_cardan">
+		<text>Homemade batteries</text>
+	</string>
+	<string id="st_addon_scope_susat_custom">
+		<text>SUSAT Mera scope</text>
+	</string>
+	<string id="st_wpn_abakan_descr">
+		<text>A modern assault rifle developed as a replacement for the ageing AK-74. The main difference is its high speed 2-round burst firing mode, which allows two bullets to be fired at exactly the same spot on a target up to 100 meters away. This significantly increases the likelihood of hitting the target in comparison to the 1 round firing mode, which considerably improves kill potential, stopping power and armor piercing capability.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_ak74_descr">
+		<text>This weapon, designed in 1974, signaled the adoption of small caliber and low impulse rounds by Warsaw Pact countries. A descendant of the most popular assault rifle in the world, the AK-74 has an even bigger muzzle brake, resulting in a reduction of what was already manageable recoil. This facilitates better accuracy and groupings, especially when fired in fast single shots or bursts. As before, the rifle is very simple and reliable.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Grenadelauncher\n%c[255,238,153,26]• %c[default]Silencer 5.45x39\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_ak74u_descr">
+		<text>Despite being similar to submachine guns in size, weight and tactical purpose, this weapon is classified as an assault rifle due to the fact that its internal mechanism is identical to that of the AK-74. The weapon is notable for its mobility in close quarters and high armor-penetration capacity, while its drawbacks are its short effective range, despite the relatively long bullet range, a tendency to overheat and high ricochet propensity. The AKS-74U was a gun made by the Russians for a Carbine that could be used for tank crews, Helicopter crews, and also Russian special forces for a CQC Weapon. The AKS-74U is a Carbine like the M4 but can be mistaken for an smg at seeing first because of its compact size and is very popular for its compact size that it can even be fitted in a shirt with the stock back.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 5.45x39</text>
+	</string>
+	<string id="st_wpn_ak74us_descr">
+		<text>A special version of AKS-74U with a different mechanism and barrel. With the new mechanism adds a burst mode to the weapon and the modified barrel gives it the same fire range as the AK-74, the modified muzzle brake reduces the recoil even better then on the ordinary AKS-74U which leads to a better handling and accuracy. It comes with a fixed PSO mini-scope and can use a silencer, this is a perfect assault weapon and for short to midrange sniper fire.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]AK74u scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.45x39</text>
+	</string>
+	<string id="st_wpn_colt1911_descr">
+		<text>An improved version of a classic automatic pistol, which passed all the major armed conflicts of the 20th century with flying colors and entered the new millennium with confidence. Produced by dozens if not hundreds of arms manufacturers around the world in both standard and modified configurations. The weapon’s only drawback, its mediocre magazine capacity, is largely compensated by the hard-hitting ammo it uses.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_eagle_descr">
+		<text>The ultimate hand cannon - bulky, heavy and highly lethal. Developed as a specialized weapon for hunting medium-sized and large game, as well as for shooting competitions involving firing at steel body targets at distances over 50 meters. Its limited use in the Zone can be attributed to its price, size and weight, which are all double those of other pistols.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_fn2000_descr">
+		<text>This futuristic-looking weapon with a bullpup layout is actually a mass produced modular system, comprising a rifle & grenade complex with a computerized fire control system and a 40-mm grenade launcher. Despite its bulky appearance, the weapon is highly ergonomic, easy to use and benefits from good technical characteristics.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher (permanent)\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_fort_descr">
+		<text>A Ukrainian-made pistol predominantly used by law enforcement organizations. Provides higher accuracy, better ergonomics and has a larger magazine than the Makarov PM.  These pistols make it into the Zone in large numbers thanks to the sale of defective weapons, which suffer from technical miscalculations in early design models. Despite this, the pistol is in demand among stalkers thanks to its good combat characteristics.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
+	</string>
+	<string id="st_wpn_g36_descr">
+		<text>A new addition to the Western-made assault rifle family, which differs significantly from previous models in the series built on an automatic foundation with a semi-open bolt assembly, this weapon is more like American automatic gas-operated assault rifles with a short-stroke gas piston system. These changes ensure that the rifle is a first-rate example of a modern weapon - lightweight, reliable and ergonomic.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]G-36 scope (permanent)\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_l85_descr">
+		<text>This rifle’s considerable number of drawbacks caused most of these weapons to be modernized, with the retired stock making its way to the Zone via the black market. The rifle's main advantages are its built-in 4x scope, high single-shot accuracy and reliable upgrade technology. When the weapon is fired in bursts, its accuracy decreases significantly and the rifle's basic internal mechanisms become somewhat unreliable.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]l85 scope (permanent)\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_lr300_descr">
+		<text>A new step in the development of this famous weapon family. The changes were made to the upper half of the steel construction comprising the barrel, gas tube and bolt assembly, reducing the weapon's weight, improving ergonomics and its gas system. The weapon is highly accurate, although its propensity to catch dirt makes it a poor choice for the Zone’s difficult conditions.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer 5.56x45\n%c[255,238,153,26]• %c[default]Grenadelauncher m203\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_pb_descr">
+		<text>This pistol was developed in the second half of the 20th century on the basis of the Makarov PM for use by special forces and scouting units. The front of the pistol’s barrel is covered with an integrated silencer, while the bolt mechanism is short, which prevents a back-moving spring from being located inside it, and it is therefore situated in the weapon’s handle. Morally obsolete, the weapon is still effective in the right hands.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+	</string>
+	<string id="st_wpn_pm_descr">
+		<text>This Soviet legacy is the most common pistol in the Zone and is one of the best compact self-defense handguns available. It is small, highly reliable, easy to use and maintain in working order. It also suffers from several drawbacks, including its short range, low firing accuracy and poor stopping power, while also losing out to modern pistols in its class in terms of weight and magazine size.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 9x18</text>
+	</string>
+	<string id="st_wpn_protecta_descr">
+		<text>A smoothbore combat revolver-type shotgun intended to provide extreme firepower for militarized units. The weapon benefits from a large magazine and a high effective rate of fire, but its bulkiness and considerable weight, combined with a long reload time, are the price to be paid for these advantages. Rare in the Zone and is used primarily to clear closed spaces of mutants.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_rpg7_descr">
+		<text>This grenade launcher from the 1960s made its way into the Zone from army depots. The weapon is a smoothbore single-shot recoilless launch system with an open-rear tube. Comes with a PGO-7 x2.7 optical scope. Although its huge size and weight make it an unlikely choice for stalkers, given its huge destructive power and ease of use, it has found admirers in the Zone.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]RPG7 scope (permanent)\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_sig220_descr">
+		<text>The only remaining mass produced model of a globally renowned pistol, this weapon has earned a reputation for its excellent ergonomics and accuracy, and while its magazine is relatively small, it benefits from powerful ammo and a mechanism that functions like a Swiss watch. Some believe the SIG-Sauer P220 to be the best mass produced .45ACP caliber handgun there is and it has certainly got a following among experienced stalkers and mercenaries.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Silencer 11.43x23</text>
+	</string>
+	<string id="st_wpn_spas12_descr">
+		<text>This special purpose smoothbore automatic shotgun was designed in the second half of the 20th century and comes with pump-action and self-cocking firing modes. Used as an all-purpose weapon by the police and assault troops. Notable for its reliability and tactical flexibility. Despite its large weight, complex mechanism and considerable cost it is in demand in the Zone due to its effectiveness against mutants.\n\n%c[255,238,153,26]As a USS Assaulter you are specialized in this weapon type</text>
+	</string>
+	<string id="st_wpn_svu_descr">
+		<text>A modernized version of the SVD / Dragunov sniper rifle in a compact bullpup design made on the order of rapid response forces. It allows faster precision fire and is considerably lighter, while its single shot firing accuracy at short and medium range is similar to that of its predecessor. These qualities have earned it the admiration of countless stalkers.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]SVU scope (permanent)</text>
+	</string>
+	<string id="st_wpn_val_descr">
+		<text>A modified version of the silent VSS Vintorez sniper rifle, this assault rifle was designed as a special forces weapon. The rifle’s primary purpose is effective fire against enemies employing modern personal protection equipment without disclosing the shooter’s location. Thanks to its integrated silencer and 9x39 caliber round with a heavy subsonic bullet, the weapon’s noise and muzzle flash have been reduced to a minimum.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Scopes\n%c[255,238,153,26]• %c[default]Silencer (permanent)</text>
+	</string>
+	<string id="st_wpn_gauss_descr">
+		<text>A super-accurate hi-tech weapon known as item 62, this rifle was developed in secret laboratories located inside the Zone. The weapon operates by accelerating bullets to extremely high speeds using a system of electromagnets, which provides incredible stopping power with virtually no recoil.  The weapon is powered by using capsulated artifact fragments in the batteries.\n\n%c[default]ATTACHMENTS:\n%c[255,238,153,26]• %c[default]Gauss scope (permanent)</text>
+	</string>
+	<string id="st_wpn_beretta_descr">
+		<text>Beretta M92F pistols enjoy the reputation of a relatively reliable, albeit somewhat cumbersome weapon, around the world. In service with armed forces and police across the ocean, as well as various military and law enforcement organizations worldwide.  The pistol is equally popular with members of the underworld, thanks to its powerful round and magazine capacity. Beretta M92F found in the Zone are usually dated, probably from retired stock.</text>
+	</string>
+	<string id="st_wpn_walther_descr">
+		<text>An excellent Western pistol known for its reliability, high capacity magazine and good accuracy, as well as being among the most ergonomic handguns in its class. One of the most widely used pistols in the Zone, both among professionals and rookies who can afford it.</text>
+	</string>
+	<string id="ammo-gauss_descr">
+		<text>Batteries that use a capsulated fragment of the Flash artifact as their power source. Manufactured using hi-tech equipment.</text>
+	</string>
+	<string id="ammo-gauss_cardan_descr">
+		<text>These lower-capacity cells use capsulated fragments of the Flash artifact as their power source. Their lower capacity is due to makeshift production conditions and lack of specialized equipment.</text>
+	</string>
+	<string id="st_knife_combat">
+		<text>Military combat knife</text>
+	</string>
+	<string id="st_knife_combat_descr">
+		<text>A large military combat knife with a rugged rubber handle. Sharp and well maintained.</text>
+	</string>
+	<string id="st_knife_nr40">
+		<text>NR-40</text>
+	</string>
+	<string id="st_knife_nr40_descr">
+		<text>On a rare occasion a Stalker proves unique talent to his faction during missions of teamwork or lone wolf tasks. Like saving a faction leader from the certain death.Such quality and worth is seen rewarded with an Honorary NR-40. A rare Soviet military knife of high historic and symbolic value. Decorated with an iron emblem of a certain World War 2 parachute division on the wooden handle. Any Stalker holding one of these, be it novice or veteran, is highly respected anywhere in the Zone and especially within his ranks.</text>
+	</string>
+	<string id="st_knife_spetznaz">
+		<text>Speztnaz switchblade</text>
+	</string>
+	<string id="st_knife_spetznaz_descr">
+		<text>A well kept Spetznas military knife ideal for recon class soldiers.</text>
+	</string>
+	<string id="st_knife_hunting">
+		<text>Large hunting knife</text>
+	</string>
+	<string id="st_knife_hunting_descr">
+		<text>A very endurable hunting knife with a large blade of stainless steel. Ideal for handling larger animals, meat and thick hides.</text>
+	</string>
+	<string id="st_knife_needle">
+		<text>Steel knife</text>
+	</string>
+	<string id="st_knife_needle_descr">
+		<text>A customized steel knife with a tip as sharp as a needle. The handle is enforced with rugged fabric for a good grip.</text>
+	</string>
+</string_table>

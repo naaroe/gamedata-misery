@@ -1,0 +1,59 @@
+stalker_patch = 1, prob=0.55 \n
+
+bandage	= 3, prob=0.75\n
+medkit = 2, prob=0.75 \n
+medkit_army = 1, prob=0.66 \n
+medkit_scientic = 1, prob=0.33 \n
+
+detector_advanced = 1, prob=1 \n
+detector_elite = 1, prob=0.005 \n
+
+bread = 4, prob=0.66 \n
+kolbasa = 3, prob=0.66 \n
+conserva = 1, prob=0.50 \n
+vodka = 2, prob=0.50 \n
+energy_drink = 1, prob=0.33 \n
+antirad	= 1, prob=0.33 \n
+
+drug_booster			= 1, prob=0.032 \n
+drug_coagulant			= 2, prob=0.080 \n
+drug_psy_blockade		= 1, prob=0.032 \n
+drug_antidot			= 1, prob=0.032 \n
+drug_radioprotector		= 2, prob=0.048 \n
+drug_anabiotic			= 1, prob=0.016 \n
+
+af_cristall = 1, prob=0.020 \n
+af_fireball = 1, prob=0.012 \n
+af_dummy_glassbeads = 1, prob=0.008 \n
+af_eye = 1, prob=0.004 \n
+af_fire = 1, prob=0.004 \n
+af_medusa = 1, prob=0.020 \n
+af_cristall_flower = 1, prob=0.016 \n
+af_night_star = 1, prob=0.012 \n
+af_vyvert = 1, prob=0.008 \n
+af_gravi = 1, prob=0.008 \n
+af_gold_fish = 1, prob=0.004 \n
+af_blood = 1, prob=0.020 \n
+af_mincer_meat = 1, prob=0.012 \n
+af_soul = 1, prob=0.008 \n
+af_fuzz_kolobok = 1, prob=0.004 \n
+af_baloon = 1, prob=0.004 \n
+af_glass = 1, prob=0.004 \n
+af_electra_sparkler = 1, prob=0.020 \n
+af_electra_flash = 1, prob=0.012 \n
+af_electra_moonlight = 1, prob=0.008 \n
+af_dummy_battery = 1, prob=0.008 \n
+af_dummy_dummy = 1, prob=0.004 \n
+af_ice = 1, prob=0.004 \n
+
+mutant_part_boar_leg = 3, prob=0.08 \n
+mutant_part_dog_tail = 5, prob=0.08 \n
+mutant_part_flesh_eye = 4, prob=0.08 \n
+mutant_part_chimera_kogot = 2, prob=0.010 \n
+mutant_part_psevdodog_tail = 3, prob=0.04 \n
+mutant_part_snork_leg = 3, prob=0.04 \n
+mutant_part_tushkano_head = 2, prob=0.016 \n
+mutant_part_krovosos_jaw = 1, prob=0.014 \n
+mutant_part_pseudogigant_hand = 2, prob=0.012 \n
+mutant_part_controller_glass = 1, prob=0.012 \n
+mutant_part_burer_hand = 2, prob=0.016 \n

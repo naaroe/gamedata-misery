@@ -1,0 +1,31 @@
+[smart_terrain];zat_sim_28
+squad_id = 56
+max_population = 1
+respawn_only_smart = true
+respawn_params = respawn@zat_sim_28   
+
+[respawn@zat_sim_28]
+spawn_bandit@advanced
+spawn_bandit@veteran
+spawn_bandit@hostile
+spawn_bandit@veteran_hostile
+
+; Bandit squads
+
+[spawn_bandit@advanced]
+spawn_squads = bandit_sim_squad_novice
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end} 0, {+kingpin_gained +jup_a12_task_done} 0, {+kingpin_gained +zat_b40_merc_gone} 0, {+kingpin_gained +jup_b8_heli_4_searched +zat_b101_both_heli_info} 0, {+kingpin_gained +jup_b209_task_done} 0, {+kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_bandit@veteran]
+spawn_squads = bandit_sim_squad_advanced, bandit_sim_squad_veteran
+spawn_num = {+kingpin_gained +jup_b207_task_end} 1, {+kingpin_gained +jup_a12_task_done} 1, {+kingpin_gained +zat_b40_merc_gone} 1, {+kingpin_gained +jup_b8_heli_4_searched +zat_b101_both_heli_info} 1, {+kingpin_gained +jup_b209_task_done} 1, {+kingpin_gained +jup_b218_gather_squad_complete} 1, 0
+
+; Bandit hostile squads
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile
+spawn_num = {+kingpin_gained} 0, {-kingpin_gained +jup_b207_task_end} 0, {-kingpin_gained +jup_a12_task_done} 0, {-kingpin_gained +zat_b40_merc_gone} 0, {-kingpin_gained +jup_b8_heli_4_searched +zat_b101_both_heli_info} 0, {-kingpin_gained +jup_b209_task_done} 0, {-kingpin_gained +jup_b218_gather_squad_complete} 0, 1
+
+[spawn_bandit@veteran_hostile]
+spawn_squads = bandit_sim_squad_advanced_hostile, bandit_sim_squad_hostile_elite
+spawn_num = {-kingpin_gained +jup_b207_task_end} 1, {-kingpin_gained +jup_a12_task_done} 1, {-kingpin_gained +zat_b40_merc_gone} 1, {-kingpin_gained +jup_b8_heli_4_searched +zat_b101_both_heli_info} 1, {-kingpin_gained +jup_b209_task_done} 1, {-kingpin_gained +jup_b218_gather_squad_complete} 1, 0

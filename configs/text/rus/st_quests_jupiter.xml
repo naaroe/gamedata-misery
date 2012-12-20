@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="jup_a10_actor_agree_back_vano_duties_name">
+<text> Debts: Bring the money </text>
+</string>
+<string id="jup_a10_actor_agree_back_vano_duties_text">
+<text> Vano owes money for his new suit, but he can't deliver it, as the interest grows too fast. He asked me to deal with this problem. </text>
+</string>
+<string id="jup_a10_actor_back_vano_duties_name">
+<text> Debts: Return to Vano </text>
+</string>
+<string id="jup_a10_actor_back_vano_duties_text">
+<text> I should tell Vano that I've paid his debt. </text>
+</string>
+<string id="jup_a10_kill_all_bandit_name">
+<text> Debts: Deal with the bandits </text>
+</string>
+<string id="jup_a10_kill_all_bandit_text">
+<text> Paying Vano's debt too a sharp turn for the worse. I must eliminate the bandits. </text>
+</string>
+<string id="jup_a12_free_prisoner_get_reward_name">
+<text> Hostage: Receive the award from Mityai's friends </text>
+</string>
+<string id="jup_a12_free_prisoner_get_reward_text">
+<text> I saved Mityai. I should meet his friends back at the bar and get my reward. </text>
+</string>
+<string id="jup_a12_free_prisoner_name">
+<text> Hostage: Free Mityai </text>
+</string>
+<string id="jup_a12_free_prisoner_not_ready_name">
+<text> Hostage: Talk to Bear when ready </text>
+</string>
+<string id="jup_a12_free_prisoner_not_ready_text">
+<text> I need to talk with Bear before going to save the hostage. </text>
+</string>
+<string id="jup_a12_free_prisoner_power_name">
+<text> Hostage: Free Mityai by force </text>
+</string>
+<string id="jup_a12_free_prisoner_power_text">
+<text> I need to kill the bandits to save the stalker named Mityai. </text>
+</string>
+<string id="jup_a12_free_prisoner_power_wait_name">
+<text> Hostage: Meet with the stalkers </text>
+</string>
+<string id="jup_a12_free_prisoner_power_wait_text">
+<text> Several stalkers will help to save the hostage. I will have to meet with them at night for a joint attack the bandits. </text>
+</string>
+<string id="jup_a12_free_prisoner_ransom_name">
+<text> Hostage: Reach an agreement about the ransom </text>
+</string>
+<string id="jup_a12_free_prisoner_ransom_text">
+<text> I have to strike a deal with the leader of the bandits about Mityai's ransom. </text>
+</string>
+<string id="jup_a12_free_prisoner_text">
+<text> I have to save a stalker named Mityai, who was taken hostage by bandits. </text>
+</string>
+<string id="jup_a12_guide_prisoner_name">
+<text> Hostage: Exfiltrate the bandit camp with Mityai </text>
+</string>
+<string id="jup_a12_guide_prisoner_text">
+<text> It's too dangerous to stay too long in the bandit camp. I have to escort Mityai to the perimeter. </text>
+</string>
+<string id="jup_a12_talk_with_prisoner_name">
+<text> Hostage: Talk to Mityai </text>
+</string>
+<string id="jup_a12_talk_with_prisoner_text">
+<text> Mityai's in relative safety. I should talk to him about any further action. </text>
+</string>
+<string id="jup_a9_way_to_pripyat_tech_name">
+<text> Road to Pripyat: Talk to a technician about the underpass </text>
+</string>
+<string id="jup_a9_way_to_pripyat_tech_text">
+<text> It's clear that there's an underground passageway leading to Pripyat. It's been shut-down, filled with gas and sealed, so I need to find technology that can run the generator and open the gateway. </text>
+</string>
+<string id="jup_b10_ufo_memory_at_text">
+<text> The memory module is in the hands of a master. I have to wait until he unlocks its information. </text>
+</string>
+<string id="jup_b10_ufo_memory_name">
+<text> Unmanned Reconnaissance: Unlock the memory module </text>
+</string>
+<string id="jup_b10_ufo_memory_nitro_name">
+<text> Unmanned Reconnaissance: Take the memory module from Nitro </text>
+</string>
+<string id="jup_b10_ufo_memory_novikov_name">
+<text> Unmanned Reconnaissance: Take the memory module from Novikov </text>
+</string>
+<string id="jup_b10_ufo_memory_repaired_by_nitro_text">
+<text> Nitro cracked the memory module. I should pick up the module to examine what's recorded on it. </text>
+</string>
+<string id="jup_b10_ufo_memory_repaired_by_novikov_text">
+<text> Novikov unlocked the module. I should take the module and examine what's recorded on it. </text>
+</string>
+<string id="jup_b10_ufo_memory_started_text">
+<text> I managed to extract a memory module from a spy drone. I should give it to someone who can crack the security lock. </text>
+</string>
+<string id="jup_b10_ufo_memory_wait_name">
+<text> Unmanned Reconnaissance: Wait for the technician to unlock the memory module </text>
+</string>
+<string id="jup_b16_oasis_art_name">
+<text> Oasis: Confirm its existence with evidence </text>
+</string>
+<string id="jup_b16_oasis_art_text">
+<text> I found the Oasis, it really does have healing properties. I have to secure evidence of its existence and bring it to the scientists. </text>
+</string>
+<string id="jup_b16_oasis_artifact_back_name">
+<text> Oasis: Bring evidence to the scientists </text>
+</string>
+<string id="jup_b16_oasis_artifact_back_text">
+<text> I found the Oasis, it really does have healing properties. I have bring the artifact to the scientists. </text>
+</string>
+<string id="jup_b16_oasis_name">
+<text> Oasis: Check the veracity of the legend </text>
+</string>
+<string id="jup_b16_oasis_text">
+<text> Ozersky, a scientist from the bunker, asked me to try and find the legendary Oasis. If the rumours are true, then it must be a reservoir of healing water. However, no one knows for sure whether it actually exists. </text>
+</string>
+<string id="jup_b19_agreed_to_go_name">
+<text> Kopachi: Go and see the countryside with Yar. </text>
+</string>
+<string id="jup_b19_agreed_to_go_text">
+<text> Uncle Yar needs some help. I should go with him to the village of Kopachi. </text>
+</string>
+<string id="jup_b19_destroy_mercs_name">
+<text> Kopachi: Eliminate the mercenaries </text>
+</string>
+<string id="jup_b19_destroy_mercs_text">
+<text> It seems that uncle Yar foresaw the appearance of mercenaries. I have to eliminate them. </text>
+</string>
+<string id="jup_b19_following_yar_name">
+<text> Kopachi: Stay near uncle Yar </text>
+</string>
+<string id="jup_b19_following_yar_text">
+<text> Uncle Yar asked me to stay near him and remain quiet. </text>
+</string>
+<string id="jup_b19_talk_to_yar_name">
+<text> Kopachi: Talk to uncle Yar </text>
+</string>
+<string id="jup_b19_talk_to_yar_text">
+<text> All of the mercenaries are dead. I should talk to uncle Yar and get an explanation. </text>
+</string>
+<string id="jup_b1_bring_art_back_name">
+<text> AC Psi Factor: Bring the sample back to the scientists </text>
+</string>
+<string id="jup_b1_bring_art_back_text">
+<text> I should bring the sample I found to Herman, as agreed. It seems that this semi-anomalous object is the source of the alternating psi-radiation. </text>
+</string>
+<string id="jup_b1_get_art_name">
+<text> AC Psi Factor: Investigate the source </text>
+</string>
+<string id="jup_b1_get_art_text">
+<text> I have to examine the tunnel in search of an anomalous sample. Scientists believe that the alternating psi-field has a source and that it may be an artifact. </text>
+</string>
+<string id="jup_b1_join_squad_name">
+<text> AC Psi Factor: Meet with Poplar's squad </text>
+</string>
+<string id="jup_b1_join_squad_text">
+<text> Poplar's squad went to the tunnel with the alternating psi-field. I have to go and meet them there. </text>
+</string>
+<string id="jup_b1_meet_squad_name">
+<text> AC Psi Factor: Talk to Poplar </text>
+</string>
+<string id="jup_b1_meet_squad_text">
+<text> I'll join Poplar's squad and enter the tunnel with the alternating psi-radiation. Stalkers will cover the tunnel while I locate the sample Herman asked me to retrieve. </text>
+</string>
+<string id="jup_b200_tech_materials_brought_all_text">
+<text> Bring Nitro all radio tech materials </text>
+</string>
+<string id="jup_b200_tech_materials_brought_some_text">
+<text> Nitro needs materials for his electronics hobby. I can give him those I've already found or go and look around the place again. </text>
+</string>
+<string id="jup_b200_tech_materials_name">
+<text> Radiotech: Get the materials for Nitro </text>
+</string>
+<string id="jup_b200_tech_materials_text">
+<text> Nitro needs materials for his electronics hobby. According to him, it would make sense to look for them at the cement plant. </text>
+</string>
+<string id="jup_b202_actor_items_stolen_01_name">
+<text> Theft: Find out who could steal your stuff </text>
+</string>
+<string id="jup_b202_actor_items_stolen_01_text">
+<text> I should ask stalkers at Yanov, see if they didn't see anyone suspicious or know someone who could steal stuff from my personal locker. </text>
+</string>
+<string id="jup_b202_actor_items_stolen_02_name">
+<text> Theft: Check the train station </text>
+</string>
+<string id="jup_b202_actor_items_stolen_02_text">
+<text> I should check the old train station, apparently the suspicious stalker who could have stolen my stuff went there. </text>
+</string>
+<string id="jup_b202_actor_items_stolen_03_name">
+<text> Theft: Retrieve my belongings </text>
+</string>
+<string id="jup_b202_actor_items_stolen_03_text">
+<text> Snag hid all of the stolen items in a secret compartment, located in the sewer entryway. </text>
+</string>
+<string id="jup_b206_anomalous_grove_get_plant_name">
+<text> Abnormal Plantlife: Get a sample of the vegetation </text>
+</string>
+<string id="jup_b206_anomalous_grove_get_plant_text">
+<text> An anomalous area emerged recently on the edge of the quarry. Ozersky asked me to get a sample for study. </text>
+</string>
+<string id="jup_b206_anomalous_grove_have_plant_name">
+<text> Abnormal Plantlife: Bring the sample to Ozersky </text>
+</string>
+<string id="jup_b206_anomalous_grove_have_plant_text">
+<text> I have to bring Ozersky the sample he ordered. In return, he'll persuade Herman to part with a scientific suit.</text>
+</string>
+<string id="jup_b208_burers_hunt_kill_burers_name">
+<text> Hunting: Destroy the unknown mutants </text>
+</string>
+<string id="jup_b208_burers_hunt_kill_burers_text">
+<text> A group of stalkers came across some strange mutants in the tunnels north of the Jupiter factory. I need to sweep the place and kill all mutants that might reside there. </text>
+</string>
+<string id="jup_b208_burers_hunt_take_reward_name">
+<text> Hunting: Receive reward from Tutsan for killing the burers</text>
+</string>
+<string id="jup_b208_burers_hunt_take_reward_text">
+<text> I've killed the strange mutants in the tunnels north of the Jupiter factory. I should notify Tutsan and pick up my reward. </text>
+</string>
+<string id="jup_b209_hypotheses_1_name">
+<text> Hypothesis: Place the scanner in the centre of the clearing </text>
+</string>
+<string id="jup_b209_hypotheses_1_text">
+<text> To test Ozersky's hypothesis, I have to install a scanner near the centre of the clearing. </text>
+</string>
+<string id="jup_b209_hypotheses_2_name">
+<text> Hypothesis: Wait until the end of the experiment </text>
+</string>
+<string id="jup_b209_hypotheses_2_text">
+<text> The scanner is activated and records data. I need to wait until it collects enough information to confirm the hypothesis. </text>
+</string>
+<string id="jup_b209_hypotheses_3_name">
+<text> Hypothesis: Collect the scanner </text>
+</string>
+<string id="jup_b209_hypotheses_3_text">
+<text> I've collected enough data to confirm Ozersky's hypothesis. I should collect the scanner. </text>
+</string>
+<string id="jup_b209_hypotheses_4_name">
+<text> Hypothesis: Give the scanner to Ozersky </text>
+</string>
+<string id="jup_b209_hypotheses_4_text">
+<text> I have to give the scanner to Ozersky. The collected data should be enough for an unambiguous evaluation of his hypothesis. </text>
+</string>
+<string id="jup_b211_kill_bloodsuckers_name">
+<text> Hunting: Kill the marsh bloodsuckers </text>
+</string>
+<string id="jup_b211_kill_bloodsuckers_text">
+<text> Near the swamp north of the cement factory, a pack of marsh bloodsuckers was sighted. Local stalkers requested its destruction. </text>
+</string>
+<string id="jup_b211_take_reward_name">
+<text> Hunting: Receive Tutsan's reward for killing the marsh bloodsuckers</text>
+</string>
+<string id="jup_b211_take_reward_text">
+<text> I've killed the pack of marsh bloodsuckers. I should pick up my reward from the local stalkers at Tutsan. </text>
+</string>
+<string id="jup_b212_jupiter_kill_chimera_name">
+<text> Nocturnal Hunt: Kill the chimera </text>
+</string>
+<string id="jup_b212_jupiter_kill_chimera_text">
+<text> The chimera is a nocturnal predator, her daytime lair is unknown. I need to find and kill her at night, when she comes out to hunt at the ventilation complex. </text>
+</string>
+<string id="jup_b212_jupiter_tell_animalboy_about_chimera_name">
+<text> Nocturnal Hunt: Tell Tutsan about the death of the chimera </text>
+</string>
+<string id="jup_b212_jupiter_tell_animalboy_about_chimera_text">
+<text> The killer chimera is dead and Fox the hunter has been avenged. I have to tell Tutsan about this. </text>
+</string>
+<string id="jup_b217_get_tools_1_2_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_1_2_text">
+<text> Nitro asked me to find two sets of tools: one for fine and one for rough work. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour. </text>
+</string>
+<string id="jup_b217_get_tools_1_3_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_1_3_text">
+<text> Nitro asked me to find two sets of tools: one for rough work and one for calibration. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour. </text>
+</string>
+<string id="jup_b217_get_tools_1_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_1_text">
+<text> Nitro asked me to find a set of tools for rough work. He not only pay for the tool, but also be able to produce more serious modernization of weapons or body armour. </text>
+</string>
+<string id="jup_b217_get_tools_2_3_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_2_3_text">
+<text>  Nitro asked me to find two sets of tools: one for fine work and one for calibration. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour. </text>
+</string>
+<string id="jup_b217_get_tools_2_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_2_text">
+<text> Nitro asked me to find a set of tools for fine work. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour.  </text>
+</string>
+<string id="jup_b217_get_tools_3_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_get_tools_3_text">
+<text> Nitro asked me to find a set of tools for calibration. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour. </text>
+</string>
+<string id="jup_b217_mechanic_toolkit_search_name">
+<text> Tools: Bring Nitro the tool kits </text>
+</string>
+<string id="jup_b217_mechanic_toolkit_search_text">
+<text>  Nitro asked me to find three sets of tools: one for fine work, one for rough work and one for calibration. He will not only pay for the tools themselves, but he'll also be able to perform more serious modernizations of weapons and body armour. </text>
+</string>
+<string id="jup_b218_actor_outfit_name">
+<text> Pripyat-1: Find a suit with a closed-circuit breathing system </text>
+</string>
+<string id="jup_b218_actor_outfit_text">
+<text> To enter the Pripyat-1 underpass I need a suit with a closed-circuit breathing system, as the overpass is filled with carbon dioxide. </text>
+</string>
+<string id="jup_b218_monolith_guide_to_zulus_name">
+<text> Pripyat-1: Bring Rogue to Zulus </text>
+</string>
+<string id="jup_b218_monolith_guide_to_zulus_text">
+<text> I have to bring Rogue to Zulus and introduce him as our team mate. I doubt he'll be happy about seeing a Monolith suit, though. </text>
+</string>
+<string id="jup_b218_monolith_name">
+<text> Pripyat-1: Talk to Rogue about a protective suit </text>
+</string>
+<string id="jup_b218_monolith_text">
+<text> Pripyat-1 underpass is filled with carbon dioxide. I need to make sure that Rogue has a suit with a closed-circuit breathing system. </text>
+</string>
+<string id="jup_b218_pripyat_group_gathering_name">
+<text> Pripyat-1: Gather a squad for an expedition to Pripyat </text>
+</string>
+<string id="jup_b218_pripyat_group_gathering_text">
+<text> Nitro can open the gateway to the Pripyat-1 underpass, but he refuses to go to Jupiter without proper protection and recommended that I should bring a couple of fighters along for our trip through the tunnels. Zulus joined my squad and recommended a few others as candidates.</text>
+</string>
+<string id="jup_b218_pripyat_group_zulus_talk_name">
+<text> Pripyat-1: Talk to Zulus about an expedition to Pripyat </text>
+</string>
+<string id="jup_b218_pripyat_group_zulus_talk_text">
+<text> Nitro can open the gateway to the Pripyat-1 underpass, but he refuses to go to Jupiter without proper protection and recommended that I should bring a couple of fighters along for our trip through the tunnels. He said that I should talk with Zulus, who can help me assemble a squad. </text>
+</string>
+<string id="jup_b218_soldier_guide_to_zulus_name">
+<text> Pripyat-1: Bring Sokolov to Zulus </text>
+</string>
+<string id="jup_b218_soldier_guide_to_zulus_text">
+<text> Sokolov agrees to go to Pripyat and I've arranged a protective suit for him. I need to take him to Zulus and introduce him as our team mate. </text>
+</string>
+<string id="jup_b218_soldier_name">
+<text> Pripyat-1: Talk to Sokolov about the protective suit </text>
+</string>
+<string id="jup_b218_soldier_talk_to_scientist_name">
+<text> Pripyat-1: Talk to Ozersky about the suit for Sokolov </text>
+</string>
+<string id="jup_b218_soldier_talk_to_scientist_text">
+<text> Sokolov can use a scientist suit, but Herman is unlikely to give him one. I should talk to Ozersky, he's far more kind and agreeable. </text>
+</string>
+<string id="jup_b218_soldier_tell_outfit_name">
+<text> Pripyat-1: Tell Sokolov about the scientific suit </text>
+</string>
+<string id="jup_b218_soldier_tell_outfit_text">
+<text> Ozersky was very pleased with my sample of the vegetation. He asked me to tell Sokolov that a protective suit will be waiting for him. </text>
+</string>
+<string id="jup_b218_soldier_text">
+<text> Pripyat-1 underpass is filled with carbon dioxide. I need to tell Sokolov that he will need a suit with a closed-circuit breathing system. </text>
+</string>
+<string id="jup_b218_stalker_bring_money_name">
+<text> Pripyat-1: Give Vano money for the suit </text>
+</string>
+<string id="jup_b218_stalker_bring_money_text">
+<text> The suit that forced Vano to become indebted to bandits has a closed-circuit breathing system. Vano had to pay his debts and now he needs 3000 to buy the suit back. </text>
+</string>
+<string id="jup_b218_stalker_guide_to_zulus_name">
+<text> Pripyat-1: Bring Vano to Zulus </text>
+</string>
+<string id="jup_b218_stalker_guide_to_zulus_text">
+<text> Vano agreed to go to Pripyat with me. I need to take him to Zulus and introduce him as our team mate. This trip will help him to get back his cash. </text>
+</string>
+<string id="jup_b218_stalker_name">
+<text> Pripyat-1: Talk to Vano about a protective suit </text>
+</string>
+<string id="jup_b218_stalker_text">
+<text> The Pripyat-1 underpass is filled with carbon dioxide. I need to tell Vano that he will need a suit with a closed-circuit breathing system. </text>
+</string>
+<string id="jup_b25_accuse_flint_end_text">
+<text> Flint is that damn bastard Soroka. I have to either tell the Creek stalkers or one of the factions about his deeds and teach him a lesson. </text>
+</string>
+<string id="jup_b25_accuse_flint_first_text">
+<text> Flint is obviously giving himself too much credit, talking about stuff he didn't even see. I ought to straighten him out. </text>
+</string>
+<string id="jup_b25_accuse_flint_name">
+<text> Lack of Merit: Deal with Flint </text>
+</string>
+<string id="jup_b25_accuse_flint_second_text">
+<text> Flint obviously loves to credit himself with the work of others. I ought to put him in his rightful place. </text>
+</string>
+<string id="jup_b25_accuse_flint_third_text">
+<text> Flint's gloating is way too much. I need to show him the truth. </text>
+</string>
+<string id="jup_b25_senya_accuse_flint_text">
+<text> Flint is that damn bastard Soroka. I have to either tell the Creek stalkers or one of the factions about his deeds and teach him a lesson. </text>
+</string>
+<string id="jup_b32_get_scanners_task_name">
+<text> Anomalous Studies: Get the scanners from the technician </text>
+</string>
+<string id="jup_b32_get_scanners_task_text">
+<text> I need to get the scanners from Novikov. Herman wants to collect artifact statistics, so I have to place each device in the centre of an anomaly. </text>
+</string>
+<string id="jup_b32_task_name">
+<text> Anomalous Studies: Place the scanners in the anomalies </text>
+</string>
+<string id="jup_b32_task_reward_name">
+<text> Anomalous Studies: A reward </text>
+</string>
+<string id="jup_b32_task_reward_text">
+<text> I should pick up my reward from Herman, since he can collect his statistics now. </text>
+</string>
+<string id="jup_b32_task_text">
+<text> I need to install the scanners in the centre of each anomaly. Herman wants to collect artifact statistics, so I have to place them in several anomalies. </text>
+</string>
+<string id="jup_b43_bring_fuzz_kolobok_name">
+<text> Academic Deal: Bring Garik a Kolobok</text>
+</string>
+<string id="jup_b43_bring_fuzz_kolobok_text">
+<text> Garik would like to finish his contract, but he needs a Kolobok for this. I should bring him one.</text>
+</string>
+<string id="jup_b43_bring_mincer_meat_name">
+<text> Academic Deal: Bring Garik a Meat Chunk </text>
+</string>
+<string id="jup_b43_bring_mincer_meat_text">
+<text>  Garik would like to finish his contract, but he needs a Meat Chunk for this. I should bring him one. </text>
+</string>
+<string id="jup_b43_contract_started_name">
+<text> Academic Deal: Bring Garik a Kolobok and a Meat Chunk </text>
+</string>
+<string id="jup_b43_contract_started_text">
+<text>  Garik would like to finish his contract, but he needs a Kolobok and a Meat Chunk for this. I should bring him one. </text>
+</string>
+<string id="jup_b43_thanks_for_2_artifacts_name">
+<text> Academic Deal: Delivered the artefacts</text>
+</string>
+<string id="jup_b43_thanks_for_2_artifacts_text">
+<text> Garik received both artefacts. His contract is now completed. </text>
+</string>
+<string id="jup_b46_duty_founder_pda_name">
+<text> Past Duty: Choose whom to give the PDA </text>
+</string>
+<string id="jup_b46_duty_founder_pda_text">
+<text> I found General Tachenko's PDA. He died in a spatial anomaly long ago, but his last words are very interesting... Many groups will be interested in the last minutes of the legendary founder of Duty. </text>
+</string>
+<string id="jup_b46_spatial_bubble_name">
+<text> Anomalous Activity: Investigate the area with an enhanced detector </text>
+</string>
+<string id="jup_b46_spatial_bubble_text">
+<text> Scientist scanners picked up anomalous activity north of the bunker. I should explore the location with an enhanced detector. </text>
+</string>
+<string id="jup_b47_bunker_guards_01_name">
+<text> Scientific Guard: Find reliable people </text>
+</string>
+<string id="jup_b47_bunker_guards_01_text">
+<text> The scientist bunker was left without any protection. I need to help them find a group of reliable people to replace the mercs. </text>
+</string>
+<string id="jup_b47_bunker_guards_02_name">
+<text> Scientific Guard: Return to Herman for a reward </text>
+</string>
+<string id="jup_b47_bunker_guards_02_text">
+<text> I found a new protection for the scientist bunker. I should go back to Herman and get my reward. </text>
+</string>
+<string id="jup_b47_jupiter_products_01_name">
+<text> Tomorrow's Technology: Find documents at the Jupiter factory </text>
+</string>
+<string id="jup_b47_jupiter_products_01_text">
+<text> Herman is interested in what was developed at the Jupiter factory before it closed down. I have to search the administration building for documentation.</text>
+</string>
+<string id="jup_b47_jupiter_products_02_name">
+<text> Tomorrow's Technology: Return the classified documents to Herman </text>
+</string>
+<string id="jup_b47_jupiter_products_02_text">
+<text> Documents I've found state that all technical documentation was removed from the factory. I should give this document to Herman, at least. </text>
+</string>
+<string id="jup_b47_jupiter_products_03_name">
+<text> Tomorrow's Technology: Deliver classified documents and Black's PDA to Herman </text>
+</string>
+<string id="jup_b47_jupiter_products_03_text">
+<text> While searching for the documentation, I was attacked by mercenaries. Judging by Black's PDA, they were tasked with preventing any classified information from reaching the scientists. Regardless, I couldn't find the technical documentation, just a note that it was removed from the factory. Herman would be interested in both the PDA and this document. </text>
+</string>
+<string id="jup_b4_monolith_squad_help_name">
+<text> Monolith Survivors: Talk with Yanov residents about shelter </text>
+</string>
+<string id="jup_b4_monolith_squad_help_text">
+<text> I've encountered a Monolith squad, who are not fanatical fighters any more, free of the Monolith's whispers. They are now looking for shelter from blowouts and mutants. I should talk with Yanov residents if they'd be willing to give asylum to former Monolithans. </text>
+</string>
+<string id="jup_b4_stalkers_come_duty_text">
+<text> I should bring Duty recruiters to the former Monolith squad. If they accept them, these former fanatics will be able to enter Yanov and be sheltered from mutants and blowouts.</text>
+</string>
+<string id="jup_b4_stalkers_come_freedom_text">
+<text> I should bring Freedom recruiters to the former Monolith squad. If they accept them, these former fanatics will be able to enter Yanov and be sheltered from mutants and blowouts. </text>
+</string>
+<string id="jup_b4_stalkers_come_name">
+<text> Monolith Survivors: Take recruiters to the former Monolith squad </text>
+</string>
+<string id="jup_b6_anom_1_guard_name">
+<text> Anomalous Studies: Provide cover for stalkers </text>
+</string>
+<string id="jup_b6_anom_1_guard_text">
+<text> It seems anomaly measurements attracted mutants. I have to cover the stalkers until they finish taking measurements. </text>
+</string>
+<string id="jup_b6_anom_2_guard_name">
+<text> Anomalous Studies: Provide cover for stalkers </text>
+</string>
+<string id="jup_b6_anom_2_guard_text">
+<text> It seems anomaly measurements attracted zombies from Kopachi. I have to cover the stalkers until they finish taking measurements. </text>
+</string>
+<string id="jup_b6_get_reward_name">
+<text> Anomalous Studies: Talk to Herman </text>
+</string>
+<string id="jup_b6_get_reward_text">
+<text> We've finished taking anomaly measurements. I need to inform the scientists and collect my reward. </text>
+</string>
+<string id="jup_b6_get_to_anomal_place_name">
+<text> Anomalous Studies: Talk to the stalkers </text>
+</string>
+<string id="jup_b6_get_to_anomal_place_text">
+<text> I should talk to the stalkers and choose which anomaly to measure. </text>
+</string>
+<string id="jup_b6_travel_home_name">
+<text> Anomalous Studies: Talk to the stalkers </text>
+</string>
+<string id="jup_b6_travel_home_text">
+<text> We've taken all the necessary measurements. We can now return to the scientist bunker. </text>
+</string>
+<string id="jup_b6_travel_name">
+<text> Anomalous Studies: Talk to the stalkers </text>
+</string>
+<string id="jup_b6_travel_text">
+<text> We've taken all the necessary measurements. Time to pick another anomaly. </text>
+</string>
+<string id="jup_b6_watch_topol_squad_six_name">
+<text> Anomalous Studies: Provide cover for stalkers </text>
+</string>
+<string id="jup_b6_watch_topol_squad_six_text">
+<text> Herman gave me a job: I have to cover their stalkers while they are taking measurements of the anomalies. </text>
+</string>
+<string id="jup_b8_heli_4_crash_name">
+<text> Stingray-4: Investigate crash site</text>
+</string>
+<string id="jup_b8_heli_4_crash_name_2">
+<text> Stingray-4: Identify what fried the electronics </text>
+</string>
+<string id="jup_b8_heli_4_crash_text">
+<text> Investigate Stingray-4s crash site. </text>
+</string>
+<string id="jup_b8_heli_4_crash_text_2">
+<text> I need to identify the source of the powerful electric shock that hit Stingray-4. </text>
+</string>
+<string id="jup_b9_blackbox_decrypting_name">
+<text> Stingray-1: Give the black box to a technician for decrypting </text>
+</string>
+<string id="jup_b9_blackbox_decrypting_text">
+<text> Stingray-1's black box survived the landing. I need to give it to a technician, so that he can decrypt its contents for me. </text>
+</string>
+<string id="jup_b9_blackbox_descrypted_after_3_name">
+<text> Stingray-1: Waiting until the black box is decrypted </text>
+</string>
+<string id="jup_b9_blackbox_descrypted_after_3_text">
+<text> Nitro accepted the black box for decryption. He estimated that he will need about three hours to crack it, so I have to wait. </text>
+</string>
+<string id="jup_b9_go_for_blackbox_descryption_name">
+<text> Stingray-1: return to Nitro for information from the "black box» </text>
+</string>
+<string id="jup_b9_go_for_blackbox_descryption_text">
+<text> Nitro already had to finish the decryption. Must return to him for information from the "black box». </text>
+</string>
+<string id="jup_b9_heli_1_crash_name">
+<text> Stingray-1: Investigate the crash site</text>
+</string>
+<string id="jup_b9_heli_1_crash_text">
+<text> Investigate Stingray-1's crash site. </text>
+</string>
+<string id="pas_b400_pripyat_name">
+<text> Pripyat-1: Reach Pripyat </text>
+</string>
+<string id="pas_b400_pripyat_text">
+<text> We need to pass through the Pripyat-1 underpass and reach the military evacuation zone in Pripyat. </text>
+</string>
+<string id="zat_a9_way_gases_check_chemistry_workshop_name">
+<text> Road to Pripyat: Check the chemical workshops of the Jupiter factory </text>
+</string>
+<string id="zat_a9_way_gases_check_chemistry_workshop_text">
+<text> The chemical workshops at Jupiter should have information about the Pripyat-1 underpass conservation method. It was supposedly filled with some gas. </text>
+</string>
+<string id="zat_a9_way_gates_check_corps_name">
+<text> Road to Pripyat: Check the administration building of the Jupiter factory </text>
+</string>
+<string id="zat_a9_way_gates_check_corps_text">
+<text> The Guide does not know a safe route to Pripyat. He suggested that I should look for information concerning underground tunnels that can lead from Jupiter to the city. Administration sounds like a good place to start.</text>
+</string>
+<string id="zat_a9_way_gates_check_electrical_workshop_name">
+<text> Road to Pripyat: Check the electrical appliances workshop  </text>
+</string>
+<string id="zat_a9_way_gates_check_electrical_workshop_text">
+<text> Documents found in Jupiter's administration mention evacuating the industrial complex from the factory. I should seek further information in the electrical appliances workshop. </text>
+</string>
+<string id="zat_a9_way_gates_check_transport_workshop_name">
+<text> Road to Pripyat: Check the transport gateway to the Pripyat-1 underpass </text>
+</string>
+<string id="zat_a9_way_gates_check_transport_workshop_text">
+<text> The entrance to the underground underpass is a transport gateway. I have to check that place and look for any info about the underpass. </text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_archives_name">
+<text> Road to Pripyat: Check the first division of the Jupiter Factory</text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_archives_text">
+<text> The first division should have information on the Pripyat-1 underpass, which can be very useful. </text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_delivery_department_name">
+<text> Road to Pripyat: Check the delivery department of the Jupiter factory </text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_delivery_department_text">
+<text> According to records from the electrical appliances workshop, the evacuation was to include the delivery department. I need to check that place. </text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_repair_workshop_name">
+<text> Road to Pripyat: Check the repair shop at the Jupiter factory </text>
+</string>
+<string id="zat_a9_way_to_pripyat_check_repair_workshop_text">
+<text> The delivery department was storing information about losses of Product No. 62 at the repair workshops. I have to check it out. </text>
+</string>
+<string id="zat_a9_way_to_pripyat_tell_stalker_guide_name">
+<text> Road to Pripyat: Ask the guide </text>
+</string>
+<string id="zat_a9_way_to_pripyat_tell_stalker_guide_text">
+<text> According to the black box recording, soldiers were to assemble at evacuation zone B28, located in Pripyat. I need to find a way to get there - time to talk to the guide. </text>
+</string>
+<string id="zat_b207_depot_reward_task_name">
+<text> Duty Cache: Take your reward </text>
+</string>
+<string id="zat_b207_morgan_depot_task_name">
+<text> Duty Cache: Meet with Morgan </text>
+</string>
+<string id="zat_b207_morgan_depot_task_text">
+<text> In return for my silence, Morgan agreed to grant me access to Duty's cache. I have to meet him near the quarry.</text>
+</string>
+<string id="pas_b400_pripyat_gate_text">
+<text> In order to advance further, you need to open the gate. </text>
+</string>
+<string id="pas_b400_pripyat_door_text">
+<text> In order to advance further, you need to open the door. </text>
+</string>
+<string id="pas_b400_pripyat_hall_door_text">
+<text> In order to advance further, you need to turn on the power. </text>
+</string>
+<string id="pas_b400_pripyat_control_text">
+<text> In order to advance further, you need to open the gate. Presumably, this can be done from the control room. </text>
+</string>
+<string id="jup_b6_employ_stalkers_name">
+<text> Study Group: Find new stalkers </text>
+</string>
+<string id="jup_b6_employ_stalkers_text">
+<text> The research group which worked for the scientists is dead. I need to find them new employees, so that their work can continue. </text>
+</string>
+<string id="jup_b6_employ_stalkers_reward_name">
+<text> Study Group: Return to Herman for a reward </text>
+</string>
+<string id="jup_b6_employ_stalkers_reward_text">
+<text> I've found a new research group for Herman, he owes me. Time to collect. </text>
+</string>
+<string id="jup_b218_soldier_do_scientist_quest_name">
+<text> Pripyat-1: Perform a task for Ozersky </text>
+</string>
+<string id="jup_b218_soldier_do_scientist_quest_text">
+<text> In order for Sokolov to get a protective suit, I need to perform a task for Ozersky and bring him a sample of an anomalous plant. </text>
+</string>
+<string id="jup_b200_tech_materials_inside_text">
+<text> Nitro needs materials for his electronics hobby. I can find them in the cement plant. </text>
+</string>
+<string id="jup_b25_flint_and_senya_text">
+<text> Flint left Sliver to die in the anomaly. I have to confront him. </text>
+</string>
+<string id="jup_b25_revenge_senya_name">
+<text> Revenge: Avenge Sliver </text>
+</string>
+<string id="jup_b25_revenge_senya_text">
+<text> I have to find the guy who left Sliver to die in the anomaly and took his artefact and left. Unfortunately, Sliver did not have enough time to tell me the name of the stalker - I only know that he was a Freedom fighter». </text>
+</string>
+<string id="zat_b207_depot_reward_task_duty_text">
+<text> Colonel Shulga allowed me to take any equipment from the Duty cache, if we can recapture it from Freedom. </text>
+</string>
+<string id="zat_b207_depot_reward_task_freedom_text">
+<text> Loki allowed me to loot the Duty cache while his men hold the fort. </text>
+</string>
+</string_table> 
+
+

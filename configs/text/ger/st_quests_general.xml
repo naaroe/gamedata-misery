@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="hide_from_surge_message">
+		<text>Achtung! Emission steht kurz bevor!</text>
+	</string>
+	<string id="hide_from_surge_descr_1_a">
+		<text>Emission steht bevor! Sofort Deckung suchen!</text>
+	</string>
+	<string id="hide_from_surge_descr_2_a">
+		<text>Es ist Ihnen nicht gestattet die Deckung wдhrend einer Emission zu verlassen.</text>
+	</string>
+	<string id="hide_from_surge_name_1">
+		<text>Emission! Suchen Sie sich Deckung!</text>
+	</string>
+	<string id="hide_from_surge_name_2">
+		<text>Emission: Bleiben Sie in Deckung!</text>
+	</string>
+
+	<!-- AtmosFear Fallout -->
+	<string id="hide_from_fallout_rad_message_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="hide_from_fallout_rad_message">
+		<text>Radioaktiver Fallout beginnt.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_1_a">
+		<text>Das radioaktive Strahlungslevel ist kritisch. Sie sollten sich vor dem Fallout verstecken!</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_2_a">
+		<text>Sie sollten Ihre Deckung wдhrend eines radioaktivem Fallouts nicht verlassen.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_1">
+		<text>Radioaktiver Fallout: Finden Sie Deckung</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_2">
+		<text>Radioaktiver Fallout: Bleiben Sie in Deckung</text>
+	</string>
+	<string id="end_fallout_rad_message_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="end_fallout_rad_message">
+		<text>Radioaktiver Fallout ist zu Ende</text>
+	</string>
+	
+	<string id="hide_from_fallout_acid_message_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="hide_from_fallout_acid_message">
+		<text>Chemischer Fallout beginnt.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_1_a">
+		<text>Hohe Kontamination. Sie sollten sich vor dem chemischen Fallout schьtzen.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_2_a">
+		<text>Sie sollten die Deckung wдhrend eines chemischen Fallouts nicht verlassen.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_1">
+		<text>Chemischer Fallout: Finden Sie Deckung</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_2">
+		<text>Chemischer Fallout: Bleiben Sie in Deckung</text>
+	</string>
+	<string id="end_fallout_acid_message_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="end_fallout_acid_message">
+		<text>Chemischer Fallout ist zu Ende</text>
+	</string>
+
+	<!-- AtmosFear Psi Storm -->
+	<string id="hide_from_psi_storm_message_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="hide_from_psi_storm_message">
+		<text>Psi-Sturm beginnt.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_1_a">
+		<text>Sie sollten sich vor dem Psi-Sturm verstecken.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_2_a">
+		<text>Sie sollten Ihre Deckung wдhrend eines Psi-Sturms nicht verlassen.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_1">
+		<text>Psi-Sturm: Suchen Sie Deckung</text>
+	</string>
+	<string id="hide_from_psi_storm_name_2">
+		<text>Psi-Sturm: Bleiben Sie in Deckung</text>
+	</string>
+	<string id="end_psi_storm_caption">
+		<text>Achtung!</text>
+	</string>
+	<string id="end_psi_storm_message">
+		<text>Psi-Sturm ist zu Ende</text>
+	</string>
+
+</string_table>

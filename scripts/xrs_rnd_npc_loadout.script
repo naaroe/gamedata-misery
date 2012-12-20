@@ -1,0 +1,107 @@
+--[[
+************************************************************
+					xrs_rnd_npc_loadout
+by Alundaio
+************************************************************
+--]]
+
+
+local ini = ini_file("ai_tweaks\\xrs_rnd_npc_loadout.ltx")
+function on_game_start()
+	local Enabled = alun_utils.read_from_ini(ini,"plugin","enable","bool",true)
+	if not (Enabled) then return end
+	callback_register("se_stalker_on_spawn",on_creation)
+end
+
+function on_creation(se_npc)
+	if not (se_npc:clsid() == clsid.script_stalker) then
+		return
+	end
+
+	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
+	local player_id = squad and squad.player_id
+	local comm = se_npc:community()
+	local rank = ranks.get_obj_rank_name(se_npc)
+
+	create_weapon_on_npc(se_npc,comm,rank,player_id,"primary")
+	create_weapon_on_npc(se_npc,comm,rank,player_id,"secondary")
+	create_weapon_on_npc(se_npc,comm,rank,player_id,"tertiary")
+	create_items_on_npc(se_npc,comm,rank,player_id)
+end
+
+function ini_get_list(se_npc,comm,rank,player_id,val)
+	if (ini:section_exist(se_npc:section_name())) then
+		return alun_utils.parse_list(ini,se_npc:section_name(),val)
+	end
+	return player_id and alun_utils.parse_list(ini,player_id.."_"..rank,val) or alun_utils.parse_list(ini,comm.."_"..rank,val)
+end
+
+function create_items_on_npc(se_npc,comm,rank,player_id)
+	local t = ini_get_list(se_npc,comm,rank,player_id,"extra")
+	if not (t) then return end
+	for i,v in ipairs(t) do
+		spawn_extra_items(se_npc,v)
+	end
+end
+
+function spawn_extra_items(se_npc,str)
+	if not (str) then return end
+	if (str == "") then return end
+
+	local item = alun_utils.str_explode(str,":")
+
+	if (system_ini():section_exist(item[1])) then
+		item[2] = item[2] and tonumber(item[2]) or 1
+		item[3] = item[3] and tonumber(item[3]) or 1
+		local amt = math.random(item[2],item[3])
+		if (amt > 0) then
+			for i=1,amt do
+				alife():create(item[1],se_npc.position,0,0,se_npc.id)
+			end
+		end
+	end
+end
+
+function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
+	local t = ini_get_list(se_npc,comm,rank,player_id,slot)
+	if not (t) then
+		return
+	end
+
+	local info = select_random_index(t)
+	if not (info) or (info == "") or (info == "none") then
+		return
+	end
+
+	local weapon = alun_utils.str_explode(info,":")
+
+	if (system_ini():section_exist(weapon[1])) then
+		local se_wpn = alife():create(weapon[1],se_npc.position,0,0,se_npc.id)
+
+		if (se_wpn) then
+			if (weapon[2] or weapon[3]) then
+				local data = alun_utils.get_weapon_data(se_wpn)
+				data.addon_flags = weapon[2] or 0
+				data.ammo_type = weapon[3] or 0
+				alun_utils.set_weapon_data(data,se_wpn)
+			end
+
+			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")
+			local ammo_section = weapon[3] and ammos[weapon[3]+1] or ammos[1]
+
+			local ammo_count = ini_get_list(se_npc,comm,rank,player_id,"ammo_1")
+			if (ammo_count) then
+				ammo_count = weapon[4] and weapon[5] and math.random( tonumber(weapon[4]),tonumber(weapon[5]) ) or math.random( tonumber(ammo_count[1]) or 1 , tonumber(ammo_count[2]) or 1)
+				create_ammo(ammo_section,se_npc.position,0,0,se_npc.id,ammo_count)
+			end
+		end
+	end
+end
+
+function select_random_index(t)
+	if not (t) or (#t == 0) then
+		return
+	end
+	local n = alun_utils.rand_num(1,#t)
+	return t[n]
+end

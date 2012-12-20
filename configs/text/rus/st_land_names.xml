@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_zat_b55_name">
+		<text>Claw Anomaly</text>
+	</string>
+	<string id="st_zat_b100_name">
+		<text>Iron Forest Anomaly</text>
+	</string>
+	<string id="st_zat_b104_name">
+		<text>Sawmill</text>
+	</string>
+	<string id="st_zat_b38_name">
+		<text>BIS Circle</text>
+	</string>
+	<string id="st_zat_b40_name">
+		<text>Water Treatment Facility</text>
+	</string>
+	<string id="st_zat_b56_name">
+		<text>Circus Anomaly</text>
+	</string>
+	<string id="st_zat_b5_name">
+		<text>Forest Authority</text>
+	</string>
+	<string id="st_zat_a2_name">
+		<text>Skadovsk Wreck</text>
+	</string>
+	<string id="st_zat_b20_name">
+		<text>Burnt Farm</text>
+	</string>
+	<string id="st_zat_b53_name">
+		<text>Boiler Anomaly</text>
+	</string>
+	<string id="st_zat_b101_name">
+		<text>Swamp</text>
+	</string>
+	<string id="st_zat_b106_name">
+		<text>Emerald Camp</text>
+	</string>
+	<string id="st_zat_b7_name">
+		<text>Shevchenko Wreck</text>
+	</string>
+	<string id="st_zat_b14_name">
+		<text>Dredger</text>
+	</string>
+	<string id="st_zat_b52_name">
+		<text>Port Cranes</text>
+	</string>
+	<string id="st_zat_b39_name">
+		<text>Pineoak Anomaly</text>
+	</string>
+	<string id="st_zat_b33_name">
+		<text>Gas Station</text>
+	</string>
+	<string id="st_zat_b18_name">
+		<text>Ark</text>
+	</string>
+	<string id="st_zat_b54_name">
+		<text>Tripe Anomaly</text>
+	</string>
+	<string id="st_zat_b12_name">
+		<text>Bridge to Processing </text>
+	</string>
+	<string id="st_zat_b28_name">
+		<text>Southern Plateau</text>
+	</string>
+	<string id="st_zat_b103_name">
+		<text>Workshop Substation</text>
+	</string>
+	<string id="st_jup_b1_name">
+		<text>Ashes Anomaly</text>
+	</string>
+	<string id="st_jup_b46_name">
+		<text>Cooling Tower</text>
+	</string>
+	<string id="st_jup_b202_name">
+		<text>Railway Station</text>
+	</string>
+	<string id="st_jup_b211_name">
+		<text>Smoothie Anomaly</text>
+	</string>
+	<string id="st_jup_b200_name">
+		<text>Cement Plant</text>
+	</string>
+	<string id="st_jup_b19_name">
+		<text>Kopachi Village</text>
+	</string>
+	<string id="st_jup_a6_name">
+		<text>Yanov Station</text>
+	</string>
+	<string id="st_jup_b25_name">
+		<text>Quarry</text>
+	</string>
+	<string id="st_jup_b6_name">
+		<text>Scientist Bunker</text>
+	</string>
+	<string id="st_jup_b205_name">
+		<text>Volkhov SAM Base</text>
+	</string>
+	<string id="st_jup_b206_name">
+		<text>Rotten Grove</text>
+	</string>
+	<string id="st_jup_b32_name">
+		<text>Parking</text>
+	</string>
+	<string id="st_jup_a10_name">
+		<text>Checkpoint</text>
+	</string>
+	<string id="st_jup_b209_name">
+		<text>Asphalt Anomaly</text>
+	</string>
+	<string id="st_jup_b208_name">
+		<text>East Tunnel</text>
+	</string>
+	<string id="st_jup_a12_name">
+		<text>Storage Containers</text>
+	</string>
+	<string id="st_jup_b212_name">
+		<text>Ventilation Complex</text>
+	</string>
+	<string id="st_jup_b9_name">
+		<text>Heliport</text>
+	</string>
+	<string id="st_jup_b201_name">
+		<text>Concrete Bathtub Anomaly</text>
+	</string>
+	<string id="st_jup_a9_name">
+		<text>Jupiter Factory</text>
+	</string>
+	<string id="st_pri_a28_name">
+		<text>Prometheus Cinema</text>
+	</string>
+	<string id="st_pri_b36_name">
+		<text>River Port</text>
+	</string>
+	<string id="st_pri_b303_name">
+		<text>Old Customer Services Centre</text>
+	</string>
+	<string id="st_pri_b301_name">
+		<text>Pripyat Secondary School No. 1</text>
+	</string>
+	<string id="st_pri_a17_name">
+		<text>Hospital</text>
+	</string>
+	<string id="st_pri_b306_name">
+		<text>"Jubilee" Palace of Arts</text>
+	</string>
+	<string id="st_pri_a16_name">
+		<text>"Novelty" Laundry and Dry Cleaning</text>
+	</string>
+	<string id="st_pri_a25_name">
+		<text>Kindergarten No. 3</text>
+	</string>
+	<string id="st_pri_b35_name">
+		<text>Block Housing</text>
+	</string>
+	<string id="st_pri_a21_name">
+		<text>Supermarket</text>
+	</string>
+	<string id="st_pri_b304_name">
+		<text>Department Store</text>
+	</string>
+	<string id="st_pri_a18_name">
+		<text>Book Shop</text>
+	</string>
+	<string id="st_pri_b307_name">
+		<text>Vulcan Anomaly</text>
+	</string>
+	<string id="st_pri_b302_name">
+		<text>Loza Anomaly</text>
+	</string>
+</string_table>

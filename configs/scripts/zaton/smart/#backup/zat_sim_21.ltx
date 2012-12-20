@@ -1,0 +1,19 @@
+[smart_terrain];zat_sim_21
+squad_id = 14
+max_population = 1
+
+respawn_params = respawn@zat_sim_21
+
+[respawn@zat_sim_21]
+spawn_boar
+spawn_flesh
+
+[spawn_boar]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 1
+
+;;; unused
+
+[spawn_flesh]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = 0

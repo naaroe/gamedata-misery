@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="hide_from_surge_message">
+		<text>Uwaga! Emisja rozpocznie siк za:</text>
+	</string>
+	<string id="hide_from_surge_descr_1_a">
+		<text>Musisz natychmiast biec do najbliїszego schronienia i ukryж siк przed emisj№.</text>
+	</string>
+	<string id="hide_from_surge_descr_2_a">
+		<text>Nie moїesz wychodziж ze schronienia w trakcie emisji.</text>
+	</string>
+	<string id="hide_from_surge_name_1">
+		<text>Emisja: znajdџ schronienie</text>
+	</string>
+	<string id="hide_from_surge_name_2">
+		<text>Emisja: czekaj w schronieniu</text>
+	</string>
+
+	<!-- AtmosFear Fallout -->
+	<string id="hide_from_fallout_rad_message_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="hide_from_fallout_rad_message">
+		<text>Rozpoczyna siк opad radioaktywny.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_1_a">
+		<text>Poziom promieniowania jest niebezpieczny. Powinieneњ ukryж siк przed opadem radioaktywnym.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_2_a">
+		<text>Nie powinieneњ wychodziж ze schronienia w trakcie opadu radioaktywnego.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_1">
+		<text>Opad radioaktywny: znajdџ schronienie</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_2">
+		<text>Opad radioaktywny: czekaj w schronieniu</text>
+	</string>
+	<string id="end_fallout_rad_message_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="end_fallout_rad_message">
+		<text>Opad radioaktywny zakoсczyі siк.</text>
+	</string>
+	
+	<string id="hide_from_fallout_acid_message_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="hide_from_fallout_acid_message">
+		<text>Rozpoczyna siк toksyczny opad.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_1_a">
+		<text>Poziom skaїenia jest niebezpieczny. Powinieneњ ukryж siк przed toksycznym opadem.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_2_a">
+		<text>Nie powinieneњ wychodziж ze schronienia w trakcie toksycznego opadu.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_1">
+		<text>Toksyczny opad: znajdџ schronienie</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_2">
+		<text>Toksyczny opad: czekaj w schronieniu</text>
+	</string>
+	<string id="end_fallout_acid_message_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="end_fallout_acid_message">
+		<text>Toksyczny opad zakoсczyі siк.</text>
+	</string>
+
+	<!-- AtmosFear Psi Storm -->
+	<string id="hide_from_psi_storm_message_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="hide_from_psi_storm_message">
+		<text>Rozpoczyna siк psioniczny sztorm.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_1_a">
+		<text>Powinieneњ ukryж siк przed psionicznym sztormem.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_2_a">
+		<text>Nie powinieneњ wychodziж ze schronienia w trakcie psionicznego sztormu.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_1">
+		<text>Psioniczny sztorm: znajdџ schronienie</text>
+	</string>
+	<string id="hide_from_psi_storm_name_2">
+		<text>Psioniczny sztorm: czekaj w schronieniu</text>
+	</string>
+	<string id="end_psi_storm_caption">
+		<text>Uwaga!</text>
+	</string>
+	<string id="end_psi_storm_message">
+		<text>Psioniczny sztorm zakoсczyі siк.</text>
+	</string>
+
+</string_table>

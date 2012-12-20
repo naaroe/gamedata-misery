@@ -1,0 +1,35 @@
+[smart_terrain];jup_b32
+squad_id = 22
+max_population = 1
+respawn_params = respawn@jup_b32
+
+[respawn@jup_b32]
+spawn_boar
+spawn_flesh
+
+spawn@zombied
+
+spawn_dog
+spawn_pseudodog
+
+[spawn_boar]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 1
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = 1
+
+[spawn@zombied]
+spawn_squads = simulation_flesh, simulation_boar, simulation_zombied_1
+spawn_num = 1
+
+;;; unused
+
+[spawn_dog]
+spawn_squads = simulation_flesh, simulation_boar, simulation_zombied_1
+spawn_num = 1
+
+[spawn_pseudodog]
+spawn_squads = simulation_flesh, simulation_boar, simulation_zombied_1
+spawn_num = 1

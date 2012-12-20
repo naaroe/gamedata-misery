@@ -1,0 +1,93 @@
+<w>
+	<uss_assaulter width="1024" height="768">
+		<auto_static x="102" y="0" width="819" height="768" stretch="1">
+	      <texture>ui_class_selection_assaulter</texture>
+	    </auto_static>
+		<auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_left</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_right</texture>
+	    </auto_static>
+	</uss_assaulter>
+
+	<uss_recon width="1024" height="768">
+		<auto_static x="102" y="0" width="819" height="768" stretch="1">
+		<texture>ui_class_selection_recon</texture>
+		</auto_static>
+		<auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_left</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_right</texture>
+	    </auto_static>
+	</uss_recon>
+
+	<uss_sniper width="1024" height="768">
+		<auto_static x="102" y="0" width="819" height="768" stretch="1">
+		<texture>ui_class_selection_sniper</texture>
+		</auto_static>
+		<auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_left</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_right</texture>
+	    </auto_static>
+	</uss_sniper>
+
+	<loadout width="1024" height="768">
+		<auto_static x="102" y="0" width="819" height="768" stretch="1">
+		<texture>ui_class_selection_loadout</texture>
+		</auto_static>
+		<auto_static x="0" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_left</texture>
+	    </auto_static>
+	    <auto_static x="920" y="0" width="104" height="768" stretch="1">
+		    <texture>ui_class_selection_sidepanel_right</texture>
+	    </auto_static>
+	</loadout>
+
+	<tab x="355" y="70" width="1024" height="768">
+		<button x="5" y="0" width="131" height="25" id="loadout">
+			<text font="letterica18" align="c">Loadouts</text>
+			<text_color>
+				<e r="50" g="50" b="50"/>
+			</text_color>
+		</button>
+
+		<button x="190" y="0" width="131" height="25" id="assaulter">
+			<text font="letterica18" align="c">USS Assaulter</text>
+			<text_color>
+				<e r="50" g="50" b="50"/>
+			</text_color>
+		</button>
+
+		<button x="287" y="2" width="131" height="25" id="recon">
+			<text font="letterica18" align="c">USS Recon</text>
+			<text_color>
+				<e r="50" g="50" b="50"/>
+			</text_color>
+		</button>
+
+		<button x="380" y="2" width="131" height="25" id="sniper">
+			<text font="letterica18" align="c">USS Sniper</text>
+			<text_color>
+				<e r="50" g="50" b="50"/>
+			</text_color>
+		</button>
+	</tab>
+
+	<btn_accept x="610" y="695" width="131" height="25">
+		<text font="letterica18" align="c">Accept</text>
+		<text_color>
+			<e r="50" g="50" b="50"/>
+		</text_color>
+	</btn_accept>
+
+	<btn_back x="710" y="695" width="131" height="25">
+		<text font="letterica18" align="c">Back</text>
+		<text_color>
+			<e r="20" g="20" b="20"/>
+		</text_color>
+	</btn_back>
+</w>

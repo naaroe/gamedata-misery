@@ -1,0 +1,52 @@
+[smart_terrain];zat_b103_merc_smart
+squad_id = 50
+max_population = 3
+;safe_restr = zat_b103_sr_safety_zone
+def_restr = zat_b103_sr_def_restr
+respawn_params = respawn@zat_b103_merc_smart
+
+[respawn@zat_b103_merc_smart]
+spawn_merc@novice
+spawn_merc@veteran
+
+spawn_bandit@hostile
+spawn_killer
+
+; Merc hostile squads
+
+[spawn_merc@novice]
+spawn_squads = merc_sim_squad_novice
+spawn_num = {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+zat_b40_merc_gone} 0, {+jup_b209_task_done} 0, {+jup_b8_heli_4_searched +zat_b101_both_heli_info} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_merc@veteran]
+spawn_squads = merc_sim_squad_advanced, merc_sim_squad_veteran
+spawn_num = {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+zat_b40_merc_gone} 1, {+jup_b209_task_done} 1, {+jup_b8_heli_4_searched +zat_b101_both_heli_info} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+;;; unused
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile_elite
+spawn_num = 0 ;		{} 1, 0
+
+[spawn_killer]
+spawn_squads = merc_sim_squad_veteran
+spawn_num = 0 ;		{} 1, 0
+
+[exclusive]
+lost_merc_leader = zaton\zat_b103_lost_merc_leader.ltx
+lost_merc_1 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_2 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_3 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_4 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_5 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_6 = zaton\zat_b103_lost_mercs.ltx
+lost_merc_7 = zaton\zat_b103_lost_mercs.ltx
+
+surge_job_leader = zaton\zat_b103_surge_jobs.ltx
+surge_job_1 = zaton\zat_b103_surge_jobs.ltx
+surge_job_2 = zaton\zat_b103_surge_jobs.ltx
+surge_job_3 = zaton\zat_b103_surge_jobs.ltx
+surge_job_4 = zaton\zat_b103_surge_jobs.ltx
+surge_job_5 = zaton\zat_b103_surge_jobs.ltx
+surge_job_6 = zaton\zat_b103_surge_jobs.ltx
+surge_job_7 = zaton\zat_b103_surge_jobs.ltx

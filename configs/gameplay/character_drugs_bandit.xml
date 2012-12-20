@@ -1,0 +1,17 @@
+meinkampf		= 1, prob=0.003 \n
+jar			= 1, prob=0.006 \n
+welding_goggles		= 1, prob=0.004 \n
+jewelry_box		= 1, prob=0.002 \n
+
+porn = 1, prob=0.012 \n
+
+crowbar		= 1, prob=0.009 \n
+cards		= 2, prob=0.010 \n
+boots		= 1, prob=0.004 \n
+mirror		= 1, prob=0.007 \n
+underwear		= 1, prob=0.004 \n
+porn2		= 1, prob=0.006 \n
+rope		= 1, prob=0.009 \n
+cutlery		= 1, prob=0.006 \n
+
+cocaine		= 1, prob=0.004 \n

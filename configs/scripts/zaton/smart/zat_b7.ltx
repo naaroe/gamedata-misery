@@ -1,0 +1,80 @@
+[smart_terrain];zat_b7
+squad_id = 29
+max_population = 2
+
+respawn_params = respawn@zat_b7
+
+[respawn@zat_b7]
+spawn_freedom@advanced_hostile
+spawn_freedom@veteran_hostile
+
+spawn_freedom@veteran_assault_hostile
+
+spawn_stalker@advanced
+
+spawn_stalker@advanced_hostile
+
+;;; unused
+
+spawn_freedom@sci_hostile
+
+; Freedom hostile squads
+
+[spawn_freedom@advanced_hostile]
+spawn_squads = freedom_sim_squad_novice_hostile
+spawn_num = {-sim_duty_help_harder} 0, {+sim_duty_help_harder +jup_b207_task_end -jup_b218_gather_squad_complete} 1, {+sim_duty_help_harder +jup_a12_task_done -jup_b218_gather_squad_complete} 1, {+sim_duty_help_harder +jup_b46_task_done -jup_b218_gather_squad_complete} 1, {+sim_duty_help_harder +jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 1, {+sim_duty_help_harder +jup_b209_task_done -jup_b218_gather_squad_complete} 1, {+jup_b218_gather_squad_complete} 0, 2
+
+[spawn_freedom@veteran_hostile]
+spawn_squads = freedom_sim_squad_advanced_veteran_hostile, freedom_sci_simulation_squad_hostile, freedom_sci_simulation_squad_hostile
+spawn_num = {+sim_duty_help_harder +jup_b207_task_end} 1, {+sim_duty_help_harder +jup_a12_task_done} 1, {+sim_duty_help_harder +jup_b46_task_done} 1, {+sim_duty_help_harder +jup_b8_heli_4_searched} 1, {+sim_duty_help_harder +jup_b209_task_done} 1, {+sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Freedom assault hostile squads
+
+[spawn_freedom@veteran_assault_hostile]
+spawn_squads = freedom_sim_squad_veteran_zat_b5_smart_terrain_assault_hostile, freedom_sim_squad_veteran_zat_b40_assault_hostile, freedom_sim_squad_veteran_zat_b103_merc_smart_assault_hostile
+spawn_num = {+sim_duty_help_harder +jup_b207_task_end} 1, {+sim_duty_help_harder +jup_a12_task_done} 1, {+sim_duty_help_harder +jup_b46_task_done} 1, {+sim_duty_help_harder +jup_b8_heli_4_searched} 1, {+sim_duty_help_harder +jup_b209_task_done} 1, {+sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+; Stalker permanent squads
+
+[spawn_stalker@advanced]
+spawn_squads = stalker_sim_squad_novice
+spawn_num = {-kingpin_gained +zat_b7_victims_disappeared} 1, {-kingpin_gained +zat_b7_task_end} 1, 0
+
+; Stalker permanent hostile squads
+
+[spawn_stalker@advanced_hostile]
+spawn_squads = stalker_sim_squad_novice_hostile
+spawn_num = {+kingpin_gained +zat_b7_victims_disappeared} 1, {+kingpin_gained +zat_b7_task_end} 1, 0
+
+; Stalker hostile squads
+
+[spawn_stalker@novice]
+spawn_squads = stalker_sim_squad_novice_hostile, stalker_sim_squad_novice_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_day_zat_sim_10_assault_simulation_squad_hostile
+spawn_num = {-kingpin_gained} 0, {+kingpin_gained +jup_b207_task_end -jup_b218_gather_squad_complete} 0, {+kingpin_gained +jup_a12_task_done -jup_b218_gather_squad_complete} 0, {+kingpin_gained +jup_b46_task_done -jup_b218_gather_squad_complete} 0, {+kingpin_gained +jup_b8_heli_4_searched -jup_b218_gather_squad_complete} 0, {+kingpin_gained +jup_b209_task_done -jup_b218_gather_squad_complete} 0, {+kingpin_gained +jup_b218_gather_squad_complete -jup_b218_gather_squad_complete} 0, {+jup_b218_gather_squad_complete} 0, 1
+
+[spawn_stalker@master]
+spawn_squads = stalker_sim_squad_advanced_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_sim_squad_advanced_veteran_hostile, stalker_sim_squad_veteran_hostile, stalker_hunter_day_simulation_squad_hostile, stalker_hunter_night_simulation_squad_hostile, stalker_hunter_night_zat_sim_10_assault_simulation_squad_hostile, stalker_hunter_day_zat_sim_10_assault_simulation_squad_hostile
+spawn_num = {-kingpin_gained } 0, {+kingpin_gained +jup_b207_task_end} 2, {+kingpin_gained +jup_a12_task_done} 2, {+kingpin_gained +jup_b46_task_done} 2, {+kingpin_gained +jup_b8_heli_4_searched} 2, {+kingpin_gained +jup_b209_task_done} 2, {+kingpin_gained +jup_b218_gather_squad_complete} 2, 0
+
+;;; unused
+
+; Freedom sci hostile squads
+
+[spawn_freedom@sci_hostile]
+spawn_squads = freedom_sci_hostile_simulation_squad_hostile
+spawn_num = 0	; {+sim_duty_help_harder +jup_b218_gather_squad_complete} 1, 0
+
+[exclusive]
+zat_b7_stalker_victim_1 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_2 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_3 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_4 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_5 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_6 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_7 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_raider_leader_after = zaton\zat_b7_stalker_raider.ltx
+;sim
+;in addition there are 1 guard and 3 walkers
+zat_b7_guard_walker = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_sleeper_1 = zaton\zat_b7_stalker_victim.ltx
+zat_b7_stalker_victim_sleeper_2 = zaton\zat_b7_stalker_victim.ltx

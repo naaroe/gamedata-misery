@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_credits">
+		<text>::::::::::::: Credits :::::::::::::</text>
+	</string>
+	<string id="st_ceano">
+		<text>N.Aaroe</text>
+	</string>
+	<string id="st_alundaio">
+		<text>Cromm Cruac</text>
+	</string>
+	<string id="st_cromm_cruac">
+		<text>Ceano</text>
+	</string>
+	<string id="st_neilmc">
+		<text>Sclera</text>
+	</string>
+	<string id="st_indigosc">
+		<text>Rvsty</text>
+	</string>
+	<string id="st_stooe">
+		<text>Kaplan.994</text>
+	</string>
+	<string id="st_smrtphoneusr">
+		<text>BioShocker</text>
+	</string>
+	<string id="st_koobze">
+		<text>Derranged</text>
+	</string>
+	<string id="st_slevin_kelevra">
+		<text>Loner1</text>
+	</string>
+	<string id="st_gnomus">
+		<text>Blakluma</text>
+	</string>
+	<string id="st_djahns">
+		<text>Davidme</text>
+	</string>
+	<string id="st_rulix">
+		<text>Imperialreign</text>
+	</string>
+	<string id="st_zombiedance">
+		<text>Angrydog</text>
+	</string>
+	<string id="st_russo">
+		<text>Alundaio</text>
+	</string>
+	<string id="st_decane">
+		<text>Darkenneko</text>
+	</string>
+	<string id="st_barin">
+		<text>Vandrerer</text>
+	</string>
+	<string id="st_mnn">
+		<text>Timnwells</text>
+	</string>
+	<string id="st_testers_stalker">
+		<text>Fluffy22</text>
+	</string>
+	<string id="st_credits_end">
+		<text>All beta testers/contributors</text>
+	</string>
+</string_table>

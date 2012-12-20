@@ -1,0 +1,40 @@
+[smart_terrain];zat_b40_smart_terrain
+squad_id = 38
+max_population = 4
+respawn_params = respawn@zat_b40_smart_terrain
+
+[respawn@zat_b40_smart_terrain]
+sim_monolith
+sim_monolith@sci
+
+spawn_mutants
+spawn_mutants_boss
+
+[spawn_mutants_boss]
+spawn_squads = simulation_controller_zat_b40_smart_terrain, simulation_controller_zat_b40_smart_terrain_flame, simulation_burer_zat_b40_smart_terrain, simulation_psy_dog_zat_b40_smart_terrain
+spawn_num = {+zat_b40_find_information_complete -pri_a17_actor_has_gauss_rifle} 1, 0
+
+[spawn_mutants]
+spawn_squads = simulation_zombied_zat_b40_smart_terrain, simulation_zombied_zat_b40_smart_terrain, simulation_snork_zat_b40_smart_terrain, simulation_zombied_zat_b40_smart_terrain, simulation_zombied_zat_b40_smart_terrain, simulation_snork_zat_b40_smart_terrain, simulation_poltergeist_tele_zat_b40_smart_terrain, simulation_poltergeist_flame_zat_b40_smart_terrain, simulation_bloodsucker_zat_b40_smart_terrain
+spawn_num = {+zat_b40_find_information_complete -pri_a17_actor_has_gauss_rifle} 3, 0
+
+[sim_monolith]
+spawn_squads = monolith_sim_squad_advanced_1, monolith_sim_squad_veteran_2
+spawn_num = {-pri_a17_actor_has_gauss_rifle} 0, {+pri_a17_actor_has_gauss_rifle -jup_b218_gather_squad_complete} 3, 2
+
+[sim_monolith@sci]
+spawn_squads = monolith_sci_simulation_squad_zat_b40
+spawn_num = {-pri_a17_actor_has_gauss_rifle} 0, {+pri_a17_actor_has_gauss_rifle +jup_b218_gather_squad_complete} 1, 0
+
+[exclusive]
+zat_b40_guard_leader_01 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_leader_02 = zaton\zat_b40_mercs.ltx
+;leave this for sim - killers only
+zat_b40_guard_01 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_02 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_03 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_04 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_05 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_06 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_07 = zaton\zat_b40_mercs.ltx
+zat_b40_guard_08 = zaton\zat_b40_mercs.ltx

@@ -1,0 +1,17 @@
+[smart_terrain];zat_sim_13
+squad_id = 23
+max_population = 1
+spawn_point = zat_sim_13_spawn_point 
+respawn_params = respawn@zat_sim_13   
+
+[respawn@zat_sim_13]
+;spawn_stalker@advanced
+spawn_bandit@hostile
+
+;[spawn_stalker@advanced]
+;spawn_squads = stalker_sim_squad_veteran
+;spawn_num = 1
+
+[spawn_bandit@hostile]
+spawn_squads = bandit_sim_squad_hostile, bandit_sim_squad_hostile_elite
+spawn_num = 1

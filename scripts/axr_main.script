@@ -1,0 +1,710 @@
+----------------------
+-- Callback manager
+-- Alundaio
+
+local intercepts = {
+	-- _g.script
+	on_game_start				= {},
+
+	-- ui_main_menu.script
+	main_menu_on_keyboard		= {},
+	main_menu_on_init			= {},
+	main_menu_on_init_callbacks	= {},
+
+	-- xr_motivator.script
+	npc_on_item_use 			= {},
+	npc_on_item_take 			= {},
+	npc_on_item_drop 			= {},
+	npc_on_net_spawn			= {},
+	npc_on_net_destroy 			= {},
+	npc_on_update				= {},
+	npc_on_weapon_no_ammo 		= {},
+	npc_on_weapon_sight			= {},
+	npc_on_weapon_unsight		= {},
+	npc_on_hit_callback			= {},
+	npc_on_death_callback		= {},
+	npc_on_fighting_actor		= {},
+	npc_add_precondition		= {},
+
+	-- state_mgr_weapon.script
+	npc_on_weapon_strapped		= {},
+	npc_on_weapon_unstrapped	= {},
+	npc_on_weapon_drop			= {},
+
+	-- xr_hear.script
+	npc_on_hear_callback		= {},
+
+	-- se_stalker.script
+	se_stalker_on_spawn			= {},
+
+	-- xr_corpse_detection.script
+	npc_on_get_all_from_corpse 	= {},
+
+	-- sim_board.script
+	squad_on_npc_creation		= {},
+	squad_on_add_npc			= {},
+
+	-- sim_squad_scripted.script
+	squad_assign_new_target		= {},
+	squad_can_help_actor		= {},
+	squad_on_npc_death			= {},
+
+	-- xr_logic.script
+	scheme_set					= {},
+	scheme_reset				= {},
+	scheme_disable				= {},
+
+	-- bind_stalker.script
+	on_game_load				= {},
+	on_game_end					= {},
+	actor_on_update				= {},
+	actor_on_weapon_no_ammo		= {},
+	actor_on_weapon_zoom_in		= {},
+	actor_on_weapon_zoom_out	= {},
+	actor_on_item_take			= {},
+	actor_on_item_take_from_box = {},
+	actor_on_item_drop			= {},
+	actor_on_item_use			= {},
+	actor_on_trade				= {},
+	actor_on_save				= {},
+	actor_on_load				= {},
+	actor_on_init				= {},
+	actor_on_torch_enabled		= {},
+	actor_on_torch_disabled		= {},
+
+	-- bind_monster.script
+	monster_on_hit_callback			= {},
+	monster_on_hear_callback        = {},
+	monster_on_net_spawn			= {},
+	monster_on_death_callback		= {},
+	monster_on_actor_use_callback   = {},
+
+	-- bind_physic_object
+	physic_object_on_hit_callback 	= {},
+	physic_object_on_use_callback 	= {}
+}
+
+function _G.callback_register(name,func)
+	if (intercepts[name]) then
+		table.insert(intercepts[name],func)
+	end
+end
+
+function _G.callback_unregister(name,func)
+	if (intercepts[name]) then
+		for i=#intercepts[name],1,-1 do
+			if (intercepts[name][i] == func) then
+				table.remove(intercepts[name],i)
+				break
+			end
+		end
+	end
+end
+
+
+-------------------
+-- on_game_start()
+-------------------
+function on_game_start()
+	-- AI Tweaks
+	if (xr_danger and xr_danger.on_game_start) then xr_danger.on_game_start() end
+	if (xr_gather_items) then xr_gather_items.on_game_start() end
+	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
+	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
+	if (ai_tweaks) then ai_tweaks.on_game_start() end
+	if (xr_visual) then xr_visual.on_game_start() end
+	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
+	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
+
+	-- SCHEMES
+	if (axr_beh) then axr_beh.on_game_start() end
+	if (axr_companions) then axr_companions.on_game_start() end
+	if (xrs_facer) then xrs_facer.on_game_start() end
+	if (xrs_kill_wounded) then xrs_kill_wounded.on_game_start() end
+	if (rx_gl) then rx_gl.on_game_start() end
+	if (rx_ff) then rx_ff.on_game_start() end
+
+	-- Atmosfear
+	if (atmosfear) then atmosfear.on_game_start() end
+
+	-- Misery
+	if (axr_misery) then axr_misery.on_game_start() end
+
+	-- Alundaio's Quest Master
+	if (axr_quest_master) then axr_quest_master.on_game_start() end
+end
+
+-------------------
+-- on_game_load() ;Actor Net Spawn
+-------------------
+function on_game_load()
+	for i=1, #intercepts.on_game_load do
+		intercepts.on_game_load[i]()
+	end
+end
+
+-------------------
+-- on_game_end() ;Actor Net Destroy
+-------------------
+function on_game_end()
+	for i=1, #intercepts.on_game_end do
+		intercepts.on_game_end[i]()
+	end
+end
+
+-------------------
+-- actor_on_init()
+-------------------
+function actor_on_init(se_actor)
+	for i=1, #intercepts.actor_on_init do
+		intercepts.actor_on_init[i](se_actor)
+	end
+end
+
+-------------------
+-- se_stalker_on_spawn(se_npc)
+-------------------
+function se_stalker_on_spawn(se_npc)
+	for i=1, #intercepts.se_stalker_on_spawn do
+		intercepts.se_stalker_on_spawn[i](se_npc)
+	end
+end
+
+-------------------
+-- npc_on_item_use(npc,item)
+-------------------
+function npc_on_item_use(npc,item)
+	for i=1, #intercepts.npc_on_item_use do
+		intercepts.npc_on_item_use[i](npc,item)
+	end
+end
+
+-------------------
+-- npc_on_item_take(npc,item)
+-------------------
+function npc_on_item_take(npc,item)
+	for i=1, #intercepts.npc_on_item_take do
+		intercepts.npc_on_item_take[i](npc,item)
+	end
+end
+
+-------------------
+-- npc_on_item_drop(npc,item)
+-------------------
+function npc_on_item_drop(npc,item)
+	for i=1, #intercepts.npc_on_item_drop do
+		intercepts.npc_on_item_drop[i](npc,item)
+	end
+end
+
+-------------------
+-- npc_on_net_spawn(npc,se_npc)
+-------------------
+function npc_on_net_spawn(npc,se_npc)
+	for i=1, #intercepts.npc_on_net_spawn do
+		intercepts.npc_on_net_spawn[i](npc,se_npc)
+	end
+	alun_utils.add_stalker(npc)
+end
+
+-------------------
+-- npc_on_net_destroy(npc)
+-------------------
+function npc_on_net_destroy(npc)
+	for i=1, #intercepts.npc_on_net_destroy do
+		intercepts.npc_on_net_destroy[i](npc)
+	end
+	alun_utils.del_stalker(npc)
+end
+
+-------------------
+-- npc_on_update(npc,st)
+-------------------
+function npc_on_update(npc,st)
+	for i=1, #intercepts.npc_on_update do
+		intercepts.npc_on_update[i](npc,st)
+	end
+
+	if (npc:alive()) then
+		local wpn = npc:best_weapon()
+		if (wpn and alun_utils.item_is_fa(wpn)) then
+			local inmag = wpn:get_ammo_in_magazine()
+			if (inmag == 0) then
+				if not (st.weapon_reload) then
+					st.weapon_reload = true
+					npc_on_weapon_no_ammo(npc,wpn,st)
+				end
+			else
+				st.weapon_reload = nil
+			end
+
+			local sight_type = npc:sight_params().m_sight_type
+			if (sight_type) and (sight_type == 4 or sight_type == 9 or sight_type == 10) then
+				if not (st.look_in_sights) then
+					npc_on_weapon_sight(npc,wpn,st,sight_type)
+					st.look_in_sights = true
+				end
+			else
+				if (st.look_in_sights) then
+					st.look_in_sights = nil
+					npc_on_weapon_unsight(npc,wpn,st,sight_type)
+				end
+			end
+		end
+	end
+end
+
+------------------
+-- npc_on_weapon_no_ammo(npc,weapon,storage)
+-------------------
+function npc_on_weapon_no_ammo(npc,wpn,st)
+	for i=1, #intercepts.npc_on_weapon_no_ammo do
+		intercepts.npc_on_weapon_no_ammo[i](npc,wpn,st)
+	end
+end
+
+------------------
+-- npc_on_weapon_sight(npc,weapon,storage)
+-------------------
+function npc_on_weapon_sight(npc,wpn,st,sight_type)
+	for i=1, #intercepts.npc_on_weapon_sight do
+		intercepts.npc_on_weapon_sight[i](npc,wpn,st,sight_type)
+	end
+end
+
+------------------
+-- npc_on_weapon_unsight(npc,weapon,storage)
+-------------------
+function npc_on_weapon_unsight(npc,wpn,st,sight_type)
+	for i=1, #intercepts.npc_on_weapon_unsight do
+		intercepts.npc_on_weapon_unsight[i](npc,wpn,st,sight_type)
+	end
+end
+
+
+-------------------
+-- npc_on_weapon_strapped(npc,weapon)
+-------------------
+function npc_on_weapon_strapped(npc,wpn)
+	for i=1, #intercepts.npc_on_weapon_strapped do
+		intercepts.npc_on_weapon_strapped[i](npc,wpn)
+	end
+end
+
+-------------------
+-- npc_on_weapon_unstrapped(npc,weapon)
+-------------------
+function npc_on_weapon_unstrapped(npc,wpn)
+	for i=1, #intercepts.npc_on_weapon_unstrapped do
+		intercepts.npc_on_weapon_unstrapped[i](npc,wpn)
+	end
+end
+
+-------------------
+-- npc_on_weapon_drop(npc,weapon)
+-------------------
+function npc_on_weapon_drop(npc,wpn)
+	for i=1, #intercepts.npc_on_weapon_drop do
+		intercepts.npc_on_weapon_drop[i](npc,wpn)
+	end
+end
+
+-------------------
+-- npc_on_weapon_fire(npc,weapon)
+-------------------
+function npc_on_weapon_fire(npc,wpn)
+	for i=1, #intercepts.npc_on_weapon_fire do
+		intercepts.npc_on_weapon_fire[i](npc,wpn)
+	end
+end
+
+-------------------
+-- npc_add_precondition(action)
+-------------------
+function npc_add_precondition(action)
+	for i=1, #intercepts.npc_add_precondition do
+		intercepts.npc_add_precondition[i](action)
+	end
+end
+
+-------------------
+-- npc_on_hear_callback(obj,who_id,s_type,sound_dist,sound_power)
+-------------------
+function npc_on_hear_callback(obj,who_id,s_type,sound_dist,sound_power)
+	for i=1, #intercepts.npc_on_hear_callback do
+		intercepts.npc_on_hear_callback[i](obj,who_id,s_type,sound_dist,sound_power)
+	end
+end
+
+-------------------
+-- npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
+-------------------
+function npc_on_hit_callback(npc,amount,local_direction,who,bone_index)
+	for i=1, #intercepts.npc_on_hit_callback do
+		intercepts.npc_on_hit_callback[i](npc,amount,local_direction,who,bone_index)
+	end
+end
+
+-------------------
+-- npc_on_death_callback(npc,who)
+-------------------
+function npc_on_death_callback(npc,who)
+	--alun_utils.printf("death_callback for %s killed by %s",npc:name(),who:name())
+	for i=1, #intercepts.npc_on_death_callback do
+		intercepts.npc_on_death_callback[i](npc,who)
+	end
+end
+
+-------------------
+-- npc_on_get_all_from_corpse(npc,corpse)
+-------------------
+function npc_on_get_all_from_corpse(npc,corpse)
+	for i=1, #intercepts.npc_on_get_all_from_corpse do
+		intercepts.npc_on_get_all_from_corpse[i](npc,corpse)
+	end
+end
+
+-------------------
+-- npc_on_fighting_actor(npc)
+-------------------
+function npc_on_fighting_actor(npc)
+	for i=1, #intercepts.npc_on_fighting_actor do
+		intercepts.npc_on_fighting_actor[i](npc)
+	end
+end
+
+-------------------
+-- squad_on_npc_creation(squad,npc,smart)
+-------------------
+function squad_on_npc_creation(squad,npc,smart)
+	for i=1, #intercepts.squad_on_npc_creation do
+		intercepts.squad_on_npc_creation[i](squad,npc,smart)
+	end
+end
+
+-------------------
+-- squad_on_npc_death(self,npc)
+-------------------
+function squad_on_npc_death(squad,npc)
+	for i=1, #intercepts.squad_on_npc_death do
+		intercepts.squad_on_npc_death[i](squad,npc)
+	end
+end
+
+-------------------
+-- squad_assign_new_target(squad)
+-------------------
+function squad_assign_new_target(squad)
+	local id
+	for i=1, #intercepts.squad_assign_new_target do
+		id = intercepts.squad_assign_new_target[i](squad)
+		if (id) then
+			break
+		end
+	end
+	return id
+end
+
+-------------------
+-- squad_can_help_actor(squad)
+-------------------
+function squad_can_help_actor(squad)
+	local flag
+	for i=1, #intercepts.squad_can_help_actor do
+		flag = intercepts.squad_can_help_actor[i](squad)
+		if (flag) then
+			break
+		end
+	end
+	return flag
+end
+
+-------------------
+-- squad_on_add_npc(squad,npc,spawn_section,spawn_position,lv_id,gv_id)
+-------------------
+function squad_on_add_npc(squad,npc,spawn_section,spawn_position,lv_id,gv_id)
+	for i=1, #intercepts.squad_on_add_npc do
+		intercepts.squad_on_add_npc[i](squad,npc,spawn_section,spawn_position,lv_id,gv_id)
+	end
+end
+
+-------------------
+-- scheme_set(npc,ini,section)
+-------------------
+function scheme_set(npc,ini,scheme,section)
+	for i=1, #intercepts.scheme_set do
+		intercepts.scheme_set[i](npc,ini,scheme,section)
+	end
+end
+
+-------------------
+-- scheme_reset(npc,scheme,section,st)
+-------------------
+function scheme_reset(npc,scheme,section,st)
+	for i=1, #intercepts.scheme_reset do
+		intercepts.scheme_reset[i](npc,scheme,section,st)
+	end
+end
+
+-------------------
+-- scheme_disable(npc,stype)
+-------------------
+function scheme_disable(npc,stype)
+	for i=1, #intercepts.scheme_disable do
+		intercepts.scheme_disable[i](npc,stype)
+	end
+end
+
+-------------------
+-- actor_on_update()
+-------------------
+local actor_reload
+local actor_scope
+local actor_light
+function actor_on_update(se_actor,delta)
+	for i=1, #intercepts.actor_on_update do
+		intercepts.actor_on_update[i](se_actor,delta)
+	end
+
+	local wpn = db.actor:active_item()
+	if (wpn) then
+		if (alun_utils.item_is_fa(wpn)) then
+			local inmag = wpn:get_ammo_in_magazine()
+			if (inmag == 0) then
+				if not (actor_reload) then
+					actor_reload = true
+					actor_on_weapon_no_ammo(wpn)
+				end
+			else
+				actor_reload = nil
+			end
+		end
+
+		if (wpn:section() == "wpn_binoc" or alun_utils.addon_attached(wpn,"sc")) then
+			if (device().fov < 50) then
+				if not (actor_scope) then
+					actor_scope = true
+					actor_on_weapon_zoom_in(wpn)
+				end
+			else
+				if (actor_scope) then
+					actor_scope = nil
+					actor_on_weapon_zoom_out(wpn)
+				end
+			end
+		else
+			if (actor_scope) then
+				actor_scope = nil
+				actor_on_weapon_zoom_out(wpn)
+			end
+		end
+	end
+
+	local torch = db.actor:object("device_torch")
+	if (torch and not actor_light and torch:torch_enabled()) then
+		actor_light = true
+		actor_on_torch_enabled()
+	elseif (torch and not torch:torch_enabled()) then
+		if (actor_light) then
+			actor_light = false
+			actor_on_torch_disabled()
+		end
+	end
+	alun_utils.execute_queue()
+end
+
+-------------------
+-- actor_on_weapon_no_ammo(wpn)
+-------------------
+function actor_on_weapon_no_ammo(wpn)
+	for i=1, #intercepts.actor_on_weapon_no_ammo do
+		intercepts.actor_on_weapon_no_ammo[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_weapon_zoom_in(wpn)
+-------------------
+function actor_on_weapon_zoom_in(wpn)
+	for i=1, #intercepts.actor_on_weapon_zoom_in do
+		intercepts.actor_on_weapon_zoom_in[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_weapon_zoom_out(wpn)
+-------------------
+function actor_on_weapon_zoom_out(wpn)
+	for i=1, #intercepts.actor_on_weapon_zoom_out do
+		intercepts.actor_on_weapon_zoom_out[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_torch_enabled()
+-------------------
+function actor_on_torch_enabled()
+	for i=1, #intercepts.actor_on_torch_enabled do
+		intercepts.actor_on_torch_enabled[i]()
+	end
+end
+
+-------------------
+-- actor_on_torch_disabled()
+-------------------
+function actor_on_torch_disabled()
+	for i=1, #intercepts.actor_on_torch_disabled do
+		intercepts.actor_on_torch_disabled[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_item_take(item)
+-------------------
+function actor_on_item_take(item)
+	for i=1, #intercepts.actor_on_item_take do
+		intercepts.actor_on_item_take[i](item)
+	end
+end
+
+-------------------
+-- actor_on_item_take_from_box(box,item)
+-------------------
+function actor_on_item_take_from_box(box,item)
+	for i=1, #intercepts.actor_on_item_take_from_box do
+		intercepts.actor_on_item_take_from_box[i](box,item)
+	end
+end
+
+-------------------
+-- actor_on_item_drop(item)
+-------------------
+function actor_on_item_drop(item)
+	for i=1, #intercepts.actor_on_item_drop do
+		intercepts.actor_on_item_drop[i](item)
+	end
+end
+
+-------------------
+-- actor_on_item_use(item)
+-------------------
+function actor_on_item_use(item)
+	for i=1, #intercepts.actor_on_item_use do
+		intercepts.actor_on_item_use[i](item)
+	end
+end
+
+-------------------
+-- actor_on_trade(item)
+-------------------
+function actor_on_trade(item,sell_bye,money)
+	for i=1, #intercepts.actor_on_trade do
+		intercepts.actor_on_trade[i](item,sell_bye,money)
+	end
+end
+
+-------------------
+-- actor_on_save(actor,packet)
+-------------------
+function actor_on_save(se_actor,packet)
+	if (atmosfear) then atmosfear.actor_on_save(se_actor,packet) end
+	if (inventory_upgrades.actor_on_save) then inventory_upgrades.actor_on_save(se_actor,packet) end
+end
+
+-------------------
+-- actor_on_load(actor,packet)
+-------------------
+function actor_on_load(se_actor,packet)
+	if (atmosfear) then atmosfear.actor_on_load(se_actor,packet) end
+	if (inventory_upgrades.actor_on_load) then inventory_upgrades.actor_on_load(se_actor,packet) end
+end
+
+-------------------
+-- monster_on_hit_callback(obj,amount,local_direction,who,bone_index)
+-------------------
+function monster_on_hit_callback(obj,amount,local_direction,who,bone_index)
+	for i=1, #intercepts.monster_on_hit_callback do
+		intercepts.monster_on_hit_callback[i](obj,amount,local_direction,who,bone_index)
+	end
+end
+
+-------------------
+-- monster_on_death_callback(obj,who)
+-------------------
+function monster_on_death_callback(obj,who)
+	for i=1, #intercepts.monster_on_death_callback do
+		intercepts.monster_on_death_callback[i](obj,who)
+	end
+end
+
+-------------------
+-- monster_on_net_spawn(obj)
+-------------------
+function monster_on_net_spawn(obj)
+	for i=1, #intercepts.monster_on_net_spawn do
+		intercepts.monster_on_net_spawn[i](obj)
+	end
+end
+
+-------------------
+-- monster_on_actor_use_callback(obj,who)
+-------------------
+function monster_on_actor_use_callback(obj,who)
+	for i=1, #intercepts.monster_on_actor_use_callback do
+		intercepts.monster_on_actor_use_callback[i](obj,who)
+	end
+end
+
+------------------
+-- monster_on_hear_callback(obj, who_id, sound_type, sound_position, sound_power)
+------------------
+function monster_on_hear_callback(obj, who_id, sound_type, sound_position, sound_power)
+	for i=1, #intercepts.monster_on_hear_callback do
+		intercepts.monster_on_hear_callback[i](obj, who_id, sound_type, sound_position, sound_power)
+	end
+end
+
+------------------
+-- main_menu_on_init()
+------------------
+function main_menu_on_init(menu)
+	for i=1, #intercepts.main_menu_on_init do
+		intercepts.main_menu_on_init[i](menu)
+	end
+end
+
+------------------
+-- main_menu_on_keyboard(dik,keyboard_action,self)
+------------------
+function main_menu_on_keyboard(dik,keyboard_action,menu)
+	for i=1, #intercepts.main_menu_on_keyboard do
+		intercepts.main_menu_on_keyboard[i](dik,keyboard_action,menu)
+	end
+end
+
+------------------
+-- main_menu_on_init()
+------------------
+function main_menu_on_init_callbacks(menu)
+	for i=1, #intercepts.main_menu_on_init_callbacks do
+		intercepts.main_menu_on_init_callbacks[i](menu)
+	end
+end
+
+------------------
+-- physic_object_on_use_callback(obj,who)
+------------------
+function physic_object_on_use_callback(obj,who)
+	for i=1, #intercepts.physic_object_on_use_callback do
+		intercepts.physic_object_on_use_callback[i](obj,who)
+	end
+end
+
+------------------
+-- physic_object_on_hit_callback(obj, amount, local_direction, who, bone_index)
+------------------
+function physic_object_on_hit_callback(obj, amount, local_direction, who, bone_index)
+	for i=1, #intercepts.physic_object_on_hit_callback do
+		intercepts.physic_object_on_hit_callback[i](obj, amount, local_direction, who, bone_index)
+	end
+end

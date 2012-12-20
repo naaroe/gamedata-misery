@@ -1,0 +1,16 @@
+[smart_terrain];zat_sim_27
+squad_id = 27
+max_population = 2
+respawn_params = respawn@zat_sim_27
+
+[respawn@zat_sim_27]
+spawn_dog
+spawn_pseudodog
+
+[spawn_dog]
+spawn_squads = simulation_pseudodog, simulation_dog, simulation_dog
+spawn_num = 2
+
+[spawn_pseudodog]
+spawn_squads = simulation_dog, simulation_dog, simulation_pseudodog, simulation_snork
+spawn_num = 1

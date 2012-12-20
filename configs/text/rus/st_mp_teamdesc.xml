@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+<string id="team_1_desc">
+<text>Anarchists of the Zone, who say that it is the reserve of unlimited freedom for everyone, where laws, rules and conventions of the outside world lose meaning. Their motto is "Do what you want, just don't disturb others". They oppose any attempts to control the Zone and are on uneasy terms with mercenary teams operating within the Zone. They use small arms manufactured in former USSR and Russia.</text>
+</string>
+<string id = "team_1_name">
+<text> Freedom (Free Stalkers) </text>
+</string>
+<string id = "team_2_desc">
+<text>Adventurers and bandits from every corner of the globe, not turning away from any job, no matter how unethical it is. The motto is logical and predictable: «Pecunia non olet». Mercs struggle to control artifact fields in order to secure themselves a stable source of income. They use weapons of Western manufacture.</text>
+</string>
+<string id = "team_2_name">
+<text> Mercenaries (Bandits) </text>
+	</string>
+</string_table>

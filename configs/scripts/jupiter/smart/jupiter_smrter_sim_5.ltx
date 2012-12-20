@@ -1,0 +1,25 @@
+[smart_terrain]
+squad_id = 66
+max_population = 1
+respawn_params = respawn@jupiter_smrter_sim_5
+
+[respawn@jupiter_smrter_sim_5]
+spawn_snork
+
+spawn_monolith@master
+spawn_monolith@advanced
+
+[spawn_snork]
+spawn_squads = simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_zombied_1_jupiter, simulation_snork_jupiter
+spawn_num = {+pri_a17_actor_has_gauss_rifle} 0, 1
+
+;;; unused
+
+[spawn_monolith@master]
+spawn_squads = monolith_sim_squad_advanced, monolith_sim_squad_veteran
+spawn_num = 0	; {+pri_a17_actor_has_gauss_rifle} 1, 0 ; {+jup_b207_task_end} 1, {+jup_a12_task_done} 1, {+jup_b46_task_done} 1, {+jup_b8_heli_4_searched} 1, {+jup_b209_task_done} 1, {+jup_b218_gather_squad_complete} 1, 0
+
+
+[spawn_monolith@advanced]
+spawn_squads = monolith_sim_squad_novice
+spawn_num = 0	; {+jup_b207_task_end} 0, {+jup_a12_task_done} 0, {+jup_b46_task_done} 0, {+jup_b8_heli_4_searched} 0, {+jup_b209_task_done} 0, {+jup_b218_gather_squad_complete} 0, 1

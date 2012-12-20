@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="hide_from_surge_message">
+		<text>Attenzione! Blowout imminente!</text>
+	</string>
+	<string id="hide_from_surge_descr_1_a">
+		<text>Blowout imminente, cercare un riparo immediatamente!</text>
+	</string>
+	<string id="hide_from_surge_descr_2_a">
+		<text>Non ti e permesso lasciare un riparo durante una blowout.</text>
+	</string>
+	<string id="hide_from_surge_name_1">
+		<text>Blowout: Trova Riparo</text>
+	</string>
+	<string id="hide_from_surge_name_2">
+		<text>Blowout: Rimani Riparato</text>
+	</string>
+
+	<!-- AtmosFear Fallout -->
+	<string id="hide_from_fallout_rad_message_caption">
+		<text>Attenzione!</text>
+	</string>
+	<string id="hide_from_fallout_rad_message">
+		<text>Ricadute radioattive iniziate.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_1_a">
+		<text>Il livello di radiazioni e pericoloso. Dovresti nasconderti dalle ricadute radioattive.</text>
+	</string>
+	<string id="hide_from_fallout_rad_descr_2_a">
+		<text>Non dovresti lasciare il riparo durante le ricadute radioattive.</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_1">
+		<text>Cadute radioattive: Trova riparo</text>
+	</string>
+	<string id="hide_from_fallout_rad_name_2">
+		<text>Cadute radioattive: Rimani riparato</text>
+	</string>
+	<string id="end_fallout_rad_message_caption">
+		<text>Attenzione!</text>
+	</string>
+	<string id="end_fallout_rad_message">
+		<text>Le ricadute radioattive sono finite</text>
+	</string>
+	
+	<string id="hide_from_fallout_acid_message_caption">
+		<text>Attenzione!</text>
+	</string>
+	<string id="hide_from_fallout_acid_message">
+		<text>Ricadute chimiche iniziate.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_1_a">
+		<text>Il livello di contaminazione e pericoloso. Dovresti nasconderti dalle ricadute chimiche.</text>
+	</string>
+	<string id="hide_from_fallout_acid_descr_2_a">
+		<text>Non dovresti lasciare il riparo durante le ricadute chimiche.</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_1">
+		<text>Ricadute chimiche: Trova riparo</text>
+	</string>
+	<string id="hide_from_fallout_acid_name_2">
+		<text>Ricadute chimiche: Rimani riparato</text>
+	</string>
+	<string id="end_fallout_acid_message_caption">
+		<text>Attenzione!</text>
+	</string>
+	<string id="end_fallout_acid_message">
+		<text>Le ricadute chimiche sono finite</text>
+	</string>
+
+	<!-- AtmosFear Psi Storm -->
+	<string id="hide_from_psi_storm_message_caption">
+		<text>attenzione!</text>
+	</string>
+	<string id="hide_from_psi_storm_message">
+		<text>La tempesta psionica e iniziata.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_1_a">
+		<text>Dovresti nasconderti dalla tempesta psionica.</text>
+	</string>
+	<string id="hide_from_psi_storm_descr_2_a">
+		<text>Non dovresti lasciare il riparo durante la tempesta psionica.</text>
+	</string>
+	<string id="hide_from_psi_storm_name_1">
+		<text>Tempesta psionica: Trova riparo</text>
+	</string>
+	<string id="hide_from_psi_storm_name_2">
+		<text>Tempesta psionica: Rimani riparato</text>
+	</string>
+	<string id="end_psi_storm_caption">
+		<text>Attenzione!</text>
+	</string>
+	<string id="end_psi_storm_message">
+		<text>La tempesta psionica e finita</text>
+	</string>
+
+</string_table>

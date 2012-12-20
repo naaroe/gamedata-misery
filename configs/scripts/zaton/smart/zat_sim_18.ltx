@@ -1,0 +1,22 @@
+[smart_terrain];zat_sim_18
+squad_id = 18
+max_population = 1
+respawn_params = respawn@zat_sim_18   
+
+[respawn@zat_sim_18]
+spawn_snork
+spawn_boar
+spawn_flesh
+
+[spawn_snork]
+spawn_squads = simulation_boar, simulation_flesh
+spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+
+[spawn_boar]
+spawn_squads = simulation_boar, simulation_boar, simulation_tushkano
+spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+
+[spawn_flesh]
+spawn_squads = simulation_flesh, simulation_boar
+spawn_num = {+zat_b53_go_nil} 1, {+zat_b53_actor_enemy} 1, {+zat_b53_thanks_dialog} 1, 0
+
