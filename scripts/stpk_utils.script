@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-function data_left(stpk)
-	return (stpk:r_elapsed() ~= 0)
-=======
 local stpk = net_packet()
 local uppk = net_packet()
 
@@ -31,7 +27,6 @@ function set_weapon_data(t,sobj)
 		stpk:r_seek(2)
 		sobj:STATE_Read(stpk,size)
 	end
->>>>>>> test
 end
 
 function get_stalker_data(sobj)
