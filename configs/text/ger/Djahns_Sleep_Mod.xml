@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="st_sleep_bag_descr">
-		<text>Schlafsack, zum schlafen wo und wann du willst</text>
+		<text>A light sleeping bag, that will keep you warm at night.</text>
 	</string>
 	<string id="st_sleep_bag">
-		<text>Schlafsack</text>
+		<text>Sleeping Bag</text>
 	</string>
 	<string id="sleep_warning_blowout">
-		<text>Sie kцnnen nicht schlafen! Wollen sie allen ernstes bei einer Emission schlafen?</text>
+		<text>It's not safe to sleep!</text>
 	</string>
 </string_table>

@@ -994,34 +994,34 @@
 		<text>Uh...sorry to cut it short but I gotta go.</text>
 	</string>
 	<string id="dm_dialog_companion_can_i_come_with_1">
-		<text>I was wondering if we could journey together?</text>
+		<text>Let's travel together. What do you say?</text>
 	</string>
 	<string id="dm_dialog_companion_can_we_come_with_2">
 		<text>My friends and I need a little help getting through the zone. Would you mind if we join you?</text>
 	</string>
 	<string id="dm_dialog_companion_can_i_come_with_2">
-		<text>I was wondering if we could journey together?</text>
+		<text>Let's continue together as a team. What do you say?</text>
 	</string>
 	<string id="dm_dialog_companion_can_we_come_with_2">
 		<text>My friends and I need a little help getting through the zone. Would you mind if we join you?</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_1">
-		<text>Sure, why the hell not?</text>
+		<text>Just be focudes on where you aim with those guns then</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_2">
-		<text>Fine. But If you die I, I'm keeping your stuff...</text>
+		<text>Fine. But If you die, I'm taking your stuff.</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_3">
-		<text>No. I don't have the time, sorry.</text>
+		<text>No. Not interested.</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_4">
 		<text>Fuck off!</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_good_alone_1">
-		<text>Thanks buddy. I promise I won't get in the way.</text>
+		<text>Thanks then. I promise I won't get in the way.</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_good_alone_2">
-		<text>Fantastic, I really needed someone's help.</text>
+		<text>Great, I really need someone's help.</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_good_alone_3">
 		<text>Bad ass man. Thanks.</text>
@@ -1039,13 +1039,13 @@
 		<text>Alright. Hey guys, this stalker will get us there. Follow him.</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_good_3">
-		<text>Let's get a move on. We have some stalkering to do.</text>
+		<text>Let's get a move on. We have some traveling ahead of us.</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_bad_1">
-		<text>Whatever man...</text>
+		<text>Whatever.</text>
 	</string>
 	<string id="dm_dialog_companion_final_words_bad_2">
-		<text>What the...Kill this motherfucker!</text>
+		<text>Kill this motherfucker!</text>
 	</string>
 	<string id="axr_phrase_companion_ask_for_command">
 		<text>What do you need?</text>
@@ -1054,7 +1054,7 @@
 		<text>[Give Command]</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_combat">
-		<text>Let's talk about combat...</text>
+		<text>Let's talk about tactics...</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_combat_type_camper">
 		<text>I want you to be more cautious in combat.</text>
@@ -1072,10 +1072,10 @@
 		<text>I want you to keep your distance.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_stealth">
-		<text>Shhh...get down. We need to be stealthy.</text>
+		<text>Shhh...get down. Keep quiet.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_stop_stealth">
-		<text>We don't have to be stealthy anymore.</text>
+		<text>Alright, let's continue as normal.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_relax">
 		<text>Relax a bit. I'll tell you when it's time to go.</text>
@@ -1084,7 +1084,7 @@
 		<text>Alright it's time to go.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_leave">
-		<text>I think we should go our separate ways.</text>
+		<text>I need to travel on my own from here.</text>
 	</string>
 	<string id="axr_phrase_companion_are_you_sure">
 		<text>Are you sure?</text>
@@ -1102,13 +1102,13 @@
 		<text>Avoid shooting at anyone for now.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_dont_ignore_combat">
-		<text>Attack enemies on sight.</text>
+		<text>Attack enemies only on sight.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_ignore_combat_but_help_actor">
 		<text>Don't attack anyone unless I'm attacked.</text>
 	</string>
 	<string id="axr_phrase_companion_acknowledge_1">
-		<text>You got it, buddy.</text>
+		<text>You got it.</text>
 	</string>
 	<string id="axr_phrase_companion_acknowledge_2">
 		<text>Alright, man.</text>
@@ -1117,13 +1117,13 @@
 		<text>Sure, what do you want me to do?</text>
 	</string>
 	<string id="axr_phrase_companion_goodbye_1">
-		<text>It's been fun. See ya around, stalker.</text>
+		<text>Thanks for the company. See you around.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_nevermind">
 		<text>Nevermind.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_hide_in_cover">
-		<text>Quick, find some cover.</text>
+		<text>Quick, find some cover!</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_patrol_menu">
 		<text>I want you to patrol an area.</text>
@@ -1141,9 +1141,19 @@
 		<text>Add this spot to your current patrol.</text>
 	</string>
 	<string id="axr_phrase_friend_companion_ask_join">
-		<text>Hey, friend. Mind if we team up? We could help eachother through the zone.</text>
+		<text>Hey, let's explore as a team. We could help eachother through the zone.</text>
 	</string>
 	<string id="axr_phrase_friend_companion_answer_join">
 		<text>Sure, sounds like a great idea! Lead the way.</text>
+	</string>
+	<!-- Alundaio -->
+	<string id="st_mechanic_query_items">
+		<text>Is any of my equipment ready for pickup?</text>
+	</string>
+	<string id="st_mechanic_repair_done">
+		<text>Yes, here you are.</text>
+	</string>
+		<string id="st_mechanic_repair_not_done">
+		<text>Not yet, check back later.</text>
 	</string>
 </string_table>

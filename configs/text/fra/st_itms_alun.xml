@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="st_alun_riddle_1_title">
+		<text>Alun's journal</text>
+	</string>
+	<string id="st_alun_riddle_2_title">
+		<text>Alun's journal page</text>
+	</string>
+	<string id="st_alun_riddle_1_desc">
+		<text>A journal with some missing pages, one passage reads:\n"People go to me\nand so do boats.\nThe boats bring the people,\nand the people bring the boats."</text>
+	</string>
+	<string id="st_alun_riddle_2_desc">
+		<text>A journal page, the passage reads:\n"What always runs\nbut never walks,\noften murmurs,\nnever talks,\nhas a bed but never sleeps,\nhas a mouth but never eats?"</text>
+	</string>
+	<string id="st_alun_riddle_3_desc">
+		<text>A journal page, the passage reads:\n"I am always hungry,\nI must always be fed,\nThe finger I touch,\nWill soon turn red"</text>
+	</string>
+	<string id="st_alun_riddle_4_desc">
+		<text>A journal page, the passage reads:\n"Damned if you do,\ndamned if you don't"</text>
+	</string>
+	<string id="st_alun_riddle_5_desc">
+		<text>A journal page, the passage reads:\n"Weight in my belly;\ntrees on my back;\nnails in my ribs;\nfeet I do lack."</text>
+	</string>
+	<string id="st_alun_riddle_6_desc">
+		<text>A journal page, the passage reads:\n"I drift forever with the current\ndown these long canals they've made\nTame, yet wild, I run elusive\nMultitasking to your aid.\nBefore I came, the world was darker\nColder, sometimes, rougher, true\nBut though I might make living easy,\nI'm good at killing people too."</text>
+	</string>
+	<string id="st_alun_riddle_7_desc">
+		<text>A journal page, the passage reads:\n"Final resting place\nfor men who sought fame,\nwhom's blood was drained\nby feelers red stained."</text>
+	</string>
+	<string id="st_alun_riddle_8_desc">
+		<text>A journal page, the passage reads:\n"Often the home\nof those who ask riddles\nin exchange for passage."</text>
+	</string>
+	<string id="st_alun_riddle_9_desc">
+		<text>A journal page, the passage reads:\n"Lifts you up,\n when you are down."</text>
+	</string>
+	<string id="st_alun_riddle_10_desc">
+		<text>A journal page, the passage reads:\n"Congratulations, Stalker."</text>
+	</string>
+	<string id="st_wpn_akm_alun">
+		<text>Mad Alun's AKM</text>
+	</string>
+	<string id="st_wpn_m1891_alun">
+		<text>Mad Alun's M1891</text>
+	</string>
+	<string id="st_outfit_alun">
+		<text>Mad Alun's Stalker outfit</text>
+	</string>
+</string_table>

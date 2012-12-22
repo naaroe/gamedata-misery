@@ -119,8 +119,8 @@ inv_name_short       	= st_wpn_l85
 
 inv_grid_width          = 5
 inv_grid_height         = 2
-inv_grid_x           	= 0
-inv_grid_y           	= 12
+inv_grid_x           	= 15
+inv_grid_y           	= 69
 
 upgr_icon_x			= 303
 upgr_icon_y			= 515
@@ -139,7 +139,7 @@ orientation             = 0, 0, 0
 fire_point              = 0.0,0.186,0.435
 fire_point2             = 0.0, 0.106, 0.468
 
-flame_particles         = weapons\generic_weapon05
+;flame_particles         = weapons\generic_weapon05
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -174,7 +174,7 @@ grenade_launcher_status = 2
 
 zoom_enabled            = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time		= 0.25
-scope_zoom_factor       = 58.6 ;        = 42                                                ; fov for zoom mode
+scope_zoom_factor       = 40 ;        = 42                                                ; fov for zoom mode
 
 scope_texture				= wpn_crosshair_l85
 
@@ -305,3 +305,135 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 upgrades                = up_gr_firstab_l85, up_gr_seconab_l85, up_gr_thirdab_l85, up_gr_fourtab_l85, up_gr_fourtcd_l85, up_gr_fourtef_l85, up_gr_fifthab_l85, up_gr_fifthcd_l85
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_l85
+
+;=========================================================================================
+[wpn_l85_custom]:wpn_l85
+
+cost                    = 16660
+inv_weight           	= 4.98
+
+installed_upgrades      = up_thirda_l85, up_fourta_l85
+
+hit_power               = 0.49, 0.49, 0.49, 0.49
+hit_impulse             = 38
+fire_distance           = 965
+bullet_speed            = 940
+rpm                     = 690
+
+hud                     = wpn_l85_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.077
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0011
+
+ammo_mag_size           = 30
+ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
+fire_modes              = 1, -1
+
+fire_dispersion_base    = 0.19
+
+inv_name          		= st_wpn_l85_custom
+inv_name_short       	= st_wpn_l85_custom
+
+inv_grid_width          = 5
+inv_grid_height         = 2
+inv_grid_x           	= 15
+inv_grid_y           	= 65
+
+visual                  = dynamics\weapons\wpn_l85\wpn_l8a.ogf
+
+snd_reload		= weapons\l85\l85_reload
+
+[wpn_l85_custom_hud]:wpn_l85_hud
+
+item_visual					= dynamics\weapons\wpn_l85\wpn_l8a_hud.ogf
+;=========================================================================================
+[wpn_l85_camo]:wpn_l85
+
+cost                    = 16660
+inv_weight           	= 5.1
+
+installed_upgrades      = up_fiftha_l85
+
+hit_power               = 0.49, 0.49, 0.49, 0.49
+hit_impulse             = 38
+fire_distance           = 965
+bullet_speed            = 940
+rpm                     = 685
+
+hud                     = wpn_l85_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.077
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0011
+
+ammo_mag_size           = 30
+ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
+fire_modes              = 1, -1
+
+fire_dispersion_base    = 0.19
+
+inv_name          	= st_wpn_l85_camo
+inv_name_short       	= st_wpn_l85_camo
+description          	= st_wpn_l85_camo_descr
+
+inv_grid_width          = 5
+inv_grid_height         = 2
+inv_grid_x           	= 15
+inv_grid_y           	= 71
+
+visual                  = dynamics\weapons\wpn_l85\wpn_l8b.ogf
+
+snd_reload		= weapons\l85\l85_reload
+
+[wpn_l85_camo_hud]:wpn_l85_hud
+
+item_visual					= dynamics\weapons\wpn_l85\wpn_l8b_hud.ogf
+;=========================================================================================
+[wpn_l85_worn]:wpn_l85
+
+cost                    = 16660
+inv_weight           	= 4.85
+
+hit_power               = 0.49, 0.49, 0.49, 0.49
+hit_impulse             = 38
+fire_distance           = 965
+bullet_speed            = 940
+rpm                     = 675
+
+hud                     = wpn_l85_worn_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.077
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0011
+
+ammo_mag_size           = 30
+ammo_class              = ammo_5.56x45_ss190, ammo_5.56x45_ap
+fire_modes              = 1, -1
+
+fire_dispersion_base    = 0.2
+
+inv_name          		= st_wpn_l85_worn
+inv_name_short       	= st_wpn_l85_worn
+
+inv_grid_width          = 5
+inv_grid_height         = 2
+inv_grid_x           	= 15
+inv_grid_y           	= 67
+
+visual                  = dynamics\weapons\wpn_l85\wpn_l8c.ogf
+
+snd_reload		= weapons\l85\l85_reload
+
+[wpn_l85_worn_hud]:wpn_l85_hud
+
+item_visual					= dynamics\weapons\wpn_l85\wpn_l8c_hud.ogf

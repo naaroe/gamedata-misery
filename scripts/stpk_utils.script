@@ -1,9 +1,3 @@
--- Credits: xStreme, Bak and Barin
--- stpk_utils
--- Alundaio
-
-
-
 function data_left(stpk)
 	return (stpk:r_elapsed() ~= 0)
 end
@@ -164,6 +158,7 @@ function parse_cse_shape_properties_packet(ret,stpk)
 			ret.v4 = stpk:r_vec3()
 		end
 	end
+	ret.restrictor_type = stpk:r_u8()
 	return ret
 end
 

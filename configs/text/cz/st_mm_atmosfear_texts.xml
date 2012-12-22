@@ -1,142 +1,136 @@
----------------------------------
------------------------
-To Czech language translated by: seeZ
---------------------------
----------------------------------
-
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="st_cap_af_options">
-		<text>AtmosFear Nastavenн</text>
+		<text>AtmosFear Options</text>
 	</string>
 	<string id="st_cap_af_options_small">
-		<text>Atmosfear</text>
+		<text>AtmosFear</text>
 	</string>
 	<string id="st_cap_af_weather_options">
-		<text>Nastavenн Poиasн</text>
+		<text>Weather Options</text>
 	</string>
 	<string id="st_cap_af_event_options">
-		<text>Nastavenн Udбlostн</text>
+		<text>Event Options</text>
 	</string>
 	<string id="st_cap_af_moon_options">
-		<text>Nastavenн Noci</text>
+		<text>Night Options</text>
 	</string>
 	<string id="st_cap_af_default_options">
-		<text>Ostatnн Nastavenн</text>
+		<text>Other Options</text>
 	</string>
 	<string id="st_cap_af_blowout">
-		<text>Blowouty</text>
+		<text>Blowouts</text>
 	</string>
 	<string id="st_cap_af_fallout">
-		<text>Fallouty</text>
+		<text>Fallouts</text>
 	</string>
 	<string id="st_cap_af_psi_storm">
-		<text>Psi Bouшe</text>
+		<text>Psi storms</text>
 	</string>
 	<string id="st_cap_check_enable_blowout">
-		<text>Blowouty Zapnuty</text>
+		<text>Blowouts enabled</text>
 	</string>
 	<string id="st_cap_check_enable_fallout">
-		<text>Fallouty Zapnuty</text>
+		<text>Fallouts enabled</text>
 	</string>
 	<string id="st_cap_check_enable_psi_storm">
-		<text>Psi Bouшe Zapnuty</text>
+		<text>Psi Storms enabled</text>
 	</string>
 
 	<string id="st_cap_fate">
-		<text>Osud NPCs:</text>
+		<text>NPCs fate:</text>
 	</string>
 	<string id="st_cap_warning">
-		<text>Varovбnн:</text>
+		<text>Warnings:</text>
 	</string>
 	<string id="st_cap_task">
-		<text>Ъkoly:</text>
+		<text>Tasks:</text>
 	</string>
 	<string id="st_cap_freq">
-		<text>Frekvence:</text>
+		<text>Frequency:</text>
 	</string>
 	
 	<string id="st_list_freq_12">
-		<text>Kaћdэch 6 - 12 hodin</text>
+		<text>every 6 - 12 hours</text>
 	</string>
 	<string id="st_list_freq_24">
-		<text>Kaћdэch 12 - 24 hodin</text>
+		<text>every 12 - 24 hours</text>
 	</string>
 	<string id="st_list_freq_48">
-		<text>Kaћdй 1 - 2 dny</text>
+		<text>every 1 - 2 days</text>
 	</string>
 	<string id="st_list_freq_96">
-		<text>Kaћdй 2 - 4 dny</text>
+		<text>every 2 - 4 days</text>
 	</string>
 
 	<string id="st_list_fate_killatend">
-		<text>Zabнt na konci</text>
+		<text>Kill at the end</text>
 	</string>
 	<string id="st_list_fate_killatwave">
-		<text>Zabнt na vlnм</text>
+		<text>Kill as wave advances</text>
 	</string>
 	<string id="st_list_fate_turntozombie">
-		<text>Zmмnit se v zombie</text>
+		<text>Turn to zombie</text>
 	</string>
 	<string id="st_list_fate_explode">
-		<text>Vybouchnout na vlnм</text>
+		<text>Rip apart</text>
 	</string>
 	<string id="st_list_fate_poison">
-		<text>Radioactivnн/chemickб otrava</text>
+		<text>Rad./chem. poisoning</text>
 	</string>
 	<string id="st_list_fate_none">
-		<text>Nezranмn</text>
+		<text>Unhurt</text>
 	</string>
 	<string id="st_list_fate_kill">
-		<text>Zabнt vypбlenнm Vortexu</text>
+		<text>Kill on vortex discharge</text>
 	</string>
 	<string id="st_list_fate_killorturn">
-		<text>Zabнt, nebo se zmмnit v zombie</text>
+		<text>Kill or turn to zombie</text>
 	</string>
 	<string id="st_list_warning_radio_siren">
-		<text>Rбdio a sirйna</text>
+		<text>Radio and siren</text>
 	</string>
 	<string id="st_list_warning_radio">
-		<text>Rбdio</text>
+		<text>Radio</text>
 	</string>
 	<string id="st_list_warning_siren">
-		<text>Sirйna</text>
+		<text>Siren</text>
 	</string>
 	<string id="st_list_warning_none">
-		<text>Ћбdnй varovбnн</text>
+		<text>No warning</text>
 	</string>
 	<string id="st_list_task_give">
-		<text>Dбt ъkol</text>
+		<text>Give task</text>
 	</string>
 	<string id="st_list_task_none">
-		<text>Nedбt ъkol</text>
+		<text>Don't give task</text>
 	</string>
 	<string id="st_cap_moon_phases">
-		<text>Fбze mмsнce</text>
+		<text>Moon phases</text>
 	</string>
 	<string id="st_cap_night_brightness">
-		<text>Svмtlost ambientnн noci</text>
+		<text>Ambient night brightness</text>
 	</string>
 	<string id="st_list_night_brightness_dark">
-		<text>Temnй noci</text>
+		<text>Dark nights</text>
 	</string>
 	<string id="st_list_night_brightness_slight">
-		<text>Lehce svмtlй noci</text>
+		<text>Slightly brighter nights</text>
 	</string>
 	<string id="st_list_night_brightness_medium">
-		<text>Stшednм svмtlй noci</text>
+		<text>Medium bright nights</text>
 	</string>
 	<string id="st_list_night_brightness_bright">
-		<text>Velmi svмtlй noci</text>
+		<text>Very bright nights</text>
 	</string>
 	<string id="st_cap_weather_presets">
-		<text>Pшedvolby:</text>
+		<text>Presets:</text>
 	</string>
 	<string id="st_cap_weather_balance_presets">
-		<text>Stav:</text>
+		<text>Balance:</text>
 	</string>
 	<string id="st_cap_weather_length_presets">
-		<text>Dйlka obdobн:</text>
+		<text>Periods length:</text>
 	</string>
 	<string id="st_cap_af_zaton">
 		<text>Zaton</text>
@@ -145,7 +139,7 @@ To Czech language translated by: seeZ
 		<text>Jupiter</text>
 	</string>
 	<string id="st_cap_af_pripyat">
-		<text>Pripyaќ</text>
+		<text>Pripyat</text>
 	</string>
 	<string id="st_period_length_2h">
 		<text>2h</text>
@@ -181,105 +175,105 @@ To Czech language translated by: seeZ
 		<text>12h</text>
 	</string>
 	<string id="st_period_length">
-		<text>Dйlka obdobн</text>
+		<text>Period length</text>
 	</string>
 	<string id="st_cap_moon_cycle_length">
-		<text>Dйlka mмsниnнho cyklu:</text>
+		<text>Moon cycle length:</text>
 	</string>
 	<string id="st_cap_moon_cycle_length_8">
-		<text>8 dnщ</text>
+		<text>8 days</text>
 	</string>
 	<string id="st_cap_moon_cycle_length_28">
-		<text>28 dnщ</text>
+		<text>28 days</text>
 	</string>
 	<string id="st_cap_moon_static">
-		<text>Nemмnit a ukбzat:</text>
+		<text>Don't change and show:</text>
 	</string>
 	<string id="st_cap_moon_phase_0">
-		<text>Novэ mмsнc</text>
+		<text>New moon</text>
 	</string>
 	<string id="st_cap_moon_phase_1">
-		<text>Pшibэvajнcн, pщl mмsнce</text>
+		<text>Waxing crescent</text>
 	</string>
 	<string id="st_cap_moon_phase_2">
-		<text>1. Иtvrќ</text>
+		<text>1st quarter</text>
 	</string>
 	<string id="st_cap_moon_phase_3">
-		<text>Pшibэvajнcн, 3/4 mмsнc</text>
+		<text>Waxing gibous</text>
 	</string>
 	<string id="st_cap_moon_phase_4">
-		<text>Celэ mмsнc</text>
+		<text>Full moon</text>
 	</string>
 	<string id="st_cap_moon_phase_5">
-		<text>Ubэvajнcн, 3/4 mмsнc</text>
+		<text>Waning gibous</text>
 	</string>
 	<string id="st_cap_moon_phase_6">
-		<text>3. Иtvrќ</text>
+		<text>3rd quarter</text>
 	</string>
 	<string id="st_cap_moon_phase_7">
-		<text>Ubэvajнcн pщlmмsнc</text>
+		<text>Waning crescent</text>
 	</string>
 	<string id="st_list_weather_balance_preset_default">
-		<text>Rщznй stavy</text>
+		<text>Various balances</text>
 	</string>
 	<string id="st_list_weather_balance_preset_good">
-		<text>Vмtљinou dobrй</text>
+		<text>Mostly good</text>
 	</string>
 	<string id="st_list_weather_balance_preset_bad">
-		<text>Vмtљinou љpatnй</text>
+		<text>Mostly bad</text>
 	</string>
 	<string id="st_list_weather_balance_preset_custom">
-		<text>Vlastnн</text>
+		<text>Custom</text>
 	</string>
 	<string id="st_list_weather_length_preset_default">
-		<text>Rщznй dйlky perioid</text>
+		<text>Various period lengths</text>
 	</string>
 	<string id="st_list_weather_length_preset_short">
-		<text>Krбtkй</text>
+		<text>Short</text>
 	</string>
 	<string id="st_list_weather_length_preset_long">
-		<text>Dlouhй</text>
+		<text>Long</text>
 	</string>
 	<string id="st_list_weather_length_preset_custom">
-		<text>Vlastnн</text>
+		<text>Custom</text>
 	</string>
 	<string id="st_list_periods_clear">
-		<text>Sluneиno</text>
+		<text>Sunny</text>
 	</string>
 	<string id="st_list_periods_clear_foggy">
-		<text>Sluneиno / Mlhavo</text>
+		<text>Sunny / Foggy</text>
 	</string>
 	<string id="st_list_periods_foggy">
-		<text>Mlhavo</text>
+		<text>Foggy</text>
 	</string>
 	<string id="st_list_periods_foggy_rainy">
-		<text>Mlhavo / Deљtivo</text>
+		<text>Foggy / Rainy</text>
 	</string>
 	<string id="st_list_periods_rainy">
-		<text>Deљtivo</text>
+		<text>Rainy</text>
 	</string>
 	<string id="st_list_periods_stormy">
-		<text>Bouшivo</text>
+		<text>Stormy</text>
 	</string>
 	<string id="st_btn_load_color_balance">
-		<text>Naинst pщvodnн stav barvy a nastavenн svмltelnosti</text>
+		<text>Load default color balance and brightness settings</text>
 	</string>
 	<string id="st_btn_load_default_settings">
-		<text>Obnovit pщvodnн poиasн a nastavenн udбlostн a mмsнce</text>
+		<text>Restore default weather, event and moon settings</text>
 	</string>
 	<string id="st_msg_after_save">
-		<text>Nastavenн budou uloћeny s dalљн uloћenou hrou</text>
+		<text>The settings will be stored with the next save game</text>
 	</string>
 	<string id="st_msg_load_user">
-		<text>Chcete naинst pщvodnн stav barev konzole a nastavenн svмtlosti?</text>
+		<text>Do you want to load default console color balance and brightness settings?</text>
 	</string>
 	<string id="st_msg_load_default_settings">
-		<text>Chcete naинst pщvodnн nastavenн poиasн, udбlostн a mмsнce?</text>
+		<text>Do you want to load default weather, event and moon settings?</text>
 	</string>
 	<string id="st_msg_load_user_done">
-		<text>Pщvodnн stav barev konzole a nastavenн svмtlosti byly naиteny</text>
+		<text>Default console color balance and brightness settings have been loaded</text>
 	</string>
 	<string id="st_msg_load_default_settings_done">
-		<text>Pщvodnн poиasн, udбlosti a nastavenн mмsнce byli obnoveny</text>
+		<text>Default weather, event and moon settings have been restored</text>
 	</string>
 </string_table>

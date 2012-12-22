@@ -82,6 +82,7 @@ local intercepts = {
 	-- bind_physic_object
 	physic_object_on_hit_callback 	= {},
 	physic_object_on_use_callback 	= {}
+
 }
 
 function _G.callback_register(name,func)

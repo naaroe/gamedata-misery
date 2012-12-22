@@ -23,7 +23,7 @@
 		<text>The pseudodog is being cooked into meals just like most mutants in The Zone. A popular choice among stalkers. The meat can be sold for scientific purposes also. \n\n%c[default]WARNING:\n%c[255,238,153,26] Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.</text>
 	</string>
 	<string id="mutant_psevdodog_meat">
-		<text>Psuedodog meat</text>
+		<text>Pseudodog meat</text>
 	</string>
 	<string id="mutant_krovosos_meat_description">
 		<text>A stringy portion of Bloodsucker meat. Although the Bloodsucker is a fearsome beast the meat is traded at affordable costs since it is hard to cook this into anything tasty. The meat can be sold for scientific purposes also. \n\n%c[default]WARNING:\n%c[255,238,153,26] Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.</text>
@@ -102,5 +102,17 @@
 	</string>
 	<string id="mutant_tushkano_head">
 		<text>Tushkano Head</text>
+	</string>
+	<string id="mutant_controller_brain_description">
+		<text>Controllers have mental powers and this mutated ability must be found somewhere in their brains. Scientists will pay for this tissue for thorough examination.</text>
+	</string>
+	<string id="mutant_controller_brain">
+		<text>Controller brain tissue</text>
+	</string>
+	<string id="mutant_controller_hand_description">
+		<text>Controllers seem to use their hands when attacking with their psychological powers. Maybe scientists are able to locate a physiological mutation in their hands that can relate to their mental attacks.</text>
+	</string>
+	<string id="mutant_controller_hand">
+		<text>Controller hand</text>
 	</string>
 </string_table>

@@ -135,8 +135,8 @@ kill_msg_y			= 104
 kill_msg_width   	= 80
 kill_msg_height		= 20
 
-flame_particles		= weapons\generic_weapon05
-smoke_particles		= weapons\generic_shoot_00
+;flame_particles		= weapons\generic_weapon05
+smoke_particles         = amik\weapons\smoke_particles\smoke_particles_pump_01
 rpm_empty_click 	= 200
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
@@ -320,3 +320,144 @@ ammo_class		 			= ammo_12x76_zhekan, ammo_12x70_buck
 upgrades				= up_gr_firstab_spas12, up_gr_seconab_spas12, up_gr_thirdab_spas12, up_gr_fourtab_spas12
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_spas12
+
+;=============================================================================================================================
+[wpn_spas12_custom]:wpn_spas12
+
+cost                = 11840
+inv_weight          = 4.25
+
+installed_upgrades      = up_fourta_spas12
+
+hit_power        			= 0.75, 0.75, 0.75, 0.75
+hit_impulse      			= 75
+fire_distance  = 530
+bullet_speed   = 520
+rpm            = 90
+
+hud                        = wpn_spas12_custom_hud
+
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0030
+
+ammo_mag_size       = 8
+fire_modes          = 1, -1
+ammo_class		 	= ammo_12x70_buck, ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.4
+
+inv_name            = st_wpn_spas12_custom
+inv_name_short      = st_wpn_spas12_custom
+
+inv_grid_width		= 5
+inv_grid_height		= 1
+inv_grid_x          	= 11
+inv_grid_y          	= 79
+
+visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1a.ogf
+
+snd_reload		= weapons\spas12\spas12_reload_end
+snd_add_cartridge	= weapons\spas12\spas12_reload
+snd_close_weapon        = weapons\spas12\spas12_reload_end
+
+[wpn_spas12_custom_hud]:wpn_spas12_hud
+
+item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas1a_hud.ogf
+;=============================================================================================================================
+[wpn_spas12_alt]:wpn_spas12
+
+cost                = 11840
+inv_weight          = 4.25
+
+installed_upgrades      = up_firsta_spas12
+
+hit_power        			= 0.75, 0.75, 0.75, 0.75
+hit_impulse      			= 75
+fire_distance  = 530
+bullet_speed   = 520
+rpm            = 90
+
+hud                        = wpn_spas12_alt_hud
+
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0030
+
+ammo_mag_size       = 8
+fire_modes          = 1, -1
+ammo_class		 	= ammo_12x70_buck, ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.4
+
+inv_name            = st_wpn_spas12_alt
+inv_name_short      = st_wpn_spas12_alt
+
+inv_grid_width		= 5
+inv_grid_height		= 1
+inv_grid_x          	= 6
+inv_grid_y          	= 79
+
+visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1b.ogf
+
+snd_reload		= weapons\spas12\spas12_reload_end
+snd_add_cartridge	= weapons\spas12\spas12_reload
+snd_close_weapon        = weapons\spas12\spas12_reload_end
+
+[wpn_spas12_alt_hud]:wpn_spas12_hud
+
+item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas1b_hud.ogf
+;=============================================================================================================================
+[wpn_spas12_worn]:wpn_spas12
+
+cost                = 11840
+inv_weight          = 4.2
+
+upgrades				= up_gr_firstab_spas12, up_gr_seconab_spas12, up_gr_thirdab_spas12, up_gr_fourtab_spas12
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_spas12
+
+hit_power        			= 0.75, 0.75, 0.75, 0.75
+hit_impulse      			= 75
+fire_distance  = 530
+bullet_speed   = 520
+rpm            = 85
+
+hud                        = wpn_spas12_worn_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0025
+condition_queue_shot_dec	= 0.0030
+
+ammo_mag_size       = 8
+fire_modes          = 1, -1
+ammo_class		 	= ammo_12x70_buck, ammo_12x76_zhekan
+
+fire_dispersion_base		= 0.48
+
+inv_name            = st_wpn_spas12_worn
+inv_name_short      = st_wpn_spas12_worn
+
+inv_grid_width		= 5
+inv_grid_height		= 1
+inv_grid_x          	= 11
+inv_grid_y          	= 79
+
+visual                     	= dynamics\weapons\wpn_spas12\wpn_spas1c.ogf
+
+snd_reload		= weapons\spas12\spas12_reload_end
+snd_add_cartridge	= weapons\spas12\spas12_reload
+snd_close_weapon        = weapons\spas12\spas12_reload_end
+
+[wpn_spas12_worn_hud]:wpn_spas12_hud
+
+item_visual                   	= dynamics\weapons\wpn_spas12\wpn_spas1c_hud.ogf

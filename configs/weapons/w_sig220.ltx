@@ -138,8 +138,8 @@ orientation             	= 0, 0, 0
 fire_point              = 0.0, 0.133, 0.161
 fire_point2             = 0.0, 0.133, 0.161
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 				= 0.0, 0.133, 0.047
@@ -379,3 +379,182 @@ ammo_class		 		= ammo_11.43x23_ap, ammo_11.43x23_hydro, ammo_11.43x23_fmj
 upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig220
+
+;==================================================================================================
+[wpn_sig220_custom]:wpn_sig220
+
+cost              = 6840            ; the price of the item
+inv_weight        = 0.7
+
+installed_upgrades      = up_firsta_sig220, up_thirda_sig220
+
+hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_impulse	 		 		= 88
+fire_distance           	= 630
+bullet_speed		 		= 670
+rpm                     	= 195
+
+hud                     = wpn_sig220_custom_hud
+
+misfire_start_condition		= 0.5
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size		 	= 7      
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.58
+
+inv_name          = st_wpn_sig220_custom              
+inv_name_short    = st_wpn_sig220_custom
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 4
+inv_grid_y				= 63
+
+visual                  = dynamics\weapons\wpn_sig220\wpn_sig22a.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_sig220_custom_hud]:wpn_sig220_hud
+
+item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22a_hud.ogf
+;==================================================================================================
+[wpn_sig220_camo]:wpn_sig220
+
+cost              = 6840            ; the price of the item
+inv_weight        = 0.7
+
+installed_upgrades      = up_fourta_sig220
+
+hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_impulse	 		 		= 88
+fire_distance           	= 630
+bullet_speed		 		= 670
+rpm                     	= 200
+
+hud                     = wpn_sig220_camo_hud
+
+misfire_start_condition		= 0.5
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size		 	= 7      
+fire_modes		  		= 1
+ammo_class		  		= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.58
+
+inv_name          = st_wpn_sig220_camo              
+inv_name_short    = st_wpn_sig220_camo
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 4
+inv_grid_y				= 66
+
+visual                  = dynamics\weapons\wpn_sig220\wpn_sig22b.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_sig220_camo_hud]:wpn_sig220_hud
+
+item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22b_hud.ogf
+;==================================================================================================
+[wpn_sig220_worn]:wpn_sig220
+
+cost              = 6840            ; the price of the item
+inv_weight        = 0.7
+
+installed_upgrades      = up_firsta_sig220
+
+hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_impulse	 		 		= 88
+fire_distance           	= 630
+bullet_speed		 		= 670
+rpm                     	= 195
+
+hud                     = wpn_sig220_worn_hud
+
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size		 	= 7      
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.65
+
+inv_name          = st_wpn_sig220_worn            
+inv_name_short    = st_wpn_sig220_worn
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 4
+inv_grid_y				= 65
+
+visual                  = dynamics\weapons\wpn_sig220\wpn_sig22c.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_sig220_worn_hud]:wpn_sig220_hud
+
+item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22c_hud.ogf
+;==================================================================================================
+[wpn_sig220_rusty]:wpn_sig220
+
+cost              = 6840            ; the price of the item
+inv_weight        = 0.8
+
+upgrades                = up_gr_firstab_sig220, up_gr_seconab_sig220, up_gr_thirdab_sig220, up_gr_fourtab_sig220, up_gr_fifthab_sig220
+installed_upgrades      =
+upgrade_scheme          = upgrade_scheme_sig220
+
+hit_power           		= 0.44, 0.44, 0.44, 0.44
+hit_impulse	 		 		= 88
+fire_distance           	= 630
+bullet_speed		 		= 670
+rpm                     	= 195
+
+hud                     = wpn_sig220_rusty_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size		 	= 7      
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.7
+
+inv_name          = st_wpn_sig220_rusty             
+inv_name_short    = st_wpn_sig220_rusty
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 4
+inv_grid_y				= 64
+
+visual                  = dynamics\weapons\wpn_sig220\wpn_sig22d.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_sig220_rusty_hud]:wpn_sig220_hud
+
+item_visual						= dynamics\weapons\wpn_sig220\wpn_sig22d_hud.ogf

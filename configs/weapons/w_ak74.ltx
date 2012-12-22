@@ -127,7 +127,7 @@ orientation             = 0, 0, 0
 fire_point              =  0,0.218,0.656        ; position (3rd person view) for particles of fire
 fire_point2             =  0,0.161,0.583        ; position (3rd person view) for particles of fire (when shooting with secondary fire)
 
-flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
+;flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -136,7 +136,7 @@ shell_particles         = weapons\generic_shells   ; name of the particles for s
 shell_particles         = weapons\generic_shells
 
 ;-------------------------------------------------------------------------------
-inv_name          = st_wpn_ak74                    ; name in inventory
+inv_name          = st_wpn_ak74
 inv_name_short    = st_wpn_ak74
 
 inv_grid_width       = 5    ; position and size of the icon that will be used to display weapon in the inventory menu
@@ -320,3 +320,260 @@ ammo_class           = ammo_5.45x39_ap, ammo_5.45x39_fmj   ; name of the ltx-sec
 upgrades                = up_gr_firstab_ak74, up_gr_seconab_ak74, up_gr_thirdab_ak74, up_gr_fourtab_ak74, up_gr_fifthab_ak74, up_gr_fifthcd_ak74
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_ak74
+
+;=====================================================================================================================================================
+[wpn_ak74_custom1]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.3
+inv_name          = st_wpn_ak74_custom
+inv_name_short    = st_wpn_ak74_custom
+
+installed_upgrades      = up_firsta_ak74, up_thirda_ak74
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 800
+bullet_speed            = 880
+rpm                     = 650
+
+hud                     = wpn_ak74_custom1_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.28
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 55
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7a.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_custom1_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7a_hud.ogf
+;=====================================================================================================================================================
+[wpn_ak74_custom2]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.4
+inv_name          = st_wpn_ak74_custom
+inv_name_short    = st_wpn_ak74_custom
+
+installed_upgrades      = up_secona_ak74, up_fiftha_ak74
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 800
+bullet_speed            = 880
+rpm                     = 650
+
+hud                     = wpn_ak74_custom2_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.28
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 65
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7b.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_custom2_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7b_hud.ogf
+;=====================================================================================================================================================
+[wpn_ak74_alt]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.35
+inv_name          = st_wpn_ak74_alt
+inv_name_short    = st_wpn_ak74_alt
+
+installed_upgrades      = up_secona_ak74, up_fiftha_ak74
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 800
+bullet_speed            = 880
+rpm                     = 650
+
+hud                     = wpn_ak74_alt_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.28
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 63
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7c.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_alt_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7c_hud.ogf
+;=====================================================================================================================================================
+[wpn_ak74_camo]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.25
+inv_name          = st_wpn_ak74_camo
+inv_name_short    = st_wpn_ak74_camo
+description       = st_wpn_ak74_camo_descr
+
+installed_upgrades      = up_secona_ak74, up_thirda_ak74
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 800
+bullet_speed            = 880
+rpm                     = 650
+
+hud                     = wpn_ak74_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.28
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 61
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7d.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_camo_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7d_hud.ogf
+;=====================================================================================================================================================
+[wpn_ak74_worn]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.4
+inv_name          = st_wpn_ak74_worn
+inv_name_short    = st_wpn_ak74_worn
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 790
+bullet_speed            = 870
+rpm                     = 640
+
+hud                     = wpn_ak74_worn_hud
+
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.3
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 59
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7e.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_worn_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7e_hud.ogf
+;=====================================================================================================================================================
+[wpn_ak74_rusty]:wpn_ak74
+
+cost              	 = 12260
+inv_weight        = 3.2
+inv_name          = st_wpn_ak74_rusty
+inv_name_short    = st_wpn_ak74_rusty
+
+hit_power            	= 0.52, 0.52, 0.52, 0.52
+hit_impulse          	= 37 
+fire_distance           = 780
+bullet_speed            = 860
+rpm                     = 630
+
+hud                     = wpn_ak74_rusty_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size        = 30
+fire_modes           = 1, -1
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base       	= 0.32
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 7
+inv_grid_y           = 57
+
+visual                  = dynamics\weapons\wpn_ak74\wpn_ak7f.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_ak74_rusty_hud]:wpn_ak74_hud
+
+item_visual                = dynamics\weapons\wpn_ak74\wpn_ak7f_hud.ogf
+;=====================================================================================================================================================

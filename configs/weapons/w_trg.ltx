@@ -139,8 +139,8 @@ fire_point           	= 0.0, 0.169, 0.902
 ;fire_point2             = 0.0, 0.129, 0.942
 fire_point2          	= 0.0, 0.169, 0.902
 
-flame_particles			= weapons\generic_weapon06
-smoke_particles			= weapons\generic_shoot_00
+;flame_particles			= weapons\generic_weapon06
+smoke_particles         = weapons\generic_shoot_00
 rpm_empty_click 		= 200
 
 shell_point		 	= 0.0, 0.129, 0.192
@@ -180,13 +180,12 @@ scope_name 					= wpn_addon_scope
 scope_x 						= 60
 scope_y 						= -2
 
-silencer_name           = wpn_addon_silencer    ; section name for the attachable silencer
-silencer_x              = 269                ; offset in inventory icon
-silencer_y              = 29
+silencer_name           = wpn_addon_silencer_1143x23    ; section name for the attachable silencer
+silencer_x              = 270                ; offset in inventory icon
+silencer_y              = -12
 
 silencer_smoke_particles 	= weapons\generic_shoot_00
-snd_silncer_shot			= weapons\trg42_silent
-snd_silncer_shot1			= weapons\trg42_silent_1
+snd_silncer_shot			= weapons\trg\trg42_shoot_sil
 
 silencer_light_color			= 0.6,0.5,0.3
 silencer_light_range			= 0.01
@@ -195,15 +194,11 @@ silencer_light_var_range	= 0.5
 silencer_light_time 			= 0.2
 
 ;звуки
-snd_draw				= weapons\rpk_draw
-snd_holster				= weapons\big_holster
-snd_shoot				= weapons\trg42_shoot
-snd_shoot1				= weapons\trg42_shoot_1
-snd_shoot2				= weapons\trg42_shoot_1
-snd_shoot3				= weapons\trg42_shoot
-snd_shoot4				= weapons\trg42_shoot_1
-snd_empty				= weapons\gen_empty, 0.5
-snd_reload				= weapons\trg42_reload
+snd_draw				= weapons\trg\trg42_draw
+snd_holster				= weapons\generic\rifle_holster
+snd_shoot				= weapons\trg\trg42_shoot
+snd_empty				= weapons\generic\rifle_modern_empty, 0.5
+snd_reload				= weapons\trg\trg42_reload
 snd_close				= weapons\generic_close
 snd_bore				= weapons\draw_silent
 snd_bore1				= weapons\mp5_bore

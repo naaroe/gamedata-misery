@@ -1146,4 +1146,14 @@
 	<string id="axr_phrase_friend_companion_answer_join">
 		<text>Sure, sounds like a great idea! Lead the way.</text>
 	</string>
+	<!-- Alundaio -->
+	<string id="st_mechanic_query_items">
+		<text>Is any of my equipment ready for pickup?</text>
+	</string>
+	<string id="st_mechanic_repair_done">
+		<text>Yes, here you are.</text>
+	</string>
+		<string id="st_mechanic_repair_not_done">
+		<text>Not yet, check back later.</text>
+	</string>
 </string_table>

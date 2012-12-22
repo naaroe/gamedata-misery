@@ -132,9 +132,13 @@ function on_game_load()
 		for gvid=0,933 do
 			if gg:valid_vertex_id(gvid) then
 				local vertex = gg:vertex(gvid)
+
 				local level_name = alife():level_name(vertex:level_id())
+
 				local lvid = vertex:level_vertex_id()
+
 				local pos = vertex:level_point()
+
 				if (not debug_game_graph_loaded) then
 					local obj = alife():create("medkit", pos, lvid, gvid)
 					level.map_add_object_spot_ser(obj.id, "alife_combat", level_name.." Gvid:"..gvid)
@@ -643,8 +647,6 @@ function enemy_hud_show(hud)
 				end
 				local scripted = xr_danger.is_danger_scripted and xr_danger.is_danger_scripted(near)
 				hud:add_msg("Scripted",scripted)
-			else
-				hud:add_msg("Best Danger",false)
 			end
 		end
 	end

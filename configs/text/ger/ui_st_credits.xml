@@ -4,60 +4,60 @@
 		<text>::::::::::::: Credits :::::::::::::</text>
 	</string>
 	<string id="st_ceano">
-		<text>I "Ceano" give thanks to you all.</text>
+		<text>N.Aaroe</text>
 	</string>
 	<string id="st_alundaio">
-		<text>Alundaio</text>
-	</string>
-	<string id="st_cromm_cruac">
 		<text>Cromm Cruac</text>
 	</string>
+	<string id="st_cromm_cruac">
+		<text>Ceano</text>
+	</string>
 	<string id="st_neilmc">
-		<text>NeilMC</text>
+		<text>Sclera</text>
 	</string>
 	<string id="st_indigosc">
-		<text>IndigoSC</text>
+		<text>Rvsty</text>
 	</string>
 	<string id="st_stooe">
-		<text>stooe</text>
+		<text>Kaplan.994</text>
 	</string>
 	<string id="st_smrtphoneusr">
-		<text>smrtphoneusr</text>
+		<text>BioShocker</text>
 	</string>
 	<string id="st_koobze">
-		<text>Koobze</text>
+		<text>Derranged</text>
 	</string>
 	<string id="st_slevin_kelevra">
-		<text>Slevin Kelevra</text>
+		<text>Loner1</text>
 	</string>
 	<string id="st_gnomus">
-		<text>Gnomus</text>
+		<text>Blakluma</text>
 	</string>
 	<string id="st_djahns">
-		<text>Djahns</text>
+		<text>Davidme</text>
 	</string>
 	<string id="st_rulix">
-		<text>Rulix</text>
+		<text>Imperialreign</text>
 	</string>
 	<string id="st_zombiedance">
-		<text>zombiedance</text>
+		<text>Angrydog</text>
 	</string>
 	<string id="st_russo">
-		<text>Russo</text>
+		<text>Alundaio</text>
 	</string>
 	<string id="st_decane">
-		<text>Decane</text>
+		<text>Darkenneko</text>
 	</string>
 	<string id="st_barin">
-		<text>Barin</text>
+		<text>Vandrerer</text>
 	</string>
 	<string id="st_mnn">
-		<text>mnn</text>
+		<text>Timnwells</text>
 	</string>
 	<string id="st_testers_stalker">
-		<text>Ewe, ExoStalker (Play Testing)</text>
+		<text>Fluffy22</text>
 	</string>
 	<string id="st_credits_end">
-		<text>::::::::::::::: End :::::::::::::::</text>
+		<text>All beta testers/contributors</text>
 	</string>
 </string_table>

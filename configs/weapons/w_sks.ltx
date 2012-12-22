@@ -68,8 +68,8 @@ inv_weight			= 3.86
 
 inv_grid_width     = 5
 inv_grid_height    = 1
-inv_grid_x         = 11
-inv_grid_y         = 48
+inv_grid_x         = 15
+inv_grid_y         = 24
 
 kill_msg_x				= 259
 kill_msg_y				= 293
@@ -117,8 +117,8 @@ orientation             = 0, 0, 0
 fire_point           	= 0.0, 0.129, 0.942
 fire_point2             = 0.0, 0.129, 0.942
 
-flame_particles			= weapons\generic_weapon06
-smoke_particles			= weapons\generic_shoot_00
+;flame_particles			= weapons\generic_weapon06
+smoke_particles         = weapons\generic_shoot_00
 rpm_empty_click 			= 200
 
 shell_point		 			= 0.0, 0.129, 0.192
@@ -247,3 +247,59 @@ anm_idle_sprint				= m1891_idle_sprint
 anm_open						= sks_reload_start
 anm_add_cartridge			= sks_reload
 anm_close					= sks_reload_end
+
+;==============================================================================================================================
+[wpn_sks_modern]:wpn_sks
+
+cost					= 19220
+inv_weight			= 3.8
+
+installed_upgrades      = up_secona_svd, up_thirda_svd
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size			= 10
+ammo_class				= ammo_7.62x39_fmj
+
+inv_name				= st_wpn_sks_modern
+inv_name_short			= st_wpn_sks_modern
+
+inv_grid_width     = 5
+inv_grid_height    = 1
+inv_grid_x         = 11
+inv_grid_y         = 48
+
+fire_dispersion_base    = 0.13
+rpm_empty_click 			= 200
+
+
+; ttc
+hit_power           	= 0.53, 0.53, 0.53, 0.53
+hit_impulse		        = 37
+fire_distance           = 700
+bullet_speed		    = 735
+rpm                     = 110
+
+hud                     = wpn_sks_modern_hud
+
+visual                  = dynamics\weapons\wpn_sks_v2\wpn_sks_v1.ogf
+
+snd_draw		= weapons\sks\sks_draw
+snd_holster		= weapons\generic\rifle_historic_holster
+snd_shoot		= weapons\sks\sks_shoot
+snd_empty		= weapons\generic\rifle_historic_empty, 0.5
+snd_reload		= weapons\sks\sks_reload
+snd_close		= weapons\generic_close
+snd_open_weapon         = weapons\sks\sks_open
+snd_add_cartridge	= weapons\sks\sks_load
+snd_close_weapon        = weapons\sks\sks_close
+snd_silncer_shot        = weapons\silencers\silencer_762x39
+
+[wpn_sks_modern_hud]:wpn_sks_hud
+
+item_visual					= dynamics\weapons\wpn_sks_v2\wpn_sks_v1_hud

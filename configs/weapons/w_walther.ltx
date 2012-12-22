@@ -139,8 +139,8 @@ orientation             = 0, -10, 0
 fire_point              	= 0.0, 0.133, 0.161
 fire_point2                 = 0.0, 0.133, 0.161
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 				= 0.0, 0.133, 0.047
@@ -251,8 +251,8 @@ anm_reload_empty			= walter99_reload, walter99_close
 anm_idle_moving 			= walter99_idle_moving
 anm_idle_moving_empty 		= walter99_idle_moving, walter99_opened
 
-anm_idle_sprint					= 1911_sprint
-anm_idle_sprint_empty			= 1911_sprint, 1911_opened
+anm_idle_sprint					= colt1911_idle_sprint
+anm_idle_sprint_empty			= colt1911_idle_sprint, colt1911_opened
 
 anm_bore					= walter99_idle_bore
 anm_bore_empty				= walter99_idle_bore, walter99_opened
@@ -289,3 +289,178 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 upgrades                = up_gr_firstab_walther, up_gr_seconab_walther, up_gr_thirdab_walther, up_gr_fourtab_walther, up_gr_fifthab_walther
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_walther
+
+;================================================================================================================
+[wpn_walther_custom]:wpn_walther
+
+cost					= 3790
+inv_weight				= 0.65
+
+installed_upgrades      = up_firsta_walther, up_secona_walther
+
+hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_impulse	 		 			= 22
+fire_distance           	= 410
+bullet_speed		 		= 370
+rpm                     	= 225
+
+hud                     = wpn_walther_custom_hud
+
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.06
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size     = 16
+fire_modes		  = 1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.61
+
+inv_name				= st_wpn_walther_custom
+inv_name_short			= st_wpn_walther_custom
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 58
+
+visual                  = dynamics\weapons\wpn_walter99\wpn_walter9a.ogf
+
+snd_reload				= weapons\generic\pistol_reload, 0.8
+
+[wpn_walther_custom_hud]:wpn_walther_hud
+
+item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9a_hud.ogf
+;================================================================================================================
+[wpn_walther_alt1]:wpn_walther
+
+cost					= 3790
+inv_weight				= 0.66
+
+installed_upgrades      = up_thirda_walther
+
+hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_impulse	 		 			= 22
+fire_distance           	= 410
+bullet_speed		 		= 370
+rpm                     	= 225
+
+hud                     = wpn_walther_alt1_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.06
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size     = 16
+fire_modes		  = 1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.61
+
+inv_name				= st_wpn_walther_alt1
+inv_name_short			= st_wpn_walther_alt1
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 57
+
+visual                  = dynamics\weapons\wpn_walter99\wpn_walter9b.ogf
+
+snd_reload				= weapons\generic\pistol_reload, 0.8
+
+[wpn_walther_alt1_hud]:wpn_walther_hud
+
+item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9b_hud.ogf
+;================================================================================================================
+[wpn_walther_alt2]:wpn_walther
+
+cost					= 3790
+inv_weight				= 0.65
+
+hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_impulse	 		 			= 22
+fire_distance           	= 410
+bullet_speed		 		= 370
+rpm                     	= 225
+
+hud                     = wpn_walther_alt2_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.06
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size     = 16
+fire_modes		  = 1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.6
+
+inv_name				= st_wpn_walther_alt2
+inv_name_short			= st_wpn_walther_alt2
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 56
+
+visual                  = dynamics\weapons\wpn_walter99\wpn_walter9c.ogf
+
+snd_reload				= weapons\generic\pistol_reload, 0.8
+
+[wpn_walther_alt2_hud]:wpn_walther_hud
+
+item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9c_hud.ogf
+;================================================================================================================
+[wpn_walther_worn]:wpn_walther
+
+cost					= 3790
+inv_weight				= 0.7
+
+installed_upgrades      = up_firsta_walther
+
+hit_power           			= 0.24, 0.24, 0.24, 0.24
+hit_impulse	 		 			= 22
+fire_distance           	= 410
+bullet_speed		 		= 370
+rpm                     	= 215
+
+hud                     = wpn_walther_worn_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.006
+misfire_end_prob	     	= 0.06
+condition_shot_dec      	= 0.0020
+condition_queue_shot_dec	= 0.0020
+
+ammo_mag_size     = 16
+fire_modes		  = 1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.65
+
+inv_name				= st_wpn_walther_worn
+inv_name_short			= st_wpn_walther_worn
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 55
+
+visual                  = dynamics\weapons\wpn_walter99\wpn_walter9d.ogf
+
+snd_reload				= weapons\generic\pistol_reload, 0.8
+
+[wpn_walther_worn_hud]:wpn_walther_hud
+
+item_visual						= dynamics\weapons\wpn_walter99\wpn_walter9d_hud.ogf
