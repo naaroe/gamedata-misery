@@ -17,12 +17,12 @@
 [simulation_stalker]:online_offline_group
 faction = stalker
 npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
-npc_in_squad = 3, 4 
+npc_in_squad = 3, 4
 
 [simulation_stalker_1]:online_offline_group
 faction = stalker
 npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2,  sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
-npc_in_squad = 2, 4 
+npc_in_squad = 2, 4
 
 [simulation_stalker_2]:online_offline_group
 faction = stalker
@@ -179,13 +179,13 @@ npc = sim_default_stalker_guide, sim_default_stalker_4, sim_default_stalker_4
 faction = stalker_hostile
 relationship = enemy
 npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_2
-npc_in_squad = 3, 4 
+npc_in_squad = 3, 4
 
 [simulation_stalker_1_hostile]:online_offline_group
 faction = stalker_hostile
 relationship = enemy
 npc_random = sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_2,  sim_default_stalker_2, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_3, sim_default_stalker_4
-npc_in_squad = 3, 4 
+npc_in_squad = 3, 4
 
 [simulation_stalker_2_hostile]:online_offline_group
 faction = stalker_hostile
@@ -304,12 +304,12 @@ npc_in_squad = 3, 4
 [simulation_bandit_1]:online_offline_group
 faction = bandit
 npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_4
-npc_in_squad = 3, 4 
+npc_in_squad = 3, 4
 
 [simulation_bandit_2]:online_offline_group
 faction = bandit
 npc_random = sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_0, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_1, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_2, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_4
-npc_in_squad = 3, 4 
+npc_in_squad = 3, 4
 
 [simulation_bandit_3]:online_offline_group
 faction = bandit
@@ -576,7 +576,7 @@ faction = killer
 npc_random = sim_default_killer_4
 relationship = neutral
 npc_in_squad = 2, 2
-target_smart = {=is_dark_night} zat_b40_smart_terrain, nil 
+target_smart = {=is_dark_night} zat_b40_smart_terrain, nil
 
 [merc_sim_squad_veteran_jup_b47_assault_neutral]:online_offline_group
 faction = killer
@@ -1614,9 +1614,9 @@ npc_random = snork_normal, snork_normal, snork_strong
 npc_in_squad = 2, 4
 
 [simulation_snork_jupiter]:online_offline_group
-faction = zombied
+faction = monster_predatory_day
 npc_random = snork_normal, snork_normal, snork_strong
-npc_in_squad = 2, 6
+npc_in_squad = 1, 3
 
 [simulation_snork_pripyat]:online_offline_group
 faction = monster_predatory_day
@@ -2140,7 +2140,7 @@ faction = monster_predatory_night
 npc_random = chimera_normal
 npc_in_squad = 1, 2
 target_smart = {=is_dark_night} nil, pri_a15
- 
+
 [simulation_chimera_jupiter]:online_offline_group
 faction = monster_predatory_night
 npc_random = chimera_normal
@@ -2948,7 +2948,7 @@ faction = monster_predatory_day
 npc_random = cat_weak, cat_normal, cat_strong, cat_strong
 npc_in_squad = 2, 5
 
-;--------------- test -------------------------------------------- 
+;--------------- test --------------------------------------------
 
 [simulation_dog_01]:simulation_dog
 target_smart = smart_02:smart_01:loop
@@ -3065,7 +3065,7 @@ story_id = pri_a25_base_army_medic
 [test_yojig_squad]:online_offline_group
 faction = stalker
 npc_random = sim_default_stalker_0, sim_default_stalker_1, sim_default_stalker_2, sim_default_stalker_3, sim_default_stalker_4
-npc_in_squad = 5, 5 
+npc_in_squad = 5, 5
 ;npc = sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1
 target_smart = {+test_info} smart_2, smart_1
 story_id = test_yojig_squad
@@ -3112,13 +3112,13 @@ target_smart = renderman_selo_smart
 
 [renderman_selo_test_stalker_squad]:online_offline_group
 faction = stalker
-npc = jup_a10_stalker_vano, jup_b220_trapper 
+npc = jup_a10_stalker_vano, jup_b220_trapper
 target_smart = alex_selo_smart_terrain
 
 [alex_selo_squad_1]:online_offline_group
 faction = stalker
 npc = sim_default_stalker_1
-target_smart = alex_selo_smart: alex_selo_smart_terrain 
+target_smart = alex_selo_smart: alex_selo_smart_terrain
 
 [plecha_selo_stalker_squad]:online_offline_group
 faction = stalker
