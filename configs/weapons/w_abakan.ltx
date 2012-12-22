@@ -57,7 +57,7 @@ condition_queue_shot_dec	= 0.001
 ammo_elapsed        = 30           ; obsolete
 ammo_mag_size        = 30           ; clip (magazine) size
 
-fire_modes           = 1, 2
+fire_modes           = 1, 2, -1
 ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap  ; name of the ltx-section of used ammo
 grenade_class        = ammo_vog-25         ; name of the ltx-section of used grenades
 
@@ -147,7 +147,7 @@ orientation             = 0, 0, 0
 fire_point				= -0.0,0.228,0.713
 fire_point2             = -0.0,0,153.608
 
-flame_particles         = weapons\generic_weapon05
+;flame_particles         = weapons\generic_weapon05
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -324,3 +324,235 @@ ammo_class           = ammo_5.45x39_ap, ammo_5.45x39_fmj   ; name of the ltx-sec
 upgrades                = up_gr_firstab_abakan, up_gr_seconab_abakan, up_gr_thirdab_abakan, up_gr_fourtab_abakan, up_gr_fifthab_abakan
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_abakan
+
+;==================================================================================================================================================
+[wpn_abakan_custom]:wpn_abakan
+
+cost				 = 15950
+inv_weight           = 3.8
+inv_name             = st_wpn_abakan_custom
+inv_name_short       = st_wpn_abakan_custom
+
+installed_upgrades      = up_fourta_abakan, up_fiftha_abakan
+
+hit_power               = 0.57, 0.57, 0.57, 0.57
+hit_impulse             = 37    
+fire_distance           = 940
+bullet_speed            = 900
+rpm                     = 600
+
+
+hud                     = wpn_abakan_custom_hud
+
+misfire_start_condition		= 0.5
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0037
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
+
+ammo_mag_size        = 30
+
+fire_modes           = 1, 2
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+grenade_class        = ammo_vog-25
+
+fire_dispersion_base    = 0.195
+
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 0
+inv_grid_y           = 67
+
+visual                  = dynamics\weapons\wpn_abakan\wpn_abaka1.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_abakan_custom_hud]:wpn_abakan_hud
+
+item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka1_hud.ogf
+;==================================================================================================================================================
+[wpn_abakan_alt]:wpn_abakan
+
+cost				 = 15950
+inv_weight           = 3.8
+inv_name             = st_wpn_abakan_alt
+inv_name_short       = st_wpn_abakan_alt
+
+installed_upgrades      = up_secona_abakan
+
+hit_power            	= 0.57, 0.57, 0.57, 0.57
+hit_impulse          	= 37  
+fire_distance           = 940
+bullet_speed            = 900 
+rpm                     = 600 
+
+
+hud                     = wpn_abakan_alt_hud
+
+misfire_start_condition		= 0.5
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0037
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
+
+ammo_mag_size        = 30           
+
+fire_modes           = 1, 2
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+grenade_class        = ammo_vog-25
+
+fire_dispersion_base    = 0.195
+
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 6  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 2
+
+visual                  = dynamics\weapons\wpn_abakan\wpn_abaka2.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_abakan_alt_hud]:wpn_abakan_hud
+
+item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka2_hud.ogf
+;==================================================================================================================================================
+[wpn_abakan_camo]:wpn_abakan
+
+cost				 = 15950
+inv_weight           = 3.75
+inv_name             = st_wpn_abakan_camo
+inv_name_short       = st_wpn_abakan_camo
+
+installed_upgrades      = up_firsta_abakan
+
+hit_power            	= 0.57, 0.57, 0.57, 0.57
+hit_impulse          	= 37  
+fire_distance           = 940
+bullet_speed            = 900 
+rpm                     = 600 
+
+
+hud                     = wpn_abakan_camo_hud
+
+misfire_start_condition		= 0.5
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0037
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
+
+ammo_mag_size        = 30           
+
+fire_modes           = 1, 2
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+grenade_class        = ammo_vog-25
+
+fire_dispersion_base    = 0.195
+
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 0
+inv_grid_y           = 73
+
+visual                  = dynamics\weapons\wpn_abakan\wpn_abaka3.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_abakan_camo_hud]:wpn_abakan_hud
+
+item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka3_hud.ogf
+;==================================================================================================================================================
+[wpn_abakan_worn]:wpn_abakan
+
+cost				 = 15950
+inv_weight           = 3.9
+inv_name             = st_wpn_abakan_worn
+inv_name_short       = st_wpn_abakan_worn
+
+installed_upgrades      = up_fiftha_abakan
+
+hit_power            	= 0.57, 0.57, 0.57, 0.57
+hit_impulse          	= 37  
+fire_distance           = 930
+bullet_speed            = 890 
+rpm                     = 590 
+
+
+hud                     = wpn_abakan_worn_hud
+
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0037
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
+
+ammo_mag_size        = 30           
+
+fire_modes           = 1, 2
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+grenade_class        = ammo_vog-25
+
+fire_dispersion_base    = 0.205
+
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 0
+inv_grid_y           = 71
+
+visual                  = dynamics\weapons\wpn_abakan\wpn_abaka4.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_abakan_worn_hud]:wpn_abakan_hud
+
+item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka4_hud.ogf
+;==================================================================================================================================================
+[wpn_abakan_rusty]:wpn_abakan
+
+cost				 = 15950
+inv_weight           = 4.0
+inv_name             = st_wpn_abakan_rusty
+inv_name_short       = st_wpn_abakan_rusty
+
+hit_power            	= 0.57, 0.57, 0.57, 0.57
+hit_impulse          	= 37  
+fire_distance           = 920
+bullet_speed            = 880 
+rpm                     = 580 
+
+hud                     = wpn_abakan_rusty_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0037
+misfire_end_prob	     	= 0.05
+condition_shot_dec      	= 0.0012
+condition_queue_shot_dec	= 0.001
+
+ammo_mag_size        = 30           
+
+fire_modes           = 1, 2
+ammo_class           = ammo_5.45x39_fmj, ammo_5.45x39_ap
+
+fire_dispersion_base    = 0.21
+
+inv_grid_width       = 5
+inv_grid_height      = 2
+inv_grid_x           = 0
+inv_grid_y           = 69
+
+visual                  = dynamics\weapons\wpn_abakan\wpn_abaka5.ogf
+
+snd_reload              = weapons\generic\type1_reload, 0.7
+
+[wpn_abakan_rusty_hud]:wpn_abakan_hud
+
+item_visual						= dynamics\weapons\wpn_abakan\wpn_abaka5_hud.ogf
+;==================================================================================================================================================

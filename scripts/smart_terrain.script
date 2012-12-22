@@ -590,9 +590,11 @@ function se_smart_terrain:select_npc_job(npc_info)
 		-- Проверяем, дошел ли персонаж до работы (то есть может ли он начать ее выполнение)
 		local job_data = self.job_data[npc_info.job_id]
 		-- Начинаем выполнять работу
-			if (xrs_debug_tools and xrs_debug_tools.debug_gulag) then
-				xrs_debug_tools.printf("[smart_terrain %s] gulag: beginJob: obj=%s job= %s", self:name(), npc_info.se_obj:name(), job_data.section)
+		if (alun_plugin_manager and alun_plugin_manager.is_plugin_enabled("axr_debug_tools")) then
+			if (axr_debug_tools.debug_gulag) then
+				axr_debug_tools.printf("[smart_terrain %s] gulag: beginJob: obj=%s job= %s", self:name(), npc_info.se_obj:name(), job_data.section)
 			end
+		end
 		-- Смена работы, очищаем память для оффлайнового обьекта.
 		db.offline_objects[npc_info.se_obj.id] = {}
 		npc_info.begin_job = true
@@ -972,16 +974,18 @@ function se_smart_terrain:show()
 
 	if(_G.dev_debug) then
 		if(self.smrt_showed_spot~=nil) then
-			level.map_remove_object_spot(self.id, "red_spot")
+			level.map_remove_object_spot(self.id, "alife_presentation_smart_"..self.sim_type.."_"..self.smrt_showed_spot)
 		end
-		level.map_add_object_spot(self.id, "red_spot", self:get_smart_props())
+		level.map_add_object_spot(self.id, "alife_presentation_smart_"..self.sim_type.."_"..spot, self:get_smart_props())
 		self.smrt_showed_spot = spot
 	else
-		if(self.smrt_showed_spot~=nil) and
-			(level.map_has_object_spot(self.id, "alife_presentation_smart_"..self.sim_type.."_"..self.smrt_showed_spot)~=0)
-		then
-			level.map_remove_object_spot(self.id, "alife_presentation_smart_base_"..self.smrt_showed_spot)
-		end
+
+	if(self.smrt_showed_spot~=nil) and
+		(level.map_has_object_spot(self.id, "alife_presentation_smart_"..self.sim_type.."_"..self.smrt_showed_spot)~=0)
+	then
+		level.map_remove_object_spot(self.id, "alife_presentation_smart_base_"..self.smrt_showed_spot)
+	end
+
 	end
 end
 --' Обновление информации о смарте на игровом поле
@@ -1273,16 +1277,220 @@ function se_smart_terrain:target_precondition(squad, need_to_dec_population)
 		return false
 	end
 
-	for k, v in pairs(valid_territory) do
-		if (self.props[k] and tonumber(self.props[k]) > 0) then
-			local smart_params = squad_params.smart[k]
-			if smart_params ~= nil and smart_params.prec(squad, self) then
-				return true
-			end
+	if tonumber(self.props["resource"] )> 0 then
+		local smart_params = squad_params.smart.resource
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["resource_hard"] )> 0 then
+		local smart_params = squad_params.smart.resource_hard
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["resource_monolith"] )> 0 then
+		local smart_params = squad_params.smart.resource_monolith
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base"] )> 0 then
+		local smart_params = squad_params.smart.base
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_hostile"] )> 0 then
+		local smart_params = squad_params.smart.base_hostile
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_freedom"] )> 0 then
+		local smart_params = squad_params.smart.base_freedom
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_duty"] )> 0 then
+		local smart_params = squad_params.smart.base_duty
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_safe"] )> 0 then
+		local smart_params = squad_params.smart.base
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_hostile_safe"] )> 0 then
+		local smart_params = squad_params.smart.base_hostile
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_freedom_safe"] )> 0 then
+		local smart_params = squad_params.smart.base_freedom
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_duty_safe"] )> 0 then
+		local smart_params = squad_params.smart.base_duty
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["base_monolith"] )> 0 then
+		local smart_params = squad_params.smart.base_monolith
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["lair"] )> 0 then
+		local smart_params = squad_params.smart.lair
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["lair_night"] )> 0 then
+		local smart_params = squad_params.smart.lair_night
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["territory"] )> 0 then
+		local smart_params = squad_params.smart.territory
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["territory_hostile"] )> 0 then
+		local smart_params = squad_params.smart.territory_hostile
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["surge"] )> 0 then
+		local smart_params = squad_params.smart.surge
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
+		end
+	end
+	if tonumber(self.props["hunting_ground"] )> 0 then
+		local smart_params = squad_params.smart.hunting_ground
+		if smart_params ~= nil and smart_params.prec(squad, self) then
+			return true
 		end
 	end
 	--printf("smart terrain [%s] precondition returns false for squad [%s]", self:name(), squad:name())
 	return false
+
+
+--[[
+	local squad_count = smart_terrain_squad_count(self.board.smarts[self.id].squads)
+	if squad_count ~= nil and (self.max_population <= squad_count) then return false end
+
+
+	if squad.player_id == "stalker" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	if squad.player_id == "stalker_sci" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	if squad.player_id == "stalker_elite" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	if squad.player_id == "stalker_hunter_day" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	if squad.player_id == "stalker_hunter_night" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	if squad.player_id == "stalker_guide" and tonumber(self.props["resource_hard"] )> 0 then
+		return true
+	end
+	--if squad.player_id ~= "monster_predatory" and squad.player_id ~= "monster_vegetarian" then
+
+	if not is_squad_monster[squad.player_id] then
+		if tonumber(self.props["base"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_hostile"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_hostile"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_freedom"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_freedom"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_duty"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_duty"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_safe"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_safe"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_hostile_safe"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_hostile_safe"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_freedom_safe"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_freedom_safe"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_duty_safe"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["base_duty_safe"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_monolith"]) > 0 and then
+			return true
+		end
+		if tonumber(self.props["base_monolith"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+	else
+		if tonumber(self.props["lair"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["lair"] ) > 0 then
+			return true
+		end
+		if tonumber(self.props["lair_night"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["lair_night"] ) > 0 then
+			return true
+		end
+		if tonumber(self.props["lair_night_rest"] ) > 0 and xr_conditions.surge_started() then
+			return true
+		end
+		if tonumber(self.props["lair_night_rest"] ) > 0 then
+			return true
+		end
+	end
+	return false
+]]
 end
 
 -- Посчитать мой приоритет для отряда.

@@ -17,7 +17,7 @@ weapon_class			 	= shotgun
 inv_weight					= 3.55
 
 upgrades                = up_gr_firstab_wincheaster1300, up_gr_seconab_wincheaster1300, up_gr_thirdab_wincheaster1300, up_gr_fourtab_wincheaster1300
-installed_upgrades      =
+installed_upgrades      = 
 upgrade_scheme          = upgrade_scheme_wincheaster1300
 
 ;--TTX----------------------------------------------------------------------------
@@ -46,8 +46,8 @@ condition_queue_shot_dec	= 0.0025
 
 tri_state_reload			= on
 
-ammo_elapsed		 		= 7
-ammo_mag_size		 		= 7
+ammo_elapsed		 		= 6
+ammo_mag_size		 		= 6
 ammo_class		 			= ammo_12x70_buck, ammo_12x76_zhekan
 fire_modes					= 1
 
@@ -133,8 +133,8 @@ kill_msg_y			= 104
 kill_msg_width		= 75
 kill_msg_height		= 20
 
-flame_particles		   	= weapons\generic_weapon05
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon05
+smoke_particles         = amik\weapons\smoke_particles\smoke_particles_pump_01
 rpm_empty_click 	   	= 200
 
 ;--STRAP PARAMETERS-----------------------------------------------------------------
@@ -306,3 +306,176 @@ ammo_class		 			= ammo_12x76_zhekan, ammo_12x70_buck
 upgrades                = up_gr_firstab_wincheaster1300, up_gr_seconab_wincheaster1300, up_gr_thirdab_wincheaster1300, up_gr_fourtab_wincheaster1300
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_wincheaster1300
+
+;======================================================================================================================
+[wpn_wincheaster1300_camo]:wpn_wincheaster1300
+
+cost					 	= 9830
+inv_weight					= 3.45
+
+installed_upgrades      = up_firsta_wincheaster1300
+
+hit_power        			= 0.715, 0.715, 0.715, 0.715
+hit_impulse      			= 70
+fire_distance            	= 460
+bullet_speed			 	= 440
+rpm                      	= 105
+
+hud                      	= wpn_winchester1300_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0025
+
+
+fire_dispersion_base		= 0.45
+
+inv_name					= st_wpn_wincheaster1300_camo
+inv_name_short				= st_wpn_wincheaster1300_camo
+description					= st_wpn_wincheaster1300_camo_descr
+
+inv_grid_width				= 4
+inv_grid_height				= 1
+inv_grid_x					= 16
+inv_grid_y					= 54
+
+visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130a.ogf
+
+snd_reload			= weapons\winchester1300\winchester1300_reload_end
+snd_open_weapon            	= weapons\draw_silent
+snd_add_cartridge		= weapons\w1300_load
+snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
+
+[wpn_winchester1300_camo_hud]:wpn_winchester1300_hud
+
+item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130a_hud.ogf
+;======================================================================================================================
+[wpn_wincheaster1300_alt]:wpn_wincheaster1300
+
+cost					 	= 9830
+inv_weight					= 3.5
+
+installed_upgrades      = up_secona_wincheaster1300
+
+hit_power        			= 0.715, 0.715, 0.715, 0.715
+hit_impulse      			= 70
+fire_distance            	= 460
+bullet_speed			 	= 440
+rpm                      	= 105
+
+hud                      	= wpn_winchester1300_alt_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0025
+
+fire_dispersion_base		= 0.46
+
+inv_name					= st_wpn_wincheaster1300_alt
+inv_name_short				= st_wpn_wincheaster1300_alt
+
+inv_grid_width				= 4
+inv_grid_height				= 1
+inv_grid_x					= 12
+inv_grid_y					= 53
+
+visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130b.ogf
+
+snd_reload			= weapons\winchester1300\winchester1300_reload_end
+snd_open_weapon            	= weapons\draw_silent
+snd_add_cartridge		= weapons\w1300_load
+snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
+
+[wpn_winchester1300_alt_hud]:wpn_winchester1300_hud
+
+item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130b_hud.ogf
+;======================================================================================================================
+[wpn_wincheaster1300_worn]:wpn_wincheaster1300
+
+cost					 	= 9830
+inv_weight					= 3.62
+
+hit_power        			= 0.715, 0.715, 0.715, 0.715
+hit_impulse      			= 70
+fire_distance            	= 460
+bullet_speed			 	= 440
+rpm                      	= 105
+
+hud                      	= wpn_winchester1300_worn_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0025
+
+fire_dispersion_base		= 0.5
+
+inv_name					= st_wpn_wincheaster1300_worn
+inv_name_short				= st_wpn_wincheaster1300_worn
+
+inv_grid_width				= 4
+inv_grid_height				= 1
+inv_grid_x					= 12
+inv_grid_y					= 54
+
+visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130c.ogf
+
+snd_reload			= weapons\winchester1300\winchester1300_reload_end
+snd_open_weapon            	= weapons\draw_silent
+snd_add_cartridge		= weapons\w1300_load
+snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end
+
+[wpn_winchester1300_worn_hud]:wpn_winchester1300_hud
+
+item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130c_hud.ogf
+;======================================================================================================================
+[wpn_wincheaster1300_rusty]:wpn_wincheaster1300
+
+cost					 	= 9830
+inv_weight					= 3.6
+
+installed_upgrades      = up_fourta_wincheaster1300
+
+hit_power        			= 0.715, 0.715, 0.715, 0.715
+hit_impulse      			= 70
+fire_distance            	= 460
+bullet_speed			 	= 440
+rpm                      	= 105
+
+hud                      	= wpn_winchester1300_rusty_hud
+
+misfire_start_condition		= 0.9
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0
+misfire_end_prob	     	= 0
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0025
+
+fire_dispersion_base		= 0.5
+
+inv_name					= st_wpn_wincheaster1300_rusty
+inv_name_short				= st_wpn_wincheaster1300_rusty
+
+inv_grid_width				= 4
+inv_grid_height				= 1
+inv_grid_x					= 16
+inv_grid_y					= 53
+
+visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130d.ogf
+
+snd_reload			= weapons\winchester1300\winchester1300_reload_end
+snd_open_weapon            	= weapons\draw_silent
+snd_add_cartridge		= weapons\w1300_load
+snd_close_weapon        	= weapons\winchester1300\winchester1300_reload_end ;spas12_reload_end
+
+[wpn_winchester1300_rusty_hud]:wpn_winchester1300_hud
+
+item_visual                   	= dynamics\weapons\wpn_winchester1300\wpn_winchester130d_hud.ogf

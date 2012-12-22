@@ -63,6 +63,9 @@
 	<string id="st_kg">
 		<text>kg</text>
 	</string>
+	<string id="st_g">
+		<text>g</text>
+	</string>
 	<string id="st_move_on_belt">
 		<text>attach to belt</text>
 	</string>
@@ -115,7 +118,7 @@
 		<text>Buy rifle ammo (W)</text>
 	</string>
 	<string id="ui_inv_bleeding">
-		<text>Wound healing</text>
+		<text>Damage / bleeding reduction</text>
 	</string>
 	<string id="ui_inv_cancel">
 		<text>Cancel</text>
@@ -175,19 +178,19 @@
 		<text>Weight carried</text>
 	</string>
 	<string id="ui_inv_outfit_burn_protection">
-		<text>Ther. prot.</text>
+		<text>Flame / Acid prot.</text>
 	</string>
 	<string id="ui_inv_outfit_chemical_burn_protection">
-		<text>Chem. prot.</text>
+		<text>Toxic prot.</text>
 	</string>
 	<string id="ui_inv_outfit_fire_wound_protection">
 		<text>Armor</text>
 	</string>
 	<string id="ui_inv_outfit_radiation_protection">
-		<text>Rad. prot.</text>
+		<text>Radiation prot.</text>
 	</string>
 	<string id="ui_inv_outfit_shock_protection">
-		<text>Elec. prot.</text>
+		<text>Electrical prot.</text>
 	</string>
 	<string id="ui_inv_outfit_telepatic_protection">
 		<text>Psy prot.</text>
@@ -223,7 +226,7 @@
 		<text>Assault rifles</text>
 	</string>
 	<string id="ui_inv_satiety">
-		<text>Hunger elimination</text>
+		<text>Satiety level</text>
 	</string>
 	<string id="ui_inv_scope_rifle">
 		<text>Buy optical scope for rifle (S)</text>
@@ -277,7 +280,7 @@
 		<text>Bleeding</text>
 	</string>
 	<string id="ui_inv_weight">
-		<text>Max convenient burden</text>
+		<text>Max. conv. encumbrance</text>
 	</string>
 	<string id="st_ui_health_sensor">
 		<text>Health</text>

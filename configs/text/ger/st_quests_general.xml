@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="hide_from_surge_message">
-		<text>Achtung! Emission steht kurz bevor!</text>
+		<text>Attention! Blowout imminent!</text>
 	</string>
 	<string id="hide_from_surge_descr_1_a">
-		<text>Emission steht bevor! Sofort Deckung suchen!</text>
+		<text>Blowout imminent, proceed to shelter immediately!</text>
 	</string>
 	<string id="hide_from_surge_descr_2_a">
-		<text>Es ist Ihnen nicht gestattet die Deckung wдhrend einer Emission zu verlassen.</text>
+		<text>You are not allowed to leave the shelter during a blowout.</text>
 	</string>
 	<string id="hide_from_surge_name_1">
-		<text>Emission! Suchen Sie sich Deckung!</text>
+		<text>Blowout: Find Shelter</text>
 	</string>
 	<string id="hide_from_surge_name_2">
-		<text>Emission: Bleiben Sie in Deckung!</text>
+		<text>Blowout: Stay sheltered</text>
 	</string>
 
 	<!-- AtmosFear Fallout -->
 	<string id="hide_from_fallout_rad_message_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_rad_message">
-		<text>Radioaktiver Fallout beginnt.</text>
+		<text>Radioactive fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_1_a">
-		<text>Das radioaktive Strahlungslevel ist kritisch. Sie sollten sich vor dem Fallout verstecken!</text>
+		<text>The level of radiation is dangerous. You should hide from the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_2_a">
-		<text>Sie sollten Ihre Deckung wдhrend eines radioaktivem Fallouts nicht verlassen.</text>
+		<text>You shouldn't leave the shelter during the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_1">
-		<text>Radioaktiver Fallout: Finden Sie Deckung</text>
+		<text>Radioactive fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_2">
-		<text>Radioaktiver Fallout: Bleiben Sie in Deckung</text>
+		<text>Radioactive fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_rad_message_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_rad_message">
-		<text>Radioaktiver Fallout ist zu Ende</text>
+		<text>Radioactive fallout has ended</text>
 	</string>
 	
 	<string id="hide_from_fallout_acid_message_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_acid_message">
-		<text>Chemischer Fallout beginnt.</text>
+		<text>Chemical fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_1_a">
-		<text>Hohe Kontamination. Sie sollten sich vor dem chemischen Fallout schьtzen.</text>
+		<text>The level of contamination is dangerous. You should hide from the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_2_a">
-		<text>Sie sollten die Deckung wдhrend eines chemischen Fallouts nicht verlassen.</text>
+		<text>You shouldn't leave the shelter during the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_1">
-		<text>Chemischer Fallout: Finden Sie Deckung</text>
+		<text>Chemical fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_2">
-		<text>Chemischer Fallout: Bleiben Sie in Deckung</text>
+		<text>Chemical fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_acid_message_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_acid_message">
-		<text>Chemischer Fallout ist zu Ende</text>
+		<text>Chemical fallout has ended</text>
 	</string>
 
 	<!-- AtmosFear Psi Storm -->
 	<string id="hide_from_psi_storm_message_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_psi_storm_message">
-		<text>Psi-Sturm beginnt.</text>
+		<text>Psi storm begins.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_1_a">
-		<text>Sie sollten sich vor dem Psi-Sturm verstecken.</text>
+		<text>You should hide from the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_2_a">
-		<text>Sie sollten Ihre Deckung wдhrend eines Psi-Sturms nicht verlassen.</text>
+		<text>You shouldn't leave the shelter during the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_name_1">
-		<text>Psi-Sturm: Suchen Sie Deckung</text>
+		<text>Psi storm: Find shelter</text>
 	</string>
 	<string id="hide_from_psi_storm_name_2">
-		<text>Psi-Sturm: Bleiben Sie in Deckung</text>
+		<text>Psi storm: Stay sheltered</text>
 	</string>
 	<string id="end_psi_storm_caption">
-		<text>Achtung!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_psi_storm_message">
-		<text>Psi-Sturm ist zu Ende</text>
+		<text>Psi storm has ended</text>
 	</string>
 
 </string_table>

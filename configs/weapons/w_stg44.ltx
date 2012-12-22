@@ -130,7 +130,7 @@ orientation             = 0, 0, 0
 fire_point              =  0,0.218,0.656        ; position (3rd person view) for particles of fire
 fire_point2             =  0,0.161,0.583        ; position (3rd person view) for particles of fire (when shooting with secondary fire)
 
-flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
+;flame_particles         = weapons\generic_weapon05 ; particles for shooting effects
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -291,3 +291,182 @@ lean_hud_offset_rot        = 0,0,0
 scope_name 		= wpn_addon_scope_ww2
 scope_x              	= 60                 ; offset in inventory icon
 scope_y                 = -16
+
+;=====================================================================================================================
+[wpn_stg44_new]:wpn_stg44
+
+cost              	 = 9650            ; the price of the item
+inv_weight        = 4.5                      ; weight in inventory
+
+installed_upgrades      = up_firsta_ak74, up_thirda_ak74, up_fiftha_ak74
+
+hit_power           		= 0.43, 0.43, 0.43, 0.43
+hit_impulse          = 32    ; size of physic impulse by bullet
+fire_distance           = 660 ;1000                  ; maximum fire distance that bullet can fly
+bullet_speed            = 685                ; starting bullet speed
+rpm                     = 500    ; max round per minute
+
+hud                     = wpn_stg44_new_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0008
+
+
+ammo_mag_size        = 30           ; clip (magazine) size
+fire_modes           = 1, -1
+ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
+
+fire_dispersion_base       	= 0.65
+
+inv_name          = st_wpn_stg44_new                    ; name in inventory
+inv_name_short    = st_wpn_stg44_new
+
+inv_grid_width       = 4    ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
+inv_grid_x           = 16  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 57
+
+visual                  = dynamics\weapons\wpn_stg44\wpn_stg4a.ogf
+
+snd_reload              = weapons\stg44\stg44_reload, 0.7
+
+[wpn_stg44_new_hud]:wpn_stg44_hud
+
+item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4a_hud.ogf
+;=====================================================================================================================
+[wpn_stg44_alt]:wpn_stg44
+
+cost              	 = 9650            ; the price of the item
+inv_weight        = 4.6                      ; weight in inventory
+
+installed_upgrades      = up_fourta_ak74
+
+hit_power           		= 0.43, 0.43, 0.43, 0.43
+hit_impulse          = 32    ; size of physic impulse by bullet
+fire_distance           = 660 ;1000                  ; maximum fire distance that bullet can fly
+bullet_speed            = 685                ; starting bullet speed
+rpm                     = 500    ; max round per minute
+
+hud                     = wpn_stg44_alt_hud
+
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0008
+
+
+ammo_mag_size        = 30           ; clip (magazine) size
+fire_modes           = 1, -1
+ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
+
+fire_dispersion_base       	= 0.69
+
+inv_name          = st_wpn_stg44_alt                    ; name in inventory
+inv_name_short    = st_wpn_stg44_alt
+
+inv_grid_width       = 4    ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
+inv_grid_x           = 16  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 59
+
+visual                  = dynamics\weapons\wpn_stg44\wpn_stg4b.ogf
+
+snd_reload              = weapons\stg44\stg44_reload, 0.7
+
+[wpn_stg44_alt_hud]:wpn_stg44_hud
+
+item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4b_hud.ogf
+;=====================================================================================================================
+[wpn_stg44_old]:wpn_stg44
+
+cost              	 = 9650            ; the price of the item
+inv_weight        = 4.5                      ; weight in inventory
+
+installed_upgrades      = up_secona_ak74
+
+hit_power           		= 0.43, 0.43, 0.43, 0.43
+hit_impulse          = 32    ; size of physic impulse by bullet
+fire_distance           = 660 ;1000                  ; maximum fire distance that bullet can fly
+bullet_speed            = 685                ; starting bullet speed
+rpm                     = 500    ; max round per minute
+
+hud                     = wpn_stg44_old_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0008
+
+
+ammo_mag_size        = 30           ; clip (magazine) size
+fire_modes           = 1, -1
+ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
+
+fire_dispersion_base       	= 0.69
+
+inv_name          = st_wpn_stg44_old                    ; name in inventory
+inv_name_short    = st_wpn_stg44_old
+
+inv_grid_width       = 4    ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
+inv_grid_x           = 9  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 32
+
+visual                  = dynamics\weapons\wpn_stg44\wpn_stg4c.ogf
+
+snd_reload              = weapons\stg44\stg44_reload, 0.7
+
+[wpn_stg44_old_hud]:wpn_stg44_hud
+
+item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4c_hud.ogf
+;=====================================================================================================================
+[wpn_stg44_worn]:wpn_stg44
+
+cost              	 = 9650            ; the price of the item
+inv_weight        = 4.55                      ; weight in inventory
+
+hit_power           		= 0.43, 0.43, 0.43, 0.43
+hit_impulse          = 32    ; size of physic impulse by bullet
+fire_distance           = 660 ;1000                  ; maximum fire distance that bullet can fly
+bullet_speed            = 685                ; starting bullet speed
+rpm                     = 500    ; max round per minute
+
+hud                     = wpn_stg44_worn_hud
+
+misfire_start_condition		= 0.85
+misfire_end_condition		= 0.12
+misfire_start_prob	     	= 0.003
+misfire_end_prob	     	= 0.043
+condition_shot_dec      	= 0.0010
+condition_queue_shot_dec	= 0.0008
+
+
+ammo_mag_size        = 30           ; clip (magazine) size
+fire_modes           = 1, -1
+ammo_class           				= ammo_7.92x33_fmj, ammo_7.92x33_ap  ; name of the ltx-section of used ammo
+
+fire_dispersion_base       	= 0.7
+
+inv_name          = st_wpn_stg44_worn                    ; name in inventory
+inv_name_short    = st_wpn_stg44_worn
+
+inv_grid_width       = 4    ; position and size of the icon that will be used to display weapon in the inventory menu
+inv_grid_height      = 2    ; all icons are on the texture ui_icon_equipment.dds,
+inv_grid_x           = 16  ; position and size are in terms of 64x64 squares
+inv_grid_y           = 55
+
+visual                  = dynamics\weapons\wpn_stg44\wpn_stg4d.ogf
+
+snd_reload              = weapons\stg44\stg44_reload, 0.7
+
+[wpn_stg44_worn_hud]:wpn_stg44_hud
+
+item_visual                = dynamics\weapons\wpn_stg44\wpn_stg4d_hud.ogf

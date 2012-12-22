@@ -1,0 +1,32 @@
+--Credit goes to Jurok/SGM, Swartz/jketiynu, Gannebamm, and Thunderfreak
+
+local inited = false
+    local levelName = false
+ 
+    function medic_wow()
+            if not inited then write("medic_wow is inited") inited = true end
+            if level.name() =="zaton" then
+                    if not levelName then write("level_name is zaton") levelName = true end
+                    if has_alife_info("zat_b22_stalker_medic_death") and not has_alife_info("zat_stalker_medic_spawn") then
+                            write("infoportions are working ... spawnin medic")
+                          alife():create("zat_stalker_medic",vector():set(110.023,-3.936,185.844),1155265,316)
+                          give_info("zat_stalker_medic_spawn")
+                    end
+            end
+    end
+     
+    --utility
+    -- original from alundaio
+    function write(text,...)
+            if text == nil then
+                    return
+            end
+     
+            local i = 0
+            local varlist = {...}
+            output = string.gsub(text,"%%s",function(a) i = i + 1 return tostring(varlist[i]) end)
+           
+            -- comment the below to get rid of console text!
+            --get_console():execute("load ~#I#:"..output)
+           
+    end

@@ -13,7 +13,7 @@
 		<text>Stone Blood</text>
 	</string>
 	<string id="st_af_cristall_descr">
-		<text>This artifact is formed in anomalous zones with intense thermal activity. Actively consumes excessive heat, remaining cool to the touch throughout. Emits radiation.</text>
+		<text>This artifact is formed in anomalous zones with intense thermal activity. Actively consumes excessive heat, remaining cool to the touch althou its capacity is limited. Emits radiation.</text>
 	</string>
 	<string id="st_af_cristall_flower_descr">
 		<text>This artifact is made up of a granite-like stone deformed by an extreme gravitational force, resulting in a crystallized formation that has not been explained by science to date. Can provide moderate protection against psy-emissions and is radioactive.</text>
@@ -185,13 +185,13 @@ It limits the voltage supplied to a body by either blocking or by shorting to gr
 		<text>Kevlar body plates</text>
 	</string>
 	<string id="st_af_kevlar_descr">
-		<text>These kevlar plates are shaped for ballistic defeating properties, fitting a wide variety of armouring applications. They are designed to withstand smaller ballistic impacts on the front and back of central torso. A lightweight alternative to the heavy armoured steel plates.</text>
+		<text>These kevlar plates are shaped for ballistic defeating properties, fitting a wide variety of armouring applications. They are designed to withstand smaller ballistic impacts on the front and back of central torso. A lightweight alternative to the heavy armoured steel plates. Wearing any type of armour plating also protects your suit or armour from general condition degradation.</text>
 	</string>
 	<string id="st_af_plates_name">
 		<text>Carbon steel plates</text>
 	</string>
 	<string id="st_af_plates_descr">
-		<text>These steel plates are heat treated and shaped for ballistic defeating properties, fitting a wide variety of armouring applications. They are designed to withstand smaller ballistic impacts on the front and back of central torso. But this protection comes at a price as the thick steel plates are very heavy.</text>
+		<text>These steel plates are heat treated and shaped for ballistic defeating properties, fitting a wide variety of armouring applications. They are designed to withstand smaller ballistic impacts on the front and back of central torso. But this protection comes at a price as the thick steel plates are very heavy. Wearing any type of armour plating also protects your suit or armour from general condition degradation.</text>
 	</string>
 	<string id="st_af_camelbak_name">
 		<text>Camelbak</text>

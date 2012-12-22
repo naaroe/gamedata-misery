@@ -135,8 +135,8 @@ fire_point              	= 0.0, 0.133, 0.161
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 
 shell_point		 				= 0.0, 0.133, 0.047
 shell_dir		 				= 0.0, 0.0, 0.4
@@ -378,3 +378,131 @@ ammo_class		 		=  ammo_9x18_ap, ammo_9x18_pmm, ammo_9x18_fmj
 upgrades                = up_gr_firstab_pm, up_gr_seconab_pm, up_gr_thirdab_pm, up_gr_fourtab_pm, up_gr_fifthab_pm, up_gr_fifthcd_pm
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_pm
+
+;=========================================================================================================================================
+[wpn_pm_custom]:wpn_pm
+
+cost					= 3090
+inv_weight				= 0.5
+
+installed_upgrades      = up_secona_pm, up_thirda_pm
+
+hit_power           		= 0.21, 0.21, 0.21, 0.21
+hit_impulse	 		 		= 15
+fire_distance           = 310
+bullet_speed		 	= 345
+rpm                     = 275
+
+hud                     	= wpn_pm_custom_hud
+
+misfire_start_condition		= 0.62
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0013
+
+ammo_mag_size		 	= 8
+ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
+
+fire_dispersion_base	= 0.56
+
+inv_name				= st_wpn_pm_custom
+inv_name_short			= st_wpn_pm_custom
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 77
+
+visual                  	= dynamics\weapons\wpn_pm\wpn_p1.ogf
+
+snd_reload					= weapons\generic\pistol_reload, 0.8
+
+[wpn_pm_custom_hud]:wpn_pm_hud
+
+item_visual						= dynamics\weapons\wpn_pm\wpn_p1_hud.ogf
+;=========================================================================================================================================
+[wpn_pm_alt]:wpn_pm
+
+cost					= 3090
+inv_weight				= 0.55
+
+installed_upgrades      = up_firsta_pm
+
+hit_power           		= 0.21, 0.21, 0.21, 0.21
+hit_impulse	 		 		= 15
+fire_distance           = 310
+bullet_speed		 	= 345
+rpm                     = 270
+
+hud                     	= wpn_pm_alt_hud
+
+misfire_start_condition		= 0.64
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0013
+
+ammo_mag_size		 	= 8
+ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
+
+fire_dispersion_base	= 0.56
+
+inv_name				= st_wpn_pm_alt
+inv_name_short			= st_wpn_pm_alt
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 75
+
+visual                  	= dynamics\weapons\wpn_pm\wpn_p2.ogf
+
+snd_reload					= weapons\generic\pistol_reload, 0.8
+
+[wpn_pm_alt_hud]:wpn_pm_hud
+
+item_visual						= dynamics\weapons\wpn_pm\wpn_p2_hud.ogf
+;=========================================================================================================================================
+[wpn_pm_worn]:wpn_pm
+
+cost					= 3090
+inv_weight				= 0.6
+
+hit_power           		= 0.21, 0.21, 0.21, 0.21
+hit_impulse	 		 		= 15
+fire_distance           = 310
+bullet_speed		 	= 345
+rpm                     = 275
+
+hud                     	= wpn_pm_worn_hud
+
+misfire_start_condition		= 0.75
+misfire_end_condition		= 0.05
+misfire_start_prob	     	= 0.007
+misfire_end_prob	     	= 0.07
+condition_shot_dec      	= 0.0013
+condition_queue_shot_dec	= 0.0013
+
+ammo_mag_size		 	= 8
+ammo_class		 		= ammo_9x18_fmj, ammo_9x18_pmm
+
+fire_dispersion_base	= 0.6
+
+inv_name				= st_wpn_pm_worn
+inv_name_short			= st_wpn_pm_worn
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 76
+
+visual                  	= dynamics\weapons\wpn_pm\wpn_p3.ogf
+
+snd_reload					= weapons\generic\pistol_reload, 0.8
+
+[wpn_pm_worn_hud]:wpn_pm_hud
+
+item_visual						= dynamics\weapons\wpn_pm\wpn_p3_hud.ogf

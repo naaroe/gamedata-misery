@@ -139,7 +139,7 @@ orientation             = 0, -10, 0
 fire_point              = 0.0, 0.188, 0.392
 fire_point2             = 0.0, 0.188, 0.392
 
-flame_particles         = weapons\generic_weapon05
+;flame_particles		   	= weapons\generic_weapon03
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -417,3 +417,134 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_mp5
+
+;=====================================================================================
+[wpn_mp5_custom]:wpn_mp5
+
+cost              = 9260
+inv_weight        = 2.7
+
+installed_upgrades      = up_secona_mp5
+
+hit_power            = 0.22, 0.22, 0.22, 0.22
+hit_impulse          = 18 
+fire_distance           = 540
+bullet_speed            = 425
+rpm                     = 800
+
+hud                     = wpn_mp5_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.057
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size     = 30
+fire_modes	  = 1, -1
+ammo_class	  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base    = 0.41
+
+inv_name          = st_wpn_mp5_custom
+inv_name_short    = st_wpn_mp5_custom
+
+inv_grid_width    = 3
+inv_grid_height   = 1
+inv_grid_x        = 7
+inv_grid_y        = 75
+
+visual                  = dynamics\weapons\wpn_mp5\wpn_mpa.ogf
+
+snd_reload              = weapons\mp5\mp5_reload
+
+[wpn_mp5_custom_hud]:wpn_mp5_hud
+
+item_visual             = dynamics\weapons\wpn_mp5\wpn_mpa_hud.ogf
+;=====================================================================================
+[wpn_mp5_alt]:wpn_mp5
+
+cost              = 9260
+inv_weight        = 2.75
+
+installed_upgrades      = up_firsta_mp5, up_fourta_mp5
+
+hit_power            = 0.22, 0.22, 0.22, 0.22
+hit_impulse          = 18 
+fire_distance           = 540
+bullet_speed            = 425
+rpm                     = 805
+
+hud                     = wpn_mp5_alt_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.057
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size     = 30
+fire_modes	  = 1, -1
+ammo_class	  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base    = 0.4
+
+inv_name          = st_wpn_mp5_alt
+inv_name_short    = st_wpn_mp5_alt
+
+inv_grid_width    = 3
+inv_grid_height   = 1
+inv_grid_x        = 7
+inv_grid_y        = 77
+
+visual                  = dynamics\weapons\wpn_mp5\wpn_mpb.ogf
+
+snd_reload              = weapons\mp5\mp5_reload
+
+[wpn_mp5_alt_hud]:wpn_mp5_hud
+
+item_visual             = dynamics\weapons\wpn_mp5\wpn_mpb_hud.ogf
+;=====================================================================================
+[wpn_mp5_worn]:wpn_mp5
+
+cost              = 9260
+inv_weight        = 2.7
+
+hit_power            = 0.22, 0.22, 0.22, 0.22
+hit_impulse          = 18 
+fire_distance           = 540
+bullet_speed            = 425
+rpm                     = 800
+
+hud                     = wpn_mp5_worn_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.004
+misfire_end_prob	     	= 0.057
+condition_shot_dec      	= 0.0007
+condition_queue_shot_dec	= 0.0008
+
+ammo_mag_size     = 30
+fire_modes	  = 1, -1
+ammo_class	  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base    = 0.45
+
+inv_name          = st_wpn_mp5_worn
+inv_name_short    = st_wpn_mp5_worn
+
+inv_grid_width    = 3
+inv_grid_height   = 1
+inv_grid_x        = 7
+inv_grid_y        = 76
+
+visual                  = dynamics\weapons\wpn_mp5\wpn_mpc.ogf
+
+snd_reload              = weapons\mp5\mp5_reload
+
+[wpn_mp5_worn_hud]:wpn_mp5_hud
+
+item_visual             = dynamics\weapons\wpn_mp5\wpn_mpc_hud.ogf

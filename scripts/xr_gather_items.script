@@ -6,7 +6,7 @@ function evaluator_gather_items:__init(name, storage, npc) super (nil, name)
 	self.a = storage
 end
 function evaluator_gather_items:evaluate()
-	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.gather_items_enabled)
+	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.gather_items_enabled)
 	if (enabled ~= "true") then
 		return false
 	end
