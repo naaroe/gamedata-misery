@@ -33,6 +33,15 @@ function se_stalker:__init (section) super (section)
 	end
 
 	self.board = sim_board.get_sim_board()
+
+	-- Alundaio
+	if (xrs_debug_tools) then
+		if not (registered_stalkers) then
+			registered_stalkers = {}
+		end
+		registered_stalkers[self:section_name()] = registered_stalkers[self:section_name()] and registered_stalkers[self:section_name()] + 1 or 1
+	end
+	-- Alundaio
 end
 --------------------
 function se_stalker:get_ini()

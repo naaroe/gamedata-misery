@@ -32,12 +32,12 @@ function actor_on_save(se_actor,packet)
 		end
 	end
 
-	packet:w_u32(c1)
-	packet:w_u32(c2)
+	packet:w_u16(c1)
+	packet:w_u16(c2)
 	for tech,v in pairs(RepairItemList) do
 		packet:w_stringZ(tech)
 		for id,gt in pairs(v) do
-			packet:w_u32(id)
+			packet:w_u16(id)
 			utils.w_CTime(packet, gt)
 		end
 	end
@@ -48,15 +48,15 @@ function actor_on_load(se_actor,packet)
 	set_save_marker(packet, "load", false, "inventory_upgrades")
 	if (packet:r_tell() > 0) then
 
-		local c1 = packet:r_u32()
-		local c2 = packet:r_u32()
+		local c1 = packet:r_u16()
+		local c2 = packet:r_u16()
 
 		local tech,id
 		for i=1, c1 do
 			tech = packet:r_stringZ()
 			RepairItemList[tech] = {}
 			for i=1, c2 do
-				id = packet:r_u32()
+				id = packet:r_u16()
 				RepairItemList[tech][id] = utils.r_CTime(packet)
 			end
 		end

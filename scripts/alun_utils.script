@@ -434,6 +434,7 @@ function is_trader(...)
 	return false
 end
 
+<<<<<<< HEAD
 local stpk = net_packet()
 local uppk = net_packet()
 function get_weapon_data(sobj)
@@ -619,6 +620,8 @@ function set_lamp_data(t,sobj)
 	end
 end
 
+=======
+>>>>>>> test
 function string_to_vector(str)
 	local t = alun_utils.str_explode(str,",")
 	return vector():set(tonumber(t[1]),tonumber(t[2]),tonumber(t[3]))
