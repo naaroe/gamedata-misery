@@ -568,14 +568,11 @@ end
 --*					Подспаун вещей в ящики					  *
 --*************************************************************
 local detective_achievement_items 		= {	"medkit",
-											"antirad",
 											"bandage"}
 
-local mutant_hunter_achievement_items	= {	"ammo_5.45x39_ap",
-											"ammo_5.56x45_ap",
-											"ammo_9x39_ap",
-											"ammo_5.56x45_ap",
-											"ammo_12x76_zhekan"}
+local mutant_hunter_achievement_items	= {	"ammo_9x18_fmj",
+											"ammo_9x19_fmj",
+											"ammo_12x70_buck"}
 
 local function spawn_achivement_items(items_table, count, inv_box_story_id)
 	local inv_box = alife():object(get_story_object_id(inv_box_story_id))
@@ -595,7 +592,7 @@ function actor_binder:check_detective_achievement()
 	if self.last_detective_achievement_spawn_time == nil then
 		self.last_detective_achievement_spawn_time = game.get_game_time()
 	end
-	if game.get_game_time():diffSec(self.last_detective_achievement_spawn_time) > 43200 then
+	if game.get_game_time():diffSec(self.last_detective_achievement_spawn_time) > 432000000 then
 		spawn_achivement_items(detective_achievement_items, 4, "zat_a2_actor_treasure")
 		xr_effects.send_tip(db.actor, nil, {"st_detective_news","got_medicine"})
 		self.last_detective_achievement_spawn_time = game.get_game_time()
@@ -609,7 +606,7 @@ function actor_binder:check_mutant_hunter_achievement()
 	if self.last_mutant_hunter_achievement_spawn_time == nil then
 		self.last_mutant_hunter_achievement_spawn_time = game.get_game_time()
 	end
-	if game.get_game_time():diffSec(self.last_mutant_hunter_achievement_spawn_time) > 43200 then
+	if game.get_game_time():diffSec(self.last_mutant_hunter_achievement_spawn_time) > 432000000 then
 		spawn_achivement_items(mutant_hunter_achievement_items, 5, "jup_b202_actor_treasure")
 		xr_effects.send_tip(db.actor, nil, {"st_mutant_hunter_news","got_ammo"})
 		self.last_mutant_hunter_achievement_spawn_time = game.get_game_time()

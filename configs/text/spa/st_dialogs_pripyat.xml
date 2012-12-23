@@ -859,10 +859,10 @@
 		<text>Who the hell knows? I had a bad feeling about the whole thing... We were flying on autopilot, the equipment was fine, and then suddenly we were flying in a piece of scrap metal with all the electronics disabled. Me and the pilot tried to reach flat ground but it didn’t work. We fell straight into the main workshop of the Jupiter plant, right through the roof... I was the only one who made it.</text>
 	</string>
 	<string id="pri_a22_army_signaller_supply_outfit_0">
-		<text>I need body armor.</text>
+		<text>I need something to help me conduct operations in this are.</text>
 	</string>
 	<string id="pri_a22_army_signaller_supply_outfit_1">
-		<text>OK. Here’s the helmet, to start with... Now armor - I hope it’s your size because we don’t have any other size anyway. I patched it up, so it should hold up.</text>
+		<text>OK. Here's my personal supply of medical rations. Use it wisely as we have not much left. If you need more, go ask doc downstairs.</text>
 	</string>
 	<string id="pri_a17_military_base_commander_task_dialog_111111">
 		<text>Of course, Major... Given the circumstances, I don't have much of a choice... By the way, go see Lieutenant Kirillov. He’ll issue you with some equipment.</text>

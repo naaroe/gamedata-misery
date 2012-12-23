@@ -59,8 +59,6 @@ meat_chimera			= 1, prob=0.002 \n
 
 itm_sleepbag = 1, prob=0.006 \n
 
-wpn_knife = 1, prob=0.05 \n
-
 marijuana			= 2, prob=0.02 \n
 tobacco			= 3, prob=0.02 \n
 
