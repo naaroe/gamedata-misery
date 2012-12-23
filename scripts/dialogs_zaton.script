@@ -127,7 +127,7 @@ function zat_b30_actor_has_jup_b202_bandit_pda(first_speaker, second_speaker)
 end
 
 function zat_b30_transfer_1000(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 4500)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 2800)
 end
 
 function zat_b30_transfer_200(first_speaker, second_speaker)
@@ -191,7 +191,7 @@ end
 
 function zat_b30_owl_stalker_trader_sell_device_flash_snag(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "device_flash_snag")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2680)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1510)
 	db.actor:give_info_portion("device_flash_snag_sold")
 end
 
@@ -203,13 +203,13 @@ end
 
 function zat_b30_owl_stalker_trader_sell_jup_b10_ufo_memory(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_b10_ufo_memory_2")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6980)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 8280)
 	db.actor:give_info_portion("jup_b10_ufo_memory_2_sold")
 end
 
 function zat_b30_owl_stalker_trader_sell_jup_b202_bandit_pda(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_b202_bandit_pda")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1160)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 830)
 end
 
 -------- B14
@@ -393,29 +393,30 @@ end
 
 function zat_b33_transfer_first_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"wpn_fort_snag","in")
+	dialogs.relocate_item_section(actor,"af_kevlar","in")
 end
 
 function zat_b33_transfer_second_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"medkit_scientic","in",3)
-	dialogs.relocate_item_section(actor,"antirad","in",3)
-	dialogs.relocate_item_section(actor,"bandage","in",5)
+	dialogs.relocate_item_section(actor,"medkit_army","in",1)
+	dialogs.relocate_item_section(actor,"stimpack_army","in",1)
+	dialogs.relocate_item_section(actor,"morphine","in",1)
+	dialogs.relocate_item_section(actor,"bandage","in",2)
 end
 
 function zat_b33_transfer_third_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"wpn_ak74u_snag","in")
+	dialogs.relocate_item_section(actor,"ied_rpg","in")
 end
 
 function zat_b33_transfer_fourth_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"af_soul","in")
+	dialogs.relocate_item_section(actor,"maps_kit","in")
 end
 
 function zat_b33_transfer_fifth_item(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section(actor,"helm_hardhat_snag","in")
+	dialogs.relocate_item_section(actor,"mili_maps","in",2)
 end
 
 function zat_b33_transfer_safe_container(first_speaker, second_speaker)
@@ -765,6 +766,88 @@ function is_good_gun(npc, item)
 						[4] = "wpn_groza",
 						[5] = "wpn_vintorez",
 						[6] = "wpn_fn2000",
+						[7] = "wpn_abakan_custom",
+						[8] = "wpn_abakan_alt",
+						[9] = "wpn_abakan_camo",
+						[10] = "wpn_abakan",
+						[11] = "wpn_ak74_custom1",
+						[12] = "wpn_ak74_custom2",
+						[13] = "wpn_ak74_alt",
+						[14] = "wpn_ak74_camo",
+						[15] = "wpn_ak74u_custom",
+						[16] = "wpn_ak74u_camo",
+						[17] = "wpn_bm16_silver",
+						[18] = "wpn_bm16_gold",
+						[19] = "wpn_colt1911_alt2",
+						[20] = "wpn_colt1911_camo",
+						[21] = "wpn_desert_eagle",
+						[22] = "wpn_desert_eagle_custom",
+						[23] = "wpn_desert_eagle_alt",
+						[24] = "wpn_desert_eagle_camo",
+						[25] = "wpn_fn2000_custom",
+						[26] = "wpn_fn2000_alt1",
+						[27] = "wpn_fn2000_alt2",
+						[28] = "wpn_fn2000_alt3",
+						[29] = "wpn_fn2000_worn",
+						[30] = "wpn_fort_custom",
+						[31] = "wpn_fort_camo",
+						[32] = "wpn_g36_custom",
+						[33] = "wpn_hpsa_custom",
+						[34] = "wpn_hpsa_camo",
+						[35] = "wpn_l85_custom",
+						[36] = "wpn_l85_camo",
+						[37] = "wpn_lr300_custom",
+						[38] = "wpn_lr300_camo",
+						[39] = "wpn_mp5_custom",
+						[40] = "wpn_mp5_alt",
+						[41] = "wpn_pm_custom",
+						[42] = "wpn_protecta_custom",
+						[43] = "wpn_protecta_camo",
+						[44] = "wpn_protecta",
+						[45] = "wpn_ppsh41_rednew",
+						[46] = "wpn_ppsh41_woodnew",
+						[47] = "wpn_sig220_custom",
+						[48] = "wpn_sig220_camo",
+						[49] = "wpn_sig550_sniper",
+						[50] = "wpn_sig550_custom",
+						[51] = "wpn_sig550_alt",
+						[52] = "wpn_sig550",
+						[53] = "wpn_sks_modern",
+						[54] = "wpn_spas12_custom",
+						[55] = "wpn_spas12_alt",
+						[56] = "wpn_stg44_alt",
+						[57] = "wpn_toz34_decor",
+						[58] = "wpn_toz34_new",
+						[59] = "wpn_usp_custom",
+						[60] = "wpn_usp_alt1",
+						[61] = "wpn_usp_alt2",
+						[62] = "wpn_walther_custom",
+						[63] = "wpn_walther_alt2",
+						[64] = "wpn_wincheaster1300_camo",
+						[65] = "wpn_wincheaster1300_alt",
+						[66] = "wpn_svd",
+						[67] = "wpn_svu",
+						[68] = "wpn_m21",
+						[69] = "wpn_m24",
+						[70] = "wpn_trg",
+						[71] = "wpn_ump45",
+						[72] = "wpn_g43",	
+						[73] = "wpn_sig550_luckygun",
+						[74] = "wpn_pkm_zulus",
+						[75] = "wpn_wincheaster1300_trapper",
+						[76] = "wpn_gauss",
+						[77] = "wpn_groza_nimble",
+						[78] = "wpn_desert_eagle_nimble",
+						[79] = "wpn_fn2000_nimble",
+						[80] = "wpn_g36_nimble",
+						[81] = "wpn_protecta_nimble",
+						[82] = "wpn_mp5_nimble",
+						[83] = "wpn_sig220_nimble",
+						[84] = "wpn_spas12_nimble",
+						[85] = "wpn_usp_nimble",
+						[86] = "wpn_vintorez_nimble",
+						[87] = "wpn_svu_nimble",
+						[88] = "wpn_svd_nimble",					
 						}
 
 	for k,v in pairs(wpn_table) do
@@ -911,18 +994,78 @@ function zat_b51_robbery(first_speaker, second_speaker)
 	end
 	local need_item = {}
 
-	need_item["wpn_usp"] = true
-	need_item["wpn_desert_eagle"] = true
-	need_item["wpn_protecta"] = true
 	need_item["wpn_sig550"] = true
-	need_item["wpn_fn2000"] = true
 	need_item["wpn_g36"] = true
 	need_item["wpn_val"] = true
-	need_item["wpn_vintorez"] = true
 	need_item["wpn_groza"] = true
+	need_item["wpn_vintorez"] = true
+	need_item["wpn_fn2000"] = true
+	need_item["wpn_abakan_custom"] = true
+	need_item["wpn_abakan_alt"] = true
+	need_item["wpn_abakan_camo"] = true
+	need_item["wpn_abakan"] = true
+	need_item["wpn_ak74_custom1"] = true
+	need_item["wpn_ak74_custom2"] = true
+	need_item["wpn_ak74_alt"] = true
+	need_item["wpn_ak74_camo"] = true
+	need_item["wpn_ak74u_custom"] = true
+	need_item["wpn_ak74u_camo"] = true
+	need_item["wpn_bm16_silver"] = true
+	need_item["wpn_bm16_gold"] = true
+	need_item["wpn_colt1911_alt2"] = true
+	need_item["wpn_colt1911_camo"] = true
+	need_item["wpn_desert_eagle"] = true
+	need_item["wpn_desert_eagle_custom"] = true
+	need_item["wpn_desert_eagle_alt"] = true
+	need_item["wpn_desert_eagle_camo"] = true
+	need_item["wpn_fn2000_custom"] = true
+	need_item["wpn_fn2000_alt1"] = true
+	need_item["wpn_fn2000_alt2"] = true
+	need_item["wpn_fn2000_alt3"] = true
+	need_item["wpn_fn2000_worn"] = true
+	need_item["wpn_fort_custom"] = true
+	need_item["wpn_fort_camo"] = true
+	need_item["wpn_g36_custom"] = true
+	need_item["wpn_hpsa_custom"] = true
+	need_item["wpn_hpsa_camo"] = true
+	need_item["wpn_l85_custom"] = true
+	need_item["wpn_l85_camo"] = true
+	need_item["wpn_lr300_custom"] = true
+	need_item["wpn_lr300_camo"] = true
+	need_item["wpn_mp5_custom"] = true
+	need_item["wpn_mp5_alt"] = true
+	need_item["wpn_pm_custom"] = true
+	need_item["wpn_protecta_custom"] = true
+	need_item["wpn_protecta_camo"] = true
+	need_item["wpn_protecta"] = true
+	need_item["wpn_ppsh41_rednew"] = true
+	need_item["wpn_ppsh41_woodnew"] = true
+	need_item["wpn_sig220_custom"] = true
+	need_item["wpn_sig220_camo"] = true
+	need_item["wpn_sig550_sniper"] = true
+	need_item["wpn_sig550_custom"] = true
+	need_item["wpn_sig550_alt"] = true
+	need_item["wpn_sig550"] = true
+	need_item["wpn_sks_modern"] = true
+	need_item["wpn_spas12_custom"] = true
+	need_item["wpn_spas12_alt"] = true
+	need_item["wpn_stg44_alt"] = true
+	need_item["wpn_toz34_decor"] = true
+	need_item["wpn_toz34_new"] = true
+	need_item["wpn_usp_custom"] = true
+	need_item["wpn_usp_alt1"] = true
+	need_item["wpn_usp_alt2"] = true
+	need_item["wpn_walther_custom"] = true
+	need_item["wpn_walther_alt2"] = true
+	need_item["wpn_wincheaster1300_camo"] = true
+	need_item["wpn_wincheaster1300_alt"] = true
 	need_item["wpn_svd"] = true
 	need_item["wpn_svu"] = true
-	need_item["wpn_pkm"] = true
+	need_item["wpn_m21"] = true
+	need_item["wpn_m24"] = true
+	need_item["wpn_trg"] = true
+	need_item["wpn_ump45"] = true
+	need_item["wpn_g43"] = true
 	need_item["wpn_sig550_luckygun"] = true
 	need_item["wpn_pkm_zulus"] = true
 	need_item["wpn_wincheaster1300_trapper"] = true
@@ -964,6 +1107,8 @@ function zat_b51_rob_nimble_weapon(first_speaker, second_speaker)
 	need_item["wpn_vintorez_nimble"] = true
 	need_item["wpn_svu_nimble"] = true
 	need_item["wpn_svd_nimble"] = true
+	need_item["wpn_ak74u_snag"] = true
+	need_item["wpn_fort_snag"] = true
 
 	for k,v in pairs(need_item) do
 		if db.actor:object(k) ~= nil then
@@ -1000,13 +1145,13 @@ item_count_by_category[6] = 1
 item_count_by_category[7] = 1
 
 local zat_b51_costs_table = {}
-zat_b51_costs_table[1] = {prepay_agreed = 4350, 	prepay_refused = 6760,	cost = 10090}
-zat_b51_costs_table[2] = {prepay_agreed = 7560, 	prepay_refused = 12530,	cost = 19620}
-zat_b51_costs_table[3] = {prepay_agreed = 10760, 	prepay_refused = 18200,	cost = 28890}
-zat_b51_costs_table[4] = {prepay_agreed = 11310, 	prepay_refused = 18650,	cost = 31550}
-zat_b51_costs_table[5] = {prepay_agreed = 14420, 	prepay_refused = 21890,	cost = 32690}
-zat_b51_costs_table[6] = {prepay_agreed = 20150, 	prepay_refused = 32100,	cost = 66860}
-zat_b51_costs_table[7] = {prepay_agreed = 24650,	prepay_refused = 36800,	cost = 78650}
+zat_b51_costs_table[1] = {prepay_agreed = 4350, 	prepay_refused = 9700,	cost = 19400}
+zat_b51_costs_table[2] = {prepay_agreed = 7560, 	prepay_refused = 16020,	cost = 32040}
+zat_b51_costs_table[3] = {prepay_agreed = 10760, 	prepay_refused = 21520,	cost = 42800}
+zat_b51_costs_table[4] = {prepay_agreed = 11310, 	prepay_refused = 22620,	cost = 44100}
+zat_b51_costs_table[5] = {prepay_agreed = 14420, 	prepay_refused = 28840,	cost = 65400}
+zat_b51_costs_table[6] = {prepay_agreed = 20150, 	prepay_refused = 40300,	cost = 80600}
+zat_b51_costs_table[7] = {prepay_agreed = 24650,	prepay_refused = 49300,	cost = 98600}
 
 local zat_b51_buy_item_table = {}
 zat_b51_buy_item_table[1] = {		[1] = {item = {"wpn_desert_eagle_nimble"}},
@@ -1228,7 +1373,7 @@ end
 function give_toolkit_1(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "toolkit_1")
 	db.actor.toolkit = nil
-	local amount = 3980
+	local amount = 2820
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, amount)
 end
 
@@ -1240,7 +1385,7 @@ end
 function give_toolkit_2(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "toolkit_2")
 	db.actor.toolkit = nil
-	local amount = 4850
+	local amount = 3850
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, amount)
 end
 
@@ -1252,7 +1397,7 @@ end
 function give_toolkit_3(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "toolkit_3")
 	db.actor.toolkit = nil
-	local amount = 5500
+	local amount = 4750
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, amount)
 end
 
@@ -1414,7 +1559,7 @@ end
 function zat_b40_transfer_merc_pda_1(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "zat_b40_pda_1")
 	db.actor:give_info_portion("zat_b40_pda_1_saled")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2262)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2260)
 
 	if (db.actor:has_info("zat_b40_notebook_saled") and db.actor:has_info("zat_b40_pda_1_saled") and db.actor:has_info("zat_b40_pda_2_saled")) then
 		db.actor:give_info_portion("zat_b40_all_item_saled")
@@ -1424,7 +1569,7 @@ end
 function zat_b40_transfer_merc_pda_2(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "zat_b40_pda_2")
 	db.actor:give_info_portion("zat_b40_pda_2_saled")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2180)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1880)
 
 	if (db.actor:has_info("zat_b40_notebook_saled") and db.actor:has_info("zat_b40_pda_1_saled") and db.actor:has_info("zat_b40_pda_2_saled")) then
 		db.actor:give_info_portion("zat_b40_all_item_saled")
@@ -1481,17 +1626,16 @@ function zat_b53_if_actor_hasnt_detector_advanced(first_speaker, second_speaker)
 end
 
 function zat_b53_transfer_detector_advanced_to_actor(first_speaker, second_speaker)
-	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
-	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+--	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
 end
 
 function zat_b53_transfer_fireball_to_actor(first_speaker, second_speaker)
-	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7540)
-	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+--	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
 end
 
 function zat_b53_transfer_medkit_to_actor(first_speaker, second_speaker)
-	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7210)
 	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "medkit",1)
 end
 
@@ -1574,7 +1718,7 @@ function is_not_zat_b106_hunting_time (first_speaker, second_speaker)
 end
 
 function zat_b106_transfer_weap_to_actor(first_speaker, second_speaker)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "wpn_spas12")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "wpn_toz34_decor")
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5250)
 end
 

@@ -271,7 +271,7 @@ It's a heavy kit but it can be very helpful when exploring deep into The Zone wi
 		<text>This is your personal ID card which reveals your true identity (keep it hidden). As a USS Assaulter you are specialized in assault rifles, shotguns and heavy weapons. You are also specialized in the control of weapon recoil. Slow sprinting speed. </text>
 	</string>
 	<string id="st_roubles">
-		<text>10-rouble coins</text>
+		<text>100-rouble coins</text>
 	</string>
 	<string id="st_roubles_descr">
 		<text>Trade in The Zone is mainly done through electronic transactions for safety and managing reasons. But many stalkers keep at least a few coins on them to be able to buy smaller things like cigarettes off each other. This minimizes economy management and conserves battery life.</text>
@@ -525,7 +525,7 @@ Unless you throw a disinfecting Akvatab into the flask with every zip of water t
 	</string>
 
 	<string id="st_crowbar">
-		<text>Leather boots</text>
+		<text>Crowbar</text>
 	</string>
 	<string id="st_crowbar_descr">
 		<text>The best tool for opening locked doors and entering buildings. A common find in the industrial areas but some stalkers are keeping a crowbar in their inventories in spite of its weight. Little value.</text>
@@ -572,7 +572,7 @@ This is no longer of any value.</text>
 		<text>Soaked underwear</text>
 	</string>
 	<string id="st_underwear_descr">
-		<text>An extra pair of socks, shirt and underwear might work wonders. But not is this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.</text>
+		<text>An extra pair of socks, shirt and underwear might work wonders. But not in this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.</text>
 	</string>
 
 	<string id="st_wpn_spareparts">

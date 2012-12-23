@@ -1766,9 +1766,6 @@ base_safe = 1
 
 [jup_b19]:default
 sim_avail = {-jup_b19_agreed_to_go} true, {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
-;hunting_ground 	= 1
-;lair_night = 2
-;territory_zombied = 2
 base_duty = 1
 base_safe = 1
 
@@ -1877,11 +1874,8 @@ sim_avail = true
 
 [jup_b47]:default
 sim_avail = true ; {+jup_b47_all_merc_dead} true, false ; {jup_b47_actor_pick_docs} true, false ; {+jup_b47_products_info_complite} true, false ; {+jup_b47_task_end} true, false ; , {+jup_b47_all_merc_dead} true, false
-lair = 1
-lair_night = 1
 base_monolith = 2
 territory_hostile = 1
-territory_zombied = 2
 
 [jup_b6_anom_2]:default_resource_hard
 sim_avail = {-jup_b6_give_task} true, {+jup_b6_task_fail} true, {+jup_b6_anom_2_count_end} true, false
@@ -1914,7 +1908,7 @@ sim_avail = false
 [jup_a9]:default_base_monolith
 sim_avail = true ; {jup_b47_actor_pick_docs} true, false ; {+jup_a9_tech_way_info +jup_a9_conservation_info +jup_a9_way_info +jup_a9_power_info} true, false
 territory_hostile = 1
-territory_zombied = 2
+base_monolith = 2
 
 ;---------	SIMULATION	--------
 
@@ -1976,7 +1970,7 @@ sim_avail =  false
 sim_avail =  true
 lair_night = 1
 lair = 1
-territory_zombied = 2
+territory_zombied = 1
 
 [jup_sim_11]:default_lair
 sim_avail =  true
@@ -2027,10 +2021,10 @@ lair = 2
 [jup_sim_19]:default
 base_monolith = 2
 territory_hostile = 1
-territory_zombied = 2
-lair_night = 2
+lair_night = 1
 lair = 1
 sim_avail = true
+
 
 [jup_sim_20]:default
 sim_avail =  true
@@ -2043,11 +2037,7 @@ lair = 1
 lair_night = 1
 
 [jupiter_smrter_sim_1]:default
-lair = 1
-lair_night = 2
-base_monolith = 2
-territory_monolith = 2
-territory_zombied = 2
+base_monolith = 1
 sim_avail = true
 
 [jupiter_smrter_sim_2]:default
@@ -2064,14 +2054,11 @@ sim_avail = true
 sim_avail = true
 lair_night = 1
 lair = 1
-territory_zombied = 2
-;base_monolith = 2
-;territory_hostile = 1
 
 [jupiter_smrter_sim_5]:default
 lair_night = 1
 lair = 1
-territory_zombied = 2
+territory_zombied = 1
 sim_avail = true
 
 [jupiter_smrter_sim_6]:default
@@ -2092,14 +2079,15 @@ hunting_ground = 2
 sim_avail = true
 
 [jupiter_smrter_sim_9]:default
-lair = 2
-lair_night = 2
+lair = 1
+lair_night = 1
 territory_zombied = 2
 sim_avail = true
 
 [jupiter_smrter_sim_10]:default
 lair = 1
 lair_night = 1
+base_monolith = 1
 sim_avail = true
 
 [jupiter_smrter_sim_11]:default

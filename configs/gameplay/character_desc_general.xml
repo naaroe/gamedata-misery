@@ -5269,7 +5269,7 @@
     <rank>70</rank>
     <reputation>0</reputation>
 	<money min="5000" max="10000" infinitive="0"/>
-    <visual>actors\stalker_freedom\stalker_free0</visual>
+    <visual>actors\stalker_freedom\stalker_free0a</visual>
     <supplies>
       [spawn] \n
 
