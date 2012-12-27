@@ -58,28 +58,23 @@ function npc_on_weapon_sight(npc,wpn,st,sight_type)
 	local zoom = alun_utils.read_from_ini(nil,scope,"scope_zoom_factor","float",30)
 	local max_range = alun_utils.read_from_ini(nil,sec,"fire_distance","float",150)
 
-	local old_range = alun_utils.load_var(npc,"lios_range",nil)
-	if not (old_range) then
-		old_range = npc:range()
-		alun_utils.save_var(npc,"lios_range",old_range)
+	if not (st.range) then
+		st.range = npc:range()
 	end
 
-
-	local old_fov = alun_utils.load_var(npc,"lios_fov",nil)
-	if not (old_fov) then
-		old_fov = npc:fov()
-		alun_utils.save_var(npc,"lios_fov",old_fov)
+	if not (st.fov) then
+		st.fov = npc:fov()
 	end
 
-	if (zoom < 80 and max_range > old_range) then
+	if (zoom < 80 and max_range > st.range) then
 		zoom = 30/zoom
 
-		local range = old_range + (old_range * LIOSRange * zoom)
+		local range = st.range + (st.range * LIOSRange * zoom)
 		if (range > max_range) then
 			range = max_range
 		end
 
-		local fov = old_fov + (old_fov * LIOSFov * zoom)
+		local fov = st.fov + (st.fov * LIOSFov * zoom)
 		if (fov < 40) then
 			fov = 40
 		end
@@ -93,13 +88,11 @@ end
 -- npc_on_weapon_unsight(npc,weapon,storage,sight_type)
 -------------------
 function npc_on_weapon_unsight(npc,wpn,st,sight_type)
-	local range = alun_utils.load_var(npc,"lios_range",nil)
-	local fov = alun_utils.load_var(npc,"lios_fov",nil)
-	if (range and fov) then
-		npc:set_range(range)
-		npc:set_fov(fov)
-		alun_utils.save_var(npc,"lios_range",nil)
-		alun_utils.save_var(npc,"lios_fov",nil)
+	if (st.range and st.fov) then
+		npc:set_range(st.range)
+		npc:set_fov(st.fov)
+		st.range = nil
+		st.fov = nil
 	end
 end
 
@@ -116,7 +109,7 @@ function npc_on_weapon_no_ammo(npc,wpn,st)
 	local ini = system_ini()
 	local sec = wpn:section()
 	local se_wpn = alife():object(wpn:id())
-	local data = stpk_utils.get_weapon_data(se_wpn)
+	local data = alun_utils.get_weapon_data(se_wpn)
 	local ammos = alun_utils.parse_list(ini,sec,"ammo_class")
 
 	local box = data.ammo_type+1 == 1 and npc:object(ammos[1]) or npc:object(ammos[2])
@@ -133,7 +126,7 @@ function npc_on_weapon_unstrapped(npc,weapon)
 	local id = weapon:id()
 	local se_wpn = alife():object(id)
 
-	local data = stpk_utils.get_weapon_data(se_wpn)
+	local data = alun_utils.get_weapon_data(se_wpn)
 	if not (data) then
 		return
 	end
@@ -178,7 +171,7 @@ function npc_on_weapon_unstrapped(npc,weapon)
 			if (se_wpn) then
 				local data = alun_utils.get_weapon_data(se_wpn)
 				data.addon_flags = flag
-				stpk_utils.set_weapon_data(data,se_wpn)
+				alun_utils.set_weapon_data(data,se_wpn)
 			end
 		end
 		alun_utils.switch_offline_execute(se_wpn.id,update_addon_flag,flag)
@@ -194,3 +187,4 @@ function squad_can_help_actor(squad)
 		return true
 	end
 end
+

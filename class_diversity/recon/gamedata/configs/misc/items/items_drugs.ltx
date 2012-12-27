@@ -1,0 +1,324 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; DRUGS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[booster]:identity_immunities
+GroupControlSection	= spawn_group
+discovery_dependency =
+;$spawn 				= "food and drugs\booster"
+$prefetch 			= 8
+class				= S_FOOD
+cform				= skeleton
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+description			= default
+inv_name			= default
+inv_name_short			= default
+inv_weight			= 0.01
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 3
+inv_grid_y			= 18
+cost				= 1
+
+; eatable item
+eat_health			= 0
+eat_satiety			= 0
+eat_power			= 0
+eat_max_power			= 0
+eat_radiation			= 0
+eat_alcohol			= 0
+wounds_heal_perc		= 0
+eat_portions_num		= 1
+
+boost_time			= 0.0
+boost_max_weight		= 0.0
+boost_health_restore		= 0.0
+boost_power_restore		= 0.0
+boost_radiation_restore		= 0.0
+boost_bleeding_restore		= 0.0
+
+boost_radiation_protection	= 0.0
+boost_telepat_protection 	= 0.0
+boost_chemburn_protection 	= 0.0
+
+boost_burn_immunity		= 0.0
+boost_shock_immunity		= 0.0
+boost_radiation_immunity	= 0.0
+boost_telepat_immunity		= 0.0
+boost_chemburn_immunity 	= 0.0
+boost_strike_immunity		= 0.0
+boost_wound_immunity		= 0.0
+boost_explosion_immunity	= 0.0
+boost_fire_wound_immunity	= 0.0
+;use_sound			= characters_voice\multiplayer\team_1\voice_roger_3
+
+[drug_sleepingpills]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\equipments\medical\drug_sleeping_pills.ogf
+inv_name			= Sleeping-Pills
+inv_name_short		= Sleeping-Pills
+description			= st_sleepingpills_descr
+
+inv_weight			= 0.05
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 17
+inv_grid_y		= 6 ;11
+cost			= 680
+
+eat_sleepiness				= 0.381
+
+use_sound			= interface\inv_eat_pills_2
+
+[antirad]:booster
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\devices\dev_antirad\dev_antirad.ogf
+inv_name			= st_antirad
+inv_name_short		= st_antirad
+description			= st_antirad_descr
+inv_weight			= 0.05
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 18
+inv_grid_y			= 12
+cost				= 1660
+
+eat_satiety 			= -0.294
+
+eat_sleepiness				= 0.098
+
+boost_time			= 8.2
+boost_radiation_restore	= 0.01092
+
+use_sound			= interface\inv_syringe
+
+eat_health			= -0.148
+
+[drug_booster]:booster
+$spawn 				= "food and drugs\drug_booster"
+visual				= dynamics\equipments\medical\drug_booster.ogf
+inv_name			= st_drug_booster
+inv_name_short		= st_drug_booster
+description			= st_drug_booster_descr
+inv_weight			= 0.18
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 18
+inv_grid_y			= 7
+cost				= 2130
+
+boost_time			= 456
+boost_max_weight	= 4.587
+
+boost_power_restore		= 0.00484
+
+eat_alcohol 			= -0.261
+eat_satiety 			= 0.254
+eat_sleepiness				= -0.08
+
+use_sound			= interface\inv_drink_flask_effect
+
+[drug_coagulant]:booster
+$spawn 				= "food and drugs\drug_coagulant"
+visual				= dynamics\equipments\medical\drug_coagulant.ogf
+inv_name			= st_drug_coagulant
+inv_name_short			= st_drug_coagulant
+description			= st_drug_coagulant_descr
+inv_weight			= 0.011
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 13
+inv_grid_y			= 12
+cost				= 1890
+
+boost_time				= 293
+boost_bleeding_restore	= 0.00038
+
+boost_wound_immunity		= 0.384
+boost_fire_wound_immunity	= 0.384
+boost_explosion_immunity	= 0.523
+boost_strike_immunity		= 0.296
+
+eat_sleepiness				= 0.008
+
+use_sound			= interface\inv_eat_pills
+
+[drug_psy_blockade]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\equipments\medical\drug_psy_blockade.ogf
+inv_name			= st_drug_psy_blockade
+inv_name_short			= st_drug_psy_blockade
+description			= st_drug_psy_blockade_descr
+inv_weight			= 0.01
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 11
+cost				= 2450
+
+boost_time				= 443
+boost_telepat_protection 	= 0.0149
+
+eat_satiety 			= -0.097
+eat_alcohol				= 0.892
+eat_sleepiness				= 0.038
+
+use_sound			= interface\inv_eat_pills
+
+[drug_antidot]:booster
+$spawn 				= "food and drugs\drug_antidot"
+visual				= dynamics\equipments\medical\drug_antidot.ogf
+inv_name			= st_drug_antidot
+inv_name_short		= st_drug_antidot
+description			= st_drug_antidot_descr
+inv_weight			= 0.011
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 11
+cost				= 1520
+
+boost_time				= 388
+boost_chemburn_protection 	= 0.00589
+
+eat_satiety 			= -0.028
+eat_sleepiness				= 0.044
+
+use_sound			= interface\inv_eat_pills_2
+
+[drug_radioprotector]:booster
+$spawn 				= "food and drugs\drug_radioprotector"
+visual				= dynamics\equipments\medical\drug_radioprotector.ogf
+inv_name			= st_drug_radioprotector
+inv_name_short		= st_drug_radioprotector
+description			= st_drug_radioprotector_descr
+inv_weight			= 0.009
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 9
+inv_grid_y			= 10
+cost				= 2350
+
+boost_time					= 434
+boost_radiation_protection	= 0.0238
+
+eat_satiety 			= -0.061
+eat_sleepiness				= 0.056
+
+use_sound			= interface\inv_eat_pills_2
+
+[drug_anabiotic]:booster
+$spawn 				= "food and drugs\drug_anabiotic"
+visual				= dynamics\equipments\medical\drug_anabiotic.ogf
+inv_name			= st_drug_anabiotic
+inv_name_short		= st_drug_anabiotic
+description			= st_drug_anabiotic_descr
+inv_weight			= 0.012
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 4
+inv_grid_y			= 8
+cost				= 2650
+
+use_sound			= interface\inv_eat_pills_2
+
+[akvatab]:booster
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\equipments\medical\drug_cat_eye.ogf
+inv_name			= st_akvatab
+inv_name_short			= st_akvatab
+description			= st_akvatab_descr
+inv_weight			= 0.007
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 12
+inv_grid_y			= 41
+cost				= 985
+
+boost_time			= 31
+boost_radiation_restore		= 0.00108
+
+eat_alcohol			= -0.092
+eat_satiety 			= 0.284
+eat_sleepiness			= -0.09
+
+use_sound			= interface\inv_eat_pills
+
+;boosters below are not used for now
+;[health_restore_booster]:booster
+;$spawn 					= "food and drugs\health_restore_booster"
+;boost_time				= 20.0
+;boost_health_restore	= 0.1
+;
+;[max_weight_booster]:booster
+;$spawn 				= "food and drugs\max_weight_booster"
+;boost_time			= 20.0
+;boost_max_weight	= 100.0
+;
+;[wound_immunity_booster]:booster
+;$spawn 					= "food and drugs\wound_immunity_booster"
+;boost_time				= 20.0
+;boost_wound_immunity	= 1
+;
+;[telepat_immunity_booster]:booster
+;$spawn 					= "food and drugs\telepat_immunity_booster"
+;boost_time				= 20.0
+;boost_telepat_immunity	= 1
+;
+;[chemburn_immunity_booster]:booster
+;$spawn 					= "food and drugs\chemburn_immunity_booster"
+;boost_time				= 20.0
+;boost_chemburn_immunity	= 1
+;
+;[radiation_restore_booster]:booster
+;$spawn 					= "food and drugs\radiation_restore_booster"
+;boost_time				= 20.0
+;boost_radiation_restore	= 0.1
+;
+;[shock_immunity_booster]:booster
+;$spawn 					= "food and drugs\shock_immunity_booster"
+;boost_time				= 20.0
+;boost_shock_immunity	= 1
+;
+;[power_restore_booster]:booster
+;$spawn 				= "food and drugs\power_restore_booster"
+;boost_time			= 20.0
+;boost_power_restore	= 0.1
+;
+;[bleeding_restore_booster]:booster
+;$spawn 					= "food and drugs\bleeding_restore_booster"
+;boost_time				= 20.0
+;boost_bleeding_restore	= 0.1
+;
+;[burn_immunity_booster]:booster
+;$spawn 				= "food and drugs\burn_immunity_booster"
+;boost_time			= 20.0
+;boost_burn_immunity	= 1
+;
+;[explosion_immunity_booster]:booster
+;$spawn 						= "food and drugs\explosion_immunity_booster"
+;boost_time					= 20.0
+;boost_explosion_immunity	= 1
+;
+;[fire_wound_immunity_booster]:booster
+;$spawn 						= "food and drugs\fire_wound_immunity_booster"
+;boost_time					= 20.0
+;boost_fire_wound_immunity	= 1
+;
+;[strike_immunity_booster]:booster
+;$spawn 					= "food and drugs\strike_immunity_booster"
+;boost_time				= 20.0
+;boost_strike_immunity	= 1
+;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

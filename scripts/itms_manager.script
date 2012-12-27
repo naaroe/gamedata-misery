@@ -87,14 +87,13 @@ function on_actor_update()
 		local obj = db.actor:active_detector()
 		local torch = db.actor:object("device_torch")
 		if (obj and FlashlightSections[obj:section()]) then
+		local torch = db.actor:object("device_torch")
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
-			else
-				if not (torch:torch_enabled()) then
-					torch:enable_torch(true)
 				end
 			end
 		else
+		local torch = db.actor:object("device_torch")
 			local se_torch = torch and alife():object(torch:id())
 			if (se_torch) then
 				alife():release(se_torch,true)

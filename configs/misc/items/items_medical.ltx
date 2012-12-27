@@ -17,16 +17,11 @@ inv_grid_height		= 1
 inv_grid_x			= 3
 inv_grid_y			= 18
 
-boost_time				= 0.01 ; 2.9
-;boost_health_restore	= 0.004
-;boost_bleeding_restore	= 0.015
-
 eat_bleeding	= -0.33
 
-eat_satiety 			= -0.038
+eat_satiety 			= -0.044
 eat_alcohol			= 0.012
-
-eat_sleepiness				= 0.012
+eat_sleepiness				= 0.0172
 
 use_sound			= interface\inv_bandage_3p7
 
@@ -45,13 +40,14 @@ inv_grid_height			= 1
 inv_grid_x			= 1
 inv_grid_y			= 45
 
+boost_time				= 48.6
 boost_time				= 42.6
-boost_health_restore	= 0.0018
-boost_radiation_restore	= 0.0054
+boost_health_restore	= 0.0021
+boost_radiation_restore	= 0.0022
 
 eat_bleeding	= -0.5
 
-eat_satiety 			= 0.25
+eat_satiety 			= 0.28
 
 use_sound			= interface\inv_medkit
 
@@ -101,18 +97,18 @@ inv_grid_width     = 1
 inv_grid_height    = 1
 inv_grid_x         = 0
 inv_grid_y         = 46
-cost				= 1500 ; 850
+cost				= 1520 ; 850
 
-boost_time				= 12.75
-boost_health_restore	= 0.0028
+boost_time				= 14.75
+boost_health_restore	= 0.00332
 boost_radiation_restore	= 0.0
 boost_bleeding_restore	= 0.0	; 0.003 ;0.005
 
 use_sound			= interface\inv_stim_4p3
 
-eat_alcohol				= 0.045
-eat_satiety 			= -0.174
-eat_sleepiness				= 0.044
+eat_alcohol				= 0.036
+eat_satiety 			= -0.196
+eat_sleepiness				= 0.056
 
 [stimpack_army]:booster
 $spawn 				= "food and drugs\medkit_army"
@@ -128,17 +124,16 @@ inv_grid_x         = 1
 inv_grid_y         = 46
 cost				= 2850 ; 1650
 
-boost_time				= 10.65
-boost_health_restore	= 0.0047
+boost_time				= 11.95
+boost_health_restore	= 0.00564
 boost_radiation_restore	= 0.0
-boost_bleeding_restore	= 0.0 ;0.02
 
 use_sound			= interface\inv_stim_4p3
 
-eat_alcohol				= 0.05
-eat_satiety 			= -0.26
+eat_alcohol				= 0.039
+eat_satiety 			= -0.346
 
-eat_sleepiness				= 0.054
+eat_sleepiness				= 0.073
 
 [stimpack_scientic]:booster
 $spawn 				= "food and drugs\medkit_scientic"
@@ -154,14 +149,13 @@ inv_grid_x         = 2
 inv_grid_y         = 46
 cost				= 4750 ; 2260
 
-boost_time				= 9.3
-boost_health_restore	= 0.0099
-boost_radiation_restore	= 0.0021
-boost_bleeding_restore	= 0.0
+boost_time				= 10.84
+boost_health_restore	= 0.0123
+boost_radiation_restore	= 0.0018
 
-eat_alcohol				= 0.016
-eat_satiety 			= -0.12
-eat_sleepiness				= 0.070
+eat_alcohol				= 0.0122
+eat_satiety 			= -0.176
+eat_sleepiness				= 0.084
 
 use_sound			= interface\inv_stim_4p3
 
@@ -258,15 +252,15 @@ cost				= 5690
 ;eatable item
 ;eat_radiation 			= 0.9
 
-boost_time				= 8.5
-boost_health_restore	= 0.0164
-boost_radiation_restore	= 0.019
+boost_time				= 9.64
+boost_health_restore	= 0.0149
+boost_radiation_restore	= 0.0164
 boost_bleeding_restore	= 0.0
 
-eat_alcohol				= 0.38
-eat_satiety 			= 0.54
+eat_alcohol				= 0.264
+eat_satiety 			= 0.462
 
-eat_sleepiness				= -0.053
+eat_sleepiness				= -0.071
 
 use_sound			= interface\inv_syringe
 
@@ -284,18 +278,15 @@ inv_grid_x			= 10
 inv_grid_y			= 48
 cost				= 2290
 
-;eatable item
-;eat_radiation 			= 0.9
+boost_time				= 79.0
+boost_health_restore	= 0.000077
+boost_radiation_restore	= 0.000068
+boost_bleeding_restore	= 0.000061
 
-boost_time				= 95.0
-boost_health_restore	= 0.000085
-boost_radiation_restore	= 0.000075
-boost_bleeding_restore	= 0.000070
+boost_chemburn_protection 	= 0.00442
 
-boost_chemburn_protection 	= 0.00495
-
-eat_satiety 			= -0.15
-eat_sleepiness			= 0.09
+eat_satiety 			= -0.184
+eat_sleepiness			= 0.126
 
 use_sound			= interface\inv_syringe
 
@@ -325,21 +316,21 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 485
-boost_power_restore		= 0.0038
-boost_max_weight	= 5.2
-boost_bleeding_restore	= 0.0002
+boost_time				= 418
+boost_power_restore		= 0.0032
+boost_max_weight	= 4.542
+boost_bleeding_restore	= 0.00016
 
-boost_wound_immunity		= 0.130
-boost_fire_wound_immunity	= 0.130
-boost_explosion_immunity	= 0.20
-boost_strike_immunity		= 0.080
+boost_wound_immunity		= 0.118
+boost_fire_wound_immunity	= 0.118
+boost_explosion_immunity	= 0.162
+boost_strike_immunity		= 0.071
 
-eat_alcohol				= -0.22
-eat_satiety				= 0.025
-eat_sleepiness				= -0.18
+eat_alcohol				= -0.292
+eat_satiety				= 0.0212
+eat_sleepiness				= -0.267
 
-eat_health				= -0.056
+eat_health				= -0.0421
 
 use_sound			= interface\inv_sniff
 
@@ -369,9 +360,9 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 320
-boost_power_restore		= -0.0028 ;0.005
-boost_max_weight	= -5.4
+boost_time				= 221
+boost_power_restore		= -0.0024 ;0.005
+boost_max_weight	= -4.126
 boost_bleeding_restore	= 0.00032
 
 boost_wound_immunity		= 0.430
@@ -379,11 +370,11 @@ boost_fire_wound_immunity	= 0.430
 boost_explosion_immunity	= 0.60
 boost_strike_immunity		= 0.35
 
-eat_alcohol				= 0.26
-eat_satiety				= -0.033
-eat_sleepiness				= 0.13
+eat_alcohol				= 0.206
+eat_satiety				= -0.0274
+eat_sleepiness				= 0.184
 
-eat_health				= -0.058
+eat_health				= -0.041
 
 use_sound			= interface\inv_syringe
 
@@ -413,21 +404,21 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 460
-boost_power_restore		= -0.0021 ;0.005
-boost_max_weight	= -3.3
-boost_bleeding_restore	= 0.00058
+boost_time				= 412
+boost_power_restore		= -0.0016 ;0.005
+boost_max_weight	= -2.84
+boost_bleeding_restore	= 0.00048
 
-boost_wound_immunity		= 0.77
-boost_fire_wound_immunity	= 0.77
-boost_explosion_immunity	= 0.99
-boost_strike_immunity		= 0.52
+boost_wound_immunity		= 0.667
+boost_fire_wound_immunity	= 0.667
+boost_explosion_immunity	= 0.88
+boost_strike_immunity		= 0.46
 
-eat_alcohol				= 0.48
-eat_satiety				= -0.039
-eat_sleepiness				= 0.16
+eat_alcohol				= 0.352
+eat_satiety				= -0.0312
+eat_sleepiness				= 0.224
 
-eat_health				= -0.044
+eat_health				= -0.031
 
 use_sound			= interface\inv_syringe
 
@@ -450,21 +441,21 @@ attach_position_offset	= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-boost_time				= 690
-boost_power_restore		= 0.0052
-boost_max_weight	= 9.2
-boost_bleeding_restore	= 0.00037
+boost_time				= 601
+boost_power_restore		= 0.0047
+boost_max_weight	= 7.926
+boost_bleeding_restore	= 0.00031
 
-boost_wound_immunity		= 0.22
-boost_fire_wound_immunity	= 0.22
-boost_explosion_immunity	= 0.32
-boost_strike_immunity		= 0.16
+boost_wound_immunity		= 0.174
+boost_fire_wound_immunity	= 0.174
+boost_explosion_immunity	= 0.286
+boost_strike_immunity		= 0.139
 
-eat_alcohol				= -0.36
-eat_satiety				= 0.05
-eat_sleepiness				= -0.28
+eat_alcohol				= -0.495
+eat_satiety				= 0.041
+eat_sleepiness				= -0.264
 
-eat_health				= -0.023
+eat_health				= -0.0174
 
 use_sound			= interface\inv_syringe
 

@@ -752,13 +752,7 @@ function weapon_hud_show(hud)
 		near = db.actor
 		wpn = db.actor:active_item()
 	end
-
-	if (wpn == nil or not alun_utils.item_is_fa(wpn)) then
-		return
-	end
-
-	local sobj = alife():object(wpn:id())
-	local data = stpk_utils.get_weapon_data(sobj)
+	local data = get_weapon_data(wpn)
 
 	if (wpn and data) then
 		local sec = wpn:section()
@@ -799,6 +793,19 @@ function corpse_hud_show(hud)
 	end
 	hud:set_header("-[Release Table]-")
 	hud:display()
+end
+
+function get_weapon_data(wpn)
+	if (wpn and alun_utils.item_is_fa(wpn)) then
+		local sobj = alife():object(wpn:id())
+		if (sobj) then
+			--alun_utils.switch_offline(wpn:id())
+			local data = alun_utils.get_weapon_data(sobj)
+			--alun_utils.switch_online(wpn:id())
+			return data
+		end
+	end
+	return {}
 end
 
 function get_debug_hud()

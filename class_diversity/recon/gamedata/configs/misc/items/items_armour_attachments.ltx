@@ -1,0 +1,660 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; ARMOUR ATTACHEMENTS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[aa_base]:identity_immunities
+GroupControlSection		= spawn_group
+cform           		= skeleton
+hud				= artefact_hud
+animation_slot			= 11
+allow_inertion			= true
+attach_angle_offset		= 0,0,0
+attach_position_offset		= -0.1,-0.1,0
+attach_bone_name		= bip01_root
+inv_grid_width			= 1
+inv_grid_height			= 1
+belt				= true
+slot 				= -1
+af_actor_properties		= on
+actor_properties		= on
+det_show_particles		= anomaly2\plasma_generator_death
+det_hide_particles		= anomaly2\plasma_generator_death
+det_show_snd			= anomaly\bfuzz_blowout
+det_hide_snd			= anomaly\pux_blast
+af_rank				= 1
+can_be_controlled		= true
+script_binding                  = bind_artefact.bind
+particles_bone			= link
+additional_inventory_weight     = 0
+
+;------------------------------------------------------------------------------------------
+
+[af_surge]:aa_base
+$spawn				= "artefacts\af_surge"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\surge
+description			= st_af_surge_descr
+inv_name			= st_af_surge_name
+inv_name_short			= st_af_surge_name
+inv_weight			= 4.95
+
+inv_grid_x			= 11
+inv_grid_y			= 42
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 5460 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_surge_absorbation
+
+additional_inventory_weight	= 3.385
+additional_inventory_weight2	= 3.385
+
+artefact_activation_seq		= af_activation_bold
+
+[af_surge_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0.264
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_frames]:aa_base
+$spawn				= "artefacts\af_frames"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\frames
+description			= st_af_frames_descr
+inv_name			= st_af_frames_name
+inv_name_short			= st_af_frames_name
+inv_weight			= 0.53
+
+inv_grid_x			= 9
+inv_grid_y			= 41
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 6380 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_frames_absorbation
+
+additional_inventory_weight	= 3.792
+additional_inventory_weight2	= 3.792
+
+artefact_activation_seq		= af_activation_bold
+
+[af_frames_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.12
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 		= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_grid]:aa_base
+$spawn				= "artefacts\af_grid"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\frames
+description			= st_af_grid_descr
+inv_name			= st_af_grid_name
+inv_name_short			= st_af_grid_name
+inv_weight			= 0.44
+
+inv_grid_x			= 9
+inv_grid_y			= 42
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 8450 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_grid_absorbation
+
+additional_inventory_weight		= 4.836
+additional_inventory_weight2		= 4.836
+
+artefact_activation_seq		= af_activation_bold
+
+[af_grid_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.132
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 		= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_freon]:aa_base
+$spawn				= "artefacts\af_freon"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\freon
+description			= st_af_freon_descr
+inv_name			= st_af_freon_name
+inv_name_short			= st_af_freon_name
+inv_weight			= 2.34
+
+inv_grid_x			= 11
+inv_grid_y			= 44
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 4580 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_freon_absorbation
+
+additional_inventory_weight	= 1.62
+additional_inventory_weight2	= 1.62
+
+artefact_activation_seq		= af_activation_bold
+
+[af_freon_absorbation]
+burn_immunity 			= 0.00242				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.184
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_cooler]:aa_base
+$spawn				= "artefacts\af_cooler"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\cooler
+description			= st_af_cooler_descr
+inv_name			= st_af_cooler_name
+inv_name_short			= st_af_cooler_name
+inv_weight			= 3.56
+
+inv_grid_x			= 11
+inv_grid_y			= 41
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 6080 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed			= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_cooler_absorbation
+
+additional_inventory_weight		= 2.58
+additional_inventory_weight2	= 2.58
+
+artefact_activation_seq		= af_activation_bold
+
+[af_cooler_absorbation]
+burn_immunity 			= 0.0037				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.24
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_kevlar]:aa_base
+$spawn				= "artefacts\af_kevlar"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\kevlar
+description			= st_af_kevlar_descr
+inv_name			= st_af_kevlar_name
+inv_name_short			= st_af_kevlar_name
+inv_weight			= 1.74
+
+inv_grid_x			= 10
+inv_grid_y			= 44
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 4480 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_kevlar_absorbation
+
+additional_inventory_weight	= 1.26
+additional_inventory_weight2	= 1.26
+
+artefact_activation_seq		= af_activation_bold
+
+[af_kevlar_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= 0
+wound_immunity 			= 0.05
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.115
+fire_wound_immunity  		= 0.115
+
+;------------------------------------------------------------------------------------------
+
+[af_plates]:aa_base
+$spawn				= "artefacts\af_plates"
+class				= SCRPTART  	; будет подпрыгивать
+visual = dynamics\equipments\aa\plates
+description			= st_af_plates_descr
+inv_name			= st_af_plates_name
+inv_name_short			= st_af_plates_name
+inv_weight			= 2.82
+
+inv_grid_x			= 10
+inv_grid_y			= 42
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 6740 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_plates_absorbation
+
+additional_inventory_weight	= 1.58
+additional_inventory_weight2	= 1.58
+
+artefact_activation_seq		= af_activation_bold
+
+[af_plates_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.22
+wound_immunity 			= 0.1
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0.195
+fire_wound_immunity  		= 0.195
+
+;------------------------------------------------------------------------------------------
+
+[af_camelbak]:aa_base
+$spawn				= "artefacts\af_camelbak"
+class   			= SCRPTART  	; будет подпрыгивать
+cform				= skeleton
+visual = dynamics\equipments\aa\camelbak
+description			= st_af_camelbak_descr
+inv_name			= st_af_camelbak_name
+inv_name_short			= st_af_camelbak_name
+inv_weight			= 1.53
+
+inv_grid_x			= 10
+inv_grid_y			= 41
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 6540 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= 0
+satiety_restore_speed		= 0
+power_restore_speed			= 0.00057
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_camelbak_absorbation
+
+additional_inventory_weight	= 1.22
+additional_inventory_weight2	= 1.22
+
+artefact_activation_seq		= af_activation_bold
+
+[af_camelbak_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.06
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_iam]:aa_base
+$spawn				= "artefacts\af_iam"
+class				= SCRPTART  	; будет подпрыгивать
+visual				= dynamics\equipments\aa\iam
+description			= st_af_iam_descr
+inv_name			= st_af_iam_name
+inv_name_short			= st_af_iam_name
+inv_weight			= 3.64
+
+inv_grid_x			= 9
+inv_grid_y			= 43
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 6590 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= -0.00046
+satiety_restore_speed		= 0
+power_restore_speed			= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_iam_absorbation
+
+additional_inventory_weight	= 1.86
+additional_inventory_weight2	= 1.86
+
+artefact_activation_seq		= af_activation_bold
+
+[af_iam_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.052
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_aac]:aa_base
+$spawn				= "artefacts\af_aac"
+class				= SCRPTART  	; будет подпрыгивать
+visual				= dynamics\equipments\aa\aac
+description			= st_af_aac_descr
+inv_name			= st_af_aac_name
+inv_name_short			= st_af_aac_name
+inv_weight			= 4.14
+
+inv_grid_x			= 10
+inv_grid_y			= 43
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 8740 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= -0.00084
+satiety_restore_speed		= 0
+power_restore_speed		= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_aac_absorbation
+
+additional_inventory_weight	= 2.34
+additional_inventory_weight2	= 2.34
+
+artefact_activation_seq		= af_activation_bold
+
+[af_aac_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.088
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 		= 0
+fire_wound_immunity  		= 0
+
+;------------------------------------------------------------------------------------------
+
+[af_aam]:aa_base
+$spawn				= "artefacts\af_aam"
+class				= SCRPTART  	; будет подпрыгивать
+visual				= dynamics\equipments\aa\aam
+description			= st_af_aam_descr
+inv_name			= st_af_aam_name
+inv_name_short			= st_af_aam_name
+inv_weight			= 4.63
+
+inv_grid_x			= 11
+inv_grid_y			= 43
+inv_grid_width			= 1
+inv_grid_height			= 1
+
+cost				= 14850 ; 6200
+
+jump_height			= 0.0
+;particles		        = artefact\af_thermal_idle
+det_show_particles		= artefact\af_thermal_show
+det_hide_particles		= artefact\af_thermal_hide
+particles_bone			= joint2
+af_rank				= 0
+lights_enabled                  = false
+trail_light_color 		= 0.9,0.4,0.2
+trail_light_range 		= 2.0
+
+attach_angle_offset		= 1.922,1.551,-0.740   
+attach_position_offset          = 0.15,0.002,0.25
+attach_bone_name		= bip01_r_hand
+auto_attach			= false
+
+;скорости увеличения (уменьшения)
+health_restore_speed		= 0
+radiation_restore_speed		= -0.00154
+satiety_restore_speed		= 0
+power_restore_speed			= 0
+bleeding_restore_speed		= 0
+hit_absorbation_sect		= af_aam_absorbation
+
+additional_inventory_weight	= 2.77
+additional_inventory_weight2	= 2.77
+
+artefact_activation_seq		= af_activation_bold
+
+[af_aam_absorbation]
+burn_immunity 			= 0				;коэффициенты иммунитета
+strike_immunity 		= 0
+shock_immunity 			= -0.094
+wound_immunity 			= 0
+radiation_immunity 		= 0
+telepatic_immunity 		= 0
+chemical_burn_immunity 		= 0
+explosion_immunity 			= 0
+fire_wound_immunity  		= 0
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

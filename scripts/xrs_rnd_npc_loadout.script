@@ -80,10 +80,10 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 
 		if (se_wpn) then
 			if (weapon[2] or weapon[3]) then
-				local data = stpk_utils.get_weapon_data(se_wpn)
+				local data = alun_utils.get_weapon_data(se_wpn)
 				data.addon_flags = weapon[2] or 0
 				data.ammo_type = weapon[3] or 0
-				stpk_utils.set_weapon_data(data,se_wpn)
+				alun_utils.set_weapon_data(data,se_wpn)
 			end
 
 			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")

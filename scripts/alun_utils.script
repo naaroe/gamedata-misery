@@ -434,6 +434,191 @@ function is_trader(...)
 	return false
 end
 
+local stpk = net_packet()
+local uppk = net_packet()
+function get_weapon_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_weapon_properties_packet(t,stpk)
+	return t
+end
+
+function set_weapon_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_weapon_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_stalker_data(sobj)
+	if not (sobj) then return {} end
+	stpk:w_begin(0)
+	uppk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	sobj:UPDATE_Write(uppk)
+	stpk:r_seek(2)
+	uppk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_trader_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_creature_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_monster_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_human_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	--stpk_utils.parse_se_stalker_properties_packet(t,stpk)
+	return t
+end
+
+function set_stalker_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		uppk:w_begin(0)
+		stpk_utils.fill_cse_alife_trader_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_creature_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_monster_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_human_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		--stpk_utils.fill_se_stalker_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		uppk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+		sobj:UPDATE_Read(uppk)
+	end
+end
+
+
+function get_smart_cover_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_smart_cover_properties_packet(t,stpk)
+	stpk_utils.parse_se_smart_cover_properties_packet(t,stpk)
+	return t
+end
+
+function set_smart_cover_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_smart_cover_properties_packet(t,stpk)
+		stpk_utils.fill_se_smart_cover_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function spawn_smart_cover(anim,sec,pos,lvid,gvid)
+	local se_cover = alife():create(sec,pos,lvid,gvid)
+	se_cover.last_description = anim
+	se_cover.loopholes[anim] = 1
+	local data = alun_utils.get_smart_cover_data(se_cover)
+	data.description = anim
+	data.last_description = anim
+	data.loopholes[anim] = 1
+	alun_utils.set_smart_cover_data(data,se_cover)
+	return se_cover
+end
+
+function get_heli_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_motion_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_helicopter_properties_packet(t,stpk)
+	return t
+end
+
+function set_heli_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_motion_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_helicopter_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function spawn_heli()
+	local pos = db.actor:position()
+	local se_obj = alife():create("helicopter",vector():set(pos.x,pos.y,pos.z),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+	local data = get_heli_data(se_obj)
+	data.visual_name = [[dynamics\vehicles\mi24\veh_mi24_u_01]]
+	data.motion_name = [[helicopter\aaa.anm]]
+	data.startup_animation = "idle"
+	data.skeleton_name = "idle"
+	data.engine_sound = [[vehicles\helicopter\helicopter]]
+	data.custom_data = "[logic]\n cfg = scripts\\heli_test.ltx"
+	set_heli_data(data,se_obj)
+	alun_utils.printf("spawn heli?")
+	return se_obj
+end
+
+function get_lamp_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_hanging_lamp_properties_packet(t,stpk)
+	return t
+end
+
+function set_lamp_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_hanging_lamp_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
 function string_to_vector(str)
 	local t = alun_utils.str_explode(str,",")
 	return vector():set(tonumber(t[1]),tonumber(t[2]),tonumber(t[3]))

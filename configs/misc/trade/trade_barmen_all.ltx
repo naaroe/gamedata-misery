@@ -4,7 +4,7 @@ sell_condition = trade_generic_sell
 
 buy_supplies = {-kingpin_gained +jup_b207_task_end -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {-kingpin_gained +jup_a12_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {-kingpin_gained +jup_b46_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {-kingpin_gained +jup_b8_heli_4_searched -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {-kingpin_gained +pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_2, {-kingpin_gained +pri_a17_actor_has_gauss_rifle} supplies_tier_3, {+kingpin_gained +jup_b207_task_end -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+kingpin_gained +jup_a12_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+kingpin_gained +jup_b46_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+kingpin_gained +jup_b8_heli_4_searched -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+kingpin_gained +pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_2, {+kingpin_gained +pri_a17_actor_has_gauss_rifle} supplies_tier_3, {+sim_duty_help_harder +jup_b207_task_end -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_duty_help_harder +jup_a12_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_duty_help_harder +jup_b46_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_duty_help_harder +jup_b8_heli_4_searched -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_duty_help_harder +pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_2, {+sim_duty_help_harder +pri_a17_actor_has_gauss_rifle} supplies_tier_3, {+sim_freedom_help_harder +jup_b207_task_end -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_freedom_help_harder +jup_a12_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_freedom_help_harder +jup_b46_task_done -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_freedom_help_harder +jup_b8_heli_4_searched -pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_1, {+sim_freedom_help_harder +pas_b400_way_button_pressed -pri_a17_actor_has_gauss_rifle} supplies_tier_2, {+sim_freedom_help_harder +pri_a17_actor_has_gauss_rifle} supplies_tier_4, supplies_generic
 
-;buy_item_condition_factor = 0.01
+buy_item_condition_factor = 0.0
 
 [trade_generic_buy]
 ;Sleeping Bag
@@ -638,8 +638,8 @@ ammo_7.62x39_ap			= 1.05, 1.45
 ammo_7.62x51_fmj				;NO TRADE
 ammo_7.62x51_ap					;NO TRADE
 
-ammo_7.92x33_fmj		;NO TRADE
-ammo_7.92x33_ap			;NO TRADE
+ammo_7.92x33_fmj		= 1.05, 1.45
+ammo_7.92x33_ap			= 1.05, 1.45
 
 ammo_9x18_ap			= 1.05, 1.45
 ammo_9x19_ap			;NO TRADE
@@ -794,7 +794,7 @@ morphine				= 1.3, 1.65
 helm_respirator			= 0.8, 1.75
 helm_respirator_heavy	= 0.8,	1.75
 helm_hardhat				;NO TRADE
-helm_protective				;NO TRADE
+helm_protective				= 0.8,	1.75
 helm_tactic				;NO TRADE
 helm_battle				;NO TRADE
 
@@ -1009,7 +1009,7 @@ drug_sleepingpills		= 3, 1
 itm_sleepbag			= 1, 0.9
 
 ; alundaio
-itm_backpack			= 1, 0.9
+itm_backpack			= 2, 0.9
 itm_actor_backpack		= 1, 0.9
 
 ;≈‰‡
@@ -1085,6 +1085,8 @@ helm_respirator_heavy	= 1,	1
 helm_protective			= 1, 0.9
 
 ecologist_red_outfit	= 1, 	1
+
+novice_outfit	= 1, 	1
 
 coat_outfit				= 1,	1
 coat_heavy_outfit		= 1,	1
