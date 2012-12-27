@@ -1,3 +1,7 @@
+-- stpk_utils
+-- Alundaio          (Credits: xStream, Bak, Barin)
+
+
 local stpk = net_packet()
 local uppk = net_packet()
 
@@ -29,6 +33,93 @@ function set_weapon_data(t,sobj)
 	end
 end
 
+function get_item_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	return t
+end
+
+function set_item_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_item_document_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	t.info_portion = stpk:r_stringZ()
+	return t
+end
+
+function set_item_document_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk:w_stringZ(t.info_portion)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_item_pda_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	t.original_owner = stpk:r_u16()
+	t.specific_character = stpk:r_stringZ()
+	t.info_portion = stpk:r_stringZ()
+	return t
+end
+
+function set_item_pda_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk:w_u16(t.original_owner)
+		stpk:w_stringZ(t.specific_character)
+		stpk:w_stringZ(t.info_portion)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
 function get_stalker_data(sobj)
 	if not (sobj) then return {} end
 	stpk:w_begin(0)
@@ -45,7 +136,7 @@ function get_stalker_data(sobj)
 	stpk_utils.parse_cse_alife_monster_abstract_properties_packet(t,stpk)
 	stpk_utils.parse_cse_alife_human_abstract_properties_packet(t,stpk)
 	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
-	--stpk_utils.parse_se_stalker_properties_packet(t,stpk)
+	stpk_utils.parse_se_stalker_properties_packet(t,stpk)
 	return t
 end
 
@@ -60,7 +151,7 @@ function set_stalker_data(t,sobj)
 		stpk_utils.fill_cse_alife_monster_abstract_properties_packet(t,stpk)
 		stpk_utils.fill_cse_alife_human_abstract_properties_packet(t,stpk)
 		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
-		--stpk_utils.fill_se_stalker_properties_packet(t,stpk)
+		stpk_utils.fill_se_stalker_properties_packet(t,stpk)
 		local size = stpk:w_tell()
 		stpk:r_seek(2)
 		uppk:r_seek(2)
@@ -209,28 +300,97 @@ function set_space_restrictor_data(t,sobj)
 	end
 end
 
-function spawn_space_restrictor()
-	local pos = db.actor:position()
-	local se_obj = alife():create("space_restrictor",vector():set(pos.x,pos.y,pos.z),db.actor:level_vertex_id(),db.actor:game_vertex_id())
-	local data = get_space_restrictor_data(se_obj)
+function get_level_changer_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_space_restrictor_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_level_changer_properties_packet(t,stpk)
+	stpk_utils.parse_se_level_changer_properties_packet(t,stpk)
+	return t
+end
 
-	-- logic
-	data.custom_data = "[logic]\n cfg = scripts\\sr_teleport_logic.ltx"
+function set_level_changer_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_space_restrictor_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_level_changer_properties_packet(t,stpk)
+		stpk_utils.fill_se_level_changer_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
 
-	-- Set shape
-	data.shape_type = 1
-	data.center = vector():set(0,0,0)
-	data.v1 = vector():set(5,0,0)
-	data.v2 = vector():set(0,2,0)
-	data.v3 = vector():set(0,0,5)
-	data.v4 = vector():set(0,0,0)
-	data.radius = 10.0
-	data.shape_count = 1
 
-	set_space_restrictor_data(data,se_obj)
-	--level.map_add_object_spot_ser(se_obj.id, "level_changer_down","Test")
-	alun_utils.printf("space_restrictor %s",se_obj.id)
-	return se_obj
+function get_item_update_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:UPDATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	if data_left(stpk) then
+		t.upd_num_items = stpk:r_u8()
+		if (t.upd_num_items > 0) then
+			t.upd_ph_force = read_chunk(stpk, 3, "s32")
+			t.upd_ph_torque = read_chunk(stpk, 3, "s32")
+			t.upd_ph_position = read_chunk(stpk, 3, "float")
+			t.upd_ph_rotation = read_chunk(stpk, 4, "float")
+			if bit_and(t.upd_num_items, 64) == 0 then
+				if stpk:r_elapsed() >= 12 then
+					t.upd_ph_angular_vel = read_chunk(stpk, 3, "float")
+				else
+					abort("cse_alife_item::update_read => cannot read 'upd:ph_angular_vel'")
+					return
+				end
+			end
+			if bit_and(t.upd_num_items, 128) == 0 then
+				if stpk:r_elapsed() >= 12 then
+					t.upd_ph_linear_vel = read_chunk(stpk, 3, "float")
+				else
+					abort("cse_alife_item::update_read => cannot read 'upd:ph_linear_vel'")
+					return
+				end
+			end
+			if data_left(stpk) then
+				t.upd_cse_alife_item__marker_one = stpk:r_u8()
+			end
+		end
+	end
+	return t
+end
+
+function set_item_update_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		if t.upd_num_items ~= nil then
+			stpk:w_u8(t.upd_num_items)
+			if t.upd_num_items ~= 0 then
+				write_chunk(stpk, t.upd_ph_force, "s32")
+				write_chunk(stpk, t.upd_ph_torque, "s32")
+				write_chunk(stpk, t.upd_ph_position, "float")
+				write_chunk(stpk, t.upd_ph_rotation, "float")
+				write_chunk(stpk, t.upd_ph_angular_vel, "float")
+				write_chunk(stpk, t.upd_ph_linear_vel, "float")
+				if t.upd_cse_alife_item__marker_one ~= nil then
+					stpk:w_u8(t.upd_cse_alife_item__marker_one)
+				end
+			end
+		end
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:UPDATE_Read(stpk,size)
+	end
 end
 
 ----------------------------------------------------------------------------
@@ -809,7 +969,6 @@ function parse_cse_alife_level_changer_properties_packet(ret,stpk)
 end
 
 function fill_cse_alife_level_changer_properties_packet(ret,stpk)
-	stpk:w_u8(ret.restrictor_type)
 	stpk:w_u16(ret.dest_game_vertex_id)
 	stpk:w_s32(ret.dest_level_vertex_id)
 	stpk:w_vec3(ret.dest_position)

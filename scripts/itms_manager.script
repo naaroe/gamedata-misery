@@ -82,20 +82,23 @@ function on_actor_update()
 		end
 	end
 
-	local obj = db.actor:active_detector()
-	local torch = db.actor:object("device_torch")
-	if (obj and FlashlightSections[obj:section()]) then
-		if not (torch) then
-			alife():create("device_torch",db.actor:position(),0,0,0)
-		else
-			if not (torch:torch_enabled()) then
-				torch:enable_torch(true)
+
+	if (FlashlightModEnable) then
+		local obj = db.actor:active_detector()
+		local torch = db.actor:object("device_torch")
+		if (obj and FlashlightSections[obj:section()]) then
+			if not (torch) then
+				alife():create("device_torch",db.actor:position(),0,0,0)
+			else
+				if not (torch:torch_enabled()) then
+					torch:enable_torch(true)
+				end
 			end
-		end
-	else
-		local se_torch = torch and alife():object(torch:id())
-		if (se_torch) then
-			alife():release(se_torch,true)
+		else
+			local se_torch = torch and alife():object(torch:id())
+			if (se_torch) then
+				alife():release(se_torch,true)
+			end
 		end
 	end
 end
@@ -397,7 +400,7 @@ function is_ammo_for_wpn(sec)
 			ammos = alun_utils.parse_list(system_ini(),wpn:section(),"ammo_class")
 
 			se_wpn = sim:object(wpn:id())
-			data = alun_utils.get_weapon_data(se_wpn)
+			data = stpk_utils.get_weapon_data(se_wpn)
 
 			if (sec == ammos[data.ammo_type+1]) then
 				return true

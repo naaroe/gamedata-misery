@@ -276,16 +276,23 @@ function precondition_functor_a( param1, section )
 			if (itm) then
 				se_itm = sim:object(itm:id())
 				if (se_itm) then
-					data = alun_utils.get_weapon_data(se_itm)
-					if not (effect_funct) then
-						weapon_upgrades[se_itm.id] = data.upgrades
-					else
-						if (#weapon_upgrades[se_itm.id] ~= #data.upgrades) then
-							lend_item_for_repair(itm,mechanic_name)
+					if (alun_utils.item_is_fa(itm)) then
+						data = stpk_utils.get_weapon_data(se_itm)
+					elseif (alun_utils.item_is_outfit(itm)) then
+						data = stpk_utils.get_item_data(se_itm)
+					end
+
+					if (data) then
+						if not (effect_funct) then
+							weapon_upgrades[se_itm.id] = data.upgrades
 						else
-							for i=1,#data.upgrades do
-								if (data.upgrades[i] ~= weapon_upgrades[se_itm.id][i]) then
-									lend_item_for_repair(itm,mechanic_name)
+							if (#weapon_upgrades[se_itm.id] ~= #data.upgrades) then
+								lend_item_for_repair(itm,mechanic_name)
+							else
+								for i=1,#data.upgrades do
+									if (data.upgrades[i] ~= weapon_upgrades[se_itm.id][i]) then
+										lend_item_for_repair(itm,mechanic_name)
+									end
 								end
 							end
 						end
