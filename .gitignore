@@ -15,7 +15,19 @@
 #ui_debug_main.xml
 #ui_custom_msgs.xml
 
-textures/
-levels/
-meshes/
-sounds/
+/textures/
+/levels/
+/meshes/
+/sounds/
+
+class_diversity/assaulter/gamedata/textures/
+class_diversity/assaulter/gamedata/meshes/
+class_diversity/assaulter/gamedata/sounds/
+
+class_diversity/assaulter/gamedata/textures/
+class_diversity/assaulter/gamedata/meshes/
+class_diversity/assaulter/gamedata/sounds/
+
+class_diversity/assaulter/gamedata/textures/
+class_diversity/assaulter/gamedata/meshes/
+class_diversity/assaulter/gamedata/sounds/
