@@ -139,7 +139,7 @@ end
 
 
 function update_vis(se_npc,p)
-	local data = alun_utils.get_stalker_data(se_npc)
+	local data = stpk_utils.get_stalker_data(se_npc)
 	data.visual_name = p[1]
-	alun_utils.set_stalker_data(data,se_npc)
+	stpk_utils.set_stalker_data(data,se_npc)
 end

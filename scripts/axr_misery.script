@@ -181,15 +181,15 @@ function dynamic_actor_loadout()
 		if (MiseryBlackRoad) then
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("wpn_knife_inv_5")
 		else
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("roubles")
 			create_items("novice_outfit")
-			create_items("wpn_knife_inv_1")
+			create_items("wpn_knife_inv")
 
 			create_items("flask",3)
 			create_items("breadold",2)
@@ -218,12 +218,12 @@ function dynamic_actor_loadout()
 		if (MiseryBlackRoad) then
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("wpn_knife_inv_2")
 		else
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("roubles")
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
@@ -254,12 +254,12 @@ function dynamic_actor_loadout()
 		if (MiseryBlackRoad) then
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("wpn_knife_inv_4")
 		else
 			create_items("wpn_binoc_inv")
 			create_items("wpn_binoc")
-			create_items("device_torch")
+			create_items("device_flashlight")
 			create_items("roubles")
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
@@ -288,7 +288,7 @@ end
 
 function create_items(sec,amt,id)
 	if not (system_ini():section_exist(sec)) then
-		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist",sec)
 		return
 	end
 	local se_obj = id and alife():object(id) or alife():object(db.actor:id())
@@ -302,7 +302,7 @@ end
 
 function create_ammunition(sec,amt)
 	if not (system_ini():section_exist(sec)) then
-		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist",sec)
 		return
 	end
 	local num_in_box = system_ini():r_u32(sec, "box_size")

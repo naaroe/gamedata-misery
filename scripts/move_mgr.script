@@ -563,14 +563,14 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 
 		if (Enable and character_community(self.object) ~= "zombied") and (self.cur_state_standing == "sit" or self.cur_state_standing == "sit_knee" or self.cur_state_standing == "sit_ass") then
 			local squad = get_object_squad(self.object)
-			local comm = squad and squad.player_id or character_community(self.object)
+			local comm = squad and SleepChanceBySquadID[squad.player_id] and squad.player_id or character_community(self.object)
 
 			-- Set default sleeping habits
 			local sleepchance = comm and tonumber(SleepChanceBySquadID[comm]) or 0.7
 			local sleephours = comm and SleepHoursBySquadID[comm] and alun_utils.str_explode(SleepHoursBySquadID[comm],",") or {3,22}
 
 			if (AllowSleepState and math.random() < sleepchance) then
-				if ((AllowSleepAnytime == true and level.get_time_hours() < tonumber(sleephours[1]) or level.get_time_hours() > tonumber(sleephours[2])) or AllowSleepAnytime == false) then
+				if ((AllowSleepAnytime == false and level.get_time_hours() < tonumber(sleephours[1]) or level.get_time_hours() > tonumber(sleephours[2])) or AllowSleepAnytime == true) then
 					if ((not Only_sleep_in_camp) or (db.storage[obj:id()] and db.storage[obj:id()].walker and db.storage[obj:id()].walker.use_camp)) then
 						self.cur_state_standing = "sleep"
 						suggested_wait_time = SuggestedWaitTimes["sleep"] or "45000"

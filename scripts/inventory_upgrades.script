@@ -276,11 +276,7 @@ function precondition_functor_a( param1, section )
 			if (itm) then
 				se_itm = sim:object(itm:id())
 				if (se_itm) then
-					if (alun_utils.item_is_fa(itm)) then
-						data = stpk_utils.get_weapon_data(se_itm)
-					elseif (alun_utils.item_is_outfit(itm)) then
-						data = stpk_utils.get_item_data(se_itm)
-					end
+					data = stpk_utils.get_weapon_data(se_itm)
 
 					if (data) then
 						if not (effect_funct) then

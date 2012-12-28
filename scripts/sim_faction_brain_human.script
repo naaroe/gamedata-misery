@@ -1,7 +1,7 @@
 --'******************************************************
 --'*	Объект группировки.
 --'******************************************************
-local TASK_DISTANCE = 15*300  -- Квадрат радиуса, в котором выдаются таски игроку
+local TASK_DISTANCE = 9000  -- Квадрат радиуса, в котором выдаются таски игроку
 
 class "faction_brain_human"
 function faction_brain_human:__init(faction)
@@ -122,8 +122,17 @@ function faction_brain_human:get_sim_targets_power(need_power_targets)
 	--' Итерируемся по всем смартам, выискиваем попадающие под наше определение
 	--' и устанавливаем им стартовую оценку.
 	local faction = self.faction
+	local valid_territory = {
+	resource = true,
+	resource_hard = true,
+	resource_monolith = true,
+	territory = true,
+	territory_hostile = true,
+	territory_zombied = true,
+	territory_monolith = true
+	}
 	for k,v in pairs(faction.board.smarts) do
-		if v.smrt.sim_type == "territory" or v.smrt.sim_type == "territory_hostile" or v.smrt.sim_type == "territory_monolith" or v.smrt.sim_type == "resource" or v.smrt.sim_type == "resource_hard" or v.smrt.sim_type == "resource_monolith" then
+		if (valid_territory[v.smrt.sim_type]) then
 			-- Если не need_power_targets, то добавляем только те точки, которые уже под нашим контролем.
 			if need_power_targets or v.smrt.player_name == faction.player_name then
 				if sim_board.is_point_avail(v.smrt, faction.player_name) then

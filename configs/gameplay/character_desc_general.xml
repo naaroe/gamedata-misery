@@ -26,8 +26,7 @@
 		<map_icon x="2" y="5"></map_icon>
 
 		<team>mp_actor</team>
-		<supplies/>
-
+		<supplies></supplies>
 		<class>mp_actor</class>
 		<community>actor</community>
 

@@ -595,6 +595,7 @@ function enemy_hud_show(hud)
 			hud:add_msg("Section Name", se_obj:section_name())
 			hud:add_msg("Best Enemy",near:best_enemy() and near:best_enemy():name())
 			hud:add_msg("Enemy",se_enemy and se_enemy:section_name())
+			hud:add_msg("Vis.Threshold",near)
 			hud:add_msg("ActorIsEnemy",near:relation(db.actor) == game_object.enemy)
 			hud:add_msg("Combat Type",st.script_combat_type)
 
@@ -752,7 +753,13 @@ function weapon_hud_show(hud)
 		near = db.actor
 		wpn = db.actor:active_item()
 	end
-	local data = get_weapon_data(wpn)
+
+	if (wpn == nil or not alun_utils.item_is_fa(wpn)) then
+		return
+	end
+
+	local sobj = alife():object(wpn:id())
+	local data = stpk_utils.get_weapon_data(sobj)
 
 	if (wpn and data) then
 		local sec = wpn:section()
@@ -793,19 +800,6 @@ function corpse_hud_show(hud)
 	end
 	hud:set_header("-[Release Table]-")
 	hud:display()
-end
-
-function get_weapon_data(wpn)
-	if (wpn and alun_utils.item_is_fa(wpn)) then
-		local sobj = alife():object(wpn:id())
-		if (sobj) then
-			--alun_utils.switch_offline(wpn:id())
-			local data = alun_utils.get_weapon_data(sobj)
-			--alun_utils.switch_online(wpn:id())
-			return data
-		end
-	end
-	return {}
 end
 
 function get_debug_hud()

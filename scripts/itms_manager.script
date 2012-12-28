@@ -87,13 +87,17 @@ function on_actor_update()
 		local obj = db.actor:active_detector()
 		local torch = db.actor:object("device_torch")
 		if (obj and FlashlightSections[obj:section()]) then
-		local torch = db.actor:object("device_torch")
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
-				end
+			end
+
+			if (torch and not torch:torch_enabled()) then
+				torch:enable_torch(true)
 			end
 		else
-		local torch = db.actor:object("device_torch")
+			if (torch and torch:torch_enabled()) then
+				torch:enable_torch(false)
+			end
 			local se_torch = torch and alife():object(torch:id())
 			if (se_torch) then
 				alife():release(se_torch,true)
@@ -433,11 +437,11 @@ function loot_mutant(obj,clsid,t)
 		return
 	end
 
-	local loot_table = alun_utils.collect_section(ini,clsid_to_section[clsid],true)
+	local loot_table = alun_utils.collect_section(ini,clsid_to_section[clsid])
 
-	local loot
-	for sec,v in pairs(loot_table) do
-		loot = alun_utils.str_explode(sec,",")
+	local loot,sec
+	for i=1,#loot_table do
+		loot = alun_utils.str_explode(loot_table[i],",")
 		if (loot and loot[1] and loot[2]) then
 			if not (loot[3]) then
 				loot[3] = 1
@@ -446,6 +450,7 @@ function loot_mutant(obj,clsid,t)
 			loot[2] = tonumber(loot[2])
 			for i=1,loot[2] do
 				if (math.random() <= tonumber(loot[3])) then
+					alun_utils.printf("loot_mutant: section=%s",loot[1])
 					local se_obj = alife():create(loot[1], db.actor:position(),0,0,0)
 					if (t) then
 						local item_section = loot[1]
