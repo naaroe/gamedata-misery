@@ -67,6 +67,7 @@ function on_game_load()
 	end
 end
 
+local torch_delay
 -- bind_stalker update
 local actor_fill_backpack
 function on_actor_update()
@@ -84,21 +85,34 @@ function on_actor_update()
 
 
 	if (FlashlightModEnable) then
+		local helm = db.actor:item_in_slot(12) or db.actor:item_in_slot(7)
+		local has_nv = helm and alun_utils.read_from_ini(nil,helm:section(),"nightvision_sect","string",nil)
+
 		local obj = db.actor:active_detector()
 		local torch = db.actor:object("device_torch")
 		if (obj and FlashlightSections[obj:section()]) then
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
+				if not (has_nv) then
+					give_info("flashlight_torch")
+				end
 			end
 
 			if (torch and not torch:torch_enabled()) then
-				torch:enable_torch(true)
+				if not (torch_delay) then
+					torch_delay = time_global() + 1000
+				end
+
+				if (time_global() > torch_delay) then
+					torch:enable_torch(true)
+				end
 			end
 		else
 			if (torch and torch:torch_enabled()) then
 				torch:enable_torch(false)
+				torch_delay = nil
 			end
-			local se_torch = torch and alife():object(torch:id())
+			local se_torch = torch and not has_nv and has_alife_info("flashlight_torch") and alife():object(torch:id())
 			if (se_torch) then
 				alife():release(se_torch,true)
 			end
