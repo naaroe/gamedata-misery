@@ -201,7 +201,8 @@ function dm_repair_not_done(a,b)
 		local inv_name = game.translate_string(alun_utils.read_from_ini(nil,itm_sec,"inv_name","string",""))
 
 		if (hours < 1) then
-			return "Your "..inv_name.." will be ready in "..minutes.." minutes. Come back then."
+			local m = math.floor(minutes)
+			return "Your "..inv_name.." will be ready in "..m.." minutes. Come back then."
 		elseif (hours < 2) then
 			local m = math.floor(minutes - 60)
 			if (npc:section() == "zat_a2_stalker_mechanic") then
@@ -258,7 +259,7 @@ function precondition_functor_a( param1, section )
 		ret = 2
 	end
 
-	if not (alun_utils.read_from_ini(nil,"mechanic_repair","queue_enable","bool",false)) then
+	if not (alun_utils.read_from_ini(nil,"mechanic_repair","upgrade_queue_enable","bool",false)) then
 		return ret or 0
 	end
 
@@ -272,6 +273,7 @@ function precondition_functor_a( param1, section )
 		local item,se_itm
 		local sim = alife()
 		local data
+		local rt = alun_utils.read_from_ini(nil,"mechanic_repair","upgrade_queue_time","float",1500)
 		local function itr(actor,itm)
 			if (itm) then
 				se_itm = sim:object(itm:id())
@@ -287,7 +289,8 @@ function precondition_functor_a( param1, section )
 							else
 								for i=1,#data.upgrades do
 									if (data.upgrades[i] ~= weapon_upgrades[se_itm.id][i]) then
-										lend_item_for_repair(itm,mechanic_name)
+										lend_item_for_repair(itm,mechanic_name,rt)
+										break
 									end
 								end
 							end
@@ -488,7 +491,7 @@ function effect_repair_item( item_name, item_condition)
 	local price = how_much_repair( item_name, item_condition )
 	db.actor:give_money(-price)
 
-	if not (alun_utils.read_from_ini(nil,"mechanic_repair","queue_enable","bool",false)) then
+	if not (alun_utils.read_from_ini(nil,"mechanic_repair","repair_queue_enable","bool",false)) then
 		return
 	end
 
@@ -503,7 +506,8 @@ function effect_repair_item( item_name, item_condition)
 	db.actor:iterate_inventory(itr,db.actor)
 
 	if (item) then
-		lend_item_for_repair(item,mechanic_name,item_condition)
+		local rt = alun_utils.read_from_ini(nil,"mechanic_repair","repair_queue_time","float",1500)
+		lend_item_for_repair(item,mechanic_name,item_condition,rt)
 	end
 end
 

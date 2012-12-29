@@ -303,9 +303,6 @@ function on_actor_update()
 	if not (Enable) then
 		return
 	end
-	if not (draw_debug_hud) then
-		return
-	end
 
 	if (debug_god) then
 		db.actor.health = 1
@@ -327,6 +324,14 @@ function on_actor_update()
 	end
 
 	dtimer = tg + 250
+
+	local disable_draw = alun_utils.load_var(db.actor,"disable_debug_draw",nil)
+	if (disable_draw) then
+		hud_display_top:clear()
+		hud_display_left:clear()
+		hud_display_right:clear()
+		return
+	end
 
 	local top_hud = toggle_hud_list["top"][toggle_top_key]
 	local left_hud = toggle_hud_list["left"][toggle_left_key]

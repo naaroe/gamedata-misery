@@ -145,6 +145,10 @@ function eval_stage_1(st,npc)
 	local corpse_npc
 
 	local se_npc = alife():object(npc:id())
+	if not (se_npc) then
+		alun_utils.printf("xr_corpse_detection: se_npc = nil! npc = %s",npc and npc:name())
+		return
+	end
 	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
 	local comm = squad and squad.player_id or character_community(npc)
 

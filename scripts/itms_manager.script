@@ -451,6 +451,7 @@ function loot_mutant(obj,clsid,t)
 		return
 	end
 
+	alun_utils.printf("loot_mutant: collecting section=%s",clsid_to_section[clsid])
 	local loot_table = alun_utils.collect_section(ini,clsid_to_section[clsid])
 
 	local loot,sec
