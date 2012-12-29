@@ -126,6 +126,19 @@ function cmd.spawn(me,txt,owner,p)
 		return "spawn:= position reset to always actor"
 	end
 
+	if (wrd == "items") then
+		if not (system_ini():section_exist("inv_backpack")) then
+			return "spawn:= requires inv_backpack from items_minimod"
+		end
+		local sim = alife()
+		local stash = sim:create("inv_backpack",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+		local itm
+		for k,v in pairs(se_item.registered_items) do
+			sim:create(k,stash.position,0,0,stash.id)
+		end
+		return "spawn:= all registered items in game spawned in a stash near you"
+	end
+
 	local sec
 	if (string.find(txt,"s:")) then
 		for s in string.gmatch(txt,"s:(.%S+)") do
@@ -577,9 +590,6 @@ function cmd.vector(me,txt,owner,p)
 	end
 end
 
---level.object_by_id():bone_position("bip01_l_hand")
---level.object_by_id():bone_position("bip01_root")
-
 -- Offset
 function cmd.offset(me,txt,owner,p)
 	local wrd = first_word(me,txt,owner,"{get}")
@@ -649,12 +659,12 @@ function cmd.hud(me,txt,owner,p)
 	if not (wrd) then return end
 
 	if (wrd == "on") then
-		xrs_debug_tools.set_draw_debug_hud(true)
+		alun_utils.save_var(db.actor,"disable_debug_draw",false)
 		return "hud:= debug hud enabled"
 	end
 
 	if (wrd == "off") then
-		xrs_debug_tools.set_draw_debug_hud(false)
+		alun_utils.save_var(db.actor,"disable_debug_draw",true)
 		return "hud:= debug hud disabled"
 	end
 
