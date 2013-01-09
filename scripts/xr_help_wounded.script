@@ -62,7 +62,7 @@ function eval_stage_1(st,npc,vis)
 		for o in squad:squad_members() do
 			id = o.object and o.object.id
 			vo = id and level.object_by_id(id)
-			if (vo and vo:alive() and xr_wounded.is_wounded(vo)) then
+			if (vo and vo:alive() and xr_wounded.is_wounded(vo) and not db.storage[id].victim_surrender) then
 				if (db.storage[id].wounded_already_selected == nil and db.storage[id].wounded.not_for_help ~= true) then
 					vo_position = vo:position()
 					dist = pos:distance_to_sqr(vo_position)
@@ -98,7 +98,7 @@ function eval_stage_1(st,npc,vis)
 		for i=1,#db.OnlineStalkers do
 			vo = db.storage[db.OnlineStalkers[i]] and db.storage[db.OnlineStalkers[i]].object or level.object_by_id(db.OnlineStalkers[i])
 			id = vo and vo:id()
-			if (id and vo:alive() and npc:relation(vo) ~= game_object.enemy and xr_wounded.is_wounded(vo)) then
+			if (id and vo:alive() and npc:relation(vo) ~= game_object.enemy and xr_wounded.is_wounded(vo) and not db.storage[id].victim_surrender) then
 				if (db.storage[id].wounded_already_selected == nil and db.storage[id].wounded.not_for_help ~= true) then
 					vo_position = vo:position()
 					dist = pos:distance_to_sqr(vo_position)

@@ -15,6 +15,7 @@ path_walk = artefact_hunter_1_spawn_point
 path_look = artefact_hunter_1_wounted_particle_steam_point_1
 on_signal = zat_b53_artefact_hunter_1_scene_start | remark@scene_start
 on_info = {+zat_b53_thanks_dialog} walker@go_friend
+invulnerable = true
 
 [remark@scene_start]
 corpse_detection_enabled = false
@@ -116,6 +117,49 @@ meet = meet
 anim = sit_ass
 target = path | zat_b53_artefact_hunter_1_sit_ass_look, 0
 on_info = {+zat_b53_actor_enemy} walker@actor_enemy
+on_game_timer = 240 | animpoint@zat_skadovsk_animpoint_trade
+
+[animpoint@general]
+cover_name = zat_skadovsk_animpoint_trade
+meet = meet
+combat_ignore_cond = true
+combat_ignore_keep_when_attacked = true
+invulnerable = true
+out_restr = zat_a2_sr_noweap
+gather_items_enabled = false
+help_wounded_enabled = false
+corpse_detection_enabled = false
+
+[animpoint@zat_skadovsk_animpoint_trade]:animpoint@general
+reach_movement = run
+on_info = {=npc_in_zone(zat_a2_sr_light)} animpoint@zat_skadovsk_animpoint_trade_reached
+
+[animpoint@zat_skadovsk_animpoint_trade_reached]:animpoint@general
+reach_movement = walk
+direction = -1,0,0
+on_game_timer = 1200 | animpoint@zat_skadovsk_animpoint_table_01
+
+[animpoint@zat_skadovsk_animpoint_table_01]:animpoint@general
+cover_name = zat_skadovsk_animpoint_table_01
+reach_movement = walk
+direction = 1,0,0
+avail_animations = animpoint_stay_table
+
+[beh@base]
+behavior = behavior
+combat_ignore_cond = {=check_enemy_name(actor)} true
+meet = meet
+gather_items_enabled = false
+gather_artifact_items_enabled = false
+corpse_detection_enabled = false
+on_info = {=check_enemy_name(actor)} %=actor_friend%
+
+[beh@start]:beh@base
+
+[behavior]
+behavior_state = beh_move
+goto_target = {!is_squad_commander} commander, actor
+keep_distance = near
 
 [walker@actor_enemy]
 gather_items_enabled = false
@@ -128,7 +172,7 @@ on_info = %=actor_enemy%
 use = true
 abuse = false
 allow_break = false
-trade_enable = false
+trade_enable = true
 close_anim = nil
 close_victim = nil
 close_distance = 0

@@ -40,6 +40,10 @@ end
 function action_reach_animpoint:execute()
         action_base.execute(self)
 
+		if not (self.st.animpoint.position) then
+			return
+		end
+
         self.object:set_dest_level_vertex_id(self.st.animpoint.position_vertex)
 
         self.object:set_desired_direction(self.st.animpoint.smart_direction)
@@ -118,6 +122,9 @@ function animpoint:activate_scheme(loading, npc, switching_scheme)
 	self.st.signals = {}
 
 	self:calculate_position()
+	if not (self.position) then
+		return
+	end
 	if self.started == true then   -- не стопать, если нужно отыграть тот же смарткавер и тот же экшн. (Кешировать в :start())
 		-- Возможно self.current_action - то, что надо
 		if not self.st.use_camp and self.cover_name == self.st.cover_name then
@@ -151,15 +158,16 @@ function animpoint:calculate_position()
 
 	local smartcover = se_smart_cover.registered_smartcovers[self.st.cover_name]
 	if smartcover == nil then
-		print_table(se_smart_cover.registered_smartcovers)
+		--print_table(se_smart_cover.registered_smartcovers)
 		abort("There is no smart_cover with name [%s]", self.st.cover_name)
+		return
 	end
 
 	self.position = se_smart_cover.registered_smartcovers[self.st.cover_name].position
 	self.position_vertex = level.vertex_id(self.position)
 	self.vertex_position = level.vertex_position(self.position_vertex)
 
-	self.smart_direction = angle_to_direction(smartcover.angle)
+	self.smart_direction = self.st.direction or angle_to_direction(smartcover.angle)
 	--printf("%s pos %s", self.st.cover_name, vec_to_str(self.position))
 	--printf("%s dir %s", self.st.cover_name, vec_to_str(self.smart_direction))
 
@@ -268,7 +276,7 @@ function animpoint:fill_approved_actions()
 	end
 
 	if(#self.st.approved_actions==0) then
-		--abort("There is no approved actions for stalker[%s] in animpoint[%s]", db.storage[self.npc_id].object:name(), self.object:name())
+		abort("There is no approved actions for stalker[%s] in animpoint[%s]", db.storage[self.npc_id].object:name(), self.object:name())
 	end
 end
 -- Чувак дошел до точки и может начинать работать
@@ -466,7 +474,8 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	--st.reach_movement	= utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk")
 	st.reach_movement = xr_logic.parse_condlist(db.actor, "animpoint", "reach_movement", utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk"))
 	st.reach_distance = st.reach_distance*st.reach_distance
-
+	local dir = alun_utils.read_from_ini(ini,section,"direction","string",nil)
+	st.direction = dir and alun_utils.string_to_vector(dir)
 	local tmp = utils.cfg_get_string(ini, section, "avail_animations", npc, false, "", nil)
 
 

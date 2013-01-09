@@ -43,6 +43,7 @@ function on_game_start()
 	end
 	DangerSoundThreshold = t
 	callback_register("npc_on_hit_callback",npc_on_hit_callback)
+	callback_register("monster_on_hit_callback",npc_on_hit_callback)
 	callback_register("npc_on_hear_callback",npc_on_hear_callback)
 end
 
@@ -90,11 +91,11 @@ end
 
 function set_script_danger(npc,time)
 	local id = npc:id()
-	local squad = get_object_squad(npc)
-	if not (get_object_story_id(id) or (squad and get_object_story_id(squad.id))) then
+--	local squad = get_object_squad(npc)
+--	if not (get_object_story_id(id) or (squad and get_object_story_id(squad.id))) then
 		script_danger[id] = {danger_time = time_global(), danger_inertion = time}
 		mem_danger[id] = nil
-	end
+--	end
 end
 
 function is_danger(npc)

@@ -14,10 +14,6 @@ function on_game_start()
 end
 
 function on_creation(se_npc)
-	if not (se_npc:clsid() == clsid.script_stalker) then
-		return
-	end
-
 	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
 	local player_id = squad and squad.player_id
 	local comm = se_npc:community()
@@ -32,8 +28,11 @@ end
 function ini_get_list(se_npc,comm,rank,player_id,val)
 	if (ini:section_exist(se_npc:section_name())) then
 		return alun_utils.parse_list(ini,se_npc:section_name(),val)
+	elseif (player_id and ini:section_exist(player_id.."_"..rank)) then
+		return alun_utils.parse_list(ini,player_id.."_"..rank,val)
+	else
+		return alun_utils.parse_list(ini,comm.."_"..rank,val)
 	end
-	return player_id and alun_utils.parse_list(ini,player_id.."_"..rank,val) or alun_utils.parse_list(ini,comm.."_"..rank,val)
 end
 
 function create_items_on_npc(se_npc,comm,rank,player_id)

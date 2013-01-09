@@ -831,7 +831,7 @@ function is_good_gun(npc, item)
 						[69] = "wpn_m24",
 						[70] = "wpn_trg",
 						[71] = "wpn_ump45",
-						[72] = "wpn_g43",	
+						[72] = "wpn_g43",
 						[73] = "wpn_sig550_luckygun",
 						[74] = "wpn_pkm_zulus",
 						[75] = "wpn_wincheaster1300_trapper",
@@ -847,7 +847,7 @@ function is_good_gun(npc, item)
 						[85] = "wpn_usp_nimble",
 						[86] = "wpn_vintorez_nimble",
 						[87] = "wpn_svu_nimble",
-						[88] = "wpn_svd_nimble",					
+						[88] = "wpn_svd_nimble",
 						}
 
 	for k,v in pairs(wpn_table) do
@@ -1626,13 +1626,13 @@ function zat_b53_if_actor_hasnt_detector_advanced(first_speaker, second_speaker)
 end
 
 function zat_b53_transfer_detector_advanced_to_actor(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
---	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
+	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "detector_simple",1)
 end
 
 function zat_b53_transfer_fireball_to_actor(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
---	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
+	--dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7840)
+	dialogs.relocate_item_section_to_actor(second_speaker, first_speaker, "af_fireball",1)
 end
 
 function zat_b53_transfer_medkit_to_actor(first_speaker, second_speaker)

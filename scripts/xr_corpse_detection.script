@@ -3,6 +3,7 @@
 -- Alundaio (original: Stohe)
 ----------------------------------------------------------------------------------------------------------------------
 local ini = ini_file("ai_tweaks\\xr_corpse_detection.ltx")
+local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","float",60000)
 local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",700)
 local StateWalk	 = alun_utils.read_from_ini(ini,"settings","state_walk","string","walk_noweap")
 local StateRun	 = alun_utils.read_from_ini(ini,"settings","state_run","string","rush")
@@ -164,7 +165,7 @@ function eval_stage_1(st,npc)
 					nearest_corpse_dist = dist
 				end
 
-				if dist <= 1500 or (npc:see(corpse_npc) and dist < nearest_corpse_dist) then
+				if dist <= AlwaysDetectDistance or (npc:see(corpse_npc) and dist < nearest_corpse_dist) then
 					corpse_vertex = level.vertex_id(corpse_pos)
 					if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
 						corpse_vertex = corpse_npc:level_vertex_id()
@@ -188,6 +189,13 @@ function eval_stage_1(st,npc)
 		st.selected_corpse_id = corpse_id
 		st.stage = 2
 		--alun_utils.printf("%s Found lootable Corpse",npc:name())
+
+		local corpse = db.storage[corpse_id] and db.storage[corpse_id].object
+		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
+		if (dt_threshold < DeathTimeDanger) then
+			xr_sound.set_sound_play(npc:id(),"tolls")
+		end
+
 		return true
 	end
 end
@@ -220,9 +228,16 @@ function action_search_corpse:initialize()
 	npc:set_path_type(game_object.level_path)
 	npc:set_dest_level_vertex_id(self.a.vertex_id)
 
-	db.storage[self.a.selected_corpse_id].corpse_already_selected = npc:id()
+	local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
+	local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
 
-	self.a.dist_run = math.random(5,30)
+	if (dt_threshold == nil or dt_threshold > DeathTimeDanger) then
+		self.a.dist_run = math.random(5,30)
+	else
+		self.a.dist_run = 1
+	end
+
+	db.storage[self.a.selected_corpse_id].corpse_already_selected = npc:id()
 end
 function action_search_corpse:execute()
 	action_base.execute(self)
@@ -243,6 +258,28 @@ function action_search_corpse:execute()
 	end
 
 	if (dist < 1.3 or npc:level_vertex_id() == self.a.vertex_id) then
+		local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
+		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and tg - corpse:death_time()
+
+		if (dt_threshold and dt_threshold < DeathTimeDanger) then
+			if not (self.a.danger_timer) then
+				self.a.danger_timer = tg + 5000
+			end
+
+			if (tg > self.a.danger_timer) then
+				if (xr_danger.set_script_danger) then
+					xr_danger.set_script_danger(npc,DeathTimeDanger-dt_threshold)
+				end
+				return
+			end
+
+			if (math.random() > 0.2) then
+				state_mgr.set_state(npc,"search")
+			end
+
+			return
+		end
+
 		if not (self.a.timer) then
 			self.a.timer = tg + 12000
 		end
@@ -253,11 +290,8 @@ function action_search_corpse:execute()
 			end
 			self.sound = true
 		end
-		local look_pos = self.a.vertex_position
-		local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
-		if corpse then
-			look_pos = corpse:bone_position("bip01_spine")
-		end
+
+		look_pos = corpse and corpse:bone_position("bip01_spine") or self.a.vertex_position
 		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos})
 	else
 		if state_mgr.get_state(npc) == "search_corpse" then

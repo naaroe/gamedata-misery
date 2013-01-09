@@ -1020,21 +1020,3 @@ end
 
 --local loadstring = memoize(loadstring)
 
-
---[[
-[zat_a1_guard_1_walk]
-points = p0,p1
-p0:name = wp00
-p0:flags = 0x1
-p0:position = 254.832214355469,16.6185741424561,498.962097167969
-p0:game_vertex_id = 6
-p0:level_vertex_id = 1402458
-p0:links = p1(1)
---]]
-
-function dynamic_pathpoint()
-
-end
-function waypoint()
-
-end

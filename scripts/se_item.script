@@ -147,6 +147,7 @@ end
 class "se_weapon_magazined" (cse_alife_item_weapon_magazined)
 function se_weapon_magazined:__init (section) super (section)
 	self.secret_item = false
+	self.dynamic_name = ""
 end
 function se_weapon_magazined:on_register()
 	cse_alife_item_weapon_magazined.on_register( self )

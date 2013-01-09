@@ -377,12 +377,13 @@ function npc_on_update(npc,st)
 			return
 		end
 
-		if not (npc_in_actor_frustrum(npc)) then
+		if (not npc_in_actor_frustrum(npc) or npc:position():distance_to(db.actor:position()) >  7) then
+		--if (alun_utils.angle_diff(db.actor:direction(), db.actor:position():sub(npc:position())) < 90 or npc:position():distance_to(db.actor:position()) >  7) then
 			return
 		end
 
-		if (math.random() > ActorKillWoundedChance) then
-			st.victim_surrender = false
+		if (math.random() >= ActorKillWoundedChance) then
+			st.victim_surrender = 65535
 			return
 		end
 

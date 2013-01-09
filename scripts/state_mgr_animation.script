@@ -353,9 +353,9 @@ function animation:add_anim(anim, state)
 
 	if not (npc:weapon_unstrapped() or npc:weapon_strapped()) then
 		--callstack()
-		self.npc:clear_animations()
+		npc:set_item(object.strap,npc:best_weapon())
 		abort("Illegal call of add animation. Weapon is strapping now!!! %s [%s]", npc:name(), anim)
-		return
+		--return
 	end
 
 

@@ -91,11 +91,20 @@ function on_actor_update()
 		local obj = db.actor:active_detector()
 		local torch = db.actor:object("device_torch")
 		if (obj and FlashlightSections[obj:section()]) then
+			if (has_alife_info("enable_device_torch")) then
+				db.actor:disable_info_portion("enable_device_torch")
+				alife():create("device_torch_dummy",db.actor:position(),0,0,0)
+
+				local hud = get_hud()
+				hud:AddCustomStatic("can_use_weapon_now", true)
+				hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Unequipped headlamp")
+				itms_manager.ShowMessage = true
+				itms_manager.ShowMessageInit = game.get_game_time()
+				itms_manager.ShowMessageTime = 25
+			end
+
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
-				if not (has_nv) then
-					give_info("flashlight_torch")
-				end
 			end
 
 			if (torch and not torch:torch_enabled()) then
@@ -108,13 +117,15 @@ function on_actor_update()
 				end
 			end
 		else
-			if (torch and torch:torch_enabled()) then
-				torch:enable_torch(false)
-				torch_delay = nil
-			end
-			local se_torch = torch and not has_nv and has_alife_info("flashlight_torch") and alife():object(torch:id())
-			if (se_torch) then
-				alife():release(se_torch,true)
+			if (torch and not has_alife_info("enable_device_torch")) then
+				if (torch:torch_enabled()) then
+					torch:enable_torch(false)
+					torch_delay = nil
+				end
+
+				if (not has_nv) then
+					alife():release(alife():object(torch:id()),true)
+				end
 			end
 		end
 	end
@@ -154,10 +165,13 @@ function monster_on_actor_use_callback(obj,who)
 		return
 	end
 
-	local se_obj = alife():object(obj:id())
-	if (se_obj.looted) then
+	local looted = xr_logic.pstor_retrieve(obj,"looted",nil)
+	if (looted) then
 		return
 	end
+
+	xr_logic.pstor_store(obj,"looted",true)
+	xr_corpse_detection.set_valuable_loot(obj:id(),false)
 
 	local st = db.storage[obj:id()]
 	if (st and st.death_time and game.get_game_time():diffSec(st.death_time) > MutantLootDecayTime) then
@@ -167,14 +181,11 @@ function monster_on_actor_use_callback(obj,who)
 		itms_manager.ShowMessage = true
 		itms_manager.ShowMessageInit = game.get_game_time()
 		itms_manager.ShowMessageTime = 25
-		se_obj.looted = true
 	else
 		if (MutantLootEnableUI and ui_mutant_loot) then
 			ui_mutant_loot.loot_ui(get_hud(),obj:id(),obj:section(),obj:clsid())
 		else
-			se_obj.looted = true
 			loot_mutant(se_obj,obj:clsid())
-			xr_corpse_detection.set_valuable_loot(se_obj.id,false)
 		end
 	end
 end
@@ -281,6 +292,23 @@ function actor_item_use(obj)
 		if (ui) then
 			ui:ShowDialog(true)
 			ui:FillList()
+		end
+	end
+
+	-- Dummy Torch for Flashlight
+	if (FlashlightModEnable and obj:section() == "device_torch_dummy") then
+		local torch = db.actor:object("device_torch")
+		if not (has_alife_info("enable_device_torch")) then
+			give_info("enable_device_torch")
+			if not (torch) then
+				alife():create("device_torch",db.actor:position(),0,0,0)
+			end
+			local hud = get_hud()
+			hud:AddCustomStatic("can_use_weapon_now", true)
+			hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Equipped headlamp")
+			itms_manager.ShowMessage = true
+			itms_manager.ShowMessageInit = game.get_game_time()
+			itms_manager.ShowMessageTime = 25
 		end
 	end
 end
@@ -443,7 +471,8 @@ local clsid_to_section = {
 		[clsid.tushkano_s]		= "tushkano",
 		[clsid.cat_s]			= "cat",
 		[clsid.fracture_s]		= "fracture",
-		[clsid.zombie_s]		= "zombie"
+		[clsid.zombie_s]		= "zombie",
+		[clsid.crow]			= "crow"
 }
 function loot_mutant(obj,clsid,t)
 	local clsid = clsid or obj and obj:clsid()
@@ -451,7 +480,7 @@ function loot_mutant(obj,clsid,t)
 		return
 	end
 
-	alun_utils.printf("loot_mutant: collecting section=%s",clsid_to_section[clsid])
+	--alun_utils.printf("loot_mutant: collecting section=%s",clsid_to_section[clsid])
 	local loot_table = alun_utils.collect_section(ini,clsid_to_section[clsid])
 
 	local loot,sec
@@ -465,7 +494,7 @@ function loot_mutant(obj,clsid,t)
 			loot[2] = tonumber(loot[2])
 			for i=1,loot[2] do
 				if (math.random() <= tonumber(loot[3])) then
-					alun_utils.printf("loot_mutant: section=%s",loot[1])
+					--alun_utils.printf("loot_mutant: section=%s",loot[1])
 					local se_obj = alife():create(loot[1], db.actor:position(),0,0,0)
 					if (t) then
 						local item_section = loot[1]
