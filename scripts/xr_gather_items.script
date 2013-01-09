@@ -138,7 +138,7 @@ function eva_gather_itm:evaluate()
 			se_itm = itm_id and Items[itm_id] == nil and alife():object(itm_id)
 
 
-			if (se_itm and se_itm.parent_id == 65535 and itm_id ~= 0) then
+			if (se_itm and se_itm.parent_id == 65535 and itm_id ~= 0 and not treasure_manager.get_treasure_manager().items_from_secrets[itm_id] and not get_object_story_id(itm_id)) then
 
 				if (isArtefact(itm) ~= true) or (xr_logic.pick_section_from_condlist(db.actor, npc, self.st.gather_artefact_items_enabled) == "true" and ArtifactDectection and ArtifactCommunities[squad_community] and has_detector) then
 					itm_pos = itm:position()

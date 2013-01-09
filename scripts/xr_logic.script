@@ -976,6 +976,11 @@ function parse_condlist(npc, section, field, src)
 
 	--printf("_bp: src = %s", src)
 
+	if not (src) then
+		alun_utils.printf("npc=%s section=%s field=%s src=%s",npc:name(),section,field,src)
+		return
+	end
+
 	local n = 1
 	for fld in string.gfind(src, "%s*([^,]+)%s*") do
 		-- Здесь fld это набор infoportions в {} и имя секции, на которую переключиться.

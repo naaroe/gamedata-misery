@@ -61,12 +61,14 @@ function action_wounded:initialize ()
 	self.object:movement_enabled(false)
 	self.object:disable_trade()
 	self.object:wounded(true)
+
+	local wound_manager_victim = xr_logic.pstor_retrieve(self.object, "wounded_victim")
 end
 function action_wounded:execute ()
 		action_base.execute (self)
 	wound_manager = self.a.wound_manager
 
-	wound_manager_victim = xr_logic.pstor_retrieve(self.object, "wounded_victim")
+	local wound_manager_victim = xr_logic.pstor_retrieve(self.object, "wounded_victim")
 	local sim = alife()
 	local victim = nil
 	if tostring(wound_manager_victim) == "nil" then
@@ -96,8 +98,8 @@ function action_wounded:execute ()
 		end
 	end
 
-	wound_manager_state = xr_logic.pstor_retrieve(self.object, "wounded_state")
-	wound_manager_sound = xr_logic.pstor_retrieve(self.object, "wounded_sound")
+	local wound_manager_state = xr_logic.pstor_retrieve(self.object, "wounded_state")
+	local wound_manager_sound = xr_logic.pstor_retrieve(self.object, "wounded_sound")
 	if wound_manager_state == "true" then
 		local h = hit()
 		h.power = 0
@@ -122,29 +124,41 @@ function action_wounded:execute ()
 
 		local id = self.object:id()
 		local po = db.storage[id].victim_surrender and level.object_by_id(db.storage[id].victim_surrender)
-		--if (po and po:alive() and po:best_enemy() and po:best_enemy():id() == id) then
-		if (po and po:alive()) then
+		if (po and po:alive() and not alun_utils.load_var(self.object,"victim_surrender",nil)) then
 			state_mgr.set_state(self.object, "prisoner")
+			self.a.reset = nil
+			if (po:id() == db.actor:id()) then
+				xr_effects.actor_neutral(db.actor,self.object)
+				if (self.object:relation(db.actor) ~= game_object.neutral) then
+					self.object:set_relation(game_object.neutral,db.actor)
+				end
+			end
 		else
-			db.storage[id].victim_surrender = nil
-			state_mgr.set_state(self.object, wound_manager_state, nil, nil, {look_object = victim}, nil)
+			if (db.storage[id].victim_surrender ~= 65535) then
+				db.storage[id].victim_surrender = nil
+			end
+
+			if (state_mgr.get_state(self.object) ~= wound_manager_state) then
+				state_mgr.set_state(self.object, wound_manager_state, nil, nil, {look_object = victim})
+				local mgr = db.storage[self.object:id()].state_mgr
+				if (mgr) then
+					mgr.animation:set_state(nil, true)
+					mgr.animation:set_control()
+				end
+			end
+
 		end
 	end
 
-	-- нужно отыграть фоновый
-	if wound_manager_sound == "nil" then
-		xr_sound.set_sound_play(self.object:id(), nil)
-	else
-		xr_sound.set_sound_play(self.object:id(), wound_manager_sound)
-	end
+	xr_sound.set_sound_play(self.object:id(), wound_manager_sound ~= "nil" and wound_manager_sound or nil)
 end
 function action_wounded:finalize ()
-		action_base.finalize (self)
-		self.object:enable_trade()
-		self.object:disable_talk()
---  xr_sound.set_sound(self.object, nil)
-		self.object:wounded(false)
-		self.object:movement_enabled(true)
+	self.a.reset = nil
+	action_base.finalize (self)
+	self.object:enable_trade()
+	self.object:disable_talk()
+	self.object:wounded(false)
+	self.object:movement_enabled(true)
 end
 
 ----------------------------------------------------------------------------------------------------------------------

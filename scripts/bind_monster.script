@@ -50,8 +50,8 @@ function generic_object_binder:update(delta)
 	--'	self.object:name(), time_global())
 	-- fluffy22
 	if not object_alive then
-		local se_obj = alife():object(self.object:id())
-		if se_obj and se_obj.looted == false then
+		local looted = xr_logic.pstor_retrieve(self.object,"looted",nil)
+		if not (looted) then
 			-- credits to ARS and TGZ teams for this - mutant looting
 			self.object:set_callback(callback.use_object, self.use_callback, self)
 			self.object:set_tip_text("Loot")
@@ -234,9 +234,6 @@ function generic_object_binder:hear_callback(self, who_id, sound_type, sound_pos
 		return
 	end
 	xr_hear.hear_callback(self, who_id, sound_type, sound_position, sound_power)
-	-- Alundaio
-	if (axr_main) then axr_main.monster_on_hear_callback(self.object, who_id, sound_type, sound_position, sound_power) end
-	-- End Alundaio
 end
 
 -- fluffy22
@@ -337,7 +334,7 @@ end
 function generic_object_binder:save(packet)
 	set_save_marker(packet, "save", false, "generic_object_binder")
 	if not (self.object:alive()) then
-		utils.w_CTime(packet,db.storage[self.object:id()].death_time)
+		utils.w_CTime(packet,db.storage[self.object:id()].death_time or game.get_game_time(),"bind_monster")
 	end
 	object_binder.save(self, packet)
 	xr_logic.save_obj(self.object, packet)
@@ -348,7 +345,7 @@ function generic_object_binder:load(reader)
 	self.loaded = true
 	set_save_marker(reader, "load", false, "generic_object_binder")
 	if not (self.object:alive()) then
-		db.storage[self.object:id()].death_time = utils.r_CTime(reader)
+		db.storage[self.object:id()].death_time = utils.r_CTime(reader,"bind_monster")
 	end
 	object_binder.load(self, reader)
 	xr_logic.load_obj(self.object, reader)

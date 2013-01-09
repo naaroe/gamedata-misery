@@ -1,0 +1,93 @@
+-- basic dynamic msg_box
+-- alundaio
+
+local ini = ini_file("sr_teleport_sections.ltx")
+
+
+class "msg_box_ui" (CUIScriptWnd)
+function msg_box_ui:__init(obj,disable_msg,item) super()
+	self:SetWndRect(Frect():set(0,0,1024,768))
+
+	self.name = obj and obj:name()
+	self.disable_msg = disable_msg
+	self.item = item
+
+	if (string.find(self.name,obj:id())) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(obj:id())
+		self.name = story_name or self.name
+	end
+
+	if (not self.name or not ini:section_exist(self.name)) then
+		alun_utils.printf("sr_teleport_sections.ltx: section doesn't exist %s",obj and obj:name())
+		return
+	end
+
+	local enable = alun_utils.read_from_ini(ini,self.name,"enable","string",nil)
+	enable = enable and xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj,"enable",self.name,enable))
+
+	if (enable ~= "true") then
+		return
+	end
+
+	self.obj = obj
+
+	self.message_box = CUIMessageBoxEx()
+	self:Register(self.message_box, "msg_box")
+
+	self:InitCallBacks()
+	self:InitControls()
+end
+
+function msg_box_ui:__finalize()
+end
+
+function msg_box_ui:InitCallBacks()
+	self:AddCallback("msg_box",     ui_events.MESSAGE_BOX_OK_CLICKED,			self.OnMsgOk,						self)
+	self:AddCallback("msg_box",     ui_events.MESSAGE_BOX_CANCEL_CLICKED,		self.OnMsgCancel,					self)
+	self:AddCallback("msg_box",     ui_events.MESSAGE_BOX_YES_CLICKED,			self.OnMsgOk,						self)
+	self:AddCallback("msg_box",     ui_events.MESSAGE_BOX_NO_CLICKED,			self.OnMsgCancel,					self)
+end
+function msg_box_ui:OnMsgOk()
+	local pos = alun_utils.read_from_ini(ini,self.name,"position","string",nil)
+	local path = pos == nil and alun_utils.read_from_ini(ini,self.name,"path","string",nil)
+	local point = path and patrol(path)
+
+	if not (pos or point) then
+		return
+	end
+
+	pos = alun_utils.string_to_vector(pos)
+	db.actor:set_actor_position(pos or point)
+	--level.add_pp_effector("sleep_fade.ppe",2,false)
+end
+
+function msg_box_ui:OnMsgCancel()
+	local pos = alun_utils.read_from_ini(ini,self.name,"reject","string",nil)
+	local path = pos == nil and alun_utils.read_from_ini(ini,self.name,"reject_path","string",nil)
+	local point = path and patrol(path)
+
+	if not (pos or point) then
+		return
+	end
+
+	local dir = point and look:point(0):sub(point:point(0)) or device().cam_dir:getH()
+	pos = alun_utils.string_to_vector(pos)
+	db.actor:set_actor_position(pos)
+	db.actor:set_actor_direction(-dir)
+end
+
+function msg_box_ui:InitControls()
+	if (self.disable_msg) then
+		if (not self.item or db.actor:object(self.item)) then
+			self:OnMsgOk()
+		else
+			self:OnMsgCancel()
+		end
+		return
+	end
+
+	self.message_box:InitMessageBox("message_box_yes_no")
+	self.message_box:ShowDialog(true)
+	local str = game.translate_string(alun_utils.read_from_ini(ini,self.name,"text","string",""))
+	self.message_box:SetText(str)
+end

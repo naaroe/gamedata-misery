@@ -867,7 +867,7 @@ end
 -----------------------------------------------------------------------------------------------
 -- Получить сквад обьекта!!!!!
 function get_object_squad(object)
-	if object == nil then abort("You are trying to get squad_object from NIL object!!!") end
+	if object == nil then return abort("You are trying to get squad_object from NIL object!!!") end
 	local obj_id = nil
 	if type(object.id) == "function" then
 		obj_id = object:id()

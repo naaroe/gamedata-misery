@@ -1,0 +1,235 @@
+--[[	axr_companions
+
+by Alundaio
+--]]
+
+function on_game_start()
+	local ini = ini_file("ai_tweaks\\axr_companions.ltx")
+	Enabled = alun_utils.read_from_ini(ini,"main","enable","bool",false)
+	if not (Enabled) then return end
+	callback_register("npc_on_death_callback",death_callback)
+	callback_register("npc_on_fighting_actor",on_fighting_actor)
+	callback_register("squad_can_help_actor",squad_can_help_actor)
+
+	DisabledFactions = alun_utils.parse_list(ini,"main","disabled_factions",true)
+	ask_anyone_to_be_companion = alun_utils.read_from_ini(ini,"main","anyone_as_companion","bool",false)
+	allow_story_squads = alun_utils.read_from_ini(ini,"main","allow_story_squads","bool",true)
+	max_actor_squad_size = alun_utils.read_from_ini(ini,"main","max_actor_squad_size","float",4)
+end
+
+function squad_can_help_actor(squad)
+	local id = squad:commander_id()
+	if (id and alife():has_info(id,"npcx_is_companion")) then
+		alun_utils.printf("help actor")
+		return true
+	end
+end
+
+function on_fighting_actor(npc)
+	if (db.actor:has_info("axr_has_companion")) then
+		for i=1,max_actor_squad_size do
+			local c = alun_utils.load_var(db.actor,"companion_"..i,nil)
+			if (c) then
+				alun_utils.set_squad_relation_to_squad(level.object_by_id(c),npc,game_object.enemy)
+			end
+		end
+	end
+end
+
+function death_callback(npc,who)
+	if ( npc:has_info("npcx_is_companion") ) then
+		remove_from_actor_squad(npc)
+	end
+end
+
+function get_companion_count()
+	local count = 0
+	for i=1,max_actor_squad_size do
+		local c = alun_utils.load_var(db.actor,"companion_"..i,nil)
+		if (c) then
+			count = count + 1
+		end
+	end
+	return count
+end
+
+function add_to_actor_squad(npc)
+	local inserted
+	local id = npc:id()
+	for i=1,max_actor_squad_size do
+		local c = alun_utils.load_var(db.actor,"companion_"..i,nil)
+		if not (c) then
+			alun_utils.save_var(db.actor,"companion_"..i,id)
+			--alun_utils.debug_write("add to actor squad %s in slot %s",npc:name(),i)
+			inserted = true
+			break
+		end
+	end
+
+	if not (inserted) then
+		return
+	end
+
+	if not ( db.actor:has_info("axr_has_companion") ) then
+		db.actor:give_info_portion("axr_has_companion")
+	end
+
+	npc:give_info_portion("npcx_is_companion")
+	axr_logic.set_new_scheme_and_logic(npc,"beh","beh@base","logic",nil,"scripts\\beh_companion.ltx")
+	alun_utils.debug_write("Inserted %s into actor squad",npc:name())
+
+	local se_npc = alife():object(id)
+	local unreg_id = se_npc:smart_terrain_id()
+	if (unreg_id ~= 65535) then
+		local unreg = alife():object(unreg_id)
+		if (unreg) then
+			unreg:unregister_npc(se_npc)
+		end
+	end
+end
+
+function remove_from_actor_squad(npc)
+	npc:disable_info_portion("npcx_is_companion")
+	axr_logic.restore_scheme_and_logic(npc)
+
+	local count = 0
+	for i=1,max_actor_squad_size do
+		local c = alun_utils.load_var(db.actor,"companion_"..i,nil)
+		if (c == npc:id()) then
+			alun_utils.save_var(db.actor,"companion_"..i,nil)
+		end
+		count = count + 1
+	end
+	if ( count < 1 ) then
+		db.actor:disable_info_portion("axr_has_companion")
+	end
+end
+
+function can_join_actor(npc)
+	local comm = character_community(npc)
+	if (DisabledFactions[comm]) then
+		return false
+	end
+
+	local squad = get_object_squad(npc)
+	if squad ~= nil and squad:commander_id() ~= npc:id() then
+		return false
+	end
+
+	if (get_companion_count() + alun_utils.get_squad_count(npc) <= max_actor_squad_size) then
+		return true
+	end
+
+	return false
+end
+
+function set_companion_combat_type_camper(npc)
+	npc:disable_info_portion("npcx_beh_combat_tactics_monolith")
+	npc:give_info_portion("npcx_beh_combat_tactics_camper")
+end
+
+function set_companion_combat_type_monolith(npc)
+	npc:disable_info_portion("npcx_beh_combat_tactics_camper")
+	npc:give_info_portion("npcx_beh_combat_tactics_monolith")
+end
+
+function set_companion_combat_type_default(npc)
+	npc:disable_info_portion("npcx_beh_combat_tactics_monolith")
+	npc:disable_info_portion("npcx_beh_combat_tactics_camper")
+end
+
+function set_companion_to_wait_state(npc)
+	npc:give_info_portion("npcx_beh_wait")
+end
+
+function set_companion_to_follow_state(npc)
+	npc:disable_info_portion("npcx_beh_wait")
+	npc:disable_info_portion("npcx_beh_hide_in_cover")
+end
+
+function set_companion_to_attack_state(npc)
+	npc:disable_info_portion("npcx_beh_ignore_combat")
+	npc:disable_info_portion("npcx_beh_ignore_actor_enemies")
+end
+
+function set_companion_to_ignore_combat_state(npc)
+	npc:give_info_portion("npcx_beh_ignore_combat")
+	npc:give_info_portion("npcx_beh_ignore_actor_enemies")
+end
+
+function set_companion_to_attack_only_actor_combat_enemy_state(npc)
+	npc:give_info_portion("npcx_beh_ignore_combat")
+	npc:disable_info_portion("npcx_beh_ignore_actor_enemies")
+end
+
+function set_companion_to_stealth_substate(npc)
+	npc:give_info_portion("npcx_beh_substate_stealth")
+end
+
+function set_companion_to_relax_substate(npc)
+	npc:give_info_portion("npcx_beh_substate_relax")
+end
+
+function set_companion_to_default_substate(npc)
+	npc:disable_info_portion("npcx_beh_substate_stealth")
+	npc:disable_info_portion("npcx_beh_substate_relax")
+end
+
+function switch_companion_distance(npc)
+	if ( npc:has_info("npcx_beh_distance_far") ) then
+		npc:disable_info_portion("npcx_beh_distance_far")
+	else
+		npc:give_info_portion("npcx_beh_distance_far")
+	end
+end
+
+function set_companion_hide_in_cover(npc)
+	npc:give_info_portion("npcx_beh_hide_in_cover")
+	npc:disable_info_portion("npcx_beh_wait")
+end
+
+function switch_companion_patrol_mode(npc)
+	if ( npc:has_info("npcx_beh_patrol_mode") ) then
+		npc:disable_info_portion("npcx_beh_patrol_mode")
+	else
+		npc:give_info_portion("npcx_beh_patrol_mode")
+	end
+end
+
+function switch_companion_gather_items(npc)
+	if ( npc:has_info("npcx_beh_gather_items") ) then
+		npc:disable_info_portion("npcx_beh_gather_items")
+	else
+		npc:give_info_portion("npcx_beh_gather_items")
+	end
+end
+
+function switch_companion_loot_corpses(npc)
+	if ( npc:has_info("npcx_beh_loot_corpses") ) then
+		npc:disable_info_portion("npcx_beh_loot_corpses")
+	else
+		npc:give_info_portion("npcx_beh_loot_corpses")
+	end
+end
+
+function companion_remove_waypoints(npc)
+	npc:disable_info_portion("npcx_beh_patrol_mode")
+	for i,v in ipairs(db.storage[npc:id()].beh.pathpoint) do
+		alun_utils.save_var(npc,"pathpoint"..tostring(i),nil)
+	end
+	db.storage[npc:id()].beh.pathpoint = {}
+end
+
+function companion_add_waypoints(npc)
+	if not (db.storage[npc:id()].beh.pathpoint) then
+		db.storage[npc:id()].beh.pathpoint = {}
+	end
+	local pos = db.actor:position()
+	local lvid = db.actor:level_vertex_id()
+	local dir = db.actor:direction()
+	table.insert(db.storage[npc:id()].beh.pathpoint,{position = pos, level_vertex_id = lvid, direction = dir, delay = 5000 })
+
+	local s = "pos:"..pos.x..","..pos.y..","..pos.z.." lvid:"..lvid.." dir:"..dir.x..","..dir.y..","..dir.z
+	alun_utils.debug_write("waypoint: %s",s)
+	alun_utils.save_var(npc,"pathpoint"..tostring(#db.storage[npc:id()].beh.pathpoint),"pos:"..pos.x..","..pos.y..","..pos.z.." lvid:"..lvid.." dir:"..dir.x..","..dir.y..","..dir.z)
+end

@@ -109,7 +109,7 @@ function npc_on_weapon_no_ammo(npc,wpn,st)
 	local ini = system_ini()
 	local sec = wpn:section()
 	local se_wpn = alife():object(wpn:id())
-	local data = alun_utils.get_weapon_data(se_wpn)
+	local data = stpk_utils.get_weapon_data(se_wpn)
 	local ammos = alun_utils.parse_list(ini,sec,"ammo_class")
 
 	local box = data.ammo_type+1 == 1 and npc:object(ammos[1]) or npc:object(ammos[2])

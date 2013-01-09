@@ -59,6 +59,33 @@ function set_item_data(t,sobj)
 	end
 end
 
+
+function get_inv_box_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_inventory_box_properties_packet(t,stpk)
+	return t
+end
+
+function set_inv_box_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_inventory_box_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
 function get_item_document_data(sobj)
 	if not sobj then
 		return {}
@@ -300,6 +327,41 @@ function set_space_restrictor_data(t,sobj)
 	end
 end
 
+
+function get_anom_zone_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_space_restrictor_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_custom_zone_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_anomalous_zone_properties_packet(t,stpk)
+	stpk_utils.parse_se_zone_anom_properties_packet(t,stpk)
+	return t
+end
+
+function set_anom_zone_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_space_restrictor_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_custom_zone_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_anomalous_zone_properties_packet(t,stpk)
+		stpk_utils.fill_se_zone_anom_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+
 function get_level_changer_data(sobj)
 	if not sobj then
 		return {}
@@ -335,36 +397,39 @@ function get_item_update_data(sobj)
 	if not sobj then
 		return {}
 	end
-	stpk:w_begin(0)
-	sobj:UPDATE_Write(stpk)
-	stpk:r_seek(2)
+	uppk:w_begin(0)
+	sobj:UPDATE_Write(uppk)
+	uppk:r_seek(2)
 	local t = {}
-	if data_left(stpk) then
-		t.upd_num_items = stpk:r_u8()
+	if data_left(uppk) then
+		t.upd_num_items = uppk:r_u8()
 		if (t.upd_num_items > 0) then
-			t.upd_ph_force = read_chunk(stpk, 3, "s32")
-			t.upd_ph_torque = read_chunk(stpk, 3, "s32")
-			t.upd_ph_position = read_chunk(stpk, 3, "float")
-			t.upd_ph_rotation = read_chunk(stpk, 4, "float")
+			t.upd_ph_force = read_chunk(uppk, 3, "s32")
+			t.upd_ph_torque = read_chunk(uppk, 3, "s32")
+			t.upd_ph_position = read_chunk(uppk, 3, "float")
+			t.upd_ph_rotation = read_chunk(uppk, 4, "float")
 			if bit_and(t.upd_num_items, 64) == 0 then
-				if stpk:r_elapsed() >= 12 then
-					t.upd_ph_angular_vel = read_chunk(stpk, 3, "float")
+				if uppk:r_elapsed() >= 12 then
+					t.upd_ph_angular_vel = read_chunk(uppk, 3, "float")
 				else
 					abort("cse_alife_item::update_read => cannot read 'upd:ph_angular_vel'")
 					return
 				end
 			end
 			if bit_and(t.upd_num_items, 128) == 0 then
-				if stpk:r_elapsed() >= 12 then
-					t.upd_ph_linear_vel = read_chunk(stpk, 3, "float")
+				if uppk:r_elapsed() >= 12 then
+					t.upd_ph_linear_vel = read_chunk(uppk, 3, "float")
 				else
 					abort("cse_alife_item::update_read => cannot read 'upd:ph_linear_vel'")
 					return
 				end
 			end
-			if data_left(stpk) then
-				t.upd_cse_alife_item__marker_one = stpk:r_u8()
+			if data_left(uppk) then
+				t.upd_cse_alife_item__marker_one = uppk:r_u8()
 			end
+		end
+		if data_left(uppk) then
+			t.upd_torch_flags = uppk:r_u8()
 		end
 	end
 	return t
@@ -372,24 +437,27 @@ end
 
 function set_item_update_data(t,sobj)
 	if sobj then
-		stpk:w_begin(0)
+		uppk:w_begin(0)
 		if t.upd_num_items ~= nil then
-			stpk:w_u8(t.upd_num_items)
+			uppk:w_u8(t.upd_num_items)
 			if t.upd_num_items ~= 0 then
-				write_chunk(stpk, t.upd_ph_force, "s32")
-				write_chunk(stpk, t.upd_ph_torque, "s32")
-				write_chunk(stpk, t.upd_ph_position, "float")
-				write_chunk(stpk, t.upd_ph_rotation, "float")
-				write_chunk(stpk, t.upd_ph_angular_vel, "float")
-				write_chunk(stpk, t.upd_ph_linear_vel, "float")
+				write_chunk(uppk, t.upd_ph_force, "s32")
+				write_chunk(uppk, t.upd_ph_torque, "s32")
+				write_chunk(uppk, t.upd_ph_position, "float")
+				write_chunk(uppk, t.upd_ph_rotation, "float")
+				write_chunk(uppk, t.upd_ph_angular_vel, "float")
+				write_chunk(uppk, t.upd_ph_linear_vel, "float")
 				if t.upd_cse_alife_item__marker_one ~= nil then
-					stpk:w_u8(t.upd_cse_alife_item__marker_one)
+					uppk:w_u8(t.upd_cse_alife_item__marker_one)
 				end
 			end
 		end
-		local size = stpk:w_tell()
-		stpk:r_seek(2)
-		sobj:UPDATE_Read(stpk,size)
+		if (t.upd_torch_flags) then
+			uppk:w_u8(t.upd_torch_flags)
+		end
+		local size = uppk:w_tell()
+		uppk:r_seek(2)
+		sobj:UPDATE_Read(uppk,size)
 	end
 end
 
@@ -681,15 +749,15 @@ end
 
 -- cse_alife_inventory_box_properties
 function parse_cse_alife_inventory_box_properties_packet(ret,stpk)
-	ret.cse_alive_inventory_box__unk1_u8 = stpk:r_u8()
-	ret.cse_alive_inventory_box__unk2_u8 = stpk:r_u8()
+	ret.unk1_u8 = stpk:r_u8()
+	ret.unk2_u8 = stpk:r_u8()
 	ret.tip = stpk:r_stringZ()
 	return ret
 end
 
 function fill_cse_alife_inventory_box_properties_packet(ret,stpk)
-	stpk:w_u8(ret.cse_alive_inventory_box__unk1_u8)
-	stpk:w_u8(ret.cse_alive_inventory_box__unk2_u8)
+	stpk:w_u8(ret.unk1_u8)
+	stpk:w_u8(ret.unk2_u8)
 	stpk:w_stringZ(ret.tip)
 end
 

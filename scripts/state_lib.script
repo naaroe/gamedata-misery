@@ -677,7 +677,7 @@ states = {
 
 
 	-- Раненый
-	wounded = {	weapon = "strapped",
+	wounded = {	weapon = "drop",
 				movement = move.stand,
 				mental = anim.danger,
 				bodystate = move.crouch,

@@ -38,13 +38,13 @@ local immuned_to_surge_squads = {
 class "CSurgeManager"
 function CSurgeManager:__init()
 	--self.debugMessages=debug_ui.get_debug_ui():create_elements(20)
-	self.blowout_sounds={	begin01		=sound_object("ambient\\blowout\\blowout_begin"), 
-							begin02		=sound_object("ambient\\blowout\\blowout_begin_02"), 
-							impact01	=sound_object("ambient\\blowout\\blowout_impact"), 
-							impact02	=sound_object("ambient\\blowout\\blowout_impact_02"), 
-							wave01		=sound_object("ambient\\blowout\\blowout_wave_01"), 
-							wave02		=sound_object("ambient\\blowout\\blowout_wave_02_short"), 
-							wave03		=sound_object("ambient\\blowout\\blowout_wave_03_short"), 
+	self.blowout_sounds={	begin01		=sound_object("ambient\\blowout\\blowout_begin"),
+							begin02		=sound_object("ambient\\blowout\\blowout_begin_02"),
+							impact01	=sound_object("ambient\\blowout\\blowout_impact"),
+							impact02	=sound_object("ambient\\blowout\\blowout_impact_02"),
+							wave01		=sound_object("ambient\\blowout\\blowout_wave_01"),
+							wave02		=sound_object("ambient\\blowout\\blowout_wave_02_short"),
+							wave03		=sound_object("ambient\\blowout\\blowout_wave_03_short"),
 							wave04		=sound_object("ambient\\blowout\\blowout_wave_04"),
 							body_tear	=sound_object("anomaly\\anomaly_body_tear_1"),
 							siren		=sound_object("ambient\\blowout\\blowout_siren")
@@ -69,13 +69,13 @@ function CSurgeManager:initialize()
 	self.ui_disabled 			= false
 	self.blowout_sound 			= false
 	self.wave_sound 			= false
-	
+
 	self.blowout_waves = {}
 	self.objects_to_kill={}
 	self.stages={}
 	self.body_tears={}
 	self.hitFactor=0
-	
+
 	self.surge_time = 222
 	self.inited_time = game.CTime()
 	self.last_surge_time = game.get_game_time()
@@ -156,7 +156,7 @@ function CSurgeManager:new_surge_time(reset)
 	MIN_SURGE_TIME			=	math.floor(self.atmosfear.opt_blowout_freq/2)*3600
 	MAX_SURGE_TIME			=	self.atmosfear.opt_blowout_freq*3600
 	self._delta 			= math.random(MIN_SURGE_TIME, MAX_SURGE_TIME)
-	
+
 	local g_time = game.get_game_time()
 	local psi_manager= psi_storm_manager.get_psi_storm_manager()
 	local psi_storm_start = math.floor(psi_manager._delta - g_time:diffSec(psi_manager.last_psi_storm_time))
@@ -179,11 +179,11 @@ function CSurgeManager:skip_surge()
 	self.last_surge_time:set(Y, M, D, h, m, s + self.surge_time, ms)
 
 	self:new_surge_time(false)
-	
+
 	self.started 			= false
 	self.finished 			= true
 	self.levels_respawn 	= {zaton = true, jupiter = true, pripyat = true}
-	
+
 	self.surge_message 		= ""
 	self.surge_task_sect 	= ""
 	self.task_given 		= false
@@ -213,9 +213,9 @@ function CSurgeManager:end_surge(manual)
 	self.started 			= false
 	self.finished 			= true
 	self.levels_respawn 	= {zaton = true, jupiter = true, pripyat = true}
-	
+
 	self:new_surge_time(false)
-	
+
 	self.surge_message 		= ""
 	self.surge_task_sect 	= ""
 	self.task_given 		= false
@@ -261,7 +261,7 @@ function CSurgeManager:end_surge(manual)
 
 	level.set_time_factor(self.game_time_factor)
 	--self.atmosfear.debugMessages[2]:SetText("level.get_time_factor() = "..tostring(level.get_time_factor()))
-	
+
 	for k,v in pairs(db.signal_light) do
 		v:stop_light()
 		v:stop()
@@ -368,9 +368,9 @@ function CSurgeManager:update()
 	end
 	local diff_sec = math.ceil(game.get_game_time():diffSec(self.inited_time)/level.get_time_factor())
 	local diff_game_sec = math.ceil(game.get_game_time():diffSec(self.inited_time)/2)
-------------------------------------update here-------------------------------- 
+------------------------------------update here--------------------------------
 	if(prev_sec~=diff_sec) then
-		--self.debugMessages[1]:SetText("dif_sec: "..tostring(diff_sec))		
+		--self.debugMessages[1]:SetText("dif_sec: "..tostring(diff_sec))
 		--local rnd_sound = math.random(4000)
 		local rnd_sound=math.ceil(math.random(4000)/1000)
 		prev_sec = diff_sec
@@ -664,7 +664,7 @@ function CSurgeManager:update()
 				hitPower = 0
 				--self.debugMessages[6]:SetText("in cover")
 			end
-			currentPPEfactor = currentPPEfactor+(PPEfactor - currentPPEfactor) * 0.1	
+			currentPPEfactor = currentPPEfactor+(PPEfactor - currentPPEfactor) * 0.1
 			if(self.effector_set) then
 				level.set_pp_effector_factor(surge_shock_pp_eff, currentPPEfactor)
 				self:displayIndicators(currentPPEfactor)
@@ -692,7 +692,7 @@ function CSurgeManager:update()
 			end
 			--self.debugMessages[5]:SetText("PPE: "..tostring(currentPPEfactor))
 			--self.debugMessages[7]:SetText("hitPower: "..tostring(hitPower))
-			
+
 			-- Waves
 			local wavevol=0
 			for k,wave in pairs(self.blowout_waves) do
@@ -771,7 +771,7 @@ function CSurgeManager:displayIndicators(power)
 	end
 	local indikName="atm_indik_psi_"..tostring(indik)..aspectRatio
 	local currentIndikName="atm_indik_psi_"..tostring(currentIndik)..aspectRatio
-	
+
 	--remove indik if 0
 	if not indik and currentIndik~=nil then
 		local hudIndikRem = hud:GetCustomStatic(currentIndikName)
@@ -781,7 +781,7 @@ function CSurgeManager:displayIndicators(power)
 		currentIndik=nil
 		return
 	end
-	-- display different indik 
+	-- display different indik
 	if currentIndik~=indik then
 		-- first remove existing one
 		if currentIndik~=nil then
@@ -1142,7 +1142,7 @@ function CSurgeManager:turn_to_zombie(obj)
 	end
 	alife():release(alife():object(obj.id), true)
 	local section_number = string.sub(section, -1)
-	if section_number=="4" then 
+	if section_number=="4" then
 		zombie_type="sim_default_zombied_4"
 	elseif section_number=="3" then
 		zombie_type="sim_default_zombied_3"
@@ -1342,9 +1342,9 @@ function CSurgeManager:save(packet)
 	set_save_marker(packet, "save", false, "SurgeHide")
 	packet:w_bool(self.finished)
 	packet:w_bool(self.started)
-	utils.w_CTime(packet, self.last_surge_time)
+	utils.w_CTime(packet, self.last_surge_time,"surge_manager")
 	if(self.started) then
-		utils.w_CTime(packet, self.inited_time)
+		utils.w_CTime(packet, self.inited_time,"surge_manager")
 
 		packet:w_bool(self.levels_respawn.zaton)
 		packet:w_bool(self.levels_respawn.jupiter)
@@ -1358,7 +1358,7 @@ function CSurgeManager:save(packet)
 
 		packet:w_stringZ(self.surge_message)
 		packet:w_stringZ(self.surge_task_sect)
-		
+
 		packet:w_u32(self.game_time_factor)
 	end
 	packet:w_u32(self._delta)
@@ -1370,9 +1370,9 @@ function CSurgeManager:load(packet)
 	self:initialize()
 	self.finished = packet:r_bool()
 	self.started = packet:r_bool()
-	self.last_surge_time = utils.r_CTime(packet)
+	self.last_surge_time = utils.r_CTime(packet,"surge_manager")
 	if(self.started) then
-		self.inited_time = utils.r_CTime(packet)
+		self.inited_time = utils.r_CTime(packet,"surge_manager")
 
 		self.levels_respawn.zaton = packet:r_bool()
 		self.levels_respawn.jupiter = packet:r_bool()
@@ -1387,7 +1387,7 @@ function CSurgeManager:load(packet)
 		self.surge_message = packet:r_stringZ()
 		self.surge_task_sect = packet:r_stringZ()
 		self.game_time_factor = packet:r_u32()
-		
+
 		self.blowout_waves = {}
 		self.objects_to_kill={}
 		self.stages={}

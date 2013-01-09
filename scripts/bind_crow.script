@@ -22,12 +22,30 @@ end
 function crow_binder:update(delta)
 -- standart update
     object_binder.update(self, delta)
-    if not(self.object:alive()) and (self.body_timer<=time_global()-120000) and (self.body_timer~=0) then
--- if crow is killed and body lays down for two minutes - release it
-        printf("releasing object ["..self.object:name().."]")
-        alife():release(alife():object(self.object:id()), true)
-    end
+	if not (self.object:alive()) then
+		if (self.body_timer<=time_global()-120000) and (self.body_timer~=0) then
+			printf("releasing object ["..self.object:name().."]")
+			alife():release(alife():object(self.object:id()), true)
+		end
+		--Alundaio
+		local looted = xr_logic.pstor_retrieve(self.object,"looted",nil)
+		if not (looted) then
+			self.object:set_callback(callback.use_object, self.use_callback, self)
+			self.object:set_tip_text("Loot")
+		else
+			self.object:set_callback(callback.use_object, nil)
+			self.object:set_tip_text("")
+		end
+		--Alundaio
+	end
 end
+
+function crow_binder:use_callback(obj, who)
+	-- Alundaio
+	if (itms_manager) then itms_manager.monster_on_actor_use_callback(obj,who) end
+	-- Alundaio
+end
+
 -- Reload object
 function crow_binder:reload(section)
     object_binder.reload(self, section)

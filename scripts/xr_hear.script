@@ -74,9 +74,9 @@ function hear_callback(obj, who_id, sound_type, sound_position, sound_power)
 	local s_type = get_sound_type(sound_type)
 
 	local sound_dist = sound_position:distance_to_sqr(obj:position())
-
+	--Alundaio
 	if (axr_main) then axr_main.npc_on_hear_callback(obj,who_id,s_type,sound_dist,sound_power) end
-
+	--Alundaio
 	local story_id = get_object_story_id(who_id) or "any"
 	if st.hear_sounds == nil then
 		return

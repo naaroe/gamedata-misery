@@ -1791,3 +1791,10 @@ end
 function psi_storm_complete()
 	return psi_storm_manager.is_finished()
 end
+
+function npc_surrendered(actor,npc,p)
+	local st = db.storage[npc:id()]
+	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
+	alun_utils.printf("surrendered = %s",po and po:id() == db.actor:id())
+	return po and po:id() == db.actor:id()
+end

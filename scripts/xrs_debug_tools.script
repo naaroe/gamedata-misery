@@ -180,7 +180,9 @@ function hud_tool:display(disable)
 end
 
 function hud_tool:clear()
-	self.hud:wnd():TextControl():SetText("")
+	if (self.hud) then
+		self.hud:wnd():TextControl():SetText("")
+	end
 end
 
 ---------------------------------------------------------------------------------------------------------
@@ -379,7 +381,9 @@ function position_other_hud_show(hud)
 	hud:set_header("-[Pos. Info]-")
 	if (obj) then
 		local lvid, gvid = obj:level_vertex_id(), obj:game_vertex_id()
-		local pos, dir = obj: position(), device().cam_dir --obj:direction()
+		local pos = obj:position()
+		local dir = obj:id() == 0 and device().cam_dir or obj:direction()
+		local angle = alife():object(obj:id()).angle
 		local pos2 = level.vertex_position(lvid)
 		local valid = pos2:distance_to(pos) <= 0.7
 
@@ -392,6 +396,7 @@ function position_other_hud_show(hud)
 		hud:add_msg("Gvid",gvid)
 		hud:add_msg("Pos",string.format("%0.3f, %0.3f, %0.3f", pos.x, pos.y, pos.z))
 		hud:add_msg("Dir",string.format("%0.3f, %0.3f, %0.3f, %0.3f", dir.x, dir.y, dir.z,dir:getH()))
+		hud:add_msg("Angle",angle and string.format("%0.3f, %0.3f, %0.3f", angle.x, angle.y, angle.z))
 		hud:display()
 	end
 end
@@ -420,6 +425,11 @@ function wounded_hud_show(hud)
 				hud:add_msg("kill_wounded Timer",st.kill_wounded.timer and st.kill_wounded.timer - tg)
 				hud:add_msg("kill_wounded Weapon",st.kill_wounded.weapon and st.kill_wounded.weapon:name())
 			end
+
+			if (st.victim_surrender) then
+				local po = level.object_by_id(st.victim_surrender)
+				hud:add_msg("Surrender to",po and po:name())
+			end
 		end
 	end
 	hud:display()
@@ -437,7 +447,7 @@ function stalker_data_hud_show(hud)
 			stalker_id = obj:id()
 			local se_obj = alife():object(stalker_id)
 			alun_utils.switch_offline(se_obj.id)
-			stalker_data = alun_utils.get_stalker_data(se_obj)
+			stalker_data = stpk_utils.get_stalker_data(se_obj)
 			alun_utils.switch_online(se_obj.id)
 		end
 		hud:add_msg("Character Name",stalker_data.character_name)
@@ -600,7 +610,6 @@ function enemy_hud_show(hud)
 			hud:add_msg("Section Name", se_obj:section_name())
 			hud:add_msg("Best Enemy",near:best_enemy() and near:best_enemy():name())
 			hud:add_msg("Enemy",se_enemy and se_enemy:section_name())
-			hud:add_msg("Vis.Threshold",near)
 			hud:add_msg("ActorIsEnemy",near:relation(db.actor) == game_object.enemy)
 			hud:add_msg("Combat Type",st.script_combat_type)
 

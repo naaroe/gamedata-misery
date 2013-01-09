@@ -118,6 +118,7 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.change_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
@@ -135,6 +136,7 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.change_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
@@ -145,6 +147,7 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.change_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else

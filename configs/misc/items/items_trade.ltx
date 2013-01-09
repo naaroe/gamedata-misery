@@ -1713,15 +1713,40 @@ anm_show_fast_16x9		= dev_detector_1_draw_ws	;_quick
 anm_hide_16x9			= dev_detector_1_holster_ws, dev_detector_1_holster
 anm_hide_fast_16x9		= dev_detector_1_holster_ws_quick
 anm_idle_16x9			= dev_detector_1_idle_ws, dev_detector_1_idle
-anm_idle_moving_16x9		= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
-anm_idle_sprint_16x9		= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
+anm_idle_moving_16x9	= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
+anm_idle_sprint_16x9	= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
 
 flash_light_range		= 0
 onoff_light_range		= 0
 
 
-[device_torch_dummy]:device_torch
-attach_bone_name		= bip01_spine
+[device_torch_dummy]:identity_immunities
+GroupControlSection 	= spawn_group
+discovery_dependency 	=
+$spawn    				= "devices\torch"
+$prefetch   			= 32
+class		 			= II_ANTIR
+cform           		= skeleton
+radius					= 1
+visual					= dynamics\devices\dev_torch_light\dev_torch_light.ogf
+description				= st_device_torch_descr
+cost					= 1360
+inv_name				= st_device_torch_name
+inv_name_short			= st_device_torch_name
+inv_weight				= 0.0
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 16
+inv_grid_y				= 12
+default_to_ruck			= true
+eat_health 				= 0
+eat_satiety 			= 0
+eat_power 				= 0
+eat_radiation	 		= 0
+eat_alcohol 			= 0
+wounds_heal_perc		= 0
+eat_portions_num 		= 1
+animation_slot  		= 4
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
