@@ -85,10 +85,12 @@ function sleep_dialog:TestAndShow()
 			self.sleep_mb:SetText("Radiation hazard!")
 		end
 		self.sleep_mb:ShowDialog(true)
+	--[[
 	elseif xr_logic.pstor_retrieve(db.actor,"drowse",0) < 0.2 then
 		self.sleep_mb:InitMessageBox("message_box_ok")
 		self.sleep_mb:SetText("You are not tired")
 		self.sleep_mb:ShowDialog(true)
+	--]]
 	else
 		self:Initialize()
 		self:ShowDialog(true)
