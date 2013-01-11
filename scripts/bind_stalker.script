@@ -132,15 +132,8 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.task_state, self.task_callback, self)
 	self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
 	self.object:set_callback(callback.use_object, self.use_inventory_item, self)
-	self.object:set_callback(callback.inventory_pda,self.inventory_pda,self)
 end
 ----------------------------------------------------------------------------------------------------------------------
-function actor_binder:inventory_pda(...)
-	local p = {...}
-	for i=1,#p do
-		alun_utils.printf("type = %s val = %s #p=%s",type(p[i]),type(p[i]) == string and p[i] or type(p[i]) == "number" and p[i],#p)
-	end
-end
 
 function actor_binder:take_item_from_box(box, item)
 	local box_name = box:name()
@@ -152,7 +145,7 @@ end
 
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:info_callback(npc, info_id)
-	alun_utils.printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
+	--alun_utils.printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
 	--' Сюжет
 	-- Отметки на карте
 end

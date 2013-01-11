@@ -192,7 +192,7 @@ function eval_stage_1(st,npc)
 
 		local corpse = db.storage[corpse_id] and db.storage[corpse_id].object
 		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
-		if (dt_threshold < DeathTimeDanger) then
+		if (dt_threshold and dt_threshold < DeathTimeDanger) then
 			xr_sound.set_sound_play(npc:id(),"tolls")
 		end
 
