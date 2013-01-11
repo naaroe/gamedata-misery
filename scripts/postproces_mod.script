@@ -25,7 +25,7 @@ function sleep_update()
 	local add = time:diffSec(drst)/max_wake_time
 	drst = time
 	val = val+add
-
+--	rx_ai.printf("drowse:add %s, val = %s",add,val)
 	xr_logic.pstor_store(db.actor,"drowse",val)
     if val > 1 and (not surge_manager.is_started() or surge_manager.actor_in_cover()) then -- отруб
 		sleepsnd:play(db.actor,0,sound_object.s2d)
@@ -118,7 +118,7 @@ function wounded_pp_update()
       level.set_pp_effector_factor(2011, effector_power)
       if prev_health > db.actor.health + crit_treshold then
 	    painsnd:play(db.actor,0,sound_object.s2d)
-        level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")
+        level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")    
         if math.random() < drop_item_on_crit_prob then
           local active_item = db.actor:active_item()
           if active_item and active_item:section() ~= "bolt" and active_item:section()~= "wpn_knife" then
