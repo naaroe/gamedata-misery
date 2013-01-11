@@ -67,6 +67,8 @@ function on_death_callback(npc,who)
 	if (corpse_contain_any_valuable) then
 		HasValuableLoot[npc:id()] = true
 	end
+
+	alun_utils.save_var(npc,"death_by_id",who:id())
 end
 
 function monster_on_death_callback(obj,who)
@@ -192,7 +194,9 @@ function eval_stage_1(st,npc)
 
 		local corpse = db.storage[corpse_id] and db.storage[corpse_id].object
 		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
-		if (dt_threshold < DeathTimeDanger) then
+		local who = alun_utils.load_var(npc,"death_by_id",nil)
+		who = who and level.object_by_id(who)
+		if (who and npc:relation(who) == game_object.enemy and dt_threshold < DeathTimeDanger) then
 			xr_sound.set_sound_play(npc:id(),"tolls")
 		end
 
@@ -261,23 +265,29 @@ function action_search_corpse:execute()
 		local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
 		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and tg - corpse:death_time()
 
-		if (dt_threshold and dt_threshold < DeathTimeDanger) then
-			if not (self.a.danger_timer) then
-				self.a.danger_timer = tg + 5000
-			end
+		local who = alun_utils.load_var(npc,"death_by_id",nil)
+		who = who and level.object_by_id(who)
 
-			if (tg > self.a.danger_timer) then
-				if (xr_danger.set_script_danger) then
-					xr_danger.set_script_danger(npc,DeathTimeDanger-dt_threshold)
+		if (who and npc:relation(who) == game_object.enemy) then
+			if (dt_threshold and dt_threshold < DeathTimeDanger) then
+				if not (self.a.danger_timer) then
+					self.a.danger_timer = tg + 5000
 				end
+
+
+				if (tg > self.a.danger_timer) then
+					if (xr_danger.set_script_danger) then
+						xr_danger.set_script_danger(npc,DeathTimeDanger-dt_threshold)
+					end
+					return
+				end
+
+				if (math.random() > 0.2) then
+					state_mgr.set_state(npc,"search")
+				end
+
 				return
 			end
-
-			if (math.random() > 0.2) then
-				state_mgr.set_state(npc,"search")
-			end
-
-			return
 		end
 
 		if not (self.a.timer) then

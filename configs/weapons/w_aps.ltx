@@ -28,22 +28,22 @@ bullet_speed		 	= 305
 rpm                     = 850
 rpm_empty_click 	 	= 120
 
-use_aim_bullet				= false		;Поддерживается ли первая суппер пуля
+use_aim_bullet				= false
 time_to_aim					= 1.0
 
 hud                     	= wpn_pm_hud
 
-;изношенность, при которой появляется шанс осечки
+
 misfire_start_condition		= 0.64
-;изношеность при которой шанс осечки становится константным
+
 misfire_end_condition		= 0.05
-;шанс осечки при изношености больше чем misfireStartCondition
+
 misfire_start_prob	     	= 0.007
-;шанс осечки при изношености больше чем misfireEndCondition
+
 misfire_end_prob	     	= 0.07
-;увеличение изношености при одиночном выстреле
+
 condition_shot_dec      	= 0.001
-;увеличение изношености при выстреле очередью
+
 condition_queue_shot_dec	= 0.0011
 
 ammo_elapsed		 	= 20
@@ -57,24 +57,22 @@ single_handed			= 1
 zoom_dof					= -1000, 1.0, 1000
 reload_dof				= 0.0, 0.5, 5, 1.7
 
-;---дийЏгђй€--------------------------------------------------------------------------
-;бЂдЋбЮвжйЏгђй€
-fire_dispersion_base	= 0.25 ;0.19 			;кѓьJ (ЃEградъBах) базовоЃEдимпермиЃEъAьEЃE (ъAк† дЂгЮймвЋ ЃEыGмках)
+;---Fire--------------------------------------------------------------------------
+fire_dispersion_base	= 0.25 ;0.19
 control_inertion_factor = 1.11
 crosshair_inertion	= 3.12
 
-;ъCдамЂ
 cam_return				= 0 ;				= 0
-cam_relax_speed         = 8				;йЉъAъBйъ бмд‚иЮйЮ ЃEисдньD ЃEЃEжеыGЃE
+cam_relax_speed         = 8
 cam_relax_speed_ai      = 360
-cam_dispersion          = 0.75				;к‚г‹дхгЌ кѓЃE (ЃEградъBах) ЃEЃEждым вый’игЃEЃE
-cam_dispersion_inc		= 0.75				;к‚г‹дхгЌиe cam_dispersion ЃEЃEждым вый’игЃEЃE
-cam_dispersion_frac		= 1.0				;й’бмЃEбудеЃEЃEдыЃEйъЃE ъь cam_dispersion*cam_dispersion_frac +- cam_dispersion*(1-cam_dispersion_frac)
-cam_max_angle			= 5.0			;ЃEЃEималЃEый кѓьJ ъCдам€
-cam_max_angle_horz		= 5.0				;(degree) maximum shot horizontal degree
-cam_step_angle_horz		= 1.0				;(degree) size of step camera moved in horizontal position while shooting
+cam_dispersion          = 0.75
+cam_dispersion_inc		= 0.75
+cam_dispersion_frac		= 1.0
+cam_max_angle			= 5.0
+cam_max_angle_horz		= 5.0
+cam_step_angle_horz		= 1.0
 
-fire_dispersion_condition_factor = 0.001 ; = 0.01 ; 11		;к‚г‹дхгЌдг вжйЏгђй€ЃEЃEЃEъGенъьЃEЃEЃEЃEЃEималЃEьK изыMй…
+fire_dispersion_condition_factor = 0.001 ; = 0.01
 
 PDM_disp_base 				= 0.5
 PDM_disp_vel_factor 		= 1.65
@@ -82,11 +80,11 @@ PDM_disp_accel_factor 		= 1.65
 PDM_disp_crouch	 				= 0.9
 PDM_disp_crouch_no_acc 			= 0.65
 
-fire_dispersion_condition_factor = 0.001 ; = 10	;к‚г‹дхгЌдг вжйЏгђй€ЃEЃEЃEъGенъьЃEЃEЃEЃEЃEималЃEьK изыMй…
+fire_dispersion_condition_factor = 0.001 ; = 10
 
 ;-------------------------------------------------------------------------------
-holder_range_modifier	= 1.0               ; бм йЉьJЃEЃEиЮк‚г‹дхдаагйпeye_range
-holder_fov_modifier		= 1.0              ; бм йЉьJЃEЃEиЮк‚г‹дхдаагйпeye_fov
+holder_range_modifier	= 1.0
+holder_fov_modifier		= 1.0
 
 hit_probability_gd_novice = 1.00 ;	= 0.80
 hit_probability_gd_stalker = 1.00 ;	= 0.80
@@ -252,7 +250,7 @@ lean_hud_offset_pos			= 0,0,0
 lean_hud_offset_rot			= 0,0,0
 
 ;-----------------------------------------------------------------------------
-; УыGЃEЃEыZЃE
+; Specific
 ;-----------------------------------------------------------------------------
 
 ;---------------------------
