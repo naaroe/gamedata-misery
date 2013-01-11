@@ -196,7 +196,7 @@ function eval_stage_1(st,npc)
 		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
 		local who = alun_utils.load_var(npc,"death_by_id",nil)
 		who = who and level.object_by_id(who)
-		if (who and npc:relation(who) == game_object.enemy and dt_threshold < DeathTimeDanger) then
+		if (who and npc:relation(who) == game_object.enemy and dth_threshold and dt_threshold < DeathTimeDanger) then
 			xr_sound.set_sound_play(npc:id(),"tolls")
 		end
 
