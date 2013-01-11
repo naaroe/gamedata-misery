@@ -86,7 +86,6 @@ function actor_binder:net_destroy()
 	level.show_weapon(true)
 	db.del_actor(self.object)
 
-	self.object:set_callback(callback.inventory_info, nil)
 	self.object:set_callback(callback.article_info, nil)
 	self.object:set_callback(callback.on_item_take, nil)
 	self.object:set_callback(callback.on_item_drop, nil)
@@ -125,22 +124,14 @@ function actor_binder:reinit()
 	self.st = db.storage[npc_id]
 	self.st.pstor = nil
 
-	self.object:set_callback(callback.inventory_info, self.info_callback, self)
 	self.object:set_callback(callback.on_item_take, self.on_item_take, self)
 	self.object:set_callback(callback.on_item_drop, self.on_item_drop, self)
 	self.object:set_callback(callback.trade_sell_buy_item, self.on_trade, self) -- for game stats
 	self.object:set_callback(callback.task_state, self.task_callback, self)
 	self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
 	self.object:set_callback(callback.use_object, self.use_inventory_item, self)
-	self.object:set_callback(callback.inventory_pda,self.inventory_pda,self)
 end
 ----------------------------------------------------------------------------------------------------------------------
-function actor_binder:inventory_pda(...)
-	local p = {...}
-	for i=1,#p do
-		alun_utils.printf("type = %s val = %s #p=%s",type(p[i]),type(p[i]) == string and p[i] or type(p[i]) == "number" and p[i],#p)
-	end
-end
 
 function actor_binder:take_item_from_box(box, item)
 	local box_name = box:name()
@@ -150,12 +141,6 @@ function actor_binder:take_item_from_box(box, item)
 	-- End Alundaio
 end
 
-----------------------------------------------------------------------------------------------------------------------
-function actor_binder:info_callback(npc, info_id)
-	alun_utils.printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
-	--' Сюжет
-	-- Отметки на карте
-end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
 	if sell_bye == true then
