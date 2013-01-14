@@ -525,7 +525,9 @@ function motivator_binder:save(packet)
 		packet:w_u16(k)
 	end
 
-
+	--Alundaio
+	inventory_upgrades.npc_on_save(self.object,packet)
+	--Alundaio
 	set_save_marker(packet, "save", true, "motivator_binder")
 end
 
@@ -544,7 +546,9 @@ function motivator_binder:load(reader)
 		local key = reader:r_u16()
 		self.opened_doors[key] = true
 	end
-
+	--Alundaio
+	inventory_upgrades.npc_on_load(self.object,reader)
+	--Alundaio
 	set_save_marker(reader, "load", true, "motivator_binder")
 end
 

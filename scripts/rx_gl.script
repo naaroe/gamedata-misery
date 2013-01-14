@@ -273,7 +273,7 @@ function action_launch_grenade:execute()
 		if rem then
 			temp.rem[rem:id()] = true
 		end
-		alun_utils.printf("launch[%s]:stage 4:end",npc:character_name())
+		printf("launch[%s]:stage 4:end",npc:character_name())
 		self:cancel(3000)
 	end
 end
@@ -347,7 +347,7 @@ function evaluator_reload_gl:evaluate()
 		if not in_cover then
 			self.evn = false
 			self.wait = time_global()+1600
-			alun_utils.printf("reload_gl[%s]:not in cover",npc:character_name())
+			--printf("reload_gl[%s]:not in cover",npc:character_name())
 		else
 			self.st.wpn_id = wpn and wpn:id()
 			self.evn = true

@@ -17,7 +17,7 @@ function on_game_start()
 	callback_register("npc_on_death_callback",death_callback)
 	callback_register("npc_on_item_take",try_to_equip)
 	callback_register("npc_on_update",npc_on_update)
-	callback_register("npc_on_get_all_from_corpse",npc_loot_dead)
+	--callback_register("npc_on_get_all_from_corpse",npc_loot_dead)
 end
 
 -- This is used as default rating if no rating can be calculated from an outfit item

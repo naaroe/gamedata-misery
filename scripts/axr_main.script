@@ -112,7 +112,7 @@ function on_game_start()
 	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
 	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
 	if (ai_tweaks) then ai_tweaks.on_game_start() end
-	if (xr_visual) then xr_visual.on_game_start() end
+	--if (xr_visual) then xr_visual.on_game_start() end
 	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
 	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
 
@@ -315,7 +315,6 @@ end
 -------------------
 function actor_on_save(se_actor,packet)
 	if (atmosfear) then atmosfear.actor_on_save(se_actor,packet) end
-	if (inventory_upgrades.actor_on_save) then inventory_upgrades.actor_on_save(se_actor,packet) end
 	if (axr_dynamic_spawn) then
 		axr_dynamic_spawn.actor_on_save(se_actor,packet)
 		story_objects.get_story_objects_registry():save(packet)
@@ -327,7 +326,6 @@ end
 -------------------
 function actor_on_load(se_actor,packet)
 	if (atmosfear) then atmosfear.actor_on_load(se_actor,packet) end
-	if (inventory_upgrades.actor_on_load) then inventory_upgrades.actor_on_load(se_actor,packet) end
 	if (axr_dynamic_spawn) then
 		axr_dynamic_spawn.actor_on_load(se_actor,packet)
 		story_objects.get_story_objects_registry():load(packet)

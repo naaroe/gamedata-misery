@@ -18,48 +18,53 @@ local check_items
 local weapon_upgrades = {}
 local effect_funct
 
-function actor_on_save(se_actor,packet)
+function npc_on_save(npc,packet)
 	set_save_marker(packet, "save", false, "inventory_upgrades")
 
-	local c1 = 0
-	local c2 = 0
-	for k,v in pairs(RepairItemList) do
-		c1 = c1 + 1
-		for kk,vv in pairs(v) do
-			c2 = c2 + 1
-		end
+	local sec = npc:section()
+	if not (RepairItemList[sec]) then
+		packet:w_u32(0)
+		return
 	end
 
-	packet:w_u32(c1)
-	packet:w_u32(c2)
-	for tech,v in pairs(RepairItemList) do
-		packet:w_stringZ(tech)
-		for id,t in pairs(v) do
-			packet:w_u32(id)
-			utils.w_CTime(packet, t.gt, "inventory_upgrades")
-			packet:w_u32(t.rt)
-		end
+	local c = 0
+	for id,t in pairs(RepairItemList[sec]) do
+		c = c + 1
 	end
+
+	packet:w_u32(c)
+
+	for id,t in pairs(RepairItemList[sec]) do
+		packet:w_u32(id)
+		packet:w_u32(t.rt)
+		utils.w_CTime(packet, t.gt, "inventory_upgrades")
+		alun_utils.printf("sec=%s id=%s c=%s",sec,id,c)
+	end
+
 	set_save_marker(packet, "save", true, "inventory_upgrades")
 end
 
-function actor_on_load(se_actor,packet)
+function npc_on_load(npc,packet)
 	set_save_marker(packet, "load", false, "inventory_upgrades")
-	if (packet:r_tell() > 0) then
 
-		local c1 = packet:r_u32()
-		local c2 = packet:r_u32()
+	local c = packet:r_u32()
 
-		local tech,id
-		for i=1, c1 do
-			tech = packet:r_stringZ()
-			RepairItemList[tech] = {}
-			for i=1, c2 do
-				id = packet:r_u32()
-				RepairItemList[tech][id] = { gt = utils.r_CTime(packet,"inventory_upgrades"), rt = packet:r_u32() }
-			end
-		end
+	if (c < 1) then
+		return
 	end
+
+	local sec = npc:section()
+	RepairItemList[sec] = {}
+
+	local id
+	for i=1, c do
+		id = packet:r_u32()
+		RepairItemList[sec][id] = {}
+		RepairItemList[sec][id].rt = packet:r_u32()
+		RepairItemList[sec][id].gt = utils.r_CTime(packet,"inventory_upgrades")
+		alun_utils.printf("sec=%s id=%s",sec,id)
+	end
+
 	set_save_marker(packet, "load", true, "inventory_upgrades")
 end
 
@@ -78,11 +83,11 @@ function lend_item_for_repair(itm,mechanic_name,rt)
 			RepairItemList[mechanic_name] = {}
 		end
 
+		alun_utils.printf("mechanic name = %s",mechanic_name)
 		RepairItemList[mechanic_name][itm:id()] = {gt = game.get_game_time(), rt = rt}
 
 		local hud = get_hud()
 		hud:HideActorMenu()
-		--db.actor:switch_to_trade()
 	end
 end
 
@@ -205,7 +210,8 @@ function dm_repair_not_done(a,b)
 						"It's not easy to repair something when you have the shakes... Come back in about an hour for your %s.",
 						"Hey Stal-- Oh heck, I forgot I was repairing your equipment. Come back for your %s in an hour and %s minutes.",
 						"Your %s will be ready in an hour and %s. So come back then, okay?",
-						"Your %s will be ready in about %s hours and %s. Come back then."
+						"Your %s will be ready in about %s hours and %s. Come back then.",
+						"It's almost ready."
 		}
 
 		local function set_text(str,...)
@@ -220,6 +226,10 @@ function dm_repair_not_done(a,b)
 
 		if (hours < 1) then
 			local m = math.floor(minutes)
+			if (m <= 1) then
+				return set_text(text[9])
+			end
+
 			if (npc:section() == "zat_a2_stalker_mechanic") then
 				return set_text(text[math.random(3)],inv_name,m)
 			end

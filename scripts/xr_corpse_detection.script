@@ -7,7 +7,7 @@ local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_dang
 local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",700)
 local StateWalk	 = alun_utils.read_from_ini(ini,"settings","state_walk","string","walk_noweap")
 local StateRun	 = alun_utils.read_from_ini(ini,"settings","state_run","string","rush")
-local MonsterLoot = alun_utils.read_from_ini(ini,"settings","enable_monster_looting","bool",false)
+local MonsterLoot = alun_utils.read_from_ini(ini,"settings","enable_mutant_looting","bool",false)
 local MonsterLootCommunities = alun_utils.collect_section(ini,"loot_mutant_communities",true)
 lootable_table = alun_utils.collect_section(ini,"lootable",true)
 ini = nil
@@ -153,13 +153,13 @@ function eval_stage_1(st,npc)
 		return
 	end
 	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
-	local comm = squad and squad.player_id or character_community(npc)
+	local can_loot_mutants = squad and squad.player_id and MonsterLootCommunities[squad.player_id] or MonsterLootCommunities[character_community(npc)]
 
 	for i=1,#corpses do
 		id = corpses[i].id
 		corpse_npc = db.storage[id] and db.storage[id].object or level.object_by_id(id)
 		if corpse_npc and HasValuableLoot[id] and db.storage[id].corpse_already_selected == nil then
-			if (IsStalker(corpse_npc) or MonsterLootCommunities[comm]) then
+			if (IsStalker(corpse_npc) or can_loot_mutants) then
 				corpse_pos = corpse_npc:bone_position("bip01_spine")
 				dist = npc:position():distance_to_sqr(corpse_pos)
 
@@ -196,7 +196,8 @@ function eval_stage_1(st,npc)
 		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
 		local who = alun_utils.load_var(npc,"death_by_id",nil)
 		who = who and level.object_by_id(who)
-		if (who and npc:relation(who) == game_object.enemy and dt_threshold and dt_threshold < DeathTimeDanger) then
+
+		if (who and npc:relation(who) == game_object.enemy and dth_threshold and dt_threshold < DeathTimeDanger) then
 			xr_sound.set_sound_play(npc:id(),"tolls")
 		end
 
@@ -235,7 +236,7 @@ function action_search_corpse:initialize()
 	local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
 	local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
 
-	if (dt_threshold == nil or dt_threshold > DeathTimeDanger) then
+	if (not dt_threshold or dt_threshold > DeathTimeDanger) then
 		self.a.dist_run = math.random(5,30)
 	else
 		self.a.dist_run = 1
@@ -421,11 +422,11 @@ function add_to_binder(npc, char_ini, scheme, section, st)
 	action:add_effect (world_property(properties["corpse_exist"], 			false))
 	manager:add_action (operators["search_corpse"], action)
 
-	action = manager:action (xr_actions_id.alife)
-	action:add_precondition		(world_property(properties["corpse_exist"],		false))
+	action = manager:action(xr_actions_id.alife)
+	action:add_precondition(world_property(properties["corpse_exist"],false))
 
-	action = manager:action (operators["state_mgr_to_idle_alife"])
-	action:add_precondition		(world_property(properties["corpse_exist"],		false))
+	action = manager:action(operators["state_mgr_to_idle_alife"])
+	action:add_precondition(world_property(properties["corpse_exist"],false))
 end
 
 function set_corpse_detection(npc, ini, scheme, section)

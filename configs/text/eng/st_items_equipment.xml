@@ -530,7 +530,7 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 
 	<string id="st_crowbar">
-		<text>Leather boots</text>
+		<text>Crowbar</text>
 	</string>
 	<string id="st_crowbar_descr">
 		<text>The best tool for opening locked doors and entering buildings. A common find in the industrial areas but some stalkers are keeping a crowbar in their inventories in spite of its weight. Little value.</text>

@@ -14,6 +14,16 @@ function se_smart_cover:__init (section) super (section)
 	end
 end
 function se_smart_cover:STATE_Write (packet)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(packet)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,packet)
+			self.repack = nil
+		end
+	end
 	cse_smart_cover.STATE_Write (self, packet)
 	packet:w_stringZ(self.last_description)
 	local n = 0
