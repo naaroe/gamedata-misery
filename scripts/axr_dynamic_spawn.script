@@ -219,11 +219,41 @@ function on_game_load()
 						secret_stashes[sec] = true
 					end
 
+					-- Repack abstract properties
+					se_obj.repack = {}
+					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+
+					-- Alter packet properties
 					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
 					if (class and m_classes[class] and dynamic[m_classes[class]]) then
 						dynamic[m_classes[class]](se_obj,t,sec)
+
+						local pid
+						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
+							pid = se_obj.id
+						end
+
+						-- Spawn supplemental items
+						local i = 1
+						local itm
+						local sysini = system_ini()
+						local sim = alife()
+						while t["item"..i] do
+							itm = alun_utils.str_explode(t["item"..i],",")
+							if (itm[1] and sysini:section_exist(itm[1])) then
+								for n=1,itm[2] and tonumber(itm[2]) or 1 do
+									if (pid) then
+										sim:create(itm[1],se_obj.position,0,0,pid)
+									else
+										sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+									end
+								end
+							end
+							i = i + 1
+						end
 					end
 
+					-- Set Map Spot
 					if (t.map_spot) then
 						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
 					end
@@ -264,8 +294,6 @@ function actor_on_update()
 			enable = enable and xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"on_info",sec,enable))
 
 			if (enable == "true") then
-				t = alun_utils.collect_section(ini,sec,true)
-
 				section = t.section
 				pos = alun_utils.string_to_vector(t.position)
 
@@ -276,17 +304,50 @@ function actor_on_update()
 					se_obj = alife():create(section,pos,lvid,gvid)
 					sor:register(se_obj.id,sec,nil,true)
 
+					-- Keep track of objects marked secret
+					if (t.secret == "true" and secret_stashes[sec] ~= false) then
+						secret_stashes[sec] = true
+					end
+
+					-- Repack abstract properties
+					se_obj.repack = {}
+					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+
+					-- Alter packet properties
 					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
 					if (class and m_classes[class] and dynamic[m_classes[class]]) then
 						dynamic[m_classes[class]](se_obj,t,sec)
+
+
+						local pid
+						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
+							pid = se_obj.id
+						end
+
+						-- Spawn supplemental items
+						local i = 1
+						local itm
+						local sysini = system_ini()
+						local sim = alife()
+						while t["item"..i] do
+							itm = alun_utils.str_explode(t["item"..i],",")
+							if (itm[1] and sysini:section_exist(itm[1])) then
+								for n=1,itm[2] and tonumber(itm[2]) or 1 do
+									sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id,pid)
+								end
+							end
+							i = i + 1
+						end
 					end
 
+					-- Set Map Spot
 					if (t.map_spot) then
-						level.map_add_object_spot_ser(se_obj.id,t.map_spot,t.hint)
+						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
 					end
-					--alun_utils.printf("after create %s",se_obj:name())
+
+					alun_utils.printf("after create %s",se_obj:name())
 				else
-					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s",sec)
+					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
 				end
 			end
 		end
@@ -438,7 +499,7 @@ function dynamic.cse_alife_level_changer(se_obj,t)
 	data.dest_game_vertex_id = tonumber(t.dest_game_vertex_id)
 	data.dest_level_vertex_id = tonumber(t.dest_level_vertex_id)
 	data.dest_position = alun_utils.string_to_vector(t.dest_position)
-	data.dest_direction = alun_utils.string_to_vector(t.dest_direction) or vector():set(0,0,0)
+	data.dest_direction = t.dest_direction and alun_utils.string_to_vector(t.dest_direction) or vector():set(0,0,0)
 	data.dest_level_name = t.dest_level_name or ""
 	data.dest_graph_point = t.dest_graph_point and t.dest_graph_point or ""
 	data.silent_mode = 1
@@ -690,20 +751,6 @@ function dynamic.cse_alife_inventory_box(se_obj,t)
 	data.unk1_u8 = t.unk1_u8 and tonumber(t.unk1_u8) or data.unk1_u8
 	data.unk2_u8 = t.unk2_u8 and tonumber(t.unk2_u8) or data.unk2_u8
 	data.tip = t.secret == "true" and "Use Stash" or t.tip or data.tip
-
-	local i = 1
-	local itm
-	local sysini = system_ini()
-	local sim = alife()
-	while t["item"..i] do
-		itm = alun_utils.str_explode(t["item"..i],",")
-		if (itm[1] and sysini:section_exist(itm[1])) then
-			for n=1,itm[2] and tonumber(itm[2]) or 1 do
-				sim:create(itm[1],se_obj.position,0,0,se_obj.id)
-			end
-		end
-		i = i + 1
-	end
 
 	stpk_utils.set_inv_box_data(data,se_obj)
 end

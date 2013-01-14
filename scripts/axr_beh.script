@@ -270,6 +270,7 @@ function action_beh:beh_move()
 		end
 
 		self.object:set_dest_level_vertex_id(self.st.assist_point)
+		self.object:set_desired_position(level.vertex_position(self.st.assist_point))
 	end
 	self.object:set_path_type(game_object.level_path)
 	self.object:set_desired_direction()

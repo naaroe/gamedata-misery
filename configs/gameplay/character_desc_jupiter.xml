@@ -32,8 +32,8 @@
     			</supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>jup_a12_stalkers_choose_actor_ransom_dialog</actor_dialog>
 		<actor_dialog>jup_a12_stalkers_choose_actor_ransom_take_dialog</actor_dialog>
 		<actor_dialog>jup_a12_stalkers_choose_actor_power_dialog</actor_dialog>
@@ -63,7 +63,7 @@
 		<visual>actors\stalker_neutral\stalker_neutral_4</visual>
 		<supplies>
 
-		[spawn] \n 
+		[spawn] \n
 
 #include "gameplay\character_items_2.xml"
 #include "gameplay\character_items_4_stalker.xml"
@@ -73,8 +73,8 @@
     			</supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>jup_a12_stalker_diplomat_after_scene_actor_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
@@ -108,11 +108,11 @@
 		      </supplies>
 
 		<actor_dialog>jup_a12_stalker_prisoner_free_actor_dialog</actor_dialog>
-		<actor_dialog>jup_a12_stalker_prisoner_employ_stalkers</actor_dialog>	
-		<actor_dialog>jup_a12_stalker_prisoner_come_with_me</actor_dialog>	
+		<actor_dialog>jup_a12_stalker_prisoner_employ_stalkers</actor_dialog>
+		<actor_dialog>jup_a12_stalker_prisoner_come_with_me</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -267,7 +267,7 @@
 
     <visual>actors\stalker_merc\stalker_merc_7</visual>
     <supplies>
-    
+
 	  [spawn] \n
       jup_b207_merc_pda_with_contract = 1 \n
 
@@ -297,7 +297,7 @@
 
     <visual>actors\stalker_merc\stalker_mercexo4a</visual>
     <supplies>
-    
+
 	  [spawn] \n
       jup_b207_merc_pda_with_contract = 1 \n
 
@@ -979,7 +979,7 @@
 	    <visual>actors\stalker_monolith\stalker_monolith_2</visual>
 		<supplies>
 
-      [spawn] \n		
+      [spawn] \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
@@ -1011,7 +1011,7 @@
 	    <visual>actors\stalker_dolg\stalker_dolg_2</visual>
 		<supplies>
 
-      [spawn] \n	
+      [spawn] \n
 
 
 #include "gameplay\character_items_3_nl.xml"
@@ -1314,11 +1314,11 @@
 
 		<actor_dialog>jup_b6_scientist_biochemist_hypotheses_about</actor_dialog>
 		<actor_dialog>jup_b6_scientist_biochemist_hypotheses_volunteer</actor_dialog>
-		
+
 		<actor_dialog>jup_b6_scientist_biochemist_anomalous_grove</actor_dialog>
 		<actor_dialog>jup_b16_biochemist_oasis_legend</actor_dialog>
-		
-		
+
+
 		<actor_dialog>jup_b6_scientist_biochemist_about_scrutiny</actor_dialog>
 		<actor_dialog>jup_b6_scientist_biochemist_about_scrutiny_learned</actor_dialog>
 		<actor_dialog>jup_b6_scientist_biochemist_stalker_assistant_rival</actor_dialog>
@@ -1363,7 +1363,7 @@
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_b32_scanner_placed</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_b32_artefact_spawn</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_results</actor_dialog>
-        <actor_dialog>jup_b6_scientist_nuclear_physicist_bubble</actor_dialog>	
+        <actor_dialog>jup_b6_scientist_nuclear_physicist_bubble</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_jupiter_products</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_jupiter_docs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_nuclear_physicist_guards</actor_dialog>
@@ -1548,7 +1548,7 @@
       [spawn] \n
 	  wpn_wincheaster1300_trapper \n
 	  ammo_12x70_buck = 1 \n
-	  
+
 #include "gameplay\character_items_3.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_4.xml"
@@ -1603,10 +1603,11 @@
 
 		<start_dialog>jup_b6_scientist_medic_start</start_dialog>
 
+		<actor_dialog>dm_tech_repair</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_soldier_outfit</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_b1_psi_emission_dialog</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_b32_give_scanner</actor_dialog>
-		<actor_dialog>jup_b6_scientist_medic_aproach</actor_dialog> 
+		<actor_dialog>jup_b6_scientist_medic_aproach</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_ufo_memory_repair</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_ufo_memory_repaired</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_zat_b30_actor_bring_detectors</actor_dialog>
@@ -1614,7 +1615,7 @@
 		<actor_dialog>jup_b6_scientist_tech_b33_about_snags_container</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_blackbox</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_csky_outfit</actor_dialog>
-		<actor_dialog>jup_b6_scientist_tech_about_new_upgrade</actor_dialog> 
+		<actor_dialog>jup_b6_scientist_tech_about_new_upgrade</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_about_mercs</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_about_scientists</actor_dialog>
 
@@ -1660,10 +1661,10 @@
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_start_miss</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
+		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -1704,8 +1705,8 @@
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_2</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -1746,8 +1747,8 @@
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_3</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -1787,8 +1788,8 @@
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_4</actor_dialog>
 		<actor_dialog>jup_b1_stalkers_about_tunnel_dialog_after_end_go_home</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -1829,7 +1830,7 @@
 		<actor_dialog>jup_b1_stalker_squad_thanks</actor_dialog>
 		<actor_dialog>jup_b1_stalker_lead_info</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
-		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -1968,8 +1969,8 @@
     			</supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>	
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>jup_a12_stalker_assaulter_after_scene_actor_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
@@ -1995,7 +1996,7 @@
 		<supplies>
 
 		[spawn] \n
-	    anomaly_scaner \n 
+	    anomaly_scaner \n
         detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2005,9 +2006,9 @@
     			</supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
-		
+
 		<actor_dialog>jup_a12_stalker_diplomat_after_scene_actor_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
@@ -2033,7 +2034,7 @@
 		<supplies>
 
 		[spawn] \n
-	  anomaly_scaner \n  
+	  anomaly_scaner \n
       detector_elite \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2042,11 +2043,11 @@
 #include "gameplay\character_drugs_sci.xml"
 		</supplies>
 
-		<actor_dialog>jup_a12_stalker_prisoner_employ_stalkers</actor_dialog>	
-		<actor_dialog>jup_a12_stalker_prisoner_come_with_me</actor_dialog>	
+		<actor_dialog>jup_a12_stalker_prisoner_employ_stalkers</actor_dialog>
+		<actor_dialog>jup_a12_stalker_prisoner_come_with_me</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -2081,8 +2082,8 @@
 		<start_dialog>zat_b106_stalker_gonta_start</start_dialog>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>zat_b106_hunt_himera</actor_dialog>
 		<actor_dialog>zat_b106_stalker_gonta_info_about_soroka</actor_dialog>
 		<actor_dialog>zat_b106_stalker_gonta_info_about_soroka_gone</actor_dialog>
@@ -2127,8 +2128,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -2162,8 +2163,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -2187,7 +2188,7 @@
     <visual>actors\stalker_freedom\stalker_freedom_2_mask</visual>
     <supplies>
       [spawn] \n
-	  anomaly_scaner \n      
+	  anomaly_scaner \n
       detector_elite \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2198,13 +2199,13 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
   </specific_character>
-  
+
 
   <specific_character id="jup_b6_freedom_stalker_2" team_default = "1">
     <name>GENERATE_NAME_stalker</name>
@@ -2222,7 +2223,7 @@
     <visual>actors\stalker_freedom\stalker_freedom_2</visual>
     <supplies>
       [spawn] \n
-	  anomaly_scaner \n      
+	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2232,8 +2233,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2256,7 +2257,7 @@
     <visual>actors\stalker_freedom\stalker_freedom_2</visual>
     <supplies>
       [spawn] \n
-  	  anomaly_scaner \n    
+  	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2266,8 +2267,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2290,7 +2291,7 @@
     <visual>actors\stalker_freedom\stalker_freedom_1</visual>
     <supplies>
       [spawn] \n
- 	  anomaly_scaner \n     
+ 	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2299,8 +2300,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2334,8 +2335,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2357,7 +2358,7 @@
     <visual>actors\stalker_dolg\stalker_dolg_1</visual>
     <supplies>
       [spawn] \n
- 	  anomaly_scaner \n     
+ 	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2366,8 +2367,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2390,7 +2391,7 @@
     <visual>actors\stalker_dolg\stalker_dolg_2</visual>
     <supplies>
       [spawn] \n
- 	  anomaly_scaner \n     
+ 	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2400,8 +2401,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2424,7 +2425,7 @@
     <visual>actors\stalker_dolg\stalker_dolg_1</visual>
     <supplies>
       [spawn] \n
- 	  anomaly_scaner \n     
+ 	  anomaly_scaner \n
       detector_advanced \n
 
 #include "gameplay\character_items_nd.xml"
@@ -2433,8 +2434,8 @@
     </supplies>
 
 		<actor_dialog>jup_b1_stalker_about_scrutiny</actor_dialog>
-		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>		
-		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>		
+		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
+		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -2968,7 +2969,7 @@
     <icon>ui_inGame2_Dolg_4</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_b46_duty_founder</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
@@ -2979,9 +2980,9 @@
     <visual>actors\stalker_dolg\stalker_dolg4c</visual>
     <supplies>
       [spawn] \n
-	  jup_b46_duty_founder_pda \n	
-	
-#include "gameplay\character_items_4_duty.xml"	  
+	  jup_b46_duty_founder_pda \n
+
+#include "gameplay\character_items_4_duty.xml"
     </supplies>
   </specific_character>
 
@@ -2992,7 +2993,7 @@
     <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_b46_duty_founder_squad_01</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
@@ -3003,7 +3004,7 @@
     <visual>actors\stalker_dolg\stalker_dolg_3</visual>
 	<supplies>
       [spawn] \n
-#include "gameplay\character_items_4_duty.xml"	  
+#include "gameplay\character_items_4_duty.xml"
     </supplies>
   </specific_character>
 
@@ -3012,7 +3013,7 @@
     <icon>ui_inGame2_Dolg_2</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_b46_duty_founder_squad_02</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_01\dolg\</snd_config>
@@ -3023,7 +3024,7 @@
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
 	<supplies>
       [spawn] \n
-#include "gameplay\character_items_4_duty.xml"	  
+#include "gameplay\character_items_4_duty.xml"
     </supplies>
   </specific_character>
 
@@ -3032,7 +3033,7 @@
     <icon>ui_inGame2_Dolg_3</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_b46_duty_founder_squad_03</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>
@@ -3043,7 +3044,7 @@
     <visual>actors\stalker_dolg\stalker_dolg_3</visual>
 	<supplies>
       [spawn] \n
-#include "gameplay\character_items_4_duty.xml"	  
+#include "gameplay\character_items_4_duty.xml"
     </supplies>
   </specific_character>
 
@@ -3052,7 +3053,7 @@
     <icon>ui_inGame2_soldier_4</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_b46_duty_founder_squad_04</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_01\dolg\</snd_config>
@@ -3117,7 +3118,7 @@
     <icon>ui_inGame2_Shulga</icon>
     <map_icon x="1" y="0"></map_icon>
     <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
- 
+
     <class>jup_a6_duty_leader</class>
     <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
     <snd_config>characters_voice\human_02\dolg\</snd_config>

@@ -5,6 +5,67 @@
 local stpk = net_packet()
 local uppk = net_packet()
 
+function get_abstract_data(stpk)
+    if (stpk:w_tell() <= 2) then
+        return
+    end
+
+    local t = {}
+
+    stpk:r_seek(0)
+    t.dummy16 = stpk:r_u16()
+    t.section_name = stpk:r_stringZ()
+    t.name = stpk:r_stringZ()
+    t.s_gameid = stpk:r_u8()
+    t.s_rp = stpk:r_u8()
+    t.position = stpk:r_vec3()
+    t.direction = stpk:r_vec3()
+    t.respawn_time = stpk:r_u16()
+    t.object_id = stpk:r_u16()
+    t.parent_id = stpk:r_u16()
+    t.phantom_id = stpk:r_u16()
+    t.s_flags = stpk:r_u16()
+    t.version = stpk:r_u16()
+    t.cse_abstract__unk1_h16 = stpk:r_u16()
+    t.script_version = stpk:r_u16()
+    t.unused = stpk:r_u16()
+    if t.unused > 0 then
+        t.extra = {}
+        for i = 1, t.unused do
+            t.extra[i] = stpk:r_u8()
+        end
+    end
+    t.spawn_id = stpk:r_u16()
+    t.extended_size = stpk:r_u16()
+    return t
+end
+
+function set_abstract_data(t,stpk)
+    stpk:w_begin(t.dummy16)
+    stpk:w_stringZ(t.section_name)
+    stpk:w_stringZ(t.name)
+    stpk:w_u8(t.s_gameid)
+    stpk:w_u8(t.s_rp)
+    stpk:w_vec3(t.position)
+    stpk:w_vec3(t.direction)
+    stpk:w_u16(t.respawn_time)
+    stpk:w_u16(t.object_id)
+    stpk:w_u16(t.parent_id)
+    stpk:w_u16(t.phantom_id)
+    stpk:w_u16(t.s_flags)
+    stpk:w_u16(t.version)
+    stpk:w_u16(t.cse_abstract__unk1_h16)
+    stpk:w_u16(t.script_version)
+    stpk:w_u16(t.unused)
+    if t.unused > 0 and t.extra ~= nil then
+        for i = 1, t.unused do
+            stpk:w_u8(t.extra[i])
+        end
+    end
+    stpk:w_u16(t.spawn_id)
+    stpk:w_u16(t.extended_size)
+end
+
 function get_weapon_data(sobj)
 	if not sobj then
 		return {}
@@ -466,7 +527,7 @@ end
 
 -- cse_abstract_properties
 function parse_cse_abstract_properties_packet(ret,stpk)
-	ret.cse_abstract__unk1_u16 = stpk:r_u16()
+	ret.dummy16 = stpk:r_u16()
 	ret.section_name = stpk:r_stringZ()
 	ret.name = stpk:r_stringZ()
 	ret.s_gameid = stpk:r_u8()
@@ -474,7 +535,7 @@ function parse_cse_abstract_properties_packet(ret,stpk)
 	ret.position = stpk:r_vec3()
 	ret.direction = stpk:r_vec3()
 	ret.respawn_time = stpk:r_u16()
-	ret.cse_abstract__unk2_u16 = stpk:r_u16()
+	ret.object_id = stpk:r_u16()
 	ret.parent_id = stpk:r_u16()
 	ret.phantom_id = stpk:r_u16()
 	ret.s_flags = stpk:r_u16()
@@ -482,13 +543,19 @@ function parse_cse_abstract_properties_packet(ret,stpk)
 	ret.cse_abstract__unk3_u16 = stpk:r_u16()
 	ret.script_version = stpk:r_u16()
 	ret.unused = stpk:r_u16()
+    if (ret.unused > 0) then
+        ret.extra = {}
+        for i = 1, ret.unused do
+            ret.extra[i] = stpk:r_u8()
+        end
+    end
 	ret.spawn_id = stpk:r_u16()
 	ret.extended_size = stpk:r_u16()
 	return ret
 end
 
 function fill_cse_abstract_properties_packet(ret,stpk)
-	stpk:w_u16(ret.cse_abstract__unk1_u16)
+	stpk:w_u16(ret.dummy16)
 	stpk:w_stringZ(ret.section_name)
 	stpk:w_stringZ(ret.name)
 	stpk:w_u8(ret.s_gameid)
@@ -496,7 +563,7 @@ function fill_cse_abstract_properties_packet(ret,stpk)
 	stpk:w_vec3(ret.position)
 	stpk:w_vec3(ret.direction)
 	stpk:w_u16(ret.respawn_time)
-	stpk:w_u16(ret.cse_abstract__unk2_u16)
+	stpk:w_u16(ret.object_id)
 	stpk:w_u16(ret.parent_id)
 	stpk:w_u16(ret.phantom_id)
 	stpk:w_u16(ret.s_flags)
@@ -504,6 +571,11 @@ function fill_cse_abstract_properties_packet(ret,stpk)
 	stpk:w_u16(ret.cse_abstract__unk3_u16)
 	stpk:w_u16(ret.script_version)
 	stpk:w_u16(ret.unused)
+	if (ret.unused > 0 and ret.extra ~= nil) then
+        for i = 1, ret.unused do
+            stpk:w_u8(ret.extra[i])
+        end
+    end
 	stpk:w_u16(ret.spawn_id)
 	stpk:w_u16(ret.extended_size)
 end

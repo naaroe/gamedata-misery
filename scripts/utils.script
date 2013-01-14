@@ -576,7 +576,6 @@ end
 
 -- запись CTime в пакет. если t=nil, то запишет один нулевой байт
 function w_CTime( p, t, caller )
-	alun_utils.printf("w_CTime %s",caller)
 	--set_save_marker(p, "save", false, "CTIME")
 	if t == nil then
 		p:w_u8(-1)
@@ -603,7 +602,6 @@ end
 
 -- чтение CTime из пакета
 function r_CTime( p, caller )
-	alun_utils.printf("r_CTime %s",caller)
 	--set_save_marker(p, "load", false, "CTIME")
 	local Y = p:r_u8()
 	if Y == 255 then
