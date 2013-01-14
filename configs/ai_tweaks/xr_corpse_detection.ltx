@@ -1,7 +1,19 @@
 [settings]
-always_detect_dist = 900			;dist*dist that NPCs will always detect corpses
-state_run = rush
-state_walk = patrol
+death_time_danger 		= 90000
+always_detect_dist 		= 400			;dist that NPCs will always detect corpses
+state_run 				= rush
+state_walk 				= patrol
+enable_mutant_looting 	= true
+
+[loot_mutant_communities]
+stalker_hunter_day
+stalker_hunter_day_hostile
+stalker_hunter_night
+stalker_hunter_night_hostile
+dolg_hunter_day
+dolg_hunter_day_hostile
+dolg_hunter_night
+dolg_hunter_night_hostile
 
 
 [lootable]
@@ -524,3 +536,6 @@ itm_backpack
 itm_sleepbag
 
 device_flashlight
+device_torch_dummy
+guitar_a
+harmonica_a

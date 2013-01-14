@@ -611,11 +611,13 @@ function squad_in_los(npc)
 end
 
 class "fake_squad"
-function fake_squad:__init()
-
+function fake_squad:__init(se_obj)
+	local squad = se_obj.parent_id ~= 65535 and alife():object(se_obj.parent_id)
+	self.id = squad and squad.id or se_obj.id
+	self.player_id = squad and squad.player_id
 end
 
-function fake_squad:am_i_reached(squad)
+function fake_squad:am_i_reached(target)
 
 end
 
@@ -626,6 +628,21 @@ end
 function fake_squad:on_after_reach_target(squad)
 
 end
+
+function fake_squad:target_precondition(target)
+	local squad_params = target.player_id and sim_board.simulation_activities[target.player_id]
+	if squad_params == nil or squad_params.squad == nil then
+		return false
+	end
+
+	local squad = alife():object(self.id)
+	local self_params = squad_params.squad[self.player_id]
+	if self_params == nil or self_params.prec(target, squad) == false then
+		return false
+	end
+	return true
+end
+
 
 function npc_in_cover(npc)
 	local st = get_storage(npc:id(),"in_cover")
@@ -929,6 +946,7 @@ function execute_queue()
 
 		if not (se_obj.online) then
 			-- execute function and switch online
+			alun_utils.printf("offline execute 1")
 			exec_data[id].f(se_obj,exec_data[id].p)
 			exec_data[id] = nil
 			table.remove(exec_queue,i)
@@ -939,6 +957,7 @@ function execute_queue()
 			else
 				se_obj:switch_online()
 			end
+			alun_utils.printf("offline execute 2")
 		else
 			local obj = level.object_by_id(id)
 			if (IsStalker(se_obj)) then
@@ -1020,21 +1039,36 @@ end
 
 --local loadstring = memoize(loadstring)
 
-
---[[
-[zat_a1_guard_1_walk]
-points = p0,p1
-p0:name = wp00
-p0:flags = 0x1
-p0:position = 254.832214355469,16.6185741424561,498.962097167969
-p0:game_vertex_id = 6
-p0:level_vertex_id = 1402458
-p0:links = p1(1)
---]]
-
-function dynamic_pathpoint()
-
+class "position_node"
+function position_node:__init(amt)
+	self.node = {}
+	for i=1,amt do
+		self.node[i] = {}
+	end
 end
-function waypoint()
 
+function position_node:select_best_vertex_id(object,dir,lvid,distance)
+	local closest
+	for i=1, #self.node do
+		if	(bit_and(i,1)) then
+			self.node[i].desired_direction = vector_rotate_y(dir, -math.random(50,60))
+		else
+			self.node[i].desired_direction = vector_rotate_y(dir, math.random(50,60))
+		end
+
+		self.node[i].vertex_id = level.vertex_in_direction(lvid, self.node[i].desired_direction, distance)
+
+		if (self.node[i].vertex_id and object:accessible(self.node[i].vertex_id)) then
+			self.node[i].distance = self.node[i].vertex_id == lvid and -1 or object:position():distance_to_sqr(level.vertex_position(self.node[i].vertex_id))
+
+			if not (closest) then
+				closest = self.node[i].vertex_id
+			end
+
+			if (self.node[i-1] and self.node[i-1].distance < self.node[i].distance) then
+				closest = self.node[i-1].vertex_id
+			end
+		end
+	end
+	return closest and closest ~= -1 and closest
 end

@@ -2372,7 +2372,8 @@ function scenario_autosave(actor, npc, p)
 	end
 
 	if IsImportantSave() then
-		local save_param = user_name().." - "..game.translate_string(save_name)
+		local prefix = axr_misery and axr_misery.ActorClass or user_name()
+		local save_param = prefix.." - "..game.translate_string(save_name)
 
 		get_console():execute("save "..save_param)
 	end
@@ -3539,5 +3540,41 @@ function jup_b200_count_found(actor)
 end
 
 function sr_teleport(actor,npc,p)
-	ui_sr_teleport.msg_box_ui(npc,p and p[1])
+	ui_sr_teleport.msg_box_ui(npc,p and p[1],p and p[2])
+end
+
+function clear_logic(actor,npc,p)
+	local st = db.storage[npc:id()]
+	st.ini_filename = "<customdata>"
+	st.ini = xr_logic.get_customdata_or_ini_file(npc, st.ini_filename)
+	st.active_section = nil
+	st.active_scheme = nil
+	st.section_logic = "logic"
+	xr_logic.switch_to_section(npc,nil,nil)
+end
+
+function set_new_scheme_and_logic(actor,npc,p)
+	local st = db.storage[npc:id()]
+	st.ini_filename = ini_filename
+	st.ini = ini_file(ini_filename)
+
+	-- Set new section logic
+	st.section_logic = logic
+
+	-- Select new active section
+	local new_section = section or xr_logic.determine_section_to_activate(npc, st.ini, st.section_logic)
+
+	-- Switch to new section
+	xr_logic.switch_to_section(npc, st.ini, new_section)
+	st.overrides = xr_logic.cfg_get_overrides(st.ini, new_section, npc)
+end
+
+function set_script_danger(actor,npc,p)
+	xr_danger.set_script_danger(npc,p and tonumber(p[1]) or 5000)
+end
+
+function spawn_npc_at_position(actor,npc,p)
+	if not (p) then return end
+	local pos = vector():set(tonumber(p[2]),tonumber(p[3]),tonumber(p[4]))
+	alife():create(p[1],pos,p[5],p[6])
 end

@@ -418,7 +418,7 @@ end
 function add_to_binder(npc,ini,scheme,section,storage)
 	local manager = npc:motivation_action_manager()
 
-	if (facer_sets.forbiddens.factions[npc:character_community()]) or not(facer_sets.ranks[ranks.get_obj_rank_name(npc)]) then
+	if (facer_sets.forbiddens.factions and facer_sets.forbiddens.factions[npc:character_community()]) or (facer_sets.ranks and not facer_sets.ranks[ranks.get_obj_rank_name(npc)]) then
 		manager:add_evaluator(evid_facer,property_evaluator_const(false))
 		manager:add_evaluator(evid_steal_up_facer,property_evaluator_const(false))
 		return

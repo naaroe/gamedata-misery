@@ -1,5 +1,6 @@
 -- Alundaio
 function register_item(se_obj)
+--[[
 	if not (xrs_debug_tools) then
 		return
 	end
@@ -7,6 +8,7 @@ function register_item(se_obj)
 		registered_items = {}
 	end
 	registered_items[se_obj:section_name()] = registered_items[se_obj:section_name()] and registered_items[se_obj:section_name()] + 1 or 1
+--]]
 end
 -- Alundaio
 
@@ -35,6 +37,19 @@ function se_outfit:can_switch_online()
 	end
 	return cse_alife_item_custom_outfit.can_switch_online(self)
 end
+function se_outfit:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_custom_outfit.STATE_Write(self, stpk)
+end
 
 class "se_helmet" (cse_alife_item_helmet)
 function se_helmet:__init (section) super (section)
@@ -60,6 +75,20 @@ function se_helmet:can_switch_online()
 		return false
 	end
 	return cse_alife_item_helmet.can_switch_online(self)
+end
+
+function se_helmet:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_helmet.STATE_Write(self, stpk)
 end
 
 -- Weapons ---------------------------------------------------------------------
@@ -94,6 +123,20 @@ function se_weapon:STATE_Read(packet, size)
 	cse_alife_item_weapon.STATE_Read(self,packet,size)
 end
 
+function se_weapon:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_weapon.STATE_Write(self, stpk)
+end
+
 class "se_weapon_shotgun" (cse_alife_item_weapon_shotgun)
 function se_weapon_shotgun:__init (section) super (section)
 	self.secret_item = false
@@ -117,6 +160,19 @@ function se_weapon_shotgun:can_switch_online()
 		return false
 	end
 	return cse_alife_item_weapon_shotgun.can_switch_online(self)
+end
+function se_weapon_shotgun:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_weapon_shotgun.STATE_Write(self, stpk)
 end
 
 class "se_weapon_automatic_shotgun" (cse_alife_item_weapon_auto_shotgun)
@@ -143,10 +199,24 @@ function se_weapon_automatic_shotgun:can_switch_online()
 	end
 	return cse_alife_item_weapon_auto_shotgun.can_switch_online(self)
 end
+function se_weapon_automatic_shotgun:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_weapon_auto_shotgun.STATE_Write(self, stpk)
+end
 
 class "se_weapon_magazined" (cse_alife_item_weapon_magazined)
 function se_weapon_magazined:__init (section) super (section)
 	self.secret_item = false
+	self.dynamic_name = ""
 end
 function se_weapon_magazined:on_register()
 	cse_alife_item_weapon_magazined.on_register( self )
@@ -167,6 +237,19 @@ function se_weapon_magazined:can_switch_online()
 		return false
 	end
 	return cse_alife_item_weapon_magazined.can_switch_online(self)
+end
+function se_weapon_magazined:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_weapon_magazined.STATE_Write(self, stpk)
 end
 
 class "se_weapon_magazined_w_gl" (cse_alife_item_weapon_magazined_w_gl)
@@ -193,7 +276,19 @@ function se_weapon_magazined_w_gl:can_switch_online()
 	end
 	return cse_alife_item_weapon_magazined_w_gl.can_switch_online(self)
 end
-
+function se_weapon_magazined_w_gl:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_weapon_magazined_w_gl.STATE_Write(self, stpk)
+end
 -- Items -----------------------------------------------------------------------
 class "se_item"	(cse_alife_item)
 function se_item:__init (section) super (section)
@@ -219,6 +314,19 @@ function se_item:can_switch_online()
 	end
 	return cse_alife_item.can_switch_online(self)
 end
+function se_item:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item.STATE_Write(self, stpk)
+end
 
 class "se_item_torch" (cse_alife_item_torch)
 function se_item_torch:__init (section) super (section)
@@ -243,6 +351,19 @@ function se_item_torch:can_switch_online()
 		return false
 	end
 	return cse_alife_item_torch.can_switch_online(self)
+end
+function se_item_torch:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_torch.STATE_Write(self, stpk)
 end
 
 --' ФИзобъекты
@@ -271,6 +392,20 @@ function se_physic:can_switch_online()
 	return cse_alife_object_physic.can_switch_online(self)
 end
 
+function se_physic:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_object_physic.STATE_Write(self,stpk)
+end
+
 class "se_lamp" (cse_alife_object_hanging_lamp)
 function se_lamp:__init (section) super (section)
 	self.secret_item = false
@@ -296,6 +431,19 @@ function se_lamp:can_switch_online()
 	return cse_alife_object_hanging_lamp.can_switch_online(self)
 end
 
+function se_lamp:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_object_hanging_lamp.STATE_Write(self,stpk)
+end
 
 
 
@@ -323,6 +471,20 @@ function se_ammo:can_switch_online()
 	end
 	return cse_alife_item_ammo.can_switch_online(self)
 end
+function se_ammo:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_item_ammo.STATE_Write(self, stpk)
+end
+
 -- GRENADES --------------------------------------------------------------------------------------------------------------------------
 class "se_grenade" (cse_alife_item_grenade)
 function se_grenade:__init (section) super (section)
@@ -395,6 +557,20 @@ function se_invbox:can_switch_online()
 		return false
 	end
 	return cse_alife_inventory_box.can_switch_online(self)
+end
+
+function se_invbox:STATE_Write(stpk)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(stpk)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,stpk)
+			self.repack = nil
+		end
+	end
+	cse_alife_inventory_box.STATE_Write(self,stpk)
 end
 
 -- EXPLOSIVE -------------------------------------------------------------------------------------------------------------------------

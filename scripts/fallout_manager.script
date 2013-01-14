@@ -46,7 +46,7 @@ function FalloutManager:__init()
 	self.atmosfear=atmosfear.get_atmosfear()
 	self.surge_manager=surge_manager.get_surge_manager()
 	--self.debugMessages=debug_ui.get_debug_ui():create_elements(20)
-	
+
 	self.effector_set=false
 	self.fallout_sound 	= false
 	self.fallout_in_progress=false
@@ -54,7 +54,7 @@ function FalloutManager:__init()
 	self.finished = true
 	self.phase=nil
 	self.loaded = false
-	
+
 	self.ini = ini_file("misc\\surge_manager.ltx")
 	self.updateFactor=5
 	self.powerFactor=1360
@@ -69,7 +69,7 @@ function FalloutManager:__init()
 	self.maxLengthTime=30*60
 	self.fadeTime=10*60
 	self.fadeFactor=0
-	
+
 	self.nextFalloutIn=math.random(self.minDelayTime, self.maxDelayTime)
 	self.falloutLength=math.random(self.minLengthTime, self.maxLengthTime)
 	self.inited_time = game.get_game_time()
@@ -81,15 +81,15 @@ function FalloutManager:__init()
 	self.fallout_message = ""
 	self.fallout_task_sect = ""
 	self.finished = false
-	self.fallout_in_progress=false	
+	self.fallout_in_progress=false
 	self.falloutType="rad"
-	self.geiger_sounds={	geiger_1 = sound_object("detectors\\geiger_1"), 
-							geiger_2 = sound_object("detectors\\geiger_2"), 
-							geiger_3 = sound_object("detectors\\geiger_3"), 
-							geiger_4 = sound_object("detectors\\geiger_4"), 
-							geiger_5 = sound_object("detectors\\geiger_5"), 
-							geiger_6 = sound_object("detectors\\geiger_6"), 
-							geiger_7 = sound_object("detectors\\geiger_7"), 
+	self.geiger_sounds={	geiger_1 = sound_object("detectors\\geiger_1"),
+							geiger_2 = sound_object("detectors\\geiger_2"),
+							geiger_3 = sound_object("detectors\\geiger_3"),
+							geiger_4 = sound_object("detectors\\geiger_4"),
+							geiger_5 = sound_object("detectors\\geiger_5"),
+							geiger_6 = sound_object("detectors\\geiger_6"),
+							geiger_7 = sound_object("detectors\\geiger_7"),
 							geiger_8 = sound_object("detectors\\geiger_8")
 							}
 end
@@ -105,7 +105,7 @@ function FalloutManager:start()
 			self.falloutType="rad"
 		else
 			self.falloutType="acid"
-		end	
+		end
 		self.finished = false
 		self.fallout_in_progress=true
 		self.inited_time_sec = game.get_game_time()
@@ -142,12 +142,12 @@ function FalloutManager:finish()
 	if self.atmosfear.opt_fallout_task=="give" and self.atmosfear.opt_enable_fallout==1 then
 		db.actor:give_game_news("end_fallout_"..self.falloutType.."_message_caption", "end_fallout_"..self.falloutType.."_message", "ui_inGame2_Fallout_"..self.falloutType, 0, 10000)
 	end
-	
+
 	self.phase=nil
 	self.fadeFactor=0
 	self.inited_time=game.get_game_time()
 	--self.atmosfear.debugMessages[5]:SetText("Fallout ended because of no rain.")
-	
+
 	-- end sound
 	if self.fallout_sound then
 		xr_sound.stop_sound_looped(db.actor:id(), "fallout_acid_rain")
@@ -181,7 +181,7 @@ function FalloutManager:update()
 			--self.atmosfear.debugMessages[6]:SetText("opt_enable_fallout="..tostring(self.atmosfear.opt_enable_fallout)..", is_started("..tostring(is_started())..")")
 			--self.atmosfear.debugMessages[7]:SetText("opt_enable_psi_storm="..tostring(self.atmosfear.opt_enable_psi_storm)..", is_started("..tostring(psi_storm_manager.is_started())..")")
 		end
-		if diff < 0 then 
+		if diff < 0 then
 			if level.rain_factor() > 0.001 then
 				self.phase="fadein"
 				self.inited_time=game.get_game_time()
@@ -190,31 +190,31 @@ function FalloutManager:update()
 				--self.atmosfear.debugMessages[1]:SetText("Fallout can begin but waiting for rain")
 			end
 			return
-		end			
+		end
 	elseif self.phase=="fadein" then
 		local diff = math.floor(self.fadeTime - g_time:diffSec(self.inited_time))
 		self.fadeFactor = (self.fadeTime - diff) / self.fadeTime
 		--self.debugMessages[2]:SetText("fadeFactor="..tostring(self.fadeFactor))
-		if diff < 0 then 
+		if diff < 0 then
 			self.fadeFactor=1
 			self.phase="fallout"
 			self.inited_time=game.get_game_time()
 			self.falloutLength=math.random(self.minLengthTime, self.maxLengthTime)
 			--self.atmosfear.debugMessages[2]:SetText("Fallout at full scale")
-		end			
+		end
 	elseif self.phase=="fallout" then
 		local diff = math.floor(self.falloutLength - g_time:diffSec(self.inited_time))
 		--self.atmosfear.debugMessages[3]:SetText("Fallout ends in "..tostring(diff).." seconds")
-		if diff < 0 then 
+		if diff < 0 then
 			self.phase="fadeout"
 			self.inited_time=game.get_game_time()
 			--self.atmosfear.debugMessages[3]:SetText("Main fallout ended. Fading out.")
-		end	
+		end
 	elseif self.phase=="fadeout" then
 		local diff = math.floor(self.fadeTime - g_time:diffSec(self.inited_time))
 		self.fadeFactor = diff / self.fadeTime
 		--self.debugMessages[4]:SetText("fadeFactor="..tostring(self.fadeFactor))
-		if diff < 0 then 
+		if diff < 0 then
 			self.phase=nil
 			self.fadeFactor=0
 			self.inited_time=game.get_game_time()
@@ -222,7 +222,7 @@ function FalloutManager:update()
 			self.maxDelayTime			= self.atmosfear.opt_fallout_freq*3600
 			self.nextFalloutIn=math.random(self.minDelayTime, self.maxDelayTime)
 			--self.atmosfear.debugMessages[5]:SetText("Fallout ended.")
-		end	
+		end
 	end
 	--self.fadeFactor=1
 	local radiationPower = level.rain_factor()/self.powerFactor*self.fadeFactor
@@ -232,14 +232,14 @@ function FalloutManager:update()
 	--self.debugMessages[3]:SetText("db.actor.radiation="..db.actor.radiation)
 	--self.debugMessages[4]:SetText("radiationPower="..radiationPower)
 	--self.debugMessages[9]:SetText("hitPower="..hitPower)
-	
-	
+
+
 	if hitPower>self.powerThreshold then
 		if self.fallout_in_progress==false then
 			self:start()
 			return
 		else
-			if self.loaded then 
+			if self.loaded then
 				self:start()
 			end
 		-- main loop
@@ -248,7 +248,7 @@ function FalloutManager:update()
 				self:init_fallout_covers()
 				return
 			end
-			
+
 			local PPEfactor
 			if cover==nil or not(db.storage[cover].object:inside(db.actor:position())) then
 				--PPEfactor = level.rain_factor()-self.powerThreshold*self.powerFactor
@@ -259,7 +259,7 @@ function FalloutManager:update()
 				PPEfactor = 0.002
 				self:displayIndicators(0)
 			end
-			currentPPEfactor = currentPPEfactor+(PPEfactor - currentPPEfactor) * 0.01			
+			currentPPEfactor = currentPPEfactor+(PPEfactor - currentPPEfactor) * 0.01
 			--self.debugMessages[7]:SetText("PPEfactor="..PPEfactor)
 			--self.debugMessages[8]:SetText("currentPPEfactor="..currentPPEfactor)
 			if self.fallout_sound then
@@ -270,8 +270,8 @@ function FalloutManager:update()
 			if(self.effector_set) then
 				level.set_pp_effector_factor(666,currentPPEfactor)
 			end
-			
-			
+
+
 			local diff_sec = math.ceil(game.get_game_time():diffSec(self.inited_time_sec)/self.updateFactor)
 			--self.atmosfear.debugMessages[1]:SetText("diff_sec="..tostring(diff_sec*self.updateFactor))
 			if(prev_sec~=diff_sec) then
@@ -520,7 +520,7 @@ end
 
 
 
-function FalloutManager:geigerSound(hitPower) 
+function FalloutManager:geigerSound(hitPower)
 	local delay = ((0.8-hitPower)*1000)
 	local rnd=math.ceil((math.random(8000-1)+1)/1000)
 	local snd_obj=self.geiger_sounds['geiger_'..tostring(rnd)]
@@ -540,7 +540,7 @@ function FalloutManager:geigerSound(hitPower)
 		--xr_sound.set_sound_play(db.actor:id(), "fallout_geiger_sound")
 		currentTime=t
 	end
-	
+
 	--self.debugMessages[8]:SetText("time="..t)
 	--xr_sound.set_sound_play(db.actor:id(), "geiger_sound")
 end
@@ -560,7 +560,7 @@ function FalloutManager:displayIndicators(power)
 	end
 	local indikName="atm_indik_"..indikType.."_"..tostring(indik)..aspectRatio
 	local currentIndikName="atm_indik_"..indikType.."_"..tostring(currentIndik)..aspectRatio
-	
+
 	--remove indik if 0
 	if not indik and currentIndik~=nil then
 		local hudIndikRem = hud:GetCustomStatic(currentIndikName)
@@ -570,7 +570,7 @@ function FalloutManager:displayIndicators(power)
 		currentIndik=nil
 		return
 	end
-	-- display different indik 
+	-- display different indik
 	if currentIndik~=indik then
 		-- first remove existing one
 		if currentIndik~=nil then
@@ -586,9 +586,9 @@ function FalloutManager:displayIndicators(power)
 		end
 	end
 	--self.atmosfear.debugMessages[19]:SetText("indik="..currentIndikName)
-	
-	
-	
+
+
+
 end
 
 
@@ -613,7 +613,7 @@ end
 
 function FalloutManager:save(packet)
 	set_save_marker(packet, "save", false, "Fallout")
-	utils.w_CTime(packet, self.inited_time)
+	utils.w_CTime(packet, self.inited_time,"fallout_manager")
 	packet:w_bool(self.finished)
 	packet:w_bool(self.fallout_in_progress)
 	if(self.fallout_in_progress) then
@@ -623,7 +623,7 @@ function FalloutManager:save(packet)
 		packet:w_stringZ(self.fallout_message)
 		packet:w_stringZ(self.fallout_task_sect)
 		local last_save_time = game.get_game_time()
-		utils.w_CTime(packet, last_save_time)
+		utils.w_CTime(packet, last_save_time,"fallout_manager")
 	end
 	packet:w_u32(self.nextFalloutIn)
 	packet:w_u32(self.falloutLength)
@@ -632,7 +632,7 @@ end
 
 function FalloutManager:load(packet)
 	set_save_marker(packet, "load", false, "Fallout")
-	self.inited_time = utils.r_CTime(packet)
+	self.inited_time = utils.r_CTime(packet,"fallout_manager")
 	self.finished = packet:r_bool()
 	self.fallout_in_progress = packet:r_bool()
 	if(self.fallout_in_progress) then
@@ -641,7 +641,7 @@ function FalloutManager:load(packet)
 		self.task_given = packet:r_bool()
 		self.fallout_message = packet:r_stringZ()
 		self.fallout_task_sect = packet:r_stringZ()
-		local last_save_time = utils.r_CTime(packet)
+		local last_save_time = utils.r_CTime(packet,"fallout_manager")
 		local diff=math.abs(game.get_game_time():diffSec(last_save_time))
 		local Y, M, D, h, m, s, ms = 0, 0, 0, 0, 0, 0, 0
 		Y, M, D, h, m, s, ms = self.inited_time:get(Y, M, D, h, m, s, ms)

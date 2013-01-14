@@ -236,6 +236,45 @@ function cmd.surge(me,txt,owner,p)
 	end
 end
 
+-- PsiStorm
+function cmd.psi_storm(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[start|stop]")
+	if not (wrd) then return end
+
+	local sm = psi_storm_manager and psi_storm_manager.get_psi_storm_manager()
+	if not (sm) then return "No psi_storm manager!" end
+
+	if (wrd == "start") then
+		sm:start(true)
+		return "psi_storm:= started"
+	elseif (wrd == "stop") then
+		sm:end_surge(true)
+		return "psi_storm:= ended"
+	else
+		return "psi_storm:= wrong argument passed."
+	end
+end
+
+-- Fallout
+function cmd.fallout(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[start|stop]")
+	if not (wrd) then return end
+
+	local sm = fallout_manager and fallout_manager.get_fallout_manager()
+	if not (sm) then return "No fallout manager!" end
+
+	if (wrd == "start") then
+		sm:start(true)
+		return "fallout:= started"
+	elseif (wrd == "stop") then
+		sm:end_surge(true)
+		return "fallout:= ended"
+	else
+		return "fallout:= wrong argument passed."
+	end
+end
+
+
 -- Find
 function cmd.find(me,txt,owner,p)
 	local wrd = first_word(me,txt,owner,"<name>")

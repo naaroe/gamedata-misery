@@ -1,0 +1,757 @@
+----------------------
+-- axr_dynamic_spawn
+-- Alundaio
+
+
+-- Credit: Barin
+local m_classes =
+{
+	["S_ACTOR"]  = "cse_alife_actor", -- actor (CS, COP)
+
+	["AI_STL_S"] = "cse_alife_stalker", -- stalker (SOC, CS, COP)
+
+	["SM_BLOOD"] = "se_monster", -- bloodsucker (SOC, CS, COP)
+	["SM_BOARW"] = "se_monster", -- boar (SOC, CS, COP)
+	["SM_BURER"] = "se_monster", -- burer (SOC, CS, COP)
+	["SM_CAT_S"] = "se_monster", -- cat (SOC, CS)
+	["SM_CHIMS"] = "se_monster", -- chimera (SOC, CS, COP)
+	["SM_CONTR"] = "se_monster", -- controller (SOC, CS, COP)
+	["AI_CROW"]  = "cse_alife_creature_abstract", --"cse_alife_creature_crow", -- crow (SOC, CS, COP)
+	["SM_DOG_S"] = "se_monster", -- dog (SOC, CS, COP)
+	["SM_FLESH"] = "se_monster", -- flesh (SOC, CS, COP)
+	["SM_IZLOM"] = "se_monster", -- izlom (SOC, CS)
+	["SM_GIANT"] = "se_monster", -- pseudogigant (SOC, CS, COP)
+	["AI_PHANT"] = "cse_alife_creature_abstract", --"cse_alife_creature_phantom", -- phantom (SOC, CS, COP)
+	["SM_POLTR"] = "se_monster", -- poltergeist (SOC, CS, COP)
+	["SM_P_DOG"] = "se_monster", -- pseudodog (SOC, CS, COP)
+	["SM_DOG_P"] = "se_monster", -- psy dog (SOC, CS, COP)
+	["SM_DOG_F"] = "se_monster", -- psy dog phantom (SOC, CS, COP)
+	["AI_RAT"]   = "se_monster", -- rat (SOC, CS)
+	["SM_SNORK"] = "se_monster", -- snork (SOC, CS, COP)
+	["SM_TUSHK"] = "se_monster", -- tushkano (SOC, CS, COP)
+	["SM_ZOMBI"] = "se_monster", -- zombie (SOC, CS)
+
+	["C_HLCP_S"] = "cse_alife_helicopter", -- helicopter (SOC, CS, COP)
+	["SCRPTCAR"] = "cse_alife_car", -- m_car (SOC, CS, COP)
+
+	["ARTEFACT"] = "cse_alife_item", --"cse_alife_item_artefact", -- artefact (SOC, CS, COP)
+	["SCRPTART"] = "cse_alife_item", --"cse_alife_item_artefact", -- artefact (SOC, CS, COP)
+
+	["AI_GRAPH"] = "cse_alife_graph_point", -- graph_point (SOC, CS, COP)
+
+	["ON_OFF_S"] = "cse_alife_online_offline_group", -- online_offline_group (COP)
+
+	["LVL_CHNG"] = "cse_alife_level_changer", -- level_changer (SOC, CS, COP)
+	["SCRIPTZN"] = "cse_alife_space_restrictor", -- script_zone (SOC, CS, COP); sim_faction (COP)
+	["Z_TEAMBS"] = "cse_alife_team_base_zone", -- zone_team_base (SOC, CS, COP)
+	["SPC_RS_S"] = "cse_alife_space_restrictor", -- space_restrictor (SOC, CS, COP); anomal_zone (CS, COP); camp_zone (COP)
+	["SMRT_C_S"] = "cse_alife_smart_cover", -- smart_cover (CS, COP)
+	["SMRTTRRN"] = "se_smart_terrain", -- smart_terrain (SOC, CS, COP)
+
+	["II_ATTCH"] = "cse_alife_item", -- attachable_item (SOC, CS, COP)
+	["II_BTTCH"] = "cse_alife_item", -- new_attachable_item (SOC, CS, COP)
+
+	["II_DOC"]   = "cse_alife_item_document", -- document (SOC, CS, COP)
+
+	["SO_HLAMP"] = "cse_alife_object_hanging_lamp", -- lights_hanging_lamp, lights_signal_light (COP)
+	["O_SEARCH"] = "cse_alife_object_projector", -- search_light (SOC, CS, COP)
+	["TORCH_S"]  = "cse_alife_item_torch", -- device_torch (SOC, CS, COP)
+
+	["O_BRKBL"]  = "cse_alife_object_breakable", -- breakable_object (SOC, CS, COP)
+	["O_CLMBL"]  = "cse_alife_object_climable", -- climable_object (SOC, CS, COP)
+
+	["O_PHYS_S"] = "cse_alife_object_physic", -- physic_object (SOC, CS, COP)
+	["O_DSTR_S"] = "cse_alife_object_physic", -- physic_destroyable_object, physic_door (COP)
+	["P_SKELET"] = "cse_alife_ph_skeleton_object", -- ph_skeleton_object (SOC, CS, COP)
+
+	["S_INVBOX"] = "cse_alife_inventory_box", -- inventory_box (COP)
+
+	["DET_SIMP"] = "cse_alife_item", --"cse_alife_item_detector", -- detector_simple (COP)
+	["DET_ADVA"] = "cse_alife_item", --"cse_alife_item_detector", -- detector_advanced (COP)
+	["DET_ELIT"] = "cse_alife_item", --"cse_alife_item_detector", -- detector_elite (COP)
+	["DET_SCIE"] = "cse_alife_item", --"cse_alife_item_detector", -- detector_scientific (COP)
+
+	["E_STLK"]   = "cse_alife_item", -- outfit (SOC, CS, COP)
+	["E_HLMET"]  = "cse_alife_item_helmet", -- helmet (COP)
+
+	["II_BANDG"] = "cse_alife_item", -- bandage (SOC, CS)
+	["II_MEDKI"] = "cse_alife_item", -- meds (SOC, CS)
+	["II_ANTIR"] = "cse_alife_item", -- antirad (SOC, CS)
+	["II_BOTTL"] = "cse_alife_item", -- drink (SOC, CS)
+	["II_FOOD"]  = "cse_alife_item", -- edibles (SOC, CS)
+	["S_FOOD"]   = "cse_alife_item", -- edibles/meds (COP)
+
+	["S_PDA"]    = "cse_alife_item_pda", -- device_pda (COP)
+	["D_PDA"]    = "cse_alife_item_pda", -- device_pda (SOC, CS); dev_flash_1, dev_flash_2 (CS, COP)
+
+	["II_BOLT"]  = "cse_alife_item", --"cse_alife_item_bolt", -- bolt (SOC, CS, COP)
+
+	["WP_KNIFE"] = "cse_alife_item_weapon", -- wpn_knife (SOC, CS, COP)
+
+	["WP_LR300"] = "cse_alife_item_weapon",
+	["WP_GROZA"] = "cse_alife_item_weapon",
+	["WP_PM"]    = "cse_alife_item_weapon",
+	["WP_AK74"]  = "cse_alife_item_weapon",
+	["WP_BINOC"] = "cse_alife_item_weapon", -- wpn_binoc (SOC, CS, COP)
+	["WP_RPG7"]  = "cse_alife_item_weapon", -- wpn_rpg7 (SOC, CS, COP)
+	["WP_HPSA"]  = "cse_alife_item_weapon", -- wpn_hpsa (SOC, CS, COP)
+	["WP_VAL"]   = "cse_alife_item_weapon", -- wpn_val (SOC, CS, COP)
+	["WP_SVU"]   = "cse_alife_item_weapon", -- wpn_svu (SOC, CS, COP)
+	["WP_SVD"]   = "cse_alife_item_weapon", -- wpn_gauss, wpn_svd (SOC, CS, COP)
+
+	["W_MOUNTD"] = "cse_alife_mounted_weapon", -- mounted_weapon (SOC, CS, COP)
+	["W_STMGUN"] = "cse_alife_mounted_weapon", -- stationary_mgun (SOC, CS, COP)
+
+	["S_EXPLO"]  = "cse_alife_item", --"cse_alife_item_explosive", -- explosives (COP)
+
+	["WP_BM16"]  = "cse_alife_item_weapon", -- wpn_bm16, wpn_toz34 (SOC, CS, COP)
+	["WP_ASHTG"] = "cse_alife_item_weapon", -- wpn_protecta, wpn_spas12, wpn_wincheaster1300 (COP)
+	["WP_RG6"]   = "cse_alife_item_weapon", -- wpn_rg-6 (SOC, CS, COP)
+
+	["AMMO_S"]   = "cse_alife_item_ammo", -- ammo (COP)
+	["S_OG7B"]   = "cse_alife_item_ammo", -- ammo_og-7b (COP)
+	["S_VOG25"]  = "cse_alife_item_ammo", -- ammo_vog-25 (COP)
+	["S_M209"]   = "cse_alife_item_ammo", -- ammo_m209 (COP)
+
+	["G_F1_S"]   = "cse_alife_item", --"cse_alife_item_grenade", -- grenade_f1, grenade_gd-05 (COP)
+	["G_RGD5_S"] = "cse_alife_item", --"cse_alife_item_grenade", -- grenade_rgd5 (COP)
+
+	["WP_SCOPE"] = "cse_alife_item", -- wpn_addon_scope, wpn_addon_scope_susat (SOC, CS, COP)
+	["WP_SILEN"] = "cse_alife_item", -- wpn_addon_silencer (COP)
+	["WP_GLAUN"] = "cse_alife_item", -- wpn_addon_grenade_launcher, wpn_addon_grenade_launcher_m203 (COP)
+
+	["ZS_MBALD"] = "cse_alife_anomalous_zone", -- buzz, zharka_static, witches_galantine, mosquito_bald (SOC, CS, COP); zone_mine_* (CS, COP)
+	["ZS_GALAN"] = "cse_alife_anomalous_zone", -- zone_gravi_zone (SOC, CS, COP)
+	["ZS_MINCE"] = "cse_alife_anomalous_zone", -- zone_mincer (SOC, CS, COP)
+	["ZS_RADIO"] = "cse_alife_anomalous_zone", -- zone_field_* (COP)
+	["ZS_TORRD"] = "se_zone_torrid", -- fireball_zone, fireball_electric_zone, fireball_acidic_zone (COP)
+	["ZS_BFUZZ"] = "se_zone_visual", -- zone_burning_fuzz (SOC, CS, COP)
+
+	["Z_MBALD"]  = "cse_alife_anomalous_zone", -- zone_teleport, zone_mine_field (SOC, CS, COP)
+	["Z_RADIO"]  = "cse_alife_anomalous_zone", -- zone_radioactive (SOC, CS, COP); zone_field_* (CS)
+	["Z_CFIRE"]  = "cse_alife_anomalous_zone", -- campfire (CS, COP)
+	["Z_NOGRAV"] = "cse_alife_anomalous_zone", -- zone_no_gravity (SOC, CS, COP)
+}
+
+secret_stashes = {}
+
+function on_game_start()
+	callback_register("on_game_load",on_game_load)
+	callback_register("actor_on_update",actor_on_update)
+	callback_register("actor_on_item_take_from_box",actor_on_item_take_from_box)
+	callback_register("actor_on_item_take",actor_on_item_take)
+end
+
+ini = ini_file("dynamic_spawn.ltx")
+local dynamic = {}
+local on_info_sections
+function on_game_load()
+	local file = io.open("gamedata\\configs\\dynamic_spawn.ltx","r")
+	if not (file) then
+		return
+	end
+
+
+	local data = file:read("*all")
+	local sections = {}
+	local ltx,ltx_data
+
+	-- collect all sections from #include configs
+	for fname in string.gmatch(data,[[%"(.-)%"]]) do
+		ltx = io.open("gamedata\\configs\\"..fname,"r")
+		if (ltx) then
+			ltx_data = ltx:read("*all")
+			for sec in string.gmatch(ltx_data,"%[(.-)%]") do
+				if (ini:line_exist(sec,"on_info")) then
+					if not (on_info_sections) then
+						on_info_sections = {}
+					end
+					table.insert(on_info_sections,sec)
+				else
+					table.insert(sections,sec)
+				end
+				--alun_utils.printf("section %s",sec)
+			end
+			ltx:close()
+		end
+	end
+
+	-- collect all sections from main spawn config
+	for sec in string.gmatch(data,"%[(.-)%]") do
+		if (ini:line_exist(sec,"on_info")) then
+			if not (on_info_sections) then
+				on_info_sections = {}
+			end
+			table.insert(on_info_sections,sec)
+		else
+			table.insert(sections,sec)
+		end
+		--alun_utils.printf("section %s",sec)
+	end
+
+	file:close()
+
+	local sor = story_objects.get_story_objects_registry()
+	local sec,section,pos,lvid,gvid,lvl,se_obj
+	local data,t,disabled
+	for i=1, #sections do
+		sec = sections[i]
+
+		if not (sor:get(sec)) then
+			t = alun_utils.collect_section(ini,sec,true)
+
+			disabled = alun_utils.read_from_ini(ini,sec,"dont_spawn","string",nil)
+			disabled = disabled and xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"dont_spawn",sec,disabled))
+
+			if (disabled ~= "true") then
+				section = t.section
+				pos = alun_utils.string_to_vector(t.position)
+
+				lvid = tonumber(t.level_vertex_id)
+				gvid = tonumber(t.game_vertex_id)
+
+				if (section and pos and lvid and gvid) then
+					se_obj = alife():create(section,pos,lvid,gvid)
+					sor:register(se_obj.id,sec,nil,true)
+
+					-- Keep track of objects marked secret
+					if (t.secret == "true" and secret_stashes[sec] ~= false) then
+						secret_stashes[sec] = true
+					end
+
+					-- Repack abstract properties
+					se_obj.repack = {}
+					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+
+					-- Alter packet properties
+					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
+					if (class and m_classes[class] and dynamic[m_classes[class]]) then
+						dynamic[m_classes[class]](se_obj,t,sec)
+
+						local pid
+						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
+							pid = se_obj.id
+						end
+
+						-- Spawn supplemental items
+						local i = 1
+						local itm
+						local sysini = system_ini()
+						local sim = alife()
+						while t["item"..i] do
+							itm = alun_utils.str_explode(t["item"..i],",")
+							if (itm[1] and sysini:section_exist(itm[1])) then
+								for n=1,itm[2] and tonumber(itm[2]) or 1 do
+									if (pid) then
+										sim:create(itm[1],se_obj.position,0,0,pid)
+									else
+										sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+									end
+								end
+							end
+							i = i + 1
+						end
+					end
+
+					-- Set Map Spot
+					if (t.map_spot) then
+						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
+					end
+
+					alun_utils.printf("after create %s",se_obj:name())
+				else
+					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
+				end
+			end
+		end
+	end
+end
+
+local tmr
+function actor_on_update()
+	if not (on_info_sections) then
+		return
+	end
+
+	local tg = time_global()
+
+	if not (tmr) then
+		tmr = 0
+	end
+
+	if (tg > tmr) then
+		tmr = tg + 5000
+		return
+	end
+
+	local sor = story_objects.get_story_objects_registry()
+	local sec,section,pos,lvid,gvid,lvl,se_obj
+	local data,t,enable
+	for i=1, #on_info_sections do
+		sec = on_info_sections[i]
+		if not (sor:get(sec)) then
+			enable = alun_utils.read_from_ini(ini,sec,"on_info","string",nil)
+			enable = enable and xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"on_info",sec,enable))
+
+			if (enable == "true") then
+				section = t.section
+				pos = alun_utils.string_to_vector(t.position)
+
+				lvid = tonumber(t.level_vertex_id)
+				gvid = tonumber(t.game_vertex_id)
+
+				if (section and pos and lvid and gvid) then
+					se_obj = alife():create(section,pos,lvid,gvid)
+					sor:register(se_obj.id,sec,nil,true)
+
+					-- Keep track of objects marked secret
+					if (t.secret == "true" and secret_stashes[sec] ~= false) then
+						secret_stashes[sec] = true
+					end
+
+					-- Repack abstract properties
+					se_obj.repack = {}
+					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+
+					-- Alter packet properties
+					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
+					if (class and m_classes[class] and dynamic[m_classes[class]]) then
+						dynamic[m_classes[class]](se_obj,t,sec)
+
+
+						local pid
+						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
+							pid = se_obj.id
+						end
+
+						-- Spawn supplemental items
+						local i = 1
+						local itm
+						local sysini = system_ini()
+						local sim = alife()
+						while t["item"..i] do
+							itm = alun_utils.str_explode(t["item"..i],",")
+							if (itm[1] and sysini:section_exist(itm[1])) then
+								for n=1,itm[2] and tonumber(itm[2]) or 1 do
+									sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id,pid)
+								end
+							end
+							i = i + 1
+						end
+					end
+
+					-- Set Map Spot
+					if (t.map_spot) then
+						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
+					end
+
+					alun_utils.printf("after create %s",se_obj:name())
+				else
+					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
+				end
+			end
+		end
+	end
+end
+
+function actor_on_item_take_from_box(box,obj)
+	local sid = story_objects.get_story_objects_registry():get_story_id(box:id())
+	if not (secret_stashes[sid]) then
+		return
+	end
+
+	if (box:is_inv_box_empty()) then
+		local hud = get_hud()
+		hud:HideActorMenu()
+		level.map_remove_object_spot(box:id(), "treasure")
+		--story_objects.get_story_objects_registry():unregister_by_story_id(sid)
+		--alife():release(alife():object(box:id()),true)
+		xr_statistic.inc_founded_secrets_counter()
+		news_manager.send_treasure(1)
+		secret_stashes[sid] = false
+
+		local info = alun_utils.read_from_ini(ini,sid,"secret_info","string",nil)
+		if (info) then
+			give_info(info)
+		end
+	end
+end
+
+function actor_on_item_take(item)
+	local sid = story_objects.get_story_objects_registry():get_story_id(item:id())
+	if not (secret_stashes[sid]) then
+		return
+	end
+
+	level.map_remove_object_spot(item:id(), "treasure")
+	xr_statistic.inc_founded_secrets_counter()
+	news_manager.send_treasure(1)
+	secret_stashes[sid] = false
+
+	local info = alun_utils.read_from_ini(ini,sid,"secret_info","string",nil)
+	if (info) then
+		give_info(info)
+	end
+end
+
+function actor_on_save(se_actor,packet)
+	local num = 0
+	for k,v in pairs(secret_stashes) do
+		num = num + 1
+	end
+	packet:w_u16(num)
+	for k,v in pairs(secret_stashes) do
+		packet:w_stringZ(k)
+		packet:w_bool(v)
+	end
+end
+
+function actor_on_load(se_actor,packet)
+	local num = packet:r_u16()
+	for i=1,num do
+		local k = packet:r_stringZ()
+		local v = packet:r_bool()
+		secret_stashes[k] = v
+	end
+end
+
+last_secret = nil
+function random_secret()
+	local t = {}
+	for k,v in pairs(secret_stashes) do
+		if (v == true) then
+			table.insert(t,k)
+		end
+	end
+
+	-- get random stash not marked, search for next stash not marked if not
+	local index = math.random(#t)
+	local id
+	for i=index,#t do
+		secret = t[i]
+		if (secret) then
+			id = story_objects.get_story_objects_registry():get(secret)
+			if (id and level.map_has_object_spot(id,"treasure") == 0) then
+				news_manager.send_treasure(0)
+				level.map_add_object_spot_ser(id, "treasure", "")
+				last_secret = secret
+				return id
+			end
+		end
+	end
+
+	for i=index,1 do
+		secret = t[i]
+		if (secret) then
+			id = story_objects.get_story_objects_registry():get(secret)
+			if (id and level.map_has_object_spot(id,"treasure") == 0) then
+				news_manager.send_treasure(0)
+				level.map_add_object_spot_ser(id, "treasure", "")
+				last_secret = secret
+				return id
+			end
+		end
+	end
+
+	last_secret = nil
+end
+-------------------------------------------
+-- cse_alife_smart_cover
+-------------------------------------------
+function dynamic.cse_alife_smart_cover(se_obj,t,sec)
+	se_obj.last_description = t.last_description
+	se_obj.loopholes[t.description] = 1
+
+	local data = stpk_utils.get_smart_cover_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.description = t.description
+	data.last_description = t.last_description or t.description
+	if not (data.loopholes) then
+		data.loopholes = {}
+	end
+	data.loopholes[t.description] = 1
+
+	data.enter_min_enemy_distance = tonumber(t.enter_min_enemy_distance) or 0
+	data.exit_min_enemy_distance = tonumber(t.exit_min_enemy_distance) or 0
+	data.is_combat_cover = tonumber(t.is_combat_cover) or 0
+	data.can_fire = tonumber(t.can_fire) or 0
+	stpk_utils.set_smart_cover_data(data,se_obj)
+
+	se_obj.last_description = t.last_description
+	se_obj.loopholes[t.description] = 1
+
+	se_smart_cover.registered_smartcovers[se_obj:name()] = nil
+	se_smart_cover.registered_smartcovers[sec] = se_obj
+end
+
+-------------------------------------------
+-- cse_alife_level_changer
+-------------------------------------------
+function dynamic.cse_alife_level_changer(se_obj,t)
+	local data = stpk_utils.get_level_changer_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.dest_game_vertex_id = tonumber(t.dest_game_vertex_id)
+	data.dest_level_vertex_id = tonumber(t.dest_level_vertex_id)
+	data.dest_position = alun_utils.string_to_vector(t.dest_position)
+	data.dest_direction = t.dest_direction and alun_utils.string_to_vector(t.dest_direction) or vector():set(0,0,0)
+	data.dest_level_name = t.dest_level_name or ""
+	data.dest_graph_point = t.dest_graph_point and t.dest_graph_point or ""
+	data.silent_mode = 1
+
+	-- TO DO: allow shape count larger then 1
+	data.shape_type = t.shape_type and tonumber(t.shape_type) or 1
+	data.center = t.center and alun_utils.string_to_vector(t.center) or vector():set(0,0,0)
+	data.v1 = t.v1 and alun_utils.string_to_vector(t.v1) or vector():set(5,0,0)
+	data.v2 = t.v2 and alun_utils.string_to_vector(t.v2) or vector():set(0,2,0)
+	data.v3 = t.v3 and alun_utils.string_to_vector(t.v3) or vector():set(0,0,5)
+	data.v4 = t.v4 and alun_utils.string_to_vector(t.v4) or vector():set(0,0,0)
+	data.radius = t.radius and tonumber(t.radius) or 10
+	data.shape_count = 1 --t.shape_count and tonumber(t.shape_count) or 1
+	data.restrictor_type = t.restrictor_type and tonumber(t.restrictor_type) or 3
+
+	data.hint = "level_changer_invitation"
+
+	stpk_utils.set_level_changer_data(data,se_obj)
+end
+
+
+-------------------------------------------
+-- cse_alife_space_restrictor
+-------------------------------------------
+function dynamic.cse_alife_space_restrictor(se_obj,t,sec)
+	local data = stpk_utils.get_space_restrictor_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	-- TO DO: allow shape count larger then 1
+	data.shape_type = t.shape_type and tonumber(t.shape_type) or 1
+	data.center = t.center and alun_utils.string_to_vector(t.center) or vector():set(0,0,0)
+	data.v1 = t.v1 and alun_utils.string_to_vector(t.v1) or vector():set(5,0,0)
+	data.v2 = t.v2 and alun_utils.string_to_vector(t.v2) or vector():set(0,2,0)
+	data.v3 = t.v3 and alun_utils.string_to_vector(t.v3) or vector():set(0,0,5)
+	data.v4 = t.v4 and alun_utils.string_to_vector(t.v4) or vector():set(0,0,0)
+	data.radius = t.radius and tonumber(t.radius) or 10
+	data.shape_count = 1 --t.shape_count and tonumber(t.shape_count) or 1
+	data.restrictor_type = t.restrictor_type and tonumber(t.restrictor_type) or 3
+
+	stpk_utils.set_space_restrictor_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_anomalous_zone
+-------------------------------------------
+function dynamic.cse_alife_anomalous_zone(se_obj,t,sec)
+	local data = stpk_utils.get_anom_zone_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	-- TO DO: allow shape count larger then 1
+	data.shape_type = t.shape_type and tonumber(t.shape_type) or 1
+	data.center = t.center and alun_utils.string_to_vector(t.center) or vector():set(0,0,0)
+	data.v1 = t.v1 and alun_utils.string_to_vector(t.v1) or vector():set(5,0,0)
+	data.v2 = t.v2 and alun_utils.string_to_vector(t.v2) or vector():set(0,2,0)
+	data.v3 = t.v3 and alun_utils.string_to_vector(t.v3) or vector():set(0,0,5)
+	data.v4 = t.v4 and alun_utils.string_to_vector(t.v4) or vector():set(0,0,0)
+	data.radius = t.radius and tonumber(t.radius) or 10
+	data.shape_count = 1 --t.shape_count and tonumber(t.shape_count) or 1
+	data.restrictor_type = t.restrictor_type and tonumber(t.restrictor_type) or 3
+
+	data.max_power = t.max_power and tonumber(t.maxpower) or 0
+	data.owner_id = t.owner_id and tonumber(t.owner_id) or data.owner_id
+	data.enabled_time = t.enabled_time and tonumber(t.enabled_time) or data.enabled_time
+	data.disabled_time = t.disabled_time and tonumber(t.disabled_time) or data.disabled_time
+	data.start_time_shift = t.start_time_shift and tonumber(t.start_time_shift) or data.start_time_shift
+
+	data.offline_interactive_radius = 30
+	data.artefact_spawn_count = 32
+	data.artefact_position_offset = 0
+
+	stpk_utils.set_anom_zone_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_object_hanging_lamp_properties
+-------------------------------------------
+function dynamic.cse_alife_object_hanging_lamp_properties(se_obj,t)
+	local data = stpk_utils.get_lamp_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.main_color = t.main_color and tonumber(t.main_color) or data.main_color
+	data.main_brightness = t.main_brightness and tonumber(t.main_brightness) or data.main_brightness
+	data.main_color_animator = t.main_color_animator or data.main_color_animator
+	data.main_range = t.main_range and tonumber(t.main_range) or data.main_range
+	data.light_flags = t.light_flags and tonumber(t.light_flags) or data.light_flags
+	data.startup_animation = t.startup_animation or data.startup_animation
+	data.lamp_fixed_bones = t.lamp_fixed_bones or data.lamp_fixed_bones
+	data.health = t.health and tonumber(t.health) or data.health
+	data.main_virtual_size = t.main_virtual_size and tonumber(t.main_virtual_size) or data.main_virtual_size
+	data.ambient_radius = t.ambient_radius and tonumber(t.ambient_radius) or 5
+	data.ambient_power = t.ambient_power and tonumber(t.ambient_power) or 5
+	data.ambient_texture = t.ambient_texture or data.ambient_texture
+	data.main_texture = t.main_texture or data.main_texture
+	data.main_bone = t.main_bone or data.main_bone
+	data.main_cone_angle = t.main_cone_angle and tonumber(t.main_cone_angle) or data.main_cone_angle
+	data.glow_texture = t.glow_texture or data.glow_texture
+	data.glow_radius = t.glow_radius and tonumber(t.glow_radius) or data.glow_radius
+	data.ambient_bone = t.ambient_bone or data.ambient_bone
+
+	stpk_utils.set_lamp_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_item
+-------------------------------------------
+function dynamic.cse_alife_item(se_obj,t)
+	local data = stpk_utils.get_item_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.condition = t.condition and tonumber(t.condition) or data.condition
+	data.upgrades = t.upgrades or data.upgrades
+
+	stpk_utils.set_item_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_item_document
+-------------------------------------------
+function dynamic.cse_alife_item_document(se_obj,t)
+	local data = stpk_utils.get_item_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.condition = t.condition and tonumber(t.condition) or data.condition
+	data.upgrades = t.upgrades or data.upgrades
+
+	data.info_portion = t.info_portion or data.info_portion
+
+	stpk_utils.set_item_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_item_pda
+-------------------------------------------
+function dynamic.cse_alife_item_pda(se_obj,t)
+	local data = stpk_utils.get_item_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.condition = t.condition and tonumber(t.condition) or data.condition
+	data.upgrades = t.upgrades or data.upgrades
+
+	data.original_owner = t.original_owner and tonumber(t.original_owner) or data.original_owner
+	data.specific_character = t.specific_character or data.specific_character
+	data.info_portion = t.info_portion or data.info_portion
+
+	stpk_utils.set_item_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_item_weapon
+-------------------------------------------
+function dynamic.cse_alife_item_weapon(se_obj,t)
+	local data = stpk_utils.get_weapon_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.condition = t.condition and tonumber(t.condition) or data.condition
+	data.upgrades = t.upgrades or data.upgrades
+
+	data.ammo_current = t.ammo_current and tonumber(t.ammo_current) or data.ammo_current
+	data.ammo_elapsed = t.ammo_elapsed and tonumber(t.ammo_elapsed) or data.ammo_elapsed
+	data.weapon_state = t.weapon_state and tonumber(t.weapon_state) or data.weapon_state
+	data.addon_flags = t.addon_flags and tonumber(t.addon_flags) or data.addon_flags
+	data.ammo_type = t.ammo_type and tonumber(t.ammo_type) or data.ammo_type
+
+	stpk_utils.set_weapon_data(data,se_obj)
+end
+
+-------------------------------------------
+-- cse_alife_helicopter
+-------------------------------------------
+function dynamic.cse_alife_helicopter(se_obj,t)
+	local data = stpk_utils.get_heli_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.motion_name = t.motion_name or [[helicopter\aaa.anm]]
+	data.startup_animation = t.startup_animation or "idle"
+	data.skeleton_name = t.startup_name or "idle"
+	data.engine_sound = t.engine_sound or [[vehicles\helicopter\helicopter]]
+
+	stpk_utils.set_heli_data(data,se_obj)
+end
+
+-------------------------------------------
+-- se_stalker
+-------------------------------------------
+function dynamic.cse_alife_stalker(se_obj,t)
+	local data = stpk_utils.get_stalker_data(se_obj)
+
+	data.money = t.money and tonumber(t.money)
+	data.specific_character = t.specific_character or data.specific_character
+	data.trader_flags = t.trader_flags and tonumber(t.trader_flags) or data.trader_flags
+	data.character_profile = t.character_profile or data.character_profile
+	data.community_index = t.community_index and tonumber(t.community_index) or data.community_index
+	data.rank = t.rank and tonumber(t.rank) or data.rank
+	data.reputation = t.reputation and tonumber(t.reputation) or data.reputation
+	data.character_name = t.character_name or data.character_name
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	stpk_utils.set_stalker_data(data,se_obj)
+end
+
+---------------------------------------------
+-- cse_alife_inventory_box
+---------------------------------------------
+function dynamic.cse_alife_inventory_box(se_obj,t)
+	local data = stpk_utils.get_inv_box_data(se_obj)
+
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
+
+	data.visual_name = t.visual_name or data.visual_name
+	data.visual_flags = t.visual_flags and tonumber(t.visual_flags) or data.visual_flags
+
+	data.unk1_u8 = t.unk1_u8 and tonumber(t.unk1_u8) or data.unk1_u8
+	data.unk2_u8 = t.unk2_u8 and tonumber(t.unk2_u8) or data.unk2_u8
+	data.tip = t.secret == "true" and "Use Stash" or t.tip or data.tip
+
+	stpk_utils.set_inv_box_data(data,se_obj)
+end
+

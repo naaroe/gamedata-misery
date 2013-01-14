@@ -87,9 +87,6 @@ function loot_ui:FillList()
 
 	self.loot = {}
 	itms_manager.loot_mutant(nil,self.clsid,self.loot)
-	local se_obj = alife():object(self.id)
-	se_obj.looted = true
-	xr_corpse_detection.set_valuable_loot(se_obj.id,false)
 
 	local is_there_loot
 	for sec,t in pairs(self.loot) do

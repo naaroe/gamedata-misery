@@ -311,7 +311,7 @@ function action_reach_task_location:initialize()
 	self.dir = vector():set(0, 0, 1)
 	self.on_point = false
 	self.was_reset = false
-	self.time_to_update = time_global () + 1000
+	self.time_to_update = time_global () + 1500
 
 	self.object:set_desired_direction   	()
 	self.object:set_movement_selection_type	(game_object.alifeMovementTypeMask)
@@ -396,17 +396,18 @@ function action_reach_task_location:commander_execute()
 			return
 		end
 
-		self.object:set_path_type           ( game_object.level_path )
+		self.object:set_path_type( game_object.level_path )
 		if not self.object:accessible(pos) then
 			local ttp = vector():set(0,0,0)
 			lv_id = self.object:accessible_nearest(pos, ttp)
 			pos = level.vertex_position(lv_id)
 		end
-		self.object:set_sight				(look.path_dir,nil,0)
+		self.object:set_sight(look.path_dir,nil,0)
 		self.object:set_dest_level_vertex_id(lv_id)
 		self.object:set_desired_position(pos)
 	end
-	update_movement						(squad_target, self.object)
+
+	update_movement(squad_target, self.object)
 	patrols[self.target_id.."_to_"..self.squad_id]:set_command(self.object, self.cur_state, self.formation)
 end
 
@@ -422,7 +423,7 @@ function action_reach_task_location:soldier_execute()
 		squad_target = alife():object(squad.assigned_target_id)
 	end
 
-	self.time_to_update = time_global() + 1000
+	self.time_to_update = time_global() + 1500
 	self.l_vid, self.dir, self.cur_state = patrols[self.target_id.."_to_"..self.squad_id]:get_npc_command(self.object)
 	self.l_vid = utils.send_to_nearest_accessible_vertex(self.object, self.l_vid)
 	local desired_direction = self.dir

@@ -83,8 +83,8 @@ function PsiStormManager:initialize()
 	max_psi_storm_time=self.atmosfear.opt_psi_storm_freq*3600
 	self._delta = math.random(min_psi_storm_time, max_psi_storm_time)
 	self.artifacts = { 	af_electra_flash 		= 0.25,
-						af_dummy_dummy 			= 0.10, 
-						af_ice 					= 0.05, 
+						af_dummy_dummy 			= 0.10,
+						af_ice 					= 0.05,
 						af_electra_moonlight	= 0.45,
 						af_cristall_flower 		= 0.15
 						}
@@ -135,7 +135,7 @@ function PsiStormManager:new_psi_storm_time(reset)
 	min_psi_storm_time		= math.floor(self.atmosfear.opt_psi_storm_freq/2)*3600
 	max_psi_storm_time		= self.atmosfear.opt_psi_storm_freq*3600
 	self._delta 			= math.random(min_psi_storm_time, max_psi_storm_time)
-	
+
 	local g_time = game.get_game_time()
 	local psi_storm_start = math.floor(self._delta - g_time:diffSec(self.last_psi_storm_time))
 	local psi_storm_end = math.floor(self._delta+3600 - g_time:diffSec(self.last_psi_storm_time))
@@ -159,10 +159,10 @@ function PsiStormManager:skip_psi_storm()
 	self.last_psi_storm_time:set(Y, M, D, h, m, s + self.psi_storm_duration, ms)
 
 	self:new_psi_storm_time(false)
-	
+
 	self.started 			= false
 	self.finished 			= true
-	
+
 	self.psi_storm_message 		= ""
 	self.psi_storm_task_sect 	= ""
 	self.task_given 		= false
@@ -183,7 +183,7 @@ function PsiStormManager:finish(manual)
 		v:stop_light()
 		v:stop()
 	end
-	
+
 	self.psi_storm_message 		= ""
 	self.psi_storm_task_sect 	= ""
 	self.task_given 		= false
@@ -206,7 +206,7 @@ function PsiStormManager:finish(manual)
 
 	level.set_time_factor(self.game_time_factor)
 	--self.atmosfear.debugMessages[2]:SetText("level.get_time_factor() = "..tostring(level.get_time_factor()))
-	
+
 	if self.loaded then
 	end
 	--db.actor:give_game_news("end_psi_storm_message_caption", "end_psi_storm_message", "ui_inGame2_psi_storm", 0, 10000)
@@ -326,7 +326,7 @@ function PsiStormManager:update()
 	diff_sec = math.ceil(game.get_game_time():diffSec(self.inited_time)/level.get_time_factor())
 	local actor_pos=db.actor:position()
 	if(prev_sec~=diff_sec) then
-		--self.atmosfear.debugMessages[1]:SetText("dif_sec: "..tostring(diff_sec))		
+		--self.atmosfear.debugMessages[1]:SetText("dif_sec: "..tostring(diff_sec))
 		prev_sec = diff_sec
 		local level_name = level.name()
 		if(level_name=="labx8" or level_name=="jupiter_underground" or self.atmosfear.opt_enable_psi_storm==0) then
@@ -369,7 +369,7 @@ function PsiStormManager:update()
 				--self.atmosfear.debugMessages[2]:SetText("task given at: "..tostring(diff_sec))
 			end
 			-- psi storm main phase -----------------------------------------------------------------------------------------------------------------------------------------
-			if (diff_sec>=40) and (diff_sec<=228) then		
+			if (diff_sec>=40) and (diff_sec<=228) then
 			--self.atmosfear.debugMessages[1]:SetText("dif_sec: "..tostring(diff_sec))
 				if self.next_vortex_at == nil then
 					self.next_vortex_at = diff_sec + math.random(self.vortex_period_min, self.vortex_period_max)
@@ -379,7 +379,7 @@ function PsiStormManager:update()
 					self.next_vortex_at = diff_sec + math.random(self.vortex_period_min, self.vortex_period_max)
 				end
 				--self.atmosfear.debugMessages[3]:SetText("next_vortex_at: "..tostring(self.next_vortex_at))
-					
+
 			end
 			for key,vortex in pairs(self.vortexes) do
 				local life_time=diff_sec-vortex.start_time
@@ -423,7 +423,7 @@ function PsiStormManager:update()
 				--self.lights[key]=nil
 				vortex=nil
 			end
-		
+
 		end
 	end
 	]]--
@@ -451,7 +451,7 @@ end
 function PsiStormManager:vortex()
 	self.vortex_index=self.vortex_index+1
 	local effect=particles_object("crommcruac\\psi_storm_01")
-	local sound=sound_object("anomaly\\psi_storm_01") 
+	local sound=sound_object("anomaly\\psi_storm_01")
 	local actor_pos=db.actor:position()
 	local angle_dec=math.random(0,359)
 	local angle_rad=math.rad(angle_dec)
@@ -491,8 +491,8 @@ function PsiStormManager:spawn_artefact(pos)
 	--af_electra_flash 4000ru, af_dummy_dummy 12000, af_ice 18000, af_electra_moonlight 6000,af_cristall_flower 3000
 	if chance <= artifact_chance then
 		--self.atmosfear.debugMessages[9]:SetText(game.translate_string("st_"..artefact_to_spawn.."_name").." spawned")
-		alife():create(artefact_to_spawn, pos, 0, 0, -1) 
-	else 
+		alife():create(artefact_to_spawn, pos, 0, 0, -1)
+	else
 		--self.atmosfear.debugMessages[9]:SetText("nothing spawned")
 	end
 end
@@ -624,7 +624,7 @@ function PsiStormManager:turn_to_zombie(obj)
 	end
 	alife():release(alife():object(obj.id), true)
 	local section_number = string.sub(section, -1)
-	if section_number=="4" then 
+	if section_number=="4" then
 		zombie_type="sim_default_zombied_4"
 	elseif section_number=="3" then
 		zombie_type="sim_default_zombied_3"
@@ -672,9 +672,9 @@ function PsiStormManager:save(packet)
 	set_save_marker(packet, "save", false, "PsiStorm")
 	packet:w_bool(self.finished)
 	packet:w_bool(self.started)
-	utils.w_CTime(packet, self.last_psi_storm_time)
+	utils.w_CTime(packet, self.last_psi_storm_time, "psi_storm")
 	if(self.started) then
-		utils.w_CTime(packet, self.inited_time)
+		utils.w_CTime(packet, self.inited_time, "psi_storm")
 		packet:w_bool(self.task_given)
 		packet:w_stringZ(self.psi_storm_message)
 		packet:w_stringZ(self.psi_storm_task_sect)
@@ -689,9 +689,9 @@ function PsiStormManager:load(packet)
 	self:initialize()
 	self.finished = packet:r_bool()
 	self.started = packet:r_bool()
-	self.last_psi_storm_time = utils.r_CTime(packet)
+	self.last_psi_storm_time = utils.r_CTime(packet, "psi_storm")
 	if(self.started) then
-		self.inited_time = utils.r_CTime(packet)
+		self.inited_time = utils.r_CTime(packet, "psi_storm")
 		self.task_given = packet:r_bool()
 		self.psi_storm_message = packet:r_stringZ()
 		self.psi_storm_task_sect = packet:r_stringZ()

@@ -90,11 +90,11 @@ luminocity_factor			= 0.5 				; фактор освещения (только для Актёра)
 transparency_threshold	 	= 0.10
 
 [stalker_sound_perceive]
-	weapon					= 2.5; 0.75; 10 коэффициент усиления приоритета\силы звука
+	weapon					= 2; 0.75; 10 коэффициент усиления приоритета\силы звука
 	item					= 0.5; коэффициент усиления приоритета\силы звука
-	npc						= 0.7;1;2 коэффициент усиления приоритета\силы звука
+	npc						= 1;1;2 коэффициент усиления приоритета\силы звука
 	anomaly					= 0.0; коэффициент усиления приоритета\силы звука
-	world					= 0.3; коэффициент усиления приоритета\силы звука
+	world					= 0.2; коэффициент усиления приоритета\силы звука
 
 [stalker_damage]
 default					= 0.5, -1, 0.5
@@ -363,16 +363,16 @@ money							= 5250					; option for ALife Simulator
 going_speed						= 3;2					; option for ALife Simulator
 current_level_going_speed		= 3						; option for ALife Simulator
 search_speed					= 0.5					; option for ALife Simulator
-going_item_detect_probability	= 0.15					; option for ALife Simulator
-search_item_detect_probability	= 0.95					; option for ALife Simulator
+going_item_detect_probability	= 0		;Alundaio gather_item			; option for ALife Simulator
+search_item_detect_probability	= 0		;Alundaio gather_item			; option for ALife Simulator
 max_item_mass					= 10000000.0				; option for ALife Simulator
 inv_max_weight					= 10000000.0				; Допустимый вес инвентори
 MaxHealthValue					= 100				; option for ALife Simulator, range [0..200]
 smart_terrain_choose_interval	= 00:10:00
 
 ;---ONLINE ALIFE-------------------------------------------------------------------
-time_to_search_for_artefacts	= 120000 ; in milliseconds
-distance_to_search_for_artefacts= 100.0	; in meters
+time_to_search_for_artefacts	= 0 ; in milliseconds
+distance_to_search_for_artefacts= 0.0	; in meters
 
 ;---ONLINE-OFFLINE ALIFE-----------------------------------------------------------
 terrain					= 255,255,255,255,0,1
@@ -380,9 +380,9 @@ terrain					= 255,255,255,255,0,1
 
 ;---SOUND-------------------------------------------------------------
 sound_threshold					= 0.08	;Low value = easier to hear object
-self_sound_factor				= 1.0
-self_decrease_quant				= 200	; in milliseconds
-self_decrease_factor			= 1.05			;0.95	; fading factor
+self_sound_factor				= 0.1
+self_decrease_quant				= 250	; in milliseconds
+self_decrease_factor			= 0.95	; fading factor
 killer_clsids					= Z_MINCER,Z_GALANT,ZS_BFUZZ,ZS_MBALD,ZS_GALAN,ZS_MINCE
 sound_perceive_section			= stalker_sound_perceive
 

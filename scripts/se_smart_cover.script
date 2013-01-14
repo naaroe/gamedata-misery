@@ -14,6 +14,16 @@ function se_smart_cover:__init (section) super (section)
 	end
 end
 function se_smart_cover:STATE_Write (packet)
+	if (self.repack) then
+		local data = stpk_utils.get_abstract_data(packet)
+		if (data) then
+			for k,v in pairs(self.repack) do
+				data[k] = v
+			end
+			stpk_utils.set_abstract_data(data,packet)
+			self.repack = nil
+		end
+	end
 	cse_smart_cover.STATE_Write (self, packet)
 	packet:w_stringZ(self.last_description)
 	local n = 0
@@ -75,10 +85,9 @@ end
 function se_smart_cover:on_before_register()
 	cse_smart_cover.on_before_register( self )
 	local name = self:name()
-	local a = string.len(self.id)
-	local b = string.len(name)
-	if (string.sub(name,b-a+1,b) == tostring(self.id)) then
-		name = string.sub(name,0,b-a)
+	if (string.find(name,self.id)) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(self.id)
+		name = story_name or name
 	end
 	registered_smartcovers[name] = self
 end
@@ -95,10 +104,9 @@ end
 function se_smart_cover:on_unregister()
 	unregister_story_object_by_id(self.id)
 	local name = self:name()
-	local a = string.len(self.id)
-	local b = string.len(name)
-	if (string.sub(name,b-a+1,b) == tostring(self.id)) then
-		name = string.sub(name,0,b-a)
+	if (string.find(name,self.id)) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(self.id)
+		name = story_name or name
 	end
 	registered_smartcovers[name] = nil
 	local level_id = game_graph():vertex(self.m_game_vertex_id):level_id()

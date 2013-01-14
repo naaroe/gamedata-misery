@@ -8,14 +8,14 @@ end
 
 function alun_stashes()
 	-- Stash 1
+	--[[
 	local pos = vector():set(434.29071044922,42.37015914917,1.3976941108704)
-	local box1_pos = vector():set(412.80319213867,43.936130523682,1.6001467704773)
 	local stash = alife():create("inv_backpack",pos,1677080,293)
-	alife():create("box_wood_01",box1_pos,1642352,293)
 	create_items("medkit",2,stash.id)
 	create_items("stimpack",2,stash.id)
 	create_items("water_drink",1,stash.id)
 	create_items("itm_alun_journal_1",1,stash.id)
+	--]]
 
 	--[[
 	-- scare 1

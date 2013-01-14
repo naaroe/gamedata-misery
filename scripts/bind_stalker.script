@@ -86,8 +86,6 @@ function actor_binder:net_destroy()
 	level.show_weapon(true)
 	db.del_actor(self.object)
 
-	self.object:set_callback(callback.inventory_info, nil)
-	self.object:set_callback(callback.article_info, nil)
 	self.object:set_callback(callback.on_item_take, nil)
 	self.object:set_callback(callback.on_item_drop, nil)
 	self.object:set_callback(callback.task_state, nil)
@@ -125,7 +123,6 @@ function actor_binder:reinit()
 	self.st = db.storage[npc_id]
 	self.st.pstor = nil
 
-	self.object:set_callback(callback.inventory_info, self.info_callback, self)
 	self.object:set_callback(callback.on_item_take, self.on_item_take, self)
 	self.object:set_callback(callback.on_item_drop, self.on_item_drop, self)
 	self.object:set_callback(callback.trade_sell_buy_item, self.on_trade, self) -- for game stats
@@ -134,6 +131,7 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.use_object, self.use_inventory_item, self)
 end
 ----------------------------------------------------------------------------------------------------------------------
+
 function actor_binder:take_item_from_box(box, item)
 	local box_name = box:name()
 	-- Alundaio
@@ -142,12 +140,6 @@ function actor_binder:take_item_from_box(box, item)
 	-- End Alundaio
 end
 
-----------------------------------------------------------------------------------------------------------------------
-function actor_binder:info_callback(npc, info_id)
-	printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
-	--' Сюжет
-	-- Отметки на карте
-end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
 	if sell_bye == true then
@@ -158,9 +150,6 @@ function actor_binder:on_trade (item, sell_bye, money)
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_trade(item,sell_bye,money) end
 	-- End Alundaio
-end
-----------------------------------------------------------------------------------------------------------------------
-function actor_binder:article_callback(npc, group, name)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
@@ -202,17 +191,6 @@ end
 function actor_binder:use_inventory_item(obj)
 	if(obj) then
 		actor_effects.use_item(alife():object(obj:id()):section_name())
---		if(s_obj) and (s_obj:section_name()=="drug_anabiotic") then
---			xr_effects.disable_ui_only(db.actor, nil)
---			level.add_cam_effector("camera_effects\\surge_02.anm", 10, false, "bind_stalker.anabiotic_callback")
---			level.add_pp_effector("surge_fade.ppe", 11, false)
---			give_info("anabiotic_in_process")
---			_G.mus_vol = get_console():get_float("snd_volume_music")
---			_G.amb_vol = get_console():get_float("snd_volume_eff")
---			get_console():execute("snd_volume_music 0")
---			get_console():execute("snd_volume_eff 0")
---		end
-
 		if postproces_mod then
 			postproces_mod.use_obj(obj)
 		end
@@ -426,11 +404,6 @@ function actor_binder:update(delta)
 	if (itms_manager) then itms_manager.on_actor_update(self,delta) end
 	if (spawn_manager) then spawn_manager.on_actor_update() end
 	-- alundaio
-
-	if spawn_music.load_variable("spawn_music_p_",false)==false then
-	spawn_music.spawn_music_01()
-	spawn_music.save_variable("spawn_music_p_",true)
-	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)
@@ -443,7 +416,7 @@ function actor_binder:save(packet)
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.st.disable_input_time)
+		utils.w_CTime(packet, self.st.disable_input_time,"bind_stalker")
 	end
 	xr_logic.pstor_save_all(self.object, packet)
 	self.weather_manager:save(packet)
@@ -489,13 +462,13 @@ function actor_binder:save(packet)
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.last_detective_achievement_spawn_time)
+		utils.w_CTime(packet, self.last_detective_achievement_spawn_time,"bind_stalker")
 	end
 	if self.last_mutant_hunter_achievement_spawn_time == nil then
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.last_mutant_hunter_achievement_spawn_time)
+		utils.w_CTime(packet, self.last_mutant_hunter_achievement_spawn_time,"bind_stalker")
 	end
 
 	--alundaio
@@ -514,7 +487,7 @@ function actor_binder:load(reader)
 	get_console():execute("g_game_difficulty "..game_difficulty_by_num[game_difficulty])
 	local stored_input_time = reader:r_u8()
 	if stored_input_time == true then
-		self.st.disable_input_time = utils.r_CTime(reader)
+		self.st.disable_input_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	xr_logic.pstor_load_all(self.object, reader)
 	self.weather_manager:load(reader)
@@ -552,11 +525,11 @@ function actor_binder:load(reader)
 
 	local stored_achievement_time = reader:r_bool()
 	if stored_achievement_time == true then
-		self.last_detective_achievement_spawn_time = utils.r_CTime(reader)
+		self.last_detective_achievement_spawn_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	stored_achievement_time = reader:r_bool()
 	if stored_achievement_time == true then
-		self.last_mutant_hunter_achievement_spawn_time = utils.r_CTime(reader)
+		self.last_mutant_hunter_achievement_spawn_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	--alundaio
 	if (axr_main) then axr_main.actor_on_load(self,reader) end
