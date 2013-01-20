@@ -263,6 +263,31 @@ eat_sleepiness				= -0.071
 
 use_sound			= interface\inv_syringe
 
+[caffeine]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine
+inv_name_short		= st_caffeine
+description			= st_caffeine_descr
+
+inv_weight			= 0.001
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 10
+inv_grid_y		= 47
+cost			= 770
+
+boost_time			= 120
+boost_max_weight	= 0.724
+
+boost_power_restore		= 0.0008
+
+eat_alcohol 			= -0.170
+eat_satiety 			= 0.006
+eat_sleepiness				= -0.022
+
+use_sound			= interface\inv_eat_pills
+
 [tetanus]:booster
 $spawn 				= "food and drugs\antirad"
 visual				= dynamics\equipments\medical\rebirth.ogf
@@ -278,9 +303,9 @@ inv_grid_y			= 48
 cost				= 2290
 
 boost_time				= 168
-boost_health_restore	= 0.000055
-boost_radiation_restore	= 0.000068
-boost_bleeding_restore	= 0.000061
+boost_health_restore	= 0.000062
+boost_radiation_restore	= 0.000074
+boost_bleeding_restore	= 0.000067
 
 boost_chemburn_protection 	= 0.00442
 
