@@ -262,6 +262,30 @@ eat_satiety 			= 0.54
 eat_sleepiness				= -0.041
 
 use_sound			= interface\inv_syringe
+[caffeine]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine
+inv_name_short		= st_caffeine
+description			= st_caffeine_descr
+
+inv_weight			= 0.001
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 10
+inv_grid_y		= 47
+cost			= 770
+
+boost_time			= 184
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.029
+
+use_sound			= interface\inv_eat_pills
 
 [tetanus]:booster
 $spawn 				= "food and drugs\antirad"
@@ -284,7 +308,7 @@ boost_bleeding_restore	= 0.000070
 
 boost_chemburn_protection 	= 0.00495
 
-eat_satiety 			= -0.15
+eat_satiety 			= -0.139
 eat_sleepiness			= 0.071
 
 use_sound			= interface\inv_syringe
@@ -303,7 +327,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 8
 inv_grid_y			= 52
-cost				= 2680
+cost				= 3680
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -326,7 +350,7 @@ boost_explosion_immunity	= 0.20
 boost_strike_immunity		= 0.080
 
 eat_alcohol				= -0.22
-eat_satiety				= 0.025
+eat_satiety				= 0.212
 eat_sleepiness				= -0.431
 
 eat_health				= -0.056
@@ -370,7 +394,7 @@ boost_explosion_immunity	= 0.60
 boost_strike_immunity		= 0.35
 
 eat_alcohol				= 0.26
-eat_satiety				= -0.033
+eat_satiety				= -0.254
 eat_sleepiness				= 0.101
 
 eat_health				= -0.058
@@ -414,7 +438,7 @@ boost_explosion_immunity	= 0.99
 boost_strike_immunity		= 0.52
 
 eat_alcohol				= 0.48
-eat_satiety				= -0.039
+eat_satiety				= -0.286
 eat_sleepiness				= 0.136
 
 eat_health				= -0.044
@@ -427,7 +451,7 @@ inv_name			= st_adrenalin
 inv_name_short			= st_adrenalin
 visual				= dynamics\equipments\medical\stim3.ogf
 description			= st_adrenalin_descr
-cost				= 3980
+cost				= 4980
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -451,7 +475,7 @@ boost_explosion_immunity	= 0.32
 boost_strike_immunity		= 0.16
 
 eat_alcohol				= -0.36
-eat_satiety				= 0.05
+eat_satiety				= 0.418
 eat_sleepiness				= -0.446
 
 eat_health				= -0.023
