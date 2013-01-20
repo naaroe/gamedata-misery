@@ -263,6 +263,31 @@ eat_sleepiness				= -0.053
 
 use_sound			= interface\inv_syringe
 
+[caffeine]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine
+inv_name_short		= st_caffeine
+description			= st_caffeine_descr
+
+inv_weight			= 0.001
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 10
+inv_grid_y		= 47
+cost			= 770
+
+boost_time			= 120
+boost_max_weight	= 0.992
+
+boost_power_restore		= 0.0014
+
+eat_alcohol 			= -0.203
+eat_satiety 			= 0.0088
+eat_sleepiness				= -0.037
+
+use_sound			= interface\inv_eat_pills
+
 [tetanus]:booster
 $spawn 				= "food and drugs\antirad"
 visual				= dynamics\equipments\medical\rebirth.ogf
@@ -277,7 +302,7 @@ inv_grid_x			= 10
 inv_grid_y			= 48
 cost				= 2290
 
-boost_time				= 216
+boost_time				= 234
 boost_health_restore	= 0.000102
 boost_radiation_restore	= 0.000096
 boost_bleeding_restore	= 0.000094
@@ -315,7 +340,7 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 798
+boost_time				= 822
 boost_power_restore		= 0.00442
 boost_max_weight	= 6.329
 boost_bleeding_restore	= 0.00026
@@ -359,7 +384,7 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 526
+boost_time				= 576
 boost_power_restore		= -0.0036 ;0.005
 boost_max_weight	= -6.88
 boost_bleeding_restore	= 0.00041

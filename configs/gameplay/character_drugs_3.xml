@@ -28,8 +28,34 @@ roubles					= 4, prob=0.5 \n
 
 bread					= 2, prob=0.003 \n
 breadold				= 2, prob=0.003 \n
-kolbasa					= 1, prob=0.003 \n
-conserva				= 1, prob=0.002 \n
+kolbasa					= 2, prob=0.003 \n
+conserva				= 2, prob=0.002 \n
+protein					= 1, prob=0.002 \n
+
+flask					= 3, prob=0.008 \n
+
+tomato				= 1, prob=0.003 \n
+sausage				= 1, prob=0.003 \n
+corn				= 1, prob=0.003 \n
+beans				= 1, prob=0.002 \n
+chili				= 1, prob=0.002 \n
+salmon				= 1, prob=0.002 \n
+raisins				= 1, prob=0.003 \n
+chocolate			= 1, prob=0.002 \n
+nuts				= 1, prob=0.003 \n
+
+mint				= 1, prob=0.003 \n
+mineral_water			= 2, prob=0.004 \n
+
+caffeine				= 1, prob=0.001 \n
+
+hand_rolling_tobacco		= 1, prob=0.001 \n
+cigar						= 1, prob=0.001 \n
+
+cigarettes_lucky		= 1, prob=0.001 \n
+cigarettes_russian		= 1, prob=0.002 \n
+
+beer					= 1, prob=0.002 \n
 
 vodka					= 1, prob=0.010 \n
 tea						= 1, prob=0.020 \n
@@ -38,7 +64,7 @@ bottle_metal			= 3, prob=0.020 \n
 
 energy_drink			= 1, prob=0.004 \n
 
-water_drink				= 1, prob=0.007 \n
+water_drink				= 2, prob=0.007 \n
 
 vodka_quality			= 1, prob=0.007 \n
 cocaine					= 1, prob=0.005 \n

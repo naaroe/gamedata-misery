@@ -30,6 +30,32 @@ bread					= 2, prob=0.002 \n
 breadold				= 2, prob=0.002 \n
 kolbasa					= 1, prob=0.001 \n
 conserva				= 1, prob=0.001 \n
+protein					= 1, prob=0.001 \n
+
+flask					= 2, prob=0.004 \n
+
+tomato				= 1, prob=0.001 \n
+sausage				= 1, prob=0.001 \n
+corn				= 1, prob=0.001 \n
+beans				= 1, prob=0.001 \n
+chili				= 1, prob=0.001 \n
+salmon				= 1, prob=0.001 \n
+raisins				= 1, prob=0.001 \n
+chocolate			= 1, prob=0.001 \n
+nuts				= 1, prob=0.001 \n
+
+mint				= 1, prob=0.001 \n
+mineral_water			= 1, prob=0.002 \n
+
+caffeine				= 1, prob=0.001 \n
+
+hand_rolling_tobacco		= 1, prob=0.001 \n
+cigar						= 1, prob=0.001 \n
+
+cigarettes_lucky		= 1, prob=0.001 \n
+cigarettes_russian		= 1, prob=0.002 \n
+
+beer					= 1, prob=0.002 \n
 
 vodka					= 1, prob=0.007 \n
 tea						= 1, prob=0.015 \n
@@ -67,7 +93,7 @@ cigar1			= 1, prob=0.01 \n
 cigar2			= 1, prob=0.01 \n
 cigar3			= 1, prob=0.01 \n
 
-porn = 1, prob=0.033 \n
+porn = 1, prob=0.01 \n
 
 shovel_old		= 1, prob=0.005 \n
 ied_rpg			= 1, prob=0.003 \n
