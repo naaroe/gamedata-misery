@@ -15,28 +15,28 @@ sound			= 10000
 visual			= 10000
 
 [danger_object] 							;Ignore distances squared
-grenade 		= 150						;May use condlists from xr_condition
-entity_corpse 	= 0
-entity_attacked = 625
-attacked 		= 22500
+grenade = {=is_heavy_rain} 100, {=is_rain} 225, 400 ;May use condlists from xr_condition
+entity_corpse = 0
+entity_attacked = {=is_dark_night} 625, {=is_heavy_rain} 100, {=is_rain} 400, 900
+attacked = 40000
 bullet_ricochet = 80
-enemy_sound 	= 25
-attack_sound 	= 625
-entity_death 	= 150
-hit				= 22500
-sound			= 22500
-visual			= 22500
+enemy_sound = {=is_heavy_rain} 25, {=is_rain} 40, 125
+attack_sound = {=is_heavy_rain} 300, {=is_rain} 400, 625
+entity_death = {=is_heavy_rain} 10, {=is_rain} 25, 250
+hit = {=is_heavy_rain} 2500, {=is_rain} 4000, 22500
+sound = {=is_heavy_rain} 2500, {=is_rain} 4000, 22500
+visual = {=is_dark_night} 2500, {=is_heavy_rain} 10000, {=is_rain} 16000, 22500
 
 [sound_threshold] ; = inertion,distance,relation   [Relation 0-all, 1-enemies]
 wpn 				= 0,0,0
 wpn_shoot 			= 0,0,1
 wpn_empty			= 0,0,1
 wpn_hit 			= 3000,350,0
-wpn_reload 			= 0,0,1
+wpn_reload 			= 3000,16,1
 mst					= 0,0,1
 mst_die				= 0,0,1
 mst_damage			= 5000,1200,1
-mst_step			= 0,0,1
+mst_step			= 0,0,1 	; 3000,1,1
 mst_talk			= 0,0,1
 mst_attack			= 5000,1500,1
 mst_eat				= 0,0,1
