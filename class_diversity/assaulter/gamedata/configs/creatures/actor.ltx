@@ -118,9 +118,9 @@ transparency_threshold                 = 0.9                                ; 0.
 still_visible_time      = 15000
 
 quick_item_1 = bandage
-quick_item_2 = medkit
-quick_item_3 = medkit_army
-quick_item_4 = medkit_scientic
+quick_item_2 = stimpack
+quick_item_3 = stimpack_army
+quick_item_4 = stimpack_scientic
 
 [actor_immunities_gd_novice]
 burn_immunity 				= 8.6
@@ -167,12 +167,12 @@ explosion_immunity 			= 0.64
 fire_wound_immunity  			= 0.59
 
 [actor_condition]
-satiety_v				= 0.0000175 	;скорость уменьшения сытости со временем
+satiety_v				= 0.0000115 	;скорость уменьшения сытости со временем
 radiation_v				= 0.00002	;скорость уменьшения радиации
 satiety_power_v			= 0.00425		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
 satiety_critical		= 0.1       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
-radiation_health_v		= 0.0016	;0.002     ;уменьшение здоровья при воздействии радиации
+radiation_health_v		= 0.0012	;0.002     ;уменьшение здоровья при воздействии радиации
 morale_v				= 0.0001	;скорость восстановления морали
 psy_health_v			= 0.002 ;0.001		;скорость восстановления psy-здоровья
 alcohol_v				= -0.0008
@@ -188,7 +188,7 @@ wound_incarnation_v		= 0.0042 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления р
 min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
-satiety_v_sleep          	= 0.000014
+satiety_v_sleep          	= 0.0000085
 radiation_v_sleep        	= 0.000017		;0.0003
 satiety_power_v_sleep    	= 0.0001
 satiety_health_v_sleep   = 0.0
