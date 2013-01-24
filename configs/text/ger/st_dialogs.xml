@@ -975,6 +975,7 @@
 	<string id="actor_break_dialog_0">
 		<text>Alright then.</text>
 	</string>
+	<!-- Alundaio -->
 	<string id="dm_dialog_become_companion_greeting">
 		<text>You look like you have a purpose here</text>
 	</string>
@@ -985,7 +986,7 @@
 		<text>Let it all out.</text>
 	</string>
 	<string id="dm_dialog_companion_question_answer_2">
-		<text>Ask someone other lonely guy.</text>
+		<text>Ask some other lonely guy.</text>
 	</string>
 	<string id="dm_dialog_actor_answer_1">
 		<text>Interesting...</text>
@@ -1006,7 +1007,7 @@
 		<text>My friends and I need a little help getting through the zone. Would you mind if we join you?</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_1">
-		<text>Just be focudes on where you aim with those guns then</text>
+		<text>Just focus on where you aim with those guns then</text>
 	</string>
 	<string id="dm_dialog_companion_actor_reply_to_join_2">
 		<text>Fine. But If you die, I'm taking your stuff.</text>
@@ -1072,7 +1073,7 @@
 		<text>I want you to keep your distance.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_stealth">
-		<text>Shhh...get down. Keep quiet.</text>
+		<text>Shhh...get down and keep quiet.</text>
 	</string>
 	<string id="axr_phrase_actor_give_command_stop_stealth">
 		<text>Alright, let's continue as normal.</text>
@@ -1146,7 +1147,7 @@
 	<string id="axr_phrase_friend_companion_answer_join">
 		<text>Sure, sounds like a great idea! Lead the way.</text>
 	</string>
-	<!-- Alundaio -->
+
 	<string id="st_mechanic_query_items">
 		<text>Is any of my equipment ready for pickup?</text>
 	</string>
@@ -1155,5 +1156,32 @@
 	</string>
 		<string id="st_mechanic_repair_not_done">
 		<text>Not yet, check back later.</text>
+	</string>
+	<string id="st_surrender_victim">
+		<text>...I give up.</text>
+	</string>
+	<string id="st_surrender_query_victim_1">
+		<text>Hand over your weapons and give me a piece of vital information - a stash's location, a supply exchange point, an ambush you're planning, whatever, and I'll let you live.</text>
+	</string>
+	<string id="st_surrender_query_victim_2">
+		<text>Here's a medkit, but I'm taking your guns.</text>
+	</string>
+	<string id="st_surrender_query_victim_3">
+		<text>You better leave before I change my mind.</text>
+	</string>
+	<string id="st_surrender_query_victim_4">
+		<text>Hope you don't bleed out.</text>
+	</string>
+	<string id="st_surrender_victim_answer_1">
+		<text>Okay, okay, just don't kill me!</text>
+	</string>
+	<string id="st_surrender_victim_answer_2">
+		<text>Okay, I'll tell you! Just stop waving that thing in my face.</text>
+	</string>
+	<string id="st_surrender_victim_answer_3">
+		<text>Please, man! I will tell you!</text>
+	</string>
+	<string id="st_surrender_victim_answer_4">
+		<text>Go fuck yourself!</text>
 	</string>
 </string_table>
