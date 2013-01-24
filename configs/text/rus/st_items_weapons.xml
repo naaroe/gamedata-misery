@@ -505,13 +505,13 @@
 		<text>TOZ 66 (Silver Sawn off)</text>
 	</string>
 	<string id="st_knife_h">
-		<text>Hunting Knife</text>
+		<text>Basic utility knife</text>
 	</string>
 	<string id="st_knife_m">
 		<text>Military Knife</text>
 	</string>
 	<string id="st_knife_h_descr">
-		<text>A hunting knife, preferred by stalkers in the zone.</text>
+		<text>Basic utility knife, preferred by stalkers in the zone as universal tool. Limited combat usability.</text>
 	</string>
 	<string id="st_knife_m_descr">
 		<text>Standard issue military knife.</text>

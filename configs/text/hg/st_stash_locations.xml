@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<!-- ZATON STASHES -->
+	<string id="st_zat_hiding_place_57">
+		<text>Near the Zaton Ranger Station on a roof. Walk the pipes to get there.</text>
+	</string>
+	<string id="st_zat_hiding_place_58">
+		<text>Inside a chimney within the Burnt Farmstead.</text>
+	</string>
+	<string id="st_zat_hiding_place_59">
+		<text>On the dredge station.</text>
+	</string>
+	<string id="st_zat_hiding_place_60">
+		<text>Hidden on top of the Skadovsk.</text>
+	</string>
+	<string id="st_zat_hiding_place_61">
+		<text>On the giant crane. Use the anomaly on top of that rusty ship where that looney Stalker and his mutant dog live...hehe.</text>
+	</string>
+	<string id="st_zat_hiding_place_62">
+		<text>The roof of the gas station in Zaton.</text>
+	</string>
+	<string id="st_zat_hiding_place_63">
+		<text>Behind a building near the Waste Processing Station.</text>
+	</string>
+	<string id="st_zat_hiding_place_64">
+		<text>Behind a building near the Waste Processing Station.</text>
+	</string>
+	<string id="st_zat_hiding_place_65">
+		<text>Inside the Waste Processing Station.</text>
+	</string>
+	<string id="st_zat_hiding_place_66">
+		<text>East of the Preobrazhensky bridge, hidden in some bushes.</text>
+	</string>
+	<string id="st_zat_hiding_place_67">
+		<text>North of the Burnt Farmstead behind some rocks.</text>
+	</string>
+
+	<!-- JUPITER STASHES -->
+
+	<!-- PRIPYAT STASHES -->
+</string_table>

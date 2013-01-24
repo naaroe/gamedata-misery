@@ -1075,10 +1075,10 @@
 		<text>Let’s have a look... Well, your liver is bigger than I'd expect, but that's an occupational hazard, right? Apart from that, you’re as healthy as a burer.</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_111">
-		<text>Well, definitely you need a treatment. But I won't do anything for free. 3500 for a full treatment, and 500 for irradiation removing only.</text>
+		<text>Well, definitely you need a treatment. But I won't do anything for free. I take 1850 for full health treatment regardless of your problems, this does not include irradiation removing which will cost you separetly 1480 RU.</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_11">
-		<text> And what do you think? Am I dead already?</text>
+		<text>And what do you think? Am I dead already?</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_1111">
 		<text>Alright, I'll pay. After all I won't take money to the grave.</text>

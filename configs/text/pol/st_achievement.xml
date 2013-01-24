@@ -369,4 +369,18 @@
 	<string id="st_sp_achievement_13_hint">
 		<text>Given how useful you are, Professor Hermann is now offering you medical supplies and equipment intended exclusively for bunker personnel at cost price.\nNovikov is so used to you that he only wants you to pay for parts when performing modifications.</text>
 	</string>
+	<string id="st_sp_achievement_13_hint">
+		<text>Given how useful you are, Professor Hermann is now offering you medical supplies and equipment intended exclusively for bunker personnel at cost price.\nNovikov is so used to you that he only wants you to pay for parts when performing modifications.</text>
+	</string>
+
+	<!-- Alundaio -->
+	<string id="st_sp_achievement_22_hint">
+		<text>You solved every one of the Mad Stalker Alun's riddles in Zaton.</text>
+	</string>
+	<string id="st_sp_achievement_22_name">
+		<text>Riddle Master</text>
+	</string>
+	<string id="st_sp_achievement_22_descr">
+		<text>You solved every one of the Mad Stalker Alun's riddles in Zaton.</text>
+	</string>
 </string_table>
