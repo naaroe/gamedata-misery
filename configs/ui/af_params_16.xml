@@ -19,7 +19,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
 		<texture_minus>ui_am_prop_radio_restore</texture_minus>
-		<value x="117" y="0" width="30" height="20" magnitude="150000" sign_inverse="1">
+		<value x="107" y="0" width="30" height="20" magnitude="150000" sign_inverse="1">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</radiation_restore_speed>
@@ -52,7 +52,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="18" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="187" y="0" width="30" height="20" magnitude="15000">
+		<value x="177" y="0" width="30" height="20" magnitude="15000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</bleeding_restore_speed>
