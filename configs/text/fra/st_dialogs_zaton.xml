@@ -1066,10 +1066,10 @@
 		<text>Let's have a look... With your health? Well, if you’re doing badly, I must be dead or something...</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_111">
-	<text>I'll be honest with you - it is not good. Although I can cure you from all ailments for 3500. I can alternatively remove your irradiating only - this will cost 500.</text>
+		<text>I'll be honest with you - you could use a patch or two. I can remove most of your physical issues for 1850 RU. I have this sweet little serum here that will get you on your feet in no time. It will not remove those little, shiny particles from your system thou. No, no for this you need another type of shit. 1480 RU and you'll be leaking those isotopes from every hole of your body for the next few hours. So what's it gonna be son?</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_11">
-		<text> And what? How bad does it look?</text>
+		<text>And what? How bad does it look?</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_1111">
 		<text>Ok, take the cash and get to work, health is more important than money.</text>
@@ -2536,7 +2536,7 @@
 		<text>Thanks again! Without you I'd be pushing up daisies right now...</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_11">
-		<text>Stalker! Quick, come help Petrukha! Look over there, at the edge of the crevice! He got whacked by an anomaly! His closed respiratory system must have decompressed again and he must have fainted from toxic and heated fumes. This fuckin SSP is only causing troubles for us and we've been saving for months to buy one! I tried to help him but my SEVA is almost completely destroyed from dog bites and now I am so badly burned that I feel that I'm done for if I take another step! Help us, please!!</text>
+		<text>Stalker! Quick, come help Petruha! Look over there, at the edge of the crevice! He got whacked by an anomaly! His closed respiratory system must have decompressed again and he must have fainted from toxic and heated fumes. This fuckin SSP is only causing troubles for us and we've been saving for months to buy one! I tried to help him but my SEVA is almost completely destroyed from dog bites and now I am so badly burned that I feel that I'm done for if I take another step! Help us, please!!</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_111">
 		<text>OK, stay where you are. I'll give it a try.</text>
@@ -2545,7 +2545,7 @@
 		<text>Deal with it yourselves.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_12">
-		<text>Thanks for saving Petrukha. Damn, I knew we shouldn't have bought the used one! Now all we saved is going to go into repairs.</text>
+		<text>Thanks for saving Petruha. Damn, I knew we shouldn't have bought the used one! Now all we saved is going to go into repairs.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_13">
 		<text>Get out of my sight. You let Petruha die... He was twice the man you'll ever be!</text>

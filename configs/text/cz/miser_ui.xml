@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+<string_table>
+	<string id="ui_repair_secondary">
+		<text>Repair Weapon</text>
+	</string>
+	<string id="ui_repair_primary">
+		<text>Repair Weapon</text>
+	</string>
+	<string id="ui_repair_helmet">
+		<text>Repair Helmet</text>
+	</string>
+	<string id="ui_repair_suit">
+		<text>Repair Suit</text>
+	</string>
+	<string id="ui_repair_exit">
+		<text>Cancel</text>
+	</string>
+	<string id="ui_exit">
+		<text>Close</text>
+	</string>
+</string_table>

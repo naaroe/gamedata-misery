@@ -84,6 +84,12 @@
 	<string id="st_meat_dog_descr">
 		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.</text>
 	</string>
+		<string id="st_meat_pseudodog">
+		<text>Pseudodog meat</text>
+	</string>
+	<string id="st_meat_pseudodog_descr">
+		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.</text>
+	</string>
 		<string id="st_meat_flesh">
 		<text>Fat bacon</text>
 	</string>

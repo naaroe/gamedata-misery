@@ -11,7 +11,7 @@
 		<text>The most popular piece of meat in The Zone. Saturating and only little contaminated. Scientific studies have plenty samples already. \n\n%c[default]WARNING:\n%c[255,238,153,26] Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.</text>
 	</string>
 	<string id="mutant_boar_chop">
-		<text>Boar Chop</text>
+		<text>Boar chop</text>
 	</string>
 	<string id="mutant_dog_meat_description">
 		<text>Mutated dogs are being cooked into meals at the Skadovsk. The meat is a cheap alternative to the more popular boar. Scientific studies have plenty samples already. \n\n%c[default]WARNING:\n%c[255,238,153,26] Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.</text>
@@ -53,55 +53,55 @@
 		<text>The mutated, swollen eye of the Flesh acquired a number of strange characteristics, the most useful of which is the ability to regenerate the lens. The specifics of the process are hitherto unknown, although such discovery would most certainly revolutionize modern medicine. You can play your part in scientific development by selling Flesh eyes to scientists for their experiments. \n\n%c[default]WARNING:\n%c[255,238,153,26] Stalkers are advised not to eat raw meat as Chernobyl animals carry a high likelihood of passing along trichinellosis or brucellosis. Both wreak havoc on the body in the form of fever, fatigue and appetite loss. Visible signs of abscesses, fungal growth and tumors inside the animal body also mean that you should toss it.</text>
 	</string>
 	<string id="mutant_flesh_eye">
-		<text>Flesh Eye</text>
+		<text>Flesh eye</text>
 	</string>
 	<string id="mutant_boar_leg_description">
 		<text>Hoofs of Boars can be used to produce various drugs, for example antiradation serums.</text>
 	</string>
 	<string id="mutant_boar_leg">
-		<text>Boar Leg</text>
+		<text>Boar leg</text>
 	</string>
 	<string id="mutant_dog_tail_description">
 		<text>The resistance of mutant dogs' skin to electricity and chemical agents has long been the subject of scientific attention. Since the animal's tail is almost completely free of fat tissue, it is especially suited for lab examination.</text>
 	</string>
 	<string id="mutant_dog_tail">
-		<text>Dog Tail</text>
+		<text>Dog tail</text>
 	</string>
 	<string id="mutant_psevdodog_tail_description">
 		<text>The resistance of mutant dogs' skin to electricity and chemical agents has long been the subject of scientific attention. Since the animal's tail is almost completely free of fat tissue, it is especially suited for lab examination.</text>
 	</string>
 	<string id="mutant_psevdodog_tail">
-		<text>Psuedodog Tail</text>
+		<text>Psuedodog tail</text>
 	</string>
 	<string id="mutant_krovosos_jaw_description">
 		<text>Bloodsucker tentacles contain a special gland producing an enzyme capable of dissolving the skin and simultaneously preventing blood from clotting. Discovering the enzyme's composition could be the cornerstone of a whole series of great medical advances.</text>
 	</string>
 	<string id="mutant_krovosos_jaw">
-		<text>Bloodsucker Jaw</text>
+		<text>Bloodsucker jaw</text>
 	</string>
 	<string id="mutant_snork_leg_description">
 		<text>Snork feet and legs contain a huge number of highly elastic tendons. This explains the beast's ability to make those unbelievably long jumps. Scientists still look for useful possibilities to use them, and they would be thankful for all help they get.</text>
 	</string>
 	<string id="mutant_snork_leg">
-		<text>Snork Leg</text>
+		<text>Snork leg</text>
 	</string>
 	<string id="mutant_chimera_cogot_description">
 		<text>The horn of a Chimera. It's exact molecular composition is unknown, but it is known that it is as strong as diamonds, explaining the beasts capacity to rip apart a man even inside an armoured suit.</text>
 	</string>
 	<string id="mutant_chimera_cogot">
-		<text>Chimera Horn</text>
+		<text>Chimera horn</text>
 	</string>
 	<string id="mutant_chimera_claw_description">
 		<text>The claw of a Chimera. It's exact molecular composition is unknown, but it is known that it is as strong as diamonds, explaining the beasts capacity to rip apart a man even inside an armoured suit.</text>
 	</string>
 	<string id="mutant_chimera_claw">
-		<text>Chimera Claw</text>
+		<text>Chimera claw</text>
 	</string>
 	<string id="mutant_tushkano_head_description">
 		<text>The head of a Tushkano mutant. Scientists wish to study these in order to help them identify what creature the Tushkano originated from.</text>
 	</string>
 	<string id="mutant_tushkano_head">
-		<text>Tushkano Head</text>
+		<text>Tushkano head</text>
 	</string>
 	<string id="mutant_controller_brain_description">
 		<text>Controllers have mental powers and this mutated ability must be found somewhere in their brains. Scientists will pay for this tissue for thorough examination.</text>
