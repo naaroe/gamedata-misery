@@ -167,9 +167,9 @@ explosion_immunity 			= 0.64
 fire_wound_immunity  			= 0.59
 
 [actor_condition]
-satiety_v				= 0.0000115 	;скорость уменьшения сытости со временем
+satiety_v				= 0.0000155 	;скорость уменьшения сытости со временем
 radiation_v				= 0.00002	;скорость уменьшения радиации
-satiety_power_v			= 0.00425		;увеличение силы при уменьшении сытости
+satiety_power_v			= 0.0076		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
 satiety_critical		= 0.1       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
 radiation_health_v		= 0.0012	;0.002     ;уменьшение здоровья при воздействии радиации
@@ -188,7 +188,7 @@ wound_incarnation_v		= 0.0042 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления р
 min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
-satiety_v_sleep          	= 0.0000085
+satiety_v_sleep          	= 0.0000135
 radiation_v_sleep        	= 0.000017		;0.0003
 satiety_power_v_sleep    	= 0.0001
 satiety_health_v_sleep   = 0.0
@@ -210,16 +210,16 @@ jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
 jump_weight_power       = 0.2  ;0.045                                        ;умешьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
 overweight_jump_k       = 1.02		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
 
-stand_power             = -0.0070
+stand_power             = -0.0034
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
-walk_weight_power       = 0.0050  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
+walk_weight_power       = 0.0049  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
 overweight_walk_k       = 1.04			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
 accel_k                 = 1.7			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
 sprint_k                = 3.8 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
 
 ; хромота
-limping_health_begin =        0.08                ;порог здоровья меньше которого актер начинает хромать
-limping_health_end   =        0.12                ;порог здоровья больше которого актер перестает хромать
+limping_health_begin =        0.04                ;порог здоровья меньше которого актер начинает хромать
+limping_health_end   =        0.08                ;порог здоровья больше которого актер перестает хромать
 limping_power_begin  =        0.18               ;порог силы меньше которого актер начинает хромать
 limping_power_end         =        0.29            ;порог силы больше которого актер перестает хромать
 use_limping_state         = on

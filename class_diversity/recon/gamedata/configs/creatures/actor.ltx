@@ -167,7 +167,7 @@ explosion_immunity 			= 0.78
 fire_wound_immunity  			= 0.72
 
 [actor_condition]
-satiety_v				= 0.0000140 	;скорость уменьшения сытости со временем
+satiety_v				= 0.000008 	;скорость уменьшения сытости со временем
 radiation_v				= 0.000018	;скорость уменьшения радиации
 satiety_power_v			= 0.0032		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.00007    ;увеличение здоровья при уменьшении сытости
@@ -188,7 +188,7 @@ wound_incarnation_v		= 0.0028 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления р
 min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
-satiety_v_sleep          	= 0.000014
+satiety_v_sleep          	= 0.000006
 radiation_v_sleep        	= 0.000014		;0.0003
 satiety_power_v_sleep    	= 0.0001
 satiety_health_v_sleep   = 0.0
@@ -208,7 +208,7 @@ health_restore_v              	= 0.0		;0.0001
 
 jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
 jump_weight_power       = 0.2  ;0.045                                        ;умешьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
-overweight_jump_k       = 1.02		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
+overweight_jump_k       = 1.04		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
 
 stand_power             = -0.0075
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
@@ -220,8 +220,8 @@ sprint_k                = 3.0 ;75        ;коэффициент на "sprint" бег (умножаетс
 ; хромота
 limping_health_begin =        0.08                ;порог здоровья меньше которого актер начинает хромать
 limping_health_end   =        0.12                ;порог здоровья больше которого актер перестает хромать
-limping_power_begin  =        0.18               ;порог силы меньше которого актер начинает хромать
-limping_power_end         =        0.29            ;порог силы больше которого актер перестает хромать
+limping_power_begin  =        0.08              ;порог силы меньше которого актер начинает хромать
+limping_power_end         =        0.16            ;порог силы больше которого актер перестает хромать
 use_limping_state         = on
 
 cant_walk_power_begin =        0.0015        ;The threshold of force less which actor cannot move

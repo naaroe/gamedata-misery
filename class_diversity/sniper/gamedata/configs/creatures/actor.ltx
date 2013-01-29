@@ -21,7 +21,7 @@ actor_class				= sniper				;Misery 2.0 Alundaio
 
 terrain                 = actor_terrain
 
-max_item_mass           = 33 ; 950 ; wpn_test ; 35 ;50.0
+max_item_mass           = 33
 jump_speed              = 6.65
 crouch_coef             = 0.65
 climb_coef              = 0.72
@@ -167,7 +167,7 @@ explosion_immunity 			= 0.73
 fire_wound_immunity  			= 0.66
 
 [actor_condition]
-satiety_v				= 0.0000155 	;скорость уменьшения сытости со временем
+satiety_v				= 0.0000125 	;скорость уменьшения сытости со временем
 radiation_v				= 0.000014	;скорость уменьшения радиации
 satiety_power_v			= 0.00385		;увеличение силы при уменьшении сытости
 satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
@@ -188,7 +188,7 @@ wound_incarnation_v		= 0.0034 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления р
 min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
-satiety_v_sleep          	= 0.000014
+satiety_v_sleep          	= 0.0000110
 radiation_v_sleep        	= 0.000021		;0.0003
 satiety_power_v_sleep    	= 0.0001
 satiety_health_v_sleep   = 0.0
@@ -208,7 +208,7 @@ health_restore_v              	= 0.0		;0.0001
 
 jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
 jump_weight_power       = 0.2  ;0.045                                        ;умешьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
-overweight_jump_k       = 1.02		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
+overweight_jump_k       = 1.03		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
 
 stand_power             = -0.0069
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
