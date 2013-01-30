@@ -1023,7 +1023,7 @@ end
 -- Также может вызваться принудительно из xr_effects
 function se_smart_terrain:update()
 	cse_alife_smart_zone.update( self )
-	if dev_debug or (alun_plugin_manager and alun_plugin_manager.is_plugin_enabled("axr_debug_tools")) then
+	if dev_debug then
 		self:refresh() -- Не забыть потом заремить
 	end
 
