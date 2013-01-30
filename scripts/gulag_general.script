@@ -879,7 +879,8 @@ local job_type_by_scheme = {
 							["mob_walker"]	= "path_job",
 							["mob_home"]	= "path_job",
 							["mob_jump"]	= "point_job",
-							["companion"]	= "point_job"
+							["companion"]	= "point_job",
+							["beh"]			= "point_job"
 }
 
 function add_exclusive_job(sect, work_field, smart_ini, job_table)

@@ -3,8 +3,9 @@
 -- Alundaio (original: Stohe)
 ----------------------------------------------------------------------------------------------------------------------
 local ini = ini_file("ai_tweaks\\xr_corpse_detection.ltx")
-local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","float",60000)
-local AlwaysDetectDistance = alun_utils.read_from_ini(ini,"settings","always_detect_dist","float",700)
+local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","string","60000")
+local AlwaysDetectDistanceFree = alun_utils.read_from_ini(ini,"settings","always_detect_dist_free","float",2500)
+local AlwaysDetectDistanceDanger = alun_utils.read_from_ini(ini,"settings","always_detect_dist_danger","float",125)
 local StateWalk	 = alun_utils.read_from_ini(ini,"settings","state_walk","string","walk_noweap")
 local StateRun	 = alun_utils.read_from_ini(ini,"settings","state_run","string","rush")
 local MonsterLoot = alun_utils.read_from_ini(ini,"settings","enable_mutant_looting","bool",false)
@@ -32,7 +33,7 @@ function on_item_take(npc,item)
 end
 
 function on_item_drop(npc,item)
-	if (npc:alive()) then
+	if (not npc or npc:alive()) then
 		return
 	end
 	local se_item = alife():object(item:id())
@@ -69,6 +70,12 @@ function on_death_callback(npc,who)
 	end
 
 	alun_utils.save_var(npc,"death_by_id",who:id())
+	if (who:id() == db.actor:id()) then
+		local itm = db.actor:active_item()
+		if (itm and itm:clsid() == clsid.wpn_knife_s) then
+			alun_utils.save_var(npc,"death_by_knife",true)
+		end
+	end
 end
 
 function monster_on_death_callback(obj,who)
@@ -146,6 +153,9 @@ function eval_stage_1(st,npc)
 	local corpse_vertex
 	local id
 	local corpse_npc
+	local detect_dist
+	local dt_threshold
+	local inertion
 
 	local se_npc = alife():object(npc:id())
 	if not (se_npc) then
@@ -155,7 +165,8 @@ function eval_stage_1(st,npc)
 	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
 	local can_loot_mutants = squad and squad.player_id and MonsterLootCommunities[squad.player_id] or MonsterLootCommunities[character_community(npc)]
 
-	for i=1,#corpses do
+	local size = #corpses
+	for i=1,size do
 		id = corpses[i].id
 		corpse_npc = db.storage[id] and db.storage[id].object or level.object_by_id(id)
 		if corpse_npc and HasValuableLoot[id] and db.storage[id].corpse_already_selected == nil then
@@ -167,7 +178,12 @@ function eval_stage_1(st,npc)
 					nearest_corpse_dist = dist
 				end
 
-				if dist <= AlwaysDetectDistance or (npc:see(corpse_npc) and dist < nearest_corpse_dist) then
+				dt_threshold = npc:relation(corpse_npc) == game_object.friend and tg - corpse_npc:death_time()
+				inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
+
+				detect_dist = alun_utils.load_var(corpse_npc,"death_by_knife") and 0 or dt_threshold and dt_threshold > tonumber(inertion) and AlwaysDetectDistanceDanger or AlwaysDetectDistanceFree
+
+				if (dist <= detect_dist) or (npc:see(corpse_npc) and dist < nearest_corpse_dist) then
 					corpse_vertex = level.vertex_id(corpse_pos)
 					if level.vertex_position(corpse_vertex):distance_to_sqr(corpse_pos) > 16 then
 						corpse_vertex = corpse_npc:level_vertex_id()
@@ -191,16 +207,6 @@ function eval_stage_1(st,npc)
 		st.selected_corpse_id = corpse_id
 		st.stage = 2
 		--alun_utils.printf("%s Found lootable Corpse",npc:name())
-
-		local corpse = db.storage[corpse_id] and db.storage[corpse_id].object
-		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
-		local who = alun_utils.load_var(npc,"death_by_id",nil)
-		who = who and level.object_by_id(who)
-
-		if (who and npc:relation(who) == game_object.enemy and dt_threshold and dt_threshold < DeathTimeDanger) then
-			xr_sound.set_sound_play(npc:id(),"tolls")
-		end
-
 		return true
 	end
 end
@@ -236,7 +242,8 @@ function action_search_corpse:initialize()
 	local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
 	local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
 
-	if (not dt_threshold or dt_threshold > DeathTimeDanger) then
+	local inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
+	if (not dt_threshold or dt_threshold > tonumber(inertion)) then
 		self.a.dist_run = math.random(5,30)
 	else
 		self.a.dist_run = 1
@@ -264,27 +271,41 @@ function action_search_corpse:execute()
 
 	if (dist < 1.3 or npc:level_vertex_id() == self.a.vertex_id) then
 		local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
-		local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and tg - corpse:death_time()
-
-		local who = alun_utils.load_var(npc,"death_by_id",nil)
+		local who = alun_utils.load_var(corpse,"death_by_id",nil)
 		who = who and level.object_by_id(who)
 
-		if (who and npc:relation(who) == game_object.enemy) then
-			if (dt_threshold and dt_threshold < DeathTimeDanger) then
+		if (who and who:alive() and npc:relation(who) == game_object.enemy) then
+			local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and tg - corpse:death_time()
+			local inertion = xr_logic.pick_section_from_condlist(db.actor,npc,xr_logic.parse_condlist(npc,"settings","death_time_danger",DeathTimeDanger))
+			if (dt_threshold and dt_threshold < tonumber(inertion)) then
 				if not (self.a.danger_timer) then
 					self.a.danger_timer = tg + 5000
 				end
-
 
 				if (tg > self.a.danger_timer) then
 					if (xr_danger.set_script_danger) then
 						xr_danger.set_script_danger(npc,DeathTimeDanger-dt_threshold)
 					end
+
+					if not (self.say_search) then
+						if (math.random() > 0.5) then
+							xr_sound.set_sound_play(npc:id(),"search")
+						end
+						self.say_search = true
+					end
+
 					return
 				end
 
-				if (math.random() > 0.2) then
+				if (math.random() < 0.60 and ranks.get_obj_rank_name(npc) ~= "master") then
 					state_mgr.set_state(npc,"search")
+				end
+
+				if not (self.say_tolls) then
+					if (math.random() > 0.5) then
+						xr_sound.set_sound_play(npc:id(),"tolls")
+					end
+					self.say_tolls = true
 				end
 
 				return
@@ -339,25 +360,23 @@ function get_all_from_corpse(npc)
 	HasValuableLoot[corpse_npc:id()] = nil
 
 	if not(IsStalker(corpse_npc)) then
-		local se_npc = alife():object(corpse_npc_id)
-		if (se_npc and not se_npc.looted) then
-			se_npc.looted = true
-			if (itms_manager) then
-				local loot = {}
-				itms_manager.loot_mutant(nil,corpse_npc:clsid(),loot)
+		local looted = alun_utils.load_var(corpse_npc,"looted",nil)
+		if (not looted and itms_manager) then
+			local loot = {}
+			itms_manager.loot_mutant(nil,corpse_npc:clsid(),loot,npc)
 
-				local is_there_loot
-				for sec,t in pairs(loot) do
-					is_there_loot = true
-					break
-				end
-
-				if (is_there_loot) then
-					xr_sound.set_sound_play(id,"corpse_loot_good")
-				else
-					xr_sound.set_sound_play(id,"corpse_loot_bad")
-				end
+			local is_there_loot
+			for sec,t in pairs(loot) do
+				is_there_loot = true
+				break
 			end
+
+			if (is_there_loot) then
+				xr_sound.set_sound_play(id,"corpse_loot_good")
+			else
+				xr_sound.set_sound_play(id,"corpse_loot_bad")
+			end
+			alun_utils.save_var(corpse_npc,"looted",true)
 		end
 		return
 	end

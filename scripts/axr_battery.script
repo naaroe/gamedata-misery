@@ -1,0 +1,156 @@
+--[[
+Misery 2.0 - Battery and UPD (Universal Power Device) feature
+Original script by wuut
+Script expanded upon and finished by SetaKat
+Rewrite 21/12/2012
+modified by Alundaio on Jan 21, 2013 for axr_main callback manager
+
+This script makes it so the PDA, Flashlight and Nightvision equipment runs off batteries
+installed into a device called a UPD (Universal Power Device). The UPD is linked to the
+PDA, Flashlight and Nightvision equipment. When the battery is exhausted, these devices
+no longer work.
+
+]]
+
+local ini = ini_file("plugins\\axr_battery.ltx")
+local Batteries = alun_utils.collect_section(ini,"battery_sections",true)
+
+local pda_open = false
+
+local nnEffectIsOn = 0
+local nnEffectId = 8080
+
+function on_game_start()
+	callback_register("actor_on_info_callback",process_pda_infoportion)
+	callback_register("actor_on_item_use",use_battery)
+	callback_register("actor_on_update",update)
+end
+
+-- add this function to bind_stalker info_callback function
+-- battery.process_pda_infoportion(info_id)
+function process_pda_infoportion(npc,info_id)
+	local actor = db.actor
+	if actor then
+		if info_id == "ui_pda" then
+			-- PDA opened
+			-- set flag to indicate PDA is open
+			pda_open = true;
+			--news_manager.send_tip(actor, "Opening PDA", nil, nil, 5000)
+			actor:disable_info_portion("ui_pda_hide")
+		elseif info_id == "ui_pda_hide" then
+			-- PDA closed
+			-- remove flag to indicate PDA is closed
+			pda_open = false;
+			--news_manager.send_tip(actor, "Closing PDA", nil, nil, 5000)
+			actor:disable_info_portion("ui_pda")
+		end
+	end
+end
+
+-- add this function to bind_stalker use_inventory_item function
+-- battery.use_battery(obj)
+function use_battery(obj)
+	local name = obj:section()
+	local upd = db.actor:object("wpn_upd")
+
+	if (Batteries[name]) then
+		if (upd) then
+			local con = alun_utils.read_from_ini(ini,name,"power","float",0.6)
+			upd:set_condition(con)
+		else
+			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			alife():create(name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+	end
+end
+
+-- add this function to bind_stalker update function
+-- battery.update()
+function update()
+	local battery = db.actor:object("wpn_upd")
+	updateLight(battery)
+	updateNV(battery)
+	updatePDA(battery)
+end
+
+
+function updateLight(battery)
+	local obj = db.actor:active_detector()
+	if (axr_main.actor_light) and not (obj and obj:section() == "device_flashlight") then
+		local batcon = battery and battery:condition()
+		-- if it is above 10%, then drain it
+		if (battery and batcon > 0.1) then
+			updateBatteryCondition(battery, batcon, "fl")
+		elseif (battery) then
+			if (itms_manager) then itms_manager.show_message("Low battery power",25) end
+			db.actor:object("device_torch"):enable_torch(false)
+		else
+			--if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			db.actor:object("device_torch"):enable_torch(false)
+		end
+	end
+end
+
+function updateNV(battery)
+	if nnEffectIsOn == 1 then
+		nnEffectIsOn = 0
+		level.remove_pp_effector(nnEffectId)
+	end
+
+	local helmet = db.actor:alive() and (db.actor:item_in_slot(12) or db.actor:get_current_outfit())
+	local nv = helmet and alun_utils.read_from_ini(nil,helmet:section(),"nightvision_sect","string",nil) and db.actor:object("device_torch")
+	local enabled = nv and nv:night_vision_enabled()
+	if enabled and battery then
+		-- battery check
+		nnEffectIsOn = 1
+		local batcon = battery:condition()
+		if batcon > 0.9 then
+			level.add_pp_effector("nightvision_mis_100.ppe", nnEffectId, true)
+		elseif batcon > 0.8 then
+			level.add_pp_effector("nightvision_mis_90.ppe", nnEffectId, true)
+		elseif batcon > 0.7 then
+			level.add_pp_effector("nightvision_mis_80.ppe", nnEffectId, true)
+		elseif batcon > 0.6 then
+			level.add_pp_effector("nightvision_mis_70.ppe", nnEffectId, true)
+		elseif batcon > 0.5 then
+			level.add_pp_effector("nightvision_mis_60.ppe", nnEffectId, true)
+		elseif batcon > 0.4 then
+			level.add_pp_effector("nightvision_mis_50.ppe", nnEffectId, true)
+		elseif batcon > 0.3 then
+			level.add_pp_effector("nightvision_mis_40.ppe", nnEffectId, true)
+		elseif batcon > 0.2 then
+			level.add_pp_effector("nightvision_mis_30.ppe", nnEffectId, true)
+		elseif batcon > 0.1 then
+			level.add_pp_effector("nightvision_mis_20.ppe", nnEffectId, true)
+		else
+			level.add_pp_effector("nightvision_mis_10.ppe", nnEffectId, true)
+		end
+		updateBatteryCondition(battery, batcon, "nv")
+	else
+		nnEffectIsOn = 0
+	end
+end
+
+function updatePDA(battery)
+	if pda_open then
+		local hud = get_hud()
+		if battery then
+			local batcon = battery:condition()
+			if batcon > 0.1 then
+				updateBatteryCondition(battery, batcon, "pda")
+			else
+				if (itms_manager) then itms_manager.show_message("Low battery power",25) end
+				hud:HidePdaMenu()
+			end
+		else
+			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			hud:HidePdaMenu()
+		end
+	end
+end
+
+function updateBatteryCondition(battery, batcon, device)
+	local newbatcon = batcon - alun_utils.read_from_ini(ini,"main",device.."_drain_speed","float",0.0001)
+	battery:set_condition(newbatcon)
+end
+

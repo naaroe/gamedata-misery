@@ -183,7 +183,7 @@ end
 -- squad_can_help_actor(squad)
 -------------------
 function squad_can_help_actor(squad)
-	if (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) == "friend") then
+	if (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) == "friend" and db.actor:position():distance_to_sqr(squad.position) <= 22500) then
 		return true
 	end
 end

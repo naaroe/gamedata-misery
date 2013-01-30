@@ -45,6 +45,21 @@ function on_game_start()
 	callback_register("npc_on_hit_callback",npc_on_hit_callback)
 	callback_register("monster_on_hit_callback",npc_on_hit_callback)
 	callback_register("npc_on_hear_callback",npc_on_hear_callback)
+	callback_register("actor_torch_active",actor_torch_active)
+	--callback_register("npc_on_update",npc_on_update)
+end
+
+---------------------
+-- npc_on_update(npc,st)
+---------------------
+function npc_on_update(npc,st)
+	if not (axr_main.actor_light) then
+		return
+	end
+
+	if (db.actor:see(npc) and npc_in_actor_frustrum(npc) and db.actor:position():distance_to_sqr(npc:position()) < 2500) then
+		set_script_danger(npc,2000)
+	end
 end
 
 -------------------
@@ -60,14 +75,11 @@ function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power)
 				if (DangerSoundThreshold[s_type] and dist <= DangerSoundThreshold[s_type][2]) then
 					if (DangerSoundThreshold[s_type][3] == 1 and npc:relation(who) == game_object.enemy) or (DangerSoundThreshold[s_type][3] == 0) then
 						set_script_danger(npc,DangerSoundThreshold[s_type][1] or 2000)
-						--alun_utils.printf("xr_hear: trigger script danger")
+						--alun_utils.printf("xr_hear: trigger script danger %s",s_type)
 					end
 				end
 			end
-
-			if (npc:relation(who) == game_object.enemy) then
-				npc:enable_memory_object(who,true)
-			end
+			--npc:enable_memory_object(who,true)
 		end
 	end
 end
@@ -306,20 +318,4 @@ function reset_danger(npc, scheme, st, section)
 	if scheme ~= nil and scheme ~= "nil" then
 		danger_section = utils.cfg_get_string(st.ini, section, "danger", npc, false, "")
 	end
-
-	--[[
-	st.danger.ignore_distance = {}
-	st.danger.danger_inertion_time = {}
-
-	st.danger.ignore_distance[danger_object.grenade]	=  math.pow(utils.cfg_get_number(st.ini, danger_section, "ignore_distance_grenade", npc, false, IGNORE_DISTANCE[danger_object.grenade]), 2)
-	st.danger.ignore_distance[danger_object.entity_corpse]	=  math.pow(utils.cfg_get_number(st.ini, danger_section, "ignore_distance_corpse", npc, false,  IGNORE_DISTANCE[danger_object.entity_corpse]), 2)
-	st.danger.ignore_distance[danger_object.hit]		=  math.pow(utils.cfg_get_number(st.ini, danger_section, "ignore_distance_hit", npc, false,  IGNORE_DISTANCE[danger_object.hit]), 2)
-	st.danger.ignore_distance[danger_object.enemy_sound]		=  math.pow(utils.cfg_get_number(st.ini, danger_section, "ignore_distance_sound", npc, false,  IGNORE_DISTANCE[danger_object.enemy_sound]), 2)
-
-	st.danger.danger_inertion_time[danger_object.grenade]		=  utils.cfg_get_number(st.ini, danger_section, "danger_inertion_time_grenade", npc, false, DANGER_INERTION_TIME[danger_object.grenade])
-	st.danger.danger_inertion_time[danger_object.entity_corpse]		=  utils.cfg_get_number(st.ini, danger_section, "danger_inertion_time_corpse", npc, false, DANGER_INERTION_TIME[danger_object.entity_corpse])
-	st.danger.danger_inertion_time[danger_object.hit]			=  utils.cfg_get_number(st.ini, danger_section, "danger_inertion_time_hit", npc, false, DANGER_INERTION_TIME[danger_object.hit])
-	st.danger.danger_inertion_time[danger_object.enemy_sound]		=  utils.cfg_get_number(st.ini, danger_section, "danger_inertion_time_sound", npc, false, DANGER_INERTION_TIME[danger_object.enemy_sound])
-	st.danger.danger_inertion_time[danger_object.bullet_ricochet]		=  utils.cfg_get_number(st.ini, danger_section, "danger_inertion_time_ricochet", npc, false, DANGER_INERTION_TIME[danger_object.bullet_ricochet])
-	--]]
 end

@@ -59,3 +59,21 @@ anim_eat			= vodka_3
 #include "items\items_armour_attachments.ltx"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bolt_dummy]:identity_immunities
+class				= II_ATTCH
+cform				= skeleton
+visual				= dynamics\devices\dev_bolt\dev_bolt.ogf
+inv_name			= st_bolt
+$prefetch 			= 16
+inv_name_short		= st_bolt
+inv_weight			= 0
+cost          		= 0
+inv_grid_width      	= 1
+inv_grid_height     	= 1
+inv_grid_x        		= 0
+inv_grid_y        		= 0
+attach_angle_offset   	= -1.571,-1.308,-1.458    ;устанавливаетсљ в радианах Angle*PI/180
+attach_position_offset  = 0.105, -0.004, 0.003
+attach_bone_name    	= bip01_l_hand
+auto_attach       		= false

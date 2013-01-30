@@ -1,0 +1,222 @@
+
+[logic@zat_b5_animp_1]
+active = animpoint@zat_b5_animp_1
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_1]
+active = beh@zat_b5_job_1
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_2]
+active = beh@zat_b5_job_2
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_3]
+active = beh@zat_b5_job_3
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_4]
+active = beh@zat_b5_job_4
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_5]
+active = beh@zat_b5_job_5
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_6]
+active = beh@zat_b5_job_6
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+[logic@zat_b5_job_7]
+active = beh@zat_b5_job_7
+suitable = {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
+prior = 100
+
+
+;-------------------------------------------- ANIMPOINT SCHEME
+;N=0,0,-1 E=-1,0,0 S=0,0,1 W=1,0,0
+
+[meet@zat_b5_animpoint_meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
+snd_on_use = {!dist_to_actor_le(3)} nil
+meet_on_talking = false
+
+[animpoint@zat_b5_animp_gen]
+use_camp = true
+meet = meet@zat_b5_animpoint_meet
+
+[animpoint@zat_b5_job_2]:animpoint@zat_b5_animp_gen
+cover_name = zat_b5_animpoint_2
+reach_distance = 3
+direction = 0,0,1
+on_info = {=surge_started} beh@zat_b5_job_2_surge
+on_game_timer = 2400 | beh@zat_b5_job_2
+
+[animpoint@zat_b5_job_3]:animpoint@zat_b5_animp_gen
+cover_name = zat_b5_animpoint_3
+direction = 1,0,0
+on_info = {=surge_started} beh@zat_b5_job_3_surge
+on_game_timer = 2400 | beh@zat_b5_job_3
+
+[animpoint@zat_b5_job_4]:animpoint@zat_b5_animp_gen
+cover_name = zat_b5_animpoint_1
+direction = -1,0,0
+on_info = {=surge_started} beh@zat_b5_job_4_surge
+on_game_timer = 2400 | beh@zat_b5_job_4
+
+;------------------------------------------- BEH SCHEME
+[beh@general]
+behavior_state = beh_move
+goto_target = waypoint
+walk_dist = 100
+jog_dist = 220
+run_dist = 400
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+sprint_anim = sprint
+delay_anim = guard
+
+[beh@zat_b5_job_1]:beh@general
+pt1 = 1603801,5000 look:393.79104614258,34.793121337891,-55.281578063965
+pt2 = 1585058,15000,hide look:359.84918212891,33.5205078125,-48.034301757813
+pt3 = 1585086,15000,hide look:361.84838867188,33.531246185303,-26.351070404053
+pt4 = 1598591,15000,hide look:392.26947021484,34.692859649658,-21.306089401245
+path_end = loop
+on_info = {=surge_started} beh@zat_b5_job_1_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_1_sleep
+on_info3 = {=is_rain} beh@zat_b5_job_1_rain
+
+[beh@zat_b5_job_2]:beh@general
+pt1 = 1647471,15000 look:416.5807800293,35.98717880249,-63.967094421387
+pt2 = 1647471,15000 look:393.79104614258,34.793121337891,-55.281578063965
+pt3 = 1651943,5000
+path_end = animpoint@zat_b5_job_2
+on_info = {=surge_started} beh@zat_b5_job_2_surge
+
+[beh@zat_b5_job_3]:beh@general
+pt1 = 1688464,10000,hide look:440.71948242188,36.197063446045,-73.626342773438
+path_end = animpoint@zat_b5_job_3
+on_info = {=surge_started} beh@zat_b5_job_3_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_3_sleep
+on_info3 = {=is_rain} beh@zat_b5_job_3_rain
+
+[beh@zat_b5_job_4]:beh@general
+pt1 = 1642319,25000 look:429.39947509766,37.530899047852,-17.142118453979
+path_end = animpoint@zat_b5_job_4
+on_info = {=surge_started} beh@zat_b5_job_4_surge
+
+[beh@zat_b5_job_5]:beh@general
+pt1 = 1585109,15000 look:361.52886962891,33.592758178711,-4.3042516708374
+pt2 = 1598609,15000 look:400.34780883789,36.024932861328,-6.6956372261047
+pt3 = 1585109,15000 look:361.52886962891,33.592758178711,-4.3042516708374
+pt4 = 1598609,15000 look:400.34780883789,36.024932861328,-6.6956372261047
+pt5 = 1634227,120000,sit_knee look:410.5768737793,39.446720123291,-8.1605033874512
+path_end = loop
+on_info = {=surge_started} beh@zat_b5_job_5_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_5_sleep
+
+[beh@zat_b5_job_6]:beh@general
+pt1 = 1630128,60000,hide look:361.52886962891,33.592758178711,-4.3042516708374
+pt2 = 1630128,120000,sit_ass look:410.61407470703,39.440414428711,-5.2409820556641
+path_end = loop
+on_info = {=surge_started} beh@zat_b5_job_6_surge
+
+[beh@zat_b5_job_7]:beh@general
+pt1 = 1667136,0,sit_knee look:430.05072021484,36.263114929199,-56.127185821533
+on_info = {=surge_started} beh@zat_b5_job_7_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_7_sleep
+
+;--------------
+;beh surge
+;--------------
+
+[beh@zat_b5_job_1_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_1
+
+[beh@zat_b5_job_2_surge]:beh@general
+walk_anim = rush
+pt1 = 1650875,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_2
+
+[beh@zat_b5_job_3_surge]:beh@general
+walk_anim = rush
+pt1 = 1649722,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_3
+
+[beh@zat_b5_job_4_surge]:beh@general
+walk_anim = rush
+pt1 = 1649722,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_4
+
+[beh@zat_b5_job_5_surge]:beh@general
+walk_anim = rush
+pt1 = 1649722,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_5
+
+[beh@zat_b5_job_6_surge]:beh@general
+walk_anim = rush
+pt1 = 1649722,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_6
+
+[beh@zat_b5_job_7_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@zat_b5_job_1
+
+;----------
+; beh sleep
+;----------
+
+[beh@zat_b5_job_1_sleep]:beh@general
+pt1 = 1672205,0,sleep look:428.74810791016,36.2575340271,-50.00252532959
+on_info = {=surge_started} beh@zat_b5_job_1_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b5_job_1
+
+[beh@zat_b5_job_3_sleep]:beh@general
+pt1 = 1672251,0,sleep look:433.00350952148,37.579662322998,-17.223728179932
+on_info = {=surge_started} beh@zat_b5_job_3_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b5_job_3
+
+[beh@zat_b5_job_5_sleep]:beh@general
+pt1 = 1586072,0,sleep look:371.60775756836,34.38357925415,-2.6929504871368
+on_info = {=surge_started} beh@zat_b5_job_5_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b5_job_5
+
+[beh@zat_b5_job_7_sleep]:beh@general
+pt1 = 1667136,0,sleep look:430.05072021484,36.263114929199,-56.127185821533
+on_info = {=surge_started} beh@zat_b5_job_7_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b5_job_7
+
+;---------
+; beh rain
+;---------
+[beh@zat_b5_job_1_rain]:beh@general
+pt1 = 1585079,15000,hide look:369.38034057617,34.240428924561,-32.889282226563
+pt2 = 1585086,15000,hide look:361.84838867188,33.531246185303,-26.351070404053
+path_end = loop
+on_info = {=surge_started} beh@zat_b5_job_1_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_1_sleep
+on_info3 = {!is_rain} beh@zat_b5_job_1
+
+[beh@zat_b5_job_3_rain]:beh@general
+pt1 = 1672251,0,sit_ass look:433.97253417969,36.181980133057,-17.790199279785
+on_info = {=surge_started} beh@zat_b5_job_3_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b5_job_3_sleep
+on_info3 = {!is_rain} beh@zat_b5_job_3

@@ -527,31 +527,31 @@ end
 
 -- cse_abstract_properties
 function parse_cse_abstract_properties_packet(ret,stpk)
-	ret.dummy16 = stpk:r_u16()
-	ret.section_name = stpk:r_stringZ()
-	ret.name = stpk:r_stringZ()
-	ret.s_gameid = stpk:r_u8()
-	ret.s_rp = stpk:r_u8()
-	ret.position = stpk:r_vec3()
-	ret.direction = stpk:r_vec3()
-	ret.respawn_time = stpk:r_u16()
-	ret.object_id = stpk:r_u16()
-	ret.parent_id = stpk:r_u16()
-	ret.phantom_id = stpk:r_u16()
-	ret.s_flags = stpk:r_u16()
-	ret.version = stpk:r_u16()
-	ret.cse_abstract__unk3_u16 = stpk:r_u16()
-	ret.script_version = stpk:r_u16()
-	ret.unused = stpk:r_u16()
-    if (ret.unused > 0) then
-        ret.extra = {}
-        for i = 1, ret.unused do
-            ret.extra[i] = stpk:r_u8()
+    t.dummy16 = stpk:r_u16()
+    t.section_name = stpk:r_stringZ()
+    t.name = stpk:r_stringZ()
+    t.s_gameid = stpk:r_u8()
+    t.s_rp = stpk:r_u8()
+    t.position = stpk:r_vec3()
+    t.direction = stpk:r_vec3()
+    t.respawn_time = stpk:r_u16()
+    t.object_id = stpk:r_u16()
+    t.parent_id = stpk:r_u16()
+    t.phantom_id = stpk:r_u16()
+    t.s_flags = stpk:r_u16()
+    t.version = stpk:r_u16()
+    t.cse_abstract__unk1_h16 = stpk:r_u16()
+    t.script_version = stpk:r_u16()
+    t.unused = stpk:r_u16()
+    if t.unused > 0 then
+        t.extra = {}
+        for i = 1, t.unused do
+            t.extra[i] = stpk:r_u8()
         end
     end
-	ret.spawn_id = stpk:r_u16()
-	ret.extended_size = stpk:r_u16()
-	return ret
+    t.spawn_id = stpk:r_u16()
+    t.extended_size = stpk:r_u16()
+    return t
 end
 
 function fill_cse_abstract_properties_packet(ret,stpk)

@@ -190,7 +190,7 @@ function nearest_object(match)
 		local obj = alife():object(i)
 		if (obj) then
 			is_match = false
-			if (type(match) == "string" and string.find(match,obj:section_name())) then
+			if (type(match) == "string" and string.find(obj:section_name(),match)) then
 				is_match = true
 			elseif (type(match) == "number" and match == obj:clsid()) then
 				is_match = true
@@ -219,25 +219,26 @@ end
 
 -- level object only
 
-function get_nearest_stalker(npc,nearest_dist)
-	local stalker
-	local dist
-	local nearest_stalker
---	printf("#db.OnlineStalkers = %s",#db.OnlineStalkers)
-
+function get_nearest_stalker(npc)
 	if not (db.OnlineStalkers) then
 		return
 	end
-
+	local stalker
+	local dist
+	local nearest_stalker,nearest_dist
+	local pos
 	for i=1, #db.OnlineStalkers do
 		stalker = db.storage[db.OnlineStalkers[i]] and db.storage[db.OnlineStalkers[i]].object or level.object_by_id(db.OnlineStalkers[i])
 		if (stalker and stalker:alive()) then
-			dist = npc:position():distance_to_sqr(stalker:position())
+			pos = npc == "cam" and device().cam_pos or npc:position()
+			dist = pos:distance_to_sqr(stalker:position())
 			if not (nearest_dist) then
-				nearest_dist = dist*dist
+				nearest_dist = dist
+				nearest_stalker = stalker
 			end
 
-			if (dist*dist <= nearest_dist) then
+			if (dist < nearest_dist) then
+				nearest_dist = dist
 				nearest_stalker = stalker
 			end
 		end
@@ -669,7 +670,7 @@ function npc_in_cover(npc)
 		for o in npc:memory_visible_objects() do
 			local obj = o:object()
 			local id = obj:id()
-			if obj and obj:alive() and npc:relation(obj) == game_object.enemy and (IsStalker(obj) or IsMonster(obj) or rx_utils.is_actor(obj)) and not xr_wounded.is_wounded(obj) then
+			if obj and obj:alive() and npc:relation(obj) == game_object.enemy and (IsStalker(obj) or IsMonster(obj) or obj:id() == 0) and not xr_wounded.is_wounded(obj) then
 --				rx_ai.printf("npc_in_cover[%s]:add enemy[%s]",npc:character_name(),obj:name())
 				table.insert(enemies,obj)
 				tt[id] = true
@@ -679,7 +680,7 @@ function npc_in_cover(npc)
 			local obj = o:object()
 			local id = obj:id()
 			if not tt[id] then
-				if obj and obj:alive() and npc:relation(obj) == game_object.enemy and (IsStalker(obj) or IsMonster(obj) or rx_utils.is_actor(obj)) and not xr_wounded.is_wounded(obj) then
+				if obj and obj:alive() and npc:relation(obj) == game_object.enemy and (IsStalker(obj) or IsMonster(obj) or obj:id() == 0) and not xr_wounded.is_wounded(obj) then
 --					rx_ai.printf("npc_in_cover[%s]:add enemy[%s]",npc:character_name(),obj:name())
 					table.insert(enemies,obj)
 				end

@@ -136,13 +136,14 @@ on_info = {=npc_in_zone(zat_a2_sr_light)} animpoint@zat_skadovsk_animpoint_trade
 
 [animpoint@zat_skadovsk_animpoint_trade_reached]:animpoint@general
 reach_movement = walk
-direction = -1,0,0
+direction = 1,0,0
+avail_animations = animpoint_stay_table
 on_game_timer = 1200 | animpoint@zat_skadovsk_animpoint_table_01
 
 [animpoint@zat_skadovsk_animpoint_table_01]:animpoint@general
 cover_name = zat_skadovsk_animpoint_table_01
 reach_movement = walk
-direction = 1,0,0
+direction = -1,0,0
 avail_animations = animpoint_stay_table
 
 [beh@base]

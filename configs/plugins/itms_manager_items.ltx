@@ -67,6 +67,12 @@ custom_data 			= scripts\ph_sleepbag.ltx
 ;custom_data 		    = models\objects\ignore_static.ltx
 ;fixed_bones = bone01_(1),bone01_(2),bone01_(3),bone02_(1),bone02_(2),bone02_(3),bone03
 
+[ph_sleepbag_npc]:physic_destroyable_object
+visual 					= dynamics\equipments\mattress02.ogf
+script_binding			= bind_physic_object.init
+custom_data 		    = models\objects\ignore_static.ltx
+fixed_bones = bone01_(1),bone01_(2),bone01_(3),bone02_(1),bone02_(2),bone02_(3),bone03
+
 [itm_actor_backpack]:itm_backpack
 inv_name = st_itm_actor_backpack_name
 inv_name_short = st_itm_actor_backpack_name

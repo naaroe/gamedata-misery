@@ -164,6 +164,17 @@ function save_dialog:OnButton_ok_clicked()
 	-- Get file name
 	self.new_save		= self.editbox:GetText()
 
+	local illegal = { [[/]],[[%.]],[[\]],[[%%]],[[%?]],[[%*]],[[:]],[[|]],[["]],[[<]],[[>]] }
+
+	for i=1,#illegal do
+		if (string.find(self.new_save,illegal[i])) then
+			self.mbox_mode = 0
+			self.message_box:InitMessageBox("message_box_illegal_file_name")
+			self.message_box:ShowDialog(true)
+			return
+		end
+	end
+
 	-- check for empty name
 	if string.len(self.new_save) == 0 then
 		self.mbox_mode = 0

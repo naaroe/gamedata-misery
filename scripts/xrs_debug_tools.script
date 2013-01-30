@@ -220,7 +220,7 @@ function main_menu_on_keyboard(dik,keyboard_action,main_menu)
 		if (db.actor) then
 			local lvid, gvid = db.actor:level_vertex_id(), db.actor:game_vertex_id()
 			local pos = db.actor:position()
-			local dir = db.actor:direction()
+			local dir = device().cam_dir
 			local pos2 = level.vertex_position(lvid)
 			local valid = pos2:distance_to(pos) <= 0.7
 			local function write_file(text,...)
@@ -250,7 +250,7 @@ function main_menu_on_keyboard(dik,keyboard_action,main_menu)
 			write_file("level_vertex_id = %s",lvid)
 			write_file("game_vertex_id 	= %s",gvid)
 			write_file("direction 		= %s,%s,%s",dir.x,dir.y,dir.z)
-			write_file("direction H 	= %s",dir:getH())
+			write_file("direction HP 	= %s,%s",dir:getH(),dir:getP())
 			write_file("valid 			= %s",valid)
 			write_file("","")
 		end
@@ -376,13 +376,13 @@ function get_target_at_cursor()
 end
 
 function position_other_hud_show(hud)
-	local obj = DEBUG_NPC or get_target_at_cursor() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local obj = DEBUG_NPC or get_target_at_cursor() or alun_utils.get_nearest_stalker("cam",4500)
 
 	hud:set_header("-[Pos. Info]-")
 	if (obj) then
 		local lvid, gvid = obj:level_vertex_id(), obj:game_vertex_id()
 		local pos = obj:position()
-		local dir = obj:id() == 0 and device().cam_dir or obj:direction()
+		local dir = obj:direction()
 		local angle = alife():object(obj:id()).angle
 		local pos2 = level.vertex_position(lvid)
 		local valid = pos2:distance_to(pos) <= 0.7
@@ -395,14 +395,14 @@ function position_other_hud_show(hud)
 		hud:add_msg("Lvid",lvid)
 		hud:add_msg("Gvid",gvid)
 		hud:add_msg("Pos",string.format("%0.3f, %0.3f, %0.3f", pos.x, pos.y, pos.z))
-		hud:add_msg("Dir",string.format("%0.3f, %0.3f, %0.3f, %0.3f", dir.x, dir.y, dir.z,dir:getH()))
+		hud:add_msg("Dir",string.format("%0.3f, %0.3f, %0.3f HP (%0.3f, %0.3f)", dir.x, dir.y, dir.z,dir:getH(),dir:getP()))
 		hud:add_msg("Angle",angle and string.format("%0.3f, %0.3f, %0.3f", angle.x, angle.y, angle.z))
 		hud:display()
 	end
 end
 
 function wounded_hud_show(hud)
-	local obj = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local obj = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	hud:set_header("-[Wound Info]-")
 	if (obj) then
 		hud:add_msg("Name",obj:name())
@@ -440,7 +440,7 @@ local stalker_id
 local stalker_data = {}
 
 function stalker_data_hud_show(hud)
-	local obj = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local obj = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	hud:set_header("-[Stalker Packet Data]-")
 	if (obj) then
 		if (stalker_id ~= obj:id()) then
@@ -505,7 +505,7 @@ local function r_seq(count, stpk)
 end
 
 function planner_hud_show(hud)
-	local obj = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local obj = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	hud:set_header("-[Planner Info]-")
 	if (obj) then
 		local manager = obj.motivation_action_manager and obj:motivation_action_manager()
@@ -530,23 +530,35 @@ function planner_hud_show(hud)
 end
 
 function position_hud_show(hud)
-	local lvid, gvid = db.actor:level_vertex_id(), db.actor:game_vertex_id()
-	local pos, dir = db.actor: position(), db.actor:direction()
+	local pos = db.actor:position()
+	local cam
+	if (pos:distance_to_sqr(device().cam_pos) > 25) then
+		cam = true
+		pos = device().cam_pos
+	end
+
+	local lvid = cam and level.vertex_id(pos) or db.actor:level_vertex_id()
+	local gvid = cam and nil or db.actor:game_vertex_id()
+
+	local dir = device().cam_dir
 	local pos2 = level.vertex_position(lvid)
 	local valid = pos2:distance_to(pos) <= 0.7
+
+	local se_actor = not cam and alife():object(db.actor:id())
 
 	hud:set_header("-[Actor Info]-")
 	hud:add_msg("Lvid",lvid)
 	hud:add_msg("Gvid",gvid)
 	hud:add_msg("Pos",string.format("%0.4f, %0.4f, %0.4f", pos.x, pos.y, pos.z))
-	hud:add_msg("Dir",string.format("%0.3f, %0.3f, %0.3f, %0.3f", dir.x, dir.y, dir.z,dir:getH()))
+	hud:add_msg("Dir",string.format("%0.3f, %0.3f, %0.3f HP = %0.3f, %0.3f", dir.x, dir.y, dir.z,dir:getH(),dir:getP()))
+	hud:add_msg("Angle",se_actor and se_actor.angle and string.format("%0.3f, %0.3f, %0.3f", se_actor.angle.x, se_actor.angle.y, se_actor.angle.z))
 	hud:add_msg("Valid",valid)
 	hud:add_msg("FOV",math.floor(device().fov))
 	hud:display()
 end
 
 function squad_info_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	if (near) then
 		local st = db.storage[near:id()]
 		if (st) then
@@ -569,7 +581,7 @@ function squad_info_hud_show(hud)
 end
 
 function stalker_info_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 
 	if (near) then
 		local st = db.storage[near:id()]
@@ -599,14 +611,13 @@ function stalker_info_hud_show(hud)
 end
 
 function enemy_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	if (near) then
 		local id = near:id()
 		local se_obj = alife():object(id)
 		local st = db.storage[id]
 		if (st) then
 			local be = near:best_enemy()
-			local combat_inertion = be and time_global() - near:memory_time(be)
 			hud:add_msg("Section Name", se_obj:section_name())
 			hud:add_msg("Best Enemy",near:best_enemy() and near:best_enemy():name())
 			hud:add_msg("Enemy",se_enemy and se_enemy:section_name())
@@ -618,6 +629,7 @@ function enemy_hud_show(hud)
 				hud:add_msg("Post Combat Wait",st.post_combat_wait.timer and tg-st.post_combat_wait.timer)
 			end
 
+			local combat_inertion = be and tg - near:memory_time(be)
 			hud:add_msg("Combat Inertion",combat_inertion)
 			hud:add_msg("Search Time",st.combat_ignore and st.combat_ignore.search_time)
 			hud:add_msg("Combat Run",st.combat_ignore and st.combat_ignore.combat_run)
@@ -670,7 +682,7 @@ function enemy_hud_show(hud)
 end
 
 function anim_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	if (near) then
 		local st = db.storage[near:id()]
 		if (st) then
@@ -731,7 +743,7 @@ function anim_hud_show(hud)
 end
 
 function behavior_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	if (near) then
 		local st = db.storage[near:id()].beh
 		if (st) then
@@ -750,6 +762,8 @@ function behavior_hud_show(hud)
 			hud:add_msg("State",state)
 			hud:add_msg("State",state)
 			st = db.storage[near:id()]
+			hud:add_msg("PT Index",st.beh and st.beh.path_index)
+			hud:add_msg("PT wait",st.beh and st.beh.wait_delay and st.beh.wait_delay - time_global())
 			hud:add_msg("Gather Items",st.gather_items and st.gather_items.gather_items_enabled and xr_logic.pick_section_from_condlist(db.actor, near, st.gather_items.gather_items_enabled))
 			hud:add_msg("Loot Corpses",st.corpse_detection and st.corpse_detection.corpse_detection_enabled and xr_logic.pick_section_from_condlist(db.actor, near, st.corpse_detection.corpse_detection_enabled))
 		end
@@ -759,7 +773,7 @@ function behavior_hud_show(hud)
 end
 
 function weapon_hud_show(hud)
-	local near = get_debug_npc() or alun_utils.get_nearest_stalker(db.actor,4500)
+	local near = get_debug_npc() or alun_utils.get_nearest_stalker("cam",4500)
 	local wpn
 	if (near) then
 		wpn = near:active_item()

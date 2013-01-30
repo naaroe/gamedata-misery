@@ -119,7 +119,7 @@ function sim_squad_scripted:get_script_target()
 	end
 	local point = self.board.smarts_by_names[nt]
 	if point == nil then
-		abort("CRITICAL ERROR: Incorrect next point [%s] for squad [%s]", tostring(nt),  tostring(self.id))
+		abort("Incorrect next point [%s] for squad [%s]", tostring(nt),  tostring(self.id))
 		return
 	end
 	return point.id
@@ -271,11 +271,13 @@ local function can_help_actor(squad)
 		return false
 	end
 
+	-- Alundaio
 	if (axr_main) then
 		if (axr_main.squad_can_help_actor(squad)) then
 			return true
 		end
 	end
+	-- Alundaio
 
 	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
 		return true
@@ -289,7 +291,7 @@ end
 
 local function get_help_target_id(squad)
 	-- Alundaio
-	local target_id = axr_main and axr_main.squad_assign_new_target(squad) or itms_manager and itms_manager.squad_assign_new_target(squad)
+	local target_id = axr_main and axr_main.squad_assign_new_target(squad)
 	if (target_id and alife():object(target_id)) then
 		return target_id
 	end
