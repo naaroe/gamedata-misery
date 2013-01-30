@@ -15,15 +15,15 @@ sound			= 7000
 visual			= 60000
 
 [danger_object] 							;Ignore distances squared
-grenade = {=is_heavy_rain} 100, {=is_rain} 225, 400 ;May use condlists from xr_condition
-entity_corpse = 0
+grenade 		= {=is_heavy_rain} 100, {=is_rain} 225, 400 ;May use condlists from xr_condition
+entity_corpse 	= 0
 entity_attacked = {=anim_state(sleep)} 300, 625
 attacked 		= 40000
 bullet_ricochet = {=anim_state(sleep)} 25, 80
 enemy_sound 	= {=anim_state(sleep)} 0, {=is_heavy_rain} 25, 125
 attack_sound 	= {=anim_state(sleep)} 100,{=is_heavy_rain} 300, 625
 entity_death 	= {=anim_state(sleep)} 0, {=is_heavy_rain} 0, 250
-hit = {=is_heavy_rain} 2500, {=is_rain} 4000, 22500
+hit 			= 22500
 sound			= {=anim_state(sleep)} 2500, {=is_heavy_rain} 2500, 22500
 visual			= {=anim_state(sleep)} 0, {=is_dark_night} 2500, {=is_heavy_rain} 10000, 22500
 
