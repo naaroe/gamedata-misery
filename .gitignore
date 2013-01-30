@@ -24,10 +24,10 @@ class_diversity/assaulter/gamedata/textures/
 class_diversity/assaulter/gamedata/meshes/
 class_diversity/assaulter/gamedata/sounds/
 
-class_diversity/assaulter/gamedata/textures/
-class_diversity/assaulter/gamedata/meshes/
-class_diversity/assaulter/gamedata/sounds/
+class_diversity/recon/gamedata/textures/
+class_diversity/recon/gamedata/meshes/
+class_diversity/recon/gamedata/sounds/
 
-class_diversity/assaulter/gamedata/textures/
-class_diversity/assaulter/gamedata/meshes/
-class_diversity/assaulter/gamedata/sounds/
+class_diversity/sniper/gamedata/textures/
+class_diversity/sniper/gamedata/meshes/
+class_diversity/sniper/gamedata/sounds/
