@@ -10,13 +10,13 @@ description			= st_vodka_descr
 
 inv_name			= st_vodka
 inv_name_short		= st_vodka
-inv_weight			= 0.33	;0.2
+inv_weight			= 0.463
 
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 5
 inv_grid_y			= 2
-cost				= 1450
+cost				= 682
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset	= 0.087266, -0.078540, 0.052360
@@ -34,8 +34,10 @@ boost_time				= 35
 boost_radiation_restore	= 0.00139
 
 eat_alcohol				= 0.092
-eat_satiety				= -0.102
+eat_satiety				= 0.022
 eat_sleepiness				= 0.032
+
+boost_wound_immunity	= -0.064
 
 use_sound			= interface\inv_drink_flask_effect
 
@@ -47,13 +49,13 @@ description			= st_vodka_quality_descr
 
 inv_name			= st_vodka_quality
 inv_name_short			= st_vodka
-inv_weight			= 0.33	;0.2
+inv_weight			= 0.492
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 11
 inv_grid_y			= 50
-cost				= 1840
+cost				= 1021
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset	= 0.087266, -0.078540, 0.052360
@@ -71,8 +73,49 @@ boost_time				= 38
 boost_radiation_restore	= 0.00178
 
 eat_alcohol				= 0.124
-eat_satiety				= -0.119
+eat_satiety				= 0.028
 eat_sleepiness				= 0.054
+
+boost_wound_immunity	= -0.082
+
+use_sound			= interface\inv_drink_flask_effect
+
+[beer]:booster
+$spawn 				= "food and drugs\vodka"
+cform				= skeleton
+visual				= dynamics\devices\dev_beer\dev_beer.ogf
+description			= st_beer_descr
+
+inv_name			= st_beer
+inv_name_short		= st_beer
+inv_weight			= 0.71	;0.2
+
+inv_grid_width		= 1
+inv_grid_height		= 2
+inv_grid_x			= 15
+inv_grid_y			= 46
+cost				= 505
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+break_particles		= destroy_fx\destroy_bottle
+break_sound			= material\bottle\collide\bottle_break_1
+
+boost_time				= 36
+boost_radiation_restore	= 0.00096
+
+eat_alcohol				= 0.032
+eat_satiety 			= 0.082
+eat_sleepiness				= 0.018
+
+boost_wound_immunity	= -0.02
 
 use_sound			= interface\inv_drink_flask_effect
 
@@ -86,7 +129,7 @@ inv_name			= st_energy_drink
 inv_name_short		= st_energy_drink
 visual				= dynamics\devices\dev_drink_stalker\dev_drink_stalker
 description			= st_energy_drink_descr
-cost				= 1160
+cost				= 722
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -101,11 +144,12 @@ auto_attach				= false
 
 boost_time			= 280
 boost_max_weight	= 1.554
+boost_radiation_restore		= 0.00007
 
 boost_power_restore		= 0.0014
 
 eat_alcohol 			= -0.280
-eat_satiety 			= 0.013
+eat_satiety 			= 0.113
 eat_sleepiness				= -0.03
 
 use_sound			= interface\inv_drink_can2
@@ -116,13 +160,13 @@ inv_name			= st_water_drink
 inv_name_short			= st_water_drink
 visual				= dynamics\devices\dev_drink_stalker\dev_drink_water
 description			= st_water_drink_descr
-cost				= 550
+cost				= 438
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 17
 inv_grid_y			= 7
-inv_weight			= 0.35
+inv_weight			= 0.38
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset		= 0.087266, -0.078540, 0.052360
@@ -130,10 +174,10 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time			= 32
-boost_radiation_restore		= 0.00063
+boost_radiation_restore		= 0.00068
 
 eat_alcohol			= -0.14
-eat_satiety 			= 0.15
+eat_satiety 			= 0.112
 eat_sleepiness			= -0.06
 
 use_sound			= interface\inv_drink_can2
@@ -144,64 +188,27 @@ inv_name			= st_mineral_water
 inv_name_short			= st_mineral_water
 visual				= dynamics\devices\dev_ mineral_water\dev_ mineral_water.ogf
 description			= st_mineral_water_descr
-cost				= 50
+cost				= 481
 
 inv_grid_width			= 1
 inv_grid_height			= 2
 inv_grid_x			= 16
 inv_grid_y			= 51
-inv_weight			= 0.4
+inv_weight			= 0.41
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset		= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
-boost_time			= 17.0
-boost_radiation_restore		= 0.
-boost_power_restore		= 0.
+boost_time			= 34
+boost_radiation_restore		= 0.00077
 
-eat_alcohol			= -0.03
-eat_satiety 			= 0.05
-eat_sleepiness			= 0
+eat_alcohol			= -0.16
+eat_satiety 			= 0.127
+eat_sleepiness			= -0.082
 
-use_sound			= interface\inv_tea
-
-[beer]:booster
-$spawn 				= "food and drugs\vodka"
-cform				= skeleton
-visual				= dynamics\devices\dev_beer\dev_beer.ogf
-description			= st_beer_descr
-
-inv_name			= st_beer
-inv_name_short		= st_beer
-inv_weight			= 0.6	;0.2
-
-inv_grid_width		= 1
-inv_grid_height		= 2
-inv_grid_x			= 15
-inv_grid_y			= 46
-cost				= 100
-
-attach_angle_offset		= 0.000000, 0.000000, 0.000000
-attach_position_offset	= 0.087266, -0.078540, 0.052360
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
-bone_name				= bip01_r_hand
-position_offset			 = 0.0,0.0,0.0
-angle_offset			 = 1.570790,1.570790,3.92699
-
-break_particles		= destroy_fx\destroy_bottle
-break_sound			= material\bottle\collide\bottle_break_1
-
-boost_time				= 60.0
-boost_radiation_restore	= 0.0003
-eat_alcohol				= 0.03
-eat_satiety				= 0.03 ;-0.05
-eat_sleepiness				= 0.03
-
-use_sound			= interface\inv_vodka
+use_sound			= interface\inv_drink_flask
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;; ZONE-PRODUCED DRINK ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -213,27 +220,29 @@ inv_name_short			= st_bottle_metal
 inv_name			= st_bottle_metal
 visual				= dynamics\drink\drink_water
 description			= st_bottle_metal_descr
-cost				= 760
+cost				= 488
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 5
 inv_grid_y			= 42
-inv_weight			= 0.26
+inv_weight			= 0.473
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset		= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
-boost_time				= 33
-boost_radiation_restore	= 0.00108
+boost_time				= 34
+boost_radiation_restore	= 0.00119
 
-eat_alcohol				= 0.128
-eat_satiety				= -0.132
+eat_alcohol				= 0.144
+eat_satiety				= 0.018
 eat_sleepiness				= 0.065
 
 eat_health			= -0.036
+
+boost_wound_immunity	= -0.06
 
 use_sound			= interface\inv_drink_flask_effect
 
@@ -243,13 +252,13 @@ inv_name			= st_tea
 inv_name_short			= st_tea
 visual				= dynamics\drink\drink_tea
 description			= st_tea_descr
-cost				= 1450
+cost				= 1208
 
 inv_grid_width			= 1
 inv_grid_height			= 2
 inv_grid_x			= 5
 inv_grid_y			= 27
-inv_weight			= 0.35
+inv_weight			= 0.369
 
 attach_angle_offset		= 0.000000, 0.000000, 0.000000
 attach_position_offset		= 0.087266, -0.078540, 0.052360
@@ -257,13 +266,13 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time				= 38
-boost_radiation_restore	= 0.00118
+boost_radiation_restore	= 0.00134
 
-eat_alcohol				= -0.26
-eat_satiety				= 0.24
+eat_alcohol				= -0.274
+eat_satiety				= 0.226
 eat_sleepiness				= -0.105
 
-eat_health			= -0.028
+eat_health			= -0.029
 
 use_sound			= interface\inv_drink_flask_effect
 
@@ -273,7 +282,7 @@ inv_name			= st_flask
 inv_name_short			= st_flask
 visual				= dynamics\drink\drink_flask
 description			= st_flask_descr
-cost				= 460
+cost				= 220
 
 inv_grid_width			= 1
 inv_grid_height			= 1
@@ -287,10 +296,10 @@ attach_bone_name		= bip01_r_hand
 auto_attach			= false
 
 boost_time			= 31
-boost_radiation_restore		= 0.00042
+boost_radiation_restore		= 0.00049
 
-eat_alcohol			= -0.075
-eat_satiety 			= 0.082
+eat_alcohol			= -0.079
+eat_satiety 			= 0.066
 eat_sleepiness			= -0.06
 
 use_sound			= interface\inv_drink_flask
@@ -312,7 +321,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 12
 inv_grid_y			= 8
-cost				= 720
+cost				= 380
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -324,15 +333,17 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 170
+boost_time				= 421
 boost_telepat_protection 	= 0.0032
-boost_power_restore		= -0.0022
-boost_max_weight	= -3.461
+;boost_power_restore		= -0.0022
+;boost_max_weight	= -3.461
 
 eat_alcohol				= -0.083
 eat_satiety				= -0.074
 
 eat_sleepiness				= 0.17
+
+eat_radiation		= 0.0008
 
 use_sound			= interface\inv_smoke
 
@@ -343,14 +354,14 @@ description			= st_marijuana_descr
 
 inv_name			= st_marijuana
 inv_name_short			= st_marijuana
-inv_weight			= 0.001
+inv_weight			= 0.011
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 10
 inv_grid_y			= 50
 
-cost				= 1380
+cost				= 1040
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -362,13 +373,13 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 252
+boost_time				= 652
 boost_telepat_protection 	= 0.0083
-boost_power_restore		= -0.0041
-boost_max_weight	= -6.854
+;boost_power_restore		= -0.0041
+;boost_max_weight	= -6.854
 
 eat_alcohol				= -0.092
-eat_satiety				= -0.011
+eat_satiety				= -0.294
 eat_sleepiness				= 0.21
 
 eat_radiation		= 0.006
@@ -386,13 +397,13 @@ description			= st_cigarettes_descr
 
 inv_name			= st_cigarettes
 inv_name_short			= st_cigarettes
-inv_weight			= 0.1	;0.2
+inv_weight			= 0.012	;0.2
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 13
 inv_grid_y			= 8
-cost				= 705
+cost				= 580
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -408,10 +419,12 @@ boost_time				= 16
 boost_radiation_restore			= 0.00073
 
 eat_alcohol				= -0.052
-eat_satiety				= 0.022
-eat_sleepiness				= -0.025
+eat_satiety				= 0.029
+eat_sleepiness				= -0.036
 
 use_sound			= interface\inv_smoke
+
+eat_health				= -0.014
 
 [cigar1]:booster
 $spawn 				= "devices\pda"
@@ -420,13 +433,14 @@ visual				= dynamics\drink\drink_cigar1.ogf
 description			= st_cigar_descr
 inv_name			= st_cigar
 inv_name_short			= st_cigar
+inv_weight			= 0.01
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 5
 inv_grid_y			= 46
 
-cost				= 840
+cost				= 602
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -442,8 +456,10 @@ boost_time				= 18
 boost_radiation_restore			= 0.00088
 
 eat_alcohol				= -0.0585
-eat_satiety				= 0.0266
-eat_sleepiness				= -0.045
+eat_satiety				= 0.031
+eat_sleepiness				= -0.049
+
+eat_health				= -0.012
 
 use_sound			= interface\inv_smoke
 
@@ -454,13 +470,14 @@ visual				= dynamics\drink\drink_cigar2.ogf
 description			= st_cigar_descr
 inv_name			= st_cigar
 inv_name_short			= st_cigar
+inv_weight			= 0.01
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 6
 inv_grid_y			= 46
 
-cost				= 990
+cost				= 664
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -476,8 +493,10 @@ boost_time				= 20
 boost_radiation_restore			= 0.00102
 
 eat_alcohol				= -0.066
-eat_satiety				= 0.0322
+eat_satiety				= 0.026
 eat_sleepiness				= -0.06
+
+eat_health				= -0.010
 
 use_sound			= interface\inv_smoke
 
@@ -488,13 +507,14 @@ visual				= dynamics\drink\drink_cigar3.ogf
 description			= st_cigar_descr
 inv_name			= st_cigar
 inv_name_short			= st_cigar
+inv_weight			= 0.011
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 7
 inv_grid_y			= 46
 
-cost				= 1150
+cost				= 827
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -510,8 +530,10 @@ boost_time				= 22
 boost_radiation_restore			= 0.00121
 
 eat_alcohol				= -0.0725
-eat_satiety				= 0.0376
+eat_satiety				= 0.023
 eat_sleepiness				= -0.074
+
+eat_health				= -0.008
 
 use_sound			= interface\inv_smoke
 
@@ -522,14 +544,14 @@ description			= st_tobacco_descr
 
 inv_name			= st_tobacco
 inv_name_short			= st_tobacco
-inv_weight			= 0.001
+inv_weight			= 0.011
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 9
 inv_grid_y			= 47
 
-cost				= 1435
+cost				= 956
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset		= 0.096910, -0.013594, 0.107925
@@ -542,13 +564,13 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 boost_time				= 28
-boost_radiation_restore			= 0.000162
+boost_radiation_restore			= 0.00162
 
 eat_alcohol				= -0.0765
-eat_satiety				= 0.0588
+eat_satiety				= 0.058
 eat_sleepiness				= -0.077
 
-eat_health				= -0.081
+eat_health				= -0.018
 
 use_sound			= interface\inv_smoke_tobacco
 
@@ -559,13 +581,13 @@ description			= st_hand_rolling_tobacco_descr
 
 inv_name			= st_hand_rolling_tobacco
 inv_name_short			= st_hand_rolling_tobacco
-inv_weight			= 0.1	;0.2
+inv_weight			= 0.014	;0.2
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x		= 17
 inv_grid_y		= 52
-cost				= 160
+cost				= 1487
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -577,12 +599,16 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time			= 60.0
-boost_radiation_restore		= 0.001
-eat_satiety			= 0.12
-eat_sleepiness			= -0.055
+boost_time				= 22
+boost_radiation_restore			= 0.00194
 
-use_sound			= interface\inv_smoke
+eat_alcohol				= -0.0876
+eat_satiety				= 0.072
+eat_sleepiness				= -0.106
+
+use_sound			= interface\inv_smoke_tobacco
+
+eat_health				= -0.008
 
 [cigar]:booster
 $spawn 				= "devices\pda"
@@ -591,13 +617,13 @@ description			= st_cigar _descr
 
 inv_name			= st_cigar
 inv_name_short			= st_cigar
-inv_weight			= 0.1	;0.2
+inv_weight			= 0.011	;0.2
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 15
 inv_grid_y			= 44
-cost				= 1200
+cost				= 898
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -609,10 +635,14 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time			= 360.0
-boost_radiation_restore		= 0.001
-eat_satiety			= 0.72
-eat_sleepiness			= -0.055
+boost_time				= 24
+boost_radiation_restore			= 0.00132
+
+eat_alcohol				= -0.066
+eat_satiety				= 0.032
+eat_sleepiness				= -0.027
+
+eat_health				= -0.010
 
 use_sound			= interface\inv_smoke
 
@@ -623,13 +653,13 @@ description			= st_cigarettes_lucky_descr
 
 inv_name			= st_cigarettes_lucky
 inv_name_short			= st_cigarettes_lucky
-inv_weight			= 0.1	;0.2
+inv_weight			= 0.011
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 12
 inv_grid_y			= 44
-cost				= 170
+cost				= 1121
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -641,10 +671,12 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time			= 50.0
-boost_radiation_restore		= 0.001
-eat_satiety			= 0.11
-eat_sleepiness			= -0.055
+boost_time			= 54
+boost_radiation_restore		= 0.00143
+eat_satiety			= 0.014
+eat_sleepiness			= -0.032
+
+eat_health				= -0.002
 
 use_sound			= interface\inv_smoke
 
@@ -655,13 +687,13 @@ description			= st_cigarettes_russian_descr
 
 inv_name			= st_cigarettes_russian
 inv_name_short			= st_cigarettes_russian
-inv_weight			= 0.1	;0.2
+inv_weight			= 0.012
 
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 13
 inv_grid_y			= 44
-cost				= 150
+cost				= 296
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -673,11 +705,16 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time			= 40.0
-boost_radiation_restore		= 0.001
-eat_satiety			= 0.1
-eat_sleepiness			= -0.055
+boost_time				= 14
+boost_radiation_restore			= 0.00054
+
+eat_alcohol				= -0.036
+eat_satiety				= 0.032
+eat_sleepiness				= -0.038
 
 use_sound			= interface\inv_smoke
+
+eat_health				= -0.018
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

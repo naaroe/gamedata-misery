@@ -77,7 +77,12 @@ function surrender_victim_answers_2(a,b)
 		end
 	end
 
+	if (db.actor:character_reputation()+2 < 10000) then
+		db.actor:change_character_reputation(2)
+	end
+
 	npc:iterate_inventory(itr,npc)
+	return game.translate_string("actor_break_dialog_2")
 end
 
 function set_enemy(a,b)
@@ -997,7 +1002,7 @@ end
 function medic_magic_potion(first_speaker, second_speaker)
 	db.actor.health = 1
 	db.actor.power = 1
-	db.actor.radiation = -1
+--	db.actor.radiation = -1
 	db.actor.bleeding = 1
 end
 function medic_rad_potion(first_speaker, second_speaker)
@@ -1005,11 +1010,11 @@ function medic_rad_potion(first_speaker, second_speaker)
 end
 
 function health_care_actor_has_money(first_speaker, second_speaker)
-	return db.actor:money() >= 3500
+	return db.actor:money() >= 1850
 end
 
 function health_care_actor_has_rad_money(first_speaker, second_speaker)
-	return db.actor:money() >= 500
+	return db.actor:money() >= 1480
 end
 
 function health_care_actor_hasnt_money(first_speaker, second_speaker)
@@ -1021,11 +1026,11 @@ function health_care_actor_hasnt_rad_money(first_speaker, second_speaker)
 end
 
 function health_care_actor_transfer_money(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 3500)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 1850)
 end
 
 function health_care_actor_transfer_rad_money(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 500)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 1480)
 end
 
 function actor_needs_bless(first_speaker, second_speaker)

@@ -46,7 +46,8 @@ function action_reach_animpoint:execute()
 
         self.object:set_dest_level_vertex_id(self.st.animpoint.position_vertex)
 
-        self.object:set_desired_direction(self.st.animpoint.smart_direction)
+        -- self.object:set_desired_direction(self.st.animpoint.smart_direction)
+		self.object:set_desired_direction()
         self.object:set_path_type(game_object.level_path)
 
 
@@ -163,20 +164,16 @@ function animpoint:calculate_position()
 		return
 	end
 
-	self.position = se_smart_cover.registered_smartcovers[self.st.cover_name].position
-	self.position_vertex = level.vertex_id(self.position)
+	self.position = self.st.position or se_smart_cover.registered_smartcovers[self.st.cover_name].position
+	self.position_vertex = self.st.lvid or se_smart_cover.registered_smartcovers[self.st.cover_name].m_level_vertex_id or level.vertex_id(self.position)
 	self.vertex_position = level.vertex_position(self.position_vertex)
 
 	self.smart_direction = self.st.direction or angle_to_direction(smartcover.angle)
 	--printf("%s pos %s", self.st.cover_name, vec_to_str(self.position))
-	--printf("%s dir %s", self.st.cover_name, vec_to_str(self.smart_direction))
+	--alun_utils.printf("%s dir %s", self.st.cover_name, vec_to_str(self.smart_direction))
 
 	local look_dir = self.smart_direction:normalize()
-	self.look_position = vector():set( 	self.position.x + 10*look_dir.x,
-										self.position.y,
-										self.position.z + 10*look_dir.z)
-
-
+	self.look_position = self.st.look_position or vector():set(self.position.x + 10*look_dir.x,self.position.y,self.position.z + 10*look_dir.z)
 
 	-- Также получаем дескриптор позиции, и формируем список доступных действий.
 	local description_name = smartcover:description()
@@ -474,8 +471,16 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	--st.reach_movement	= utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk")
 	st.reach_movement = xr_logic.parse_condlist(db.actor, "animpoint", "reach_movement", utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk"))
 	st.reach_distance = st.reach_distance*st.reach_distance
+
 	local dir = alun_utils.read_from_ini(ini,section,"direction","string",nil)
 	st.direction = dir and alun_utils.string_to_vector(dir)
+	local lvid = alun_utils.read_from_ini(ini,section,"lvid","float",nil)
+	st.lvid = lvid
+	st.position = lvid and level.vertex_position(st.lvid)
+	--local look = alun_utils.read_from_ini(ini,section,"look","string",nil)
+	--st.look_position = look and alun_utils.string_to_vector(look)
+	--st.direction = look and npc:position():sub(st.look_position)
+
 	local tmp = utils.cfg_get_string(ini, section, "avail_animations", npc, false, "", nil)
 
 

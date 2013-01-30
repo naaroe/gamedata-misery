@@ -29,7 +29,7 @@
 	    <caption x="0" y="20" width="467" height="30">
 		    <text font="graffiti32" align="c">ui_mm_save_game</text>
 	    </caption>
-	    <edit x="24" y="75" width="204" height="23" file_name_mode="1">
+	    <edit x="24" y="75" width="204" height="23">
 		    <texture>ui_inGame2_edit_box_1</texture>
 		    <text x="3" font="letterica18" vert_align="c"/>
 	    </edit>

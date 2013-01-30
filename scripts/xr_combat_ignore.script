@@ -26,6 +26,7 @@ local EnableMemoryTimer = alun_utils.read_from_ini(ini,"settings","enable","bool
 local CombatDuringSurge = alun_utils.read_from_ini(ini,"settings","combat_during_surge","bool",false)
 local CombatInertion = alun_utils.collect_section(ini,"combat_inertion",true)
 local CombatInertionMult = alun_utils.collect_section(ini,"combat_inertion_mult",true)
+local ForbiddenNPCs = alun_utils.collect_section(ini,"forbidden_npcs",true)
 TimeSafe = alun_utils.read_from_ini(ini,"settings","time_safe","float",120000)
 ini = nil
 
@@ -46,6 +47,10 @@ function ignore_enemy_by_overrides(obj,enemy,st)
 			--obj:enable_memory_object(enemy,false)
 			return true
 		end
+	end
+
+	if (ene_id == db.actor:id() and xrs_debug_tools.debug_invis) then
+		return true
 	end
 
 	return false
@@ -113,7 +118,7 @@ function squad_on_npc_death(squad,npc)
 	end
 end
 
-function is_enemy(obj,enemy,st,check_overrides)
+function is_enemy(obj,enemy,st)
 	if not (obj:alive()) then return false end
 	if (obj:critically_wounded()) then return true end
 
@@ -223,6 +228,7 @@ function action_process_enemy:__init( obj, storage )
 	self.comm = get_object_community(obj)
 	self.rank = ranks.get_obj_rank_name(obj)
 	self.st.stage = 0
+	self.st.enemy_id = nil
 	if not (IsStalker(obj)) then
 		return
 	end
@@ -275,49 +281,41 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			self.st.enemy_id = ene_id
 
 			-- Jump to next stage
-			if (EnableMemoryTimer ~= true or self.comm == "monster" or self.comm == "zombied" or character_community(enemy) == "zombied" or character_community(enemy) == "monster") then
+			if (string.find(level.get_weather(),"veryfoggy") or ForbiddenNPCs[npc:section()] or ForbiddenNPCs[enemy:section()]) then
+				self.st.stage = 3
+			elseif (string.find(level.get_weather(),"foggy") or EnableMemoryTimer ~= true or self.comm == "monster" or self.comm == "zombied" or character_community(enemy) == "zombied" or character_community(enemy) == "monster") then
 				self.st.stage = 2
 			else
 				self.st.stage = 1
 			end
+		else
+			self.st.enemy_id = nil
 		end
 		return is_obj_enemy ~= nil
 	elseif (self.st.stage == 1) then
-		local time_in_memory = time_global() - npc:memory_time(enemy)
-		if (time_in_memory < 0) then
-			time_in_memory = time_in_memory + xr_logic.pstor_retrieve(npc,"mem_time_offset",0)
-		end
-
-		if (time_in_memory > self.st.combat_inertion) then
-			-- Check if No longer fighting actor npcs
+		return true
+	elseif (self.st.stage == 2) then
+		local dist = npc:position():distance_to_sqr(enemy:position())
+		if (dist > 22500) then
 			if (enemy:id() == db.actor:id()) then
 				fighting_with_actor_npcs[npc:id()] = nil
 			end
-
-			-- Disable enemy from memory
-			npc:enable_memory_object(enemy,false)
-
-			-- Store offset for saves
-			xr_logic.pstor_store(npc,"mem_time_offset",time_global())
-
-			-- Store this value
 			self.st.enemy_id = nil
-
-			-- reset stage
 			self.st.stage = 0
 			return false
-		else
-			return true
 		end
-	elseif (self.st.stage == 2) then
-		--[[ Disabled for Misery 2.0
+		self.st.stage = 0
+		return true
+	elseif (self.st.stage == 3) then
 		local dist = npc:position():distance_to_sqr(enemy:position())
-		if (dist > 50000) then
-			-- reset stage
+		if (dist > 5700) then
+			if (enemy:id() == db.actor:id()) then
+				fighting_with_actor_npcs[npc:id()] = nil
+			end
+			self.st.enemy_id = nil
 			self.st.stage = 0
 			return false
 		end
-		--]]
 		self.st.stage = 0
 		return true
 	end

@@ -65,8 +65,6 @@ function actor_binder:net_spawn(data)
 	-- alundaio
 	if (axr_main) then axr_main.on_game_load() end
 	if (xrs_debug_tools) then xrs_debug_tools.on_game_load() end
-	if (itms_manager) then itms_manager.on_game_load() end
-	if (spawn_manager) then spawn_manager.on_game_load() end
 	-- end alundaio
 
 	return true
@@ -86,6 +84,7 @@ function actor_binder:net_destroy()
 	level.show_weapon(true)
 	db.del_actor(self.object)
 
+	self.object:set_callback(callback.inventory_info, nil)
 	self.object:set_callback(callback.on_item_take, nil)
 	self.object:set_callback(callback.on_item_drop, nil)
 	self.object:set_callback(callback.task_state, nil)
@@ -123,6 +122,7 @@ function actor_binder:reinit()
 	self.st = db.storage[npc_id]
 	self.st.pstor = nil
 
+	self.object:set_callback(callback.inventory_info, self.info_callback, self)
 	self.object:set_callback(callback.on_item_take, self.on_item_take, self)
 	self.object:set_callback(callback.on_item_drop, self.on_item_drop, self)
 	self.object:set_callback(callback.trade_sell_buy_item, self.on_trade, self) -- for game stats
@@ -136,10 +136,14 @@ function actor_binder:take_item_from_box(box, item)
 	local box_name = box:name()
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_take_from_box(box,item) end
-	if (itms_manager) then itms_manager.actor_take_item_from_box(box,item) end
 	-- End Alundaio
 end
-
+----------------------------------------------------------------------------------------------------------------------
+function actor_binder:info_callback(npc, info_id)
+	-- Alundaio
+	if (axr_main) then axr_main.actor_on_info_callback(npc,info_id) end
+	-- Alundaio
+end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
 	if sell_bye == true then
@@ -177,14 +181,12 @@ function actor_binder:on_item_take (obj)
 
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_take(obj) end
-	if (itms_manager) then itms_manager.actor_item_take(obj) end
 	-- End Alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_drop (obj)
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_drop(obj) end
-	if (itms_manager) then itms_manager.actor_item_drop(obj) end
 	-- End Alundaio
 end
 
@@ -196,7 +198,6 @@ function actor_binder:use_inventory_item(obj)
 		end
 		-- Alundaio
 		if (axr_main) then axr_main.actor_on_item_use(obj) end
-		if (itms_manager) then itms_manager.actor_item_use(obj) end
 		-- End Alundaio
 	end
 end
@@ -215,7 +216,7 @@ function anabiotic_callback()
 			m:end_surge()
 		end
 	end
-	local m = psi_storm_manager.get_psi_storm_manager()
+	local m = psi_storm_manager and psi_storm_manager.get_psi_storm_manager()
 	if(m.started) then
 		local tf = level.get_time_factor()
 		local diff_sec = math.ceil(game.get_game_time():diffSec(m.inited_time)/tf)
@@ -401,8 +402,6 @@ function actor_binder:update(delta)
 	-- alundaio
 	if (axr_main) then axr_main.actor_on_update(self,delta) end
 	if (xrs_debug_tools) then xrs_debug_tools.on_actor_update(self,delta) end
-	if (itms_manager) then itms_manager.on_actor_update(self,delta) end
-	if (spawn_manager) then spawn_manager.on_actor_update() end
 	-- alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------

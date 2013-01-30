@@ -10,6 +10,10 @@ local function get_sound_type(sound_type)
 			s_type = "WPN_hit"
 		elseif bit_and(sound_type, snd_type.weapon_reload) == snd_type.weapon_reload then
 			s_type = "WPN_reload"
+		elseif bit_and(sound_type, -1065353216) == -1065353216 then
+			s_type = "WPN_show"
+		elseif bit_and(sound_type, -1056964608) == -1056964608 then
+			s_type = "WPN_hide"
 		end
 	elseif bit_and(sound_type, snd_type.item) == snd_type.item then
 		s_type = "ITM"
@@ -71,9 +75,10 @@ function reset_hear_callback(st, section)
 end
 function hear_callback(obj, who_id, sound_type, sound_position, sound_power)
 	local st = db.storage[obj:id()]
-	local s_type = get_sound_type(sound_type)
 
+	local s_type = get_sound_type(sound_type)
 	local sound_dist = sound_position:distance_to_sqr(obj:position())
+
 	--Alundaio
 	if (axr_main) then axr_main.npc_on_hear_callback(obj,who_id,s_type,sound_dist,sound_power) end
 	--Alundaio

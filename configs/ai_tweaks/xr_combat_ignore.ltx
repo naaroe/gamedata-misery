@@ -1,5 +1,5 @@
 [settings]
-enable = true ;	false ; 							;Enables a memory system that keeps track of how long enemy has been visible or heard. When time is up, combat enemy is forgotten.
+enable = true  									;Enables a memory system that keeps track of how long enemy has been visible or heard. When time is up, combat enemy is forgotten.
 combat_during_surge = false						; When disabled NPCs will ignore enemies during surge until cover is reached.
 time_safe = 180000								;Amount of time before safe zone flag wears off when an NPC leaves a no combat smart
 
@@ -15,6 +15,12 @@ monolith =	{=is_dark_night} 240000, 240000
 
 [combat_inertion_mult]
 novice = 1.1
-experienced = 1.25
-veteran = 1.7
-master = 1.8
+experienced = 1.2
+veteran = 1.2
+master = 1.3
+
+[forbidden_npcs] ;NPCs who will use vanilla distance check
+zat_b38_stalker_cop
+zat_b18_noah
+zat_b18_dog_noah
+jup_a10_stalker_vano

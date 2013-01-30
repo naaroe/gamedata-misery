@@ -30,6 +30,32 @@ bread					= 3, prob=0.007 \n
 breadold				= 3, prob=0.007 \n
 kolbasa					= 2, prob=0.007 \n
 conserva				= 1, prob=0.006 \n
+protein					= 1, prob=0.002 \n
+
+flask					= 4, prob=0.008 \n
+
+tomato				= 2, prob=0.007 \n
+sausage				= 2, prob=0.007 \n
+corn				= 2, prob=0.007 \n
+beans				= 1, prob=0.006 \n
+chili				= 1, prob=0.006 \n
+salmon				= 1, prob=0.006 \n
+raisins				= 2, prob=0.003 \n
+chocolate			= 1, prob=0.006 \n
+nuts				= 1, prob=0.003 \n
+
+mint				= 1, prob=0.003 \n
+mineral_water			= 2, prob=0.004 \n
+
+caffeine				= 1, prob=0.001 \n
+
+hand_rolling_tobacco		= 1, prob=0.001 \n
+cigar						= 1, prob=0.001 \n
+
+cigarettes_lucky		= 1, prob=0.001 \n
+cigarettes_russian		= 1, prob=0.002 \n
+
+beer					= 1, prob=0.002 \n
 
 vodka					= 2, prob=0.012 \n
 tea						= 2, prob=0.025 \n

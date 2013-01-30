@@ -119,7 +119,7 @@ function sim_squad_scripted:get_script_target()
 	end
 	local point = self.board.smarts_by_names[nt]
 	if point == nil then
-		abort("CRITICAL ERROR: Incorrect next point [%s] for squad [%s]", tostring(nt),  tostring(self.id))
+		abort("Incorrect next point [%s] for squad [%s]", tostring(nt),  tostring(self.id))
 		return
 	end
 	return point.id
@@ -271,11 +271,13 @@ local function can_help_actor(squad)
 		return false
 	end
 
+	-- Alundaio
 	if (axr_main) then
 		if (axr_main.squad_can_help_actor(squad)) then
 			return true
 		end
 	end
+	-- Alundaio
 
 	if has_alife_info("sim_duty_help_harder") and squad:get_squad_community() == "duty" then
 		return true
@@ -289,7 +291,7 @@ end
 
 local function get_help_target_id(squad)
 	-- Alundaio
-	local target_id = axr_main and axr_main.squad_assign_new_target(squad) or itms_manager and itms_manager.squad_assign_new_target(squad)
+	local target_id = axr_main and axr_main.squad_assign_new_target(squad)
 	if (target_id and alife():object(target_id)) then
 		return target_id
 	end
@@ -328,16 +330,13 @@ function sim_squad_scripted:generic_update()
 		return
 	end
 
-	local se_target = self.assigned_target_id and alife():object(self.assigned_target_id)
-	if (se_target) then
-		if (se_target:clsid() ~= clsid.online_offline_group_s) then
-			local squad_target = self.board:get_squad_target(self)
-			if squad_target:clsid() == clsid.online_offline_group_s then
-				self.assigned_target_id = squad_target.id
-				self.current_action = nil
-				self:get_next_action(true)
-				return
-			end
+	if self.assigned_target_id and alife():object(self.assigned_target_id) and alife():object(self.assigned_target_id):clsid() ~= clsid.online_offline_group_s then
+		local squad_target = self.board:get_squad_target(self)
+		if squad_target:clsid() == clsid.online_offline_group_s then
+			self.assigned_target_id = squad_target.id
+			self.current_action = nil
+			self:get_next_action(true)
+			return
 		end
 	end
 
@@ -365,11 +364,11 @@ end
 function sim_squad_scripted:get_next_action(under_simulation)
 	local squad_target = alife():object(self.assigned_target_id)
 	--printf("assigned_target = [%s]", tostring(self.assigned_target_id))
-	if (squad_target and not squad_target.am_i_reached) then
-		squad_target = alun_utils.fake_squad()
-	end
-
 	if self.current_target_id == nil then
+		if (squad_target and not squad_target.am_i_reached) then
+			squad_target = alun_utils.fake_squad()
+		end
+
 		if squad_target == nil or squad_target:am_i_reached(self) then
 			if squad_target ~= nil then
 				squad_target:on_reach_target(self)
@@ -1021,6 +1020,60 @@ function sim_squad_scripted:target_precondition(squad)
 		return false
 	end
 	return true
+
+--[[
+	if squad.player_id == "dolg" and
+		(is_squad_monster[self.player_id] or self.player_id == "freedom") and
+		in_time_interval(8,22) then
+		return true
+	end
+
+
+	if squad.player_id == "bandit" and self.player_id == "stalker" then
+		return true
+	end
+	if squad.player_id == "freedom" and self.player_id == "dolg" and in_time_interval(8,22) then
+		return true
+	end
+
+	-- Травоядные днем атакуют проходящих мимо сталкеров.(плоть, кабан)
+	if squad.player_id == "monster_vegetarian" and in_time_interval(8,22) and not is_squad_monster[self.player_id] then
+		return true
+	end
+
+	-- Хищники днем атакуют сталкеров и травоядных(собаки, псевдособаки, пси собаки)
+	if squad.player_id == "monster_predatory_day" and
+		in_time_interval(8,22) and
+		(self.player_id == "monster_vegetarian" or not is_squad_monster[self.player_id]) then
+		return true
+	end
+	-- Хищники ночью атакуют сталкеров и травоядных(тушканы,кровосос, химера)
+	if squad.player_id == "monster_predatory_night" and
+		in_time_interval( 22 , 8) and
+		(self.player_id == "monster_vegetarian" or not is_squad_monster[self.player_id]) then
+		return true
+	end
+	-- Зомбиобразные днем атакуют проходящих мимо сталкеров.
+	if squad.player_id == "monster_zombied_day" and
+		in_time_interval(8,22) and
+		(not is_squad_monster[self.player_id]) then
+		return true
+	end
+	-- Зомбиобразные днем атакуют проходящих мимо сталкеров.
+	if squad.player_id == "monster_zombied_night" and
+		in_time_interval(22,8) and
+		(not is_squad_monster[self.player_id]) then
+		return true
+	end
+	-- Особенные днем атакуют проходящих мимо сталкеров.
+	if squad.player_id == "monster_special" and
+		in_time_interval(8,22) and
+		(not is_squad_monster[self.player_id]) then
+		return true
+	end
+
+	return false
+	]]
 end
 
 -- Посчитать мой приоритет для отряда.

@@ -66,6 +66,9 @@
 	<string id="st_g">
 		<text>g</text>
 	</string>
+	<string id="st_kcal">
+		<text>kcal eq.</text>
+	</string>
 	<string id="st_move_on_belt">
 		<text>attach to belt</text>
 	</string>

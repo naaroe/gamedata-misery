@@ -227,6 +227,10 @@ function load_dialog:OnMsgYes()
 	if self.msgbox_id == 1 then
 		local item  = self.list_box:GetItemByIndex(index)
 
+		if not (item) then
+			return
+		end
+
 		local fname = item.fn:GetText()
 
 		delete_save_game	(fname)

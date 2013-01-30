@@ -66,28 +66,27 @@ cr_turn_right_0		=	1,	  0.2,	    0.1,   0.65,     0.1
 cl_run_back_0		=	1,	  0.2,	    1,     0.4,	     1
 cl_run_fwd_0		=	1,	  0.2,	    1,     0.4,	     1
 
-
 [stalker_vision_free]
-min_view_distance   		= 0.45				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.9				; коэффициент, который множится на eye_range, в зависимости от угла
+min_view_distance   		= 0.35				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
 visibility_threshold	 	= 200.0				;Threshold in which object becames visible based on factors
-always_visible_distance 	= 0.05
-time_quant					= 0.001				;step increment to for sight calculations (low values seem to make stalkers take shots faster)
-decrease_value				= 0.004				;Decrease over time to overall threshold
-velocity_factor		     	= 0.7				;Low value = easier to see moving object
-luminocity_factor			= 0.85				;Low value = easier to see at night
-transparency_threshold	 	= 0.50				;Low value = easier to see through semi-transparent objects
+always_visible_distance 	= 0.02
+time_quant					= 0.0012			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
+decrease_value				= 0.0013 			;Decrease over time to overall threshold
+velocity_factor		     	= 2.12				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+luminocity_factor			= 0.36				;Low value = easier to see at night
+transparency_threshold	 	= 0.96 				;Low value = easier to see through semi-transparent objects
 
 [stalker_vision_danger]
-min_view_distance   		= 0.45				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.9				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 150.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.05
-time_quant					= 0.0005
-decrease_value				= 0.004				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.4
-luminocity_factor			= 0.5 				; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.10
+min_view_distance   		= 0.50				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 125.0				; значение, при достижении суммой которого объект считается видимым
+always_visible_distance 	= 0.02
+time_quant					= 0.0009
+decrease_value				= 0.0011 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
+velocity_factor		     	= 2.12				
+luminocity_factor			= 0.36				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.96
 
 [stalker_sound_perceive]
 	weapon					= 2; 0.75; 10 коэффициент усиления приоритета\силы звука
@@ -103,12 +102,12 @@ bip01_pelvis 				= 0.75, 4, 1.6
 bip01_spine 		 		= 0.85, 4, 1.8
 bip01_spine1 		 		= 0.85, 4, 1.9
 bip01_spine2 		 		= 0.9, 4, 2.1
-bip01_neck 			 	= 0.6, 0, 3.2
-bip01_head 			 	= 1.65, 0, 4.3
-eyelid_1 			 	= 1.65, 0, 4.3
-eye_left 			 	= 1.65, 0, 4.3
-eye_right 			 	= 1.65, 0, 4.3
-jaw_1 		 		 	= 1.35, 0, 3.6
+bip01_neck 			 	= 1.25, 0, 8.2
+bip01_head 			 	= 2.25, 0, 12.3
+eyelid_1 			 	= 2.25, 0, 12.3
+eye_left 			 	= 2.25, 0, 12.3
+eye_right 			 	= 2.25, 0, 12.3
+jaw_1 		 		 	= 2.25, 0, 12.3
 
 bip01_l_clavicle	 		= 0.35, 8, 0.65
 bip01_l_upperarm	 		= 0.2, 8, 0.45
@@ -308,7 +307,7 @@ min_wound_size				= 0.0075
 	;; stand
 	;;; forward
 	free_stand_walk_forward		= 1.15
-	free_stand_run_forward		= 5.85
+	free_stand_run_forward		= 3.35
 	; panic
 	;; stand
 	;;; run
@@ -392,7 +391,7 @@ vision_free_section				= stalker_vision_free
 eye_fov							= 110 ;110;120
 eye_range						= 110
 far_plane_factor				= 1.0				; фактор дальности тумана
-fog_density_factor				= 0.5			;0.1		;0.05				; фактор плотности тумана
+fog_density_factor				= 0.95 ; 0.95			;0.1		;0.05				; фактор плотности тумана
 
 
 ;---MEMORY------------------------------------------------------------

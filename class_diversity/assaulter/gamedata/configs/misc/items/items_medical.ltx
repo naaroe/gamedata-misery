@@ -10,7 +10,7 @@ description			= st_bandage_descr
 inv_name			= st_bandage
 inv_name_short		= st_bandage
 inv_weight			= 0.038	;0.2
-cost				= 960
+cost				= 560
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -41,13 +41,13 @@ inv_grid_height			= 1
 inv_grid_x			= 1
 inv_grid_y			= 45
 
-boost_time				= 48.6
+boost_time				= 42.6
 boost_health_restore	= 0.0024
-boost_radiation_restore	= 0.0025
+boost_radiation_restore	= 0.0051
 
-eat_bleeding	= -0.68
+eat_bleeding	= -0.88
 
-eat_satiety 			= 0.22
+eat_satiety 			= 0.346
 
 use_sound			= interface\inv_medkit
 
@@ -97,12 +97,11 @@ inv_grid_width     = 1
 inv_grid_height    = 1
 inv_grid_x         = 0
 inv_grid_y         = 46
-cost				= 1520 ; 850
+cost				= 1320 ; 850
 
 boost_time				= 14.75
-boost_health_restore	= 0.00332
+boost_health_restore	= 0.0033
 boost_radiation_restore	= 0.0
-boost_bleeding_restore	= 0.0	; 0.003 ;0.005
 
 use_sound			= interface\inv_stim_4p3
 
@@ -122,10 +121,10 @@ inv_grid_width     = 1
 inv_grid_height    = 1
 inv_grid_x         = 1
 inv_grid_y         = 46
-cost				= 2850 ; 1650
+cost				= 2250 ; 1650
 
 boost_time				= 11.95
-boost_health_restore	= 0.00564
+boost_health_restore	= 0.0057
 boost_radiation_restore	= 0.0
 
 use_sound			= interface\inv_stim_4p3
@@ -147,7 +146,7 @@ inv_grid_width     = 1
 inv_grid_height    = 1
 inv_grid_x         = 2
 inv_grid_y         = 46
-cost				= 4750 ; 2260
+cost				= 3450 ; 2260
 
 boost_time				= 10.84
 boost_health_restore	= 0.0123
@@ -196,7 +195,7 @@ inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 10
 inv_grid_y			= 10
-cost				= 1730
+cost				= 1530
 
 boost_time				= 42.6
 boost_health_restore	= 0.0014
@@ -222,12 +221,11 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 12
 inv_grid_y			= 9
-cost				= 2860
+cost				= 2260
 
 boost_time				= 42.6
 boost_health_restore	= 0.0018
 boost_radiation_restore	= 0.0061
-boost_bleeding_restore	= 0.0
 
 eat_alcohol				= 0.0
 eat_satiety 			= 0.0
@@ -247,7 +245,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 19
 inv_grid_y			= 4
-cost				= 5690
+cost				= 4690
 
 ;eatable item
 ;eat_radiation 			= 0.9
@@ -255,7 +253,6 @@ cost				= 5690
 boost_time				= 9.64
 boost_health_restore	= 0.0149
 boost_radiation_restore	= 0.0164
-boost_bleeding_restore	= 0.0
 
 eat_alcohol				= 0.264
 eat_satiety 			= 0.462
@@ -263,6 +260,31 @@ eat_satiety 			= 0.462
 eat_sleepiness				= -0.071
 
 use_sound			= interface\inv_syringe
+
+[caffeine]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine
+inv_name_short		= st_caffeine
+description			= st_caffeine_descr
+
+inv_weight			= 0.01
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 10
+inv_grid_y		= 47
+cost			= 510
+
+boost_time			= 266
+boost_max_weight	= 0.724
+
+boost_power_restore		= 0.0008
+
+eat_alcohol 			= -0.170
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.022
+
+use_sound			= interface\inv_eat_pills
 
 [tetanus]:booster
 $spawn 				= "food and drugs\antirad"
@@ -276,12 +298,12 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 10
 inv_grid_y			= 48
-cost				= 2290
+cost				= 1940
 
-boost_time				= 79.0
-boost_health_restore	= 0.000077
-boost_radiation_restore	= 0.000068
-boost_bleeding_restore	= 0.000061
+boost_time				= 336
+boost_health_restore	= 0.000062
+boost_radiation_restore	= 0.000074
+boost_bleeding_restore	= 0.000067
 
 boost_chemburn_protection 	= 0.00442
 
@@ -304,7 +326,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 8
 inv_grid_y			= 52
-cost				= 2480
+cost				= 1780
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -316,7 +338,7 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 418
+boost_time				= 1236
 boost_power_restore		= 0.0032
 boost_max_weight	= 4.542
 boost_bleeding_restore	= 0.00016
@@ -327,10 +349,10 @@ boost_explosion_immunity	= 0.162
 boost_strike_immunity		= 0.071
 
 eat_alcohol				= -0.292
-eat_satiety				= 0.0212
+eat_satiety				= 0.212
 eat_sleepiness				= -0.267
 
-eat_health				= -0.0421
+eat_health				= -0.042
 
 use_sound			= interface\inv_sniff
 
@@ -348,7 +370,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 4
 inv_grid_y			= 46
-cost				= 1640
+cost				= 980
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -360,9 +382,9 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 221
-boost_power_restore		= -0.0024 ;0.005
-boost_max_weight	= -4.126
+boost_time				= 842
+;boost_power_restore		= -0.0024 ;0.005
+;boost_max_weight	= -4.126
 boost_bleeding_restore	= 0.00032
 
 boost_wound_immunity		= 0.430
@@ -371,7 +393,7 @@ boost_explosion_immunity	= 0.60
 boost_strike_immunity		= 0.35
 
 eat_alcohol				= 0.206
-eat_satiety				= -0.0274
+eat_satiety				= -0.474
 eat_sleepiness				= 0.184
 
 eat_health				= -0.041
@@ -392,7 +414,7 @@ inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x			= 3
 inv_grid_y			= 46
-cost				= 2740
+cost				= 1640
 
 attach_angle_offset		= -0.287979, 1.560923, 1.544060
 attach_position_offset	= 0.096910, -0.013594, 0.107925
@@ -404,9 +426,9 @@ bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
-boost_time				= 412
-boost_power_restore		= -0.0016 ;0.005
-boost_max_weight	= -2.84
+boost_time				= 1224
+;boost_power_restore		= -0.0016 ;0.005
+;boost_max_weight	= -2.84
 boost_bleeding_restore	= 0.00048
 
 boost_wound_immunity		= 0.667
@@ -415,7 +437,7 @@ boost_explosion_immunity	= 0.88
 boost_strike_immunity		= 0.46
 
 eat_alcohol				= 0.352
-eat_satiety				= -0.0312
+eat_satiety				= -0.712
 eat_sleepiness				= 0.224
 
 eat_health				= -0.031
@@ -428,7 +450,7 @@ inv_name			= st_adrenalin
 inv_name_short			= st_adrenalin
 visual				= dynamics\equipments\medical\stim3.ogf
 description			= st_adrenalin_descr
-cost				= 3480
+cost				= 2780
 
 inv_grid_width		= 1
 inv_grid_height		= 1
@@ -441,7 +463,7 @@ attach_position_offset	= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-boost_time				= 601
+boost_time				= 1896
 boost_power_restore		= 0.0047
 boost_max_weight	= 7.926
 boost_bleeding_restore	= 0.00031
@@ -452,10 +474,10 @@ boost_explosion_immunity	= 0.286
 boost_strike_immunity		= 0.139
 
 eat_alcohol				= -0.495
-eat_satiety				= 0.041
+eat_satiety				= 0.418
 eat_sleepiness				= -0.264
 
-eat_health				= -0.0174
+eat_health				= -0.017
 
 use_sound			= interface\inv_syringe
 

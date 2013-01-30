@@ -1,20 +1,20 @@
 [settings]
-death_time_danger 		= 90000
-always_detect_dist 		= 400			;dist that NPCs will always detect corpses
-state_run 				= rush
-state_walk 				= patrol
-enable_mutant_looting 	= true
+death_time_danger 			= 120000		;Miliseconds a fresh friendly body causes a danger reaction
+always_detect_dist_free		= 1200			;dist that NPCs will always detect corpses
+always_detect_dist_danger 	= 125			;dist NPCs will always detect fresh friendly bodies that cause danger reaction
+state_run 					= rush
+state_walk 					= patrol
+enable_mutant_looting 		= true
 
 [loot_mutant_communities]
-stalker_hunter_day
-stalker_hunter_day_hostile
-stalker_hunter_night
-stalker_hunter_night_hostile
-dolg_hunter_day
-dolg_hunter_day_hostile
-dolg_hunter_night
-dolg_hunter_night_hostile
-
+stalker
+bandit
+killer
+dolg
+freedom
+ecolog
+army
+monolith
 
 [lootable]
 csky_patch
@@ -412,6 +412,30 @@ drug_anabiotic
 bread
 kolbasa
 conserva
+
+tomato
+sausage
+corn
+beans
+chili
+salmon
+raisins
+chocolate
+nuts
+
+mint
+mineral_water
+
+caffeine
+
+hand_rolling_tobacco
+cigar
+
+cigarettes_lucky
+cigarettes_russian
+
+beer
+
 vodka
 energy_drink
 
@@ -534,6 +558,7 @@ sleep_bag
 ;Alundaio Item Manager
 itm_backpack
 itm_sleepbag
+itm_actor_backpack
 
 device_flashlight
 device_torch_dummy

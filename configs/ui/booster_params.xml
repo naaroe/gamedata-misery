@@ -30,7 +30,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_satiety</texture_minus>
-		<value x="153" y="0" width="30" height="20" magnitude="100">
+		<value x="153" y="0" width="30" height="20" magnitude="1000" unit_str="st_kcal">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_satiety>
@@ -63,7 +63,7 @@
 			<text color="ui_3" font="letterica16" vert_align="c" x="22" y="0"/>
 		</caption>
 			<texture_minus>ui_am_prop_bleeding_restore</texture_minus>
-		<value x="235" y="0" width="30" height="20" magnitude="10000">
+		<value x="210" y="0" width="30" height="20" magnitude="10000">
 			<text font="letterica16" vert_align="c"/>
 		</value>
 	</boost_bleeding_restore>

@@ -76,12 +76,28 @@ function sleep_dialog:TestAndShow()
 	if(db.actor.bleeding>0 or db.actor.radiation>0 or xr_conditions.surge_started() == true) then
 		self.sleep_mb:InitMessageBox("message_box_ok")
 		if(db.actor.bleeding>0 and db.actor.radiation>0) then
+			if (itms_manager) then
+				itms_manager.show_message("I need a medic",25)
+				return
+			end
 			self.sleep_mb:SetText("Sleep well")
 		elseif(db.actor.bleeding>0) then
+			if (itms_manager) then
+				itms_manager.show_message("I'll bleed to death",25)
+				return
+			end
 			self.sleep_mb:SetText("You are hurt!")
 		elseif(surge_manager.get_surge_manager().started == true) then
+			if (itms_manager) then
+				itms_manager.show_message("Not crazy enough to sleep during this shit",30)
+				return
+			end
 			self.sleep_mb:SetText("Blowout warning!")
 		else
+			if (itms_manager) then
+				itms_manager.show_message("I have radiation sickness",25)
+				return
+			end
 			self.sleep_mb:SetText("Radiation hazard!")
 		end
 		self.sleep_mb:ShowDialog(true)
@@ -128,12 +144,7 @@ function sleep_dialog:OnButtonSleep()
 
 		if not (safe) then
 			if (xr_conditions.surge_started()) then
-				local hud = get_hud()
-				hud:AddCustomStatic("can_use_weapon_now", true)
-				hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Not crazy enough to sleep during this shit")
-				itms_manager.ShowMessage = true
-				itms_manager.ShowMessageInit = game.get_game_time()
-				itms_manager.ShowMessageTime = 30
+				if (itms_manager) then itms_manager.show_message("Not crazy enough to sleep during this shit",30) end
 				self:OnButtonCancel()
 				return
 			end

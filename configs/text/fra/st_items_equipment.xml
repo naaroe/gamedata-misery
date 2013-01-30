@@ -29,7 +29,7 @@
 	</string>
 		<string id="st_breadold_descr">
 		<text>A bread loaf baked outside the Zone.</text>
-	</string>	
+	</string>
 	<string id="st_porn">
 		<text>Porn magazine</text>
 	</string>
@@ -84,6 +84,12 @@
 	<string id="st_meat_dog_descr">
 		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.</text>
 	</string>
+		<string id="st_meat_pseudodog">
+		<text>Pseudodog meat</text>
+	</string>
+	<string id="st_meat_pseudodog_descr">
+		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.</text>
+	</string>
 		<string id="st_meat_flesh">
 		<text>Fat bacon</text>
 	</string>
@@ -101,7 +107,7 @@
 	</string>
 	<string id="st_meat_bloodsucker_descr">
 		<text>A small but hot meal made from bloodsucker flesh and chilis with added mushrooms. Served in a tin box.</text>
-	</string>	
+	</string>
 	<string id="st_meat_snork">
 		<text>Roasted Snork hand.</text>
 	</string>
@@ -271,7 +277,7 @@ It's a heavy kit but it can be very helpful when exploring deep into The Zone wi
 		<text>This is your personal ID card which reveals your true identity (keep it hidden). As a USS Assaulter you are specialized in assault rifles, shotguns and heavy weapons. You are also specialized in the control of weapon recoil. Slow sprinting speed. </text>
 	</string>
 	<string id="st_roubles">
-		<text>100-rouble coins</text>
+		<text>10-rouble coins</text>
 	</string>
 	<string id="st_roubles_descr">
 		<text>Trade in The Zone is mainly done through electronic transactions for safety and managing reasons. But many stalkers keep at least a few coins on them to be able to buy smaller things like cigarettes off each other. This minimizes economy management and conserves battery life.</text>
@@ -352,7 +358,7 @@ For this reason it can be extremely dangerous to display a patch to the wrong pe
 		<text>Cleansed zone water</text>
 	</string>
 	<string id="st_flask_descr">
-		<text>Military flasks are used for small zips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. But the water is impossible to clean perfectly so a slight radiation and fatigue slowly generates a grainy vision and a decrease in stamina. 
+		<text>Military flasks are used for small zips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. But the water is impossible to clean perfectly so a slight radiation and fatigue slowly generates a grainy vision and a decrease in stamina.
 Unless you throw a disinfecting Akvatab into the flask with every zip of water that you take in to neutralize this effect.</text>
 	</string>
 	<string id="st_akvatab">
@@ -473,7 +479,7 @@ Unless you throw a disinfecting Akvatab into the flask with every zip of water t
 		<text>Picture of a woman</text>
 	</string>
 	<string id="st_picture_woman_descr">
-		<text>The small picture wrapped in plastic displays a beautiful woman with blond hair. At the bottom of the picture a name is crossed out.</text>
+		<text>The small picture wrapped in plastic displays a beautiful woman with black hair. At the bottom of the picture a name is crossed out.</text>
 	</string>
 	<string id="st_drugs_kit">
 		<text>Kit for making drugs</text>
@@ -501,7 +507,12 @@ Unless you throw a disinfecting Akvatab into the flask with every zip of water t
 		<text>Quick Release System</text>
 	</string>
 	<string id="st_itm_backpack_desc">
-		<text>In The Zone you are most likely to be caught by surprise in terrible situations. With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to free yourself from its weight. Your equipped weapon(s), ammunition, armour and armour attachments remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
+With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
+Push the hotkey to activate the emergency release that instantly drops your
+backpack (and everything inside it) to free yourself from its weight.
+Your equipped weapon(s), ammunition, armour and armour attachments
+remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
 	</string>
 	<string id="st_kit_hunt">
 		<text>Hunters kit</text>
@@ -564,7 +575,7 @@ There is little chance that this item is ever going to function again.</text>
 		<text>Broken flashlight</text>
 	</string>
 	<string id="st_flashlight_broken_descr">
-		<text>The handle is broken and not even duck tape would be able to keep the batteries in place. 
+		<text>The handle is broken and not even duck tape would be able to keep the batteries in place.
 This is no longer of any value.</text>
 	</string>
 
@@ -572,7 +583,7 @@ This is no longer of any value.</text>
 		<text>Soaked underwear</text>
 	</string>
 	<string id="st_underwear_descr">
-		<text>An extra pair of socks, shirt and underwear might work wonders. But not in this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.</text>
+		<text>An extra pair of socks, shirt and underwear might work wonders. But not is this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.</text>
 	</string>
 
 	<string id="st_wpn_spareparts">
@@ -668,7 +679,7 @@ Many stalkers carry such tool so it may be of little value when traded.</text>
 Cocaine is a powerful nervous system stimulant. Its effects can last from 15–30 minutes to an hour, depending on the route of administration. Cocaine increases alertness, feelings of well-being and euphoria, energy and motor activity, feelings of competence and sexuality. Athletic performance may be enhanced in sports where sustained attention and endurance is required. Anxiety, paranoia and restlessness are also frequent. With excessive dosage, tremors, convulsions and increased body temperature are observed. Occasional cocaine use does not typically lead to severe or even minor physical or social problems.
 Bandits are know for making use of such drugs right before launching an assault or ambush.</text>
 	</string>
-  
+
 	<string id="st_hammer">
 		<text>Old hammer</text>
 	</string>
@@ -752,20 +763,31 @@ As injection of inactivated toxin overally boosts users organism activity, there
 		<text>Quick Release System</text>
 	</string>
 	<string id="st_itm_backpack_desc">
-		<text>In The Zone you are most likely to be caught by surprise in terrible situations. With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item. Push the hotkey to activate the emergency release that instantly drops your backpack (and everything inside it) to free yourself from its weight. Your equipped weapon(s), ammunition, armour and armour attachments remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
+With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
+Push the hotkey to activate the emergency release that instantly drops your
+backpack (and everything inside it) to free yourself from its weight.
+Your equipped weapon(s), ammunition, armour and armour attachments
+remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
 	</string>
 	<string id="st_itm_backpack_stash_name">
 		<text>PDA marked backpack</text>
 	</string>
 	<string id="st_itm_backpack_stash_desc">
-		<text>An extremely durable backpack with implemented GPS electronical devices. You will synchronize this device with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry even in very humid environments. The camouflaged design makes sure that it doesn't stand out from the surroundings.\n\n%c[255,238,153,26]This PDA marked backpack can be used only once. So place it carefully.</text>
+		<text>An extremely durable backpack with implemented GPS electronical devices. You will synchronize this device with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry even in very humid environments. The camouflaged design makes sure that it doesn't stand out from the surroundings.</text>
 	</string>
 	<string id="st_identity_card">
 		<text>Personal USS identity card</text>
 	</string>
-	<string id="st_identity_card_descr">
+	<string id="st_identity_card_assaulter_descr">
 		<text>As a USS Assaulter you have unique strengths and weaknesses.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]C\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]High recoils\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]Heavy weapons\n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]C\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]very high\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]slow\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Base stamina: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]high\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]high\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol:%c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]C</text>
 	</string>
+    <string id="st_identity_card_recon_descr">
+        <text>As a USS Recon you have unique strengths and weaknesses.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]A+\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]SMG's\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]SMG's\n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]A\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Base stamina: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]low\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]slow\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]medium\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]A</text>
+    </string>
+    <string id="st_identity_card_sniper_descr">
+        <text>As a USS Sniper your attributes are extremely well balanced.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]B\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]sniper rifles\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]sniper rifles \n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]B+\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Stamina running: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Stamina sprinting: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]medium\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]low\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]B</text>
+    </string>
 	<string id="st_morphine">
 		<text>Morphine ampoule (imported)</text>
 	</string>
@@ -778,22 +800,105 @@ As injection of inactivated toxin overally boosts users organism activity, there
 	<string id="st_salicidic_acid_descr">
 		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Salicylic acid. Salicylic acid is known for its ability to ease aches and pains and reduce fevers. These medicinal properties, particularly fever relief, have been known since ancient times, and it is used as an anti-inflammatory drug.Some researchers believe that salicylate is an essential micronutrient in the human diet, potentially qualifying as a vitamin, namely Vitamin S. Injected to arm or thigh.</text>
 	</string>
-	<string id="st_stim_impro">
-		<text>Improvised Stim (zone produced)</text>
+	<string id="st_tomato">
+		<text>Canned tomatoes (imported)</text>
 	</string>
-	<string id="st_stim_impro_descr">
-		<text>Improvised Stims are popular among novice Zone Men as they are easily attainable and within reach in terms of costs. But their Zone produced contents also generates many side effect when injected intramuscularly to the thigh. Stims are in-field chemical delivery systems with powerful mixtures of synthetic adrenaline, endorphins, coagulent medicaments and other health boosting drugs to instantly reduce pain and shock when wounded. Bleeding and basic wound treatment must be attended to in traditional ways with medkits and bandages when safe.</text>
+	<string id="st_tomato_descr">
+		<text>Canned sliced and diced tomatoes are brought to the Zone on regular basis. The date on the bottom tells you that this should be alright to eat.</text>
 	</string>
-	<string id="st_stim_military">
-		<text>Military Stim (imported)</text>
+	<string id="st_sausage">
+		<text>Smoked sausage (imported)</text>
 	</string>
-	<string id="st_stim_military_descr">
-		<text>Military Stims are preferred by experienced Stalkers as they are very effective and faster than improvised one but also kicks like a bull producing numerous side effects. Very high trading value as they are hard to come by for anyone without military contacts. Stims are in-field chemical delivery systems with powerful mixtures of synthetic adrenaline, endorphins, coagulent medicaments and other health boosting drugs to instantly reduce pain and shock when wounded. Bleeding and basic wound treatment must be attended to in traditional ways with medkits and bandages when safe.</text>
+	<string id="st_sausage_descr">
+		<text>Made of beef and pork. Smoked and vacuum packaged it can be preserved for a long periods.</text>
 	</string>
-	<string id="st_stim_scientic">
-		<text>Scientific Stim (experimental)</text>
+        <string id="st_corn">
+		<text>Canned corn (imported)</text>
 	</string>
-	<string id="st_stim_scientic_descr">
-		<text>Products of the same Kiev institute that developed the SEVA suit. Quality mixtures of the best medicaments available can be injected for instant restorative effect that even cures some radiation poisoning with little to no side effect. Hellishly expensive! Stims are in-field chemical delivery systems with powerful mixtures of synthetic adrenaline, endorphins, coagulent medicaments and other health boosting drugs to instantly reduce pain and shock when wounded. Bleeding and basic wound treatment must be attended to in traditional ways with medkits and bandages when safe.</text>
+	<string id="st_corn_descr">
+		<text>Canned sweet corn brought from the outside. Can be eaten as it is, but there are some who cook soup with it.</text>
+	</string>
+        <string id="st_mineral_water">
+		<text>Mineral water (imported)</text>
+	</string>
+	<string id="st_mineral_water_descr">
+		<text>Spring water from the Ukrainian mountains with added carbohydrates and calcium.</text>
+	</string>
+        <string id="st_hand_rolling_tobacco">
+		<text>Hand rolling tobacco (imported)</text>
+	</string>
+	<string id="st_hand_rolling_tobacco_descr">
+		<text>Precious hand rolling tobacco which was brought from the west side. Since there are no additives with this brand, it is posible to enjoy the original taste of tobacco leaf itself.</text>	</string>
+	<string id="st_beer">
+		<text>Beer (imported)</text>
+	</string>
+	<string id="st_beer_descr">
+		<text>Ukrainian beer. Not only vodka, but also beer is popular within every faction.</text>
+	</string>
+	<string id="st_beans">
+		<text>Baked beans (imported)</text>
+	</string>
+	<string id="st_beans_descr">
+		<text>Canned baked beans brought from west. The kidney beans with tomato sauce may bring back some memories for some people in certain areas.</text>
+	</string>
+	<string id="st_chili">
+		<text>Chili beans (imported)</text>
+	</string>
+	<string id="st_chili_descr">
+		<text>Canned chili beans brought from the outside are popular as incredients in cooked mutant meals.</text>
+	</string>
+	<string id="st_salmon">
+		<text>Smoked salmon (imported)</text>
+	</string>
+	<string id="st_salmon_descr">
+		<text>Ukrainian smoked salmon. These valuable packages are often traded and consumed within a few days after they've been brought to the Zone.</text>
+	</string>
+	<string id="st_raisins">
+		<text>Raisins (imported)</text>
+	</string>
+	<string id="st_raisins_descr">
+		<text>A pack of raisins are a rich and instant nutrition source for balancing the sugar balance in the blood.</text>
+	</string>
+	<string id="st_chocolate">
+		<text>Chocolate (imported)</text>
+	</string>
+	<string id="st_chocolate_descr">
+		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone.</text>
+	</string>
+	<string id="st_mint">
+		<text>Mint gum (imported)</text>
+	</string>
+	<string id="st_mint_descr">
+		<text>Strong mint gum brough from the west. It is refreshing and seems to have a nice ability to fight off sleepiness for a short while.</text>
+	</string>
+	<string id="st_caffeine">
+		<text>Caffeine tablets (imported)</text>
+	</string>
+	<string id="st_caffeine_descr">
+		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.</text>
+	</string>
+	<string id="st_cigar">
+		<text>Cigar (imported)</text>
+	</string>
+	<string id="st_cigar_descr">
+		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco.</text>
+	</string>
+	<string id="st_cigarettes_lucky">
+		<text>Lucky Strike (imported)</text>
+	</string>
+	<string id="st_cigarettes_lucky_descr">
+		<text>Cigarettes brought from the west. Some Stalkers use these packages to trade a few rounds of ammo within their faction.</text>
+	</string>
+	<string id="st_cigarettes_russian">
+		<text>Russian Cigarettes (imported)</text>
+	</string>
+	<string id="st_cigarettes_russian_descr">
+		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.</text>
+	</string>
+	<string id="st_nuts">
+		<text>Mixed Nuts (imported)</text>
+	</string>
+	<string id="st_nuts_descr">
+		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high.</text>
 	</string>
 </string_table>

@@ -48,7 +48,6 @@ veteran					= 1.1
 master					= 1.2
 elite					= 1.4
 
-
 ; Papa ScarabParamit say's:
 ; Here You can set CHANCES of certain items to be DESTROYED upon NPC's death...
 ; Settings DO NOT concerns items spawn on NPC death,
@@ -118,6 +117,22 @@ bread				= 0.75
 kolbasa				= 0.75
 conserva			= 0.75
 protein				= 0.75
+
+tomato				= 0.75
+sausage				= 0.75
+corn				= 0.75
+beans				= 0.75
+chili				= 0.75
+salmon				= 0.75
+raisins				= 0.75
+chocolate			= 0.75
+nuts				= 0.75
+
+mint				= 0.75
+mineral_water			= 0.75
+
+beer					= 0.75
+
 energy_drink		= 0.75
 water_drink			= 0.75
 
@@ -160,12 +175,22 @@ cigar1					= 1.0
 cigar2					= 1.0
 cigar3					= 1.0
 
+caffeine				= 1.0
+
+cigar					= 1.0
+cigarettes_lucky		= 1.0
+cigarettes_russian		= 1.0
+
 tetanus				= 1.0
 adrenalin			= 1.0
 cocaine				= 1.0
 
 salicidic_acid		= 1.0
 morphine			= 1.0
+
+tobacco					= 1.0
+marijuana				= 1.0
+hand_rolling_tobacco		= 1.0
 
 ; --- Artifacts ---
 af_cristall					= 1.0
@@ -244,7 +269,6 @@ book3					= 1.0
 picture_woman			= 1.0
 drugs_kit				= 1.0
 
-
 hammer_inv					= 1.0
 crowbar					= 1.0
 spareparts				= 1.0
@@ -258,8 +282,6 @@ swiss					= 1.0
 headlamp				= 1.0
 mirror					= 1.0
 kit_hunt				= 1.0
-tobacco					= 1.0
-marijuana				= 1.0
 flashlight_old			= 1.0
 flashlight_broken		= 1.0
 underwear				= 1.0
@@ -275,37 +297,39 @@ radio2					= 1.0
 fieldcooker				= 1.0
 
 ; --- Ammunition ---
-ammo_9x18_fmj			= 0.33 ; Light Pistol Rounds
-ammo_9x18_pmm			= 0.15
-ammo_9x18_ap			= 0.15
-ammo_9x19_fmj			= 0.33 ; Pistol & SMG Rounds
-ammo_9x19_pbp			= 0.15
-ammo_9x19_ap			= 0.15
-ammo_11.43x23_fmj		= 0.33 ; 45 ACP Heavy Pistol Rounds
-ammo_11.43x23_hydro		= 0.15
-ammo_11.43x23_ap		= 0.15
-ammo_12x70_buck			= 0.33 ; Shotgun Shells
-ammo_12x76_zhekan		= 0.15
-ammo_5.45x39_fmj		= 0.33 ; Warsaw Pact Rifle Rounds
-ammo_5.45x39_ap			= 0.15
-ammo_5.56x45_ss190		= 0.33 ; NATO Assault Rifle Rounds
-ammo_5.56x45_ap			= 0.15
-ammo_9x39_pab9			= 0.33 ; Special Forces Subsonic Rounds
-ammo_9x39_ap			= 0.15
-ammo_7.62x39_fmj		= 0.33 ; Old Soviet WorldWar II Rounds
-ammo_7.62x39_ap			= 0.15
-ammo_7.92x33_fmj		= 0.75 ; Old German WorldWar II Rounds
-ammo_7.92x33_ap			= 0.25
-ammo_7.62x54_7h1		= 0.33 ; Warsaw Pact Sniper Rifle Rounds
-ammo_7.62x54_7h14		= 0.0 ; (???)
-ammo_7.62x54_ap			= 0.33
-ammo_7.62x51_fmj		= 0.15 ; NATO Sniper Rifle Rounds
+ammo_9x18_fmj			= 0.5 ; Light Pistol Rounds
+ammo_9x18_pmm			= 0.5
+ammo_9x18_ap			= 0.5
+ammo_9x19_fmj			= 0.5 ; Pistol & SMG Rounds
+ammo_9x19_pbp			= 0.5
+ammo_9x19_ap			= 0.5
+ammo_11.43x23_fmj		= 0.5 ; 45 ACP Heavy Pistol Rounds
+ammo_11.43x23_hydro		= 0.5
+ammo_11.43x23_ap		= 0.5
+ammo_12x70_buck			= 0.5 ; Shotgun Shells
+ammo_12x76_zhekan		= 0.5
+ammo_5.45x39_fmj		= 0.5 ; Warsaw Pact Rifle Rounds
+ammo_5.45x39_ap			= 0.5
+ammo_5.56x45_ss190		= 0.5 ; NATO Assault Rifle Rounds
+ammo_5.56x45_ap			= 0.5
+ammo_9x39_pab9			= 0.5 ; Special Forces Subsonic Rounds
+ammo_9x39_ap			= 0.5
+ammo_7.62x39_fmj		= 0.5 ; Old Soviet WorldWar II Rounds
+ammo_7.62x39_ap			= 0.5
+ammo_7.92x33_fmj		= 0.5 ; Old German WorldWar II Rounds
+ammo_7.92x33_ap			= 0.5
+ammo_7.62x54_7h1		= 0.5 ; Warsaw Pact Sniper Rifle Rounds
+ammo_7.62x54_7h14		= 0.5
+ammo_7.62x51_fmj		= 0.5 ; NATO Sniper Rifle Rounds
+ammo_7.62x51_ap			= 0.5
 ammo_gauss				= 1.0 ; Electro-Magnetic Particle Cannon
 ammo_gauss_cardan		= 1.0
-ammo_pkm_100			= 0.33 ; Warsaw Pact Light Machine Gun
-ammo_7.62x51_ap			= 0.15
-ammo_357_hp_mag_ap		= 0.15
-ammo_357_hp_mag			= 0.15
+ammo_pkm_100			= 0.5 ; Warsaw Pact Light Machine Gun
+ammo_7.62x54_ap			= 0.5
+ammo_357_hp_mag_ap		= 0.5
+ammo_357_hp_mag			= 0.5
+ammo_magnum_300 		= 0.5
+ammo_magnum_300_ap 		= 0.5
 
 ; --- Explosive Projectiles ---
 ammo_vog-25				= 1.0 ; Warsaw Pact ammo for Grenade Launcher
@@ -393,15 +417,17 @@ ammo_7.62x39_ap 		= 2, 10
 ammo_7.92x33_fmj 		= 3, 17 ; Old German WorldWar II Rounds
 ammo_7.92x33_ap 		= 1, 7
 ammo_7.62x54_7h1 		= 2, 8 ; Warsaw Pact Sniper Rifle Rounds
-ammo_7.62x54_7h14 		= 0, 0 ; (???)
-ammo_7.62x54_ap			= 1, 6
+ammo_7.62x54_7h14 		= 1, 4
 ammo_7.62x51_fmj 		= 2, 6 ; NATO Sniper Rifle Rounds
+ammo_7.62x51_ap 		= 1, 4
 ammo_gauss				= 1, 3 ; Electro-Magnetic Particle Cannon
 ammo_gauss_cardan		= 0, 0
 ammo_pkm_100			= 18, 53 ; Warsaw Pact Light Machine Gun
-ammo_7.62x51_ap 		= 8, 29
+ammo_7.62x54_ap			= 7, 29
 ammo_357_hp_mag_ap 			= 3, 7
 ammo_357_hp_mag 			= 2, 4
+ammo_magnum_300 		= 2, 7
+ammo_magnum_300_ap 		= 1, 3
 
 ; --- Explosive Projectiles ---
 ammo_vog-25				= 2, 4 ; Warsaw Pact ammo for Grenade Launcher
@@ -522,15 +548,17 @@ ammo_7.62x39_ap			= 0, 0
 ammo_7.92x33_fmj		= 0, 0 ; Old German WorldWar II Rounds
 ammo_7.92x33_ap			= 0, 0
 ammo_7.62x54_7h1		= 0, 0 ; Warsaw Pact Sniper Rifle Rounds
-ammo_7.62x54_7h14		= 0, 0 ; (???)
-ammo_7.62x54_ap			= 0, 0
+ammo_7.62x54_7h14		= 0, 0
 ammo_7.62x51_fmj		= 0, 0 ; NATO Sniper Rifle Rounds
 ammo_7.62x51_ap			= 0, 0
 ammo_gauss				= 0, 0 ; Electro-Magnetic Particle Cannon
 ammo_gauss_cardan		= 0, 0
 ammo_pkm_100			= 0, 0 ; Warsaw Pact Light Machine Gun
+ammo_7.62x54_ap			= 0, 0
 ammo_357_hp_mag_ap 		= 0, 0
 ammo_357_hp_mag 		= 0, 0
+ammo_magnum_300 		= 0, 0
+ammo_magnum_300_ap 		= 0, 0
 
 ; --- Explosive Projectiles ---
 ammo_vog-25				= 0, 0 ; Warsaw Pact ammo for Grenade Launcher
@@ -568,6 +596,22 @@ bread				= 0, 2
 kolbasa				= 0, 2
 conserva			= 0, 1
 protein				= 0, 1
+
+tomato				= 0, 2
+sausage				= 0, 2
+corn				= 0, 2
+beans				= 0, 1
+chili				= 0, 1
+salmon				= 0, 1
+raisins				= 0, 2
+chocolate			= 0, 1
+nuts				= 0, 2
+
+mint				= 0, 2
+mineral_water			= 0, 2
+
+beer					= 0.3, 0.2
+
 vodka				= 0, 2
 energy_drink		= 0, 1
 water_drink			= 0, 2
@@ -590,11 +634,17 @@ drug_psy_blockade		= 0, 1
 drug_antidot			= 0, 1
 drug_radioprotector		= 0, 2
 drug_anabiotic			= 0, 1
-joint					= 0, 2
+joint					= 0, 3
 cigarettes				= 0, 1
 cigar1					= 1, 1
 cigar2					= 1, 1
 cigar3					= 1, 1
+
+cigar						= 1, 2
+cigarettes_lucky		= 1, 1
+cigarettes_russian		= 1, 1
+
+caffeine				= 0, 3
 
 tetanus					= 0, 1
 adrenalin				= 0, 1
@@ -602,6 +652,10 @@ cocaine					= 0, 2
 
 salicidic_acid			= 0, 3
 morphine				= 0, 1
+
+tobacco					= 0, 2
+marijuana				= 0, 3
+hand_rolling_tobacco		= 0, 2
 
 ; --- Artifacts ---
 af_cristall				= 0, 0
@@ -650,7 +704,32 @@ book3					= 1, 1
 picture_woman			= 1, 1
 drugs_kit				= 1, 1
 
-
+hammer_inv					= 1, 1
+crowbar					= 1, 1
+spareparts				= 1, 1
+beadspread				= 1, 1
+walkie					= 1, 1
+cards					= 1, 1
+ammo_bad				= 1, 1
+boots					= 1, 1
+mili_maps				= 1, 1
+swiss					= 1, 1
+headlamp				= 1, 1
+mirror					= 1, 1
+kit_hunt				= 1, 1
+flashlight_old			= 1, 1
+flashlight_broken		= 1, 1
+underwear				= 1, 1
+porn2					= 1, 1
+batteries_dead			= 1, 1
+batteries_ccell			= 1, 1
+tarpaulin				= 1, 1
+rope					= 1, 1
+synthrope				= 1, 1
+cutlery					= 1, 1
+radio					= 1, 1
+radio2					= 1, 1
+fieldcooker				= 1, 1
 
 ; --- Random additional Ammo --- ( WIP ) ---------------------------------------------------
 
@@ -682,15 +761,17 @@ ammo_7.62x39_ap			= 0.0
 ammo_7.92x33_fmj		= 0.0 ; Old German WorldWar II Rounds
 ammo_7.92x33_ap			= 0.0
 ammo_7.62x54_7h1		= 0.0 ; Warsaw Pact Sniper Rifle Rounds
-ammo_7.62x54_7h14		= 0.0 ; (???)
-ammo_7.62x54_ap			= 0.0
+ammo_7.62x54_7h14		= 0.0
 ammo_7.62x51_fmj		= 0.0 ; NATO Sniper Rifle Rounds
 ammo_7.62x51_ap			= 0.0
 ammo_gauss				= 0.0 ; Electro-Magnetic Particle Cannon
 ammo_gauss_cardan		= 0.0
 ammo_pkm_100			= 0.0 ; Warsaw Pact Light Machine Gun
+ammo_7.62x54_ap			= 0.0
 ammo_357_hp_mag_ap 		= 0,0
 ammo_357_hp_mag 		= 0,0
+ammo_magnum_300 		= 0,0
+ammo_magnum_300_ap 		= 0,0
 
 ; --- Weapons ------------------------------------------------------------------------------
 
@@ -711,10 +792,10 @@ ammo_357_hp_mag 		= 0,0
 
 ; -- WCF
 [weapon_condition_factor]
-level_0			= 0.8, 1.2
-level_1			= 0.8, 1.2
-level_2			= 0.8, 1.2
-level_3			= 0.8, 1.2
+level_0			= 0.9, 1.2
+level_1			= 0.9, 1.2
+level_2			= 0.9, 1.2
+level_3			= 0.9, 1.2
 
 
 ; Yeas i know how this sound - Weapon Condition Stage Stepping... =P
@@ -758,15 +839,15 @@ stage4 = 0.6
 
 ; -- CWC
 [community_weapon_condition_min]
-zombied 			= 0.00
-bandit				= 0.00
+zombied 			= 0.01
+bandit				= 0.01
 ecolog				= 0.15
 stalker				= 0.02
 freedom				= 0.03
 dolg				= 0.03
 army				= 0.25
-killer				= 0.03
-monolith			= 0.03
+killer				= 0.05
+monolith			= 0.05
 [community_weapon_condition_max]
 zombied 			= 0.05
 bandit				= 0.25
@@ -775,22 +856,22 @@ stalker				= 0.30
 freedom				= 0.35
 dolg				= 0.35
 army				= 0.80
-killer				= 0.50
-monolith			= 0.50
+killer				= 0.55
+monolith			= 0.45
 
 ; -- RWC
 [rank_weapon_condition_min]
-novice				= 0.00
-experienced			= 0.02
-veteran				= 0.03
-master				= 0.15
-elite				= 0.25
-[rank_weapon_condition_max]
-novice				= 0.00
+novice				= 0.01
 experienced			= 0.05
-veteran				= 0.08
-master				= 0.15
-elite				= 0.25
+veteran				= 0.10
+master				= 0.20
+elite				= 0.35
+[rank_weapon_condition_max]
+novice				= 0.1
+experienced			= 0.15
+veteran				= 0.20
+master				= 0.25
+elite				= 0.40
 
 ; --- Outfits ---
 

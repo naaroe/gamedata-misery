@@ -1,5 +1,5 @@
 local ltx
-
+local ini = ini_file("beh_gulag_jobs.ltx")
 function load_job(smart)
 		printf("LOAD JOB %s", smart:name())
 		-- Иерархия задается таблицей вида:
@@ -36,6 +36,7 @@ function load_job(smart)
 		local board = sim_board.get_sim_board()
 		local job_table = {}
 
+		local name, job_ltx, _jobs, beh_data
 
 		ltx =  "" ..
 
@@ -92,7 +93,7 @@ function load_job(smart)
 				local stalker_generic_point = {_prior = 3, jobs = {}}
 				for it=1,20 do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local name = gname.."_point_"..it
+						name = gname.."_point_"..it
 
 						-- добавляем должность
 						t = {   _prior = 3,
@@ -104,7 +105,7 @@ function load_job(smart)
 						table.insert(stalker_generic_point.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..name.."]\n"..
+						job_ltx = "[logic@"..name.."]\n"..
 										"active = cover@"..name.."\n"..
 
 										"[cover@"..name.."]\n"..
@@ -139,11 +140,11 @@ function load_job(smart)
 				it = 1
 				while level.patrol_path_exists(gname.."_surge_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_surge_"..it.."_walk"
+						name = gname.."_surge_"..it.."_walk"
 
 						-- добавляем должность
 						t = {   _prior = 50,
-								job_id = {  section = "logic@"..way_name,
+								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -153,10 +154,10 @@ function load_job(smart)
 						table.insert(stalker_surge.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = walker@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = walker@"..name.."\n"..
 
-														"[walker@"..way_name.."]\n"..
+														"[walker@"..name.."]\n"..
 														"sound_idle = state\n"..
 														"use_camp = true\n"..
 														"meet = meet@generic_lager\n"..
@@ -174,7 +175,7 @@ function load_job(smart)
 
 						if smart.base_on_actor_control ~= nil and
 							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, way_name)
+							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
 						then
 							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
 												"combat_ignore_keep_when_attacked = true \n"
@@ -189,15 +190,15 @@ function load_job(smart)
 				--'                         SLEEP
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие путей для сна.
-				local stalker_sleep = {_prior = 10, jobs = {}}
+				_jobs = {_prior = 10, jobs = {}}
 				it = 1
 				while level.patrol_path_exists(gname.."_sleep_"..it) do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_sleep_"..it
+						name = gname.."_sleep_"..it
 
 						-- добавляем должность
 						t = {   _prior = 10,
-								job_id = {  section = "logic@"..way_name,
+								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -219,22 +220,22 @@ function load_job(smart)
 																end
 
 																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name)
+																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
 																end
 
 																return precond_params.is_safe_job ~= false
 															end
 								}
-						table.insert(stalker_sleep.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = sleeper@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = sleeper@"..name.."\n"..
 
-														"[sleeper@"..way_name.."]\n"..
+														"[sleeper@"..name.."]\n"..
 														"path_main = sleep_"..it.."\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -244,7 +245,7 @@ function load_job(smart)
 
 						if smart.base_on_actor_control ~= nil and
 							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, way_name)
+							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
 						then
 							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
 												"combat_ignore_keep_when_attacked = true \n"
@@ -253,21 +254,21 @@ function load_job(smart)
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_sleep) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 				--'------------------------------------------------------------------------
 				--'                           COLLECTOR
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие путей брожения внутри лагеря.
-				local stalker_collector = {_prior = 25, jobs = {}}
+				_jobs = {_prior = 25, jobs = {}}
 				it = 1
 				while level.patrol_path_exists(gname.."_collector_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_collector_"..it.."_walk"
+						name = gname.."_collector_"..it.."_walk"
 
 						-- добавляем должность
 						t = {   _prior = 25,
-								job_id = {  section = "logic@"..way_name,
+								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -299,13 +300,13 @@ function load_job(smart)
 																return false
 															end
 								}
-						table.insert(stalker_collector.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = walker@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = walker@"..name.."\n"..
 
-														"[walker@"..way_name.."]\n"..
+														"[walker@"..name.."]\n"..
 														"sound_idle = state\n"..
 														"meet = meet@generic_lager\n"..
 														"path_walk = collector_"..it.."_walk\n"..
@@ -316,7 +317,7 @@ function load_job(smart)
 								job_ltx = job_ltx.."path_look = collector_"..it.."_look\n"
 						end
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -326,7 +327,7 @@ function load_job(smart)
 
 						if smart.base_on_actor_control ~= nil and
 							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, way_name)
+							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
 						then
 							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
 												"combat_ignore_keep_when_attacked = true \n"
@@ -335,23 +336,23 @@ function load_job(smart)
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_collector) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 				--'------------------------------------------------------------------------
 				--'                           WALKER
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие путей брожения внутри лагеря.
-				local stalker_walker = {_prior = 15, jobs = {}}
+				_jobs = {_prior = 15, jobs = {}}
 				it = 1
 
 				while level.patrol_path_exists(gname.."_walker_"..it.."_walk") do
 
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_walker_"..it.."_walk"
+						name = gname.."_walker_"..it.."_walk"
 
 						-- добавляем должность
 						t = {   _prior = 15,
-								job_id = {  section = "logic@"..way_name,
+								job_id = {  section = "logic@"..name,
 											job_type = "path_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -364,19 +365,19 @@ function load_job(smart)
 																end
 
 																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name)
+																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
 																end
 
 																return precond_params.is_safe_job ~= false
 															end
 								}
-						table.insert(stalker_walker.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = walker@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = walker@"..name.."\n"..
 
-														"[walker@"..way_name.."]\n"..
+														"[walker@"..name.."]\n"..
 														"sound_idle = state\n"..
 														"meet = meet@generic_lager\n"..
 														"path_walk = walker_"..it.."_walk\n"..
@@ -387,7 +388,7 @@ function load_job(smart)
 								job_ltx = job_ltx.."path_look = walker_"..it.."_look\n"
 						end
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -397,7 +398,7 @@ function load_job(smart)
 
 						if smart.base_on_actor_control ~= nil and
 							 smart.base_on_actor_control.ignore_zone ~= nil and
-							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, way_name)
+							 xr_gulag.job_in_restrictor(smart, smart.base_on_actor_control.ignore_zone, name)
 						then
 							job_ltx = job_ltx .."combat_ignore_cond = {=npc_in_zone(smart.base_on_actor_control.ignore_zone)} true \n"..
 												"combat_ignore_keep_when_attacked = true \n"
@@ -406,20 +407,25 @@ function load_job(smart)
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_walker) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 				--'------------------------------------------------------------------------
 				--'                          PATROL
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие патрулей обхода в лагере.
-				local stalker_patrol = {_prior = 20, jobs = {}}
+				_jobs = {_prior = 20, jobs = {}}
 				it = 1
+
+				local ptr
+				local wp_prop
+				local job_count
+
 				while level.patrol_path_exists(gname.."_patrol_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_patrol_"..it.."_walk"
-						local ptr = patrol(way_name)
-						local wp_prop = utils.parse_waypoint_data(way_name, ptr:flags(0), ptr:name(0))
-						local job_count = 3
+						name = gname.."_patrol_"..it.."_walk"
+						ptr = patrol(name)
+						wp_prop = utils.parse_waypoint_data(name, ptr:flags(0), ptr:name(0))
+						job_count = 3
 						if wp_prop.count ~= nil then
 								job_count = wp_prop.count
 						end
@@ -427,7 +433,7 @@ function load_job(smart)
 						for i = 1, job_count do
 								-- добавляем должность
 								t = {   _prior = 20,
-										job_id = { section = "logic@"..way_name,
+										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
 										_precondition_params = { },
 										_precondition_function =    function(se_obj, smart, precond_params)
@@ -445,20 +451,20 @@ function load_job(smart)
 																		end
 
 																		if precond_params.is_safe_job == nil then
-																			precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name)
+																			precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
 																		end
 
 																		return precond_params.is_safe_job ~= false
 																	end
 										}
-								table.insert(stalker_patrol.jobs, t)
+								table.insert(_jobs.jobs, t)
 						end
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = patrol@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = patrol@"..name.."\n"..
 
-														"[patrol@"..way_name.."]\n"..
+														"[patrol@"..name.."]\n"..
 														"meet = meet@generic_lager\n"..
 														"formation = back\n"..
 														"path_walk = patrol_"..it.."_walk\n"..
@@ -468,7 +474,7 @@ function load_job(smart)
 								job_ltx = job_ltx.."path_look = patrol_"..it.."_look\n"
 						end
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -479,7 +485,7 @@ function load_job(smart)
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_patrol) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 
 				--'------------------------------------------------------------------------
@@ -489,11 +495,11 @@ function load_job(smart)
 				it = 1
 				while se_smart_cover.registered_smartcovers[gname.."_animpoint_"..it] ~= nil do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local smartcover_name = gname.."_animpoint_"..it
+						name = gname.."_animpoint_"..it
 
 						-- добавляем должность
 						t = {   _prior = 15,
-								job_id = { section = "logic@"..smartcover_name,
+								job_id = { section = "logic@"..name,
 											 job_type = "smartcover_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -510,7 +516,7 @@ function load_job(smart)
 																end
 
 																--if precond_params.is_safe_job == nil then
-																--	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name)
+																--	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
 																--end
 
 																--return precond_params.is_safe_job ~= false
@@ -521,18 +527,18 @@ function load_job(smart)
 						table.insert(stalker_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..smartcover_name.."]\n"..
-										"active = animpoint@"..smartcover_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+										"active = animpoint@"..name.."\n"..
 
-										"[animpoint@"..smartcover_name.."]\n"..
+										"[animpoint@"..name.."]\n"..
 										"meet = meet@generic_animpoint\n"..
-										"cover_name = "..smartcover_name.."\n"
+										"cover_name = "..name.."\n"
 
 						if smart.def_restr ~= nil then
 								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 						end
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -552,17 +558,18 @@ function load_job(smart)
 				--'                              GUARD
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие часовых в лагере.
-				local stalker_guard = {_prior = 25, jobs = {}}
+				_jobs = {_prior = 25, jobs = {}}
 				it = 1
+				local guard_timeout
 				while level.patrol_path_exists(gname.."_guard_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_guard_"..it.."_walk"
+						name = gname.."_guard_"..it.."_walk"
 						--local guard_timeout = tostring(math.random(180,300))*1000
-						local guard_timeout = tostring(math.random(20,21))*1000
+						guard_timeout = tostring(math.random(20,21))*1000
 
 						-- добавляем должность
 						t = { 	_prior = 25,
-								job_id = { section = "logic@"..way_name,
+								job_id = { section = "logic@"..name,
 												 job_type = "path_job" },
 								_precondition_params = { },
 								_precondition_function =    function(se_obj, smart, precond_params)
@@ -575,24 +582,24 @@ function load_job(smart)
 																end
 
 																if precond_params.is_safe_job == nil then
-																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name)
+																	precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
 																end
 
 																return precond_params.is_safe_job ~= false
 															end
 								}
-						table.insert(stalker_guard.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-														"active = walker@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+														"active = walker@"..name.."\n"..
 
-														"[walker@"..way_name.."]\n"..
+														"[walker@"..name.."]\n"..
 														"meet = meet@generic_lager\n"..
 														"path_walk = guard_"..it.."_walk\n"..
 														"path_look = guard_"..it.."_look\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -600,15 +607,15 @@ function load_job(smart)
 								job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
 						end
 
-						local job1_ltx ="[walker1@"..way_name.."]\n"..
+						local job1_ltx ="[walker1@"..name.."]\n"..
 														"meet = meet@generic_lager\n"..
 														"path_walk = guard_"..it.."_walk\n"..
 														"path_look = guard_"..it.."_look\n"..
 														"def_state_standing = wait_na\n"..
-														"on_info = {!is_obj_on_job(logic@follower_"..way_name..":3)} walker@"..way_name.."\n"..
-														"on_info2 = {=distance_to_obj_on_job_le(logic@follower_"..way_name..":3)} remark@"..way_name.."\n"
+														"on_info = {!is_obj_on_job(logic@follower_"..name..":3)} walker@"..name.."\n"..
+														"on_info2 = {=distance_to_obj_on_job_le(logic@follower_"..name..":3)} remark@"..name.."\n"
 
-						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, way_name) then
+						if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
 							job1_ltx = job1_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
 						end
 
@@ -616,9 +623,9 @@ function load_job(smart)
 								job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
 						end
 
-						job1_ltx = job1_ltx .. "[remark@"..way_name.."]\n"..
+						job1_ltx = job1_ltx .. "[remark@"..name.."]\n"..
 																		"anim = wait_na\n"..
-																		"target = logic@follower_"..way_name.."\n"
+																		"target = logic@follower_"..name.."\n"
 
 						if smart.def_restr ~= nil then
 								job1_ltx = job1_ltx .."out_restr = "..smart.def_restr.."\n"
@@ -626,30 +633,30 @@ function load_job(smart)
 
 						--' настройки фоловера для каждого гварда!!!!!!!!!!!!!!!!!
 						t = {   _prior = 24,
-								job_id = { section = "logic@follower_"..way_name,
+								job_id = { section = "logic@follower_"..name,
 											 job_type = "path_job" },
-								_precondition_params = { changing_job = "logic@"..way_name },
+								_precondition_params = { changing_job = "logic@"..name },
 								_precondition_function = function(se_obj, smart, precond_params, npc_info)
 																return npc_info.need_job == precond_params.changing_job
 														 end }
-						table.insert(stalker_guard.jobs, t)
+						table.insert(_jobs.jobs, t)
 
-						local follower_ltx = "[logic@follower_"..way_name.."]\n"..
-																"active = walker@follow_"..way_name.."\n"..
+						local follower_ltx = "[logic@follower_"..name.."]\n"..
+																"active = walker@follow_"..name.."\n"..
 
-																"[walker@follow_"..way_name.."]\n"..
+																"[walker@follow_"..name.."]\n"..
 																"meet = meet@generic_lager\n"..
 																"path_walk = guard_"..it.."_walk\n"..
 																"path_look = guard_"..it.."_look\n"..
-																"on_info = {=distance_to_obj_on_job_le(logic@"..way_name..":3)} remark@follower_"..way_name.."\n"
+																"on_info = {=distance_to_obj_on_job_le(logic@"..name..":3)} remark@follower_"..name.."\n"
 
 						if smart.def_restr ~= nil then
 								follower_ltx = follower_ltx .."out_restr = "..smart.def_restr.."\n"
 						end
 
-						follower_ltx = follower_ltx .. "[remark@follower_"..way_name.."]\n"..
+						follower_ltx = follower_ltx .. "[remark@follower_"..name.."]\n"..
 																						"anim = wait_na\n"..
-																						"target = logic@"..way_name.."\n"..
+																						"target = logic@"..name.."\n"..
 																						"on_timer = 2000 | %=switch_to_desired_job%\n"
 
 						if smart.def_restr ~= nil then
@@ -659,7 +666,7 @@ function load_job(smart)
 						ltx = ltx..job_ltx..job1_ltx..follower_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_guard) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 
 
@@ -671,14 +678,15 @@ function load_job(smart)
 				--'                     SNIPER
 				--'------------------------------------------------------------------------
 				-- Проверяем наличие снайперов в лагере.
-				local stalker_def_sniper = {_prior = 30, jobs = {}}
+				_jobs = {_prior = 30, jobs = {}}
 				it = 1
+				local state
 				while level.patrol_path_exists(gname.."_sniper_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_sniper_"..it.."_walk"
-						local ptr = patrol(way_name)
-						local wp_prop = utils.parse_waypoint_data(way_name, ptr:flags(0), ptr:name(0))
-						local state = "hide"
+						name = gname.."_sniper_"..it.."_walk"
+						ptr = patrol(name)
+						wp_prop = utils.parse_waypoint_data(name, ptr:flags(0), ptr:name(0))
+						state = "hide"
 
 						if wp_prop.state ~= nil then
 							if wp_prop.state == "stand" then
@@ -687,24 +695,24 @@ function load_job(smart)
 						end
 						-- добавляем должность
 						t = {   _prior = 30,
-										job_id = { section = "logic@"..way_name,
+										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
-										_precondition_params = { way_name = way_name },
+										_precondition_params = { name = name },
 										_precondition_function =    function(se_obj, smart, precond_params)
 																		if se_obj:community() == "zombied" then
 																			return false
 																		end
 
-																		return combat_restrictor.accessible_job(se_obj, precond_params.way_name)
+																		return combat_restrictor.accessible_job(se_obj, precond_params.name)
 																	end
 								}
-						table.insert(stalker_def_sniper.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-										"active = camper@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+										"active = camper@"..name.."\n"..
 
-										"[camper@"..way_name.."]\n"..
+										"[camper@"..name.."]\n"..
 										"meet = meet@generic_lager\n"..
 										"path_walk = sniper_"..it.."_walk\n"..
 										"path_look = sniper_"..it.."_look\n"..
@@ -713,28 +721,29 @@ function load_job(smart)
 										"def_state_campering_fire ="..state.."_fire\n"
 
 						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(way_name).."\n"
+								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
 						end
 
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_def_sniper) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 
 				--'------------------------------------------------------------------------
 				--'                             CAMPER
 				--'------------------------------------------------------------------------
 				-- Проверяем возможность стать кемпером :-)
-				local stalker_def_camper = {_prior = 45, jobs = {}}
+				_jobs = {_prior = 45, jobs = {}}
 				it = 1
+				local radius
 				while level.patrol_path_exists(gname.."_camper_"..it.."_walk") do
 						-- Необходимо вычитать количество работ из названия точки пути.
-						local way_name = gname.."_camper_"..it.."_walk"
-						local ptr = patrol(way_name)
-						local wp_prop = utils.parse_waypoint_data(way_name, ptr:flags(0), ptr:name(0))
-						local state = "hide"
-						local radius = 0
+						name = gname.."_camper_"..it.."_walk"
+						ptr = patrol(name)
+						wp_prop = utils.parse_waypoint_data(name, ptr:flags(0), ptr:name(0))
+						state = "hide"
+						radius = 0
 						if wp_prop.state ~= nil then
 								if wp_prop.state == "stand" then
 										state = "threat"
@@ -745,20 +754,20 @@ function load_job(smart)
 						end
 						-- добавляем должность
 						t = {   _prior = 45,
-										job_id = { section = "logic@"..way_name,
+										job_id = { section = "logic@"..name,
 													 job_type = "path_job" },
-										_precondition_params = { way_name = way_name },
+										_precondition_params = { name = name },
 										_precondition_function =    function(se_obj, smart, precond_params)
-																		return combat_restrictor.accessible_job(se_obj, precond_params.way_name)
+																		return combat_restrictor.accessible_job(se_obj, precond_params.name)
 																	end
 								}
-						table.insert(stalker_def_camper.jobs, t)
+						table.insert(_jobs.jobs, t)
 
 						-- добавляем описание должности в лтх.
-						local job_ltx = "[logic@"..way_name.."]\n"..
-										"active = camper@"..way_name.."\n"..
+						job_ltx = "[logic@"..name.."]\n"..
+										"active = camper@"..name.."\n"..
 
-										"[camper@"..way_name.."]\n"..
+										"[camper@"..name.."]\n"..
 										"meet = meet@generic_lager\n"..
 										"radius = "..tostring(radius).."\n"..
 										"path_walk = camper_"..it.."_walk\n"..
@@ -771,13 +780,120 @@ function load_job(smart)
 						end
 
 						if smart.def_restr ~= nil then
-								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(way_name).."\n"
+								job_ltx = job_ltx .."out_restr = "..smart.def_restr..","..combat_restrictor.get_job_restrictor(name).."\n"
 						end
 
 						ltx = ltx..job_ltx
 						it = it + 1
 				end
-				if it > 1 then table.insert(stalker_jobs.jobs, stalker_def_camper) end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
+
+
+				--'------------------------------------------------------------------------
+				--'                              BEH
+				--'------------------------------------------------------------------------
+
+				_jobs = {_prior = 35, jobs = {}}
+				it = 1
+				while ini:section_exist(gname.."_beh_"..it) do
+
+					name = gname.."_beh_"..it
+					alun_utils.printf("behavior scheme = %s",name)
+
+					t = { 	_prior = 35,
+							job_id = { section = "logic@"..name,
+											 job_type = "point_job" },
+							_precondition_params = { },
+							_precondition_function =    function(se_obj, smart, precond_params)
+															if smart.smart_alarm_time == nil then
+																return true
+															end
+
+															if smart.safe_restr == nil then
+																return true
+															end
+
+															if precond_params.is_safe_job == nil then
+																precond_params.is_safe_job = xr_gulag.job_in_restrictor(smart, smart.safe_restr, name)
+															end
+
+															return precond_params.is_safe_job ~= false
+														end
+							}
+					table.insert(_jobs.jobs, t)
+
+					-- добавляем описание должности в лтх.
+					job_ltx = "[logic@"..name.."]\n"..
+													"active = beh@"..name.."\n"..
+
+													"[beh@"..name.."]\n"..
+													"meet = meet@generic_lager\n"
+
+					beh_data = alun_utils.collect_section(ini,name,true)
+
+					if (beh_data) then
+						for k,v in pairs(beh_data) do
+							job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+						end
+					end
+
+					if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+						job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+					end
+
+					if smart.def_restr ~= nil then
+							job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+					end
+
+					ltx = ltx..job_ltx
+					it = it + 1
+				end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
+				-----------------------------
+				-- beh surge
+				-----------------------------
+				_jobs = {_prior = 50, jobs = {}}
+				it = 1
+				while ini:section_exist(gname.."_beh_"..it.."_surge") do
+					name = gname.."_beh_"..it.."_surge"
+
+					t = { 	_prior = 50,
+							job_id = { section = "logic@"..name,
+											 job_type = "point_job" },
+							_precondition_params = { },
+							_precondition_function = 		function(se_obj, smart, precond_params)
+																return xr_conditions.surge_started()
+															end
+							}
+					table.insert(_jobs.jobs, t)
+
+					-- добавляем описание должности в лтх.
+					job_ltx = "[logic@"..name.."]\n"..
+													"active = beh@"..name.."\n"..
+
+													"[beh@"..name.."]\n"..
+													"meet = meet@generic_lager\n"
+
+					beh_data = alun_utils.collect_section(ini,name,true)
+
+					if (beh_data) then
+						for k,v in pairs(beh_data) do
+							job_ltx = job_ltx .. k .. " = " .. v .. "\n"
+						end
+					end
+
+					if smart.safe_restr ~= nil and xr_gulag.job_in_restrictor(smart, smart.safe_restr, name) then
+						job_ltx = job_ltx .. "invulnerable = {=npc_in_zone(smart.safe_restr)} true\n"
+					end
+
+					if smart.def_restr ~= nil then
+							job_ltx = job_ltx .."out_restr = "..smart.def_restr.."\n"
+					end
+
+					ltx = ltx..job_ltx
+					it = it + 1
+				end
+				if it > 1 then table.insert(stalker_jobs.jobs, _jobs) end
 
 
 		table.insert(job_table, stalker_jobs)
@@ -807,7 +923,7 @@ function load_job(smart)
 
 		for it = 1,20 do
 				-- Необходимо вычитать количество работ из названия точки пути.
-				local name = gname.."_home_"..it
+				name = gname.."_home_"..it
 				local home_min_radius = 10
 				local home_mid_radius = 20
 				local home_max_radius = 70
@@ -819,7 +935,7 @@ function load_job(smart)
 				table.insert(monster_jobs.jobs, t)
 
 				-- добавляем описание должности в лтх.
-				local job_ltx = "[logic@"..name.."]\n"..
+				job_ltx = "[logic@"..name.."]\n"..
 												"active = mob_home@"..name.."\n"..
 
 												"[mob_home@"..name.."]\n"..
@@ -879,7 +995,8 @@ local job_type_by_scheme = {
 							["mob_walker"]	= "path_job",
 							["mob_home"]	= "path_job",
 							["mob_jump"]	= "point_job",
-							["companion"]	= "point_job"
+							["companion"]	= "point_job",
+							["beh"]			= "point_job"
 }
 
 function add_exclusive_job(sect, work_field, smart_ini, job_table)
