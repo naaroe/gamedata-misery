@@ -26,12 +26,16 @@ function on_creation(se_npc)
 end
 
 function ini_get_list(se_npc,comm,rank,player_id,val)
-	if (ini:section_exist(se_npc:section_name())) then
-		return alun_utils.parse_list(ini,se_npc:section_name(),val)
-	elseif (player_id and ini:section_exist(player_id.."_"..rank)) then
-		return alun_utils.parse_list(ini,player_id.."_"..rank,val)
-	else
-		return alun_utils.parse_list(ini,comm.."_"..rank,val)
+	local src = alun_utils.read_from_ini(ini,se_npc:section_name(),val,"string",nil) or player_id and alun_utils.read_from_ini(ini,player_id.."_"..rank,val,"string",nil) or alun_utils.read_from_ini(ini,comm.."_"..rank,val,"string",nil)
+
+	if not (src) then
+		return
+	end
+
+	local sec = xr_logic.pick_section_from_condlist(db.actor,se_npc,xr_logic.parse_condlist(se_npc,se_npc:section_name(),val,src))
+
+	if (ini:section_exist(sec)) then
+		return alun_utils.collect_section(ini,sec)
 	end
 end
 
@@ -80,15 +84,34 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 		if (se_wpn) then
 			if (weapon[2] or weapon[3]) then
 				local data = stpk_utils.get_weapon_data(se_wpn)
-				data.addon_flags = weapon[2] or 0
-				data.ammo_type = weapon[3] or 0
+
+				local flag = tonumber(weapon[2]) or 0
+				if (weapon[2] == "r") then
+					flag = 0
+					if (alun_utils.read_from_ini(nil,weapon[1],"scope_status","float",nil)) then
+						flag = flag + 1
+					end
+
+					if (alun_utils.read_from_ini(nil,weapon[1],"grenade_launcher_status","float",nil)) then
+						flag = flag + 2
+					end
+
+					if (alun_utils.read_from_ini(nil,weapon[1],"silencer_status","float",nil)) then
+						flag = flag + 4
+					end
+
+					flag = math.random(0,flag)
+				end
+
+				data.addon_flags = flag
+				data.ammo_type = tonumber(weapon[3])  or 0
 				stpk_utils.set_weapon_data(data,se_wpn)
 			end
 
 			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")
 			local ammo_section = weapon[3] and ammos[weapon[3]+1] or ammos[1]
 
-			local ammo_count = ini_get_list(se_npc,comm,rank,player_id,"ammo_1")
+			local ammo_count = ini_get_list(se_npc,comm,rank,player_id,slot == "primary" and "ammo_1" or slot == "secondary" and "ammo_2" or slot == "tertiary" and "ammo_3")
 			if (ammo_count) then
 				ammo_count = weapon[4] and weapon[5] and math.random( tonumber(weapon[4]),tonumber(weapon[5]) ) or math.random( tonumber(ammo_count[1]) or 1 , tonumber(ammo_count[2]) or 1)
 				create_ammo(ammo_section,se_npc.position,0,0,se_npc.id,ammo_count)

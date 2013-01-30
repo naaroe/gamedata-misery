@@ -82,7 +82,7 @@ local obj_table = {}
 function use_obj(obj)
 	local s = obj:section()
 	if not obj_table[s] then
-		obj_table[s] = rx_utils.read_from_ini(nil,s,"eat_sleepiness",0)
+		obj_table[s] = alun_utils.read_from_ini(nil,s,"eat_sleepiness","float",0)
 	end
 	if obj_table[s] ~= 0 then
 --		rx_ai.printf("sleep:use %s = %s",s,obj_table[s])
@@ -121,7 +121,7 @@ function wounded_pp_update()
         level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")    
         if math.random() < drop_item_on_crit_prob then
           local active_item = db.actor:active_item()
-          if active_item and active_item:section() ~= "bolt" and active_item:section()~= "wpn_knife" then
+          if active_item and active_item:section() ~= "bolt" and not string.find(active_item:section(),"knife") then
             db.actor:drop_item(active_item)
           end
         end

@@ -67,7 +67,15 @@ end
 
 -- Alundaio
 function story_objects_registry:save(packet)
+
+	local sim = alife()
+	if not (sim) then
+		return
+	end
+
 	set_save_marker(packet, "save", false, "story_objects")
+
+	--alun_utils.printf("save count=%s",#self.dynamic_story_ids)
 	packet:w_u16(#self.dynamic_story_ids)
 	for i=1,#self.dynamic_story_ids do
 		local id = self.dynamic_story_ids[i]
@@ -79,26 +87,30 @@ function story_objects_registry:save(packet)
 end
 
 function story_objects_registry:load(packet)
-	set_save_marker(packet, "load", false, "story_objects")
-	local sim = alife()
-	local se_obj
-	local count = packet:r_u16()
-	for i = 1, count do
-		local story_id 	= packet:r_stringZ()
-		local obj_id = packet:r_u16()
 
-		se_obj = sim:object(obj_id)
-		if (se_obj) then
+	local sim = alife()
+	if not (sim) then
+		return
+	end
+
+	set_save_marker(packet, "load", false, "story_objects")
+
+	local count = packet:r_u16()
+	--alun_utils.printf("load count=%s",count)
+
+	-- empty table
+	for i=#self.dynamic_story_ids,1,-1 do
+		table.remove(self.dynamic_story_ids,i)
+	end
+
+	local se_obj,story_id,obj_id
+	for i = 1, count do
+		story_id 	= packet:r_stringZ()
+		obj_id = packet:r_u16()
+
 			self.id_by_story_id[story_id] 	= obj_id
 			self.story_id_by_id[obj_id]		= story_id
 			table.insert(self.dynamic_story_ids,obj_id)
-
-			-- dynamic smart_cover hack
-			if (se_obj:clsid() == clsid.smartcover_s) then
-				se_smart_cover.registered_smartcovers[se_obj:name()] = nil
-				se_smart_cover.registered_smartcovers[story_id] = se_obj
-			end
-		end
 	end
 	set_save_marker(packet, "load", true, "story_objects")
  end

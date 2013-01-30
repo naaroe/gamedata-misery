@@ -1,0 +1,398 @@
+; general
+
+[logic@zat_b40_mercs_gen]
+suitable = {=squad_exist(zat_b40_merc_squad) =npc_community(killer)} true, {!squad_exist(zat_b40_merc_squad)} true
+prior = 250
+
+[logic@zat_b40_guard_leader_01]:logic@zat_b40_mercs_gen
+suitable = {=check_npc_name(zat_b40_merc_squad_leader_1)} true
+prior = 300
+active = walker@zat_b40_guard_leader_01
+known_info = known_info@zat_b40_guard_leader_01
+
+[logic@zat_b40_guard_leader_02]:logic@zat_b40_mercs_gen
+suitable = {=check_npc_name(zat_b40_merc_squad_leader_2)} true
+prior = 300
+active = walker@zat_b40_guard_leader_02
+known_info = known_info@zat_b40_guard_leader_02
+
+[logic@zat_b40_guard_01]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_01
+
+[logic@zat_b40_guard_02]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_02
+
+[logic@zat_b40_guard_03]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_03
+
+[logic@zat_b40_guard_04]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_04
+
+[logic@zat_b40_guard_05]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_05
+
+[logic@zat_b40_guard_06]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_06
+
+[logic@zat_b40_guard_07]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_07
+
+[logic@zat_b40_guard_08]:logic@zat_b40_mercs_gen
+active = walker@zat_b40_guard_08
+
+[logic@zat_b40_guard_09]:logic@zat_b40_mercs_gen
+suitable = {!squad_exist(zat_b40_merc_squad)} true
+active = walker@zat_b40_guard_leader_01
+
+[logic@zat_b40_guard_10]:logic@zat_b40_mercs_gen
+suitable = {!squad_exist(zat_b40_merc_squad)} true
+active = walker@zat_b40_guard_leader_02
+
+[logic@zat_b40_guard_11]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_11
+
+[logic@zat_b40_guard_12]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_12
+
+[logic@zat_b40_guard_13]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_13
+
+[logic@zat_b40_guard_14]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_14
+
+[logic@zat_b40_guard_15]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_15
+
+[logic@zat_b40_guard_16]:logic@zat_b40_mercs_gen
+active = beh@zat_b40_guard_16
+
+
+; corp
+
+[known_info@zat_b40_guard_leader_01]
+zat_b40_guard_leader_01_serchd
+
+[known_info@zat_b40_guard_leader_02]
+zat_b40_guard_leader_02_serchd
+
+;--------------------------------------------------------------animpoint
+[meet@zat_b40_animpoint_meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
+snd_on_use = {!dist_to_actor_le(3)} nil
+meet_on_talking = false
+
+[animpoint@general]
+use_camp = true
+reach_movement = patrol
+meet = meet@zat_b40_animpoint_meet
+
+[animpoint@zat_b40_guard_12]:animpoint@general
+cover_name = zat_b40_animpoint_1
+direction = 0,0,-1
+on_info = {=surge_started} beh@zat_b40_guard_12_surge
+on_game_timer = 2400 | beh@zat_b40_guard_12
+
+[animpoint@zat_b40_guard_15]:animpoint@general
+cover_name = zat_b40_animpoint_2
+direction = 0,0,-1
+on_info = {=surge_started} beh@zat_b40_guard_15_surge
+on_game_timer = 2400 | beh@zat_b40_guard_15
+
+;---------------------------------------------------------------beh
+[beh@general]
+behavior_state = beh_move
+goto_target = waypoint
+walk_dist = 100
+jog_dist = 220
+run_dist = 400
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+sprint_anim = sprint
+delay_anim = guard
+
+[beh@zat_b40_guard_11]:beh@general
+pt1 = 1565894,240000,hide
+pt2 = 1617743,240000,sit_ass look:394.7958984375,33.464221954346,-436.88269042969
+path_end = reverse
+on_info = {=surge_started} beh@zat_b40_guard_11_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_11_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_11_rain
+
+[beh@zat_b40_guard_12]:beh@general
+pt1 = 1528357
+pt2 = 1529553
+pt3 = 1385464
+pt4 = 1386632
+pt5 = 1434943
+pt6 = 1578326,15000,binocular look:371.68685913086,33.260974884033,-323.43347167969
+path_end = animpoint@zat_b40_guard_12
+on_info = {=surge_started} beh@zat_b40_guard_12_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_12_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_12_rain
+
+[beh@zat_b40_guard_13]:beh@general
+pt1 = 1612122,120000,sit_ass look:394.7958984375,33.464221954346,-436.88269042969
+pt2 = 1578326,15000,binocular look:371.68685913086,33.260974884033,-323.43347167969
+pt3 = 1424695,15000,binocular look:228.9481048584,33.102966308594,-383.73696899414
+path_end = reverse
+on_info = {=surge_started} beh@zat_b40_guard_13_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_13_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_13_rain
+
+[beh@zat_b40_guard_14]:beh@general
+pt1 = 1560280,15000,hide
+pt2 = 1504584,15000,binocular look:324.75958251953,33.338901519775,-328.68121337891
+pt3 = 1615493,120000,sit_ass look:394.7958984375,33.464221954346,-436.88269042969
+path_end = reverse
+on_info = {=surge_started} beh@zat_b40_guard_14_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_14_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_14_rain
+
+[beh@zat_b40_guard_15]:beh@general
+pt1 = 1647151,30000,hide look:422.03771972656,35.695636749268,-413.07583618164
+pt2 = 1592899,10000,search look:374.6389465332,28.091470718384,-370.43029785156
+path_end = animpoint@zat_b40_guard_15
+on_info = {=surge_started} beh@zat_b40_guard_15_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_15_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_15_rain
+
+[beh@zat_b40_guard_16]:beh@general
+pt1 = 1617743,0,sit_ass look:394.7958984375,33.464221954346,-436.88269042969
+on_info = {=surge_started} beh@zat_b40_guard_16_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_16_sleep
+on_info3 = {=is_rain} beh@zat_b40_guard_16_rain
+
+;---------beh sleep
+[beh@zat_b40_guard_11_sleep]:beh@general
+pt1 = 1632781,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_11_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_11
+
+[beh@zat_b40_guard_12_sleep]:beh@general
+pt1 = 1630758,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_12_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_12
+
+[beh@zat_b40_guard_13_sleep]:beh@general
+pt1 = 1628620,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_13_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_13
+
+[beh@zat_b40_guard_14_sleep]:beh@general
+pt1 = 1628624,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_14_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_14
+
+[beh@zat_b40_guard_15_sleep]:beh@general
+pt1 = 1629705,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_15_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_15
+
+[beh@zat_b40_guard_16_sleep]:beh@general
+pt1 = 1632786,0,sleep
+on_info = {=surge_started} beh@zat_b40_guard_16_surge
+on_info2 = {!zat_b7_is_night} beh@zat_b40_guard_16
+
+;---------beh surge
+[beh@zat_b40_guard_11_surge]:beh@general
+walk_anim = rush
+pt1 = 1510862,0,sit_knee look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} beh@zat_b40_guard_11
+
+[beh@zat_b40_guard_12_surge]:beh@general
+walk_anim = rush
+pt1 = 1511806,0,sit_ass look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} animpoint@zat_b40_guard_12
+
+[beh@zat_b40_guard_13_surge]:beh@general
+walk_anim = rush
+pt1 = 1509989,0,sit_ass look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} beh@zat_b40_guard_13
+
+[beh@zat_b40_guard_14_surge]:beh@general
+walk_anim = rush
+pt1 = 1509094,0,sit_ass look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} beh@zat_b40_guard_14
+
+[beh@zat_b40_guard_15_surge]:beh@general
+walk_anim = rush
+pt1 = 1507327,0,sit_ass look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} beh@zat_b40_guard_15
+
+[beh@zat_b40_guard_16_surge]:beh@general
+walk_anim = rush
+pt1 = 1507327,0,sit_ass look:325.89904785156,38.340690612793,-395.06311035156
+on_info = {=surge_complete} beh@zat_b40_guard_16
+
+
+;---------beh rain
+
+[beh@zat_b40_guard_11_rain]:beh@general
+walk_anim = rush
+pt1 = 1506423,0,sit_knee look:322.33325195313,33.241191864014,-394.57192993164
+on_info = {=surge_started} beh@zat_b40_guard_11_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_11_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_11
+
+[beh@zat_b40_guard_12_rain]:beh@general
+walk_anim = rush
+pt1 = 1502631,0,sit_ass look:322.33325195313,33.241191864014,-394.57192993164
+on_info = {=surge_started} beh@zat_b40_guard_12_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_12_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_12
+
+[beh@zat_b40_guard_13_rain]:beh@general
+walk_anim = rush
+pt1 = 1508224,0,sit_ass look:322.33325195313,33.241191864014,-394.57192993164
+on_info = {=surge_started} beh@zat_b40_guard_13_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_13_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_13
+
+[beh@zat_b40_guard_14_rain]:beh@general
+walk_anim = rush
+pt1 = 1505517,0,sit_ass look:322.33325195313,33.241191864014,-394.57192993164
+on_info = {=surge_started} beh@zat_b40_guard_14_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_14_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_14
+
+[beh@zat_b40_guard_15_rain]:beh@general
+walk_dist = 30
+jog_anim = rush
+pt1 = 1497978,15000 look:316.08245849609,33.242721557617,-415.41806030273
+pt2 = 1497092,25000 look:316.00827026367,33.239925384521,-388.58255004883
+path_end = loop
+on_info = {=surge_started} beh@zat_b40_guard_15_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_15_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_15
+
+[beh@zat_b40_guard_16_rain]:beh@general
+walk_dist = 30
+jog_anim = rush
+pt1 = 1512674,15000 look:327.79531860352,33.242637634277,-415.2353515625
+pt2 = 1515747,25000 look:330.318359375,33.241146087646,-386.4924621582
+path_end = loop
+on_info = {=surge_started} beh@zat_b40_guard_16_surge
+on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_16_sleep
+on_info3 = {!is_rain} beh@zat_b40_guard_16
+
+;---------------------------------------------------------------walker
+
+[walker@zat_b40_mercs_gen]
+def_state_moving = rush
+def_state_standing = guard
+
+[walker@zat_b40_surge_gen]:walker@zat_b40_mercs_gen
+def_state_standing = sit_knee
+out_restr = zat_surge_hide_b40
+
+[walker@zat_b40_guard_leader_01]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_squad_leader_1_walk
+path_look = zat_b40_merc_squad_leader_1_look
+def_state_standing = hide
+on_info = {=surge_started} walker@zat_b40_surge_09
+
+[walker@zat_b40_guard_leader_02]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_squad_leader_2_walk
+path_look = zat_b40_merc_squad_leader_2_look
+def_state_standing = hide
+on_info = {=surge_started} walker@zat_b40_surge_10
+
+[walker@zat_b40_guard_01]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_01_walk
+path_look = zat_b40_merc_01_look
+on_info = {=surge_started} walker@zat_b40_surge_01
+
+[walker@zat_b40_guard_02]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_02_walk
+path_look = zat_b40_merc_02_look
+on_info = {=surge_started} walker@zat_b40_surge_02
+
+[walker@zat_b40_guard_03]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_03_walk
+path_look = zat_b40_merc_03_look
+on_info = {=surge_started} walker@zat_b40_surge_03
+
+[walker@zat_b40_guard_04]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_04_walk
+path_look = zat_b40_merc_04_look
+on_info = {=surge_started} walker@zat_b40_surge_04
+
+[walker@zat_b40_guard_05]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_05_walk
+path_look = zat_b40_merc_05_look
+on_info = {=surge_started} walker@zat_b40_surge_05
+
+[walker@zat_b40_guard_06]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_06_walk
+path_look = zat_b40_merc_06_look
+on_info = {=surge_started} walker@zat_b40_surge_06
+
+[walker@zat_b40_guard_07]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_07_walk
+path_look = zat_b40_merc_07_look
+on_info = {=surge_started} walker@zat_b40_surge_07
+
+[walker@zat_b40_guard_08]:walker@zat_b40_mercs_gen
+path_walk = zat_b40_merc_08_walk
+path_look = zat_b40_merc_08_look
+on_info = {=surge_started} walker@zat_b40_surge_08
+
+;surge
+
+[walker@zat_b40_surge_01]:walker@zat_b40_surge_gen
+path_walk = walker_1_walk
+path_look = walker_1_look
+on_info = {=surge_complete} walker@zat_b40_guard_01
+
+[walker@zat_b40_surge_02]:walker@zat_b40_surge_gen
+path_walk = walker_2_walk
+path_look = walker_2_look
+on_info = {=surge_complete} walker@zat_b40_guard_02
+
+[walker@zat_b40_surge_03]:walker@zat_b40_surge_gen
+path_walk = walker_3_walk
+path_look = walker_3_look
+on_info = {=surge_complete} walker@zat_b40_guard_03
+
+[walker@zat_b40_surge_04]:walker@zat_b40_surge_gen
+path_walk = walker_4_walk
+path_look = walker_4_look
+on_info = {=surge_complete} walker@zat_b40_guard_04
+
+[walker@zat_b40_surge_05]:walker@zat_b40_surge_gen
+path_walk = walker_5_walk
+path_look = walker_5_look
+on_info = {=surge_complete} walker@zat_b40_guard_05
+
+[walker@zat_b40_surge_06]:walker@zat_b40_surge_gen
+path_walk = walker_6_walk
+path_look = walker_6_look
+on_info = {=surge_complete} walker@zat_b40_guard_06
+
+[walker@zat_b40_surge_07]:walker@zat_b40_surge_gen
+path_walk = walker_7_walk
+path_look = walker_7_look
+on_info = {=surge_complete} walker@zat_b40_guard_07
+
+[walker@zat_b40_surge_08]:walker@zat_b40_surge_gen
+path_walk = surge_4_walk
+path_look = surge_4_look
+on_info = {=surge_complete} walker@zat_b40_guard_08
+
+[walker@zat_b40_surge_09]:walker@zat_b40_surge_gen
+path_walk = surge_5_walk
+path_look = surge_5_look
+on_info = {=surge_complete} walker@zat_b40_guard_leader_01
+
+[walker@zat_b40_surge_10]:walker@zat_b40_surge_gen
+path_walk = surge_3_walk
+path_look = surge_3_look
+on_info = {=surge_complete} walker@zat_b40_guard_leader_02

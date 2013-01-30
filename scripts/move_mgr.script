@@ -302,7 +302,7 @@ function move_mgr:update()
 	local tg = time_global()
 	if (self.play_sound and self.play_sound_idle and tg > self.play_sound_idle) then
 		--alun_utils.printf("move_mgr: Playing sound")
-		xr_sound.set_sound_play(id,self.play_sound)
+		xr_sound.set_sound_play(self.object:id(),self.play_sound)
 		self.play_sound = nil
 		self.play_sound_idle = nil
 	end

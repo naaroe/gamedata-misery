@@ -6,6 +6,8 @@
 --function printf()
 --end
 
+local ini = alun_utils.read_from_ini("plugins\\xr_sound.ltx")
+
 sound_table = {}
 
 function set_sound_play(npc_id, sound, faction, point)
@@ -278,13 +280,13 @@ function get_key(npc)
 	-- формирование ключа
 	local overrides = xr_logic.generic_scheme_overrides(npc)
 	if overrides and
-	   overrides.soundgroup 
+	   overrides.soundgroup
 	then
 		key = overrides.soundgroup
 	else
 		key = utils.to_str(npc:id())
 	end
-	
+
 	-- апдейт таблиц :) не менять!
 	if xr_sound.key_by_id[npc:id()] ~= key then
 		if xr_sound.group_idle[xr_sound.key_by_id[npc:id()]] ~= nil	then
@@ -299,7 +301,7 @@ function get_key(npc)
 	end
 	return key
 end
-	
+
 -----------------------------------------------------------------------------------------------------------------------------------
 --	Установка и распарсивание тем в файлы.
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -323,21 +325,21 @@ function set_sound(npc, sound, now, into_timeout)
 		db.sound[npc_id].snd = parse_names(sound)
 		if db.sound[npc_id].last_snd == nil then
 			db.sound[npc_id].last_snd = {}
-		else	
-		
+		else
+
 			local snd_table = {}
-			local t = 0		
+			local t = 0
 			for k,v in pairs(db.sound[npc_id].snd) do
 				snd_table[t] = {}
 				get_sound(sound_theme.theme[v], snd_table[t], npc)
 				t = t + 1
-			end	
+			end
 			for k,v in pairs(snd_table) do
 				if v.into_id then db.sound[npc_id].last_snd[v.into_id] = nil end
 				if v.rnd_id then db.sound[npc_id].last_snd[v.rnd_id] = nil end
-			end	
-			
-			
+			end
+
+
 		end
 		-- Устанавливаем входную паузу
 		local key = get_key(npc)
@@ -347,7 +349,7 @@ function set_sound(npc, sound, now, into_timeout)
 		else
 			xr_sound.group_idle[key].idle = 0
 		end
-		
+
 		if now == true then
 			stop_play_sound(npc)
 		end
@@ -358,7 +360,7 @@ end
 function play_sound(npc, themes, timeout)
 	-- нужно составить список тем
 	local snd_table = {}
-	local t = 0		
+	local t = 0
 	for k,v in pairs(themes) do
 		snd_table[t] = {}
 		if sound_theme.theme[v] ~= nil then
@@ -368,11 +370,11 @@ function play_sound(npc, themes, timeout)
 			abort("ERROR: ILLEGAL PLAY SOUND!!! %s for %s", v, npc:name())
 		end
 		t = t + 1
-	end	
+	end
 	--printf("*")
 	--print_table(snd_table)
 	if t == 0 then return end
-	-- из списка тем выбираем одну.	
+	-- из списка тем выбираем одну.
 	local snd = snd_table[math.random(0, t-1)]
 	if snd ~= nil then
 		--printf("!")
@@ -390,22 +392,22 @@ function play_sound(npc, themes, timeout)
 		then
 			if db.sound[npc_id].last_snd[snd.into_id] == snd.into_max - 1 then
 				if snd.into_cycled == true then
-					db.sound[npc_id].last_snd[snd.into_id] = nil 
+					db.sound[npc_id].last_snd[snd.into_id] = nil
 				else
 					return
 				end
 			end
-			
+
 			-- играем входные
 			if db.sound[npc_id].last_snd[snd.into_id] == nil then db.sound[npc_id].last_snd[snd.into_id] = -1 end
-			
+
 			--printf("*SND* play seq [%s] for [%s]", db.sound[npc_id].last_snd[snd.into_id]+1, npc:name())
 			process_tutor_on_sound(snd.theme)
 			npc:play_sound(snd.into_id, 1, 0, 1, 0, db.sound[npc_id].last_snd[snd.into_id]+1)
 			db.sound[npc_id].last_snd[snd.into_id] = db.sound[npc_id].last_snd[snd.into_id] + 1
 			--printf("*SND* play seq [%s] for [%s]", db.sound[npc_id].last_snd[snd.into_id], npc:name())
 			return
-		end		
+		end
 		if snd.rnd_max ~= nil and
 			snd.rnd_max > 0
 		then
@@ -421,20 +423,20 @@ function play_sound(npc, themes, timeout)
 					s = math.random(0, snd.rnd_max-2)
 					if s >= group_table.last_snd[snd.rnd_id] then s = s + 1 end
 				else
-					s = math.random(0, snd.rnd_max-1)					
-				end	
-			end			
+					s = math.random(0, snd.rnd_max-1)
+				end
+			end
 
 			if timeout == nil then
 				timeout = 0
-			end							
+			end
 			--printf("*SND* play rnd [%s] for [%s]", s, npc:name())
 			process_tutor_on_sound(snd.theme)
 			npc:play_sound(snd.rnd_id, timeout+1, timeout, 1, 0, s)
 			--db.sound[npc_id].last_snd[snd.rnd_id] = s
 			group_table.last_snd[snd.rnd_id] = s
-		end		
-	end			
+		end
+	end
 end
 
 function get_last_IDS(npc, theme)
@@ -442,7 +444,7 @@ function get_last_IDS(npc, theme)
 	local snd_table = {}
 	if sound_theme.theme[theme] ~= nil then
 		get_sound(sound_theme.theme[theme], snd_table, npc)
-	end	
+	end
 	printf("LAST INTO ID for [%s] = [%s], max [%s]", theme, last_table[snd_table.into_id], snd_table.into_max)
 	return last_table[snd_table.into_id], snd_table.into_max
 end
@@ -462,10 +464,10 @@ function set_actor_sound(sound)
 	printf("*ACTOR SND* try to change SND to [%s]", tostring(sound))
 	if actor_sound.theme ~= sound then
 		--' Туточки надобно распарсить имена тем в их id
-		if sound == nil then sound = "" end		
+		if sound == nil then sound = "" end
 		actor_sound.theme = sound
 		actor_sound.begin = nil
-		
+
 		this.set_actor_sound_factor(1)
 	end
 end
@@ -481,7 +483,7 @@ end
 function update_actor()
 	local theme = sound_theme.actor_theme[actor_sound.theme]
 	if theme == nil then return end
-	
+
 	if table.getn(theme.sounds) == 0 then
 		return
 	end
@@ -490,7 +492,7 @@ function update_actor()
 	   time_global() - actor_sound.begin >= actor_sound.idle
 	then
 		actor_sound.begin = time_global()
-		
+
 		--' Тут надо отыграть звук
 		local sound = theme.sounds[math.random(table.getn(theme.sounds))]
 		if sound ~= nil then
@@ -505,10 +507,14 @@ end
 
 --' Таблица для хранения созданных саунд обжектов.
 sound_object_by_theme = {}
+ph_snd_themes = {}
 --' type = [random|seq|looped]
 function get_sound_object(theme, t_type)
-	if sound_theme.ph_snd_themes[theme] == nil then
-		abort("ph_snd_themes for theme %s", tostring(theme))
+	if not (ph_snd_themes[theme]) then
+		ph_snd_themes = alun_utils.collect_section(ini,theme)
+	end
+
+	if ph_snd_themes[theme] == nil then
 		return
 	end
 
@@ -522,7 +528,7 @@ function get_sound_object(theme, t_type)
 
 	--' Выбор следующего айдишника
 	local play_id = -1
-	local table_size = table.getn(sound_theme.ph_snd_themes[theme])
+	local table_size = #ph_snd_themes[theme]
 	if sound_object_by_theme[theme].last_id == nil then
 		if t_type == "random" then
 			if table_size >= 2 then
@@ -549,7 +555,7 @@ function get_sound_object(theme, t_type)
 					play_id = 1
 				end
 			end
-		end		
+		end
 	end
 
 	printf("SOUND_OBJECT: selected id [%s] for theme [%s], type [%s], size [%s]", tostring(play_id), tostring(theme), tostring(type), table_size)
@@ -559,18 +565,18 @@ function get_sound_object(theme, t_type)
 	end
 	--' Проверяем создан ли у нас соответствующий саунд обжект или его надо создать
 	if sound_object_by_theme[theme][play_id] == nil then
-		if type(sound_theme.ph_snd_themes[theme][play_id]) == "table" then
-			sound_object_by_theme[theme][play_id.."_r"] = get_safe_sound_object(sound_theme.ph_snd_themes[theme][play_id][1].."_r")
-			sound_object_by_theme[theme][play_id.."_l"] = get_safe_sound_object(sound_theme.ph_snd_themes[theme][play_id][1].."_l")
+		if type(ph_snd_themes[theme][play_id]) == "table" then
+			sound_object_by_theme[theme][play_id.."_r"] = get_safe_sound_object(ph_snd_themes[theme][play_id][1].."_r")
+			sound_object_by_theme[theme][play_id.."_l"] = get_safe_sound_object(ph_snd_themes[theme][play_id][1].."_l")
 		else
-			sound_object_by_theme[theme][play_id] = get_safe_sound_object(sound_theme.ph_snd_themes[theme][play_id])
+			sound_object_by_theme[theme][play_id] = get_safe_sound_object(ph_snd_themes[theme][play_id])
 		end
 	end
 
 	sound_object_by_theme[theme].last_id = play_id
 
 	--' Возвращаем саунд обжект
-	if type(sound_theme.ph_snd_themes[theme][play_id]) == "table" then
+	if type(ph_snd_themes[theme][play_id]) == "table" then
 		return sound_object_by_theme[theme][play_id.."_r"], sound_object_by_theme[theme][play_id.."_l"]
 	else
 		return sound_object_by_theme[theme][play_id]

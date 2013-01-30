@@ -728,6 +728,24 @@ function cmd.god(me,txt,owner,p)
 	return "god:= type god help for list of sub commands"
 end
 
+-- Invisible
+function cmd.invisible(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on|off]")
+	if not (wrd) then return end
+
+	if (wrd == "on") then
+		xrs_debug_tools.debug_invis = true
+		return "invisible:= invisibility enabled"
+	end
+
+	if (wrd == "off") then
+		xrs_debug_tools.debug_invis = nil
+		return "invisible:= invisibility disabled"
+	end
+
+	return "invisible:= type invisible help for list of sub commands"
+end
+
 function cmd.crow(me,txt,owner,p)
 	local wrd = first_word(me,txt,owner,"[on|off]")
 	if not (wrd) then return end

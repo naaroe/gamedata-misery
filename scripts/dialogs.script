@@ -77,7 +77,12 @@ function surrender_victim_answers_2(a,b)
 		end
 	end
 
+	if (db.actor:character_reputation()+2 < 10000) then
+		db.actor:change_character_reputation(2)
+	end
+
 	npc:iterate_inventory(itr,npc)
+	return game.translate_string("actor_break_dialog_2")
 end
 
 function set_enemy(a,b)

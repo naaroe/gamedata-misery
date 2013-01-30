@@ -2273,7 +2273,7 @@
 #include "gameplay\character_criticals_4.xml"
   </specific_character>
 
-  <specific_character id="zat_stalker_medic" team_default="1">
+ <specific_character id="zat_stalker_medic" team_default="1">
 		<name>zat_stalker_medic</name>
 		<icon>ui_inGame2_neutral_1</icon>
 		<map_icon x="1" y="0">
@@ -2300,4 +2300,31 @@
 
 </specific_character>
 
+	<specific_character id="zat_b5_prisoner" team_default="1">
+		<name>GENERATE_NAME_stalker</name>
+		<icon>ui_inGame2_neutral_1</icon>
+		<map_icon x="1" y="0">
+		</map_icon>
+		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+		<class>zat_b5_prisoner</class>
+		<community>stalker</community>
+		<terrain_sect>stalker_terrain</terrain_sect>
+		<snd_config>characters_voice\human_01\stalker\</snd_config>
+
+		<rank>25</rank>
+		<reputation>0</reputation>
+
+		<visual>actors\stalker_neutral\stalker_neutral0c</visual>
+		<supplies>
+      [spawn] \n
+#include "gameplay\character_items.xml"
+#include "gameplay\character_items_4_stalker.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_2.xml"
+#include "gameplay\character_drugs_neutral_2.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+	</specific_character>
 </xml>

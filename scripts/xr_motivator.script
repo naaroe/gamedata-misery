@@ -88,6 +88,9 @@ function motivator_binder:net_spawn(sobject)
 	self.object:set_callback(callback.sound, motivator_binder.hear_callback, self)
 	self.object:set_callback(callback.on_item_take, self.on_item_take, self)
 	self.object:set_callback(callback.on_item_drop, self.on_item_drop, self)
+	--Alundaio
+	self.object:set_callback(callback.take_item_from_box, self.take_item_from_box, self)
+	--Alundaio
 	--memusage.collect_info(self.object, "after__callback")
 
 	-- ставим дефолтное расстояние входа в смарткаверы
@@ -188,6 +191,12 @@ function motivator_binder:on_item_take(item)
 	-- End Alundaio
 end
 
+--Alundaio
+function motivator_binder:take_item_from_box(box,item)
+	if (axr_main) then axr_main.npc_on_item_take_from_box(self.object,box,item) end
+end
+--Alundaio
+
 function motivator_binder:on_item_drop(item)
 	-- Alundaio
 	if (axr_main) then axr_main.npc_on_item_drop(self.object,item) end
@@ -240,6 +249,9 @@ function motivator_binder:clear_callbacks()
 	self.object:set_callback(callback.hit, nil)
 	self.object:set_callback(callback.death, nil)
 	self.object:set_callback(callback.sound, nil)
+	--Alundaio
+	self.object:set_callback(callback.take_item_from_box, nil)
+	--Alundaio
 end
 
 function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_index)

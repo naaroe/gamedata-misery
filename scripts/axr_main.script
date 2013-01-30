@@ -25,6 +25,7 @@ local intercepts = {
 	npc_on_death_callback		= {},
 	npc_on_fighting_actor		= {},
 	npc_add_precondition		= {},
+	npc_on_item_take_from_box	= {},
 
 	-- state_mgr_weapon.script
 	npc_on_weapon_strapped		= {},
@@ -36,6 +37,9 @@ local intercepts = {
 
 	-- se_stalker.script
 	se_stalker_on_spawn			= {},
+
+	-- se_actor.script
+	se_actor_on_register		= {},
 
 	-- xr_corpse_detection.script
 	npc_on_get_all_from_corpse 	= {},
@@ -71,6 +75,7 @@ local intercepts = {
 	actor_on_init				= {},
 	actor_on_torch_enabled		= {},
 	actor_on_torch_disabled		= {},
+	actor_on_info_callback		= {},
 
 	-- bind_monster.script
 	monster_on_hit_callback			= {},
@@ -101,6 +106,26 @@ function _G.callback_unregister(name,func)
 	end
 end
 
+local ev_queue = {}
+function event_queue()
+	local data
+	for i=#ev_queue, 1, -1 do
+		data = ev_queue[i]
+		if (game.get_game_time():diffSec(data.game_time) >= data.timer) then
+			data.f(data.p)
+			table.remove(ev_queue,i)
+		end
+	end
+end
+
+function _G.create_delayed_event(timer,f,...)
+	local t = {}
+	t.game_time = game.get_game_time()
+	t.timer = timer
+	t.f = f
+	t.p = {...}
+	table.insert(ev_queue,t)
+end
 
 -------------------
 -- on_game_start()
@@ -116,6 +141,9 @@ function on_game_start()
 	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
 	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
 
+	-- item mini-mod
+	if (itms_manager) then itms_manager.on_game_start() end
+
 	-- SCHEMES
 	if (axr_beh) then axr_beh.on_game_start() end
 	if (axr_companions) then axr_companions.on_game_start() end
@@ -130,9 +158,19 @@ function on_game_start()
 	-- Misery
 	if (axr_misery) then axr_misery.on_game_start() end
 	if (axr_quest_master) then axr_quest_master.on_game_start() end
+	if (axr_battery) then axr_battery.on_game_start() end
 
 	-- Dynamic Spawn
 	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
+end
+
+-------------------
+-- se_actor_on_register()
+-------------------
+function se_actor_on_register(actor)
+	for i=1, #intercepts.se_actor_on_register do
+		intercepts.se_actor_on_register[i](actor)
+	end
 end
 
 -------------------
@@ -163,11 +201,20 @@ function actor_on_init(se_actor)
 end
 
 -------------------
+-- actor_on_info_callback(npc,info_id)
+-------------------
+function actor_on_info_callback(npc,info_id)
+	for i=1, #intercepts.actor_on_info_callback do
+		intercepts.actor_on_info_callback[i](npc,info_id)
+	end
+end
+
+-------------------
 -- actor_on_update()
 -------------------
 local actor_reload
 local actor_scope
-local actor_light
+actor_light = nil
 function actor_on_update(se_actor,delta)
 	for i=1, #intercepts.actor_on_update do
 		intercepts.actor_on_update[i](se_actor,delta)
@@ -217,6 +264,7 @@ function actor_on_update(se_actor,delta)
 			actor_on_torch_disabled()
 		end
 	end
+
 	alun_utils.execute_queue()
 end
 
@@ -261,7 +309,7 @@ end
 -------------------
 function actor_on_torch_disabled()
 	for i=1, #intercepts.actor_on_torch_disabled do
-		intercepts.actor_on_torch_disabled[i](wpn)
+		intercepts.actor_on_torch_disabled[i]()
 	end
 end
 
@@ -317,7 +365,7 @@ function actor_on_save(se_actor,packet)
 	if (atmosfear) then atmosfear.actor_on_save(se_actor,packet) end
 	if (axr_dynamic_spawn) then
 		axr_dynamic_spawn.actor_on_save(se_actor,packet)
-		story_objects.get_story_objects_registry():save(packet)
+		--story_objects.get_story_objects_registry():save(packet)
 	end
 end
 
@@ -328,7 +376,7 @@ function actor_on_load(se_actor,packet)
 	if (atmosfear) then atmosfear.actor_on_load(se_actor,packet) end
 	if (axr_dynamic_spawn) then
 		axr_dynamic_spawn.actor_on_load(se_actor,packet)
-		story_objects.get_story_objects_registry():load(packet)
+		--story_objects.get_story_objects_registry():load(packet)
 	end
 end
 
@@ -541,6 +589,15 @@ end
 function npc_on_fighting_actor(npc)
 	for i=1, #intercepts.npc_on_fighting_actor do
 		intercepts.npc_on_fighting_actor[i](npc)
+	end
+end
+
+--------------------
+-- npc_on_item_take_from_box(npc,box,item)
+--------------------
+function npc_on_item_take_from_box(npc,box_item)
+	for i=1, #intercepts.npc_on_item_take_from_box do
+		intercepts.npc_on_item_take_from_box[i](npc,box,item)
 	end
 end
 

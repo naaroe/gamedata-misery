@@ -136,7 +136,7 @@ local m_classes =
 secret_stashes = {}
 
 function on_game_start()
-	callback_register("on_game_load",on_game_load)
+	callback_register("se_actor_on_register",on_register)
 	callback_register("actor_on_update",actor_on_update)
 	callback_register("actor_on_item_take_from_box",actor_on_item_take_from_box)
 	callback_register("actor_on_item_take",actor_on_item_take)
@@ -145,126 +145,37 @@ end
 ini = ini_file("dynamic_spawn.ltx")
 local dynamic = {}
 local on_info_sections
-function on_game_load()
+function on_register(actor)
+
+	if (actor.start_position_filled) then
+		return
+	end
+
 	local file = io.open("gamedata\\configs\\dynamic_spawn.ltx","r")
 	if not (file) then
 		return
 	end
 
-
 	local data = file:read("*all")
+	file:close()
+
 	local sections = {}
 	local ltx,ltx_data
+
+	-- collect all sections from main config
+	parse_ltx(actor,sections,data)
 
 	-- collect all sections from #include configs
 	for fname in string.gmatch(data,[[%"(.-)%"]]) do
 		ltx = io.open("gamedata\\configs\\"..fname,"r")
 		if (ltx) then
 			ltx_data = ltx:read("*all")
-			for sec in string.gmatch(ltx_data,"%[(.-)%]") do
-				if (ini:line_exist(sec,"on_info")) then
-					if not (on_info_sections) then
-						on_info_sections = {}
-					end
-					table.insert(on_info_sections,sec)
-				else
-					table.insert(sections,sec)
-				end
-				--alun_utils.printf("section %s",sec)
-			end
+			parse_ltx(actor,sections,ltx_data)
 			ltx:close()
 		end
 	end
 
-	-- collect all sections from main spawn config
-	for sec in string.gmatch(data,"%[(.-)%]") do
-		if (ini:line_exist(sec,"on_info")) then
-			if not (on_info_sections) then
-				on_info_sections = {}
-			end
-			table.insert(on_info_sections,sec)
-		else
-			table.insert(sections,sec)
-		end
-		--alun_utils.printf("section %s",sec)
-	end
-
-	file:close()
-
-	local sor = story_objects.get_story_objects_registry()
-	local sec,section,pos,lvid,gvid,lvl,se_obj
-	local data,t,disabled
-	for i=1, #sections do
-		sec = sections[i]
-
-		if not (sor:get(sec)) then
-			t = alun_utils.collect_section(ini,sec,true)
-
-			disabled = alun_utils.read_from_ini(ini,sec,"dont_spawn","string",nil)
-			disabled = disabled and xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"dont_spawn",sec,disabled))
-
-			if (disabled ~= "true") then
-				section = t.section
-				pos = alun_utils.string_to_vector(t.position)
-
-				lvid = tonumber(t.level_vertex_id)
-				gvid = tonumber(t.game_vertex_id)
-
-				if (section and pos and lvid and gvid) then
-					se_obj = alife():create(section,pos,lvid,gvid)
-					sor:register(se_obj.id,sec,nil,true)
-
-					-- Keep track of objects marked secret
-					if (t.secret == "true" and secret_stashes[sec] ~= false) then
-						secret_stashes[sec] = true
-					end
-
-					-- Repack abstract properties
-					se_obj.repack = {}
-					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
-
-					-- Alter packet properties
-					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
-					if (class and m_classes[class] and dynamic[m_classes[class]]) then
-						dynamic[m_classes[class]](se_obj,t,sec)
-
-						local pid
-						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
-							pid = se_obj.id
-						end
-
-						-- Spawn supplemental items
-						local i = 1
-						local itm
-						local sysini = system_ini()
-						local sim = alife()
-						while t["item"..i] do
-							itm = alun_utils.str_explode(t["item"..i],",")
-							if (itm[1] and sysini:section_exist(itm[1])) then
-								for n=1,itm[2] and tonumber(itm[2]) or 1 do
-									if (pid) then
-										sim:create(itm[1],se_obj.position,0,0,pid)
-									else
-										sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
-									end
-								end
-							end
-							i = i + 1
-						end
-					end
-
-					-- Set Map Spot
-					if (t.map_spot) then
-						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
-					end
-
-					alun_utils.printf("after create %s",se_obj:name())
-				else
-					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
-				end
-			end
-		end
-	end
+	interpret_spawn_data(sections)
 end
 
 local tmr
@@ -284,72 +195,14 @@ function actor_on_update()
 		return
 	end
 
-	local sor = story_objects.get_story_objects_registry()
-	local sec,section,pos,lvid,gvid,lvl,se_obj
-	local data,t,enable
-	for i=1, #on_info_sections do
-		sec = on_info_sections[i]
-		if not (sor:get(sec)) then
-			enable = alun_utils.read_from_ini(ini,sec,"on_info","string",nil)
-			enable = enable and xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"on_info",sec,enable))
+	interpret_spawn_data(on_info_sections)
+end
 
-			if (enable == "true") then
-				section = t.section
-				pos = alun_utils.string_to_vector(t.position)
-
-				lvid = tonumber(t.level_vertex_id)
-				gvid = tonumber(t.game_vertex_id)
-
-				if (section and pos and lvid and gvid) then
-					se_obj = alife():create(section,pos,lvid,gvid)
-					sor:register(se_obj.id,sec,nil,true)
-
-					-- Keep track of objects marked secret
-					if (t.secret == "true" and secret_stashes[sec] ~= false) then
-						secret_stashes[sec] = true
-					end
-
-					-- Repack abstract properties
-					se_obj.repack = {}
-					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
-
-					-- Alter packet properties
-					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
-					if (class and m_classes[class] and dynamic[m_classes[class]]) then
-						dynamic[m_classes[class]](se_obj,t,sec)
-
-
-						local pid
-						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
-							pid = se_obj.id
-						end
-
-						-- Spawn supplemental items
-						local i = 1
-						local itm
-						local sysini = system_ini()
-						local sim = alife()
-						while t["item"..i] do
-							itm = alun_utils.str_explode(t["item"..i],",")
-							if (itm[1] and sysini:section_exist(itm[1])) then
-								for n=1,itm[2] and tonumber(itm[2]) or 1 do
-									sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id,pid)
-								end
-							end
-							i = i + 1
-						end
-					end
-
-					-- Set Map Spot
-					if (t.map_spot) then
-						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
-					end
-
-					alun_utils.printf("after create %s",se_obj:name())
-				else
-					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
-				end
-			end
+function on_game_load()
+	local t = {}
+	for k,v in pairs(secret_stashes) do
+		if (v == true) then
+			table.insert(t,k)
 		end
 	end
 end
@@ -415,6 +268,108 @@ function actor_on_load(se_actor,packet)
 	end
 end
 
+function parse_ltx(actor,sections,ltx_data)
+	local gvid,id
+	local sim = alife()
+	for sec in string.gmatch(ltx_data,"%[(.-)%]") do
+		gvid = alun_utils.read_from_ini(ini,sec,"game_vertex_id","float",nil)
+		if (gvid and is_on_the_same_level(actor,gvid)) then
+			if (ini:line_exist(sec,"on_info")) then
+				if not (on_info_sections) then
+					on_info_sections = {}
+				end
+				--alun_utils.printf("on_info sec = %s",sec)
+				table.insert(on_info_sections,sec)
+			else
+				--alun_utils.printf("sec = %s",sec)
+				table.insert(sections,sec)
+			end
+		end
+	end
+end
+
+function interpret_spawn_data(sections)
+	local sor = story_objects.get_story_objects_registry()
+	local sec,section,pos,lvid,gvid,lvl,se_obj
+	local data,t,enable,on_info
+	for i=1, #sections do
+		sec = sections[i]
+
+		if not (sor:get(sec)) then
+			t = alun_utils.collect_section(ini,sec,true)
+
+			enable = alun_utils.read_from_ini(ini,sec,"enable","string","true")
+			enable = xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"enable",sec,enable))
+
+			on_info = alun_utils.read_from_ini(ini,sec,"on_info","string","true")
+			on_info = xr_logic.pick_section_from_condlist(db.actor,db.actor,xr_logic.parse_condlist(db.actor,"on_info",sec,on_info))
+
+			if (enable == "true" and on_info == "true") then
+				section = t.section
+				pos = alun_utils.string_to_vector(t.position)
+
+				lvid = tonumber(t.level_vertex_id)
+				gvid = tonumber(t.game_vertex_id)
+
+				if (section and pos and lvid and gvid) then
+					se_obj = alife():create(section,pos,lvid,gvid)
+
+					-- dynamic section name as story_id
+					sor:register(se_obj.id,sec,nil,true)
+
+					-- Keep track of objects marked secret
+					if (t.secret == "true" and secret_stashes[sec] ~= false) then
+						secret_stashes[sec] = true
+					end
+
+					-- Repack abstract properties
+					se_obj.repack = {}
+					se_obj.repack.direction = t.direction and alun_utils.string_to_vector(t.direction) or vector():set(0,0,0)
+
+					-- Alter packet properties
+					local class = alun_utils.read_from_ini(nil,section,"class","string",nil)
+					if (class and m_classes[class] and dynamic[m_classes[class]]) then
+						dynamic[m_classes[class]](se_obj,t,sec)
+
+						local pid
+						if (m_classes[class] == "cse_alife_inventory_box" or m_classes[class] == "cse_alife_stalker") then
+							pid = se_obj.id
+						end
+
+						-- Spawn supplemental items
+						local i = 1
+						local itm
+						local sysini = system_ini()
+						local sim = alife()
+						while t["item"..i] do
+							itm = alun_utils.str_explode(t["item"..i],",")
+							if (itm[1] and sysini:section_exist(itm[1])) then
+								for n=1,itm[2] and tonumber(itm[2]) or 1 do
+									if (pid) then
+										sim:create(itm[1],se_obj.position,0,0,pid)
+									else
+										sim:create(itm[1],se_obj.position,se_obj.m_level_vertex_id,se_obj.m_game_vertex_id)
+									end
+								end
+							end
+							i = i + 1
+						end
+					end
+
+					-- Set Map Spot
+					if (t.map_spot) then
+						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
+					end
+
+					alun_utils.printf("after create %s",se_obj:name())
+				else
+					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
+				end
+			end
+		end
+	end
+end
+
 last_secret = nil
 function random_secret()
 	local t = {}
@@ -455,6 +410,12 @@ function random_secret()
 
 	last_secret = nil
 end
+
+function is_on_the_same_level(actor,gvid)
+	return game_graph():vertex(actor.m_game_vertex_id):level_id() == game_graph():vertex(gvid):level_id()
+end
+
+
 -------------------------------------------
 -- cse_alife_smart_cover
 -------------------------------------------
@@ -464,7 +425,7 @@ function dynamic.cse_alife_smart_cover(se_obj,t,sec)
 
 	local data = stpk_utils.get_smart_cover_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.description = t.description
@@ -493,7 +454,7 @@ end
 function dynamic.cse_alife_level_changer(se_obj,t)
 	local data = stpk_utils.get_level_changer_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.dest_game_vertex_id = tonumber(t.dest_game_vertex_id)
@@ -527,7 +488,7 @@ end
 function dynamic.cse_alife_space_restrictor(se_obj,t,sec)
 	local data = stpk_utils.get_space_restrictor_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	-- TO DO: allow shape count larger then 1
@@ -550,7 +511,7 @@ end
 function dynamic.cse_alife_anomalous_zone(se_obj,t,sec)
 	local data = stpk_utils.get_anom_zone_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	-- TO DO: allow shape count larger then 1
@@ -583,7 +544,7 @@ end
 function dynamic.cse_alife_object_hanging_lamp_properties(se_obj,t)
 	local data = stpk_utils.get_lamp_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.main_color = t.main_color and tonumber(t.main_color) or data.main_color
@@ -614,7 +575,7 @@ end
 function dynamic.cse_alife_item(se_obj,t)
 	local data = stpk_utils.get_item_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -632,7 +593,7 @@ end
 function dynamic.cse_alife_item_document(se_obj,t)
 	local data = stpk_utils.get_item_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -652,7 +613,7 @@ end
 function dynamic.cse_alife_item_pda(se_obj,t)
 	local data = stpk_utils.get_item_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -674,7 +635,7 @@ end
 function dynamic.cse_alife_item_weapon(se_obj,t)
 	local data = stpk_utils.get_weapon_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -698,7 +659,7 @@ end
 function dynamic.cse_alife_helicopter(se_obj,t)
 	local data = stpk_utils.get_heli_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -727,7 +688,7 @@ function dynamic.cse_alife_stalker(se_obj,t)
 	data.reputation = t.reputation and tonumber(t.reputation) or data.reputation
 	data.character_name = t.character_name or data.character_name
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name
@@ -742,7 +703,7 @@ end
 function dynamic.cse_alife_inventory_box(se_obj,t)
 	local data = stpk_utils.get_inv_box_data(se_obj)
 
-	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or ""
+	data.custom_data = t.custom_data and "[logic]\n cfg = " .. t.custom_data or data.custom_data
 	data.object_flags = t.object_flags and tonumber(t.object_flags) or data.object_flags
 
 	data.visual_name = t.visual_name or data.visual_name

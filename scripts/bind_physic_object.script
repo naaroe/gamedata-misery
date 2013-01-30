@@ -148,7 +148,6 @@ function generic_physics_binder:use_callback(obj, who)
 		xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "use_callback", obj, who)
 	end
 	-- Alundaio
-	if (itms_manager) then itms_manager.physics_object_use_callback(self.object,who) end
 	if (axr_main) then axr_main.physic_object_on_use_callback(self.object,who) end
 	-- Alundaio
 end

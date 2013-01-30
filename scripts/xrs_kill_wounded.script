@@ -7,7 +7,7 @@ local ini = ini_file("ai_tweaks\\xrs_kill_wounded.ltx")
 local Enable = alun_utils.read_from_ini(ini,"settings","enable","bool",false)
 local ActorKillWoundedEnable = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender","string","true")
 local ActorKillWoundedChance = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_chance","float",0.25)
-local ActorKillWoundedMaxDist = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_max_dist","float",50)
+local ActorKillWoundedMaxDist = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_max_dist","float",7)
 local OnlyUsePistols = Enable and alun_utils.read_from_ini(ini,"settings","only_use_pistols","bool",false)
 local RandomStateRun = Enable and alun_utils.read_from_ini(ini,"settings","random_state_run","bool",true)
 local RandomStateWalk = Enable and alun_utils.read_from_ini(ini,"settings","random_state_walk","bool",false)
@@ -377,7 +377,7 @@ function npc_on_update(npc,st)
 			return
 		end
 
-		if (not npc_in_actor_frustrum(npc) or npc:position():distance_to(db.actor:position()) >  7) then
+		if (not npc_in_actor_frustrum(npc) or npc:position():distance_to(db.actor:position()) >  ActorKillWoundedMaxDist) then
 		--if (alun_utils.angle_diff(db.actor:direction(), db.actor:position():sub(npc:position())) < 90 or npc:position():distance_to(db.actor:position()) >  7) then
 			return
 		end
