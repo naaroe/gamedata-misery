@@ -16,7 +16,23 @@ end
 
 local class_ui
 function main_menu_on_init(menu)
+	local fsgame = io.open("fsgame.ltx","a+")
+	local data = fsgame:read("*all")
+	local restart
+	if not (string.find(data,"game_class_assaulter")) then
+		fsgame:write([[$game_class_assaulter$  = true|  false| $game_data$|          class_diversity\assaulter\
+$game_class_recon$      = true|  false| $game_data$|          class_diversity\recon\
+$game_class_sniper$     = true|  false| $game_data$|          class_diversity\sniper\]])
+		restart = true
+	end
+	fsgame:close()
 	local function OnButton_select_class()
+		if (restart) then
+			menu.mbox_mode = 2
+			menu.message_box:InitMessageBox("message_box_edit_fsgame")
+			menu.message_box:ShowDialog(true)
+			return
+		end
 		if not (class_ui) then
 			class_ui = ui_class_selector and ui_class_selector.class_ui(menu)
 		end
@@ -31,7 +47,7 @@ function main_menu_on_init(menu)
 end
 
 function on_update()
-	-- medic_wow
+	-- medic
 	if (has_alife_info("zat_b22_stalker_medic_death") and level.name() =="zaton" and not has_alife_info("zat_stalker_medic_spawn")) then
 		alife():create("zat_stalker_medic",vector():set(110.023,-3.936,185.844),1155265,316)
         give_info("zat_stalker_medic_spawn")
@@ -118,25 +134,18 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
-			level.change_weather("af3_dark_storm",true)
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
 			pos = vector():set(472.95452880859,36.698554992676,-69.10285949707)
 			dir = -1.3
-
-			local box1_pos = vector():set(460,37,-66.66)
-			local box2_pos = vector():set(460,37.8,-66.66)
-			local box3_pos = vector():set(461,37,-67.7)
-			alife():create("box_wood_01",box1_pos,1716749,222)
-			alife():create("box_wood_01",box2_pos,1716749,222)
-			alife():create("box_wood_01",box3_pos,1716749,222)
 		end
 	elseif (ActorClass == "sniper") then
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
-			level.change_weather("af3_dark_storm",true)
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
@@ -147,22 +156,12 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
-			level.change_weather("af3_dark_storm",true)
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
 			pos = vector():set(260.97579956055,27.684192657471,-461.89776611328)
-			--pos = vector():set(275.23883056641,27.686254501343,-468.93121337891)
 			dir = -1.3
-
-			--[[
-			local box1_pos = vector():set(257,27,-476)
-			local box2_pos = vector():set(257,27.8,-476)
-			local box3_pos = vector():set(258,27,-474)
-			alife():create("box_wood_01",box1_pos,1400133,17)
-			alife():create("box_wood_01",box2_pos,1400133,17)
-			alife():create("box_wood_01",box3_pos,1400133,17)
-			--]]
 		end
 	end
 
@@ -208,8 +207,8 @@ function dynamic_actor_loadout()
 			create_items("wpn_aps")
             create_ammunition("ammo_9x18_fmj",3)
             create_ammunition("ammo_9x18_pmm",2)
-			create_ammunition("ammo_7.92x33_fmj",4)
-			create_ammunition("ammo_7.92x33_ap",2)
+			create_ammunition("ammo_7.92x33_fmj",5)
+			create_ammunition("ammo_7.92x33_ap",3)
 
 			create_items("device_flashlight")
 			create_items("helm_hardhat")
@@ -281,7 +280,7 @@ function dynamic_actor_loadout()
 			create_items("stimpack_army",2)
 
 			create_items("wpn_mp5_worn")
-            create_ammunition("ammo_9x19_fmj",4)
+         	create_ammunition("ammo_9x19_fmj",5)
            	create_ammunition("ammo_9x19_pbp",2)
 			create_ammunition("ammo_9x19_ap",4)
 

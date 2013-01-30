@@ -103,11 +103,13 @@ function evaluate_prior(target, squad)
 		local level_name = alife():level_name(game_graph():vertex(squad.m_game_vertex_id):level_id())
 		local target_level_name = alife():level_name(game_graph():vertex(target.m_game_vertex_id):level_id())
 
-		if not (EnterLevels[target_level_name]) then
+		local enable = EnterLevels[target_level_name] and xr_logic.pick_section_from_condlist(db.actor,squad,xr_logic.parse_condlist(squad,"enter_levels",target_level_name,EnterLevels[target_level_name]))
+		if not (enable) then
 			return 0
 		end
 
-		if not (ExitLevels[level_name]) then
+		enable = level_name,ExitLevels[level_name] and xr_logic.pick_section_from_condlist(db.actor,squad,xr_logic.parse_condlist(squad,"exit_levels",level_name,ExitLevels[level_name]))
+		if not (enable) then
 			return 0
 		end
 	end

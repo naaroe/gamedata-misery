@@ -508,12 +508,20 @@ function se_smart_terrain:load_jobs()
 		elseif v.job_type == "smartcover_job" then -- работа задается смарткавером
 			local smartcover_name = ltx:r_string(active_section, "cover_name")
 			local smartcover = se_smart_cover.registered_smartcovers[smartcover_name]
-			if smartcover == nil then
+			if not smartcover then
 				abort("There is an exclusive job with wrong smatrcover name [%s]    smartterrain [%s]", tostring(smartcover_name), self:name())
-			end
-			printf("Returning alife task for object [%s] game_vertex [%s] level_vertex [%s] position %s", smartcover.id, smartcover.m_game_vertex_id, smartcover.m_level_vertex_id, vec_to_str(smartcover.position))
-			v.alife_task = CALifeSmartTerrainTask(smartcover.m_game_vertex_id, smartcover.m_level_vertex_id)
 
+				local lvid = axr_dynamic_spawn and alun_utils.read_from_ini(axr_dynamic_spawn.ini,smartcover_name,"level_vertex_id","float",nil)
+				local gvid = axr_dynamic_spawn and alun_utils.read_from_ini(axr_dynamic_spawn.ini,smartcover_name,"game_vertex_id","float",nil)
+
+				if (lvid and gvid) then
+					alun_utils.printf("smart_terrain.script: Recovered from error, read data from axr_dynamic_spawn.ltx")
+					v.alife_task = CALifeSmartTerrainTask(gvid, lvid)
+				end
+			else
+				printf("Returning alife task for object [%s] game_vertex [%s] level_vertex [%s] position %s", smartcover.id, smartcover.m_game_vertex_id, smartcover.m_level_vertex_id, vec_to_str(smartcover.position))
+				v.alife_task = CALifeSmartTerrainTask(smartcover.m_game_vertex_id, smartcover.m_level_vertex_id)
+			end
 		elseif v.job_type == "point_job" then   -- работа задается позицией
 			v.alife_task = self.smart_alife_task
 		end
@@ -1015,7 +1023,7 @@ end
 -- Также может вызваться принудительно из xr_effects
 function se_smart_terrain:update()
 	cse_alife_smart_zone.update( self )
-	if dev_debug or (alun_plugin_manager and alun_plugin_manager.is_plugin_enabled("axr_debug_tools")) then
+	if dev_debug then
 		self:refresh() -- Не забыть потом заремить
 	end
 

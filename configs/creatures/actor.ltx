@@ -17,20 +17,20 @@ destroyed_vis_name	= dynamics\Dead_Body\skelet_crash
 
 player_hud_section      = actor_hud
 
-actor_class				= assaulter				;Misery 2.0 Alundaio
+actor_class				= recon				;Misery 2.0 Alundaio
 
 terrain                 = actor_terrain
 
-max_item_mass           = 35
-jump_speed              = 6.3
+max_item_mass           = 29
+jump_speed              = 7.0
 crouch_coef             = 0.65
-climb_coef              = 0.45
+climb_coef              = 0.5
 run_coef                = 1.710	;4.1
 sprint_koef             = 1.68	;2.0
 run_back_coef           = 1.4
 walk_back_coef          = 0.66
 air_control_param       = 0.15
-walk_accel              = 20	;16
+walk_accel              = 24	;16
 show_corpses_dist	= 10
 
 pickup_info_radius                = 3       ;3
@@ -50,8 +50,8 @@ ph_box2_size                            = 0.35, 0.6,  0.35
 stalker_restrictor_radius               = 0.1;0.1;0.1;0.1;0.1
 stalker_small_restrictor_radius         = .1
 medium_monster_restrictor_radius        = 0.1
-ph_crash_speed_min                              = 13
-ph_crash_speed_max                              = 33
+ph_crash_speed_min                              = 15
+ph_crash_speed_max                              = 41
 ph_collision_damage_factor                        = 0.88
 ph_mass                                                         = 94
 
@@ -123,76 +123,76 @@ quick_item_3 = stimpack_army
 quick_item_4 = stimpack_scientic
 
 [actor_immunities_gd_novice]
-burn_immunity 				= 8.6
-strike_immunity 			= 1.24
-shock_immunity 				= 1.28
-wound_immunity				= 1.18
-radiation_immunity 			= 1.2
-telepatic_immunity 			= 3.23
-chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
-fire_wound_immunity  			= 0.59
+burn_immunity 				= 10.9
+strike_immunity 			= 1.28
+shock_immunity 				= 1.36
+wound_immunity				= 1.28
+radiation_immunity 			= 1.03
+telepatic_immunity 			= 2.64
+chemical_burn_immunity 			= 2.42
+explosion_immunity 			= 0.78
+fire_wound_immunity  			= 0.72
 
 [actor_immunities_gd_stalker]
-burn_immunity 				= 8.4
-strike_immunity 			= 1.24
-shock_immunity 				= 1.28
-wound_immunity				= 1.18
-radiation_immunity 			= 1.2
-telepatic_immunity 			= 3.2
-chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
-fire_wound_immunity  			= 0.59
+burn_immunity 				= 10.9
+strike_immunity 			= 1.28
+shock_immunity 				= 1.36
+wound_immunity				= 1.28
+radiation_immunity 			= 1.03
+telepatic_immunity 			= 2.64
+chemical_burn_immunity 			= 2.42
+explosion_immunity 			= 0.78
+fire_wound_immunity  			= 0.72
 
 [actor_immunities_gd_veteran]
-burn_immunity 				= 8.4
-strike_immunity 			= 1.24
-shock_immunity 				= 1.28
-wound_immunity				= 1.18
-radiation_immunity 			= 1.2
-telepatic_immunity 			= 3.2
-chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
-fire_wound_immunity  			= 0.59
+burn_immunity 				= 10.9
+strike_immunity 			= 1.28
+shock_immunity 				= 1.36
+wound_immunity				= 1.28
+radiation_immunity 			= 1.03
+telepatic_immunity 			= 2.64
+chemical_burn_immunity 			= 2.42
+explosion_immunity 			= 0.78
+fire_wound_immunity  			= 0.72
 
 [actor_immunities_gd_master]
-burn_immunity 				= 8.4
-strike_immunity 			= 1.24
-shock_immunity 				= 1.28
-wound_immunity				= 1.18
-radiation_immunity 			= 1.2
-telepatic_immunity 			= 3.2
-chemical_burn_immunity 			= 2.15
-explosion_immunity 			= 0.64
-fire_wound_immunity  			= 0.59
+burn_immunity 				= 10.9
+strike_immunity 			= 1.28
+shock_immunity 				= 1.36
+wound_immunity				= 1.28
+radiation_immunity 			= 1.03
+telepatic_immunity 			= 2.64
+chemical_burn_immunity 			= 2.42
+explosion_immunity 			= 0.78
+fire_wound_immunity  			= 0.72
 
 [actor_condition]
-satiety_v				= 0.0000115 	;скорость уменьшения сытости со временем
-radiation_v				= 0.00002	;скорость уменьшения радиации
-satiety_power_v			= 0.00425		;увеличение силы при уменьшении сытости
-satiety_health_v		= 0.0001    ;увеличение здоровья при уменьшении сытости
-satiety_critical		= 0.1       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
-radiation_health_v		= 0.0012	;0.002     ;уменьшение здоровья при воздействии радиации
+satiety_v				= 0.000008 	;скорость уменьшения сытости со временем
+radiation_v				= 0.000018	;скорость уменьшения радиации
+satiety_power_v			= 0.0032		;увеличение силы при уменьшении сытости
+satiety_health_v		= 0.00007    ;увеличение здоровья при уменьшении сытости
+satiety_critical		= 0.06       ;критическое значения сытости (в процентах от 0..1) когда здоровье начианает уменьшаться
+radiation_health_v		= 0.0018	;0.002     ;уменьшение здоровья при воздействии радиации
 morale_v				= 0.0001	;скорость восстановления морали
-psy_health_v			= 0.002 ;0.001		;скорость восстановления psy-здоровья
-alcohol_v				= -0.0008
+psy_health_v			= 0.0028 ;0.001		;скорость восстановления psy-здоровья
+alcohol_v				= -0.00052
 health_hit_part			= 1.0		;процент хита, уходящий на отнимание здоровья
-power_hit_part			= 0.04		;процент хита, уходящий на отнимание силы
+power_hit_part			= 0.08		;процент хита, уходящий на отнимание силы
 max_power_leak_speed	= 0.000001		;накопление усталости (макс граница, до которой восстанавливается сила) в секунду игрового времени
 max_walk_weight			= 150 ; 950 ; wpn_test ; 150 ; 55 ;50 ;490 ;90
 health_restore_v              = 0
 
-bleeding_v 				= 0.0106	 ;0.0005	;потеря крови при номинальной ране в секунду
+bleeding_v 				= 0.0128	 ;0.0005	;потеря крови при номинальной ране в секунду
 
-wound_incarnation_v		= 0.0042 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
+wound_incarnation_v		= 0.0028 ; 0.004 ; 0.003 ;0.0003     ;скорость заживления раны
 min_wound_size 			= 0.0075	;минимальный размер раны, после которого она считается зажившей
 
 ;--when actor in sleep
-satiety_v_sleep          	= 0.0000085
-radiation_v_sleep        	= 0.000017		;0.0003
+satiety_v_sleep          	= 0.000006
+radiation_v_sleep        	= 0.000014		;0.0003
 satiety_power_v_sleep    	= 0.0001
 satiety_health_v_sleep   = 0.0
-radiation_health_v_sleep = 0.0013
+radiation_health_v_sleep = 0.0012
 morale_v_sleep           	= 0.0
 psy_health_v_sleep       	= 0.0
 
@@ -208,20 +208,20 @@ health_restore_v              	= 0.0		;0.0001
 
 jump_power 				= 0.018 ;умешьшение силы с прыжком без учета веса ноши
 jump_weight_power       = 0.2  ;0.045                                        ;умешьшение силы с прыжком с учетом веса ноши, для максимального допустимого веса
-overweight_jump_k       = 1.02		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
+overweight_jump_k       = 1.04		;10                ;10                                        ;коэффициент влияние перегрузки прыжок с весом (умножается на jump_weight_power)
 
-stand_power             = -0.0070
+stand_power             = -0.0075
 walk_power              = 0.00001 ;0.00002  ;0.000012                                ;Reduction of force for a second during walking without taking into account weight of a burden
-walk_weight_power       = 0.0050  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
-overweight_walk_k       = 1.04			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
-accel_k                 = 1.7			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
-sprint_k                = 3.8 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
+walk_weight_power       = 0.0065  ;0.0001;                        ;Reduction of force for a second during walking in view of weight of a burden, for the maximal allowable weight
+overweight_walk_k       = 1.12			;9        ;10                                ;Factor influence of an overload of a burden (it is multiplied on walk_weight_power)
+accel_k                 = 1.3			;5                                        ;Factor on run (it is multiplied walk_power, walk_weight_power)
+sprint_k                = 3.0 ;75        ;коэффициент на "sprint" бег (умножается walk_power, walk_weight_power)
 
 ; хромота
 limping_health_begin =        0.08                ;порог здоровья меньше которого актер начинает хромать
 limping_health_end   =        0.12                ;порог здоровья больше которого актер перестает хромать
-limping_power_begin  =        0.18               ;порог силы меньше которого актер начинает хромать
-limping_power_end         =        0.29            ;порог силы больше которого актер перестает хромать
+limping_power_begin  =        0.08              ;порог силы меньше которого актер начинает хромать
+limping_power_end         =        0.16            ;порог силы больше которого актер перестает хромать
 use_limping_state         = on
 
 cant_walk_power_begin =        0.0015        ;The threshold of force less which actor cannot move

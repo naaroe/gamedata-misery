@@ -110,6 +110,7 @@ function eva_gather_itm:evaluate()
 		local nearest_pos
 		local se_itm
 		local id = npc:id()
+		local class
 
 		local squad = get_object_squad(self.object)
 		local squad_community
@@ -134,7 +135,8 @@ function eva_gather_itm:evaluate()
 		self.st.started = true
 		for o in npc:memory_visible_objects() do
 			itm = o:object()
-			itm_id = itm  and loot_table[itm:section()] and itm:id()
+
+			itm_id = itm and loot_table[itm:section()] and itm:id()
 			se_itm = itm_id and Items[itm_id] == nil and alife():object(itm_id)
 
 
@@ -162,11 +164,11 @@ function eva_gather_itm:evaluate()
 							selected_id = itm_id
 						end
 					end
-
 				end
 
 			end
 		end
+
 		self.st.started = nil
 
 		if (selected_id) then
@@ -238,6 +240,17 @@ function act_gather_itm:execute()
 	end
 
 	local dist = self.object:position():distance_to(self.st.vid_pos)
+
+	if (dist < 5 and self.st.stage ~= 2) then
+		if not (self.hang_time) then
+			self.hang_time = time_global() + 10000
+		end
+
+		if (time_global() > self.hang_time) then
+			self.st.stage = 2
+			self.hang_time = nil
+		end
+	end
 
 	if (isArtefact(itm) and dist < 1500) then
 		local tg = time_global()

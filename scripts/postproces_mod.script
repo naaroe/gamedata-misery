@@ -3,7 +3,7 @@
 --[[------ идея такая - при недосыпе в 12 часов начинаеться двоиться в глазах, при 18 - заблуривание, при 24 отруб с анимацией. Правда я не доконца разобрался с таблицами времени, ну ты уж сам напишешь как правильно. кстати, нужно бы расписать по часам ведь Пысовский сон ранжируется по часам а не по 3 этапам. нужно еще правда сделать подъем с анимацие так используй эту анимацию sleep.anm, а лучше такую surge_02.anm или surge_01, не помню точно. нужно будет потом еще звук зевка прописать на проигрывание, но пока нужного не нашел. сгенерирую из архивов игры потом, как экзамены сдам --]]
 
 local upd_time
-local max_wake_time = 73*60*60 -- сколько может продержаться без сна. часы*минуты*секунды
+local max_wake_time = 88*60*60 -- сколько может продержаться без сна. часы*минуты*секунды
 local drst = game.get_game_time()
 local sleep_ppe1,sleep_ppe2
 local sleepd = nil
@@ -82,7 +82,7 @@ local obj_table = {}
 function use_obj(obj)
 	local s = obj:section()
 	if not obj_table[s] then
-		obj_table[s] = rx_utils.read_from_ini(nil,s,"eat_sleepiness",0)
+		obj_table[s] = alun_utils.read_from_ini(nil,s,"eat_sleepiness","float",0)
 	end
 	if obj_table[s] ~= 0 then
 --		rx_ai.printf("sleep:use %s = %s",s,obj_table[s])
@@ -121,7 +121,7 @@ function wounded_pp_update()
         level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")    
         if math.random() < drop_item_on_crit_prob then
           local active_item = db.actor:active_item()
-          if active_item and active_item:section() ~= "bolt" and active_item:section()~= "wpn_knife" then
+          if active_item and active_item:section() ~= "bolt" and not string.find(active_item:section(),"knife") then
             db.actor:drop_item(active_item)
           end
         end

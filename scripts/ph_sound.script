@@ -9,15 +9,15 @@ function snd_source:reset_scheme(loading)
 	self.st.signals = {}
 	self.played_sound = nil
 
-	
+
 	self.first_sound = true
-    self.st.pause_time = 0	
+    self.st.pause_time = 0
     self.st.sound_set = true
     if loading == false then
 	   self.destructed = false
 	else
 	   self.destructed = xr_logic.pstor_retrieve (self.object, "destr")
-	end   
+	end
 end
 
 function snd_source:save ()
@@ -54,7 +54,7 @@ function snd_source:update(delta)
     if self.st.pause_time - device ():time_global () > 0 then
         return
     end
-       
+
     self.st.pause_time = 0
     if self.st.sound_set == true then
         self.st.sound_set = false
@@ -73,35 +73,35 @@ function snd_source:update(delta)
 			self.st.signals["theme_end"] = true
 		end
 		self.first_sound = false
-	end   
+	end
 
-       
+
     if self.last_update == 0 then
        self.last_update = device ():time_global ()
     else
        if device ():time_global () - self.last_update > 50 then
           self.last_update = 0
        else
-          return     
-       end          
+          return
+       end
     end
-       
-	if self.played_sound ~= nil then 
+
+	if self.played_sound ~= nil then
 		if self.played_sound:playing () == false then
 			if self.first_sound == false then
 				self.st.signals["sound_end"] = true
 			end
-	                
+
 			self.st.sound_set = true
 			if self.st.pause_min ~= 0 or self.st.pause_max ~= 0 then
 				local time = math.random (self.st.pause_min, self.st.pause_max)
 				self.st.pause_time = device ():time_global () + time
-			end 
+			end
 			self.first_sound = false
 		else
 			self.played_sound:set_position (self.object:position ())
 		end
-	end       
+	end
 end
 
 function snd_source:deactivate ()
@@ -117,7 +117,7 @@ function add_to_binder (npc, ini, scheme, section, storage)
 	local new_action = snd_source (npc, storage)
 	-- Зарегистрировать все actions, в которых должен быть вызван метод reset_scheme при изменении настроек схемы:
 	xr_logic.subscribe_action_for_events(npc, storage, new_action)
-	
+
 end
 
 function set_scheme(npc, ini, scheme, section, gulag_name)
@@ -131,6 +131,5 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	st.no_hit   = utils.cfg_get_bool (ini, section, "no_hit", npc, false, true)
 	if st.pause_max < st.pause_min then
 	   abort ("PH_SOUND - invalid time range !!!")
-    end	    
+    end
 end
-    

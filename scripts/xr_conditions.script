@@ -1795,6 +1795,24 @@ end
 function npc_surrendered(actor,npc,p)
 	local st = db.storage[npc:id()]
 	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
-	alun_utils.printf("surrendered = %s",po and po:id() == db.actor:id())
+	--alun_utils.printf("surrendered = %s",po and po:id() == db.actor:id())
 	return po and po:id() == db.actor:id()
+end
+
+function actor_class(actor,npc,p)
+	return p and p[1] and axr_misery and axr_misery.ActorClass == p[1]
+end
+
+function black_road_enabled(actor,npc,p)
+	return axr_misery and axr_misery.MiseryBlackRoad
+end
+
+function squad_behavior(actor,npc,p)
+	local se_npc = type(npc.id) == "function" and alife():object(npc:id()) or npc
+	local squad = se_npc and se_npc.parent_id ~= 65535 and alife():object(se_npc.parent_id)
+	return p and p[1] and squad and squad.player_id == p[1]
+end
+
+function anim_state(actor,npc,p)
+	return p and p[1] and state_mgr.get_state(npc) == p[1]
 end

@@ -99,6 +99,19 @@ function se_smart_cover:on_register()
 		registered_smartcovers_by_lv_id[level_id] = {}
 	end
 	registered_smartcovers_by_lv_id[level_id][self.m_level_vertex_id] = self
+	local name = self:name()
+	if (string.find(name,self.id)) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(self.id)
+		name = story_name or name
+	end
+	registered_smartcovers[name] = self
+
+	local sid = get_object_story_id(self.id)
+	if (sid and axr_dynamic_spawn and axr_dynamic_spawn.ini:line_exist(sid,"direction"))then
+		local dir = alun_utils.read_from_ini(axr_dynamic_spawn.ini,sid,"direction","string","0,0,0")
+		self.repack = {}
+		self.repack.direction = alun_utils.string_to_vector(dir)
+	end
 --	printf("smart_cover [%s] is registered lvlid [%s] lvid[%s]", self:name(), tostring(level_id), tostring(self.m_level_vertex_id))
 end
 function se_smart_cover:on_unregister()

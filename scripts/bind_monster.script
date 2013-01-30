@@ -240,7 +240,6 @@ end
 function generic_object_binder:use_callback(obj, who)
 	-- Alundaio
 	if (axr_main) then axr_main.monster_on_actor_use_callback(obj,who) end
-	if (itms_manager) then itms_manager.monster_on_actor_use_callback(obj,who) end
 	-- Alundaio
 end
 -- fluffy22

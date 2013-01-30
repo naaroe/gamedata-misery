@@ -546,6 +546,13 @@ function se_invbox:on_register()
 	story_objects.check_spawn_ini_for_story_id(self)
 	register_item(self)
 	self.secret_item = treasure_manager.get_treasure_manager():register_item(self)
+
+	local sid = get_object_story_id(self.id)
+	if (sid and axr_dynamic_spawn and axr_dynamic_spawn.ini:line_exist(sid,"direction"))then
+		local dir = alun_utils.read_from_ini(axr_dynamic_spawn.ini,sid,"direction","string","0,0,0")
+		self.repack = {}
+		self.repack.direction = alun_utils.string_to_vector(dir)
+	end
 end
 
 function se_invbox:on_unregister()

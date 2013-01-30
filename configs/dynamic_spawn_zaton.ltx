@@ -1,8 +1,50 @@
+;=======================================
+; Misc.
+;=======================================
+
 [zat_box_wood_01]
 section 			= box_wood_01
 position			= 412.80319213867,43.936130523682,1.6001467704773
 level_vertex_id		= 1642352
 game_vertex_id		= 293
+
+[zat_box_wood_02]
+section 			= box_wood_01
+position			= 460,37,-66.66
+level_vertex_id		= 1716749
+game_vertex_id		= 222
+enable				= {=actor_class(assaulter)} true, false
+
+[zat_box_wood_03]
+section 			= box_wood_01
+position			= 460,37.8,-66.66
+level_vertex_id		= 1716749
+game_vertex_id		= 222
+enable				= {=actor_class(assaulter)} true, false
+
+[zat_box_wood_04]
+section 			= box_wood_01
+position			= 461,37,-67.7
+level_vertex_id		= 1716749
+game_vertex_id		= 222
+enable				= {=actor_class(assaulter)} true, false
+
+[radio_skadovsk_01]
+section 			= krujka
+position			= 124.06143798828,-4.3362640380859,175.74554138184
+level_vertex_id		= 1182873
+game_vertex_id		= 225
+custom_data			= scripts\sounds\music\playlist_1.ltx
+
+[zat_b5_sleepbag_1]
+section				= ph_sleepbag_npc
+position 			= 431.43981933594,36.374034881592,-50.163204193115
+level_vertex_id 	= 1672205
+game_vertex_id 		= 293
+
+;=======================================
+; Smart Covers - Animpoints
+;=======================================
 
 [zat_skadovsk_animpoint_trade]
 section				= smart_cover
@@ -28,6 +70,58 @@ game_vertex_id 		= 297
 description			= animpoint_stay_table
 last_description 	= animpoint_stay_table
 
+[zat_a2_animpoint_23]
+section				= smart_cover
+position 			= 111,-3.9360280036926,187.65454101563
+level_vertex_id 	= 1157372
+game_vertex_id 		= 316
+description			= animpoint_stay_table
+last_description 	= animpoint_stay_table
+
+[zat_b5_animpoint_1]
+section				= smart_cover
+position 			= 404.62268066406,39.447956085205,-11.831384658813
+level_vertex_id 	= 1630121
+game_vertex_id 		= 293
+description			= animpoint_sit_high
+last_description 	= animpoint_sit_high
+
+[zat_b5_animpoint_2]
+section				= smart_cover
+position 			= 431.79592895508,36.261932373047,-54.101097106934
+level_vertex_id 	= 1673463
+game_vertex_id 		= 222
+description			= animpoint_sit_high
+last_description 	= animpoint_sit_high
+
+[zat_b5_animpoint_3]
+section				= smart_cover
+position 			= 440.40771484375,36.525550842285,-30.583957672119
+level_vertex_id 	= 1687397
+game_vertex_id 		= 293
+description			= animpoint_stay_wall
+last_description 	= animpoint_stay_wall
+
+[zat_b40_animpoint_1]
+section				= smart_cover
+position 			= 358.74932861328,33.740585327148,-391.47021484375
+level_vertex_id 	= 1560265
+game_vertex_id 		= 1
+description			= animpoint_sit_low
+last_description 	= animpoint_sit_low
+
+[zat_b40_animpoint_2]
+section				= smart_cover
+position 			= 395.7712097168,33.402793884277,-440.68048095703
+level_vertex_id 	= 1615491
+game_vertex_id 		= 1
+description			= animpoint_stay_wall
+last_description 	= animpoint_stay_wall
+
+;========================================
+; Teleport Zones
+;========================================
+
 [zat_anom_zone_teleport_01]
 section				= zone_teleport
 position 			= 148.34191894531,16.591650009155,-137.80070495605
@@ -40,5 +134,3 @@ position 			= 148.34191894531,16.591650009155,-137.80070495605
 level_vertex_id 	= 1581222
 game_vertex_id 		= 219
 custom_data			= scripts\compass_tele.ltx
-
-

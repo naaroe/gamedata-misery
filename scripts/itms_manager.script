@@ -46,6 +46,19 @@ ShowMessage = nil
 ShowMessageInit = nil
 ShowMessageTime = nil
 
+
+function on_game_start()
+	callback_register("on_game_load",on_game_load)
+	callback_register("actor_on_update",actor_on_update)
+	callback_register("actor_on_item_drop",actor_on_item_drop)
+	callback_register("monster_on_actor_use_callback",monster_on_actor_use_callback)
+	callback_register("actor_on_item_use",actor_on_item_use)
+	callback_register("actor_on_item_take_from_box",actor_on_item_take_from_box)
+	callback_register("physic_object_on_use_callback",physic_object_on_use_callback)
+	callback_register("squad_assign_new_target",squad_assign_new_target)
+	--callback_register("npc_on_item_take_from_box",npc_on_item_take_from_box)
+end
+
 function on_game_load()
 
 	if (ActorBackPackEnable and ActorBackPackForced) then
@@ -70,7 +83,7 @@ end
 local torch_delay
 -- bind_stalker update
 local actor_fill_backpack
-function on_actor_update()
+function actor_on_update()
 	check_actor_backpack()
 	if (ShowMessage and ShowMessageInit) then
 		local hud = get_hud()
@@ -94,13 +107,7 @@ function on_actor_update()
 			if (has_alife_info("enable_device_torch")) then
 				db.actor:disable_info_portion("enable_device_torch")
 				alife():create("device_torch_dummy",db.actor:position(),0,0,0)
-
-				local hud = get_hud()
-				hud:AddCustomStatic("can_use_weapon_now", true)
-				hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Unequipped headlamp")
-				itms_manager.ShowMessage = true
-				itms_manager.ShowMessageInit = game.get_game_time()
-				itms_manager.ShowMessageTime = 25
+				show_message("Unequipped headlamp",25)
 			end
 
 			if not (torch) then
@@ -142,7 +149,7 @@ function actor_item_take(obj)
 end
 
 -- bind_stalker on_item_drop
-function actor_item_drop(obj)
+function actor_on_item_drop(obj)
 	if not (obj) then
 		return
 	end
@@ -175,12 +182,7 @@ function monster_on_actor_use_callback(obj,who)
 
 	local st = db.storage[obj:id()]
 	if (st and st.death_time and game.get_game_time():diffSec(st.death_time) > MutantLootDecayTime) then
-		local hud = get_hud()
-		hud:AddCustomStatic("can_use_weapon_now", true)
-		hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Body is badly decayed")
-		itms_manager.ShowMessage = true
-		itms_manager.ShowMessageInit = game.get_game_time()
-		itms_manager.ShowMessageTime = 25
+		show_message("Body is badly decayed",25)
 	else
 		if (MutantLootEnableUI and ui_mutant_loot) then
 			ui_mutant_loot.loot_ui(get_hud(),obj:id(),obj:section(),obj:clsid())
@@ -192,7 +194,7 @@ end
 
 
 -- bind_stalker on_item_use
-function actor_item_use(obj)
+function actor_on_item_use(obj)
 
 	-- Backpack
 	if (BackPackStashEnable and obj:section() == "itm_backpack") then
@@ -208,12 +210,7 @@ function actor_item_use(obj)
 		end
 
 		if (BackPackStashAllowInBase ~= true and in_base) then
-			local hud = get_hud()
-			hud:AddCustomStatic("can_use_weapon_now", true)
-			hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Not safe to place it here.")
-			itms_manager.ShowMessage = true
-			itms_manager.ShowMessageInit = game.get_game_time()
-			itms_manager.ShowMessageTime = 25
+			show_message("Not safe to place it here",25)
 			alife():create("itm_backpack",db.actor:position(),0,0,0)
 			return
 		else
@@ -235,12 +232,7 @@ function actor_item_use(obj)
 			end
 
 			if (BackPackStashEnableTip) then
-				local hud = get_hud()
-				hud:AddCustomStatic("can_use_weapon_now", true)
-				hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Stash created")
-				itms_manager.ShowMessage = true
-				itms_manager.ShowMessageInit = game.get_game_time()
-				itms_manager.ShowMessageTime = 25
+				show_message("Stash created",25)
 			end
 		end
 		return
@@ -266,13 +258,7 @@ function actor_item_use(obj)
 	if (ActorBackPackEnable and obj:section() == "itm_actor_backpack") then
 		local id = xr_logic.pstor_retrieve(db.actor,"actor_inv_backpack_id",nil)
 		if (id) then
-			--alun_utils.printf("Actor already has a backpack placed!")
-			local hud = get_hud()
-			hud:AddCustomStatic("can_use_weapon_now", true)
-			hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("I've already left my rucksack someplace")
-			itms_manager.ShowMessage = true
-			itms_manager.ShowMessageInit = game.get_game_time()
-			itms_manager.ShowMessageTime = 30
+			show_message("I've already left my rucksack someplace",30)
 			alife():create("itm_actor_backpack",db.actor:position(),0,0,0)
 			return
 		end
@@ -303,12 +289,7 @@ function actor_item_use(obj)
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
 			end
-			local hud = get_hud()
-			hud:AddCustomStatic("can_use_weapon_now", true)
-			hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST("Equipped headlamp")
-			itms_manager.ShowMessage = true
-			itms_manager.ShowMessageInit = game.get_game_time()
-			itms_manager.ShowMessageTime = 25
+			show_message("Equipped headlamp",25)
 		end
 	end
 end
@@ -359,7 +340,7 @@ function check_actor_backpack()
 end
 
 -- bind_stalker take_item_from_iventory_box
-function actor_take_item_from_box(box,obj)
+function actor_on_take_item_from_box(box,obj)
 	if not (box) then
 		return
 	end
@@ -400,8 +381,12 @@ function actor_take_item_from_box(box,obj)
 	end
 end
 
+function npc_on_item_take_from_box(npc,box,item)
+
+end
+
 -- bind_physic_object use_callback
-function physics_object_use_callback(obj,who)
+function physic_object_on_use_callback(obj,who)
 	if (SleepBagEnable and SleepBagPlaceableSections[obj:section()]) then
 		local hud = get_hud()
 		hud:HideActorMenu()
@@ -474,7 +459,8 @@ local clsid_to_section = {
 		[clsid.zombie_s]		= "zombie",
 		[clsid.crow]			= "crow"
 }
-function loot_mutant(obj,clsid,t)
+
+function loot_mutant(obj,clsid,t,npc)
 	local clsid = clsid or obj and obj:clsid()
 	if not (clsid) then
 		return
@@ -495,7 +481,7 @@ function loot_mutant(obj,clsid,t)
 			for i=1,loot[2] do
 				if (math.random() <= tonumber(loot[3])) then
 					--alun_utils.printf("loot_mutant: section=%s",loot[1])
-					local se_obj = alife():create(loot[1], db.actor:position(),0,0,0)
+					local se_obj = alife():create(loot[1],npc and npc:position() or db.actor:position(),0,0,npc and npc:id() or 0)
 					if (t) then
 						local item_section = loot[1]
 						if not (t[item_section]) then
@@ -509,4 +495,13 @@ function loot_mutant(obj,clsid,t)
 			end
 		end
 	end
+end
+
+function show_message(msg,time)
+	local hud = get_hud()
+	hud:AddCustomStatic("can_use_weapon_now", true)
+	hud:GetCustomStatic("can_use_weapon_now"):wnd():TextControl():SetTextST(msg)
+	ShowMessage = true
+	ShowMessageInit = game.get_game_time()
+	ShowMessageTime = time
 end

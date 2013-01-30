@@ -34,8 +34,7 @@ function action_beh:initialize()
 	self.object:set_desired_direction()
 	--self.object:enable_talk()
 	self.st.assist_point = nil
-	self.st.last_state = "guard"
-	state_mgr.set_state(self.object, self.st.last_state, nil, nil, nil, { animation = true })
+	state_mgr.set_state(self.object, "guard", nil, nil, nil, { animation = true })
 	self.keep_state_until = time_global()
 end
 
@@ -53,8 +52,10 @@ function action_beh:execute()
 	if (self.st.behavior and self.st.desired_target and next(self.st.desired_target)) then
 		if (self.st.behavior == "beh_wait") then
 			self:beh_wait()
-		elseif (self.st.behavior == "beh_move") then
+		elseif (self.st.behavior == "beh_move" and not self.st.target == "waypoint") then
 			self:beh_move()
+		elseif (self.st.target == "waypoint") then
+			self:beh_path()
 		end
 	end
 end
@@ -122,7 +123,7 @@ function action_beh:set_desired_target()
 		if (vid) then
 			t.level_vertex_id = vid
 			t.position = level.vertex_position(vid)
-			t.direction = self.object:position():sub(t.pos)
+			t.direction = self.object:position():sub(t.position)
 			t.object = nil
 		end
 	elseif (string.find(target,"id:")) then
@@ -138,53 +139,35 @@ function action_beh:set_desired_target()
 end
 
 function action_beh:beh_wait()
-	local new_state = self.st.wait_animation
-	if (new_state ~= self.st.last_state) then
-		state_mgr.set_state(self.object, new_state,nil, nil, {look_object = nil}, { animation = true })
-		self.st.last_state = new_state
+	local state = state_mgr.get_state(self.object)
+	if (new_state and new_state ~= state) then
+		state_mgr.set_state(self.object, new_state,nil, nil, {look_object = nil }, { animation = true })
 	end
 end
 
 function action_beh:set_state()
 	local new_state
-	if ( self.object:level_vertex_id() == self.st.assist_point ) then
-		local tg = time_global()
-		if (self.st.wait_delay and tg < self.st.wait_delay) then
-			if ( self.st.delay_animation ~= "nil" ) then
-				if ( self.st.delay_animation == "random_animation" ) then
-					local add = random_choice("binocular","caution","search","guard","stoop_no_weap","fold_arms")
-					new_state = add --self.st.wait_animation
-				else
-					new_state = self.st.delay_animation
-				end
-			end
+	local dist_walk	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.walk_dist))
+	local dist_jog 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.jog_dist))
+	local dist_run 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.run_dist))
+	local t = time_global()
+
+	if t >= self.keep_state_until then
+		self.keep_state_until = t + keep_state_min_time
+		if (self.dist_to_assist_pt <= dist_walk ) then
+			new_state = self.st.walk_animation
+		elseif (self.dist_to_assist_pt <= dist_jog ) then
+			new_state = self.st.jog_animation
+		elseif (self.dist_to_assist_pt <= dist_run ) then
+			new_state = self.st.run_animation
 		else
-			new_state = self.st.wait_animation
-		end
-		new_state = self.st.wait_animation
-	else
-		local dist_walk	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.walk_dist))
-		local dist_jog 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.jog_dist))
-		local dist_run 	= tonumber(xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.run_dist))
-		local t = time_global()
-		if t >= self.keep_state_until then
-			self.keep_state_until = t + keep_state_min_time
-			if (self.dist_to_assist_pt <= dist_walk ) then
-				new_state = self.st.walk_animation
-			elseif (self.dist_to_assist_pt <= dist_jog ) then
-				new_state = self.st.jog_animation
-			elseif (self.dist_to_assist_pt <= dist_run ) then
-				new_state = self.st.run_animation
-			else
-				new_state = self.st.sprint_animation
-			end
+			new_state = self.st.sprint_animation
 		end
 	end
 
-	if new_state and new_state ~= self.st.last_state then
-		state_mgr.set_state(self.object, new_state,
-			nil, nil, {look_object = nil }, { animation = true })
-		self.st.last_state = new_state
+	local state = state_mgr.get_state(self.object)
+	if (new_state and new_state ~= state) then
+		state_mgr.set_state(self.object, new_state,nil, nil, nil, { animation = true })
 	end
 end
 
@@ -245,18 +228,6 @@ function action_beh:beh_move()
 		 (not dist_from_assist_pt_to_goto_target or
 			dist_from_assist_pt_to_goto_target >= self.st.desired_distance * 2)) then
 			select_new_pt = true
-		elseif (dist_from_self_to_goto_target < self.st.desired_distance + 1) then
-			if (self.st.target == "waypoint") then
-				if (not self.st.wait_delay) then
-					self.st.wait_delay = self.st.desired_target.delay and time_global() + self.st.desired_target.delay
-				end
-				if (self.st.wait_delay) then
-					if (time_global() > self.st.wait_delay) then
-						self:increment_waypoint_index()
-						self.st.wait_delay = nil
-					end
-				end
-			end
 		end
 
 		if ( select_new_pt ) then
@@ -279,42 +250,110 @@ function action_beh:beh_move()
 	self:set_state()
 end
 
+function action_beh:beh_path()
+	if not (self.st.desired_target.position) then
+		return
+	end
+
+	local pos = self.object:position()
+	pos = vector():set(pos.x,self.st.desired_target.position.y,pos.z)
+	local dist = pos:distance_to(self.st.desired_target.position)
+
+	if (dist > 1.2) then
+		self.object:set_path_type(game_object.level_path)
+		self.object:set_desired_direction()
+		self.object:set_dest_level_vertex_id(self.st.desired_target.level_vertex_id)
+		self.object:set_desired_position(self.st.desired_target.position)
+		self.dist_to_assist_pt = dist
+		self:set_state()
+		return
+	end
+
+	if (not self.st.wait_delay) then
+		self.st.wait_delay = time_global() + (self.st.desired_target.delay or 0)
+	end
+
+	if (self.st.wait_delay and time_global() > self.st.wait_delay) then
+		self:increment_waypoint_index()
+		self.st.wait_delay = nil
+	else
+		local state = state_mgr.get_state(self.object)
+		local new_state = self.st.desired_target.delay_animation or self.st.delay_animation
+		if (new_state and new_state ~= state) then
+			state_mgr.set_state(self.object, new_state,nil, nil,{look_object = self.st.desired_target.look_object, look_position = self.st.desired_target.look_position }, { animation = true})
+		end
+	end
+end
+
+function angle_dir(ang)
+	return vector():setHP(ang.y,ang.x):normalize()
+end
+
 function action_beh:get_current_waypoint()
-	if not (self.st.pathpoint) then
+	local st = db.storage[self.object:id()]
+	local str = alun_utils.read_from_ini(st.ini,st.active_section,"pt"..self.st.path_index,"string",nil)
+	if not (str) then
 		return {}
 	end
 
-	if (not self.st.path_index or self.st.path_index > #self.st.pathpoint) then
-		self.st.path_index = 1
+	local t = {}
+	for s in string.gmatch(str,"look:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
+		local p = alun_utils.str_explode(s,",")
+		t.look_position = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
 	end
 
-	return self.st.pathpoint[self.st.path_index]
+	for s in string.gmatch(str,"look_object:(.%S+)") do
+		t.look_object = s
+	end
+
+	for s in string.gmatch(str,"snap:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
+		local p = alun_utils.str_explode(s,",")
+		t.snap_pos = p
+	end
+
+	local a = string.find(str,"look")
+	if (a) then
+		str = string.sub(str,1,a-1)
+	end
+
+	a = string.find(str,"snap")
+	if (a) then
+		str = string.sub(str,1,a-1)
+	end
+
+	local pt = alun_utils.str_explode(str,",")
+
+	t.level_vertex_id = tonumber(pt[1])
+	t.position = level.vertex_position(t.level_vertex_id)
+	t.direction = self.object:position():sub(t.position)
+	t.delay = pt[2] and tonumber(pt[2]) or 0
+	t.delay_animation = pt[3]
+	return t
 end
 
 function action_beh:increment_waypoint_index()
-	if (self.st.path_reverse) then
-		self.st.path_index = self.st.path_index - 1
-	else
-		self.st.path_index = self.st.path_index + 1
-	end
-	alun_utils.debug_write("%s: increment way to %s",self.object:name(),self.st.path_index)
-
-	--on path end
-	if (self.st.path_index == #self.st.pathpoint) then
+	local st = db.storage[self.object:id()]
+	if (not self.st.path_reverse and not alun_utils.read_from_ini(st.ini,st.active_section,"pt"..self.st.path_index+1,"string",nil)) then
 		local new_section = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.path_end)
+		--alun_utils.printf("path_end = %s [%s]",new_section,self.st.path_end)
 		if (new_section and new_section ~= "nil") then
 			if (new_section == "reverse") then
 				self.st.path_reverse = true
-				alun_utils.debug_write("%s: path end reverse",self.object:name())
 			elseif (new_section ~= "loop") then
 				xr_logic.switch_to_section(self.object, db.storage[self.object:id()].ini, new_section)
-				alun_utils.debug_write("%s: path end new section",self.object:name())
+				alun_utils.save_var(self.object,"path_index",nil)
+				return
+			else
+				self.st.path_index = 1
 			end
 		end
 	elseif (self.st.path_index == 1 and self.st.path_reverse) then
 		self.st.path_reverse = nil
 		self.st.path_index = 1
+	else
+		self.st.path_index = self.st.path_reverse and self.st.path_index - 1 or self.st.path_index + 1
 	end
+	alun_utils.save_var(self.object,"path_index",self.st.path_index)
 end
 
 function action_beh:finalize()
@@ -375,8 +414,7 @@ function reset_scheme(npc,scheme,section,st)
 end
 
 ------------------- CUSTOM DATA LOGIC ------------------------------------------
-function init_custom_data(npc, ini, sec, st, scheme)
-	local section = utils.cfg_get_string(ini, sec, "behavior", npc, false, "")
+function init_custom_data(npc, ini, section, st, scheme)
 	local def = {}
 
 	def.path_walk_enabled= "false"
@@ -428,65 +466,58 @@ function init_custom_data(npc, ini, sec, st, scheme)
 		return
 	end
 
-	-- Only squad commanders need pathpoints
-	local squad = get_object_squad(npc)
-	local c_id = squad and squad:commander_id()
-	if (squad and c_id ~= npc:id()) then
-		return
-	end
 	st.pathpoint = {}
-	st.path_index = 1
+	st.path_index = alun_utils.load_var(npc,"path_index",1)
 	-- Grab pathpoints
+
+
+	local t = {}
+	local str
+	local pt
+
 	local i = 1
-	if (section and ini and ini:section_exist(section)) then
-		while ini:line_exist(section,"pt"..tostring(i)) do
-			local str = ini:r_string(section,"pt"..tostring(i))
-			i = i + 1
-			if not (str) then
-				return
-			end
-
-			local t = {}
-			for s in string.gmatch(str,"pos:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
-				local p = alun_utils.str_explode(s,",")
-				t.position = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
-			end
-
-			for s in string.gmatch(str,"dir:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
-				local p = alun_utils.str_explode(s,",")
-				t.direction = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
-			end
-
-			for s in string.gmatch(str,"lvid:(%w+)") do
-				t.level_vertex_id = tonumber(s)
-			end
-
-			table.insert(st.pathpoint, t)
+--[[
+	while ini:line_exist(sec,"pt"..tostring(i)) do
+		str = alun_utils.read_from_ini(ini,sec,"pt"..tostring(i),"string",nil)
+		i = i + 1
+		if not (str) then
+			return
 		end
-	else
-		while alun_utils.load_var(npc,"pathpoint"..tostring(i)) do
-			local str = alun_utils.load_var(npc,"pathpoint"..tostring(i))
-			if not (str) then
-				i = i + 1
-				return
-			end
 
-			local t = {}
-			for s in string.gmatch(str,"pos:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
-				local p = alun_utils.str_explode(s,",")
-				t.position = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
-			end
+		pt = alun_utils.str_explode(str,",")
 
-			for s in string.gmatch(str,"dir:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
-				local p = alun_utils.str_explode(s,",")
-				t.direction = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
-			end
+		t.level_vertex_id = tonumber(pt[1])
+		t.position = level.vertex_position(t.level_vertex_id)
+		t.direction = pt[4] and vector():set(0,tonumber(pt[4]),0) or npc:position():sub(t.position)
+		t.delay = pt[2] and tonumber(pt[2]) or 0
+		t.delay_animation = pt[3]
 
-			for s in string.gmatch(str,"lvid:(%w+)") do
-				t.level_vertex_id = tonumber(s)
-			end
-			table.insert(st.pathpoint, t)
-			i = i + 1
-		end
+		table.insert(st.pathpoint, t)
 	end
+
+	while alun_utils.load_var(npc,"pathpoint"..tostring(i)) do
+		str = alun_utils.load_var(npc,"pathpoint"..tostring(i))
+		if not (str) then
+			i = i + 1
+			return
+		end
+
+		for s in string.gmatch(str,"pos:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
+			local p = alun_utils.str_explode(s,",")
+			t.position = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
+		end
+
+		for s in string.gmatch(str,"dir:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do
+			local p = alun_utils.str_explode(s,",")
+			t.direction = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
+		end
+
+		for s in string.gmatch(str,"lvid:(%w+)") do
+			t.level_vertex_id = tonumber(s)
+		end
+
+		table.insert(st.pathpoint, t)
+		i = i + 1
+	end
+--]]
 end

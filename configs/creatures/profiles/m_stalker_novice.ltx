@@ -69,8 +69,8 @@ step_params					= stalker_novice_step_manager
 
 ;---------------------------------------------------
 
-;vision_danger_section			= stalker_novice_vision_danger
-;vision_free_section				= stalker_novice_vision_free
+vision_danger_section			= stalker_novice_vision_danger
+vision_free_section				= stalker_novice_vision_free
 
 ;eye_fov							= 145 ;110;120
 ;eye_range						= 100
@@ -78,26 +78,26 @@ step_params					= stalker_novice_step_manager
 ;---------------------------------------------------
 
 [stalker_novice_vision_free]:stalker_vision_free
-min_view_distance   		= 0.25				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.85				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.05
-time_quant					= 0.0055
-decrease_value				= 0.006 ;0.004				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.52 ;0.5
-luminocity_factor			= 0.65;0.7 ;0.5					; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.96 ; 1.19		; 0.25
+min_view_distance   		= 0.20				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.75				; коэффициент, который множится на eye_range, в зависимости от угла
+visibility_threshold	 	= 200.0				;Threshold in which object becames visible based on factors
+always_visible_distance 	= 0.02
+time_quant					= 0.0018			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
+decrease_value				= 0.0020			;Decrease over time to overall threshold
+velocity_factor		     	= 2.12				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+luminocity_factor			= 0.62				;Low value = easier to see at night
+transparency_threshold	 	= 0.96 				;Low value = easier to see through semi-transparent objects
 
 [stalker_novice_vision_danger]:stalker_vision_danger
-min_view_distance   		= 0.25				; коэффициент, который множится на eye_range, в зависимости от угла
-max_view_distance	 		= 1.85				; коэффициент, который множится на eye_range, в зависимости от угла
+min_view_distance   		= 0.30				; коэффициент, который множится на eye_range, в зависимости от угла
+max_view_distance	 		= 1.80				; коэффициент, который множится на eye_range, в зависимости от угла
 visibility_threshold	 	= 150.0				; значение, при достижении суммой которого объект считается видимым
-always_visible_distance 	= 0.05
-time_quant					= 0.0015
-decrease_value				= 0.006 ;0.004				; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 0.52 ;0.5
-luminocity_factor			= 0.65;0.7 ;0.5					; фактор освещения (только для Актёра)
-transparency_threshold	 	= 0.96 ; 1.19		; 0.25
+always_visible_distance 	= 0.02
+time_quant					= 0.0014
+decrease_value				= 0.0016 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
+velocity_factor		     	= 2.12				
+luminocity_factor			= 0.62				; фактор освещения (только для Актёра)
+transparency_threshold	 	= 0.96
 
 ;---SECTIONS----------------------------------------------------------
 damage						= stalker_novice_damage

@@ -3578,3 +3578,5 @@ function spawn_npc_at_position(actor,npc,p)
 	local pos = vector():set(tonumber(p[2]),tonumber(p[3]),tonumber(p[4]))
 	alife():create(p[1],pos,p[5],p[6])
 end
+
+
