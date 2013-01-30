@@ -87,6 +87,11 @@ function check_light(stalker)
 		forced = true
 	end
 
+	if (db.storage[stalker:id()] and db.storage[stalker:id()].danger_flag) then
+		torch:enable_attachable_item(false)
+		return
+	end
+
 	if (LightOffSleep and state_mgr.get_state(stalker) == "sleep") then
 		torch:enable_attachable_item(false)
 		return
