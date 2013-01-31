@@ -27,9 +27,9 @@ options = {
 	},
 	health = {
 		-- health level for heavy injuring sounds
-		level1 = 0.08,
+		level1 = 0.17,
 		-- health level for light injuring sounds
-		level2 = 0.40,
+		level2 = 0.33,
 		-- little hit effect (played on every hit > little_delta)
 		little_delta = 5,
 		little_ppe = "amk_shoot.ppe",
@@ -43,7 +43,7 @@ options = {
 		huge_anm = {"head_shot","fusker"},
 		huge_snd = {"pain_4","pain_1","hit_5","hit_6"},
 		-- hit drop weapon probability (0-1)
-		drop_wnp_prob = 0.1,
+		drop_wnp_prob = 0.08,
 		-- non dropable items
 		no_drop_wnp = {bolt = true,wpn_binoc = true,wpn_knife = true},
 		injury_snd = {
@@ -66,9 +66,9 @@ options = {
 		-- speed time decrease per update (when not running)
 		dec = 0.28,
 		-- minimal speed time for playing breath sounds (when no gasmask)
-		time_mini = 9,
+		time_mini = 6,
 		-- play breath sounds (when no gasmask) when stamina is below this level
-		stamina = 0.27,
+		stamina = 0.4,
 		-- on actor hit, actor_speed_time += delta_health*k_health
 		k_health = 0.28,
 		-- actor_speed_time += bleeding*k_bleed
