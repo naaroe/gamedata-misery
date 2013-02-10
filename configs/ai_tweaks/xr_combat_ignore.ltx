@@ -1,21 +1,21 @@
 [settings]
 enable = true  									;Enables a memory system that keeps track of how long enemy has been visible or heard. When time is up, combat enemy is forgotten.
 combat_during_surge = false						; When disabled NPCs will ignore enemies during surge until cover is reached.
-time_safe = 180000								;Amount of time before safe zone flag wears off when an NPC leaves a no combat smart
+time_safe = 300000								;Amount of time before safe zone flag wears off when an NPC leaves a no combat smart
 
 [combat_inertion]; Time in which a NPC engages combat long after losing sight or sound on an enemy
-stalker = 	{=is_dark_night} 120000, 50000
-bandit = 	{=is_dark_night} 120000, 50000
-dolg = 		{=is_dark_night} 130000, 60000
-freedom =	{=is_dark_night} 130000, 60000
-ecolog = 	{=is_dark_night} 900000, 60000
-killer = 	{=is_dark_night !npc_in_zone(zat_b40)} 45000, {=npc_in_zone(zat_b40)} 30000, 60000
-army =		{=is_dark_night} 260000, 120000
-monolith =	{=is_dark_night} 240000, 240000
+stalker = 	{=is_dark_night} 1800000, 1500000
+bandit = 	{=is_dark_night} 1800000, 1500000
+dolg = 		{=is_dark_night} 2100000, 1800000
+freedom =	{=is_dark_night} 2100000, 1800000
+ecolog = 	{=is_dark_night} 1800000, 1800000
+killer = 	{=is_dark_night} 2700000, {=is_dark_night !npc_in_zone(zat_b40)} 600000, {=npc_in_zone(zat_b40)} 900000, 2100000
+army =		{=is_dark_night} 2700000, 2100000
+monolith =	{=is_dark_night} 2700000, 2100000
 
 [combat_inertion_mult]
-novice = 1.1
-experienced = 1.2
+novice = 0.9
+experienced = 1.0
 veteran = 1.2
 master = 1.3
 

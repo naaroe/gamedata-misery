@@ -58,7 +58,7 @@ end
 
 function GetRPM(wpn_section, upgr_sections) --' скорострельность
 	local rpm = read_float(wpn_section, upgr_sections, "rpm")
-	return normalize(rpm, 0, 1250)
+	return normalize(rpm, 0, 1450)
 end
 
 function GetDamage(wpn_section, upgr_sections) --' повреждение
@@ -85,12 +85,12 @@ function GetHandling(wpn_section, upgr_sections) --' удобность
 		crosshair_inertion = read_float(wpn_section, upgr_sections, "crosshair_inertion")
 	end
 
-	crosshair_inertion = 11.9 - crosshair_inertion
-	return normalize(crosshair_inertion, 0, 10.5)
+	crosshair_inertion = 12.5 - crosshair_inertion
+	return normalize(crosshair_inertion, 0, 16.0)
 end
 
 function GetAccuracy(wpn_section, upgr_sections) --' точность
     local fire_dispersion_base  = read_float(wpn_section, upgr_sections, "fire_dispersion_base")
-  fire_dispersion_base = 0.85 - fire_dispersion_base
-  return normalize(fire_dispersion_base, 0.1, 0.8)
+  fire_dispersion_base = 0.9 - fire_dispersion_base
+  return normalize(fire_dispersion_base, 0.1, 1.05)
 end
