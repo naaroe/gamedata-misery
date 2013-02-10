@@ -47,7 +47,7 @@ holder_range_modifier	= 1.0               ; во сколько раз увеличивается eye_ran
 holder_fov_modifier		= 1.0              ; во сколько раз увеличивается eye_fov
 ;-------------------------------------------------------------------------------
 
-cost					= 19220
+cost					= 38440
 weapon_class            = sniper_rifle
 
 ammo_limit				= 60
@@ -55,7 +55,7 @@ ammo_current			= 10
 ammo_elapsed			= 10
 
 ammo_mag_size			= 10
-ammo_class				= ammo_7.62x39_fmj
+ammo_class           				= ammo_7.62x39_fmj, ammo_7.62x39_ap
 hand_dependence         = 1
 single_handed           = 0
 
@@ -64,7 +64,7 @@ animation_slot          = 2                ; type of the animation that will be 
 
 inv_name			= st_wpn_sks
 inv_name_short			= st_wpn_sks
-inv_weight			= 3.86
+inv_weight			= 3.864
 
 inv_grid_width     = 5
 inv_grid_height    = 1
@@ -251,10 +251,10 @@ anm_close					= sks_reload_end
 ;==============================================================================================================================
 [wpn_sks_modern]:wpn_sks
 
-cost					= 19220
-inv_weight			= 3.8
+cost					= 43960
+inv_weight			= 3.622
 
-installed_upgrades      = up_secona_svd, up_thirda_svd
+;installed_upgrades      = up_secona_svd, up_thirda_svd
 
 misfire_start_condition		= 0.6
 misfire_end_condition		= 0.05
@@ -264,7 +264,7 @@ condition_shot_dec      	= 0.0013
 condition_queue_shot_dec	= 0.0008
 
 ammo_mag_size			= 10
-ammo_class				= ammo_7.62x39_fmj
+ammo_class           				= ammo_7.62x39_fmj, ammo_7.62x39_ap
 
 inv_name				= st_wpn_sks_modern
 inv_name_short			= st_wpn_sks_modern

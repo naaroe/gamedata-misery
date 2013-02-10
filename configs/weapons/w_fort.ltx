@@ -10,8 +10,8 @@ description					= st_wpn_fort_descr
 ef_weapon_type			  	= 5
 
 ;-----------------------------------------------------------------------------
-cost					= 3560
-inv_weight				= 0.83
+cost					= 7120
+inv_weight				= 0.832
 
 upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
 installed_upgrades      =
@@ -241,23 +241,6 @@ aim_hud_offset_rot_16x9			=  0.034000, 0.057500, 0.010000
 ;-----------------------------------------------------------------------------
 ; ”никальные
 ;-----------------------------------------------------------------------------
-[wpn_fort_snag]:wpn_fort
-$spawn                  	= "weapons\wpn_fort_snag"		; option for Level Editor
-
-cost					= 700
-
-upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
-installed_upgrades      = up_firsta_fort, up_thirda_fort
-upgrade_scheme          = upgrade_scheme_fort
-
-;--TTX----------------------------------------------------------------------------
-hit_power           		= 0.25, 0.25, 0.25, 0.25
-hit_impulse	 		 		= 45
-hit_type 					= fire_wound
-fire_distance           	= 620
-bullet_speed		 		= 690
-rpm                     	= 265
-rpm_empty_click 	 		= 120
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -278,8 +261,8 @@ upgrade_scheme          = upgrade_scheme_fort
 ;===================================================================================================
 [wpn_fort_custom]:wpn_fort
 
-cost					= 3560
-inv_weight				= 0.81
+cost					= 8760
+inv_weight				= 0.845
 
 installed_upgrades      = up_fiftha_fort
 
@@ -321,10 +304,10 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for1_hud
 ;===================================================================================================
 [wpn_fort_camo]:wpn_fort
 
-cost					= 3560
-inv_weight				= 0.8
+cost					= 9920
+inv_weight				= 0.726
 
-installed_upgrades      = up_firsta_fort
+installed_upgrades      = up_firsta_fort, up_fiftha_fort
 
 hit_power           		= 0.23, 0.23, 0.23, 0.23
 hit_impulse	 		 		= 45
@@ -365,8 +348,8 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for2_hud
 ;===================================================================================================
 [wpn_fort_rusty]:wpn_fort
 
-cost					= 3560
-inv_weight				= 0.83
+cost					= 5080
+inv_weight				= 0.848
 
 hit_power           		= 0.23, 0.23, 0.23, 0.23
 hit_impulse	 		 		= 45
@@ -406,8 +389,8 @@ item_visual						= dynamics\weapons\wpn_fort\wpn_for3_hud
 ;===================================================================================================
 [wpn_fort_worn]:wpn_fort
 
-cost					= 3560
-inv_weight				= 0.8
+cost					= 7368
+inv_weight				= 0.836
 
 hit_power           		= 0.23, 0.23, 0.23, 0.23
 hit_impulse	 		 		= 45
@@ -444,3 +427,23 @@ snd_reload					= weapons\generic\pistol2_reload, 0.8
 [wpn_fort_worn_hud]:wpn_fort_hud
 
 item_visual						= dynamics\weapons\wpn_fort\wpn_for4_hud
+
+[wpn_fort_snag]:wpn_fort_custom
+$spawn                  	= "weapons\wpn_fort_snag"		; option for Level Editor
+
+cost					= 9520
+
+inv_weight				= 0.807
+
+upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
+installed_upgrades      = up_firsta_fort, up_thirda_fort, up_fiftha_fort
+upgrade_scheme          = upgrade_scheme_fort
+
+;--TTX----------------------------------------------------------------------------
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 45
+hit_type 					= fire_wound
+fire_distance           	= 620
+bullet_speed		 		= 690
+rpm                     	= 265
+rpm_empty_click 	 		= 120
