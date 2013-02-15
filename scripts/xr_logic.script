@@ -724,6 +724,8 @@ function switch_to_section(npc, ini, section)
 		return false
 	end
 
+	if (axr_beh) then alun_utils.save_var(npc,"path_index",1) end
+
 	--printf("section = [%s]", tostring(section))
 	local npc_id = npc:id()
 	local active_section = db.storage[npc_id].active_section
@@ -1300,6 +1302,11 @@ function pstor_is_registered_type(tv)
 end
 
 function pstor_store(obj, varname, val)
+	if not (obj) then
+		alun_utils.printf("xr_logic: error: pstor_store: obj is nil for varname = %s, val = %s",varname,val)
+		return
+	end
+
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
 
 	if db.storage[npc_id].pstor == nil then
@@ -1314,6 +1321,11 @@ function pstor_store(obj, varname, val)
 end
 
 function pstor_retrieve(obj, varname, defval)
+	if not (obj) then
+		alun_utils.printf("xr_logic: error: pstor_retrieve: obj is nil for varname = %s, val = %s",varname,defval)
+		return
+	end
+
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
 
 	if db.storage[npc_id].pstor ~= nil then

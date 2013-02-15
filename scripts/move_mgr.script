@@ -45,6 +45,7 @@ function choose_look_point(patrol_look, path_look_info, search_for)
 	local pt_chosen_idx = nil -- индекс выбранной точки
 	local r
 	local num_equal_pts = 0
+	local point_look_weight
 	for look_idx = 0, patrol_look:count() - 1 do
 		this_val = path_look_info[look_idx].flags
 		if this_val:equal(search_for) then
@@ -52,7 +53,7 @@ function choose_look_point(patrol_look, path_look_info, search_for)
 			-- Ќашли точку с нужными флагами, но поскольку в пути могут быть еще такие-же
 			-- точки, возьмем текущую только с некоторой веро€тностью:
 			-- Ўанс, с которым на точку посмотрит персонаж:
-			local point_look_weight = path_look_info[look_idx]["p"]
+			point_look_weight = path_look_info[look_idx]["p"]
 			if point_look_weight then
 				point_look_weight = tonumber(point_look_weight)
 			else
@@ -280,9 +281,9 @@ function move_mgr:sync_ok()
 	if self.team then
 		local s = sync[self.team]
 		local self_id = self.object:id()
-
+		local obj
 		for k, v in pairs(s) do
-			local obj = level.object_by_id(k)
+			obj = level.object_by_id(k)
 			if obj and obj:alive() then
 				if v ~= true then
 					return false
@@ -573,13 +574,15 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 				if ((AllowSleepAnytime == false and level.get_time_hours() < tonumber(sleephours[1]) or level.get_time_hours() > tonumber(sleephours[2])) or AllowSleepAnytime == true) then
 					if ((not Only_sleep_in_camp) or (db.storage[obj:id()] and db.storage[obj:id()].walker and db.storage[obj:id()].walker.use_camp)) then
 						self.cur_state_standing = "sleep"
-						suggested_wait_time = SuggestedWaitTimes["sleep"] or "45000"
+
+						suggested_wait_time = SuggestedWaitTimes["sleep"] and SuggestedWaitTimes["sleep"] ~= "*" and tonumber(SuggestedWaitTimes["sleep"]) or 45000
+
 						--alun_utils.printf("%s set state to sleep with a %s wait time",self.object:name(),suggested_wait_time)
 						if (SoundSets["sleep"]) then
 							local t = alun_utils.str_explode(SoundSets["sleep"],",")
 							if (t[2] and math.random() < tonumber(t[2])) then
 								self.play_sound = t[1]
-								self.play_sound_idle = time_global() + math.random(1000,tonumber(suggested_wait_time))
+								self.play_sound_idle = time_global() + math.random(1000,suggested_wait_time)
 							end
 						end
 					end

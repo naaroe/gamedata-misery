@@ -347,7 +347,7 @@
 
 	    <radia_sensor x="15" y="72" width="145" height="18">
 	        <hint_text delay="800">ui_inv_outfit_radiation_protection</hint_text>
-	        <icon x="0" y="0" width="18" height="18" magnitude="100">
+	        <icon x="0" y="0" width="18" height="18" magnitude="150">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
 	        <state_progress x="23" y="1" width="122" height="18" horz="1" min="0" max="1" pos="0">
@@ -359,7 +359,7 @@
 
 	    <acid_sensor x="15" y="100" width="145" height="18">
 	        <hint_text delay="800">ui_inv_outfit_chemical_burn_protection</hint_text>
-	        <icon x="0" y="0" width="18" height="18" magnitude="100">
+	        <icon x="0" y="0" width="18" height="18" magnitude="200">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
 	        <state_progress x="23" y="1" width="122" height="18" horz="1" min="0" max="1" pos="0">
@@ -371,7 +371,7 @@
 
 	    <shock_sensor x="15" y="128" width="145" height="18">
 	        <hint_text delay="800">ui_inv_outfit_shock_protection</hint_text>
-	        <icon x="0" y="0" width="18" height="18" magnitude="100">
+	        <icon x="0" y="0" width="18" height="18" magnitude="200">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
 	        <state_progress x="23" y="1" width="122" height="18" horz="1" min="0" max="1" pos="0">
@@ -383,7 +383,7 @@
 
 	    <fire_sensor x="15" y="156" width="145" height="18">
 	        <hint_text delay="800">ui_inv_outfit_burn_protection</hint_text>
-	        <icon x="0" y="0" width="18" height="18" magnitude="100">
+	        <icon x="0" y="0" width="18" height="18" magnitude="200">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
 	        <state_progress x="24" y="1" width="122" height="18" horz="1" min="0" max="1" pos="0">
@@ -395,7 +395,7 @@
 
 	    <psi_sensor x="174" y="72" width="145" height="18">
 	        <hint_text delay="800">ui_inv_outfit_telepatic_protection</hint_text>
-	        <icon x="0" y="0" width="18" height="18" magnitude="100">
+	        <icon x="0" y="0" width="18" height="18" magnitude="250">
 		        <text align="c" vert_align="c" font="graffiti22" color="ui_7">99</text>
 	        </icon>
 	        <state_progress x="23" y="1" width="122" height="18" horz="1" min="0" max="1" pos="0">
