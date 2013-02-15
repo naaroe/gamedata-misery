@@ -142,10 +142,10 @@
 		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.</text>
 	</string>
 	<string id="st_device_torch_descr">
-		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
+		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely. Relatively low power consumption.</text>
 	</string>
 	<string id="st_device_torch_name">
-		<text>Flashlight</text>
+		<text>Head lamp</text>
 	</string>
 	<string id="st_drug_anabiotic">
 		<text>Anabiotics</text>
@@ -651,7 +651,7 @@ Many stalkers carry such tool so it may be of little value when traded.</text>
 	</string>
 
 	<string id="st_headlamp">
-		<text>Head lamp</text>
+		<text>Old head lamp</text>
 	</string>
 	<string id="st_headlamp_descr">
 		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.</text>

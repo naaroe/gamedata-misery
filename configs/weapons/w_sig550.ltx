@@ -15,9 +15,9 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost                    = 16820
+cost                    = 33640
 weapon_class            = assault_rifle        ; Type of the weapon
-inv_weight              = 4.2
+inv_weight              = 4.212
 
 upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
 installed_upgrades      =
@@ -320,7 +320,7 @@ description             = st_wpn_sig550_strelok_descr
 inv_name                = st_wpn_sig550_strelok
 
 upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
-installed_upgrades      = 
+installed_upgrades      = up_thirda_sig550, up_fourta_sig550
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;-------TTX-----------------------------------------------------------------------
@@ -335,7 +335,8 @@ rpm_empty_click         = 200
 scope_status            	= 2
 silencer_status			= 2
 
-cost 				= 19420
+inv_weight              = 3.926
+cost 				= 49920
 
 inv_grid_width			= 5	 
 inv_grid_height			= 2	  
@@ -431,14 +432,14 @@ ammo_class              = ammo_5.56x45_ap, ammo_5.56x45_ss190
 ;---------------------------
 
 upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
-installed_upgrades      =
+installed_upgrades      = up_thirda_sig550, up_fourta_sig550
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;====================================================================================================================================================
 [wpn_sig550_sniper]:wpn_sig550
 
-cost                    = 27820
-inv_weight              = 4.8
+cost                    = 44260
+inv_weight              = 4.874
 
 hit_power				= 0.52, 0.52, 0.52, 0.52
 hit_impulse				= 34
@@ -498,10 +499,10 @@ item_visual						= dynamics\weapons\wpn_sig550_sniper\wpn_sig550_sniper_hud
 ;====================================================================================================================================================
 [wpn_sig550_custom]:wpn_sig550
 
-cost                    = 16820
-inv_weight              = 4.22
+cost                    = 36260
+inv_weight              = 4.188
 
-installed_upgrades      = up_fourta_sig550
+installed_upgrades      = up_firsta_sig550, up_thirda_sig550, up_fourta_sig550
 
 hit_power				= 0.485, 0.485, 0.485, 0.485
 hit_impulse				= 34
@@ -543,10 +544,8 @@ item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55a_hud
 ;====================================================================================================================================================
 [wpn_sig550_alt]:wpn_sig550
 
-cost                    = 16820
-inv_weight              = 4.1
-
-installed_upgrades      = up_thirda_sig550
+cost                    = 33980
+inv_weight              = 4.186
 
 hit_power				= 0.475, 0.475, 0.475, 0.475
 hit_impulse				= 34
@@ -588,10 +587,8 @@ item_visual						= dynamics\weapons\wpn_sig550\wpn_sig55b_hud
 ;====================================================================================================================================================
 [wpn_sig550_worn]:wpn_sig550
 
-cost                    = 16820
-inv_weight              = 4.1
-
-installed_upgrades      = up_firsta_sig550
+cost                    = 29520
+inv_weight              = 4.226
 
 hit_power				= 0.445, 0.445, 0.445, 0.445
 hit_impulse				= 34

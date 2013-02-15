@@ -1172,6 +1172,9 @@
 	<string id="st_surrender_query_victim_4">
 		<text>Hope you don't bleed out.</text>
 	</string>
+	<string id="st_surrender_query_victim_5">
+		<text>Where did you put your fucking stuff? Tell me!! And I will consider saving your sorry ass!</text>
+	</string>
 	<string id="st_surrender_victim_answer_1">
 		<text>Okay, okay, just don't kill me!</text>
 	</string>
