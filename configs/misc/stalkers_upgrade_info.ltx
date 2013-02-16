@@ -253,6 +253,7 @@ helm_battle
 helm_hardhat
 helm_protective
 helm_respirator
+helm_respirator_heavy
 helm_tactic
 
 stalker_outfit_barge
@@ -1069,6 +1070,13 @@ up_sect_secona_helm_respirator = true ; {!upgrade_hint_kardan(1)} false, true
 up_sect_seconc_helm_respirator = true ; {!upgrade_hint_kardan(1)} false, true
 up_sect_secone_helm_respirator = true ; {!upgrade_hint_kardan(1)} false, true
 
+up_sect_firsta_helm_respirator_heavy = {!upgrade_hint_kardan(1)} false, true
+up_sect_firstc_helm_respirator_heavy = {!upgrade_hint_kardan(2)} false, true
+up_sect_firstd_helm_respirator_heavy = {!upgrade_hint_kardan(2)} false, true
+
+up_sect_seconc_helm_respirator_heavy = true ; {!upgrade_hint_kardan(1)} false, true
+up_sect_secone_helm_respirator_heavy = true ; {!upgrade_hint_kardan(1)} false, true
+
 up_sect_firsta_helm_hardhat = {!upgrade_hint_kardan(1)} false, true
 up_sect_firstc_helm_hardhat = {!upgrade_hint_kardan(2)} false, true
 up_sect_firstd_helm_hardhat = {!upgrade_hint_kardan(2)} false, true
@@ -1341,6 +1349,7 @@ helm_battle
 helm_hardhat
 helm_protective
 helm_respirator
+helm_respirator_heavy
 helm_tactic
 
 stalker_outfit_barge
@@ -2181,6 +2190,13 @@ up_sect_secona_helm_respirator = true ; {+jup_b217_tech_instrument_1_brought}, f
 up_sect_seconc_helm_respirator = true ; {+jup_b217_tech_instrument_2_brought}, false %=upgrade_hint(st_upgr_toolkit_2)%
 up_sect_secone_helm_respirator = true ; {+jup_b217_tech_instrument_2_brought}, false %=upgrade_hint(st_upgr_toolkit_2)%
 
+up_sect_firsta_helm_respirator_heavy = {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
+up_sect_firstc_helm_respirator_heavy = {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
+up_sect_firstd_helm_respirator_heavy = {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
+
+up_sect_seconc_helm_respirator_heavy = true ;  {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
+up_sect_secone_helm_respirator_heavy = true ;  {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
+
 up_sect_firsta_helm_hardhat = {+jup_b217_tech_instrument_1_brought}, false %=upgrade_hint(st_upgr_toolkit_1)%
 up_sect_firstc_helm_hardhat = {+jup_b217_tech_instrument_2_brought}, false %=upgrade_hint(st_upgr_toolkit_2)%
 up_sect_firstd_helm_hardhat = {+jup_b217_tech_instrument_2_brought}, false %=upgrade_hint(st_upgr_toolkit_2)%
@@ -2248,6 +2264,7 @@ helm_battle
 helm_hardhat
 helm_protective
 helm_respirator
+helm_respirator_heavy
 helm_tactic
 
 stalker_outfit_barge
@@ -3032,16 +3049,23 @@ up_sect_firstc_helm_respirator = {+jup_b6_anom_2_count_end}, false %=upgrade_hin
 up_sect_firstd_helm_respirator = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
 
 up_sect_secona_helm_respirator = false
-up_sect_seconc_helm_respirator = false
-up_sect_secone_helm_respirator = false
+up_sect_seconc_helm_respirator = true
+up_sect_secone_helm_respirator = true
+
+up_sect_firsta_helm_respirator_heavy = true
+up_sect_firstc_helm_respirator_heavy = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
+up_sect_firstd_helm_respirator_heavy = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
+
+up_sect_seconc_helm_respirator_heavy = true
+up_sect_secone_helm_respirator_heavy = true
 
 up_sect_firsta_helm_hardhat = true
 up_sect_firstc_helm_hardhat = {+jup_b1_complete_end}, false %=upgrade_hint(st_upgr_condlist)%
 up_sect_firstd_helm_hardhat = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
 
 up_sect_secona_helm_hardhat = false
-up_sect_seconc_helm_hardhat = false
-up_sect_secone_helm_hardhat = false
+up_sect_seconc_helm_hardhat = true
+up_sect_secone_helm_hardhat = true
 
 up_sect_firsta_helm_protective = true
 up_sect_firstc_helm_protective = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
@@ -3053,8 +3077,8 @@ up_sect_secona_helm_protective = true
 up_sect_seconc_helm_protective = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st_upgr_condlist)%
 up_sect_secone_helm_protective = false
 
-; up_sect_thirdc_helm_protective = false
-up_sect_thirde_helm_protective = false
+; up_sect_thirdc_helm_protective = true
+up_sect_thirde_helm_protective = true
 
 up_sect_firsta_helm_tactic = true
 up_sect_firstc_helm_tactic = {+jup_b1_complete_end}, false %=upgrade_hint(st_upgr_condlist)%
@@ -3064,8 +3088,8 @@ up_sect_firstf_helm_tactic = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st
 
 up_sect_secona_helm_tactic = false
 up_sect_seconc_helm_tactic = false
-up_sect_secone_helm_tactic = false
-up_sect_seconf_helm_tactic = false
+up_sect_secone_helm_tactic = true
+up_sect_seconf_helm_tactic = true
 
 up_sect_firsta_helm_battle = true
 up_sect_firstc_helm_battle = {+jup_b1_complete_end}, false %=upgrade_hint(st_upgr_condlist)%
@@ -3075,8 +3099,8 @@ up_sect_firste_helm_battle = {+jup_b6_anom_2_count_end}, false %=upgrade_hint(st
 up_sect_secona_helm_battle = false
 up_sect_seconc_helm_battle = false
 up_sect_second_helm_battle = false
-up_sect_secone_helm_battle = false
-up_sect_seconf_helm_battle = false
+up_sect_secone_helm_battle = true
+up_sect_seconf_helm_battle = true
 
 ;************************************************
 ;***************** Δÿδόκΰ ίπ ********************
@@ -3866,6 +3890,13 @@ up_sect_firstd_helm_respirator = false
 up_sect_secona_helm_respirator = false
 up_sect_seconc_helm_respirator = false
 up_sect_secone_helm_respirator = false
+
+up_sect_firsta_helm_respirator_heavy = false
+up_sect_firstc_helm_respirator_heavy = false
+up_sect_firstd_helm_respirator_heavy = false
+
+up_sect_seconc_helm_respirator_heavy = false
+up_sect_secone_helm_respirator_heavy = false
 
 up_sect_firsta_helm_hardhat = false
 up_sect_firstc_helm_hardhat = false
@@ -4699,6 +4730,13 @@ up_sect_firstd_helm_respirator = false
 up_sect_secona_helm_respirator = false
 up_sect_seconc_helm_respirator = false
 up_sect_secone_helm_respirator = false
+
+up_sect_firsta_helm_respirator_heavy = false
+up_sect_firstc_helm_respirator_heavy = false
+up_sect_firstd_helm_respirator_heavy = false
+
+up_sect_seconc_helm_respirator_heavy = false
+up_sect_secone_helm_respirator_heavy = false
 
 up_sect_firsta_helm_hardhat = false
 up_sect_firstc_helm_hardhat = false
