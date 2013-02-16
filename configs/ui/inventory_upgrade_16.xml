@@ -325,20 +325,42 @@
 	    <template name="upgrade_scheme_helm_respirator">
 	        <column>
 	            <cell x="0" y="24" point_x="162" point_y="190"/>
+				<cell x="0" y="330" point_x="171" point_y="215"/>
 	        </column>
 	        <column>
-	            <cell x="80" y="0" point_x="163" point_y="265"/>
-	            <cell x="80" y="49" point_x="190" point_y="224"/>
+	            <cell x="80" y="24" point_x="163" point_y="265"/>
+	            <cell x="80" y="126" point_x="190" point_y="224"/>
+				<cell x="80" y="330" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="160" y="330" point_x="171" point_y="215"/>
+	        </column>
+	    </template>
+		<template name="upgrade_scheme_helm_respirator_heavy">
+	        <column>
+	            <cell x="0" y="24" point_x="162" point_y="190"/>
+	        </column>
+	        <column>
+	            <cell x="80" y="24" point_x="163" point_y="265"/>
+	            <cell x="80" y="126" point_x="190" point_y="224"/>
+				<cell x="80" y="330" point_x="171" point_y="215"/>
+	        </column>
+	        <column>
+	            <cell x="160" y="330" point_x="171" point_y="215"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_helm_hardhat">
 	        <column>
 	            <cell x="0" y="24" point_x="212" point_y="236"/>
-	            <cell x="0" y="126" point_x="171" point_y="215"/>
+	            <cell x="0" y="330" point_x="171" point_y="215"/>
 	        </column>
 	        <column>
-	            <cell x="80" y="0" point_x="168" point_y="153"/>
-	            <cell x="80" y="49" point_x="212" point_y="236"/>
+	            <cell x="80" y="24" point_x="168" point_y="153"/>
+	            <cell x="80" y="126" point_x="212" point_y="236"/>
+				<cell x="80" y="330" point_x="171" point_y="215"/>
+	        </column>
+			<column>
+	            <cell x="160" y="330" point_x="171" point_y="215"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_helm_protective">
@@ -347,14 +369,15 @@
 	            <cell x="0" y="126" point_x="174" point_y="253"/>
 	        </column>
 	        <column>
-	            <cell x="80" y="0" point_x="212" point_y="230"/>
-	            <cell x="80" y="49" point_x="128" point_y="198"/>
-	            <cell x="80" y="126" point_x="102" point_y="222"/>
+	            <cell x="80" y="24" point_x="212" point_y="230"/>
+	            <cell x="80" y="126" point_x="128" point_y="198"/>
+	            <cell x="80" y="228" point_x="102" point_y="222"/>
 	        </column>
 	        <column>
-	            <cell x="160" y="0" point_x="208" point_y="158"/>
-	            <cell x="160" y="49" point_x="186" point_y="174"/>
-	            <cell x="160" y="126" point_x="122" point_y="240"/>
+	            <cell x="160" y="24" point_x="208" point_y="158"/>
+	            <cell x="160" y="126" point_x="186" point_y="174"/>
+	            <cell x="160" y="228" point_x="122" point_y="240"/>
+				<cell x="160" y="330" point_x="171" point_y="215"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_helm_tactic">
@@ -363,14 +386,14 @@
 	            <cell x="0" y="126" point_x="213" point_y="229"/>
 	        </column>
 	        <column>
-	            <cell x="80" y="0" point_x="181" point_y="155"/>
-	            <cell x="80" y="49" point_x="202" point_y="203"/>
-	            <cell x="80" y="126" point_x="166" point_y="208"/>
+	            <cell x="80" y="24" point_x="181" point_y="155"/>
+	            <cell x="80" y="126" point_x="202" point_y="203"/>
+	            <cell x="80" y="160" point_x="171" point_y="215"/>
 	        </column>
 	        <column>
-	            <cell x="160" y="0" point_x="132" point_y="198"/>
-	            <cell x="160" y="49" point_x="218" point_y="258"/>
-	            <cell x="160" y="126" point_x="207" point_y="150"/>
+	            <cell x="160" y="24" point_x="132" point_y="198"/>
+	            <cell x="160" y="126" point_x="218" point_y="258"/>
+	            <cell x="160" y="160" point_x="171" point_y="215"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_helm_battle">
@@ -379,9 +402,9 @@
 	            <cell x="0" y="126" point_x="199" point_y="254"/>
 	        </column>
 	        <column>
-	            <cell x="80" y="0" point_x="174" point_y="174"/>
-	            <cell x="80" y="49" point_x="222" point_y="234"/>
-	            <cell x="80" y="102" point_x="119" point_y="168"/>
+	            <cell x="80" y="24" point_x="174" point_y="174"/>
+	            <cell x="80" y="126" point_x="222" point_y="234"/>
+	            <cell x="80" y="228" point_x="119" point_y="168"/>
 	            <cell x="80" y="151" point_x="160" point_y="149"/>
 	        </column>
 	        <column>
@@ -438,6 +461,18 @@
 	            <cell x="160" y="126" point_x="135" point_y="199"/>
 	            <cell x="160" y="228" point_x="185" point_y="193"/>
 	            <cell x="160" y="330" point_x="82" point_y="211"/>
+	        </column>
+	    </template>
+	    <template name="upgrade_scheme_ak74_worn">
+	        <column>
+	            <cell x="0" y="24" point_x="80" point_y="185"/>
+	            <cell x="0" y="126" point_x="101" point_y="183"/>
+	            <cell x="0" y="228" point_x="112" point_y="186"/>
+	            <cell x="0" y="330" point_x="105" point_y="193"/>
+	            <cell x="0" y="409" point_x="111" point_y="163"/>
+	        </column>
+	        <column>
+	            <cell x="80" y="409" point_x="306" point_y="212"/>
 	        </column>
 	    </template>
 	    <template name="upgrade_scheme_ak74u">
