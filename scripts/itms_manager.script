@@ -107,7 +107,7 @@ function actor_on_update()
 			if (has_alife_info("enable_device_torch")) then
 				db.actor:disable_info_portion("enable_device_torch")
 				alife():create("device_torch_dummy",db.actor:position(),0,0,0)
-				show_message("Unequipped headlamp",25)
+				show_message("Head lamp disconnected from UPD interface",25)
 			end
 
 			if not (torch) then
@@ -289,7 +289,7 @@ function actor_on_item_use(obj)
 			if not (torch) then
 				alife():create("device_torch",db.actor:position(),0,0,0)
 			end
-			show_message("Equipped headlamp",25)
+			show_message("Head lamp connected to UPD interface",25)
 		end
 	end
 end
