@@ -1096,10 +1096,10 @@
 		<text>Steam purification & respiration mask</text>
 	</string>
 	<string id="st_up_resp_b1_descr">
-		<text>Medern-day, IIT generation 2+ PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. Installation greatly enhances possibilities of operations in complete darkness. Special filtering software automatically transforms typical green night-vision view to more convenient black-white one. Requires base grid to be installed on helmet to allow mounting. Opens possibility to update to better lens and filtration software in future. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation.</text>
+		<text>Modern-day, IIT generation 2+ PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. Installation greatly enhances possibilities of operations in complete darkness. Special filtering software automatically transforms typical green night-vision view to more convenient black-white one. Requires base grid to be installed on helmet to allow mounting. Opens possibility to update to better lens and filtration software in future. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation.</text>
 	</string>
 	<string id="st_up_resp_b1_name">
-		<text>PN21KL nigh vision device</text>
+		<text>PN21KL night vision device</text>
 	</string>
 	<string id="st_up_resp_b2_descr">
 		<text>A heat visor allows the wearer to detect and identify matching heat sources.</text>
@@ -1114,7 +1114,7 @@
 		<text>Oracle psy-stimulator</text>
 	</string>
 	<string id="st_up_resp_c1_descr">
-		<text>Lenses and filtration software upgrade cleares the vision of artifacts and enhances the image intensifying capabilities of PN21K nvd - making it a full-fledged generation 3 nvd. Does not affect the weight of helmet.</text>
+		<text>Lenses and filtration software upgrade cleares the vision of artifacts and enhances the image intensifying capabilities of PN21K unit - making it a full-fledged IIT generation 3 night vision device. Does not affect the weight of helmet.</text>
 	</string>
 	<string id="st_up_resp_c1_name">
 		<text>Improved lenses and filtration software update for PN21K night vision device</text>
