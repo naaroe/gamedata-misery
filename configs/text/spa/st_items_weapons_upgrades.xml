@@ -1081,10 +1081,10 @@
 		<text>Reinforced respirator for extreme conditions</text>
 	</string>
 	<string id="st_up_resp_a1_descr">
-		<text>Installation of a night vision device for operations at night or in reduced lightning conditions.</text>
+		<text>Standard-issue 1PN93 Russian Military Forces nvd. Offers generation 2 image intensifying for operations at night or in reduced lightning conditions. Total weight if set is ~1,5 kg as it also installs grid allowing updating to better device in future.</text>
 	</string>
 	<string id="st_up_resp_a1_name">
-		<text>First generation night vision device</text>
+		<text>1PN93 soviet night vision device</text>
 	</string>
 	<string id="st_up_resp_a2_descr">
 		<text>A system for switching to closed cycle breathing in the event of critical air contamination with radioactive or chemical particles.</text>
@@ -1096,10 +1096,10 @@
 		<text>Steam purification & respiration mask</text>
 	</string>
 	<string id="st_up_resp_b1_descr">
-		<text>Installation of a more advanced night vision device for operations in complete darkness.</text>
+		<text>Medern, generation 2+ night-vision device produced by Novosibirsk Instrument-Making Plant. Installation greatly enhances possibilities of operations in complete darkness. Special filtering software automatically transforms typical green night-vision view to more convenient black-white one. Requires base grid to be installed on helmet to allow mounting. Opens possibility to update to better lens and filtration software in future. Weighting ~450 grams it is lighter than 1PN58 nvd giving back ~400 grams on installation.</text>
 	</string>
 	<string id="st_up_resp_b1_name">
-		<text>Second generation night vision device</text>
+		<text>PN21K modernized nighvision device</text>
 	</string>
 	<string id="st_up_resp_b2_descr">
 		<text>A heat visor allows the wearer to detect and identify matching heat sources.</text>
@@ -1114,10 +1114,10 @@
 		<text>Oracle psy-stimulator</text>
 	</string>
 	<string id="st_up_resp_c1_descr">
-		<text>Installation of a more advanced night vision device for operations in complete darkness.</text>
+		<text>Lenses and filtration software upgrade cleares the vision of artifacts and enhances the image intensifying capabilities of PN21K nvd - making it a full-fledged generation 3 nvd. Does not affect the weight of helmet.</text>
 	</string>
 	<string id="st_up_resp_c1_name">
-		<text>Third generation night vision device</text>
+		<text>Enhanced lenses and filtration software update for PN21K night vision device.</text>
 	</string>
 	<string id="st_up_resp_c2_descr">
 		<text>Ionized air particles move between the system's electrodes in reverse to the movement of electrons using electricity, creating an ion wind.</text>
