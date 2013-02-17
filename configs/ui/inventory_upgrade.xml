@@ -366,9 +366,9 @@
 	            <cell x="0" y="126" point_x="174" point_y="253"/>
 	        </column>
 	        <column>
-	            <cell x="100" y="0" point_x="212" point_y="230"/>
-	            <cell x="100" y="24" point_x="128" point_y="198"/>
-	            <cell x="100" y="126" point_x="102" point_y="222"/>
+	            <cell x="100" y="24" point_x="212" point_y="230"/>
+	            <cell x="100" y="126" point_x="128" point_y="198"/>
+	            <cell x="100" y="228" point_x="102" point_y="222"/>
 	        </column>
 	        <column>
 	            <cell x="200" y="24" point_x="208" point_y="158"/>

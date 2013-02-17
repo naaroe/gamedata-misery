@@ -37,7 +37,7 @@
 		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment</text>
 	</string>
 	<string id="st_joint">
-		<text>Canabis joint</text>
+		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
 		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.</text>
@@ -562,15 +562,12 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	<string id="st_marijuana_descr">
 		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.</text>
 	</string>
-
 	<string id="st_flashlight_old">
-		<text>Old flashlight</text>
+		<text>Wind-up flashlight</text>
 	</string>
 	<string id="st_flashlight_old_descr">
-		<text>The light bulb is removed and the flashlight makes strange noises when being handled.
-There is little chance that this item is ever going to function again.</text>
+		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.</text>
 	</string>
-
 	<string id="st_flashlight_broken">
 		<text>Broken flashlight</text>
 	</string>
