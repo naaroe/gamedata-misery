@@ -66,7 +66,18 @@ end
 
 -- add this function to bind_stalker update function
 -- battery.update()
+local timr
 function update()
+	if not (timr) then
+		timr = 0
+	end
+
+	local tg = time_global()
+	if (tg > timr) then
+		timr = tg + 1000
+		return
+	end
+
 	local battery = db.actor:object("wpn_upd")
 	updateLight(battery)
 	updateNV(battery)

@@ -240,11 +240,11 @@ function init_start_dialogs(dialog, str)
 				add_dialog(v.id,p[4],"dm_wounded_medkit",{"dialogs.victim_no_surrender","dialogs.actor_have_medkit","dialogs.npc_is_not_surrendered"},{"dialogs.transfer_medkit","dialogs.break_dialog"})
 				add_dialog(v.id,p[5],"dm_wounded_sorry",{"dialogs.victim_no_surrender","dialogs.npc_is_not_surrendered"},"dialogs.break_dialog")
 				add_dialog(v.id,p[6],"st_surrender_query_victim_3","dialogs.victim_surrender","dialogs.break_dialog")
-<<<<<<< HEAD
+
 					d = add_dialog(p[1],p[7],"I smoke crack!")
-=======
+
 					local d = add_dialog(p[1],p[7],"I smoke crack!")
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
+
 						d:SetScriptText("dialogs.surrender_victim_answers_1")
 					d = add_dialog(p[2],p[7],"I smoke crack! sadf")
 						--d:SetScriptText("dialogs.surrender_victim_answers_1")

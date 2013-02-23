@@ -29,10 +29,8 @@ local intercepts = {
 	npc_on_fighting_actor		= {},
 	npc_add_precondition		= {},
 	npc_on_item_take_from_box	= {},
-<<<<<<< HEAD
 	npc_on_weapon_state_change	= {},
-=======
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
+
 
 	-- state_mgr_weapon.script
 	npc_on_weapon_strapped		= {},
@@ -114,10 +112,7 @@ function _G.callback_unregister(name,func)
 end
 
 local ev_queue = {}
-<<<<<<< HEAD
 local ev_object_queue = {}
-=======
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 function event_queue()
 	local data
 	for i=#ev_queue, 1, -1 do
@@ -127,7 +122,6 @@ function event_queue()
 			table.remove(ev_queue,i)
 		end
 	end
-<<<<<<< HEAD
 
 	local se_obj
 	local sim = alife()
@@ -311,12 +305,10 @@ function actor_on_update(se_actor,delta)
 		end
 	end
 
-<<<<<<< HEAD
+
 	--alun_utils.execute_queue()
 	event_queue()
-=======
 	alun_utils.execute_queue()
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 end
 
 -------------------
