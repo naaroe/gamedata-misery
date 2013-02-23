@@ -15,7 +15,7 @@ behavior = behavior
 
 [behavior]
 behavior_state = {+npcx_beh_wait} beh_wait, beh_move
-goto_target = {!is_squad_commander} commander, {=is_squad_commander +npcx_beh_patrol_mode} waypoint, actor
+target = {!is_squad_commander} commander, {=is_squad_commander +npcx_beh_patrol_mode} waypoint, actor
 walk_dist = {+npcx_beh_patrol_mode} 90, 5
 jog_dist = {+npcx_beh_patrol_mode} 150, 15
 run_dist = {+npcx_beh_patrol_mode} 250, {-npcx_beh_patrol_mode +npcx_beh_substate_stealth} 40, 30

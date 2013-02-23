@@ -1,4 +1,5 @@
 <w>
+
 	<background width="1024" height="768">
 		<auto_static x="0" y="0" width="1024" height="768" stretch="1">
 			<texture>ui_inGame2_mp_background</texture>
@@ -8,12 +9,12 @@
 		</auto_static>
 	</background>
 
-	<console x="150" y="274" width="325" height="180" stretch="1">
+	<console x="150" y="135" width="330" height="420" stretch="1">
 		<texture>ui_inGame2_picture_window</texture>
 		<ln x="0" y="0" width="325" height="20">
 			<text align="l" font="medium"/>
 		</ln>
-		<input x="150" y="454" width="325" height="30">
+		<input x="150" y="554" width="325" height="30">
 			<text x="5" font="medium" vert_align="c" align="l"/>
 			<texture>ui_inGame2_edit_box_2</texture>
 		</input>

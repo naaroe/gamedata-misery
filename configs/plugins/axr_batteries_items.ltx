@@ -1,0 +1,94 @@
+; BATTERY ITEM SECTIONS
+
+[batteries]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_name
+inv_name_short			= st_batteries_name
+inv_weight			= 0.139
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 12
+inv_grid_y			= 19
+cost				= 735
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt
+
+[batteries_dead]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_dead_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_dead
+inv_name_short			= st_batteries_dead
+inv_weight			= 0.127
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 48
+cost				= 224
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt
+
+[batteries_ccell]:identity_immunities
+$spawn 				= "food and drugs\kolbasa"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\battery.ogf
+description			= st_batteries_ccell_descr
+
+radius				= 68; 50
+inv_name			= st_batteries_ccell
+inv_name_short			= st_batteries_ccell
+inv_weight			= 0.141
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 48
+cost				= 1340
+
+attach_angle_offset		= 0.440521, 1.378287, -0.644026
+attach_position_offset	= 0.104196, -0.010821, 0.076969
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+use_sound			= interface\inv_batt

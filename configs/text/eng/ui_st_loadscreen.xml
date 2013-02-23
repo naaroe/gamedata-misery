@@ -40,7 +40,7 @@
 		<text>Don't be a hero!</text>
 	</string>
 	<string id="ls_tip_50">
-		<text>Don't be deceived, Stalker. In The Zone, dogs are no longer 'man's best friend'.</text>
+		<text>Don't be deceived, stalker. In The Zone, dogs are no longer 'man's best friend'.</text>
 	</string>
 	<string id="ls_tip_52">
 		<text>Instead of carrying a thousand rounds, carry 150 if you're just heading out and 210 if you're thinking you'll be in a firefight. Conserve it.</text>
@@ -52,7 +52,7 @@
 		<text>Grenades can work wonders; keep one or two around for when the shit hits the fan.</text>
 	</string>
 	<string id="ls_tip_number">
-		<text>Page #</text>
+		<text>Page </text>
 	</string>
 	<string id="ls_tip_1">
 		<text>Vodka, a cheap alternative to antirad meds, thus a cheaper way to reduce the effects of radiation on the body.</text>
@@ -256,10 +256,10 @@
 		<text>A pack of cigarettes a day keeps the hunger at bay.</text>
 	</string>
 	<string id="ls_tip_96">
-		<text>When trying to sneak up on someone or something, remember to turn of the flash light.</text>
+		<text>When trying to sneak up on someone or something, remember to turn off your flash light.</text>
 	</string>
 	<string id="ls_tip_97">
-		<text>Healthy living is essential. Avoid drugs if not necessary, eat clean food if you can and sleep regularly.</text>
+		<text>Healthy living is essential. Avoid drugs if necessary, eat clean food if you can and sleep regularly.</text>
 	</string>
 	<string id="ls_tip_98">
 		<text>Control your mental state or you'll look too much and you won't see.</text>

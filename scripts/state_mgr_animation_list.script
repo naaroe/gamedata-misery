@@ -378,8 +378,6 @@ animations = {
 						out		= { [0]	= { "knopka_1" } },
 						idle	= { [0]	= "knopka_2" },
 						rnd		= nil },
-
-
 		warding		= {	prop	= { maxidle = 10,
 									sumidle = 10,
 									rnd = 0 },
@@ -387,7 +385,6 @@ animations = {
 						out		= {	[0]	= { "ohrana_2" }},
 						idle	= {	[0]	= "ohrana_1"},
 						rnd		= nil },
-
 		warding_short		= {	prop	= { maxidle = 10,
 									sumidle = 10,
 									rnd = 0 },
@@ -403,9 +400,6 @@ animations = {
 						out		= nil,
 						idle	= {	[0]	= "cut_scene_idle_0"},
 						rnd		= nil },
-
-
-
 		talk_default	= {	prop	= { maxidle = 5,
 									sumidle = 5,
 									rnd = 70 },
@@ -479,25 +473,6 @@ animations = {
 											 "trans_0_idle_4",
 											 "trans_0_idle_5",
 											 "trans_0_idle_6"} } },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		probe_stand		= {	prop	= { maxidle = 0,
 									sumidle = 0,
 									rnd = 100 },
@@ -756,6 +731,72 @@ animations = {
 						out		= nil,
 						rnd		= nil,
 						idle	= nil},
+
+		prone		= 	{	prop	= 	{ maxidle = 5,sumidle = 3,rnd = 80,moving = true },
+						into	= 	{
+										[0] = { "loophole_9_in_front_0" },
+										[1] = { "loophole_9_in_front_0" }
+									},
+						out		= nil,
+						idle	= 	{
+										[0]	= "loophole_9_idle_0",
+										[1]	= "loophole_9_idle_0"
+									},
+						rnd		= 	{
+										[0]	= {	"loophole_9_idle_0" },
+										[1]	= {	"loophole_9_idle_0" }
+									}
+					},
+		prone_idle		= 	{	prop	= 	{ maxidle = 5,sumidle = 3,rnd = 80,moving = true },
+						into	= nil,
+						out		= nil,
+						idle	= 	{
+										[0]	= "loophole_9_idle_0",
+										[1]	= "loophole_9_idle_0"
+									},
+						rnd		= 	{
+										[0]	= {	"loophole_9_idle_0" },
+										[1]	= {	"loophole_9_idle_0" }
+									}
+					},
+		barricade = {
+					prop = 	{ maxidle = 4, sumidle = 1, rnd = 100},
+					into = 	nil,
+					out  = 	nil,
+					idle = 	{
+								[0] = "barricade_0_idle_0",
+								[1] = "barricade_1_idle_0",
+								[2] = "barricade_2_idle_0",
+								[3] = "barricade_3_idle_0",
+								[4] = "barricade_commander_idle_0"
+							},
+					rnd  =	nil
+					},
+		barricade_look = {
+					prop = 	{ maxidle = 1, sumidle = 1, rnd = 100},
+					into =  {
+								[0] = {"barricade_0_look_in_0"},
+								[1] = {"barricade_1_look_in_0"},
+								[2] = {"barricade_2_look_in_0"},
+								[3] = {"barricade_3_look_in_0"},
+								[4] = {"barricade_commander_look_in_0"}
+							},
+					out  = 	{
+								[5] = {"barricade_0_look_out_0"},
+								[6] = {"barricade_1_look_out_0"},
+								[7] = {"barricade_2_look_out_0"},
+								[8] = {"barricade_3_look_out_0"},
+								[9] = {"barricade_commander_look_out_0"}
+							},
+					rnd  = 	nil,
+					idle = 	{
+								[0] = {"barricade_0_look_idle_0"},
+								[1] = {"barricade_1_look_idle_0"},
+								[2] = {"barricade_2_look_idle_0"},
+								[3] = {"barricade_3_look_idle_0"},
+								[4] = {"barricade_commander_look_idle_0"}
+							}
+					}
 	}
 
 utils.copy_table(animations, state_mgr_animation_list_animpoint.add_animation_list())

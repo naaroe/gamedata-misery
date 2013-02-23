@@ -6,8 +6,6 @@
 --function printf()
 --end
 
-local ini = alun_utils.read_from_ini("plugins\\xr_sound.ltx")
-
 sound_table = {}
 
 function set_sound_play(npc_id, sound, faction, point)
@@ -201,11 +199,6 @@ function load_npc(thread, npc_id)
 		v:load_npc(thread, npc_id)
 	end
 	set_save_marker(thread, "load", true, "sound_npc_save")
-end
-
-
-function start_game_callback()
-	sound_table = {}
 end
 
 function stop_all_sounds()
@@ -504,21 +497,28 @@ end
 
 
 
-
+-- modified by Alundaio (original: ????)
 --' Таблица для хранения созданных саунд обжектов.
-sound_object_by_theme = {}
-ph_snd_themes = {}
 --' type = [random|seq|looped]
+local ltx = ini_file("plugins\\xr_sound.ltx")
+local path = alun_utils.read_from_ini(ltx,"settings","path","string",nil)
 function get_sound_object(theme, t_type)
-	if not (ph_snd_themes[theme]) then
-		ph_snd_themes = alun_utils.collect_section(ini,theme)
+	if not (ph_snd_themes) then
+		ph_snd_themes = {}
+		ph_snd_themes[theme] = alun_utils.collect_section(ltx,theme)
+		--alun_utils.printf("collect theme=%s",theme)
 	end
 
-	if ph_snd_themes[theme] == nil then
+	if (not ph_snd_themes or not ph_snd_themes[theme]) then
+		--alun_utils.printf("no ph_snd_themes theme=%s",theme)
 		return
 	end
 
-	if sound_object_by_theme[theme] == nil then
+	if not (sound_object_by_theme) then
+		sound_object_by_theme = {}
+	end
+
+	if (not sound_object_by_theme[theme])then
 		sound_object_by_theme[theme] = {}
 	end
 
@@ -528,7 +528,14 @@ function get_sound_object(theme, t_type)
 
 	--' Выбор следующего айдишника
 	local play_id = -1
+
 	local table_size = #ph_snd_themes[theme]
+
+	if (table_size == 0) then
+		return
+	end
+
+	--alun_utils.printf("tablesize = %s theme=%s",table_size,theme)
 	if sound_object_by_theme[theme].last_id == nil then
 		if t_type == "random" then
 			if table_size >= 2 then
@@ -563,6 +570,8 @@ function get_sound_object(theme, t_type)
 	if play_id == -1 then
 		return
 	end
+
+
 	--' Проверяем создан ли у нас соответствующий саунд обжект или его надо создать
 	if sound_object_by_theme[theme][play_id] == nil then
 		if type(ph_snd_themes[theme][play_id]) == "table" then

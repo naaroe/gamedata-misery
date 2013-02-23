@@ -1,3 +1,7 @@
+--[[
+	Copyright (C) 2012 Alundaio
+	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+-]]
 function add_stalker(npc)
 	if not (db.OnlineStalkers) then
 		db.OnlineStalkers = {}
@@ -285,6 +289,13 @@ function get_squad_count(npc)
 	return c
 end
 
+function release(se_obj)
+	if (se_obj) then
+		local sim = alife()
+		sim:release(se_obj,true)
+	end
+end
+
 function get_current_action_id(npc)
 	local mgr = npc:motivation_action_manager()
 
@@ -533,7 +544,6 @@ function get_commander(npc)
 end
 
 function get_squad_commander_action(npc)
-
 	local commander = get_commander(npc)
 	local mgr = commander and commander:motivation_action_manager()
 	if (mgr and mgr:initialized()) then
@@ -541,7 +551,11 @@ function get_squad_commander_action(npc)
 	end
 end
 
-function collect_section(ini,section,keytable)
+function collect_section(ini,section,keytable,reverse)
+	if not (ini) then
+		return
+	end
+
 	local _t = {}
 	if ini:section_exist(section) then
 		local n = ini:line_count(section)
@@ -549,10 +563,14 @@ function collect_section(ini,section,keytable)
 			for i = 0,n-1 do
 				local res,id,val = ini:r_line(section,i,"","")
 
-				if not (keytable) then
-					table.insert(_t,id)
+				if (keytable) then
+					if (reverse) then
+						_t[val] = id or true
+					else
+						_t[id] = val or true
+					end
 				else
-					_t[id] = val or true
+					table.insert(_t,id)
 				end
 			end
 		end

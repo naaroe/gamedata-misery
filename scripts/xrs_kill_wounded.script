@@ -1,6 +1,10 @@
 ----------------------------------------------------------------------------------------------------------------------
 -- xrs_kill_wounded
 -- by Alundaio
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ----------------------------------------------------------------------------------------------------------------------
 
 local ini = ini_file("ai_tweaks\\xrs_kill_wounded.ltx")
@@ -68,6 +72,7 @@ function eva_kill_wounded:evaluate()
 
 	local st = self.st
 
+	--alun_utils.printf("stage = %s",st.stage)
 	if (st.stage == 0) then
 		local tg = time_global()
 
@@ -286,7 +291,7 @@ function add_to_binder(npc, ini, scheme, section, st)
 
 	action:add_precondition( wp(evaid,true) )
 	action:add_precondition( wp(stalker_ids.property_alive,true) )
-	action:add_precondition( wp(stalker_ids.property_enemy,true) )
+	--action:add_precondition( wp(stalker_ids.property_enemy,true) )
 
 	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
 	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base,false) )

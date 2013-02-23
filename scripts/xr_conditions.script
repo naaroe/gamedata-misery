@@ -1,3 +1,13 @@
+--[[
+	modified by Alundaio (original: ???? GSC)
+
+
+	Copyright (C) 2012 Alundaio
+
+	This program is free software; you can redistribute and/or modify
+	it under the terms of the Open S.T.A.L.K.E.R. Mod License version 1.0.
+-]]
+
 function dist_to_job_point_le(actor, npc, p)
 	if not (npc) then
 		return false
@@ -51,29 +61,34 @@ end
 -- ----------------------------------------------------------------------------------------------------
 -- Функции для работы с combat_ignore_cond
 -- ----------------------------------------------------------------------------------------------------
-function is_enemy_actor(enemy, object)
-	return enemy:id() == db.actor:id()
+function is_enemy_actor(actor, npc, p)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
+	return be and be:alive() and be:id() == db.actor:id()
 end
 
 -- текущий враг на расстоянии больше или равном заданному расстоянию
 -- для combat_ignore
-function fighting_dist_ge(enemy, npc, p)
+function fighting_dist_ge(actor, npc, p)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
 	local d = p[1]
-	return enemy:position():distance_to_sqr(npc:position()) >= d * d
+	return be and be:alive() and be:position():distance_to_sqr(npc:position()) >= d * d
 end
 
 -- расстояние до текущего реального врага меньше или равно заданного значения
-function fighting_dist_le(enemy, npc, p)
+function fighting_dist_le(actor, npc, p)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
 	local d = p[1]
-	return enemy:position():distance_to_sqr(npc:position()) <= d * d
+	return be and be:alive() and be:position():distance_to_sqr(npc:position()) <= d * d
 end
 
-function enemy_in_zone(enemy, npc, p)
+function enemy_in_zone(actor, npc, p)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
 	local zone = db.zone_by_name[p[1]]
-	if zone == nil then
-		abort("Wrong zone name %s in enemy_in_zone function. NPC [%s]", tostring(p[1]), npc:name())
-	end
-	return utils.npc_in_zone(enemy, zone)
+	return zone and be and be:alive() and utils.npc_in_zone(be, zone)
 end
 
 
@@ -87,18 +102,33 @@ end
 --Проверка, встречается ли в имени чувака одна из строк .
 function check_npc_name (actor , npc , p)
 	if npc:name() == nil then return false end
-	local name_exist = false
 	for k,v in pairs(p) do
-		if string.find( npc:name(), v ) ~= nil then
-			name_exist = true
+		if string.find( npc:name(), v ) then
+			return true
 		end
 	end
-	return name_exist
+	return false
+end
+
+function check_squad_name (actor , npc , p)
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return
+	end
+
+	local sq
+	for k,v in pairs(p) do
+		sq = get_story_squad(v)
+		if (sq and sq.id == squad.id) then
+			return true
+		end
+	end
+	return
 end
 
 function check_enemy_name (actor , npc , p)
 	local enemy_id = db.storage[npc:id()].enemy_id
-	local enemy = db.storage[enemy_id] and db.storage[enemy_id].object
+	local enemy = enemy_id and db.storage[enemy_id] and db.storage[enemy_id].object
 	local name
 	if enemy and enemy:alive() then
 		name = enemy:name()
@@ -175,8 +205,9 @@ function is_obj_on_job(actor, npc, p)
 	if smart == nil then
 		return false
 	end
+	local npc_job
 	for k,v in pairs(smart.npc_info) do
-		local npc_job = smart.job_data[v.job_id]
+		npc_job = smart.job_data[v.job_id]
 		printf("section [%s]", tostring(npc_job.section))
 		if npc_job.section == p[1] then
 			return true
@@ -185,6 +216,50 @@ function is_obj_on_job(actor, npc, p)
 	return false
 end
 
+function is_enemy_on_job(actor, npc, p)
+	local enemy_id = db.storage[npc:id()].enemy_id
+	local enemy = enemy_id and db.storage[enemy_id] and db.storage[enemy_id].object
+	if not (enemy) then
+		return false
+	end
+	local smart
+	if p and p[2] then
+		smart = sim_board.get_sim_board():get_smart_by_name(p[2])
+	else
+		smart = xr_gulag.get_npc_smart(enemy)
+	end
+	if smart == nil then
+		return false
+	end
+	local npc_job
+	for k,v in pairs(smart.npc_info) do
+		npc_job = smart.job_data[v.job_id]
+		printf("section [%s]", tostring(npc_job.section))
+		if npc_job.section == p[1] then
+			return true
+		end
+	end
+	return false
+end
+
+function enemy_smart(actor, npc, p)
+	if not (npc:best_enemy()) then
+		return
+	end
+
+	local enemy_id = db.storage[npc:id()].enemy_id
+	local enemy = enemy_id and db.storage[enemy_id] and db.storage[enemy_id].object
+	if not (enemy) then
+		return
+	end
+
+	local smart = xr_gulag.get_npc_smart(enemy)
+	if not (smart) then
+		return
+	end
+
+	return p and smart:name() == p[1]
+end
 -- проверка того что дистанция до обьекта <= заданной
 -- параметры: [sid,dist]
 function distance_to_obj_on_job_le(actor, npc, p)
@@ -192,8 +267,9 @@ function distance_to_obj_on_job_le(actor, npc, p)
 		return false
 	end
 	local smart = xr_gulag.get_npc_smart(npc)
+	local npc_job
 	for k,v in pairs(smart.npc_info) do
-		local npc_job = smart.job_data[v.job_id]
+		npc_job = smart.job_data[v.job_id]
 		if npc_job.section == p[1] then
 			return npc:position():distance_to_sqr(v.se_obj.position) <= p[2]*p[2]
 		end
@@ -672,9 +748,27 @@ function has_enemy(actor, npc)
 	return npc:best_enemy() ~= nil
 end
 
+function has_pure_enemy(actor, npc)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
+	return be and be:alive()
+end
+
+function pure_enemy_mem_time_le(actor, npc, p)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
+	return p and p[1] and be and be:alive() and npc:memory_time(be) <= tonumber(p[1])
+end
+
 function has_actor_enemy(actor, npc)
 	local best_enemy = npc:best_enemy()
 	return best_enemy ~= nil and best_enemy:id() == db.actor:id()
+end
+
+function see_pure_enemy(actor,npc)
+	local st = db.storage[npc:id()]
+	local be = npc:best_enemy() or st and st.enemy_id and level.object_by_id(st.enemy_id)
+	return be and be:alive() and npc:see(be)
 end
 
 function see_enemy(actor, npc)
@@ -1816,3 +1910,148 @@ end
 function anim_state(actor,npc,p)
 	return p and p[1] and state_mgr.get_state(npc) == p[1]
 end
+
+function smart_empty(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board.smarts_by_names[p[1]]
+	if not (smart) then
+		return
+	end
+	local smart_id = smart.id
+	local sim = alife()
+	for k,v in pairs(board.smarts[smart_id].squads) do
+		if (v.id and sim:object(v.id)) then
+			return false
+		end
+	end
+	return true
+end
+
+function job_on_point(actor,npc,p)
+	-- p[1] = smart_name p[2] = logic p[3] = index p[4] = less_than_equal_to Distance p[5] = return true if object is dead or doesn't exist
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	if (not obj or not obj:alive()) then
+		return p[5] ~= nil
+	end
+
+	local st = db.storage[obj:id()]
+	local index = st.active_scheme and st.active_scheme == "beh" and alun_utils.load_var(obj,"path_index",nil) or obj:get_current_point_index()
+
+	if (p[4] and index == tonumber(p[3])) then
+		if (st.active_scheme and st.active_scheme == "beh") then
+			if (axr_beh.am_i_reached(obj)) then
+				return true
+			end
+			return false
+		end
+
+		local path = obj:patrol()
+		local pos = path and patrol(path):point(tonumber(p[3]))
+		local dist = pos and obj:position():distance_to_sqr(pos)
+		return dist <= tonumber(p[4])
+	end
+
+	return index == tonumber(p[3])
+end
+
+function beh_reached(actor,npc,p)
+	return p[1] and axr_beh.am_i_reached(npc,tonumber(p[1])) or axr_beh.am_i_reached(npc)
+end
+
+function obj_on_job(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	return obj and obj:alive()
+end
+
+function see_obj_on_job(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	return obj and obj:alive() and npc:memory_time(obj) < 5000
+end
+
+function obj_on_job_danger(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	return obj and db.storage[obj:id()].danger_flag
+end
+
+function obj_on_job_hit_by(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	if (not obj and not obj:alive()) then
+		return false
+	end
+
+	local id = db.storage[obj:id()].hitted_by
+	return id and id == npc:id()
+end
+
+
+function job_active_section(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	local st = obj and db.storage[obj:id()]
+	return st and st.active_section == p[3]
+end
+
+function weather_veryfoggy(actor,npc,p)
+	return string.find(level.get_weather(),"veryfoggy")
+end
+
+function npc_squad_has_enemy(actor,npc,p)
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return
+	end
+
+	local o
+	for k in squad:squad_members() do
+		o = level.object_by_id(k.object.id)
+		if (o and o:best_enemy()) then
+			return true
+		end
+	end
+end
+
+function hit_by_enemy_on_smart(actor,npc,p)
+	local id = db.storage[npc:id()].hitted_by
+	local who = id and level.object_by_id(id)
+	if (not who or not who:alive()) then
+		return
+	end
+
+	local smart = xr_gulag.get_npc_smart(who)
+	return p and p[1] and smart and smart:name() == p[1]
+end
+
+function squad_hit_by_smart(actor,npc,p)
+	local squad = get_object_squad(npc)
+	if not (squad) then
+		return
+	end
+
+	local who,smart
+	for k in squad:squad_members() do
+		who = db.storage[k.object.id].hitted_by and level.object_by_id(db.storage[k.object.id].hitted_by)
+		smart = who and xr_gulag.get_npc_smart(who)
+		if (smart and smart:name() == p[1]) then
+			return true
+		end
+	end
+	return false
+end
+

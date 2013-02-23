@@ -1,22 +1,15 @@
 -- axr_quest_master
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 function on_game_start()
 	callback_register("actor_on_item_take",on_item_take)
 end
 
 function alun_stashes()
-	-- Stash 1
-	--[[
-	local pos = vector():set(434.29071044922,42.37015914917,1.3976941108704)
-	local stash = alife():create("inv_backpack",pos,1677080,293)
-	create_items("medkit",2,stash.id)
-	create_items("stimpack",2,stash.id)
-	create_items("water_drink",1,stash.id)
-	create_items("itm_alun_journal_1",1,stash.id)
-	--]]
-
 	--[[
 	-- scare 1
 	-- create animpoint

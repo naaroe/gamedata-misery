@@ -1,9 +1,9 @@
 [up_sect_firsta_helm_respirator_heavy]
-cost 		= 5160
+cost 		= 6850
 inv_weight 				= 0.26
-value 		= +60
+value 		= +400
 
-telepatic_protection  			= 0.0360; 0.0
+telepatic_protection  			= 0.0520 ; 0.0
 
 [up_sect_firstc_helm_respirator_heavy]
 cost 		= 3380
@@ -23,10 +23,25 @@ radiation_protection 			= 0.0054 ;0.01
 
 immunities_sect_add = sect_helm_respirator_heavy_immunities_radiation_add
 
+[up_sect_seconc_helm_respirator_heavy]
+inv_weight 				= -0.041
+cost 		= 8280
+value		= +2
+
+nightvision_sect 				= effector_nightvision_2
+
+[up_sect_secone_helm_respirator_heavy]
+value		= +3
+inv_weight 				= +0.01
+cost 		= 4840
+value		= +3
+
+nightvision_sect 				= effector_nightvision_3
+
 [up_firsta_helm_respirator_heavy]
 scheme_index            = 0, 0
 known                   = 1
-effects                 = up_gr_firstcd_helm_respirator_heavy
+effects                 = ;  up_gr_firstcd_helm_respirator_heavy
 section                 = up_sect_firsta_helm_respirator_heavy
 property                = prop_psy
 
@@ -41,13 +56,13 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_res_a2_name
 description             = st_up_res_a2_descr
-icon                    = ui_inGame2_upgrade_helm_respirator_1
+icon                    = ui_inGame2_upgrade_helm_respirator_heavy_1
 
 
 [up_firstc_helm_respirator_heavy]
 scheme_index            = 1, 0
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firstc_helm_respirator_heavy
 property                = prop_chem
 
@@ -62,12 +77,12 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_res_b2_name
 description             = st_up_res_b2_descr
-icon                    = ui_inGame2_upgrade_helm_respirator_2
+icon                    = ui_inGame2_upgrade_helm_respirator_heavy_2
 
 [up_firstd_helm_respirator_heavy]
 scheme_index            = 1, 1
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firstd_helm_respirator_heavy
 property                = prop_radio
 
@@ -82,10 +97,56 @@ prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
 prereq_params           = 
 name                    = st_up_res_b3_name
 description             = st_up_res_b3_descr
-icon                    = ui_inGame2_upgrade_helm_respirator_3
+icon                    = ui_inGame2_upgrade_helm_respirator_heavy_3
+
+[up_seconc_helm_respirator_heavy]
+scheme_index            = 1, 2
+known                   = 1
+effects                 = up_gr_seconef_helm_respirator_heavy
+section                 = up_sect_seconc_helm_respirator_heavy
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_b1_name
+description             = st_up_resp_b1_descr
+icon                    = ui_inGame2_upgrade_helm_tactic_7
+
+[up_secone_helm_respirator_heavy]
+scheme_index            = 2, 0
+known                   = 1
+effects                 = ; 
+section                 = up_sect_secone_helm_respirator_heavy
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_c1_name
+description             = st_up_resp_c1_descr
+icon                    = ui_inGame2_upgrade_helm_battle_9
 
 [up_gr_firstab_helm_respirator_heavy]
 elements                = up_firsta_helm_respirator_heavy
 
 [up_gr_firstcd_helm_respirator_heavy]
 elements                = up_firstc_helm_respirator_heavy, up_firstd_helm_respirator_heavy
+
+[up_gr_seconcd_helm_respirator_heavy]
+elements                = up_seconc_helm_respirator_heavy
+
+[up_gr_seconef_helm_respirator_heavy]
+elements                = up_secone_helm_respirator_heavy

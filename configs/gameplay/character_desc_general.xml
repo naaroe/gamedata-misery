@@ -3197,6 +3197,35 @@
 
 			<!--  duty commando 1  -->
 
+<specific_character id="sim_default_duty_commando_sniper" team_default = "1">
+    <name>GENERATE_NAME_lieutenant</name>
+    <icon>ui_inGame2_Dolg_4</icon>
+    <map_icon x="1" y="0"></map_icon>
+    <bio>Опытный сталкер. Детальная информация отсутствует.</bio>
+
+    <class>sim_default_duty_commando_sniper</class>
+    <community>dolg</community> <terrain_sect>stalker_terrain</terrain_sect>
+    <snd_config>characters_voice\human_03\dolg\</snd_config>
+
+    <rank>55</rank>
+    <reputation>0</reputation>
+	<money min="2500" max="5000" infinitive="0"/>
+    <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
+    <supplies>
+      [spawn] \n
+		hand_radio = 1 \n
+
+#include "gameplay\character_items_3_nl.xml"
+#include "gameplay\character_food.xml"
+#include "gameplay\character_drugs_3.xml"
+#include "gameplay\character_drugs_mil.xml"
+#include "gameplay\character_drugs_duty_3.xml"
+
+#include "gameplay\character_sell_weapons.xml"
+    </supplies>
+#include "gameplay\character_criticals_4.xml"
+#include "gameplay\character_dialogs.xml"
+</specific_character>
   <specific_character id="sim_default_duty_commando_1_default_0" team_default = "1">
     <name>GENERATE_NAME_lieutenant</name>
     <icon>ui_inGame2_Dolg_4</icon>
@@ -3213,7 +3242,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+		hand_radio = 1 \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
@@ -3243,8 +3272,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
-
+	hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_3.xml"
@@ -3273,7 +3301,7 @@
     <supplies>
       [spawn] \n
 
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_3.xml"
@@ -3303,7 +3331,7 @@
     <supplies>
       [spawn] \n
 
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs_3.xml"
@@ -3331,7 +3359,7 @@
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
@@ -3360,7 +3388,7 @@
     <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
@@ -3389,7 +3417,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_food.xml"
@@ -3449,7 +3477,7 @@
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3479,7 +3507,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3510,7 +3538,7 @@
     <supplies>
       [spawn] \n
 
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3541,7 +3569,7 @@
     <supplies>
       [spawn] \n
 
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3603,7 +3631,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
@@ -3634,7 +3662,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3664,7 +3692,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3694,7 +3722,7 @@
     <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3724,7 +3752,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3754,7 +3782,7 @@
     <visual>actors\stalker_dolg\stalker_dolg2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3784,7 +3812,7 @@
     <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3814,7 +3842,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3844,7 +3872,7 @@
     <visual>actors\stalker_dolg\stalker_dolggas2a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3874,7 +3902,7 @@
     <visual>actors\stalker_dolg\stalker_dolgexo4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3904,7 +3932,7 @@
     <visual>actors\stalker_dolg\stalker_dolg4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3934,7 +3962,7 @@
     <visual>actors\stalker_dolg\stalker_dolg4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"
@@ -3964,7 +3992,7 @@
     <visual>actors\stalker_dolg\stalker_dolg4a</visual>
     <supplies>
       [spawn] \n
-
+hand_radio = 1 \n
 #include "gameplay\character_items_3_nl.xml"
 #include "gameplay\character_items_4_duty.xml"
 #include "gameplay\character_food.xml"

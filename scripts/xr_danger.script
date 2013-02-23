@@ -69,13 +69,29 @@ function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power)
 	if not (xr_combat_ignore.npc_in_safe_zone(npc)) then
 		local who = who_id and level.object_by_id(who)
 		if (who) then
+			if (xr_combat_ignore.ignore_enemy_by_overrides(npc,who)) then
+				return
+			end
+
 			if not (xr_wounded.is_wounded(npc)) then
-				s_type = string.lower(s_type)
-				--alun_utils.printf("SCRIPT DANGER sound_threshold= %s,%s,%s",DangerSoundThreshold[s_type][1],DangerSoundThreshold[s_type][2],DangerSoundThreshold[s_type][3])
-				if (DangerSoundThreshold[s_type] and dist <= DangerSoundThreshold[s_type][2]) then
-					if (DangerSoundThreshold[s_type][3] == 1 and npc:relation(who) == game_object.enemy) or (DangerSoundThreshold[s_type][3] == 0) then
-						set_script_danger(npc,DangerSoundThreshold[s_type][1] or 2000)
-						--alun_utils.printf("xr_hear: trigger script danger %s",s_type)
+				if (IsStalker(who)) then
+					s_type = string.lower(s_type)
+					--alun_utils.printf("SCRIPT DANGER sound_threshold= %s,%s,%s",DangerSoundThreshold[s_type][1],DangerSoundThreshold[s_type][2],DangerSoundThreshold[s_type][3])
+					if (DangerSoundThreshold[s_type] and dist <= DangerSoundThreshold[s_type][2]) then
+						if (DangerSoundThreshold[s_type][3] == 1 and npc:relation(who) == game_object.enemy) or (DangerSoundThreshold[s_type][3] == 0) then
+							if (s_type == "wpn_hit" and npc:relation(who) ~= game_object.enemy) then
+								set_script_danger(npc,8000)
+							else
+								set_script_danger(npc,DangerSoundThreshold[s_type][1] or 5000)
+							end
+							--alun_utils.printf("xr_hear: trigger script danger %s",s_type)
+						end
+					end
+				else
+					if (string.find(s_type,"MST")) then
+						if (dist < 1000) then
+							set_script_danger(npc,15000)
+						end
 					end
 				end
 			end
@@ -103,11 +119,8 @@ end
 
 function set_script_danger(npc,time)
 	local id = npc:id()
---	local squad = get_object_squad(npc)
---	if not (get_object_story_id(id) or (squad and get_object_story_id(squad.id))) then
-		script_danger[id] = {danger_time = time_global(), danger_inertion = time}
-		mem_danger[id] = nil
---	end
+	script_danger[id] = {danger_time = time_global(), danger_inertion = time}
+	mem_danger[id] = nil
 end
 
 function is_danger(npc)
@@ -154,7 +167,7 @@ function is_danger(npc)
 			end
 		end
 
-		if not xr_combat_ignore.is_enemy(npc, best_danger_object,db.storage[id].combat_ignore,false) then
+		if not xr_combat_ignore.is_enemy(npc, best_danger_object,true) then
 			return set_danger(false)
 		end
 

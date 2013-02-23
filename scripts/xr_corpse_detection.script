@@ -1,6 +1,10 @@
 ----------------------------------------------------------------------------------------------------------------------
 -- xr_corpse_detection
 -- Alundaio (original: Stohe)
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+--]]
 ----------------------------------------------------------------------------------------------------------------------
 local ini = ini_file("ai_tweaks\\xr_corpse_detection.ltx")
 local DeathTimeDanger = alun_utils.read_from_ini(ini,"settings","death_time_danger","string","60000")
@@ -133,6 +137,10 @@ function evaluator_corpse:evaluate()
 		return false
 	end
 
+	if (xr_help_wounded.is_under_help_wounded(npc)) then
+		return false
+	end
+
 	return this["eval_stage_"..self.a.stage](self.a,npc)
 end
 
@@ -238,6 +246,7 @@ function action_search_corpse:initialize()
 	npc:set_desired_direction()
 	npc:set_path_type(game_object.level_path)
 	npc:set_dest_level_vertex_id(self.a.vertex_id)
+	--utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
 
 	local corpse = db.storage[self.a.selected_corpse_id] and db.storage[self.a.selected_corpse_id].object
 	local dt_threshold = corpse and npc:relation(corpse) == game_object.friend and time_global() - corpse:death_time()
@@ -256,17 +265,25 @@ function action_search_corpse:execute()
 	local npc = self.object
 
 	local tg = time_global()
-	if (self.a.timer and tg > self.a.timer) then
-		--alun_utils.printf("%s Looting corpse due to hang time.",npc:name())
-		get_all_from_corpse(npc)
-		return
-	end
+
 
 	local dist = npc:position():distance_to(self.a.vertex_position)
 	if (dist < self.a.dist_run) then
 		state_mgr.set_state(self.object,"patrol")
 	else
 		state_mgr.set_state(self.object,"rush")
+	end
+
+	if (dist < 5 and not state_mgr.get_state(npc) == "search_corpse") then
+		if not (self.a.timer) then
+			self.a.timer = tg + 10000
+		end
+
+		if (self.a.timer and tg > self.a.timer) then
+			--alun_utils.printf("%s Looting corpse due to hang time.",npc:name())
+			get_all_from_corpse(npc)
+			return
+		end
 	end
 
 	if (dist < 1.3 or npc:level_vertex_id() == self.a.vertex_id) then
@@ -312,10 +329,6 @@ function action_search_corpse:execute()
 			end
 		end
 
-		if not (self.a.timer) then
-			self.a.timer = tg + 12000
-		end
-
 		if not self.sound then
 			if math.random() < 0.60 then
 				xr_sound.set_sound_play(npc:id(),"corpse_loot_begin")
@@ -324,11 +337,14 @@ function action_search_corpse:execute()
 		end
 
 		look_pos = corpse and corpse:bone_position("bip01_spine") or self.a.vertex_position
+
+		--self.object:clear_animations()
 		state_mgr.set_state(npc,"search_corpse",nil,nil,{look_position = look_pos})
 	else
 		if state_mgr.get_state(npc) == "search_corpse" then
 			state_mgr.set_state(npc,"rush")
 			npc:set_dest_level_vertex_id(self.a.vertex_id)
+			--utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
 		end
 	end
 end
@@ -342,7 +358,7 @@ function action_search_corpse:finalize()
 	self.sound = nil
 	self.a.timer = nil
 
-	self.object:set_item(object.strap,self.object:best_weapon()) -- fix freeze
+	--self.object:set_item(object.strap,self.object:best_weapon()) -- fix freeze
 
 --	state_mgr.set_state(self.object,"idle",nil,nil,nil,{fast_set = true})
 end
@@ -408,44 +424,42 @@ end
 -- BINDER
 ----------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, char_ini, scheme, section, st)
-	local operators	= {}
-	local properties  = {}
-
-
-	properties["corpse_exist"]				= xr_evaluators_id.corpse_exist
-	properties["wounded"]					= xr_evaluators_id.sidor_wounded_base
-
-	operators["search_corpse"]				= xr_actions_id.corpse_exist
-	operators["state_mgr_to_idle_alife"]	= xr_actions_id.state_mgr + 2
-
 	local manager = npc:motivation_action_manager()
 
 
 	if (character_community(npc) == "zombied" or npc:section() == "actor_visual_stalker") then
-		manager:add_evaluator(properties["corpse_exist"],property_evaluator_const(false))
+		manager:add_evaluator(xr_evaluators_id.corpse_exist,property_evaluator_const(false))
 	end
 
 	-- Evaluators
-	manager:add_evaluator (properties["corpse_exist"], 		evaluator_corpse("corpse_exist", st))
+	manager:add_evaluator (xr_evaluators_id.corpse_exist, evaluator_corpse("corpse_exist", st))
 
+	local wp = world_property
 	-- Actions
 	local action = action_search_corpse (npc:name(),"action_search_corpse", st)
-	action:add_precondition		(world_property(stalker_ids.property_alive, true))
-	action:add_precondition		(world_property(stalker_ids.property_enemy,	false))
-	action:add_precondition		(world_property(stalker_ids.property_danger,false))
-	action:add_precondition		(world_property(stalker_ids.property_anomaly,false))
-	action:add_precondition		(world_property(stalker_ids.property_items,false))
-	action:add_precondition		(world_property(properties["corpse_exist"],	true))
-	action:add_precondition		(world_property(properties["wounded"], 		false))
-	action:add_precondition 	(world_property(xr_evaluators_id.wounded_exist,		false))
-	action:add_effect (world_property(properties["corpse_exist"], 			false))
-	manager:add_action (operators["search_corpse"], action)
+	action:add_precondition(wp(stalker_ids.property_alive, true))
+	--action:add_precondition(wp(stalker_ids.property_enemy,	false))
+	action:add_precondition(wp(stalker_ids.property_danger,false))
+	action:add_precondition(wp(stalker_ids.property_anomaly,false))
+	--action:add_precondition(wp(stalker_ids.property_items,false))
+	action:add_precondition(wp(xr_evaluators_id.corpse_exist, true))
+	--action:add_precondition(wp(xr_evaluators_id.sidor_wounded_base, false))
+	action:add_precondition(wp(xr_evaluators_id.wounded_exist, false))
+	action:add_effect(wp(xr_evaluators_id.corpse_exist, false))
+	manager:add_action(xr_actions_id.corpse_exist, action)
 
-	action = manager:action(xr_actions_id.alife)
-	action:add_precondition(world_property(properties["corpse_exist"],false))
-
-	action = manager:action(operators["state_mgr_to_idle_alife"])
-	action:add_precondition(world_property(properties["corpse_exist"],false))
+	local p = {
+				stalker_ids.action_smart_terrain_task,
+				xr_actions_id.alife,
+				xr_actions_id.state_mgr + 1,
+				xr_actions_id.state_mgr + 2,
+				xr_actions_id.state_mgr + 3,
+				--stalker_ids.action_alife_planner
+	}
+	for i=1,#p,1 do
+		action = manager:action(p[i])
+		action:add_precondition( wp(xr_evaluators_id.corpse_exist,false) )
+	end
 end
 
 function set_corpse_detection(npc, ini, scheme, section)

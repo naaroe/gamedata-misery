@@ -1,8 +1,10 @@
 --[[	axr_companions
 
 by Alundaio
---]]
 
+	Copyright (C) 2012 Alundaio
+	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+-]]
 function on_game_start()
 	local ini = ini_file("ai_tweaks\\axr_companions.ltx")
 	Enabled = alun_utils.read_from_ini(ini,"main","enable","bool",false)

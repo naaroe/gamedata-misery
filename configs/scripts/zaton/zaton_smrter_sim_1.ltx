@@ -1,0 +1,290 @@
+[logic@assault_job_1]
+active = beh@assault_job_1
+suitable = true
+prior = 200
+
+[logic@assault_job_2]
+active = beh@assault_job_2
+suitable = true
+prior = 200
+
+[logic@assault_job_3]
+active = beh@assault_job_3
+suitable = {=check_npc_name(commando_sniper)}, true
+prior = 200
+
+[logic@assault_job_4]
+active = beh@assault_job_4
+suitable = true
+prior = 200
+
+[logic@assault_job_5]
+active = beh@assault_job_5
+suitable = true
+prior = 200
+
+[logic@assault_job_6]
+active = beh@assault_job_6
+suitable = true
+prior = 200
+
+;-------------------------------------------- ANIMPOINT SCHEME
+;N=0,0,-1 E=-1,0,0 S=0,0,1 W=1,0,0
+
+[meet@assault_animpoint_meet]
+close_anim 		= nil
+close_victim 	= nil
+far_anim 		= nil
+far_victim 		= nil
+close_distance 	= 0
+far_distance 	= 0
+use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
+snd_on_use = {!dist_to_actor_le(3)} nil
+meet_on_talking = false
+
+[animpoint@assault_animp_gen]
+meet = meet@assault_animpoint_meet
+
+;------------------------------------------- BEH SCHEME
+
+[beh@general]
+corpse_detection_enabled = false
+gather_items_enabled = false
+behavior_state = beh_move
+target = waypoint
+walk_dist = 50
+jog_dist = 120
+run_dist = 400
+wait_anim = hide
+walk_anim = sneak_run
+jog_anim = sneak_run
+run_anim = rush
+sprint_anim = sprint
+delay_anim = guard
+combat_ignore_cond = {=enemy_smart(zat_b40_smart_terrain)} true
+
+[camper@general]
+corpse_detection_enabled = false
+gather_items_enabled = false
+def_state_moving = sneak_run
+shoot = always
+
+
+;-------------------Assault Job 1
+[beh@assault_job_1]:beh@general
+pt1 = 1732591
+path_end = beh@assault_job_1_reached
+on_info = {=surge_started} beh@assault_job_1_surge
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[beh@assault_job_1_reached]:beh@general
+pt1 = 1732591,35000,binocular look:465,34,-419
+pt2 = 1732591,60000,hide look:475,34,-419
+path_end = loop
+on_info = {=surge_started} beh@assault_job_1_surge
+on_game_timer = 320 | beh@assault_job_1_issue_orders
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[beh@assault_job_1_issue_orders]:beh@general
+pt1 = 1732591,10000,hide_rac look:465,34,-419
+pt2 = 1732591,10000,give_orders look:465,34,-419
+path_end = beh@assault_job_1_sneak_wait
+on_info = {=surge_started} beh@assault_job_1_surge
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[beh@assault_job_1_sneak_wait]:beh@general
+pt1 = 1649322,0,hide look:418,36,-408
+path_end = {=job_on_point(zat_b40_smart_terrain:zat_b40_guard_03:1:15:true)} beh@assault_job_1_sneak_1
+on_info = {=surge_started} beh@assault_job_1_surge
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[beh@assault_job_1_sneak_1]:beh@general
+pt1 = 1646029
+pt2 = 1599275
+pt3 = 1589764,10000,hide look:382,35,-416
+pt4 = 1522012,5000,hide look:320,33,-420
+path_end = {=job_on_point(zat_b40_smart_terrain:zat_b40_guard_01:2:30:true)} beh@assault_job_1_sneak_2
+on_info = {=surge_started} beh@assault_job_1_surge
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[beh@assault_job_1_sneak_2]:beh@general
+pt1 = 1527197,30000,hide look:342,34,-398
+path_end = camper@assault_job_1_attack
+on_info = {=surge_started} beh@assault_job_1_surge
+on_info2 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_1_attack
+
+[camper@assault_job_1_attack]:camper@general
+pt1 = 1527197,40000 look:342,34,-398
+pt2 = 1536070,5000 look:345,34,-391
+pt3 = 1539510,5000 look:324,34,-389
+pt4 = 1536070,5000 look:333,34,-396
+pt5 = 1536078,5000 look:351,38,-398
+pt6 = 1536078,5000 look:318,40,-394
+pt7 = 1542855 look:332,40,-397
+on_info = {=surge_started} beh@assault_job_1_surge
+
+;-------------------Assault Job 2
+[beh@assault_job_2]:beh@general
+pt1 = 1720349
+pt2 = 1712411,0,prone look:417,35,-415
+on_info = {=surge_started} beh@assault_job_2_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_wait)} beh@assault_job_2_sneak_wait
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_2_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_2_attack
+
+[beh@assault_job_2_sneak_wait]:beh@general
+pt1 = 1650454,0,hide look:417,35,-415
+on_info = {=surge_started} beh@assault_job_2_surge
+on_info2 = {=beh_reached(1) =job_on_point(zat_b40_smart_terrain:zat_b40_guard_03:1:15:true)} beh@assault_job_2_sneak_1
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_2_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_2_attack
+
+[beh@assault_job_2_sneak_1]:beh@general
+pt1 = 1569233,5000,hide
+path_end = {=job_on_point(zat_b40_smart_terrain:zat_b40_guard_01:2:30:true)} beh@assault_job_2_sneak_2
+on_info = {=surge_started} beh@assault_job_2_surge
+on_info3 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_2_attack
+
+[beh@assault_job_2_sneak_2]:beh@general
+pt1 = 1489203,65000,hide look:315,34,-419
+on_info = {=surge_started} beh@assault_job_2_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_2_attack
+on_info3 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_4_attack
+
+[camper@assault_job_2_attack]:camper@general
+pt1 = 1458701,5000 look:488,39,-397
+pt2 = 1458739,5000 look:316,40,-389
+pt3 = 1459846,5000 look:302,34,-398
+pt4 = 1476654,5000 look:306,35,-393
+pt5 = 1491322,5000 look:321,34,-396
+pt6 = 1492349,5000 look:324,29,-393
+pt7 = 1499896 look:324,38,-399
+on_info = {=surge_started} beh@assault_job_2_surge
+
+;-------------------Assault Job 3
+[beh@assault_job_3]:beh@general
+pt1 = 1661587,0,prone look:401,35,-338
+on_info = {=surge_started} beh@assault_job_3_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_1)} beh@assault_job_3_wait
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_3_attack
+
+[beh@assault_job_3_wait]:beh@general
+pt1 = 1629817 look:357,39,-345
+on_info = {=surge_started} beh@assault_job_3_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_3_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_3_attack
+
+[camper@assault_job_3_attack]:camper@general
+sniper = true
+pt1 = 1595039 look:395,40,-386
+on_info = {=surge_started} beh@assault_job_3_surge
+
+;-------------------Assault Job 4
+[beh@assault_job_4]:beh@general
+pt1 = 1734640,0,hide look:464,34,-410
+on_info = {=surge_started} beh@assault_job_4_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_wait)} beh@assault_job_4_sneak_wait
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_4_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_4_attack
+
+[beh@assault_job_4_sneak_wait]:beh@general
+pt1 = 1650460,20000,hide look:425,35,-421
+on_info = {=surge_started} beh@assault_job_4_surge
+on_info2 = {=beh_reached(1) =job_on_point(zat_b40_smart_terrain:zat_b40_guard_03:1:15:true)} beh@assault_job_4_sneak_1
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_4_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_4_attack
+
+[beh@assault_job_4_sneak_1]:beh@general
+pt1 = 1646029
+pt2 = 1606663,20000,hide look:388,33,-430
+pt3 = 1542832,3000,hide look:361,35,-416
+path_end = {=job_on_point(zat_b40_smart_terrain:zat_b40_guard_01:2:30:true)} beh@assault_job_4_sneak_2
+on_info = {=surge_started} beh@assault_job_4_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_4_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_4_attack
+
+[beh@assault_job_4_sneak_2]:beh@general
+pt1 = 1524094,30000,hide look:334,34,-396
+on_info = {=surge_started} beh@assault_job_4_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_4_attack
+on_info3 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_4_attack
+
+[camper@assault_job_4_attack]:camper@general
+pt1 = 1524094,45000 look:334,34,-396
+pt2 = 1522043,5000 look:327,33,-396
+pt3 = 1524094,15000 look:334,34,-396
+pt4 = 1509989,15000 look:321,39,-396
+pt5 = 1517835 look:325,44,-395
+pt6 = 1509989 look:333,39,-396
+on_info = {=surge_started} beh@assault_job_4_surge
+
+;-------------------Assault Job 5
+[beh@assault_job_5]:beh@general
+pt1 = 1720358,0,hide look:417,35,-414
+pt2 = 1719370,0,prone look:417,35,-414
+on_info = {=surge_started} beh@assault_job_5_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_wait)} beh@assault_job_5_sneak_wait
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_5_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_5_attack
+
+[beh@assault_job_5_sneak_wait]:beh@general
+pt1 = 1659157,0,hide
+on_info = {=surge_started} beh@assault_job_5_surge
+on_info2 = {=beh_reached(1) =job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_1) =job_on_point(zat_b40_smart_terrain:zat_b40_guard_03:1:7)} beh@assault_job_5_sneak_1
+on_info3 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_5_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_5_attack
+
+[beh@assault_job_5_sneak_1]:beh@general
+pt1 = 1646029
+pt2 = 1591786,0,hide
+on_info = {=surge_started} beh@assault_job_4_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:camper@assault_job_1_attack)} camper@assault_job_5_attack
+on_info4 = {=squad_hit_by_smart(zat_b40_smart_terrain)} camper@assault_job_5_attack
+
+[camper@assault_job_5_attack]:camper@general
+pt1 = 1589763,10000,hide look:378,33,-420
+pt2 = 1512663,0,hide
+pt3 = 1532793,0,hide look:342,34,-398
+on_info = {=surge_started} beh@assault_job_4_surge
+
+;-------------------Assault Job 6
+[beh@assault_job_6]:beh@general
+pt1 = 1752132,0,hide look:492,32,-400
+on_info = {=surge_started} beh@assault_job_6_surge
+on_info2 = {=job_active_section(zaton_smrter_sim_1:assault_job_1:beh@assault_job_1_sneak_wait)} beh@assault_job_6_sneak_wait
+
+;pt1 = 1589763,0,hide
+
+;--------------
+;beh surge
+;--------------
+
+[beh@assault_job_1_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_1
+
+[beh@assault_job_2_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_2
+
+[beh@assault_job_3_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_3
+
+[beh@assault_job_4_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_4
+
+[beh@assault_job_5_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_5
+
+[beh@assault_job_6_surge]:beh@general
+walk_anim = rush
+pt1 = 1647522,0,sit_ass look:417.13940429688,36.26309967041,-13.190529823303
+on_info = {=surge_complete} beh@assault_job_6

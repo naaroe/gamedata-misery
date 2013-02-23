@@ -480,6 +480,36 @@ local function reset_animation(npc)
 
 end
 
+function teleport_npc_lvid(actor,npc,p)
+	local vid = tonumber(p[1])
+	if not (vid) then
+		return
+	end
+	local position = level.vertex_position(vid)
+	if (p[2]) then
+		local obj = get_story_object_id(p[2])
+		if (obj) then
+			obj:set_npc_position(position)
+		end
+		return
+	end
+	npc:set_npc_position(position)
+end
+
+function teleport_squad_lvid(actor,npc,p)
+	local vid = tonumber(p[1])
+	if not (vid) then
+		return
+	end
+
+	local squad = p[2] and get_story_squad(p[2]) or get_object_squad(npc)
+	if not (squad) then
+		return
+	end
+
+	local position = level.vertex_position(vid)
+	squad:set_squad_position(position)
+end
 
 function teleport_npc(actor, npc, p)
 	local patrol_point = p[1]
@@ -497,6 +527,7 @@ function teleport_npc_by_story_id(actor, npc, p)
 	local story_id = p[1]
 	local patrol_point = p[2]
 	local patrol_point_index = p[3] or 0
+
 	if story_id == nil or patrol_point == nil then
 		abort("Wrong parameters in 'teleport_npc_by_story_id' function!!!")
 	end
@@ -518,6 +549,7 @@ function teleport_squad(actor, npc, p)
 	local squad_story_id = p[1]
 	local patrol_point = p[2]
 	local patrol_point_index = p[3] or 0
+	--alun_utils.printf("teleport squad [%s][%s][%s]",p[1],p[2],p[3])
 	if squad_story_id == nil or patrol_point == nil then
 		abort("Wrong parameters in 'teleport_squad' function!!!")
 	end
@@ -783,13 +815,13 @@ end
 Дать сталкеру небольшой пинок после смерти. Аналогично предыдущему, только направление хита теперь
 вычисляется через убийцу. Поэтому параметра direction нет.
 параметры: actor, npc, p[bone,power,impulse]
-FIXME: killer:position() isn't working
+FIXME: killer:position() isn't working <-(Because you are fucking stupid)
 --]]
 function hit_by_killer(actor, npc, p)
 	if not npc then return end
 	local t = db.storage[npc:id()].death
 	if t == nil or t.killer == -1 then return end
-	local killer = db.storage[t.killer]
+	local killer = db.storage[t.killer].object
 	if killer == nil then return end
 	local p1, p2
 	p1 = npc:position()
@@ -906,7 +938,34 @@ function remove_npc(actor, npc, p)
 		npc_id = get_story_object_id(p[1])
 	end
 	if npc_id ~= nil then
-		alife():release(alife():object(npc_id), true)
+		local sim = alife()
+		if (axr_main) then
+			-- safe destroy
+			local sobj = sim:object(npc_id)
+			if (sobj and sobj.online and IsStalker(sobj)) then
+				local squad = get_object_squad(sobj)
+				if (squad) then
+					squad:switch_offline()
+					sim:set_switch_online(squad.id,false)
+					sim:set_switch_offline(squad.id,true)
+					alun_utils.printf("xr_effects:remove_npc: squad switch offline")
+				else
+					sobj:switch_offline()
+					sim:set_switch_online(sobj.id,false)
+					sim:set_switch_offline(sobj.id,true)
+					alun_utils.printf("xr_effects:remove_npc: npc switch offline")
+				end
+				local npc = level.object_by_id(sobj.id)
+				local st = npc and db.storage[sobj.id]
+				if (st) then
+					alun_utils.printf("xr_effects:remove_npc: npc switch_to_section nil")
+					xr_logic.switch_to_section(npc, st.ini, "nil")
+				end
+				create_delayed_object_event(sobj.id,10,alun_utils.release)
+				return
+			end
+		end
+		sim:release(sim:object(npc_id), true)
 	end
 end
 
@@ -1426,7 +1485,41 @@ function destroy_object(actor, obj, p)
 	if sobj == nil then
 		return
 	end
-	printf("releasing object ["..sobj:name().."]")
+
+	if (axr_main and sobj.online) then
+		-- safe destroy
+		if (IsStalker(sobj)) then
+			local squad = get_object_squad(sobj)
+			if (squad) then
+				local sim = alife()
+				squad:switch_offline()
+				sim:set_switch_online(squad.id,false)
+				sim:set_switch_offline(squad.id,true)
+				alun_utils.printf("xr_effects:destroy_object: squad switch offline")
+			else
+				local sim = alife()
+				sobj:switch_offline()
+				sim:set_switch_online(sobj.id,false)
+				sim:set_switch_offline(sobj.id,true)
+				alun_utils.printf("xr_effects:destroy_object: npc switch offline")
+			end
+			local npc = level.object_by_id(sobj.id)
+			local st = npc and db.storage[sobj.id]
+			if (st) then
+				alun_utils.printf("xr_effects:destroy_object: npc switch_to_section nil")
+				xr_logic.switch_to_section(npc, st.ini, "nil")
+			end
+		else
+			local sim = alife()
+			sobj:switch_offline()
+			sim:set_switch_online(sobj.id,false)
+			sim:set_switch_offline(sobj.id,true)
+			alun_utils.printf("xr_effects:destroy_object: sobj switch offline")
+		end
+		create_delayed_object_event(sobj.id,10,alun_utils.release)
+		return
+	end
+
 	alife():release(sobj, true)
 end
 
@@ -3579,4 +3672,37 @@ function spawn_npc_at_position(actor,npc,p)
 	alife():create(p[1],pos,p[5],p[6])
 end
 
+function kill_obj_on_job(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	if not obj or not obj:alive() then
+		return false
+	end
+	local h = hit()
 
+	h:bone("bip01_neck")
+	h.power = 1
+	h.impulse = 1
+	h.direction = vector():sub(npc:position(), obj:position())
+	h.draftsman = npc
+	h.type = hit.wound
+	obj:hit(h)
+end
+
+function obj_at_job_switch_section(actor,npc,p)
+	local board = sim_board.get_sim_board()
+	local smart = p[1] and board and board.smarts_by_names[p[1]]
+	local obj = smart and smart.npc_by_job_section["logic@"..p[2]]
+	obj = obj and level.object_by_id(obj)
+	if not obj or not obj:alive() then
+		return
+	end
+
+	local st = db.storage[obj:id()]
+	if not (st) then
+		return
+	end
+	xr_logic.switch_to_section(obj, st.ini, p[3])
+end

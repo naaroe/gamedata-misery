@@ -485,6 +485,11 @@ function npc_freedom(first_speaker, second_speaker)
 	return character_community(npc) == "freedom"
 end
 
+function npc_killer(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return character_community(npc) == "killer"
+end
+
 function npc_dolg(first_speaker, second_speaker)
 	local npc = who_is_npc(first_speaker, second_speaker)
 	return character_community(npc) == "dolg"
@@ -493,6 +498,11 @@ end
 function npc_army(first_speaker, second_speaker)
 	local npc = who_is_npc(first_speaker, second_speaker)
 	return character_community(npc) == "army"
+end
+
+function npc_ecolog(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return character_community(npc) == "ecolog"
 end
 -----------------------------------------------------------------------------------
 -- Money functions

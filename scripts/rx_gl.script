@@ -1,6 +1,10 @@
 ---- Rulix aka Bak --- 8.5.2009
 -- создано на базе схемы метания гранат от   xStream  (xrs_grenade.script)
-
+--modified by Alundaio
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ---------------------------------
 evid_gl_fire = 18801
 evid_gl_reload = evid_gl_fire+1

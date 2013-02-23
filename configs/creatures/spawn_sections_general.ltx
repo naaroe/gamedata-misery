@@ -129,10 +129,16 @@ community = dolg
 
 ;---------------------------------------------------
 
+[sim_default_duty_commando_sniper]:stalker_duty_master
+$spawn                     = "respawn\sim_default_duty_4"
+character_profile     = sim_default_duty_commando_sniper
+spec_rank = master
+community = dolg
+
 [sim_default_duty_commando_1]:stalker_duty_veteran
 $spawn                     = "respawn\sim_default_duty_4"
-character_profile     = sim_default_duty_4
-spec_rank = master
+character_profile     = sim_default_duty_commando_1
+spec_rank = veteran
 community = dolg
 
 ;---------------------------------------------------
@@ -143,7 +149,7 @@ community = dolg
 
 [sim_default_duty_commando_2]:stalker_duty_master
 $spawn                     = "respawn\sim_default_duty_4"
-character_profile     = sim_default_duty_4
+character_profile     = sim_default_duty_commando_2
 spec_rank = master
 community = dolg
 
@@ -676,16 +682,3 @@ $spawn 					= "respawn\actor_visual_stalker"
 character_profile 		= actor_visual_stalker
 set_visual 				= actor_visual
 
-
-;***** test_killer *****
-
-[test_killer]:stalker
-$spawn                     = "respawn\test_killer"
-character_profile     = test_killer
-spec_rank = novice
-community = killer
-
-[conrack_selo_stalker]:stalker
-$spawn                     = "respawn\conrack_selo_stalker"
-character_profile     = jup_b6_freedom_stalker_1
-set_visual 				= actor_visual

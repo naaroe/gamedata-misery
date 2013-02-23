@@ -314,35 +314,22 @@ end
 -- BINDER
 ----------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, char_ini, scheme, section, st)
-	local operators	= {}
-	local properties  = {}
-
-
-	properties["wounded_exist"]				= xr_evaluators_id.wounded_exist
-	properties["wounded"]					= xr_evaluators_id.sidor_wounded_base
-
-	operators["help_wounded"]				= xr_actions_id.wounded_exist
-	operators["state_mgr_idle_combat"]	= xr_actions_id.state_mgr + 1
-	operators["state_mgr_to_idle_alife"]	= xr_actions_id.state_mgr + 2
-	operators["state_mgr_to_idle_items"]	= xr_actions_id.state_mgr + 3
-
 	local manager = npc:motivation_action_manager()
-
 
 	-- Evaluators
 	if (character_community(npc) == "zombied" or npc:section() == "actor_visual_stalker") then
-		manager:add_evaluator(properties["wounded_exist"],property_evaluator_const(false))
+		manager:add_evaluator(xr_evaluators_id.wounded_exist,property_evaluator_const(false))
 		return
 	end
 
-	manager:add_evaluator (properties["wounded_exist"], evaluator_wounded_exist("wounded_exist", st))
+	manager:add_evaluator (xr_evaluators_id.wounded_exist, evaluator_wounded_exist("wounded_exist", st))
 
 	local wp = world_property
 
 	-- Actions
 	local action = action_help_wounded (npc:name(),"action_help_wounded", st)
 	action:add_precondition( wp(stalker_ids.property_alive, true) )
-	action:add_precondition( wp(properties["wounded_exist"], true) )
+	action:add_precondition( wp(xr_evaluators_id.wounded_exist, true) )
 
 	local vis = npc:get_visual_name()
 	if (HelpInCombat == false and HelpInCombatVisuals[vis] == nil) then
@@ -351,29 +338,30 @@ function add_to_binder(npc, char_ini, scheme, section, st)
 	end
 
 	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
-	action:add_precondition( wp(properties["wounded"], false) )
+	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base, false) )
 
-	action:add_effect(wp(properties["wounded_exist"], false) )
-	manager:add_action(operators["help_wounded"], action)
-
-	action = manager:action(xr_actions_id.alife)
-	action:add_precondition( wp(properties["wounded_exist"],false) )
-
-	action = manager:action(operators["state_mgr_idle_combat"])
-	action:add_precondition( wp(properties["wounded_exist"],false) )
-
-	action = manager:action(operators["state_mgr_to_idle_alife"])
-	action:add_precondition( wp(properties["wounded_exist"],false) )
-
-	action = manager:action(operators["state_mgr_to_idle_items"])
-	action:add_precondition( wp(properties["wounded_exist"],false) )
+	action:add_effect(wp(xr_evaluators_id.wounded_exist, false) )
+	manager:add_action(xr_actions_id.wounded_exist, action)
 
 	--action = manager:action(stalker_ids.action_danger_planner)
 	--action:add_precondition( wp(properties["wounded_exist"],false) )
 
 	if (HelpInCombat or HelpInCombatVisuals[vis]) then
 		action = manager:action(stalker_ids.action_combat_planner)
-		action:add_precondition( wp(properties["wounded_exist"],false) )
+		action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
+	end
+
+	local p = {
+				xr_actions_id.state_mgr + 1,
+				xr_actions_id.state_mgr + 2,
+				xr_actions_id.state_mgr + 3,
+				xr_actions_id.alife
+				--stalker_ids.action_combat_planner,
+				--stalker_ids.action_alife_planner
+	}
+	for i=1,#p,1 do
+		action = manager:action(p[i])
+		action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
 	end
 end
 

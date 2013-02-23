@@ -97,12 +97,17 @@ function updateNV(battery)
 		level.remove_pp_effector(nnEffectId)
 	end
 
-	local helmet = db.actor:alive() and (db.actor:item_in_slot(12) or db.actor:get_current_outfit())
-	local nv = helmet and alun_utils.read_from_ini(nil,helmet:section(),"nightvision_sect","string",nil) and db.actor:object("device_torch")
+	--local helmet = db.actor:alive() and (db.actor:item_in_slot(12) or db.actor:get_current_outfit())
+	local nv = db.actor:object("device_torch")
 	local enabled = nv and nv:night_vision_enabled()
-	if enabled and battery then
-		-- battery check
+	if enabled then
 		nnEffectIsOn = 1
+		-- battery check
+		if not (battery) then
+			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			return
+		end
+
 		local batcon = battery:condition()
 		if batcon > 0.9 then
 			level.add_pp_effector("nightvision_mis_100.ppe", nnEffectId, true)
@@ -124,6 +129,8 @@ function updateNV(battery)
 			level.add_pp_effector("nightvision_mis_20.ppe", nnEffectId, true)
 		else
 			level.add_pp_effector("nightvision_mis_10.ppe", nnEffectId, true)
+			if (itms_manager) then itms_manager.show_message("Low battery power",35) end
+			nv:enable_night_vision(false)
 		end
 		updateBatteryCondition(battery, batcon, "nv")
 	else

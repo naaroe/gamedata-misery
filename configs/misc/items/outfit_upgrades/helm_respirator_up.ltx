@@ -23,10 +23,32 @@ radiation_protection 			= 0.0054 ;0.01
 
 immunities_sect_add = sect_helm_respirator_immunities_radiation_add
 
+[up_sect_secona_helm_respirator]
+value		= 1
+inv_weight 				= +1.54
+cost 		= 4880
+
+nightvision_sect 				= effector_nightvision_1
+
+[up_sect_seconc_helm_respirator]
+inv_weight 				= -0.041
+cost 		= 8280
+value		= +2
+
+nightvision_sect 				= effector_nightvision_2
+
+[up_sect_secone_helm_respirator]
+value		= +3
+inv_weight 				= +0.01
+cost 		= 4840
+value		= +3
+
+nightvision_sect 				= effector_nightvision_3
+
 [up_firsta_helm_respirator]
 scheme_index            = 0, 0
 known                   = 1
-effects                 = up_gr_firstcd_helm_respirator
+effects                 = ;  up_gr_firstcd_helm_respirator
 section                 = up_sect_firsta_helm_respirator
 property                = prop_psy
 
@@ -47,7 +69,7 @@ icon                    = ui_inGame2_upgrade_helm_respirator_1
 [up_firstc_helm_respirator]
 scheme_index            = 1, 0
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firstc_helm_respirator
 property                = prop_chem
 
@@ -67,7 +89,7 @@ icon                    = ui_inGame2_upgrade_helm_respirator_2
 [up_firstd_helm_respirator]
 scheme_index            = 1, 1
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firstd_helm_respirator
 property                = prop_radio
 
@@ -84,8 +106,77 @@ name                    = st_up_res_b3_name
 description             = st_up_res_b3_descr
 icon                    = ui_inGame2_upgrade_helm_respirator_3
 
+[up_secona_helm_respirator]
+scheme_index            = 0, 1
+known                   = 1
+effects                 = up_gr_seconcd_helm_respirator  
+section                 = up_sect_secona_helm_respirator
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_a1_name
+description             = st_up_resp_a1_descr
+icon                    = ui_inGame2_upgrade_helm_hardhat_4
+
+[up_seconc_helm_respirator]
+scheme_index            = 1, 2
+known                   = 1
+effects                 = up_gr_seconef_helm_respirator 
+section                 = up_sect_seconc_helm_respirator
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_b1_name
+description             = st_up_resp_b1_descr
+icon                    = ui_inGame2_upgrade_helm_tactic_7
+
+[up_secone_helm_respirator]
+scheme_index            = 2, 0
+known                   = 1
+effects                 = ; 
+section                 = up_sect_secone_helm_respirator
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_c1_name
+description             = st_up_resp_c1_descr
+icon                    = ui_inGame2_upgrade_helm_battle_9
+
 [up_gr_firstab_helm_respirator]
 elements                = up_firsta_helm_respirator
 
 [up_gr_firstcd_helm_respirator]
 elements                = up_firstc_helm_respirator, up_firstd_helm_respirator
+
+[up_gr_seconab_helm_respirator]
+elements                = up_secona_helm_respirator
+
+[up_gr_seconcd_helm_respirator]
+elements                = up_seconc_helm_respirator
+
+[up_gr_seconef_helm_respirator]
+elements                = up_secone_helm_respirator

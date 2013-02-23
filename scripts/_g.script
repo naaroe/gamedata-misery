@@ -580,7 +580,6 @@ function start_game_callback()
 	smart_names.init_smart_names_table()
 	task_manager.clear_task_manager()
 	sound_theme.load_sound()
-	xr_sound.start_game_callback()
 	dialog_manager.fill_phrase_table()
 	xr_s.init()
 	sim_objects.clear()
@@ -629,11 +628,17 @@ end
 
 function give_info (info)
 	db.actor:give_info_portion(info)
+	if (xrs_debug_tools and xrs_debug_tools.actor_info) then
+		xrs_debug_tools.actor_info[info] = true
+	end
 end
 function disable_info (info)
 	if has_alife_info(info) then
 		printf("*INFO*: disabled npc='single_player' id='%s'", info)
 		db.actor:disable_info_portion(info)
+		if (xrs_debug_tools and xrs_debug_tools.actor_info) then
+			xrs_debug_tools.actor_info[info] = nil
+		end
 	end
 end
 

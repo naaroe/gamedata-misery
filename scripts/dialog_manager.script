@@ -3,6 +3,8 @@
 -- Made by Peacemaker ----------------------------------------------------------
 -- 11.01.08 --------------------------------------------------------------------
 --------------------------------------------------------------------------------
+-- modified by Alundaio
+
 disabled_phrases = {} -- temporary table of phrases which have been disabled during a conversation
 local quest_disabled_phrases = {} -- temporary table of phrases which have been disabled during a conversation
 local id_counter = 5 -- start from 5 because of adding root phrases
@@ -220,13 +222,13 @@ function init_start_dialogs(dialog, str)
 	add_dialog(0,1,"",nil,"dialog_manager.fill_priority_"..str.."_table")
 
 	local ph
-	local p
+	local p,d
 	local script
 	for k,v in pairs(phrase_table[str]) do
-		ph = true
 		if (v.wounded == "true") then
 			script = add_dialog(1,v.id,v.name,{"dialogs.is_wounded","dialog_manager.precondition_"..str.."_dialogs"},"dialog_manager.action_"..str.."_dialogs")
 			if (script) then
+				ph = true
 				p = {}
 				for i=1,9 do
 					table.insert(p,get_id())
@@ -238,7 +240,7 @@ function init_start_dialogs(dialog, str)
 				add_dialog(v.id,p[4],"dm_wounded_medkit",{"dialogs.victim_no_surrender","dialogs.actor_have_medkit","dialogs.npc_is_not_surrendered"},{"dialogs.transfer_medkit","dialogs.break_dialog"})
 				add_dialog(v.id,p[5],"dm_wounded_sorry",{"dialogs.victim_no_surrender","dialogs.npc_is_not_surrendered"},"dialogs.break_dialog")
 				add_dialog(v.id,p[6],"st_surrender_query_victim_3","dialogs.victim_surrender","dialogs.break_dialog")
-					local d = add_dialog(p[1],p[7],"I smoke crack!")
+					d = add_dialog(p[1],p[7],"I smoke crack!")
 						d:SetScriptText("dialogs.surrender_victim_answers_1")
 					d = add_dialog(p[2],p[7],"I smoke crack! sadf")
 						--d:SetScriptText("dialogs.surrender_victim_answers_1")
@@ -249,6 +251,7 @@ function init_start_dialogs(dialog, str)
 			end
 		else
 			add_dialog(1,v.id,v.name,{"dialogs.is_not_wounded","dialog_manager.precondition_"..str.."_dialogs"},"dialog_manager.action_"..str.."_dialogs")
+			ph = true
 		end
 	end
 	if not(ph) then
@@ -267,56 +270,45 @@ function init_new_dialog(dialog)
 						 [1] = "dm_universal_npc_start_0",
 						 [2] = "dm_universal_npc_start_1",
 						 [3] = "dm_universal_npc_start_2",
-						 [4] = "dm_universal_npc_start_3",
+						 [4] = "dm_universal_npc_start_3"
 						}
 	local precond_table = {
 						 [1] = "dialogs.npc_stalker",
 						 [2] = "dialogs.npc_bandit",
 						 [3] = "dialogs.npc_freedom",
 						 [4] = "dialogs.npc_dolg",
+						 [5] = "dialogs.npc_killer"
 						}
 
-	printf("init_new_actor_dialog")
+	saved_dialog = dialog
+	add_dialog("",0,"dm_universal_actor_start")
 
-	local actor_phrase = dialog:AddPhrase("dm_universal_actor_start", tostring(0), "", -10000)
-	local actor_script = actor_phrase:GetPhraseScript()
+	local ph,id,str
+	for j = 1, 5 do
 
-	for j = 1, 4 do
-		local npc_phrase = dialog:AddPhrase(start_phrase_table[j], tostring(j), tostring(0), -10000)
-		local npc_phrase_script = npc_phrase:GetPhraseScript()
- 		npc_phrase_script:AddPrecondition(precond_table[j])
+		ph = add_dialog(0,j,start_phrase_table[math.random(4)],precond_table[j])
 
-		for i = 1,#actor_table do
-			local index = get_id()
-			local str = actor_table[i]
-			local phrase = dialog:AddPhrase("dm_"..str.."_general", tostring(index), tostring(j), -10000)
-			local script = phrase:GetPhraseScript()
-			if str == "anomalies" then
-				script:AddPrecondition("dialogs.npc_stalker")
+		for i = 1,3 do
+			id = get_id()
+			str = actor_table[i]
+
+			if (str == "anomalies") then
+				add_dialog(j,id,"dm_"..str.."_general","dialogs.npc_stalker","dialog_manager.fill_priority_"..str.."_table")
+			else
+				add_dialog(j,id,"dm_"..str.."_general",nil,"dialog_manager.fill_priority_"..str.."_table")
 			end
 
-			script:AddAction("dialog_manager.fill_priority_"..str.."_table")
-
 			for k = 1,3 do
-				local answer_no_more = dialog:AddPhrase("dm_"..str.."_no_more_"..tostring(k), tostring(get_id()), tostring(index), -10000)
-				local script_no_more = answer_no_more:GetPhraseScript()
-				script_no_more:AddPrecondition("dialog_manager.precondition_"..str.."_dialogs_no_more")
-				local answer_do_not_know = dialog:AddPhrase("dm_"..str.."_do_not_know_"..tostring(k), tostring(get_id()), tostring(index), -10000)
-				local script_do_not_know = answer_do_not_know:GetPhraseScript()
-				script_do_not_know:AddPrecondition("dialog_manager.precondition_"..str.."_dialogs_do_not_know")
+				add_dialog(id,get_id(),"dm_"..str.."_no_more_"..tostring(k),"dialog_manager.precondition_"..str.."_dialogs_no_more")
+				add_dialog(id,get_id(),"dm_"..str.."_do_not_know_"..tostring(k),"dialog_manager.precondition_"..str.."_dialogs_do_not_know")
 			end
 
 			for k,v in pairs(phrase_table[str]) do
-				phrase = dialog:AddPhrase(v.name, tostring(v.id), tostring(index), -10000)
-				if(phrase) then
-					script = phrase:GetPhraseScript()
-					script:AddPrecondition("dialog_manager.precondition_"..str.."_dialogs")
-					script:AddAction("dialog_manager.action_"..str.."_dialogs")
-				end
+				add_dialog(id,v.id,v.name,"dialog_manager.precondition_"..str.."_dialogs","dialog_manager.action_"..str.."_dialogs")
 			end
 		end
 
-		local actor_exit_phrase = dialog:AddPhrase("dm_universal_actor_exit", tostring(get_id()), tostring(j), -10000)
+		add_dialog(j,get_id(),"dm_universal_actor_exit")
 	end
 
 end
@@ -711,10 +703,5 @@ end
 
 function uni_dialog_precond(first_speaker, second_speaker)
 	local npc = dialogs.who_is_npc(first_speaker, second_speaker)
-	return character_community(npc) == "stalker" or
-			character_community(npc) == "bandit" or
-			character_community(npc) == "freedom" or
-			character_community(npc) == "dolg" or
-			character_community(npc) == "monolith" or
-			character_community(npc) == "killer"
+	return character_community(npc) ~= "zombied" or character_community(npc) ~= "army"
 end

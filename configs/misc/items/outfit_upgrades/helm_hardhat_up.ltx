@@ -27,15 +27,29 @@ immunities_sect_add = sect_helm_tactic_immunities_radiation_add
 
 [up_sect_secona_helm_hardhat]
 value		= 1
-inv_weight 				= +0.09
-cost 		= 2880
+inv_weight 				= +1.54
+cost 		= 4880
 
 nightvision_sect 				= effector_nightvision_1
+
+[up_sect_seconc_helm_hardhat]
+cost 		= 8280
+inv_weight 				= -0.041
+value		= +2
+
+nightvision_sect 				= effector_nightvision_2
+
+[up_sect_secone_helm_hardhat]
+cost 		= 4840
+inv_weight 				= +0.01
+value		= +3
+
+nightvision_sect 				= effector_nightvision_3
 
 [up_firsta_helm_hardhat]
 scheme_index            = 0, 0
 known                   = 1
-effects                 = up_gr_firstcd_helm_hardhat
+effects                 = ;  up_gr_firstcd_helm_hardhat
 section                 = up_sect_firsta_helm_hardhat
 property                = prop_radio, prop_chem
 
@@ -56,7 +70,7 @@ icon                    = ui_inGame2_upgrade_helm_hardhat_1
 [up_firstc_helm_hardhat]
 scheme_index            = 1, 0
 known                   = 1
-effects                 =
+effects                 = ; 
 section                 = up_sect_firstc_helm_hardhat
 property                = prop_psy
 
@@ -76,7 +90,7 @@ icon                    = ui_inGame2_upgrade_helm_hardhat_2
 [up_firstd_helm_hardhat]
 scheme_index            = 1, 1
 known                   = 1
-effects                 =
+effects                 = ; 
 section                 = up_sect_firstd_helm_hardhat
 property                = prop_radio
 
@@ -96,7 +110,7 @@ icon                    = ui_inGame2_upgrade_helm_hardhat_3
 [up_secona_helm_hardhat]
 scheme_index            = 0, 1
 known                   = 1
-effects                 =
+effects                 = up_gr_seconcd_helm_hardhat 
 section                 = up_sect_secona_helm_hardhat
 property                = prop_night_vision
 
@@ -113,6 +127,45 @@ name                    = st_up_resp_a1_name
 description             = st_up_resp_a1_descr
 icon                    = ui_inGame2_upgrade_helm_hardhat_4
 
+[up_seconc_helm_hardhat]
+scheme_index            = 1, 2
+known                   = 1
+effects                 = up_gr_seconef_helm_hardhat
+section                 = up_sect_seconc_helm_hardhat
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_b1_name
+description             = st_up_resp_b1_descr
+icon                    = ui_inGame2_upgrade_helm_tactic_7
+
+[up_secone_helm_hardhat]
+scheme_index            = 2, 0
+known                   = 1
+effects                 = ; 
+section                 = up_sect_secone_helm_hardhat
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_c1_name
+description             = st_up_resp_c1_descr
+icon                    = ui_inGame2_upgrade_helm_battle_9
 
 [up_gr_firstab_helm_hardhat]
 elements                = up_firsta_helm_hardhat
@@ -122,3 +175,9 @@ elements                = up_firstc_helm_hardhat, up_firstd_helm_hardhat
 
 [up_gr_seconab_helm_hardhat]
 elements                = up_secona_helm_hardhat
+
+[up_gr_seconcd_helm_hardhat]
+elements                = up_seconc_helm_hardhat
+
+[up_gr_seconef_helm_hardhat]
+elements                = up_secone_helm_hardhat

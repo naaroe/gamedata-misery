@@ -2,8 +2,10 @@
 		Scripting Dialog Made Easy
 
 Alundaio
---]]
 
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 
 lost_reset_time = 60000 	-- milliseconds to allow another re-roll to get lost

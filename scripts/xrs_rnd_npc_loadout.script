@@ -3,8 +3,10 @@
 					xrs_rnd_npc_loadout
 by Alundaio
 ************************************************************
---]]
 
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 local ini = ini_file("ai_tweaks\\xrs_rnd_npc_loadout.ltx")
 function on_game_start()
@@ -82,6 +84,20 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 		local se_wpn = alife():create(weapon[1],se_npc.position,0,0,se_npc.id)
 
 		if (se_wpn) then
+
+			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")
+
+			local ct = ammos and #ammos
+			local ammo_type = ammos and weapon[3] and weapon[3] == "r" and ct and math.random(0,ct-1) or ammos and weapon[3] and tonumber(weapon[3]) or 0
+			local ammo_section = ammo_type and ammos[ammo_type+1]
+
+			if not (ammo_section) then
+				ammo_type = 0
+				ammo_section = ammo_type and ammos[ammo_type+1]
+				alun_utils.printf("xrs_rnd_npc_loadout: error wrong ammo_type set for %s, missing value in ammo_class",weapon[1])
+			end
+
+
 			if (weapon[2] or weapon[3]) then
 				local data = stpk_utils.get_weapon_data(se_wpn)
 
@@ -104,17 +120,34 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 				end
 
 				data.addon_flags = flag
-				data.ammo_type = tonumber(weapon[3])  or 0
+
+
+				data.ammo_type = ammo_type
 				stpk_utils.set_weapon_data(data,se_wpn)
 			end
 
-			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")
-			local ammo_section = weapon[3] and ammos[weapon[3]+1] or ammos[1]
+			local ammo_count
+			if (weapon[4] and weapon[5]) then
+				ammo_count = math.random( tonumber(weapon[4]) or 1, tonumber(weapon[5]) or 1 )
+			else
+				ammo_count = ini_get_list(se_npc,comm,rank,player_id,slot == "primary" and "ammo_1" or slot == "secondary" and "ammo_2" or slot == "tertiary" and "ammo_3")
 
-			local ammo_count = ini_get_list(se_npc,comm,rank,player_id,slot == "primary" and "ammo_1" or slot == "secondary" and "ammo_2" or slot == "tertiary" and "ammo_3")
-			if (ammo_count) then
-				ammo_count = weapon[4] and weapon[5] and math.random( tonumber(weapon[4]),tonumber(weapon[5]) ) or math.random( tonumber(ammo_count[1]) or 1 , tonumber(ammo_count[2]) or 1)
+				if (ammo_count) then
+					ammo_count[1] = ammo_count[1] and tonumber(ammo_count[1]) or 1
+					ammo_count[2] = ammo_count[2] and tonumber(ammo_count[2]) or 1
+
+					ammo_count = ammo_count[1] < ammo_count[2] and math.random(ammo_count[1],ammo_count[2]) or math.random(ammo_count[2],ammo_count[1])
+				end
+			end
+
+			if not (ammo_count) then
+				ammo_count = 1
+			end
+
+			if (system_ini():section_exist(ammo_section)) then
 				create_ammo(ammo_section,se_npc.position,0,0,se_npc.id,ammo_count)
+			else
+				alun_utils.printf("xrs_rnd_npc_loadout: Section %s does not exist",ammo_section)
 			end
 		end
 	end

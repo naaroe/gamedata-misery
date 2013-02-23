@@ -79,10 +79,11 @@ function cmd.help(me,txt,owner,p)
 	local a = {}
     for n in pairs(commands) do table.insert(a, n) end
     table.sort(a)
+	local ind,k,out
 	for i=1,sz do
-		local ind = (page*sz - sz) + i
-		local k = ind > 0 and a[ind]
-		local out = " "
+		ind = (page*sz - sz) + i
+		k = ind > 0 and a[ind]
+		out = " "
 
 		if (k == "help") then
 			out = ""
@@ -482,11 +483,12 @@ function cmd.wound(me,txt,owner,p)
 
 	if (vo) then
 		local h = hit()
-		h.type = hit.fire_wound
-		h.power = (1 - vo.health) + vo.health - 0.09
-		h.impulse = 0.0
-		h.direction = vector():set(0,0,1)
-		h.draftsman = vo
+		h.power = 0
+		h.direction = vo:direction()
+		h.bone = "bip01_spine"
+		h.draftsman = db.actor
+		h.impulse = 0
+		h.type = hit.wound
 		vo:hit(h)
 		return "wound:= %s has been hit for %s.",vo:name(),h.power
 	end
@@ -510,25 +512,23 @@ function cmd.var(me,txt,owner,p)
 	end
 
 	if (wrd == "list") then
-		local _strt, _end = string.find(txt,"list")
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
 		if (_strt and _end) then
 			wrd = string.sub(txt,_strt, _end)
 			wrd = string.lower(wrd)
 		end
 
-		local page = wrd and wrd ~= "" and tonumber(wrd) or 1
-		local sz = owner.console_size
+		local page = wrd ~= "" and tonumber(wrd) or 1
+		local sz = owner.console_size-1
 
 		if not (sz) or (sz == 0) then return "var:= error" end
 
 		local list_sz = 0
-		local list_count = function()
-			for k,v in pairs(var_list) do
-				list_sz = list_sz + 1
-			end
+		for k,v in pairs(var_list) do
+			list_sz = list_sz + 1
 		end
 
-		list_count()
 		local page_count = math.ceil(list_sz/sz)
 
 		if (page > page_count) then
@@ -540,10 +540,12 @@ function cmd.var(me,txt,owner,p)
 		local a = {}
 		for n in pairs(var_list) do table.insert(a, n) end
 		table.sort(a)
+
+		local ind, out, k
 		for i=1,sz do
-			local ind = (page*sz - sz) + i
-			local k = ind > 0 and a[ind]
-			local out = " "
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			out = " "
 
 			if (k) then
 				local v = var_list[k]
@@ -810,4 +812,190 @@ function cmd.heli(me,txt,owner,p)
 
 	end
 	return "heli:= type heli help for list of sub commands"
+end
+
+-- weather
+local weather_list
+function cmd.weather(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[list <page> | <weather_name> ]")
+	if not (wrd) then return end
+
+	if (wrd == "list") then
+		if not (weather_list) then
+			weather_list = {}
+			local f = getFS()
+			local flist = f:file_list_open("$game_weathers$",1)
+			local f_cnt = flist:Size()
+
+			for	it=0, f_cnt-1 do
+				local file = flist:GetAt(it)
+				table.insert(weather_list,file)
+			end
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+
+		local sz = owner.console_size
+
+		if not (sz) or (sz == 0) then return "weather:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(weather_list) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+
+		if (page > page_count) then
+			return "weather:= Invaild page"
+		end
+
+		owner:SendOutput("weather:= Weathers List [%s of %s]",page,page_count)
+
+		table.sort(weather_list)
+
+		local ind, out
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			out = ind > 0 and weather_list[ind] or " "
+			owner:SendOutput(out)
+		end
+		return
+	end
+
+	level.set_weather(txt,true)
+
+	return "weather:= weather set"
+end
+
+-- time
+function cmd.time(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[day,hour,minute]")
+	if not (wrd) then return end
+
+	local t = alun_utils.str_explode(txt,",")
+	if (t) then
+		level.change_game_time( tonumber(t[1]),tonumber(t[2]),tonumber(t[3]) )
+		level_weathers.get_weather_manager():forced_weather_change()
+	end
+end
+
+-- item
+function cmd.item(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[list <page> ]")
+	if not (wrd) then return end
+
+	if (wrd == "list") then
+		if not (se_item.registered_items) then
+			return "item:= error no registered_items list"
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+		local sz = owner.console_size - 1
+
+		if not (sz) or (sz == 0) then return "item:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(se_item.registered_items) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+
+		if (page > page_count) then
+			return "item:= Invaild page"
+		end
+
+		owner:SendOutput("item:= Registered Item List [%s of %s]",page,page_count)
+
+		local a = {}
+		for n in pairs(se_item.registered_items) do table.insert(a, n) end
+		table.sort(a)
+
+		local ind, out, k
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			out = " "
+			if (k) then
+				out = string.format("%s [count: %s]",k,se_item.registered_items[k])
+			end
+			owner:SendOutput(out)
+		end
+		return
+	end
+	return "item:= type item help for a list of subcommands"
+end
+
+-- info
+function cmd.info(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[list <page> | give | take ]")
+	if not (wrd) then return end
+
+	if (wrd == "give") then
+		give_info(txt)
+		return "info:= info given"
+	elseif (wrd == "take") then
+		disable_info(txt)
+		return "info:= disabled"
+	end
+
+
+	if (wrd == "list") then
+		if not (xrs_debug_tools.actor_info) then
+			return "info:= actor_info empty"
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+
+		local sz = owner.console_size-1
+
+		if not (sz) or (sz == 0) then return "info:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(xrs_debug_tools.actor_info) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+		if (page > page_count) then
+			return list_sz > 0 and "info: nothing in list" or "info:= Invaild page"
+		end
+
+		owner:SendOutput("info:= Infoportions [%s of %s]",page,page_count)
+
+		local a = {}
+		for n in pairs(xrs_debug_tools.actor_info) do table.insert(a, n) end
+		table.sort(a)
+
+		local ind, out, k
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			owner:SendOutput(k or " ")
+		end
+		return
+	end
+	return "info:= type info help for a list of subcommands"
 end

@@ -17,6 +17,7 @@ function motivator_binder:__init (obj) super(obj)
 	self.last_update = 0
 	----memusage.collect_info(self.object, "__init")
 	self.first_update = false
+	self.upd_stage = 1
 --	self.need_relation_update = false
 
 	self.opened_doors = {} --Хранит таблицу дверей, открытых данным персонажем (чтобы потом закрыть)
@@ -255,23 +256,17 @@ function motivator_binder:clear_callbacks()
 end
 
 function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_index)
+	if not (self.object) then
+		alun_utils.printf("motivator_binder:hit_callback: Critical error self.object = nil! %s [who=%s]",obj and obj:name(),who and who:name())
+		return
+	end
+
 	-- FIXME: коллбеки неплохо было бы регистрировать в общем storage, а не посхемно...
 	-- просто всегда ставить их при включении схемы и снимать при отключении.
 	if(who:id()==db.actor:id()) then
 		xr_statistic.set_best_weapon(amount)
 
---[[
-		local se_obj = alife():object(obj:id())
-		if se_obj and se_obj.m_smart_terrain_id ~= 65535 and amount > 0 then
-			local smart_obj = alife():object(se_obj.m_smart_terrain_id)
-			smart_obj:set_alarm()
-
-			if smart_obj.base_on_actor_control ~= nil then
-				smart_obj.base_on_actor_control:actor_attack()
-			end
-		end
-]]
-		-- Ищем смарты по расстоянию
+		--[[
 		if amount > 0 then
 			for k,v in pairs(sim_board.get_sim_board().smarts) do
 				local smart = v.smrt
@@ -286,24 +281,26 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 				end
 			end
 		end
+		--]]
+
 	end
 	if self.st.active_section then
-		xr_logic.issue_event(self.object, self.st[self.st.active_scheme], "hit_callback", obj, amount, local_direction, who, bone_index)
+		xr_logic.issue_event(obj, self.st[self.st.active_scheme], "hit_callback", obj, amount, local_direction, who, bone_index)
 	end
 	if self.st.combat_ignore then
-		xr_logic.issue_event(self.object, self.st.combat_ignore, "hit_callback", obj, amount, local_direction, who, bone_index)
+		xr_logic.issue_event(obj, self.st.combat_ignore, "hit_callback", obj, amount, local_direction, who, bone_index)
 	end
 	if self.st.combat then
-		xr_logic.issue_event(self.object, self.st.combat, "hit_callback", obj, amount, local_direction, who, bone_index)
+		xr_logic.issue_event(obj, self.st.combat, "hit_callback", obj, amount, local_direction, who, bone_index)
 	end
 	if self.st.hit then
-		xr_logic.issue_event(self.object, self.st.hit, "hit_callback", obj, amount, local_direction, who, bone_index)
+		xr_logic.issue_event(obj, self.st.hit, "hit_callback", obj, amount, local_direction, who, bone_index)
 	end
 
 	-- Если пришел смертельный хит, с некоторой вероятностью делаем чувака раненым.
-	if bone_index ~= 15 and amount > self.object.health*100 then
+	if bone_index ~= 15 and amount > obj.health*100 then
 		--printf("DEADLY HIT %s %s", amount, self.object.health*100)
-		self.object.health = 0.15
+		obj.health = 0.15
 	end
 
 	if amount > 0 then
@@ -393,115 +390,79 @@ end
 function motivator_binder:update(delta)
 	object_binder.update(self, delta)
 
-	if xr_combat_ignore.fighting_with_actor_npcs[self.object:id()] and self.object:best_enemy() == nil then
-		xr_combat_ignore.fighting_with_actor_npcs[self.object:id()] = nil
+	local object = self.object
+
+	if not (object:best_enemy()) then
+		xr_combat_ignore.fighting_with_actor_npcs[object:id()] = nil
 	end
 
-	local object = self.object
 	local object_alive = object:alive()
-	local actor = db.actor
 
-	-- Переключение логики.
-	update_logic(object)
-
-
-	if self.first_update == false then
-		if object_alive == false then
+	if not self.first_update then
+		if not object_alive then
 			death_manager.drop_manager(object):create_release_item()
 		end
 		self.first_update = true
 	end
-	if time_global() - self.last_update > 1000 then
-		sr_light.check_light(object)
-		self.last_update = time_global()
+
+	-- update custom data logic
+	update_logic(object)
+
+	-- create a 200 milisecond delay
+	local tg = time_global()
+	if tg - self.last_update < 200 then
+		return
 	end
+	self.last_update = tg
 
-	-- Открываем двери
-	if object_alive then
-		local opened_doors = ph_door.try_to_open_door(self.object)
-		utils.copy_table(self.opened_doors, opened_doors)
-		-- Закрываем двери
-		local closed_doors = ph_door.try_to_close_door(self.object, self.opened_doors)
-		for id,v in pairs(closed_doors) do
-			self.opened_doors[id] = nil
-		end
-	end
+	--object:info_clear()
 
-	--' Апдейт менеджера состояний тела
-	if self.st.state_mgr then
-		if object_alive then
-			self.st.state_mgr:update()
-			-- Апдейт торговли
-			if self.st.state_mgr.combat == false and
-				 self.st.state_mgr.alife == false --and self.st.state_mgr.planner:current_action_id() == self.st.state_mgr.operators["end"]
-			then
-				trade_manager.update(object)
-			end
-		else
-			self.st.state_mgr = nil
-		end
-	end
-
-
-	if object_alive then
-		--' Апдейт саундменеджера
-		xr_sound.update(object:id())
-
-		--' Апдейт юзабилити персонажа
-		xr_meet.process_npc_usability(object)
-
-		-- Апдейт безсмертия
+	if (object_alive) then
 		stalker_generic.update_invulnerability(self.object)
-	end
 
-	-- Апдейт отряда
-	local squad = get_object_squad(self.object)
-	if squad ~= nil then
-		if squad:commander_id() == self.object:id() then
-			squad:update()
-		end
-	end
-
-	object:info_clear()
-	if object_alive then
-		local active_section = db.storage[object:id()].active_section
-		if active_section then
-			object:info_add("section: " .. active_section)
-		end
-		local best_enemy = object:best_enemy()
-		if best_enemy then
-			object:info_add("enemy: " .. best_enemy:name())
-		end
-		local best_danger = object:best_danger()
-		if best_danger then
-			object:info_add("danger: " .. xr_danger.get_danger_name(best_danger))
-		end
-		object:info_add(object:name().." ["..object:team().."]["..object:squad().."]["..object:group().."]")
-
-		if alife():object(object:id()) == nil then
-			return
-		end
-
-		if squad ~= nil then
-			object:info_add("squad_id: " .. squad:section_name())
-			if squad.current_action ~= nil then
-				local target = squad.assigned_target_id and alife():object(squad.assigned_target_id) and alife():object(squad.assigned_target_id):name()
-				self.object:info_add("current_action: " .. squad.current_action.name .."["..tostring(target).."]")
+		if self.st.state_mgr then
+			self.st.state_mgr:update()
+			if not self.st.state_mgr.combat and not self.st.state_mgr.alife then
+				trade_manager.update(object)
 			end
 		end
 	else
 		object:set_tip_text_default()
-	end
---[[
--- Полечилось в двигле...
-	if self.need_relation_update then
-		local squad = get_object_squad(self.object)
-		local obj_relation_to_actor =  game_relations.game_relations_by_num[self.object:relation(db.actor)]
-		if squad ~= nil and (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) ~= obj_relation_to_actor) then
-			game_relations.set_squad_goodwill(squad.id, obj_relation_to_actor)
+		if self.st.state_mgr then
+			self.st.state_mgr = nil
 		end
-		self.need_relation_update = false
-	end]]--
+	end
+
+	if (self.upd_stage == 1) then
+		sr_light.check_light(object)
+	elseif (self.upd_stage == 2) then
+		if object_alive then
+			local opened_doors = ph_door.try_to_open_door(self.object)
+			utils.copy_table(self.opened_doors, opened_doors)
+
+			local closed_doors = ph_door.try_to_close_door(self.object, self.opened_doors)
+			for id,v in pairs(closed_doors) do
+				self.opened_doors[id] = nil
+			end
+
+			xr_sound.update(object:id())
+
+			xr_meet.process_npc_usability(object)
+		end
+	elseif (self.upd_stage == 3) then
+		local squad = get_object_squad(self.object)
+		if squad then
+			if squad:commander_id() == self.object:id() then
+				squad:update()
+			end
+		end
+	end
+
+	self.upd_stage = self.upd_stage + 1
+
+	if (self.upd_stage > 3) then
+		self.upd_stage = 1
+	end
 
 	-- Start [Alundaio]
 	if (axr_main) then axr_main.npc_on_update(object,db.storage[object:id()]) end

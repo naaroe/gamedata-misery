@@ -17,7 +17,7 @@ control_inertion_factor = 1.0
 ;-------------------------------------------------------------------------------
 cost              = 9260           ; the price of the item
 weapon_class      = assault_rifle      ; the type of the box that will be used in buy-menu in multiplayer mode
-inv_weight        = 2.8
+inv_weight        = 2.789
 
 upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
 installed_upgrades      =
@@ -289,15 +289,16 @@ $spawn                  	= "weapons\wpn_mp5_nimble"		; option for Level Editor
 inv_name				= st_wpn_mp5_nimble
 description					= st_wpn_mp5_nimble_descr
 
-cost              = 15450
+cost              = 30900
+inv_weight        = 2.667
 
-inv_grid_width			= 3	 
-inv_grid_height			= 1	  
-inv_grid_x			= 6  
+inv_grid_width			= 3
+inv_grid_height			= 1
+inv_grid_x			= 6
 inv_grid_y			= 27
 
 upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5, up_gr_fifthcd_mp5
-installed_upgrades      = 
+installed_upgrades      = up_secona_mp5
 upgrade_scheme          = upgrade_scheme_mp5
 
 ;----TTX--------------------------------------------------------------------------
@@ -313,7 +314,7 @@ ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro
 fire_modes		  = 1, -1
 
 upgrades                = up_gr_firstab_mp5, up_gr_seconab_mp5, up_gr_thirdab_mp5, up_gr_fourtab_mp5, up_gr_fifthab_mp5
-installed_upgrades      =
+installed_upgrades      = up_fourta_mp5, up_secona_mp5
 upgrade_scheme          = upgrade_scheme_mp5_nimble
 
 hud                     = wpn_mp6_hud
@@ -326,7 +327,7 @@ hands_orientation_16x9			= -3.999999,3.199998,-6.000006
 item_position				= 0.014173,-0.001619,-0.004513
 item_orientation			= 4.899572,0.078592,366.138245
 
-silencer_x 						= 127						
+silencer_x 						= 127
 silencer_y 						= -17
 
 [wpn_mp6_hud]
@@ -421,13 +422,13 @@ upgrade_scheme          = upgrade_scheme_mp5
 ;=====================================================================================
 [wpn_mp5_custom]:wpn_mp5
 
-cost              = 9260
-inv_weight        = 2.7
+cost              = 21780
+inv_weight        = 2.669
 
-installed_upgrades      = up_secona_mp5
+installed_upgrades      = up_secona_mp5, up_firsta_mp5
 
 hit_power            = 0.22, 0.22, 0.22, 0.22
-hit_impulse          = 18 
+hit_impulse          = 18
 fire_distance           = 540
 bullet_speed            = 425
 rpm                     = 800
@@ -465,13 +466,11 @@ item_visual             = dynamics\weapons\wpn_mp5\wpn_mpa_hud.ogf
 ;=====================================================================================
 [wpn_mp5_alt]:wpn_mp5
 
-cost              = 9260
-inv_weight        = 2.75
-
-installed_upgrades      = up_firsta_mp5, up_fourta_mp5
+cost              = 18520
+inv_weight        = 2.744
 
 hit_power            = 0.22, 0.22, 0.22, 0.22
-hit_impulse          = 18 
+hit_impulse          = 18
 fire_distance           = 540
 bullet_speed            = 425
 rpm                     = 805
@@ -509,11 +508,11 @@ item_visual             = dynamics\weapons\wpn_mp5\wpn_mpb_hud.ogf
 ;=====================================================================================
 [wpn_mp5_worn]:wpn_mp5
 
-cost              = 9260
-inv_weight        = 2.7
+cost              = 15240
+inv_weight        = 2.787
 
 hit_power            = 0.22, 0.22, 0.22, 0.22
-hit_impulse          = 18 
+hit_impulse          = 18
 fire_distance           = 540
 bullet_speed            = 425
 rpm                     = 800

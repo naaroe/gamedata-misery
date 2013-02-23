@@ -11,8 +11,15 @@ sim_monolith
 
 [sim_killer]
 spawn_squads = simulation_pseudodog, simulation_pseudodog, simulation_dog, simulation_dog, simulation_cat_normal, simulation_cat_strong, simulation_bloodsucker
-spawn_num = 3 ; {-zat_b40_actor_has_notebook} 1, 0
+spawn_num = 1
 
 [sim_monolith]
 spawn_squads = simulation_cat_normal, simulation_cat_strong, simulation_dog, simulation_dog, simulation_dog, simulation_pseudodog, simulation_pseudodog, simulation_snork, simulation_bloodsucker, simulation_psy_dog
-spawn_num = 2 ; {+zat_b40_actor_has_notebook} 1, 0
+spawn_num = {+zat_b40_actor_has_notebook} 1, 0
+
+[exclusive]
+
+;zat_sim_14_job_1 = zaton\zat_sim_14.ltx
+;zat_sim_14_job_2 = zaton\zat_sim_14.ltx
+;zat_sim_14_job_3 = zaton\zat_sim_14.ltx
+;zat_sim_14_job_4 = zaton\zat_sim_14.ltx

@@ -1,6 +1,9 @@
 -- ui_itm_backpack
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 class "backpack_ui" (CUIScriptWnd)
 function backpack_ui:__init(owner,box_id,box_spot) super()
 	self.owner = owner

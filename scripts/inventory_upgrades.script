@@ -3,8 +3,11 @@
 --' Made by Distemper ----------------------------------------------------------------
 --' 03.08 --------------------------------------------------------------------------------
 -- Alundaio (ScarabParamit -- Repair Cost Factor)
--- Misery 2.0
-
+-- For Misery 2.0
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 cur_hint = nil
 local issue_condlist = true

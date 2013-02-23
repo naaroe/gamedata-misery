@@ -1665,10 +1665,12 @@
 		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
+		<actor_dialog>dm_universal_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
+
   	</specific_character>
 
 	<!-- Сталкер 2 -->
@@ -1830,6 +1832,7 @@
 		<actor_dialog>jup_b1_stalker_squad_thanks</actor_dialog>
 		<actor_dialog>jup_b1_stalker_lead_info</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
+		<actor_dialog>dm_universal_dialog</actor_dialog>
 		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 

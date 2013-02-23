@@ -406,9 +406,11 @@ function activate_by_section(npc, ini, section, gulag_name, loading)
 		abort("xr_logic: scheme '%s' is not registered in modules.script", scheme)
 	end
 	--printf("_bp: calling module('%s')", filename)
-	if not _G[filename] then
+	if (not _G[filename] or not _G[filename].set_scheme) then
 		abort("xr_logic: can't call %s.set_scheme() - a nil value", filename)
+		return
 	end
+
 	_G[filename].set_scheme(npc, ini, scheme, section, gulag_name)
 
 	--printf("DEBUG: activate_by_section: scheme '%s' activated from section '%s'", scheme, section)
@@ -690,7 +692,9 @@ function pick_section_from_condlist(actor, npc, condlist, p)
 					else
 						if not ( has_alife_info(infop.name)  ) then
 							actor:give_info_portion(infop.name)
-							--alun_utils.printf("xr_logic:ACTOR GIVEN INFO: %s",infop.name)
+							if (xrs_debug_tools and xrs_debug_tools.actor_info) then
+								xrs_debug_tools.actor_info[infop.name] = true
+							end
 						end
 					end
 				else
@@ -700,7 +704,9 @@ function pick_section_from_condlist(actor, npc, condlist, p)
 						if has_alife_info(infop.name) then
 							--printf("*INFO [disabled]*: npc='%s' id='%s'", actor:name(),infop.name)
 							disable_info(infop.name)
-							--alun_utils.printf("xr_logic:ACTOR LOST INFO: %s",infop.name)
+							if (xrs_debug_tools and xrs_debug_tools.actor_info) then
+								xrs_debug_tools.actor_info[infop.name] = nil
+							end
 						end
 					end
 				end
@@ -723,6 +729,8 @@ function switch_to_section(npc, ini, section)
 	if section == "" or section == nil then
 		return false
 	end
+
+	if (axr_beh) then alun_utils.save_var(npc,"path_index",1) end
 
 	--printf("section = [%s]", tostring(section))
 	local npc_id = npc:id()
@@ -1300,6 +1308,11 @@ function pstor_is_registered_type(tv)
 end
 
 function pstor_store(obj, varname, val)
+	if not (obj) then
+		alun_utils.printf("xr_logic: error: pstor_store: obj is nil for varname = %s, val = %s",varname,val)
+		return
+	end
+
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
 
 	if db.storage[npc_id].pstor == nil then
@@ -1314,6 +1327,11 @@ function pstor_store(obj, varname, val)
 end
 
 function pstor_retrieve(obj, varname, defval)
+	if not (obj) then
+		alun_utils.printf("xr_logic: error: pstor_retrieve: obj is nil for varname = %s, val = %s",varname,defval)
+		return
+	end
+
 	local npc_id = type(obj.id) == "function" and obj:id() or obj.id
 
 	if db.storage[npc_id].pstor ~= nil then

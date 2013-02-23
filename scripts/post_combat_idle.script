@@ -7,45 +7,31 @@ function evaluator_combat_enemy:__init(storage, name) super(nil, name)
 	self.st.timer = time_global()
 end
 function evaluator_combat_enemy:evaluate()
-	local best_enemy = self.object:best_enemy()
-
-	local is_enemy = best_enemy and xr_combat_ignore.is_enemy(self.object, best_enemy, db.storage[self.object:id()].combat_ignore)
-
-	local tg = time_global()
-
-	if is_enemy then
-		local time_in_memory = tg - self.object:memory_time(best_enemy)
-		if (time_in_memory > db.storage[self.object:id()].combat_ignore.combat_inertion) then
-			is_enemy = false
-		end
-	end
-
-	if not is_enemy then
-		self.st.last_best_enemy_id = nil
-		self.st.last_best_enemy_name = nil
+	local be = self.object:best_enemy()
+	if be and not xr_combat_ignore.is_enemy(self.object, be) then
 		return false
 	end
-
-	if best_enemy and self.st.timer then
-		self.st.last_best_enemy_id = best_enemy:id()
-		self.st.last_best_enemy_name = best_enemy:name()
+	if be and self.st.timer then
+		self.st.last_be_id = be:id()
+		self.st.last_be_name = be:name()
 		self.st.timer = nil
 		return true
 	end
 
-	if best_enemy == nil and self.st.timer == nil then
+	local tg = time_global()
+	if be == nil and self.st.timer == nil then
 		--printf("object name is [%s]", self.object:name())
 		local overrides = db.storage[self.object:id()].overrides
-		local min = (overrides and overrides.min_post_combat_time*1000) or 5000
-		local max = (overrides and overrides.max_post_combat_time*1000) or 10000
+		local min = (overrides and overrides.min_post_combat_time*1000) or 10000
+		local max = (overrides and overrides.max_post_combat_time*1000) or 15000
 		self.st.timer = tg + math.random(min, max)
 	end
 
 	if self.st.timer == nil then
-		return best_enemy ~= nil
+		return be ~= nil
 	end
 
-	if time_global() < self.st.timer then
+	if tg < self.st.timer then
 		return true
 	end
 
@@ -108,20 +94,21 @@ end
 
 
 function weapon_locked(npc)
-	local weapon_strapped = npc:weapon_strapped()
-	local weapon_unstrapped = npc:weapon_unstrapped()
-
-	--log(string.format("%s [%s] [%s]", self.object:name(), tostring(weapon_strapped), tostring(weapon_unstrapped)))
-	if not (weapon_unstrapped or weapon_strapped) then
-		return true
-	end
-
 	local bestweapon = npc:best_weapon()
+
 	if bestweapon == nil then
 		return false
 	end
+
 	if npc:active_item() == nil then
 		return false
+	end
+
+	local weapon_strapped = npc:weapon_strapped()
+	local weapon_unstrapped = npc:weapon_unstrapped()
+
+	if not (weapon_unstrapped or weapon_strapped) then
+		return true
 	end
 
 	local weapon_going_to_be_strapped = npc:is_weapon_going_to_be_strapped(bestweapon)

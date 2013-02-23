@@ -1,7 +1,10 @@
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
 ----------------------
 -- Callback manager
 -- Alundaio
-
+--]]
 local intercepts = {
 	-- _g.script
 	on_game_start				= {},
@@ -26,6 +29,7 @@ local intercepts = {
 	npc_on_fighting_actor		= {},
 	npc_add_precondition		= {},
 	npc_on_item_take_from_box	= {},
+	npc_on_weapon_state_change	= {},
 
 	-- state_mgr_weapon.script
 	npc_on_weapon_strapped		= {},
@@ -107,6 +111,7 @@ function _G.callback_unregister(name,func)
 end
 
 local ev_queue = {}
+local ev_object_queue = {}
 function event_queue()
 	local data
 	for i=#ev_queue, 1, -1 do
@@ -114,6 +119,19 @@ function event_queue()
 		if (game.get_game_time():diffSec(data.game_time) >= data.timer) then
 			data.f(data.p)
 			table.remove(ev_queue,i)
+		end
+	end
+
+	local se_obj
+	local sim = alife()
+	for k,v in pairs(ev_object_queue) do
+		se_obj = sim:object(k)
+		if (se_obj) then
+			if (game.get_game_time():diffSec(v.game_time) >= v.timer) then
+				--alun_utils.printf("delayed ev")
+				v.f(se_obj,v.p)
+				ev_object_queue[k] = nil
+			end
 		end
 	end
 end
@@ -127,6 +145,13 @@ function _G.create_delayed_event(timer,f,...)
 	table.insert(ev_queue,t)
 end
 
+function _G.create_delayed_object_event(id,timer,f,...)
+	ev_object_queue[id] = {}
+	ev_object_queue[id].game_time = game.get_game_time()
+	ev_object_queue[id].timer = timer
+	ev_object_queue[id].f = f
+	ev_object_queue[id].p = {...}
+end
 -------------------
 -- on_game_start()
 -------------------
@@ -162,6 +187,9 @@ function on_game_start()
 
 	-- Dynamic Spawn
 	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
+
+	-- TEST
+	--if (axr_overheat) then axr_overheat.on_game_start() end
 end
 
 -------------------
@@ -265,7 +293,8 @@ function actor_on_update(se_actor,delta)
 		end
 	end
 
-	alun_utils.execute_queue()
+	--alun_utils.execute_queue()
+	event_queue()
 end
 
 -------------------
@@ -459,17 +488,34 @@ function npc_on_update(npc,st)
 
 			local sight_type = npc:sight_params().m_sight_type
 			if (sight_type) and (sight_type == 4 or sight_type == 9 or sight_type == 10) then
-				if not (st.look_in_sights) then
+				if not (st.sight_type) then
 					npc_on_weapon_sight(npc,wpn,st,sight_type)
-					st.look_in_sights = true
+					st.sight_type = sight_type
 				end
 			else
-				if (st.look_in_sights) then
-					st.look_in_sights = nil
+				if (st.sight_type) then
+					st.sight_type = nil
 					npc_on_weapon_unsight(npc,wpn,st,sight_type)
 				end
 			end
+
+			local sobj = alife():object(wpn:id())
+			local data = stpk_utils.get_weapon_data(sobj)
+
+			if (st.weapon_state ~= data.weapon_state) then
+				npc_on_weapon_state_change(npc,wpn,st,data.weapon_state)
+				st.weapon_state = data.weapon_state
+			end
 		end
+	end
+end
+
+------------------
+-- npc_on_weapon_state_change(npc,weapon,storage)
+-------------------
+function npc_on_weapon_state_change(npc,wpn,st,state)
+	for i=1, #intercepts.npc_on_weapon_state_change do
+		intercepts.npc_on_weapon_state_change[i](npc,wpn,st,state)
 	end
 end
 

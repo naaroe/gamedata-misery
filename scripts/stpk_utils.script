@@ -1,6 +1,9 @@
 -- stpk_utils
 -- Alundaio          (Credits: xStream, Bak, Barin)
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 local stpk = net_packet()
 local uppk = net_packet()
@@ -289,6 +292,32 @@ function spawn_smart_cover(anim,sec,pos,lvid,gvid)
 	return se_cover
 end
 
+function get_climable_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_climable_properties_packet(t,stpk)
+	return t
+end
+
+function set_climable_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_climable_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
 function get_heli_data(sobj)
 	if not sobj then
 		return {}
@@ -356,6 +385,34 @@ function set_lamp_data(t,sobj)
 		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
 		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
 		stpk_utils.fill_cse_alife_object_hanging_lamp_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_physic_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_physic_properties_packet(t,stpk)
+	return t
+end
+
+function set_physic_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_physic_properties_packet(t,stpk)
 		local size = stpk:w_tell()
 		stpk:r_seek(2)
 		sobj:STATE_Read(stpk,size)
@@ -603,18 +660,25 @@ end
 -- cse_shape_properties
 function parse_cse_shape_properties_packet(ret,stpk)
 	ret.shape_count = stpk:r_u8()
+	ret.shape_type = {}
+	ret.center = {}
+	ret.radius = {}
+	ret.v1 = {}
+	ret.v2 = {}
+	ret.v3 = {}
+	ret.v4 = {}
 	for i = 1, ret.shape_count do
-		ret.shape_type = stpk:r_u8()
-		if (ret.shape_type == 0) then
+		ret.shape_type[i] = stpk:r_u8()
+		if (ret.shape_type[i] == 0) then
 			-- sphere
-			ret.center = stpk:r_vec3()
-			ret.radius = stpk:r_float()
+			ret.center[i] = stpk:r_vec3()
+			ret.radius[i] = stpk:r_float()
 		else
 			-- box
-			ret.v1 = stpk:r_vec3()
-			ret.v2 = stpk:r_vec3()
-			ret.v3 = stpk:r_vec3()
-			ret.v4 = stpk:r_vec3()
+			ret.v1[i] = stpk:r_vec3()
+			ret.v2[i] = stpk:r_vec3()
+			ret.v3[i] = stpk:r_vec3()
+			ret.v4[i] = stpk:r_vec3()
 		end
 	end
 	ret.restrictor_type = stpk:r_u8()
@@ -624,15 +688,15 @@ end
 function fill_cse_shape_properties_packet(ret,stpk)
 	stpk:w_u8(ret.shape_count)
 	for i=1,ret.shape_count do
-		stpk:w_u8(ret.shape_type)
-		if (ret.shape_type == 0) then
-			stpk:w_vec3(ret.center)
-			stpk:w_float(ret.radius)
+		stpk:w_u8(ret.shape_type[i])
+		if (ret.shape_type[i] == 0) then
+			stpk:w_vec3(ret.center[i])
+			stpk:w_float(ret.radius[i])
 		else
-			stpk:w_vec3(ret.v1)
-			stpk:w_vec3(ret.v2)
-			stpk:w_vec3(ret.v3)
-			stpk:w_vec3(ret.v4)
+			stpk:w_vec3(ret.v1[i])
+			stpk:w_vec3(ret.v2[i])
+			stpk:w_vec3(ret.v3[i])
+			stpk:w_vec3(ret.v4[i])
 		end
 	end
 end
@@ -710,7 +774,7 @@ end
 -- cse_smart_cover_properties
 function parse_cse_smart_cover_properties_packet(ret,stpk)
 	ret.description = stpk:r_stringZ()
-	ret.cse_smart_cover__unk2_f32 = stpk:r_float()
+	ret.unk2_f32 = stpk:r_float()
 	ret.enter_min_enemy_distance = stpk:r_float()
 	ret.exit_min_enemy_distance = stpk:r_float()
 	ret.is_combat_cover = stpk:r_u8()
@@ -719,7 +783,7 @@ end
 
 function fill_cse_smart_cover_properties_packet(ret,stpk)
 	stpk:w_stringZ(ret.description)
-	stpk:w_float(ret.cse_smart_cover__unk2_f32)
+	stpk:w_float(ret.unk2_f32)
 	stpk:w_float(ret.enter_min_enemy_distance)
 	stpk:w_float(ret.exit_min_enemy_distance)
 	stpk:w_u8(ret.is_combat_cover)

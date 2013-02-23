@@ -13,6 +13,13 @@ target_smart = zat_b38
 spawn_point = zat_b38_bloodsucker_2_wait_walk
 story_id = zat_b38_bloodsucker_2_lair
 
+[zat_b38_bloodsucker_3_lair]:online_offline_group
+faction = monster_predatory_night
+npc = zat_b38_bloodsucker_3
+target_smart = zat_b38
+spawn_point = zat_b38_bloodsucker_2_wait_walk
+story_id = zat_b38_bloodsucker_3_lair
+
 [zat_b38_bloodsuckers_sleepers]:online_offline_group
 faction = monster_predatory_night
 npc = bloodsucker_strong, bloodsucker_strong, bloodsucker_strong, bloodsucker_strong, bloodsucker_weak, bloodsucker_strong, bloodsucker_weak, bloodsucker_weak, bloodsucker_weak
@@ -303,22 +310,30 @@ target_smart = zat_b42_smart_terrain
 spawn_point = zat_b42_smart_terrain_mob_home
 story_id = zat_b42_controller_squad
 
-[renderman_selo_test_controller_squad]:online_offline_group
-faction = monster_zombied_day
-npc = m_controller_normal
-target_smart = alex_selo_smart_terrain
-spawn_point = alex_selo_smart_terrain_mob_home
-;story_id = zat_b42_controller_squad
-
-
 ;------------------------b40-------------------------------
 [zat_b40_merc_squad]:online_offline_group
 faction = killer
 sympathy = 0
 npc = zat_b40_merc_squad_leader_1, zat_b40_merc_squad_leader_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_2, sim_default_killer_1, sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2,sim_default_killer_2
-target_smart = {+zat_b40_find_information_comlpete} nil, zat_b40_smart_terrain
+target_smart = zat_b40_smart_terrain
 spawn_point = zat_b40_smart_terrain_spown_point
 story_id = zat_b40_merc_squad
+
+[zat_b40_bandit_squad]:online_offline_group
+faction = bandit_elite
+relationship = enemy
+npc_random = sim_default_killer_2, sim_default_bandit_3, sim_default_bandit_3, sim_default_bandit_4
+npc_in_squad = 4,4
+target_smart = {+zat_b40_find_information_comlpete -pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+spawn_point = zat_b40_smart_terrain_spown_point
+
+[zat_b40_monolith_squad]:online_offline_group
+faction = monolith
+relationship = enemy
+npc_random = sim_default_monolith_2, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_3, sim_default_monolith_4, sim_default_monolith_4
+npc_in_squad = 4, 4
+target_smart = {+zat_b40_find_information_comlpete +pri_a17_actor_has_gauss_rifle} zat_b40_smart_terrain
+spawn_point = zat_b40_smart_terrain_spown_point
 
 ;-----------------------zaton B20-------------------
 
@@ -396,28 +411,3 @@ npc = m_poltergeist_normal_tele
 target_smart = {-zat_b100_heli_2_searched} zat_b100, nil
 spawn_point = zat_b100_poltergeist_01_walk
 story_id = zat_b100_poltergeist_squad_01
-
-;[zat_b100_poltergeist_squad_02]:online_offline_group
-;faction = monster
-;npc = m_poltergeist_normal_tele
-;target_smart = {-zat_b100_heli_2_searched} zat_b100, nil
-;spawn_point = zat_b100_poltergeist_02_walk
-;story_id = zat_b100_poltergeist_squad_02
-
-;------------------------------- Simulation TEST -------------------------------
-
-[zat_simulation_test]:online_offline_group
-faction = freedom
-npc = sim_default_stalker_1, sim_default_stalker_1, sim_default_stalker_1
-target_smart = {-test_simulation_start} zat_b28, nil
-spawn_point = test_simulation_spawn
-story_id = zat_simulation_test
-
-
-
-
-
-
-
-
-

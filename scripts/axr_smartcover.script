@@ -1,0 +1,322 @@
+----------------------------------------------------------------------------------------------------------------------
+-- axr_smartcover
+-- by Alundaio
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+----------------------------------------------------------------------------------------------------------------------
+function printf(txt,...)
+	alun_utils.printf(txt,...)
+end
+
+local used_covers = {}
+
+local ini
+local Enable
+function on_game_start()
+	ini = ini_file("ai_tweaks\\axr_smartcover.ltx")
+	Enable = alun_utils.read_from_ini(ini,"settings","enable","bool",false)
+	if not (Enable) then ini = nil return end
+	load_scheme("axr_smartcover", "axr_smartcover", 0)
+	callback_register("npc_on_add_precondition",add_common_precondition)
+	callback_register("scheme_set",scheme_set)
+end
+
+function add_common_precondition(action)
+	action:add_precondition(world_property(evaid,false))
+end
+
+function scheme_set(npc,ini,section)
+	set_axr_smartcover(npc,ini,"axr_smartcover")
+end
+
+-----------------------------------------------
+class "eva_axr_smartcover" ( property_evaluator )
+function eva_axr_smartcover:__init( name, storage ) super ( nil, name )
+	self.st = storage
+	self.st.stage = 0
+end
+
+function eva_axr_smartcover:evaluate()
+	local npc = self.object
+
+	if not (npc:alive()) then
+		return false
+	end
+
+	local is_wounded = xr_wounded.is_wounded
+
+	if (is_wounded(npc)) then
+		return false
+	end
+
+	local st = self.st
+	local cover = npc:get_dest_smart_cover_name()
+
+	if (cover == nil or cover == "") then
+		if (st.last_cover) then
+			used_covers[st.last_cover] = nil
+		end
+	end
+
+	if (xr_help_wounded.is_under_help_wounded(npc)) then
+		npc:use_smart_covers_only(false)
+		if (st.last_cover) then
+			used_covers[st.last_cover] = nil
+		end
+		return false
+	end
+
+	if (st.stage == 0) then
+		local tg = time_global()
+
+		-- Delta
+		if not (st.delta) then
+			st.delta = 0
+		end
+
+		if (st.delta > tg) then
+			return false
+		end
+
+		st.delta = tg+math.random(2000,3000)
+
+		local vo = npc:best_enemy()
+		if (vo and vo:alive() and not is_wounded(vo)) then
+			st.current_id = vo:id()
+			st.stage = 1
+			npc:use_smart_covers_only(true)
+			return false
+		end
+	-- EVALUATE COVER
+	elseif (st.stage == 1) then
+		local vo = npc:best_enemy()
+		if (not vo) or (not vo:alive()) or (is_wounded(vo)) then
+			st.stage = 0
+			npc:use_smart_covers_only(false)
+			if (st.last_cover) then
+				used_covers[st.last_cover] = nil
+			end
+			return false
+		end
+
+		if (cover and cover ~= "") then
+			if not (used_covers[cover]) then
+				used_covers[cover] = npc:id()
+				st.last_cover = cover
+			elseif (used_covers[cover] ~= npc:id()) then
+				st.stage = 0
+				npc:use_smart_covers_only(false)
+				if (st.last_cover) then
+					used_covers[st.last_cover] = nil
+				end
+			end
+		end
+
+		--[[
+		local bd = npc:best_danger()
+		local bd_type = bd and bd:type()
+		if (bd_type == danger_object.grenade) then
+			st.stage = 2
+			--npc:use_smart_covers_only(false)
+			if (st.last_cover) then
+				used_covers[st.last_cover] = nil
+			end
+			return true
+		end
+		--]]
+	-- PANIC MODE
+	elseif (st.stage == 2) then
+		return true
+	-- RUSH UNARMED
+	elseif (st.stage == 3) then
+		if (npc:see(vo) and not alun_utils.item_is_fa(vo:active_item())) then
+			return true
+		end
+	end
+	return false
+end
+
+--------------------------------------------------------------------------------------------------------------
+-- Action Smart Cover
+
+class "act_axr_smartcover" ( action_base )
+function act_axr_smartcover:__init( name, storage )  super ( nil, name )
+	self.st = storage
+end
+function act_axr_smartcover:initialize()
+	action_base.initialize( self )
+end
+
+
+function act_axr_smartcover:execute()
+	action_base.execute(self)
+
+	local st = self.st
+	local npc = self.object
+	local vo = npc:best_enemy()
+	local tg = time_global()
+
+	-- PANIC
+	if (st.stage == 2) then
+		if not (st.lvid) then
+			local bd = npc:best_danger()
+			local bdo = bd and bd:type() == danger_object.grenade and bd:dependent_object() or vo
+			st.lvid = get_rand_vertex(npc,bdo,6,20)
+			st.pos = level.vertex_position(st.lvid)
+
+			alun_utils.printf("bdo = %s pos = %s  lvid = %s",bdo and bdo.name and bdo:name(),alun_utils.vector_to_string(st.pos),st.lvid)
+			--[[
+			local cover
+			for i=2,4 do
+				cover = npc:best_cover(pos, bdo:position(), i, 1, 150)
+				if (cover) then
+					break
+				end
+			end
+			--]]
+
+			local mgr = db.storage[npc:id()].state_mgr
+			if (mgr) then
+				mgr.animation:set_state(nil, true)
+				mgr.animation:set_control()
+			end
+		end
+
+		npc:set_path_type(game_object.level_path)
+		utils.send_to_nearest_accessible_vertex(npc,st.lvid)
+
+		npc:set_mental_state(anim.panic)
+		npc:set_movement_type(move.run)
+
+		--[[
+		local panic_state = st.panic_state or "panic"
+
+		if (state_mgr.get_state(npc) ~= panic_state) then
+			npc:clear_animations()
+			state_mgr.set_state(npc, panic_state)
+			local mgr = db.storage[npc:id()].state_mgr
+			if (mgr) then
+				mgr.animation:set_state(nil, true)
+				mgr.animation:set_control()
+			end
+		end
+		--]]
+
+		local dist = npc:position():distance_to_sqr(st.pos)
+		if (dist < 1) then
+			st.stage = 1
+		end
+
+		return
+	-- RUSH
+	elseif (st.stage == 3) then
+		if not (st.lvid) then
+			st.lvid = get_rand_vertex(npc,vo,3,5)
+			st.pos = level.vertex_position(lvid)
+		end
+
+		npc:set_desired_position()
+		npc:set_desired_direction()
+		npc:set_path_type(game_object.level_path)
+		utils.send_to_nearest_accessible_vertex(npc,st.lvid)
+
+		npc:set_mental_state(anim.danger)
+		npc:set_movement_type(move.run)
+
+		if not (st.weapon) then st.weapon = npc:best_weapon() end
+
+		npc:set_item(object.aim1,st.weapon)
+
+		local dist = npc:position():distance_to_sqr(st.pos)
+		if (dist < 1) then
+			st.stage = 4
+		end
+	-- KILL ENEMY
+	elseif (st.stage == 4) then
+		npc:set_item(object.fire1,st.weapon,1,1)
+		local look_pos = vo:bone_position("bip01_neck")
+		npc:set_sight(look.fire_point,look_pos)
+	end
+end
+
+function act_axr_smartcover:finalize()
+	action_base.finalize( self )
+	self.st.weapon = nil
+	self.st.lvid = nil
+	self.st.pos = nil
+end
+
+function get_rand_vertex(npc,vo,min_dist,max_dist)
+	local dir = npc:position():sub(vo:position())
+	dir = vector_rotate_y(dir,math.random(0,45))
+	return vo:vertex_in_direction(vo:level_vertex_id(),dir,math.random(min_dist,max_dist))
+end
+
+--------------------------------------------------------------------------------------------------------------
+function set_axr_smartcover(npc, ini)
+	local st = xr_logic.assign_storage_and_bind(npc, ini, "axr_smartcover")
+end
+
+evaid = 188113
+actid = 188113
+function add_to_binder(npc, ini, scheme, section, st)
+	local manager = npc:motivation_action_manager()
+	if not (Enable) then
+		manager:add_evaluator(evaid,property_evaluator_const(false))
+		return
+	end
+
+	if (character_community(npc) == "zombied" or npc:section() == "actor_visual_stalker") then
+		manager:add_evaluator(evaid,property_evaluator_const(false))
+		return
+	end
+
+	manager:add_evaluator(evaid,eva_axr_smartcover("eva_axr_smartcover",st))
+
+	local wp = world_property
+	local action = act_axr_smartcover("act_axr_smartcover",st)
+
+	action:add_precondition( wp(evaid,true) )
+	action:add_precondition( wp(stalker_ids.property_alive,true) )
+	action:add_precondition( wp(stalker_ids.property_enemy,true) )
+
+	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
+	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base,false) )
+	--action:add_precondition( wp(stalker_ids.property_danger_grenade,false) )
+
+	action:add_effect( wp(evaid,false) )
+
+	manager:add_action(actid,action)
+
+	local p = {
+				xr_actions_id.stohe_meet_base+1,
+				xr_actions_id.state_mgr + 1,
+				xr_actions_id.state_mgr + 2,
+				xr_actions_id.state_mgr + 3,
+				stalker_ids.action_combat_planner,
+				stalker_ids.action_kill_enemy,
+				stalker_ids.action_look_out,
+				stalker_ids.action_get_ready_to_kill,
+				stalker_ids.action_search_enemy,
+				stalker_ids.action_take_cover
+	}
+
+	local sz = #p
+	for i=1,sz do
+		action = manager:action(p[i])
+		action:add_precondition( wp(evaid,false) )
+	end
+end
+
+function is_under_axr_smartcover(npc)
+	local mgr = npc:motivation_action_manager()
+
+	if not mgr:initialized() then
+		return false
+	end
+
+	local current_action_id = mgr:current_action_id()
+	return  current_action_id == actid
+end

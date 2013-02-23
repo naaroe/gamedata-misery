@@ -8,7 +8,7 @@
 ----------------------------------------------------------------------------------------------------------------------
 class "evaluator_wound" (property_evaluator)
 function evaluator_wound:__init(name, storage) super(nil, name)
-		self.a = storage
+	self.a = storage
 end
 function evaluator_wound:evaluate ()
 	if self.object:in_smart_cover() then return false end
@@ -16,17 +16,15 @@ function evaluator_wound:evaluate ()
 	if self.a.wounded_set ~= true then return false end
 
 	self.a.wound_manager:update()
-	if self.mgr == nil then
-		self.mgr = self.object:motivation_action_manager()
-	end
+
 	if self.object:critically_wounded() == true then
 		return false
 	end
-	if self.mgr:evaluator(stalker_ids.property_enemy):evaluate() and
-		 xr_logic.pstor_retrieve(self.object, "wounded_fight") == "true"
-	then
+
+	if self.object:best_enemy() and xr_logic.pstor_retrieve(self.object, "wounded_fight") == "true" then
 		return false
 	end
+
 	return tostring(xr_logic.pstor_retrieve(self.object, "wounded_state")) ~= "nil"
 end
 
@@ -54,30 +52,17 @@ function action_wounded:initialize ()
 	self.object:set_desired_position()
 	self.object:set_desired_direction()
 
-
 	if self.a.help_start_dialog then
 		self.object:set_start_dialog(self.a.help_start_dialog)
 	end
 	self.object:movement_enabled(false)
 	self.object:disable_trade()
 	self.object:wounded(true)
-
-	local wound_manager_victim = xr_logic.pstor_retrieve(self.object, "wounded_victim")
 end
-function action_wounded:execute ()
-		action_base.execute (self)
-	wound_manager = self.a.wound_manager
-
-	local wound_manager_victim = xr_logic.pstor_retrieve(self.object, "wounded_victim")
-	local sim = alife()
-	local victim = nil
-	if tostring(wound_manager_victim) == "nil" then
-		victim = nil
-	else
-		if sim then
-			victim = get_story_object(victim)
-		end
-	end
+function action_wounded:execute()
+	action_base.execute (self)
+	local npc = self.object
+	local wound_manager = self.a.wound_manager
 
 	-- Проверяем возможность скушать аптечку.
 	if self.a.autoheal == true then
@@ -87,19 +72,15 @@ function action_wounded:execute ()
 			if begin_wounded == nil then
 				xr_logic.pstor_store(self.object, "begin_wounded", current_time)
 			elseif current_time - begin_wounded > 60000 then
-				local npc = self.object
-				sim:create("medkit_script",
-								npc:position(),
-							npc:level_vertex_id(),
-							npc:game_vertex_id(),
-							npc:id())
+				local sim = alife()
+				sim:create("medkit_script",npc:position(),npc:level_vertex_id(),npc:game_vertex_id(),npc:id())
 				wound_manager:unlock_medkit()
 			end
 		end
 	end
 
-	local wound_manager_state = xr_logic.pstor_retrieve(self.object, "wounded_state")
-	local wound_manager_sound = xr_logic.pstor_retrieve(self.object, "wounded_sound")
+	local wound_manager_state = xr_logic.pstor_retrieve(npc, "wounded_state")
+
 	if wound_manager_state == "true" then
 		local h = hit()
 		h.power = 0
@@ -109,56 +90,69 @@ function action_wounded:execute ()
 		h.impulse = 0
 		h.type = hit.wound
 		self.object:hit(h)
-	else
-		--' жрание аптечек и прочей срани.
-		--' Использовать можно только если нам можно сейчас есть аптечку.
-		if self.a.use_medkit == true then
-			wound_manager:eat_medkit()
-		end
-
-		if tostring(wound_manager_state) == "nil" then
-			print_table(self.a.hp_state)
-			print_table(self.a.hp_state_see)
-			abort("wrong wounded animation %s", self.object:name())
-		end
-
-		local id = self.object:id()
-		local po = db.storage[id].victim_surrender and level.object_by_id(db.storage[id].victim_surrender)
-		if (po and po:alive() and not alun_utils.load_var(self.object,"victim_surrender",nil)) then
-			state_mgr.set_state(self.object, "prisoner")
-			self.a.reset = nil
-			if (po:id() == db.actor:id()) then
-				xr_effects.actor_neutral(db.actor,self.object)
-				if (self.object:relation(db.actor) ~= game_object.neutral) then
-					self.object:set_relation(game_object.neutral,db.actor)
-				end
-			end
-		else
-			if (db.storage[id].victim_surrender ~= 65535) then
-				db.storage[id].victim_surrender = nil
-			end
-
-			if (state_mgr.get_state(self.object) ~= wound_manager_state) then
-				state_mgr.set_state(self.object, wound_manager_state, nil, nil, {look_object = victim})
-				local mgr = db.storage[self.object:id()].state_mgr
-				if (mgr) then
-					mgr.animation:set_state(nil, true)
-					mgr.animation:set_control()
-				end
-			end
-
-		end
+		return
 	end
 
-	xr_sound.set_sound_play(self.object:id(), wound_manager_sound ~= "nil" and wound_manager_sound or nil)
+	local id = npc:id()
+	local po = db.storage[id].victim_surrender and level.object_by_id(db.storage[id].victim_surrender)
+	if (po and po:alive() and not alun_utils.load_var(npc,"victim_surrender",nil)) then
+		if (state_mgr.get_state(npc) ~= "prisoner") then
+			local mgr = db.storage[npc:id()].state_mgr
+			if (mgr) then
+				mgr.animation:set_state("prisoner")
+				mgr.animation:set_control()
+			end
+		end
+		self.a.reset = nil
+		if (po:id() == db.actor:id()) then
+			xr_effects.actor_neutral(db.actor,npc)
+			if (npc:relation(db.actor) ~= game_object.neutral) then
+				npc:set_relation(game_object.neutral,db.actor)
+			end
+		end
+		return
+	end
+
+	local wound_manager_sound = xr_logic.pstor_retrieve(npc, "wounded_sound")
+
+	if (not wound_manager_sound or wound_manager_sound == "nil") then
+		xr_sound.set_sound_play(npc:id(), nil)
+	else
+		xr_sound.set_sound_play(npc:id(), wound_manager_sound)
+	end
+
+	if self.a.use_medkit == true then
+		wound_manager:eat_medkit()
+	end
+
+	if tostring(wound_manager_state) == "nil" then
+		print_table(self.a.hp_state)
+		print_table(self.a.hp_state_see)
+		abort("wrong wounded animation %s", self.object:name())
+	end
+
+	if (db.storage[id].victim_surrender ~= 65535) then
+		db.storage[id].victim_surrender = nil
+	end
+
+	local state = state_mgr.get_state(npc)
+	if (state ~= wound_manager_state) then
+		npc:clear_animations()
+		state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,{fast_set = true})
+		local mgr = db.storage[npc:id()].state_mgr
+		if (mgr) then
+			mgr.animation:set_state(nil,true)
+			mgr.animation:set_control()
+		end
+	end
 end
 function action_wounded:finalize ()
-	self.a.reset = nil
-	action_base.finalize (self)
-	self.object:enable_trade()
-	self.object:disable_talk()
-	self.object:wounded(false)
-	self.object:movement_enabled(true)
+		action_base.finalize (self)
+		self.object:enable_trade()
+		self.object:disable_talk()
+--  xr_sound.set_sound(self.object, nil)
+		self.object:wounded(false)
+		self.object:movement_enabled(true)
 end
 
 ----------------------------------------------------------------------------------------------------------------------

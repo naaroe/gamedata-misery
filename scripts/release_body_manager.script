@@ -22,7 +22,7 @@ local function find_nearest_obj_to_release(release_tbl)
 		local v = release_tbl[i]
 		local object = alife():object(v.id)
 		if (object) then
-			if (object:section_name() ~= "zat_b38_stalker_cop" or has_alife_info("zat_b22_stalker_medic_death")) then
+			if (object:section_name() ~= "zat_b38_stalker_cop_dead" or has_alife_info("zat_b22_stalker_medic_death")) then
 				local distance_to_body = actor_pos:distance_to_sqr(object.position)
 				if distance_to_body > max_distanse and ((v.death_time == nil) or (time_global() > v.death_time + IDLE_AFTER_DEATH*1000)) then
 					max_distanse = distance_to_body

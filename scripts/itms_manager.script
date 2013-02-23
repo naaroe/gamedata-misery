@@ -3,7 +3,10 @@
 --
 -- by Alundaio
 ---------------------------------
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 local ini = ini_file("plugins\\itms_manager.ltx")
 	--Backpack stash mod
 	local BackPackStashEnable = alun_utils.read_from_ini(ini,"backpack_stash","enable","bool",true)
@@ -98,16 +101,13 @@ function actor_on_update()
 
 
 	if (FlashlightModEnable) then
-		local helm = db.actor:item_in_slot(12) or db.actor:item_in_slot(7)
-		local has_nv = helm and alun_utils.read_from_ini(nil,helm:section(),"nightvision_sect","string",nil)
-
 		local obj = db.actor:active_detector()
 		local torch = db.actor:object("device_torch")
 		if (obj and FlashlightSections[obj:section()]) then
 			if (has_alife_info("enable_device_torch")) then
 				db.actor:disable_info_portion("enable_device_torch")
 				alife():create("device_torch_dummy",db.actor:position(),0,0,0)
-				show_message("Unequipped headlamp",25)
+				show_message("Head lamp disconnected from UPD",25)
 			end
 
 			if not (torch) then
@@ -128,10 +128,6 @@ function actor_on_update()
 				if (torch:torch_enabled()) then
 					torch:enable_torch(false)
 					torch_delay = nil
-				end
-
-				if (not has_nv) then
-					alife():release(alife():object(torch:id()),true)
 				end
 			end
 		end

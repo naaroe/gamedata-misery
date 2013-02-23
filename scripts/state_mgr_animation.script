@@ -12,8 +12,9 @@ function eva_state_mgr_animation:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_animation:evaluate()
+	self.st.eval_states[self.st.properties["animation"]] = state_lib.states[self.st.target_state].animation == self.st.animation.states.current_state
 	--printf("%s [%s] == [%s]", self.object:name(), tostring(state_lib.states[self.st.target_state].animation), tostring(self.st.animation.states.current_state))
-	return state_lib.states[self.st.target_state].animation == self.st.animation.states.current_state
+	return self.st.eval_states[self.st.properties["animation"]]
 end
 
 
@@ -47,8 +48,8 @@ function eva_state_mgr_animation_locked:evaluate()
 --	if self.st.fast_set == true then
 --		return false
 --	end
-
-	return self.st.animation.states.anim_marker ~= nil
+	self.st.eval_states[self.st.properties["animation_locked"]] = self.st.animation.states.anim_marker ~= nil
+	return self.st.eval_states[self.st.properties["animation_locked"]]
 end
 
 
@@ -229,6 +230,7 @@ function animation:select_anim()
 			end
 
 			local next_anim = anim_for_slot[states.seq_id]
+
 			-- Если следующая анимация - спец действие
 			if type(next_anim) == "table" then
 				self:process_special_action(next_anim)
@@ -243,6 +245,11 @@ function animation:select_anim()
 			--printf("		select into, seq_id [%s], target [%s]", tostring(states.seq_id), tostring(states.target_state))
 
 			local state = self.anim_path.animations[states.target_state]
+
+			if not (state) then
+				alun_utils.printf("state_mgr_animation: Critical Error: No animation state for %s",states.target_state)
+				return
+			end
 
 			-- Если нет INTO анимации
 			if state.into == nil then
@@ -351,12 +358,10 @@ function animation:add_anim(anim, state)
 	local animation_props = state.prop
 	--printf("[%s][%s] add_anim[%s] time[%s] no_rootmove[%s] %s", self.npc:name(), self.name, tostring(anim), time_global(), tostring(animation_props == nil or animation_props.moving ~= true), device():time_global())
 
-	if not (npc:weapon_unstrapped() or npc:weapon_strapped()) then
-		npc:set_item(object.hide,npc:best_weapon())
-		abort("Illegal call of add animation. Weapon is strapping now!!! %s [%s]", npc:name(), anim)
-		return
-	end
-
+	--if (state_mgr.weapon_locked(npc)) then
+		--alun_utils.printf("state_mgr_animation: weapon_locked can't add animation")
+		--return
+	--end
 
 	if animation_props == nil or animation_props.moving ~= true then
 		npc:add_animation(anim, true, false)
@@ -393,6 +398,7 @@ function animation:animation_callback(skip_multianim_check)
 	if(self.npc:animation_count()~=0) then
 		return
 	end
+
 	local states = self.states
 
 	-- 1. Отыграли INTO анимацию

@@ -1,7 +1,10 @@
 ----------------------
 -- Misery Main Content
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ActorClass = alun_utils.read_from_ini(nil,"actor","actor_class","string","assaulter")
 MiseryBlackRoad = false
 MiseryBlackRoadEnableReducedRewards = true
@@ -102,13 +105,19 @@ function on_update()
 		if (timer and time_global() > timer) then
 			set_stage(nil)
 
+			local classes = { "assaulter","sniper","recon" }
+			local has_card
+			for i=1,3 do
+				has_card = db.actor:object("identity_card_"..classes[i]) and classes[i]
+			end
+
 			if not (db.actor:object("identity_card_"..ActorClass)) then
 				if (ui_dyn_msg_box) then
 					local function game_quit()
 						local console = get_console()
 						console:execute("disconnect")
 					end
-					ui_dyn_msg_box.msg_box_ui("message_box_ok",true,"This save game requires the "..ActorClass..". Your game will be forced to quit.",game_quit)
+					ui_dyn_msg_box.msg_box_ui("message_box_ok",true,"This save game requires the "..has_card.." class. Your game will be forced to quit.",game_quit)
 				end
 			end
 		end
@@ -178,16 +187,19 @@ function dynamic_actor_loadout()
 		create_items("itm_gunsmith_toolkit",4)
 	end
 
+	-- Items all classes should have
+	create_items("device_torch")
+	create_items("wpn_binoc_inv")
+	create_items("wpn_binoc")
+
+	-- Class specific items
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
+			create_items("wpn_upd")
 			create_items("roubles",7)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv")
@@ -219,13 +231,10 @@ function dynamic_actor_loadout()
 	elseif (ActorClass == "sniper") then
 		create_items("identity_card_sniper")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv_5")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")			
+			create_items("wpn_upd")
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
@@ -234,7 +243,7 @@ function dynamic_actor_loadout()
 			create_items("breadold",3)
 			create_items("kolbasa")
 			create_items("conserva",2)
-			
+
 			create_items("bandage",3)
 			create_items("tetanus")
 			create_items("drug_coagulant")
@@ -255,13 +264,10 @@ function dynamic_actor_loadout()
 	elseif (ActorClass == "recon") then
 		create_items("identity_card_recon")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv_4")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
+			create_items("wpn_upd")
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
