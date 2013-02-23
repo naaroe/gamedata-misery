@@ -84,18 +84,18 @@ visibility_threshold	 	= 200.0				;Threshold in which object becames visible bas
 always_visible_distance 	= 0.02
 time_quant					= 0.0018			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
 decrease_value				= 0.0020			;Decrease over time to overall threshold
-velocity_factor		     	= 2.12				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 1.7				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.62				;Low value = easier to see at night
 transparency_threshold	 	= 0.96 				;Low value = easier to see through semi-transparent objects
 
 [stalker_novice_vision_danger]:stalker_vision_danger
 min_view_distance   		= 0.30				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 1.80				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 150.0				; значение, при достижении суммой которого объект считается видимым
+visibility_threshold	 	= 200.0				; значение, при достижении суммой которого объект считается видимым
 always_visible_distance 	= 0.02
 time_quant					= 0.0014
 decrease_value				= 0.0016 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 2.12				
+velocity_factor		     	= 1.7
 luminocity_factor			= 0.62				; фактор освещения (только для Актёра)
 transparency_threshold	 	= 0.96
 

@@ -199,7 +199,12 @@ function dynamic_actor_loadout()
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv")
 		else
+<<<<<<< HEAD
 			create_items("wpn_upd")
+=======
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			create_items("roubles",7)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv")
@@ -234,7 +239,12 @@ function dynamic_actor_loadout()
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv_5")
 		else
+<<<<<<< HEAD
 			create_items("wpn_upd")
+=======
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")			
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
@@ -243,7 +253,11 @@ function dynamic_actor_loadout()
 			create_items("breadold",3)
 			create_items("kolbasa")
 			create_items("conserva",2)
+<<<<<<< HEAD
 
+=======
+			
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			create_items("bandage",3)
 			create_items("tetanus")
 			create_items("drug_coagulant")
@@ -267,7 +281,12 @@ function dynamic_actor_loadout()
 			create_items("device_flashlight")
 			create_items("wpn_knife_inv_4")
 		else
+<<<<<<< HEAD
 			create_items("wpn_upd")
+=======
+			create_items("wpn_binoc_inv")
+			create_items("wpn_binoc")
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")

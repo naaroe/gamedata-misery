@@ -139,11 +139,19 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 					ammo_count = ammo_count[1] < ammo_count[2] and math.random(ammo_count[1],ammo_count[2]) or math.random(ammo_count[2],ammo_count[1])
 				end
 			end
+<<<<<<< HEAD
 
 			if not (ammo_count) then
 				ammo_count = 1
 			end
 
+=======
+
+			if not (ammo_count) then
+				ammo_count = 1
+			end
+
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			if (system_ini():section_exist(ammo_section)) then
 				create_ammo(ammo_section,se_npc.position,0,0,se_npc.id,ammo_count)
 			else

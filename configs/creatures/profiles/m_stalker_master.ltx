@@ -80,22 +80,22 @@ vision_free_section				= stalker_master_vision_free
 [stalker_master_vision_free]:stalker_vision_free
 min_view_distance   		= 0.35				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 200.0				;Threshold in which object becames visible based on factors
+visibility_threshold	 	= 220.0				;Threshold in which object becames visible based on factors
 always_visible_distance 	= 0.02
 time_quant					= 0.0012			;step increment to for sight calculations (low values seem to make stalkers take shots faster)
 decrease_value				= 0.0013 			;Decrease over time to overall threshold
-velocity_factor		     	= 2.12				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
+velocity_factor		     	= 2.0				;Higher value = greater bonus to detection speed when target is moving (depended on movement speed)
 luminocity_factor			= 0.36				;Low value = easier to see at night
 transparency_threshold	 	= 0.96 				;Low value = easier to see through semi-transparent objects
 
 [stalker_master_vision_danger]:stalker_vision_danger
 min_view_distance   		= 0.50				; коэффициент, который множится на eye_range, в зависимости от угла
 max_view_distance	 		= 2.00				; коэффициент, который множится на eye_range, в зависимости от угла
-visibility_threshold	 	= 125.0				; значение, при достижении суммой которого объект считается видимым
+visibility_threshold	 	= 190.0				; значение, при достижении суммой которого объект считается видимым
 always_visible_distance 	= 0.02
 time_quant					= 0.0009
 decrease_value				= 0.0011 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 2.12				
+velocity_factor		     	= 2.0
 luminocity_factor			= 0.36				; фактор освещения (только для Актёра)
 transparency_threshold	 	= 0.96
 

@@ -1910,6 +1910,7 @@ end
 function anim_state(actor,npc,p)
 	return p and p[1] and state_mgr.get_state(npc) == p[1]
 end
+<<<<<<< HEAD
 
 function smart_empty(actor,npc,p)
 	local board = sim_board.get_sim_board()
@@ -2055,3 +2056,5 @@ function squad_hit_by_smart(actor,npc,p)
 	return false
 end
 
+=======
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941

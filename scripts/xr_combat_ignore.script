@@ -106,7 +106,11 @@ function squad_on_npc_death(squad,npc)
 	end
 end
 
+<<<<<<< HEAD
 function is_enemy(obj,enemy,no_memory)
+=======
+function is_enemy(obj,enemy,st)
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 	if not (obj:alive()) then return false end
 	if (obj:critically_wounded()) then return true end
 
@@ -187,7 +191,11 @@ function action_process_enemy:__init( obj, storage )
 	self.comm = get_object_community(obj)
 	self.rank = ranks.get_obj_rank_name(obj)
 	self.st.stage = 0
+<<<<<<< HEAD
 
+=======
+	self.st.enemy_id = nil
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 	if not (IsStalker(obj)) then
 		return
 	end
@@ -235,12 +243,21 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			-- Jump to next stage
 			if (string.find(level.get_weather(),"veryfoggy") or ForbiddenNPCs[npc:section()] or ForbiddenNPCs[enemy:section()]) then
 				self.st.stage = 3
+<<<<<<< HEAD
 			elseif (string.find(level.get_weather(),"foggy") or self.comm == "monster" or self.comm == "zombied" or character_community(enemy) == "zombied" or character_community(enemy) == "monster") then
+=======
+			elseif (string.find(level.get_weather(),"foggy") or EnableMemoryTimer ~= true or self.comm == "monster" or self.comm == "zombied" or character_community(enemy) == "zombied" or character_community(enemy) == "monster") then
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 				self.st.stage = 2
 			else
 				self.st.stage = 1
 			end
+<<<<<<< HEAD
 			return true
+=======
+		else
+			self.st.enemy_id = nil
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 		end
 		return false
 	elseif (self.st.stage == 1) then
@@ -251,6 +268,7 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			if (enemy:id() == db.actor:id()) then
 				fighting_with_actor_npcs[npc:id()] = nil
 			end
+<<<<<<< HEAD
 
 			if (db.storage[npc:id()].enemy_id == enemy:id()) then
 				db.storage[npc:id()].enemy_id = nil
@@ -259,6 +277,9 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			--npc:enable_memory_object(enemy,false)
 
 			self.st.enabled = true
+=======
+			self.st.enemy_id = nil
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			self.st.stage = 0
 			return false
 		end
@@ -270,6 +291,7 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			if (enemy:id() == db.actor:id()) then
 				fighting_with_actor_npcs[npc:id()] = nil
 			end
+<<<<<<< HEAD
 
 			if (db.storage[npc:id()].enemy_id == enemy:id()) then
 				db.storage[npc:id()].enemy_id = nil
@@ -278,6 +300,9 @@ function action_process_enemy:enemy_callback(npc, enemy)
 			--npc:enable_memory_object(enemy,false)
 
 			self.st.enabled = true
+=======
+			self.st.enemy_id = nil
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			self.st.stage = 0
 			return false
 		end

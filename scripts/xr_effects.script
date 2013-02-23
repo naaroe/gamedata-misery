@@ -3672,6 +3672,7 @@ function spawn_npc_at_position(actor,npc,p)
 	alife():create(p[1],pos,p[5],p[6])
 end
 
+<<<<<<< HEAD
 function kill_obj_on_job(actor,npc,p)
 	local board = sim_board.get_sim_board()
 	local smart = p[1] and board and board.smarts_by_names[p[1]]
@@ -3706,3 +3707,6 @@ function obj_at_job_switch_section(actor,npc,p)
 	end
 	xr_logic.switch_to_section(obj, st.ini, p[3])
 end
+=======
+
+>>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
