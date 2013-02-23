@@ -6,8 +6,6 @@
 --function printf()
 --end
 
-local ini = alun_utils.read_from_ini("plugins\\xr_sound.ltx")
-
 sound_table = {}
 
 function set_sound_play(npc_id, sound, faction, point)
@@ -501,16 +499,10 @@ end
 
 -- modified by Alundaio (original: ????)
 --' Таблица для хранения созданных саунд обжектов.
-<<<<<<< HEAD
-=======
-sound_object_by_theme = {}
-ph_snd_themes = {}
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 --' type = [random|seq|looped]
 local ltx = ini_file("plugins\\xr_sound.ltx")
 local path = alun_utils.read_from_ini(ltx,"settings","path","string",nil)
 function get_sound_object(theme, t_type)
-<<<<<<< HEAD
 	if not (ph_snd_themes) then
 		ph_snd_themes = {}
 		ph_snd_themes[theme] = alun_utils.collect_section(ltx,theme)
@@ -519,13 +511,6 @@ function get_sound_object(theme, t_type)
 
 	if (not ph_snd_themes or not ph_snd_themes[theme]) then
 		--alun_utils.printf("no ph_snd_themes theme=%s",theme)
-=======
-	if not (ph_snd_themes[theme]) then
-		ph_snd_themes = alun_utils.collect_section(ini,theme)
-	end
-
-	if ph_snd_themes[theme] == nil then
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 		return
 	end
 
@@ -543,7 +528,6 @@ function get_sound_object(theme, t_type)
 
 	--' Выбор следующего айдишника
 	local play_id = -1
-<<<<<<< HEAD
 
 	local table_size = #ph_snd_themes[theme]
 
@@ -552,9 +536,6 @@ function get_sound_object(theme, t_type)
 	end
 
 	--alun_utils.printf("tablesize = %s theme=%s",table_size,theme)
-=======
-	local table_size = #ph_snd_themes[theme]
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 	if sound_object_by_theme[theme].last_id == nil then
 		if t_type == "random" then
 			if table_size >= 2 then

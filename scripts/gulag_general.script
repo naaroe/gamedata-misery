@@ -798,10 +798,6 @@ function load_job(smart)
 				while ini:section_exist(gname.."_beh_"..it) do
 
 					name = gname.."_beh_"..it
-<<<<<<< HEAD
-=======
-					alun_utils.printf("behavior scheme = %s",name)
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 
 					t = { 	_prior = 35,
 							job_id = { section = "logic@"..name,

@@ -31,7 +31,6 @@ local intercepts = {
 	npc_on_item_take_from_box	= {},
 	npc_on_weapon_state_change	= {},
 
-
 	-- state_mgr_weapon.script
 	npc_on_weapon_strapped		= {},
 	npc_on_weapon_unstrapped	= {},
@@ -135,8 +134,6 @@ function event_queue()
 			end
 		end
 	end
-=======
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 end
 
 function _G.create_delayed_event(timer,f,...)
@@ -193,15 +190,6 @@ function on_game_start()
 
 	-- TEST
 	--if (axr_overheat) then axr_overheat.on_game_start() end
-end
-
--------------------
--- se_actor_on_register()
--------------------
-function se_actor_on_register(actor)
-	for i=1, #intercepts.se_actor_on_register do
-		intercepts.se_actor_on_register[i](actor)
-	end
 end
 
 -------------------
@@ -305,10 +293,8 @@ function actor_on_update(se_actor,delta)
 		end
 	end
 
-
 	--alun_utils.execute_queue()
 	event_queue()
-	alun_utils.execute_queue()
 end
 
 -------------------

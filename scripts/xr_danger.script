@@ -74,7 +74,6 @@ function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power)
 			end
 
 			if not (xr_wounded.is_wounded(npc)) then
-<<<<<<< HEAD
 				if (IsStalker(who)) then
 					s_type = string.lower(s_type)
 					--alun_utils.printf("SCRIPT DANGER sound_threshold= %s,%s,%s",DangerSoundThreshold[s_type][1],DangerSoundThreshold[s_type][2],DangerSoundThreshold[s_type][3])
@@ -93,14 +92,6 @@ function npc_on_hear_callback(npc,who_id,s_type,dist,sound_power)
 						if (dist < 1000) then
 							set_script_danger(npc,15000)
 						end
-=======
-				s_type = string.lower(s_type)
-				--alun_utils.printf("SCRIPT DANGER sound_threshold= %s,%s,%s",DangerSoundThreshold[s_type][1],DangerSoundThreshold[s_type][2],DangerSoundThreshold[s_type][3])
-				if (DangerSoundThreshold[s_type] and dist <= DangerSoundThreshold[s_type][2]) then
-					if (DangerSoundThreshold[s_type][3] == 1 and npc:relation(who) == game_object.enemy) or (DangerSoundThreshold[s_type][3] == 0) then
-						set_script_danger(npc,DangerSoundThreshold[s_type][1] or 2000)
-						--alun_utils.printf("xr_hear: trigger script danger %s",s_type)
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 					end
 				end
 			end

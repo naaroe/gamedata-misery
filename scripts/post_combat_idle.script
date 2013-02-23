@@ -7,7 +7,6 @@ function evaluator_combat_enemy:__init(storage, name) super(nil, name)
 	self.st.timer = time_global()
 end
 function evaluator_combat_enemy:evaluate()
-<<<<<<< HEAD
 	local be = self.object:best_enemy()
 	if be and not xr_combat_ignore.is_enemy(self.object, be) then
 		return false
@@ -15,30 +14,6 @@ function evaluator_combat_enemy:evaluate()
 	if be and self.st.timer then
 		self.st.last_be_id = be:id()
 		self.st.last_be_name = be:name()
-=======
-	local best_enemy = self.object:best_enemy()
-
-	local is_enemy = best_enemy and xr_combat_ignore.is_enemy(self.object, best_enemy, db.storage[self.object:id()].combat_ignore)
-
-	local tg = time_global()
-
-	if is_enemy then
-		local time_in_memory = tg - self.object:memory_time(best_enemy)
-		if (time_in_memory > db.storage[self.object:id()].combat_ignore.combat_inertion) then
-			is_enemy = false
-		end
-	end
-
-	if not is_enemy then
-		self.st.last_best_enemy_id = nil
-		self.st.last_best_enemy_name = nil
-		return false
-	end
-
-	if best_enemy and self.st.timer then
-		self.st.last_best_enemy_id = best_enemy:id()
-		self.st.last_best_enemy_name = best_enemy:name()
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 		self.st.timer = nil
 		return true
 	end
@@ -47,13 +22,8 @@ function evaluator_combat_enemy:evaluate()
 	if be == nil and self.st.timer == nil then
 		--printf("object name is [%s]", self.object:name())
 		local overrides = db.storage[self.object:id()].overrides
-<<<<<<< HEAD
 		local min = (overrides and overrides.min_post_combat_time*1000) or 10000
 		local max = (overrides and overrides.max_post_combat_time*1000) or 15000
-=======
-		local min = (overrides and overrides.min_post_combat_time*1000) or 5000
-		local max = (overrides and overrides.max_post_combat_time*1000) or 10000
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 		self.st.timer = tg + math.random(min, max)
 	end
 

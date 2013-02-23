@@ -251,15 +251,9 @@ function act_gather_itm:execute()
 
 	local dist = self.object:position():distance_to(self.st.vid_pos)
 
-<<<<<<< HEAD
 	if (dist < 7 and self.st.stage ~= 2) then
 		if not (self.hang_time) then
 			self.hang_time = time_global() + 12000
-=======
-	if (dist < 5 and self.st.stage ~= 2) then
-		if not (self.hang_time) then
-			self.hang_time = time_global() + 10000
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 		end
 
 		if (time_global() > self.hang_time) then

@@ -200,7 +200,6 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv")
 		else
 			create_items("wpn_upd")
-
 			create_items("roubles",7)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv")
@@ -236,7 +235,6 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv_5")
 		else
 			create_items("wpn_upd")
-
 			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
@@ -270,7 +268,6 @@ function dynamic_actor_loadout()
 			create_items("wpn_knife_inv_4")
 		else
 			create_items("wpn_upd")
-
 			create_items("roubles",2)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")

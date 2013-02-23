@@ -149,13 +149,6 @@ local dynamic = {}
 local on_info_sections
 function on_register(actor)
 
-<<<<<<< HEAD
-=======
-	if (actor.start_position_filled) then
-		return
-	end
-
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 	local file = io.open("gamedata\\configs\\dynamic_spawn.ltx","r")
 	if not (file) then
 		return
@@ -366,11 +359,7 @@ function interpret_spawn_data(sections)
 						level.map_add_object_spot(se_obj.id,t.map_spot,t.hint)
 					end
 
-<<<<<<< HEAD
 					alun_utils.printf("after create %s [%s]",se_obj:name(),sec)
-=======
-					alun_utils.printf("after create %s",se_obj:name())
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 				else
 					alun_utils.printf("dynamic_spawn.ltx: ERROR improper values for section %s [ section=%s | pos=%s | lvid=%s | gvid=%s ]",sec,section,t.position,lvid,gvid)
 				end
@@ -424,7 +413,6 @@ function is_on_the_same_level(actor,gvid)
 	return game_graph():vertex(actor.m_game_vertex_id):level_id() == game_graph():vertex(gvid):level_id()
 end
 
-<<<<<<< HEAD
 function get_object_flag_name(fl)
 	local flags = {
 		[1] = "UseSwitches",
@@ -463,9 +451,6 @@ function get_object_flag(fl)
 		["CorpseRemoval"] 	= 8192
 	}
 end
-=======
-
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 -------------------------------------------
 -- cse_alife_smart_cover
 -------------------------------------------

@@ -107,11 +107,7 @@ function actor_on_update()
 			if (has_alife_info("enable_device_torch")) then
 				db.actor:disable_info_portion("enable_device_torch")
 				alife():create("device_torch_dummy",db.actor:position(),0,0,0)
-<<<<<<< HEAD
 				show_message("Head lamp disconnected from UPD",25)
-=======
-				show_message("Unequipped headlamp",25)
->>>>>>> 69c90e29890b7a505c1ef5f7f91b1a9759107941
 			end
 
 			if not (torch) then
