@@ -263,9 +263,9 @@ function animpoint:fill_approved_actions()
 		end
 	end
 
-	if(#self.st.approved_actions==0) then
+	--if(#self.st.approved_actions==0) then
 		--abort("There is no approved actions for stalker[%s] in animpoint[%s]", db.storage[self.npc_id].object:name(), self.object:name())
-	end
+	--end
 end
 -- Чувак дошел до точки и может начинать работать
 function animpoint:start()

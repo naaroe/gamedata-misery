@@ -53,14 +53,37 @@ function use_battery(obj)
 	local name = obj:section()
 	local upd = db.actor:object("wpn_upd")
 
-	if (Batteries[name]) then
-		if (upd) then
-			local con = alun_utils.read_from_ini(ini,name,"power","float",0.6)
-			upd:set_condition(con)
-		else
-			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
-			alife():create(name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+	if not Batteries[name] then
+		return
+	end
+
+	if (upd) then
+		-- spawn batteries if still condition left in upd
+		local con = upd:condition()
+		local power
+		local bb,bp
+
+		for k, v in pairs(Batteries) do
+			power = alun_utils.read_from_ini(ini,k,"power","float",0)
+			-- Find battery closest to current power level of UPD
+			if (not bp and power <= con) or (bp and power > bp and power <= con) then
+				bp = power
+				bb = k
+			end
 		end
+
+		-- spawn battery according to current UPD power level
+		if (bp and bb) then
+			alife():create(bb, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
+		end
+
+		power = alun_utils.read_from_ini(ini,name,"power","float",0.6)
+		upd:set_condition(power)
+
+		db.actor:transfer_item(upd,db.actor)
+	else
+		if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+		alife():create(name, db.actor:position(), db.actor:level_vertex_id(), db.actor:game_vertex_id(), db.actor:id())
 	end
 end
 

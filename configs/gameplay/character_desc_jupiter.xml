@@ -229,7 +229,7 @@
 		<rank>65</rank>
 		<reputation>0</reputation>
 		<money min="1000"  max="5000"  infinitive="0"/>
-		<visual>actors\stalker_neutral\stalker_mercen2b_mask</visual>
+		<visual>actors\stalker_neutral\stalker_neutral2b_mask</visual>
 
 		<supplies>
 

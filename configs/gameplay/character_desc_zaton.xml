@@ -2072,7 +2072,7 @@
 	<!-------------- zat_b53_artefact_hunter_2 ---------------------->
 	<specific_character id="zat_b53_artefact_hunter_2" team_default="1">
 		<name>zat_b53_artefact_hunter_2_name</name>
-		<icon>ui_inGame2_neutral_nauchniy</icon>
+		<icon>ui_inGame2_neutral_1</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>
@@ -2085,7 +2085,7 @@
 		<rank>35</rank>
 		<reputation>0</reputation>
 
-		<visual>actors\stalker_neutral\stalker_neutral_nauchniy</visual>
+		<visual>actors\stalker_neutral\stalker_neutral_1_mask</visual>
 		<supplies>
 
 		[spawn] \n

@@ -82,14 +82,14 @@ on_info5 = {+zat_b53_thanks_dialog} remark@actor_help_wait %=actor_friend%
 meet = meet
 anim = wait_na
 target = story | actor
-on_info = {=npc_talking} remark@acor_help_talk
+on_info = {=npc_talking} remark@actor_help_talk
 on_info2 = {+zat_b53_thanks_dialog +zat_b53_artefact_hunter_1_with_friend} beh@sit_ass_talk
 on_info3 = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info4 = {=surge_kill_all} %=kill_npc%
 on_info5 = {!is_alive(zat_b53_artefact_hunter_1)} remark@wait_for_a_new_job
 on_info6 = {+zat_b53_thanks_dialog} %=actor_friend%
 
-[remark@acor_help_talk]:walker@def_no_loot
+[remark@actor_help_talk]:walker@def_no_loot
 meet = meet
 anim = wait_na
 target = story | actor
@@ -116,16 +116,9 @@ target = story | zat_b53_artefact_hunter_1
 on_info = {+zat_b53_actor_enemy} walker@actor_enemy
 on_info2 = {=surge_kill_all} %=kill_npc%
 
-[remark@sit_ass_talk]:walker@def_no_loot
-meet = meet
-anim = sit_ass
-target = path | zat_b53_artefact_hunter_2_sit_ass_look, 0
-on_info = {+zat_b53_actor_enemy} walker@actor_enemy
-on_game_timer = 230 | camper@go_to_skadovsk
-
 [beh@sit_ass_talk]
 behavior_state = beh_move
-goto_target = waypoint
+target = waypoint
 meet = meet
 corpse_detection_enabled = false
 gather_items_enabled = false
@@ -138,12 +131,13 @@ meet = meet
 corpse_detection_enabled = false
 gather_items_enabled = false
 def_state_moving = rush
+def_state_standing = idle
 shoot = always
-pt1 = 1224387 look:139,-7,183
-path_end = animpoint@zat_skadovsk_animpoint_wall_01
+pt1 = 1224391,0,idle look:139,-7,183
+path_end = beh@wait_wall
 
-[animpoint@general]
-cover_name = zat_skadovsk_animpoint_wall_01
+
+[beh@general]
 meet = meet
 combat_ignore_cond = true
 combat_ignore_keep_when_attacked = true
@@ -152,15 +146,20 @@ out_restr = zat_a2_sr_noweap
 gather_items_enabled = false
 help_wounded_enabled = false
 corpse_detection_enabled = false
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+delay_anim = guard
 
-[animpoint@zat_skadovsk_animpoint_wall_01]:animpoint@general
-reach_movement = run
-on_info = {=npc_in_zone(zat_a2_sr_light)} animpoint@zat_skadovsk_animpoint_wall_01_reached
-
-[animpoint@zat_skadovsk_animpoint_wall_01_reached]:animpoint@general
-reach_movement = walk
-direction = -1,0,0
-avail_animations = animpoint_stay_wall
+[beh@wait_wall]
+use_camp = true
+pt1 = 1186086,60000,animpoint_stay_wall animpoint:125.75717926025,-7.3197393417358,179.54898071289,-1,0,0
+on_info = {+zat_b53_go_nil} %=clear_logic%
 
 [walker@actor_enemy]:walker@def_no_loot
 meet = no_meet

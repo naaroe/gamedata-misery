@@ -7,7 +7,7 @@ $npc			 		= on	;off
 $prefetch 				= 8
 scheduled         			= off
 cform             			= skeleton
-class                   		= WP_KNIFE
+class                   		= WP_BINOC
 min_radius              		= 0
 max_radius              		= 50
 
@@ -31,21 +31,20 @@ holder_fov_modifier			= 1.0
 cost					= 3880
 inv_weight				= 0.786
 
-ammo_limit		 		= 120
-ammo_current		 		= 96
-ammo_elapsed		 		= 16
-
-ammo_mag_size		 		= 1
+ammo_limit		 		= 0
+ammo_current		 	= 0
+ammo_elapsed		 	= 0
+ammo_mag_size		 	= 0
 ammo_class		 		= ammo_knife
 
-hand_dependence		 		= 1
-single_handed				= 1
+hand_dependence		 	= 1
+single_handed			= 1
 
-slot 			 		= 1	;0
-animation_slot				= 5
-default_to_ruck				= false
-sprint_allowed				= true
-control_inertion_factor			= 1
+slot 			 		= 4	;0
+animation_slot			= 5
+default_to_ruck			= true
+sprint_allowed			= true
+control_inertion_factor	= 1
 
 inv_grid_width          = 1
 inv_grid_height         = 1
@@ -63,7 +62,7 @@ kill_msg_width				= 53
 kill_msg_height				= 16
 
 show_ammo				= false
-
+show_condition			= false
 ;-------------------------------------------------------------------------------
 ;базовая дисперсия
 fire_dispersion_base			= 0.5
@@ -172,6 +171,12 @@ snd_shoot				= weapons\knife\knife_1
 snd_empty				= weapons\pistol_empty
 snd_reload				= weapons\pm_reload, 0.8
 snd_close				= weapons\generic_close
+
+show_ammo					= false
+
+vision_present				= false ;cant be set to false, if so no binoc hud is showing up
+vis_frame_speed				= 0	;4				; скорость, с которой наводится рамка на цель
+vis_frame_color				= 0.7,0.7,0.7,1.0	; цвет рамки RGBA (A) Не учитывается
 
 [wpn_upd_hud]:hud_base
 zoom_hide_crosshair			= true

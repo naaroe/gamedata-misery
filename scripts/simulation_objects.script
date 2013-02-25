@@ -98,6 +98,13 @@ function evaluate_prior(target, squad)
 		end
 	end
 
+	local prior = 0
+	if (not target:target_precondition(squad)) then
+		return 0
+	else
+		prior = 3
+	end
+
 	-- Level travel
 	if not (is_on_the_same_level(target, squad)) then
 		local level_name = alife():level_name(game_graph():vertex(squad.m_game_vertex_id):level_id())
@@ -112,13 +119,6 @@ function evaluate_prior(target, squad)
 		if not (enable) then
 			return 0
 		end
-	end
-
-	local prior = 0
-	if (not target:target_precondition(squad)) then
-		return 0
-	else
-		prior = 3
 	end
 
 	for k,v in pairs (squad.behaviour) do

@@ -1,1 +1,14 @@
+;Naming convention: <smart_name>_beh_<index> (ie. zat_b5_smart_terrain_beh_1, zat_b5_smart_terrain_beh_1_surge)
 
+; Directions [North = 0,0,-1] [East = -1,0,0] [South = 0,0,1] [West = 1,0,0]
+
+;--------------------- jup_a10_smart_terrain
+[jup_a10_smart_terrain_beh_1]:beh@general
+pt1 = 749771,60000,sit_ass look:25,25,-185
+pt2 = 747367,60000,hide look:22,24,-158
+path_end = loop
+on_info = {=surge_started} jup_a10_smart_terrain_beh_surge
+
+[jup_a10_smart_terrain_beh_surge]:beh@general
+pt1 = 738194,60000,sit_ass look:13,24,-189
+on_info = {!=surge_started} jup_a10_smart_terrain_beh_1

@@ -185,9 +185,9 @@ function pri_a22_give_actor_outfit (first_speaker, second_speaker)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "bandage")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_coagulant")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "drug_psy_blockade")
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "morphine")
 end
 

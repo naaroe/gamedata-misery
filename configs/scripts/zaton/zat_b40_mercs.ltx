@@ -87,23 +87,6 @@ use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
 snd_on_use = {!dist_to_actor_le(3)} nil
 meet_on_talking = false
 
-[animpoint@general]
-use_camp = true
-reach_movement = patrol
-meet = meet@zat_b40_animpoint_meet
-
-[animpoint@zat_b40_guard_12]:animpoint@general
-cover_name = zat_b40_animpoint_1
-direction = 0,0,-1
-on_info = {=surge_started} beh@zat_b40_guard_12_surge
-on_game_timer = 2400 | beh@zat_b40_guard_12
-
-[animpoint@zat_b40_guard_15]:animpoint@general
-cover_name = zat_b40_animpoint_2
-direction = 0,0,-1
-on_info = {=surge_started} beh@zat_b40_guard_15_surge
-on_game_timer = 2400 | beh@zat_b40_guard_15
-
 ;---------------------------------------------------------------beh
 [beh@general]
 behavior_state = beh_move
@@ -133,7 +116,8 @@ pt3 = 1385464
 pt4 = 1386632
 pt5 = 1434943
 pt6 = 1578326,15000,binocular look:371.68685913086,33.260974884033,-323.43347167969
-path_end = animpoint@zat_b40_guard_12
+pt7 = 1560265,30000,animpoint_sit_low animpoint:358.74932861328,33.740585327148,-391.47021484375,0,0,-1
+path_end = loop
 on_info = {=surge_started} beh@zat_b40_guard_12_surge
 on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_12_sleep
 on_info3 = {=is_rain} beh@zat_b40_guard_12_rain
@@ -159,7 +143,8 @@ on_info3 = {=is_rain} beh@zat_b40_guard_14_rain
 [beh@zat_b40_guard_15]:beh@general
 pt1 = 1647151,30000,hide look:422.03771972656,35.695636749268,-413.07583618164
 pt2 = 1592899,10000,search look:374.6389465332,28.091470718384,-370.43029785156
-path_end = animpoint@zat_b40_guard_15
+pt3 = 1615491,60000,animpoint_stay_wall animpoint:395.7712097168,33.402793884277,-440.68048095703,0,0,-1
+path_end = loop
 on_info = {=surge_started} beh@zat_b40_guard_15_surge
 on_info2 = {=zat_b7_is_night} beh@zat_b40_guard_15_sleep
 on_info3 = {=is_rain} beh@zat_b40_guard_15_rain

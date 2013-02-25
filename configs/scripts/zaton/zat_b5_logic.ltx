@@ -2,42 +2,42 @@
 [logic@zat_b5_animp_1]
 active = animpoint@zat_b5_animp_1
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_1]
 active = beh@zat_b5_job_1
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_2]
 active = beh@zat_b5_job_2
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_3]
 active = beh@zat_b5_job_3
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_4]
 active = beh@zat_b5_job_4
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_5]
 active = beh@zat_b5_job_5
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_6]
 active = beh@zat_b5_job_6
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 [logic@zat_b5_job_7]
 active = beh@zat_b5_job_7
 suitable = {-zat_b5_task_end} false, {=check_npc_name(sim_default)} true, {=check_npc_name(stalker_raider)} true
-prior = 100
+prior = 25
 
 
 ;-------------------------------------------- ANIMPOINT SCHEME
@@ -53,29 +53,6 @@ far_distance 	= 0
 use = {=actor_enemy} false, {=dist_to_actor_le(3)} true, false
 snd_on_use = {!dist_to_actor_le(3)} nil
 meet_on_talking = false
-
-[animpoint@zat_b5_animp_gen]
-use_camp = true
-meet = meet@zat_b5_animpoint_meet
-
-[animpoint@zat_b5_job_2]:animpoint@zat_b5_animp_gen
-cover_name = zat_b5_animpoint_2
-reach_distance = 3
-direction = 0,0,1
-on_info = {=surge_started} beh@zat_b5_job_2_surge
-on_game_timer = 2400 | beh@zat_b5_job_2
-
-[animpoint@zat_b5_job_3]:animpoint@zat_b5_animp_gen
-cover_name = zat_b5_animpoint_3
-direction = 1,0,0
-on_info = {=surge_started} beh@zat_b5_job_3_surge
-on_game_timer = 2400 | beh@zat_b5_job_3
-
-[animpoint@zat_b5_job_4]:animpoint@zat_b5_animp_gen
-cover_name = zat_b5_animpoint_1
-direction = -1,0,0
-on_info = {=surge_started} beh@zat_b5_job_4_surge
-on_game_timer = 2400 | beh@zat_b5_job_4
 
 ;------------------------------------------- BEH SCHEME
 [beh@general]
@@ -105,19 +82,23 @@ on_info3 = {=is_rain} beh@zat_b5_job_1_rain
 pt1 = 1647471,15000 look:416.5807800293,35.98717880249,-63.967094421387
 pt2 = 1647471,15000 look:393.79104614258,34.793121337891,-55.281578063965
 pt3 = 1651943,5000
-path_end = animpoint@zat_b5_job_2
+pt4 = 1673463,50000,animpoint_sit_high animpoint:431.79592895508,36.261932373047,-54.101097106934,0,0,1
+path_end = loop
 on_info = {=surge_started} beh@zat_b5_job_2_surge
 
 [beh@zat_b5_job_3]:beh@general
 pt1 = 1688464,10000,hide look:440.71948242188,36.197063446045,-73.626342773438
-path_end = animpoint@zat_b5_job_3
+pt2 = 1687397,60000,animpoint_stay_wall animpoint:440.40771484375,36.525550842285,-30.583957672119,1,0,0
+path_end = loop
 on_info = {=surge_started} beh@zat_b5_job_3_surge
 on_info2 = {=zat_b7_is_night} beh@zat_b5_job_3_sleep
 on_info3 = {=is_rain} beh@zat_b5_job_3_rain
 
 [beh@zat_b5_job_4]:beh@general
+use_camp = true
 pt1 = 1642319,25000 look:429.39947509766,37.530899047852,-17.142118453979
-path_end = animpoint@zat_b5_job_4
+pt2 = 1630121,60000,animpoint_sit_high animpoint:404.62268066406,39.447956085205,-11.831384658813,-1,0,0
+path_end = loop
 on_info = {=surge_started} beh@zat_b5_job_4_surge
 
 [beh@zat_b5_job_5]:beh@general

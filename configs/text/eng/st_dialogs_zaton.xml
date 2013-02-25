@@ -349,13 +349,13 @@
 		<text>That kind of work ain't for us. Better ask the stalkers.</text>
 	</string>
 	<string id="zat_b103_lost_merc_leader_employ_stalkers_2">
-		<text>Listen, stalker. We cannot eat any more of this contaminated stuff as we're already dealing with serious radiation poisoning here. We cannot afford to waste any more supplies on healing it. Soon we will need to be resupplied. But until then could you bring us some clean food to ease our waiting?</text>
+		<text>Listen, stalker. We cannot eat any more of this contaminated stuff as we're already dealing with serious radiation poisoning here. W cannot afford to spend any more supplies on this healing it. Soon will need resupplying, until then thou - could you bring us some clean food to ease our waiting?</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_supplies_0">
 		<text>I know what you mean. We really have a lack of good food here and I want to vomit when I thing about another mutated piggu sausage. How much of it would you need?</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_supplies_1">
-		<text>Hah! Kay', you do that. Two different kinds of canned meat and some fresh bread. Six of each. Make sure to bring enough to go around, so that can we move on. By the way, if I smell any of that irradiated crap in anything you bring, I swear to God I'll put a bullet through your brain.</text>
+		<text>Hah! 'Kay, you do that. 2 different kinds of canned meat and some fresh bread... Six of each. Make sure to bring enough to go around, so that can we move on. And if smell any of that radiated crap in anything you ring, I swear to God that I'll put a bullet thru you brain.</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_toolkit_0">
 		<text>Someone told me that tools are to be found around here.</text>
@@ -1750,7 +1750,7 @@
 		<text>You can keep that. What else is there?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_113">
-		<text>Okay... Wow. An improvised explosive device made from RPG grenade. Very handy in scilfull hands but you would never know how to use it, so this is definitely for me.</text>
+		<text>Okay... Wow. An improvised explosive device made from RPG grenade. Very handy in skillful hands but you would never know how to use it, so this is definitely for me.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1131">
 		<text>Maybe I can have it?</text>
@@ -1792,7 +1792,7 @@
 		<text>Keep it. What's next?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_115">
-		<text>And last but not least... Two folded sheets of military maps presenting some of the parts of the Zone in an in-depth way. I have some connections to explorers who mith be interested, so I'm keeping them.</text>
+		<text>And last but not least... Two folded sheets of military maps presenting some of the parts of the Zone in an in-depth way. I have some connections to explorers who might be interested, so I'm keeping them.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1151">
 		<text>Look here, I'm getting robbed here by you and this was my case in the first place! Remember - I also took some damage from those damn snorks!</text>

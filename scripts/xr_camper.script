@@ -481,13 +481,13 @@ function action_patrol:get_current_waypoint()
 		return {}
 	end
 
-	if (self.a.path_index == self.target.index and st.active_section == self.target.active_section) then
+	if (self.target and self.a.path_index == self.target.index and st.active_section == self.target.active_section) then
 		return self.target
 	end
 
 	local t = {}
 
-	t.index = self.st.path_index
+	t.index = self.a.path_index
 	t.active_section = st.active_section
 
 	for s in string.gmatch(str,"look:([-]?%d+[.]?%d*,[-]?%d+[.]?%d*,[-]?%d+[.]?%d*)") do

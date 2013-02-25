@@ -496,6 +496,25 @@ function teleport_npc_lvid(actor,npc,p)
 	npc:set_npc_position(position)
 end
 
+function teleport_npc_pos(actor,npc,p)
+	for i=1,3 do
+		p[i] = string.gsub(p[i],"n","-")
+	end
+	local pos = vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
+	if not (pos) then
+		return
+	end
+
+	if (p[4]) then
+		local obj = get_story_object_id(p[4])
+		if (obj) then
+			obj:set_npc_position(pos)
+		end
+		return
+	end
+	npc:set_npc_position(pos)
+end
+
 function teleport_squad_lvid(actor,npc,p)
 	local vid = tonumber(p[1])
 	if not (vid) then
@@ -940,27 +959,25 @@ function remove_npc(actor, npc, p)
 	if npc_id ~= nil then
 		local sim = alife()
 		if (axr_main) then
+
 			-- safe destroy
 			local sobj = sim:object(npc_id)
-			if (sobj and sobj.online and IsStalker(sobj)) then
-				local squad = get_object_squad(sobj)
-				if (squad) then
-					squad:switch_offline()
-					sim:set_switch_online(squad.id,false)
-					sim:set_switch_offline(squad.id,true)
-					alun_utils.printf("xr_effects:remove_npc: squad switch offline")
-				else
-					sobj:switch_offline()
-					sim:set_switch_online(sobj.id,false)
-					sim:set_switch_offline(sobj.id,true)
-					alun_utils.printf("xr_effects:remove_npc: npc switch offline")
-				end
+			if (sobj and sobj.online) then
+				sobj:switch_offline()
+				sim:set_switch_online(sobj.id,false)
+				sim:set_switch_offline(sobj.id,true)
+				alun_utils.printf("xr_effects:remove_npc: npc switch offline")
+
 				local npc = level.object_by_id(sobj.id)
-				local st = npc and db.storage[sobj.id]
-				if (st) then
-					alun_utils.printf("xr_effects:remove_npc: npc switch_to_section nil")
-					xr_logic.switch_to_section(npc, st.ini, "nil")
+
+				if (npc and IsStalker(npc) ) then
+					local st = db.storage[sobj.id]
+					if (st) then
+						alun_utils.printf("xr_effects:remove_npc: npc switch_to_section nil")
+						xr_logic.switch_to_section(npc, st.ini, "nil")
+					end
 				end
+
 				create_delayed_object_event(sobj.id,10,alun_utils.release)
 				return
 			end
@@ -1488,33 +1505,19 @@ function destroy_object(actor, obj, p)
 
 	if (axr_main and sobj.online) then
 		-- safe destroy
+		local sim = alife()
+		sobj:switch_offline()
+		sim:set_switch_online(sobj.id,false)
+		sim:set_switch_offline(sobj.id,true)
+		alun_utils.printf("xr_effects:destroy_object: switch offline")
+
 		if (IsStalker(sobj)) then
-			local squad = get_object_squad(sobj)
-			if (squad) then
-				local sim = alife()
-				squad:switch_offline()
-				sim:set_switch_online(squad.id,false)
-				sim:set_switch_offline(squad.id,true)
-				alun_utils.printf("xr_effects:destroy_object: squad switch offline")
-			else
-				local sim = alife()
-				sobj:switch_offline()
-				sim:set_switch_online(sobj.id,false)
-				sim:set_switch_offline(sobj.id,true)
-				alun_utils.printf("xr_effects:destroy_object: npc switch offline")
-			end
 			local npc = level.object_by_id(sobj.id)
 			local st = npc and db.storage[sobj.id]
 			if (st) then
 				alun_utils.printf("xr_effects:destroy_object: npc switch_to_section nil")
 				xr_logic.switch_to_section(npc, st.ini, "nil")
 			end
-		else
-			local sim = alife()
-			sobj:switch_offline()
-			sim:set_switch_online(sobj.id,false)
-			sim:set_switch_offline(sobj.id,true)
-			alun_utils.printf("xr_effects:destroy_object: sobj switch offline")
 		end
 		create_delayed_object_event(sobj.id,10,alun_utils.release)
 		return
@@ -1703,7 +1706,15 @@ function create_squad_member(actor, obj, p)
 	end
 	local board = sim_board.get_sim_board()
 	local squad = get_story_squad(story_id)
-	local squad_smart = board.smarts[squad.smart_id].smrt
+	if not (squad) then
+		return
+	end
+
+	local squad_smart = squad.smart_id and board.smarts[squad.smart_id].smrt
+	if not (squad_smart) then
+		return
+	end
+
 	if p[3] ~= nil then
 		local spawn_point
 		if p[3] == "simulation_point" then
@@ -3705,4 +3716,27 @@ function obj_at_job_switch_section(actor,npc,p)
 		return
 	end
 	xr_logic.switch_to_section(obj, st.ini, p[3])
+end
+
+function change_visual(actor,npc,p)
+	if (not axr_main) then
+		return
+	end
+	local sobj = alife():object(npc:id())
+	if not (sobj) then
+		return
+	end
+	local sim = alife()
+	sobj:switch_offline()
+	sim:set_switch_online(sobj.id,false)
+	sim:set_switch_offline(sobj.id,true)
+	create_delayed_object_event(sobj.id,5,update_visual,p[1])
+end
+
+
+------------------- util functions
+function update_visual(se_npc,vis)
+	local data = stpk_utils.get_stalker_data(se_npc)
+	data.visual_name = vis
+	stpk_utils.set_stalker_data(data,se_npc)
 end

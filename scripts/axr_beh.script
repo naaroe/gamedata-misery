@@ -16,16 +16,6 @@ end
 local keep_state_min_time = 1000
 
 local assoc_tbl = 	{
-						idle = {		director = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"},
-										listener = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"}},
-						harmonica = {	director = {"play_harmonica"},
-										listener = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"}},
-						guitar = {		director = {"play_guitar"},
-										listener = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"}},
-						story = {		director = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"},
-										listener = {"","eat_bread", "eat_vodka", "eat_energy", "eat_kolbasa"}},
-					}
-local animpoint_assoc_tbl = 	{
 						idle = {		director = {"", "_eat_bread", "_eat_kolbasa", "_drink_vodka", "_drink_energy", "_weapon"},
 										listener = {"", "_eat_bread", "_eat_kolbasa", "_drink_vodka", "_drink_energy", "_weapon"}},
 						harmonica = {	director = {"_harmonica"},
@@ -36,6 +26,15 @@ local animpoint_assoc_tbl = 	{
 										listener = {"", "_eat_bread", "_eat_kolbasa", "_drink_vodka", "_drink_energy", "_weapon"}},
 					}
 
+local camp_states = {
+						["sit_ass"] = true,
+						["sit_knee"] = true,
+						["animpoint_stay_table"] = true,
+						["animpoint_sit_low"] = true,
+						["animpoint_sit_normal"] = true,
+						["animpoint_sit_high"] = true,
+						["animpoint_stay_wall"] = true
+}
 --------------------------------Action Base Evaluator ---------------------------------------------------------------------
 
 class "evaluator_beh" (property_evaluator)
@@ -57,6 +56,7 @@ function action_beh:initialize()
 	action_base.initialize(self)
 	self.st.assist_point = nil
 	self.keep_state_until = time_global()
+	self.st.approved_actions = {}
 end
 
 function action_beh:execute()
@@ -78,15 +78,6 @@ function action_beh:execute()
 		elseif (self.st.target == "waypoint") then
 			self:beh_path()
 		end
-	end
-
-	self.camp = sr_camp.get_current_camp(self.object:position())
-	if (self.camp and self.st.use_camp == "true") then
-		self.camp:register_npc(self.object:id())
-		self.in_camp = true
-	elseif (self.in_camp) then
-		self.camp:unregister_npc(self.object:id())
-		self.in_camp = nil
 	end
 end
 
@@ -176,18 +167,10 @@ function action_beh:set_desired_target()
 end
 
 function action_beh:beh_wait()
-	local camp_action, is_director = self.camp and self.camp:get_camp_action(self.object:id())
-	if (camp_action) then
-		local tbl = is_director and assoc_tbl[camp_action].director or assoc_tbl[camp_action].listener
-		local anim = tbl and tbl[math.random(#tbl)]
-		if (anim and anim ~= "" and axr_beh["can_"..anim] and axr_beh["can_"..anim](self.object)) then
-			state_mgr.set_state(self.object, anim)
-			return
-		end
-	end
 
-	local state = state_mgr.get_state(self.object)
 	local new_state = self.st.desired_target.wait_animation
+	local state = state_mgr.get_state(self.object)
+
 	if (new_state and new_state ~= state) then
 		local target = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.goto_target)
 		local lobj
@@ -352,21 +335,65 @@ function action_beh:beh_path()
 	local state = state_mgr.get_state(self.object)
 	local new_state = self.st.desired_target.delay_animation or self.st.delay_animation
 
-	if (new_state == "sit_ass" or new_state == "sit_knee") then
-		local camp_action, is_director = self.camp and self.camp:get_camp_action(self.object:id())
-		if (camp_action) then
-			local tbl = is_director and assoc_tbl[camp_action].director or assoc_tbl[camp_action].listener
-			local anim = tbl and tbl[math.random(#tbl)]
-			if (anim and anim ~= "" and axr_beh["can_"..anim] and axr_beh["can_"..anim](self.object)) then
-				state_mgr.set_state(self.object, anim)
-				return
+	if (self.st.use_camp and camp_states[new_state]) then
+		self:fill_approved_actions(new_state)
+
+		self.camp = sr_camp.get_current_camp(self.object:position())
+		if (self.camp and not self.in_camp) then
+			self.camp:register_npc(self.object:id())
+			self.in_camp = true
+		end
+
+		if (self.in_camp) then
+			local camp_action, is_director = self.camp and self.camp:get_camp_action(self.object:id())
+			if (camp_action) then
+
+				local tbl = is_director and assoc_tbl[camp_action].director or assoc_tbl[camp_action].listener
+				local descr = new_state == "sit_knee" and "sit_ass" or new_state
+
+				local t = {}
+				local found
+				for i=1,#tbl do
+					for n=#self.st.approved_actions, 1, -1 do
+						if (self.st.approved_actions[n].name == descr..tbl[i]) then
+							table.insert(t,self.st.approved_actions[n].name)
+							found = true
+						end
+					end
+				end
+
+				local anim = found and t[math.random(#t)]
+				if (anim and anim ~= "") then
+					if (self.st.desired_target.animpoint) then
+						alun_utils.printf("camp_action = %s",anim)
+						state_mgr.set_state(self.object, anim, nil, nil, nil, {animation_position = self.st.desired_target.animpoint, animation_direction = self.st.desired_target.animpoint_dir})
+					else
+						state_mgr.set_state(self.object, anim)
+					end
+					return
+				end
 			end
+		end
+	elseif (self.in_camp) then
+		self.camp:unregister_npc(self.object:id())
+		self.in_camp = nil
+	else
+		local sound = self.st.desired_target.sound_idle or xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.sound_idle)
+		if (sound and sound ~= "nil") then
+			xr_sound.set_sound_play(self.object:id(), sound)
 		end
 	end
 
 	if (new_state and new_state ~= state) then
 		if (self.st.desired_target.animpoint) then
 			state_mgr.set_state(self.object, new_state,nil, nil,{look_object = self.st.desired_target.look_object, look_position = self.st.desired_target.look_position }, {animation_position = self.st.desired_target.animpoint, animation_direction = self.st.desired_target.animpoint_dir})
+			if (new_state == "zat_b106_wounded_idle") then
+				local mgr = db.storage[self.object:id()].state_mgr
+				if (mgr) then
+					mgr.animation:set_state(nil,true)
+					mgr.animation:set_control()
+				end
+			end
 		else
 			state_mgr.set_state(self.object, new_state,nil, nil,{look_object = self.st.desired_target.look_object, look_position = self.st.desired_target.look_position })
 		end
@@ -392,7 +419,7 @@ function action_beh:get_current_waypoint()
 		return {}
 	end
 
-	if (self.st.path_index == self.st.desired_target.index and st.active_section == self.st.desired_target.active_section) then
+	if (self.st.desired_target and self.st.path_index == self.st.desired_target.index and st.active_section == self.st.desired_target.active_section) then
 		return self.st.desired_target
 	end
 
@@ -417,6 +444,10 @@ function action_beh:get_current_waypoint()
 
 	for s in string.gmatch(str,"sig:(.%S+)") do
 		t.sig = s
+	end
+
+	for s in string.gmatch(str,"sound_idle:(.%S+)") do
+		t.sound_idle = s
 	end
 
 	for s in string.gmatch(str,"look_object:(.%S+)") do
@@ -452,6 +483,11 @@ function action_beh:get_current_waypoint()
 	end
 
 	local a = string.find(str,"sig:")
+	if (a) then
+		str = string.sub(str,1,a-1)
+	end
+
+	local a = string.find(str,"sound_idle:")
 	if (a) then
 		str = string.sub(str,1,a-1)
 	end
@@ -508,6 +544,25 @@ function action_beh:increment_waypoint_index()
 	alun_utils.save_var(self.object,"path_index",self.st.path_index)
 end
 
+function action_beh:fill_approved_actions(state)
+	for i=#self.st.approved_actions, 1, -1 do
+		self.st.approved_actions[i] = nil
+	end
+
+	if (state == "sit_knee") then
+		state = "sit_ass"
+	end
+
+	self.st.description = state
+
+	local t = { "eat_bread", "drink_energy", "drink_vodka", "eat_kolbasa", "guitar", "harmonica", "weapon" }
+	for i=1, 6 do
+		if (axr_beh["can_"..t[i]] and axr_beh["can_"..t[i]](self.object)) then
+			table.insert(self.st.approved_actions, { name = state.."_"..t[i] })
+		end
+	end
+end
+
 function action_beh:finalize()
 	action_base.finalize(self)
 	if (self.in_camp) then
@@ -531,7 +586,7 @@ function add_to_binder(npc, ini, scheme, section, storage)
 	local new_action = this.action_beh(npc, "action_beh", storage)
 	new_action:add_precondition(world_property(stalker_ids.property_anomaly,false))
 	new_action:add_precondition(world_property(stalker_ids.property_alive, true))
-	--new_action:add_precondition(world_property(stalker_ids.property_enemy, false))
+	new_action:add_precondition(world_property(stalker_ids.property_enemy, false))
 	new_action:add_precondition(world_property(beh_evid, true))
 	new_action:add_precondition(world_property(xr_gather_items.evaid,false))
 	new_action:add_precondition(world_property(xr_evaluators_id.corpse_exist,false))
@@ -547,9 +602,6 @@ function add_to_binder(npc, ini, scheme, section, storage)
 	xr_logic.subscribe_action_for_events(npc, storage, new_action)
 
 	new_action = manager:action(xr_actions_id.alife)
-	new_action:add_precondition(world_property(beh_evid, false))
-
-	new_action = manager:action(xr_actions_id.state_mgr + 1)
 	new_action:add_precondition(world_property(beh_evid, false))
 
 	new_action = manager:action(xr_actions_id.state_mgr + 2)
@@ -625,10 +677,9 @@ function init_custom_data(npc, ini, section, st, scheme)
 	st.wait_delay		= nil
 	st.am_i_reached 	= nil
 
-	local use_camp_cond 	= xr_logic.parse_condlist(npc, section, "use_camp", 	utils.cfg_get_string(ini, section, "use_camp", npc, false, "", 	def.use_camp_cond))
-	st.use_camp 			= xr_logic.pick_section_from_condlist(db.actor, npc, use_camp_cond)
+	st.use_camp  		= utils.cfg_get_bool(ini, section, "use_camp",npc, false, false)
+	st.sound_idle		= xr_logic.parse_condlist(npc, section, "sound_idle", 	utils.cfg_get_string(ini, section, "sound_idle", npc, false, "", "nil"))
 end
-
 
 function can_eat_bread(npc)
 	local t = { "bread" }
@@ -640,7 +691,7 @@ function can_eat_bread(npc)
 	return false
 end
 
-function can_eat_energy(npc)
+function can_drink_energy(npc)
 	local t = { "energy" }
 	for i=1,#t do
 		if (npc:object(t[i])) then
@@ -650,7 +701,7 @@ function can_eat_energy(npc)
 	return false
 end
 
-function can_eat_vodka(npc)
+function can_drink_vodka(npc)
 	local t = { "vodka" }
 	for i=1,#t do
 		if (npc:object(t[i])) then
@@ -670,7 +721,7 @@ function can_eat_kolbasa(npc)
 	return false
 end
 
-function can_play_harmonica(npc)
+function can_harmonica(npc)
 	local t = { "harmonica_a" }
 	for i=1,#t do
 		if (npc:object(t[i])) then
@@ -680,7 +731,7 @@ function can_play_harmonica(npc)
 	return false
 end
 
-function can_play_guitar(npc)
+function can_guitar(npc)
 	local t = {"guitar_a"}
 	for i=1,#t do
 		if (npc:object(t[i])) then
@@ -688,4 +739,8 @@ function can_play_guitar(npc)
 		end
 	end
 	return false
+end
+
+function can_weapon(npc)
+	return npc:best_weapon()
 end

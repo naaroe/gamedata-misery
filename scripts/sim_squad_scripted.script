@@ -300,14 +300,18 @@ local function get_help_target_id(squad)
 	if not can_help_actor(squad) then
 		return nil
 	end
+	local enemy_squad_id,target_squad
 	for k,v in pairs (xr_combat_ignore.fighting_with_actor_npcs) do
-		local enemy_squad_id = alife():object(k).group_id
-		if enemy_squad_id ~= nil then
-			local target_squad = alife():object(enemy_squad_id)
-			if target_squad and squad.position:distance_to_sqr(target_squad.position) < 150^2 and
+		enemy_squad_id = alife():object(k)
+		enemy_squad_id = enemy_squad_id and enemy_squad_id:alive() and enemy_squad_id.group_id
+		if enemy_squad_id then
+			target_squad = alife():object(enemy_squad_id)
+			if target_squad and squad.position:distance_to_sqr(target_squad.position) < 22500 and
 				game_relations.is_factions_enemies(squad:get_squad_community(), target_squad:get_squad_community()) then
 				return enemy_squad_id
 			end
+		else
+			xr_combat_ignore.fighting_with_actor_npcs[k] = nil
 		end
 	end
 	return nil
@@ -401,8 +405,9 @@ function sim_squad_scripted:remove_squad()
 		squad_npcs[k.id] = true
 	end
 --
+	local obj
 	for j,v in pairs(squad_npcs) do
-		local obj = alife():object(j)
+		obj = alife():object(j)
 		if obj ~= nil then
 			self:unregister_member(j)
 			alife():release(obj, true)

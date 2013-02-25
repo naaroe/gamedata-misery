@@ -113,32 +113,24 @@ on_info = {+zat_b53_thanks_dialog_end !talking} walker@go_friend
 
 [beh@sit_ass_talk]
 behavior_state = beh_move
-goto_target = waypoint
+target = waypoint
 meet = meet
 corpse_detection_enabled = false
 gather_items_enabled = false
 pt1 = 1653594,30000,sit_ass look:425,-4,425
 path_end = camper@journey_skadovsk
 
-[remark@sit_ass_talk]
-corpse_detection_enabled = false
-meet = meet
-anim = sit_ass
-target = path | zat_b53_artefact_hunter_1_sit_ass_look, 0
-on_info = {+zat_b53_actor_enemy} walker@actor_enemy
-on_game_timer = 240 | camper@go_to_skadovsk
-
 [camper@journey_skadovsk]
 out_restr = zat_a2_sr_noweap
 corpse_detection_enabled = false
 gather_items_enabled = false
 def_state_moving = rush
+def_state_standing = idle
 shoot = always
-pt1 = 1224387 look:139,-7,183
-path_end = animpoint@zat_skadovsk_animpoint_trade
+pt1 = 1224387,0,idle look:139,-7,183
+path_end = beh@trade_with_beard %+zat_b53_artefact_hunter_quest_1_finished%
 
-[animpoint@general]
-cover_name = zat_skadovsk_animpoint_trade
+[beh@general]
 meet = meet
 combat_ignore_cond = true
 combat_ignore_keep_when_attacked = true
@@ -147,25 +139,26 @@ out_restr = zat_a2_sr_noweap
 gather_items_enabled = false
 help_wounded_enabled = false
 corpse_detection_enabled = false
+behavior_state = beh_move
+target = waypoint
+walk_dist = 100
+jog_dist = 220
+wait_anim = guard
+walk_anim = patrol
+jog_anim = patrol
+run_anim = rush
+delay_anim = guard
 
-[animpoint@zat_skadovsk_animpoint_trade]:animpoint@general
-reach_movement = run
-on_info = {=npc_in_zone(zat_a2_sr_light)} animpoint@zat_skadovsk_animpoint_trade_reached
+[beh@trade_with_beard]:beh@general
+use_camp = true
+pt1 = 1182522,60000,animpoint_stay_table animpoint:125.60218811035,-7.3215823173523,176.90800476074,-1,0,0
+pt2 = 1182522,360000,animpoint_stay_table animpoint:128.11792602539,-7.339723110199,185.22194824219,1,0,0
+path_end = loop
 
-[animpoint@zat_skadovsk_animpoint_trade_reached]:animpoint@general
-reach_movement = walk
-direction = 1,0,0
-avail_animations = animpoint_stay_table
-on_game_timer = 1200 | animpoint@zat_skadovsk_animpoint_table_01
-
-[animpoint@zat_skadovsk_animpoint_table_01]:animpoint@general
-cover_name = zat_skadovsk_animpoint_table_01
-reach_movement = walk
-direction = -1,0,0
-avail_animations = animpoint_stay_table
-
-[beh@base]
-behavior = behavior
+[beh@companion_base]
+behavior_state = beh_move
+target = {!is_squad_commander} commander, actor
+keep_distance = near
 combat_ignore_cond = {=check_enemy_name(actor)} true
 meet = meet
 gather_items_enabled = false
@@ -173,12 +166,8 @@ gather_artifact_items_enabled = false
 corpse_detection_enabled = false
 on_info = {=check_enemy_name(actor)} %=actor_friend%
 
-[beh@start]:beh@base
+[beh@start]:beh@companion_base
 
-[behavior]
-behavior_state = beh_move
-goto_target = {!is_squad_commander} commander, actor
-keep_distance = near
 
 [walker@actor_enemy]
 gather_items_enabled = false

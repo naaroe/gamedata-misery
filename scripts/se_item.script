@@ -325,6 +325,10 @@ function se_item:STATE_Write(stpk)
 	end
 	cse_alife_item.STATE_Write(self, stpk)
 end
+function se_item:switch_online()
+	alun_utils.printf("item %s switch online",self:name())
+	cse_alife_item.switch_online(self)
+end
 
 class "se_item_torch" (cse_alife_item_torch)
 function se_item_torch:__init (section) super (section)

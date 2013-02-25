@@ -20,7 +20,7 @@ function smart_cover_binder:net_spawn(server_object)
 		name = story_name or name
 	end
 	registered_smartcovers[name] = self.object
-	printf("smart_cover_binder.net_spawn() smart_cover [%s] is registered %s", self.object:name(), vec_to_str(self.object:direction()))
+	--printf("smart_cover_binder.net_spawn() smart_cover [%s] is registered %s", self.object:name(), vec_to_str(self.object:direction()))
 	return true
 end
 function smart_cover_binder:net_destroy()
@@ -30,7 +30,7 @@ function smart_cover_binder:net_destroy()
 		name = story_name or name
 	end
 	registered_smartcovers[name] = nil
-	printf("smart_cover_binder.net_destroy() smart_cover [%s] is unregistered", self.object:name())
+	--printf("smart_cover_binder.net_destroy() smart_cover [%s] is unregistered", self.object:name())
 	object_binder.net_destroy(self)
 end
 

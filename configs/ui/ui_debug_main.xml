@@ -64,6 +64,14 @@
             </text_color>
 		</btn_quit>
 
+		<btn_tp x="145" y="431" width="100" height="26">
+			<text font="letterica18" align="c">Teleport to Cam</text>
+			<texture>ui_inGame2_Mp_bigbuttone</texture>
+            <text_color>
+                <e r="170" g="170" b="170"/>
+            </text_color>
+		</btn_tp>
+
 		<tab x="14" y="27" width="461" height="38">
 			<button x="2" y="2" width="131" height="25" id="spawner">
 				<texture>ui_inGame2_opt_button_1</texture>

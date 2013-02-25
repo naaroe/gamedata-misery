@@ -551,7 +551,7 @@ function get_squad_commander_action(npc)
 	end
 end
 
-function collect_section(ini,section,keytable,reverse)
+function collect_section(ini,section,keytable)
 	if not (ini) then
 		return
 	end
@@ -562,13 +562,11 @@ function collect_section(ini,section,keytable,reverse)
 		if n > 0 then
 			for i = 0,n-1 do
 				local res,id,val = ini:r_line(section,i,"","")
-
 				if (keytable) then
-					if (reverse) then
-						_t[val] = id or true
-					else
-						_t[id] = val or true
+					if (val == "") then
+						val = true
 					end
+					_t[id] = val or true
 				else
 					table.insert(_t,id)
 				end

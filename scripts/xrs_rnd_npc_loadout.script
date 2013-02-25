@@ -85,6 +85,7 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 
 		if (se_wpn) then
 
+			--alun_utils.printf("xrs_rnd_npc_loadout: spawn weapon [start] = %s",se_wpn:section_name())
 			local ammos = alun_utils.parse_list(system_ini(),se_wpn:section_name(),"ammo_class")
 
 			local ct = ammos and #ammos
@@ -149,6 +150,8 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 			else
 				alun_utils.printf("xrs_rnd_npc_loadout: Section %s does not exist",ammo_section)
 			end
+
+			--alun_utils.printf("xrs_rnd_npc_loadout: spawn weapon [END] = %s",se_wpn:section_name())
 		end
 	end
 end

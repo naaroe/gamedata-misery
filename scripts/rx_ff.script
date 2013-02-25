@@ -4,7 +4,7 @@
 --This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
 
 function printf(s,...)
---	ai_tweaks.printf("ff:"..s,...)
+	ai_tweaks.printf("ff:"..s,...)
 --	get_console():execute("flush")
 end
 
@@ -126,8 +126,8 @@ function add_to_binder(npc,ini,scheme,section,storage)
 	if rx_gl then
 		action:add_precondition(world_property(rx_gl.evid_gl_reload,false))
 	end
-	if rx_facer then
-		action:add_precondition(world_property(rx_facer.evid_facer,false))
+	if xrs_facer then
+		action:add_precondition(world_property(xrs_facer.evid_facer,false))
 	end
 	if rx_knife then
 		action:add_precondition(world_property(rx_knife.evid_knife_attack,false))
@@ -186,9 +186,9 @@ function friends_on_fire_line(npc)
 	for o in npc:memory_visible_objects() do
 		check_object(o:object())
 	end
-	for o in npc:memory_sound_objects() do
+	--for o in npc:memory_sound_objects() do
 --		check_object(o:object())
-	end
+	--end
 	if #friends ~= 0 then
 		local npc_pos = npc:bone_position("bip01_l_finger02")
 		local be = npc:best_enemy()
