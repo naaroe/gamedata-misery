@@ -1,8 +1,9 @@
 ; BATTERY ITEM SECTIONS
 
-[batteries]:booster
+[batteries]:identity_immunities
 $spawn 				= "food and drugs\kolbasa"
 $prefetch 			= 16
+class				= S_PDA
 cform				= skeleton
 visual				= dynamics\equipments\trade\battery.ogf
 description			= st_batteries_descr
@@ -30,9 +31,10 @@ angle_offset			 = 1.570790,1.570790,3.92699
 
 use_sound			= interface\inv_batt
 
-[batteries_dead]:booster
+[batteries_dead]:identity_immunities
 $spawn 				= "food and drugs\kolbasa"
 $prefetch 			= 16
+class				= S_PDA
 cform				= skeleton
 visual				= dynamics\equipments\trade\battery.ogf
 description			= st_batteries_dead_descr
@@ -60,9 +62,10 @@ angle_offset			 = 1.570790,1.570790,3.92699
 
 use_sound			= interface\inv_batt
 
-[batteries_ccell]:booster
+[batteries_ccell]:identity_immunities
 $spawn 				= "food and drugs\kolbasa"
 $prefetch 			= 16
+class				= S_PDA
 cform				= skeleton
 visual				= dynamics\equipments\trade\battery.ogf
 description			= st_batteries_ccell_descr
@@ -89,5 +92,3 @@ position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 use_sound			= interface\inv_batt
-
-[batteries_empty]:batteries_dead

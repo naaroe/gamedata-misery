@@ -37,7 +37,7 @@
 		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment</text>
 	</string>
 	<string id="st_joint">
-		<text>Canabis joint</text>
+		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
 		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.</text>
@@ -142,10 +142,10 @@
 		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.</text>
 	</string>
 	<string id="st_device_torch_descr">
-		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
+		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely. Relatively low power consumption.</text>
 	</string>
 	<string id="st_device_torch_name">
-		<text>Flashlight</text>
+		<text>Head lamp</text>
 	</string>
 	<string id="st_drug_anabiotic">
 		<text>Anabiotics</text>
@@ -201,20 +201,38 @@
 	<string id="st_medkit">
 		<text>First-aid kit</text>
 	</string>
+	<string id="st_medkit_descr">
+		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical and thermal burns and various types of poisoning.</text>
+	</string>
 	<string id="st_medkit_army">
 		<text>Army medkit</text>
 	</string>
 	<string id="st_medkit_army_descr">
 		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued to army personnel as standard and is sometimes used by Duty forces.</text>
 	</string>
-	<string id="st_medkit_descr">
-		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical and thermal burns and various types of poisoning.</text>
-	</string>
 	<string id="st_medkit_science">
 		<text>Scientific medkit</text>
 	</string>
 	<string id="st_medkit_science_descr">
 		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.</text>
+	</string>
+	<string id="st_stim_impro">
+		<text>Improvised stimpack (zone produced)</text>
+	</string>
+	<string id="st_stim_impro_descr">
+		<text>Improvised stimpacks are popular among novice Zone Men as they are easly attainable and withing reach in therms of costs. They are produced from commonly available contents, locally in the Zone often without proper composition and purification of the mixture. This leads to many side effects when they are infected intramusculary into the thigh. These include headache, paraesthesia and considerable increase in nutrition demand.</text>
+	</string>
+	<string id="st_stim_military">
+		<text>Military stimpack</text>
+	</string>
+	<string id="st_stim_military_descr">
+		<text>Military stims are part of a standard issue soldier equipment for field operation within the Zone. Easly attainable on the market, but not chaep they are prefered by experienced Stalkers. They are siginificantly more potent and faster working than improvised conterparts, allowing for much more rapid and often life-saving stabilization. Army specifications did not include user's pleasure thou, thus extremely high density and raw nature of healing agents often cause shock, extreme dizziness and extensive hunger.</text>
+	</string>
+	<string id="st_stim_scientic">
+		<text>Scientific stimpack</text>
+	</string>
+	<string id="st_stim_scientic_descr">
+		<text>Created by chemical department of the same Kiev defence research institute wich developed SEVA, this state-of-art mixture constitutes the highest level of rapidly-working health stabilizers available in the Zone. Best quality ingredients and perfected formula allow for almost instant health restorative effect and high rate radiation cleansing. Side effects are minimized. Extremely high cost practically limits regular users of this grade of medicaments to a small group of the most skillfull and succesfull Zone explorers.</text>
 	</string>
 	<string id="st_sleepingpills_descr">
 		<text>A package of small white sleeping pills that imediately will slow and ease your stressed mind. Eat 5 min before you want to rest and use water in combination for maximum effect.</text>
@@ -562,15 +580,12 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	<string id="st_marijuana_descr">
 		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.</text>
 	</string>
-
 	<string id="st_flashlight_old">
-		<text>Old flashlight</text>
+		<text>Wind-up flashlight</text>
 	</string>
 	<string id="st_flashlight_old_descr">
-		<text>The light bulb is removed and the flashlight makes strange noises when being handled.
-There is little chance that this item is ever going to function again.</text>
+		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.</text>
 	</string>
-
 	<string id="st_flashlight_broken">
 		<text>Broken flashlight</text>
 	</string>
@@ -651,7 +666,7 @@ Many stalkers carry such tool so it may be of little value when traded.</text>
 	</string>
 
 	<string id="st_headlamp">
-		<text>Head lamp</text>
+		<text>Old head lamp</text>
 	</string>
 	<string id="st_headlamp_descr">
 		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.</text>

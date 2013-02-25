@@ -55,19 +55,19 @@
 		<text>Sphere M12 helmet</text>
 	</string>
 	<string id="st_helm_battle_descr">
-		<text>An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its respirator and built-in first generation night vision device, as well as providing the maximum head protection possible. Comes with electronics slots.</text>
+		<text>An aluminum/titanium helmet with a cloth exterior that comes with pockets for additional steel armor pieces and an armor face mask. Sphere M12 is normally used as part of a combination that includes PSZ series Spetsnaz body armor. Quite popular in the Zone thanks to its fully opearational respirator and a standard military issue 1PN93-1 night vision device put on it by defult, as well as providing the maximum head protection possible. Comes with electronics slots.</text>
 	</string>
 	<string id="st_helm_hardhat">
 		<text>Steel helmet</text>
 	</string>
 	<string id="st_helm_hardhat_descr">
-		<text>A desperately outdated steel army helmet without any additions. Provides no protection against anomalies or radiation, but can deflect bullets. This helmet was never particularly popular in the Zone, except for use in brief armed conflicts between factions.</text>
+		<text>A standard steel army helmet without any additions. Provides no protection against anomalies or radiation, but can deflect bullets - effectively preventing damage to head areas it covers. This helmet was never particularly popular in the Zone, except for use in brief armed conflicts between factions.</text>
 	</string>
 	<string id="st_helm_protective">
 		<text>Screen helmet</text>
 	</string>
 	<string id="st_helm_protective_descr">
-		<text>A light helmet with an airtight visor intended for protection from anomalies. Judging by the design, the helmet is made by the same Defense Research Institutes as the SEVA bodysuit. Its intended use may very well be in combination with military suits for operations in highly anomalous areas. </text>
+		<text>A light helmet with an airtight visor intended for protection from anomalies. Judging by the design, the helmet is made by the same Defense Research Institutes as the SEVA bodysuit. Its intended use may very well be in combination with military suits for operations in highly anomalous areas. Includes an advanced IIT generation 3 PN21KL night vision device.</text>
 	</string>
 	<string id="st_helm_respirator">
 		<text>Gas mask</text>
@@ -75,11 +75,17 @@
 	<string id="st_helm_respirator_descr">
 		<text>A regular plastic and rubber gas mask, used for filtering air for radioactive particles and poisonous substances. Widely used by rookies and veterans of all factions due to its universal functionality. Does not provide any physical protection.</text>
 	</string>
+	<string id="st_helm_respirator_heavy">
+		<text>Heavy gas mask</text>
+	</string>
+	<string id="st_helm_respirator_heavy_descr">
+		<text>Heavier and more durable version of standard gasmask. Comes with thicker and larger filters which provides better protection to radiation and toxicity even when damaged. Reinforced construction makes it more durable to physical stress at the cost of extra weight. It has an 1PN93-1 night vision device installed on it by default.</text>
+	</string>	
 	<string id="st_helm_tactic">
 		<text>Tactical helmet</text>
 	</string>
 	<string id="st_helm_tactic_descr">
-		<text>A Western model of a tactical helmet that lacks camouflage. It is not known how it made its way into the Zone. The helmet is designed to provide a squad leader with strategic superiority over the enemy via its many scanners and satellite communications devices, which have not been installed in this particular helmet. Comes with multi-layered Kevlar protection and armored elements to protect electronic components. Includes a respirator and a first generation night vision device.</text>
+		<text>A Western model of a tactical helmet that lacks camouflage. It is not known how it made its way into the Zone. The helmet is designed to provide a squad leader with strategic superiority over the enemy via its many scanners and satellite communications devices, which have not been installed in this particular helmet. Comes with multi-layered Kevlar protection and armored elements to protect electronic components. Includes a fully opearational respirator and a standard military issue 1PN93-1 night vision device.</text>
 	</string>
 	<string id="stalker_outfit_name">
 		<text>Sunrise bodysuit</text>

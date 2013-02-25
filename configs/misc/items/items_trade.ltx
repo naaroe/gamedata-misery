@@ -947,34 +947,6 @@ attach_position_offset		= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-[flashlight_old]:identity_immunities
-$spawn 				= "devices\roubles"
-$prefetch 			= 16
-class				= S_PDA
-cform				= skeleton
-visual				= dynamics\equipments\trade\torch.ogf
-radius				= 68; 50
-
-description			= st_flashlight_old_descr
-inv_name			= st_flashlight_old
-inv_name_short			= st_flashlight_old
-
-inv_grid_width			= 1
-inv_grid_height			= 1
-inv_grid_x			= 9
-inv_grid_y			= 50
-
-cost				= 1060
-
-;box_size			= 1
-
-inv_weight			= 0.4
-
-attach_angle_offset		= -0.287979, 1.560923, 1.544060
-attach_position_offset		= 0.096910, -0.013594, 0.107925
-attach_bone_name		= bip01_r_hand
-auto_attach				= false
-
 [flashlight_broken]:identity_immunities
 $spawn 				= "devices\roubles"
 $prefetch 			= 16
@@ -1537,7 +1509,7 @@ inv_grid_height		= 1
 inv_grid_x			= 9
 inv_grid_y			= 50
 
-cost				= 1920
+cost				= 2440
 inv_weight			= 0.484
 
 default_to_ruck		= false
@@ -1626,6 +1598,32 @@ anm_idle_sprint_16x9	= dev_detector_1_idle_moving_ws, dev_detector_1_idle_moving
 flash_light_range		= 0
 onoff_light_range		= 0
 
+[flashlight_old]:identity_immunities
+$spawn 				= "devices\roubles"
+$prefetch 			= 16
+class				= S_PDA
+cform				= skeleton
+visual				= dynamics\equipments\trade\torch.ogf
+radius				= 68; 50
+
+description			= st_flashlight_old_descr
+inv_name			= st_flashlight_old
+inv_name_short			= st_flashlight_old
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 9
+inv_grid_y			= 50
+
+cost				= 1920
+inv_weight			= 0.484
+
+;box_size			= 1
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset		= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
 
 [device_torch_dummy]:identity_immunities
 GroupControlSection 	= spawn_group
@@ -1637,7 +1635,7 @@ cform           		= skeleton
 radius					= 1
 visual					= dynamics\devices\dev_torch_light\dev_torch_light.ogf
 description				= st_device_torch_descr
-cost					= 4890
+cost					= 4390
 inv_name				= st_device_torch_name
 inv_name_short			= st_device_torch_name
 inv_weight				= 0.186
