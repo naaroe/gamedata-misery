@@ -52,9 +52,10 @@ character_profile     = zat_b38_stalker_cop
 spec_rank = veteran
 community = stalker
 story_id = zat_cop_id
-sound_enemy_killed_or_wounded = 
-sound_enemy_critically_wounded = 
-sound_hit = 
+custom_data = scripts\zaton\zat_b38_stalker_cop.ltx
+sound_enemy_killed_or_wounded =
+sound_enemy_critically_wounded =
+sound_hit =
 
 [zat_b38_stalker_cop_dead]:stalker_silent_veteran
 $spawn                     = "respawn\zat_b38_stalker_cop_dead"
@@ -96,6 +97,10 @@ story_id = zat_b38_bloodsucker_1
 $spawn                     = "respawn\zat_b38_bloodsucker_2"
 story_id = zat_b38_bloodsucker_2
 
+[zat_b38_bloodsucker_3]:bloodsucker_strong
+$spawn                     = "respawn\zat_b38_bloodsucker_3"
+story_id = zat_b38_bloodsucker_3
+
 [zat_b38_bloodsucker_corpse]:bloodsucker_weak
 $spawn                     = "respawn\zat_b38_bloodsucker_corpse"
 story_id = zat_b38_bloodsucker_corpse
@@ -110,7 +115,7 @@ spec_rank = experienced
 community = dolg
 ;custom_data = scripts\zaton\zat_b7_duty_illicit_dealer_b5_link.ltx
 story_id = zat_b7_duty_illicit_dealer
- 
+
 sound_death						= ;fight\death\death_
 sound_anomaly_death				= ;fight\death\anomaly_
 ;sound_hit						= ;fight\hit\hit_
@@ -136,7 +141,7 @@ sound_attack_no_allies				= ;fight\fire\fire_,fight\threat\threat_distant_
 sound_attack_allies_several_enemies	= ;fight\attack\attack_,fight\attack\attack_many_,fight\fire\fire_
 sound_search1_no_allies				= ;fight\threat\threat_distant_
 sound_search1_with_allies			= ;fight\searching_enemy\search_,fight\searching_enemy\enemy_lost_
-sound_throw_grenade					= ;fight\grenade\grenade_ready_ 
+sound_throw_grenade					= ;fight\grenade\grenade_ready_
 
 ;---------------------------------------------------
 
@@ -400,6 +405,15 @@ community = stalker
 ;[EXPERIENCED_PROFILE]
 
 ;---------------------------------------------------
+
+;--------------------------------------------Alundaio Zatb5
+[zat_b5_prisoner]:stalker
+$spawn            = "respawn\zat_b5_prisoner"
+character_profile = zat_b5_prisoner
+spec_rank         = regular
+community         = stalker
+story_id          = zat_b5_prisoner
+custom_data       = scripts\zaton\zat_b5_prisoner.ltx
 
 ;-------------------A2-------------------
 
@@ -937,7 +951,7 @@ jump_max_angle					= 3.15 ;0.8
 jump_max_height					= 3.5
 
 [chimera_immunities_wounded]
-burn_immunity     	= 0.5 				;коэффициенты иммунитета 
+burn_immunity     	= 0.5 				;коэффициенты иммунитета
 strike_immunity     	= 0.0
 shock_immunity      	= 0.1
 wound_immunity      	= 0.35
@@ -965,40 +979,4 @@ $spawn				= "respawn\zat_b5_actor_with_dealer"
 custom_data			= scripts\zaton\zat_b5_actor_with_dealer.ltx
 story_id = zat_b5_actor_with_dealer
 set_visual 			= actor_visual
-
-;*********************потом удалить!*********
-[test_body_1]:stalker
-$spawn                     = "respawn\test_body_1"
-;character_profile     = zat_b22_stalker_medic
-community = stalker
-;story_id = test_body_1
-custom_data = scripts\test_cfg1.ltx
-
-[test_body_2]:stalker
-$spawn                     = "respawn\test_body_2"
-;character_profile     = zat_b38_stalker_cop
-community = stalker
-;story_id = test_body_2
-custom_data = scripts\test_cfg2.ltx
-
-[test_body_3]:stalker
-$spawn                     = "respawn\test_body_3"
-;character_profile     = zat_b33_stalker_snag
-community = stalker
-;story_id = test_body_3
-custom_data = scripts\test_cfg3.ltx
-
-[test_body_4]:stalker
-$spawn                     = "respawn\test_body_4"
-;character_profile     = zat_b7_duty_illicit_dealer
-community = stalker
-;story_id = test_body_4
-custom_data = scripts\test_cfg4.ltx
-
-[test_body_5]:stalker
-$spawn                     = "respawn\test_body_5"
-;character_profile     = zat_a2_stalker_mechanic
-community = stalker
-;story_id = test_body_5
-custom_data = scripts\test_cfg5.ltx
 

@@ -1,2024 +1,2022 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
-<string id="st_prop_bullet_speed">
-<text> Bullet velocity </text>
-</string>
-<string id="st_prop_calibre">
-<text> Calibre </text>
-</string>
-<string id="st_prop_recoil">
-<text> Recoil </text>
-</string>
-<string id="st_prop_reliability">
-<text> Reliability </text>
-</string>
-<string id="st_prop_scope_1.6x">
-<text> Attach 1.6x scope </text>
-</string>
-<string id="st_prop_scope_4x">
-<text> Attach 4x scope </text>
-</string>
-<string id="st_prop_silencer">
-<text> Attach silencer </text>
-</string>
-<string id="st_prop_underbarrel_slot">
-<text> Attach grenade launcher </text>
-</string>
-<string id="st_prop_weight">
-<text> Weight </text>
-</string>
-<string id="st_up_add_a1_descr">
-<text> External threads permit the installation of a silencer. </text>
-</string>
-<string id="st_up_add_a1_name">
-<text> External barrel threads</text>
-</string>
-<string id="st_up_add_a2_descr">
-<text> A mount allows you to install a scope. </text>
-</string>
-<string id="st_up_add_a2_name">
-<text> Scope rail </text>
-</string>
-<string id="st_up_add_a3_descr">
-<text> Attachment point for an underslung grenade launcher. </text>
-</string>
-<string id="st_up_add_a3_name">
-<text> Grenade launcher mount </text>
-</string>
-<string id="st_up_add_a4_descr">
-<text> Change standard magazines for larger ones. </text>
-</string>
-<string id="st_up_add_a4_name">
-<text> Expanded magazine </text>
-</string>
-<string id="st_up_add_b1_descr">
-<text> The calibre of the weapon can be changed by modifying its internal mechanics. </text>
-</string>
-<string id="st_up_add_b1_name">
-<text> Conversion to 5,45 mm </text>
-</string>
-<string id="st_up_add_b2_descr">
-<text> The calibre of the weapon can be changed by modifying its internal mechanics. </text>
-</string>
-<string id="st_up_add_b2_name">
-<text> Conversion to 5,56 mm </text>
-</string>
-<string id="st_up_add_b3_descr">
-<text> The calibre of the weapon can be changed by modifying its internal mechanics. </text>
-</string>
-<string id="st_up_add_b3_name">
-<text> Conversion to 9x18 mm </text>
-</string>
-<string id="st_up_add_b4_descr">
-<text> The calibre of the weapon can be changed by modifying its internal mechanics. </text>
-</string>
-<string id="st_up_add_b4_name">
-<text> Conversion to 9x19 mm </text>
-</string>
-<string id="st_up_addd_a1_descr">
-<text> Increased capacity of the internal magazine. </text>
-</string>
-<string id="st_up_addd_a1_name">
-<text> Expanded magazine </text>
-</string>
-<string id="st_up_addh_a1_descr">
-<text> A polycarbonate ammo box increases ammo capacity. </text>
-</string>
-<string id="st_up_addh_a1_name">
-<text> Polycarbonate box </text>
-</string>
-<string id="st_up_arm_a1_descr">
-<text> An increased number of titanium plates greatly increases the strength of body armour. </text>
-</string>
-<string id="st_up_arm_a1_name">
-<text> Additional aluminium / titanium plates </text>
-</string>
-<string id="st_up_arm_a2_descr">
-<text> Reinforcement plates give a much greater margin of survivability, compared to standard armour. </text>
-</string>
-<string id="st_up_arm_a2_name">
-<text> Kevlar plates </text>
-</string>
-<string id="st_up_arm_a3_descr">
-<text> Aluminium / titanium plates have a lower weight while maintain the same defensive properties. </text>
-</string>
-<string id="st_up_arm_a3_name">
-<text> Aluminium / titanium plates </text>
-</string>
-<string id="st_up_arm_a4_descr">
-<text> Titanium is usually too heavy for use in body armour, but its effective when used in conjunction with an exoskeleton. </text>
-</string>
-<string id="st_up_arm_a4_name">
-<text> Titanium alloy components </text>
-</string>
-<string id="st_up_arm_a5_descr">
-<text> Replacing metal elements with carbon fibre ones reduces the mass of body armour without loss of protection. </text>
-</string>
-<string id="st_up_arm_a5_name">
-<text> Carbon fibre substitution </text>
-</string>
-<string id="st_up_arm_a6_descr">
-<text> Kevlar is perhaps the most common material used in bullet-proof vests. </text>
-</string>
-<string id="st_up_arm_a6_name">
-<text> Kevlar plates </text>
-</string>
-<string id="st_up_arm_a7_descr">
-<text> Polycarbonate plates can stop a pistol bullet, while weighing as little as a piece of ordinary plastic. </text>
-</string>
-<string id="st_up_arm_a7_name">
-<text> Polycarbonate plates </text>
-</string>
-<string id="st_up_arm_a8_descr">
-<text> Ceramic plates are not durable, but provide superior protection to Kevlar. </text>
-</string>
-<string id="st_up_arm_a8_name">
-<text> Ceramic plates </text>
-</string>
-<string id="st_up_arm_a9_descr">
-<text> Steel plates sewn into the jacket enhance its resistance to damage. </text>
-</string>
-<string id="st_up_arm_a9_name">
-<text> Steel plating </text>
-</string>
-<string id="st_up_arm_b1_descr">
-<text> Ceramic coating can deflect a standard bullet, if it hits at an angle, or even completely stop it in case of a direct hit. </text>
-</string>
-<string id="st_up_arm_b1_name">
-<text> Ceramic coating </text>
-</string>
-<string id="st_up_arm_b2_descr">
-<text> An additional, internal layer of plates protects the user, if the external one is damaged. </text>
-</string>
-<string id="st_up_arm_b2_name">
-<text> Backup layer of protective plates </text>
-</string>
-<string id="st_up_arm_b3_descr">
-<text> Special underarmour distributes bullet impact over the entire armour, reducing damage. </text>
-</string>
-<string id="st_up_arm_b3_name">
-<text> Compensating underarmour </text>
-</string>
-<string id="st_up_arm_b4_descr">
-<text> Even if the armour is severely damaged, the reinforced frame will stop pistol bullets. </text>
-</string>
-<string id="st_up_arm_b4_name">
-<text> Additional frame reinforcement </text>
-</string>
-<string id="st_up_arm_b5_descr">
-<text> Subtler armoured sheets that overlap each another, like scales, increase overall damage resistance. </text>
-</string>
-<string id="st_up_arm_b5_name">
-<text> Segmented protection </text>
-</string>
-<string id="st_up_arm_b6_descr">
-<text> A backup layer inside the armour increases survivability. </text>
-</string>
-<string id="st_up_arm_b6_name">
-<text> Backup safety layer </text>
-</string>
-<string id="st_up_arm_b7_descr">
-<text> A set of knee and elbow pads, designed to protect joints from bullets and shrapnel. </text>
-</string>
-<string id="st_up_arm_b7_name">
-<text> Knee and elbow pads </text>
-</string>
-<string id="st_up_arm_b8_descr">
-<text> Steel frame is replaced with one made from lightweight aluminium. </text>
-</string>
-<string id="st_up_arm_b8_name">
-<text> Lightweight aluminium frame </text>
-</string>
-<string id="st_up_arm_b9_descr">
-<text> A self-repairing armour layer helps the armour to compensate for bullet impact. </text>
-</string>
-<string id="st_up_arm_b9_name">
-<text> Self-sealing layer </text>
-</string>
-<string id="st_up_arm_c10_descr">
-<text> An extra layer of silicone-cushioned ceramic plates. </text>
-</string>
-<string id="st_up_arm_c10_name">
-<text> Reinforced ceramic plates </text>
-</string>
-<string id="st_up_arm_c11_descr">
-<text> Lighter synthetic and plastic parts replace standard ones, reducing the armour's mass. </text>
-</string>
-<string id="st_up_arm_c11_name">
-<text> Lightweight part replacement </text>
-</string>
-<string id="st_up_arm_c12_descr">
-<text> An obscene amount of titanium plating would be too heavy for the average trooper, but not for one using a powered exoskeleton. </text>
-</string>
-<string id="st_up_arm_c12_name">
-<text> Kurassier Titanium plating </text>
-</string>
-<string id="st_up_arm_c13_descr">
-<text> SBC-RHZ Mk II is a sealed combat jumpsuit, protecting from radiation and chemical agents. </text>
-</string>
-<string id="st_up_arm_c13_name">
-<text> SBC-RHZ Mk II jumpsuit </text>
-</string>
-<string id="st_up_arm_c1_descr">
-<text> Creating and weaving in a layer of chain mail is a time consuming, tedious job, but it can save your life. </text>
-</string>
-<string id="st_up_arm_c1_name">
-<text> Chain mail layer </text>
-</string>
-<string id="st_up_arm_c2_descr">
-<text> The Scale system consists of tens of ceramic plates on top of each other, to provide excellent protection, even after receiving damage from bullets or shrapnel. </text>
-</string>
-<string id="st_up_arm_c2_name">
-<text> Scale ceramic armour </text>
-</string>
-<string id="st_up_arm_c3_descr">
-<text> The Sovereign process affects the protective suit's fibre, reducing its susceptibility to damage, especially rupture. </text>
-</string>
-<string id="st_up_arm_c3_name">
-<text> Sovereign processing </text>
-</string>
-<string id="st_up_arm_c4_descr">
-<text> Ceramic coating significantly reduces the impact of the bullet, splintering on contact. </text>
-</string>
-<string id="st_up_arm_c4_name">
-<text> Ceramic coated plates </text>
-</string>
-<string id="st_up_arm_c5_descr">
-<text> A beryllium matrix reinforced with titanium (instead of aluminium) is one of the most reliable protective systems worldwide. </text>
-</string>
-<string id="st_up_arm_c6_descr">
-<text> Ceramic coating significantly reduces the impact of the bullet, splintering on contact. </text>
-</string>
-<string id="st_up_arm_c6_name">
-<text> Ceramic coated plates </text>
-</string>
-<string id="st_up_arm_c7_descr">
-<text> Carbon fibre is one of the most durable and wear resistant synthetic materials.</text>
-</string>
-<string id="st_up_arm_c8_descr">
-<text> A combination of polymers and ceramics forms the basis for this multiple layer protection system. </text>
-</string>
-<string id="st_up_arm_c8_name">
-<text> "Screen" Combination Plating </text>
-</string>
-<string id="st_up_arm_c9_descr">
-<text> Cutting edge protection technology - artificial sapphires integrated into key regions of the armour. </text>
-</string>
-<string id="st_up_autd_a1_descr">
-<text> Perfectly fitted parts allow the weapon to last longer before jamming. </text>
-</string>
-<string id="st_up_autd_a1_name">
-<text> Precision reassembly </text>
-</string>
-<string id="st_up_autd_a2_descr">
-<text> The once outlandish idea of substituting metal parts with polymer is now quite commonplace. </text>
-</string>
-<string id="st_up_autd_a2_name">
-<text> Polymer parts</text>
-</string>
-<string id="st_up_autd_b1_descr">
-<text> A low impulse hammer mechanism reduces recoil, without diminishing the weapon's reliability. </text>
-</string>
-<string id="st_up_autd_b1_name">
-<text> Low impulse hammer </text>
-</string>
-<string id="st_up_autd_b2_descr">
-<text> This modification adjusts the slide, so that it doesn't move while firing, providing excellent accuracy. </text>
-</string>
-<string id="st_up_autd_b2_name">
-<text> Lockable slide </text>
-</string>
-<string id="st_up_autd_b3_descr">
-<text> Often used in firearms, the roller locking system reduces recoil and increases accuracy in battle. </text>
-</string>
-<string id="st_up_autd_b3_name">
-<text> Semi free roller locking system </text>
-</string>
-<string id="st_up_autd_b4_descr">
-<text> An auxiliary gas cylinder reduces the stress on the weapon's mechanism, significantly increasing the rate of fire. </text>
-</string>
-<string id="st_up_autd_b4_name">
-<text> Auxiliary gas cylinder </text>
-</string>
-<string id="st_up_autd_b5_descr">
-<text> A gas powered reloading mechanism turns semi-automatic shotguns into fully automatic beasts. </text>
-</string>
-<string id="st_up_autd_b5_name">
-<text> Gas powered reloading mechanism </text>
-</string>
-<string id="st_up_autd_c1_descr">
-<text> A layer of protective coating applied to each part reduces possibility of weapon failure. </text>
-</string>
-<string id="st_up_autd_c1_name">
-<text> Application of protective coating</text>
-</string>
-<string id="st_up_autd_c2_descr">
-<text> This modification automatically seals the weapon when firing, acting in synch with the fire rate.</text>
-</string>
-<string id="st_up_autd_c2_name">
-<text> Gun locking system </text>
-</string>
-<string id="st_up_autd_c3_descr">
-<text> With an inertial reloading mechanism, a standard pump action shotgun can be turned into a semi-automatic. </text>
-</string>
-<string id="st_up_autd_c3_name">
-<text> Inertial reloading mechanism </text>
-</string>
-<string id="st_up_autd_c4_descr">
-<text> A single, universal chamber closing mechanism is a modern technological solution reducing recoil. </text>
-</string>
-<string id="st_up_autd_c4_name">
-<text> Universal chambering module </text>
-</string>
-<string id="st_up_autd_c5_descr">
-<text> An automated firing pin improves firearm accuracy. </text>
-</string>
-<string id="st_up_autd_c5_name">
-<text> Firing pin automation </text>
-</string>
-<string id="st_up_auth_a1_descr">
-<text> An automatic counterforce mechanism moves away from the bolt, offsetting the recoil force. </text>
-</string>
-<string id="st_up_auth_a1_name">
-<text> Automatic counterforce rotator </text>
-</string>
-<string id="st_up_auth_b1_descr">
-<text> Auxiliary rollers reduce recoil. </text>
-</string>
-<string id="st_up_auth_b1_name">
-<text> Auxiliary recoil dampeners </text>
-</string>
-<string id="st_up_auth_c1_descr">
-<text> A revamped firing mechanism increases the weapon's rate of fire. </text>
-</string>
-<string id="st_up_auth_c1_name">
-<text> Open bolt fire </text>
-</string>
-<string id="st_up_auth_c2_descr">
-<text> When firing, this autonomous counterweight automatically changes its position, balancing the weapon and making it more comfortable to use. </text>
-</string>
-<string id="st_up_auth_c2_name">
-<text> Self-regulating counterweight </text>
-</string>
-<string id="st_up_auto_a1_descr">
-<text> A counterforce rotator installed in the receiver reduces weapon recoil. </text>
-</string>
-<string id="st_up_auto_a1_name">
-<text> Receiver counterforce rotator </text>
-</string>
-<string id="st_up_auto_a2_descr">
-<text> The once outlandish idea of substituting metal parts with polymer is now quite commonplace. </text>
-</string>
-<string id="st_up_auto_a2_name">
-<text> Polymer parts</text>
-</string>
-<string id="st_up_auto_b1_descr">
-<text> This special mechanism reduces the weapon's sway, increasing accuracy. </text>
-</string>
-<string id="st_up_auto_b1_name">
-<text> Automatic two-position gas regulator </text>
-</string>
-<string id="st_up_auto_b2_descr">
-<text> A special mechanism that seals the barrel when firing, maximizing internal pressure. </text>
-</string>
-<string id="st_up_auto_b2_name">
-<text> Self sealing barrel </text>
-</string>
-<string id="st_up_auto_b3_descr">
-<text> Synchronised gears improve the trajectory of the bullet. </text>
-</string>
-<string id="st_up_auto_b3_name">
-<text> Synchronized gears </text>
-</string>
-<string id="st_up_auto_b4_descr">
-<text> Installed on the back of the receiver, this modifications slows down the slide, increasing the weapon's accuracy. </text>
-</string>
-<string id="st_up_auto_b4_name">
-<text> Inertia moderator </text>
-</string>
-<string id="st_up_auto_c1_descr">
-<text> Special slide parts compensate the movement of the slide, reducing recoil. </text>
-</string>
-<string id="st_up_auto_c1_name">
-<text> Rollback moderator </text>
-</string>
-<string id="st_up_auto_c2_descr">
-<text> This complex modification is typically installed in dedicated sniper rifles, increasing its mass and reducing recoil. </text>
-</string>
-<string id="st_up_auto_c2_name">
-<text> Integrated shock-absorption materials </text>
-</string>
-<string id="st_up_auto_c3_descr">
-<text> A more convenient magazine loading mechanism, mobile parts allow for faster reloading. </text>
-</string>
-<string id="st_up_auto_c3_name">
-<text> Speed loader </text>
-</string>
-<string id="st_up_auto_c4_descr">
-<text> Certain parts are replaced, increasing accuracy and, unfortunately, the failure rate. </text>
-</string>
-<string id="st_up_auto_c4_name">
-<text> Balanced unaccented system </text>
-</string>
-<string id="st_up_auto_c5_descr">
-<text> A synthetic part installed behind the end of the step slide compresses it to increase accuracy. </text>
-</string>
-<string id="st_up_auto_c5_name">
-<text> Stop drive </text>
-</string>
-<string id="st_up_auto_c6_descr">
-<text> A special compensator fixes the position of the barrel, automatically releasing gasses and pushing the barrel to its original position after firing. </text>
-</string>
-<string id="st_up_auto_c6_name">
-<text> Smart compensator </text>
-</string>
-<string id="st_up_auts_a1_descr">
-<text> This modification alters the trigger, making it break more smoothly. Useful for snipers. </text>
-</string>
-<string id="st_up_auts_a1_name">
-<text> Trigger regulator </text>
-</string>
-<string id="st_up_auts_a2_descr">
-<text> improved slide mechanism to clearly predict the time of the shot, which positively affects accuracy. </text>
-</string>
-<string id="st_up_auts_a2_name">
-<text> Setting descent with a warning </text>
-</string>
-<string id="st_up_auts_b1_descr">
-<text> Often used in Western arms, the roller locking system helps reduce recoil and increase accuracy. </text>
-</string>
-<string id="st_up_auts_b1_name">
-<text> Semi free roller slide system </text>
-</string>
-<string id="st_up_auts_b2_descr">
-<text> This special mechanism compensates recoil, making sustained fire easier. </text>
-</string>
-<string id="st_up_auts_b2_name">
-<text> Pulsing compensation system </text>
-</string>
-<string id="st_up_auts_b3_descr">
-<text> A three-position gas regulator reduces difficulties in handling the rifle, making it less capricious in comparison with regular automatic rifles. </text>
-</string>
-<string id="st_up_auts_b3_name">
-<text> Automatic three-position gas regulator </text>
-</string>
-<string id="st_up_auts_c1_descr">
-<text> W special spray coating reduces the strain powder gases put on the internal mechanics and increases muzzle velocity at the same time. </text>
-</string>
-<string id="st_up_auts_c1_name">
-<text> Application of a special spray to internal parts </text>
-</string>
-<string id="st_up_auts_c2_descr">
-<text> A long pull trigger group allows fully automatic fire from a sniper rifle. </text>
-</string>
-<string id="st_up_auts_c2_name">
-<text> Long pull trigger group </text>
-</string>
-<string id="st_up_auts_c3_descr">
-<text> A special stop stopping drive increases firearm accuracy. </text>
-</string>
-<string id="st_up_auts_c3_name">
-<text> Stop drive </text>
-</string>
-<string id="st_up_bar_a1_descr">
-<text> By replacing the standard barrel with a longer one, the accuracy and muzzle velocity of the bullet was increased.</text>
-</string>
-<string id="st_up_bar_a1_name">
-<text> Longer barrel </text>
-</string>
-<string id="st_up_bar_a2_descr">
-<text> Without massive gas blowback systems and the rigid mounting stem, the accuracy is much greater. </text>
-</string>
-<string id="st_up_bar_a2_name">
-<text> Free floating barrel </text>
-</string>
-<string id="st_up_bar_a3_descr">
-<text> A more efficient ventilation system allows the weapon to work faster. </text>
-</string>
-<string id="st_up_bar_a3_name">
-<text> Barrel with cooling fins </text>
-</string>
-<string id="st_up_bar_b1_descr">
-<text> Replacing the obsolete muzzle compensator with a more modern model helps further reduce recoil. </text>
-</string>
-<string id="st_up_bar_b1_name">
-<text> Modern muzzle compensator </text>
-</string>
-<string id="st_up_bar_b2_descr">
-<text> Installing a barrel with additional rifling increases the velocity and accuracy of the weapons. </text>
-</string>
-<string id="st_up_bar_b2_name">
-<text> Additional rifling </text>
-</string>
-<string id="st_up_bar_b3_descr">
-<text> Reducing the amount of rifling cut into the weapon increases the rate of fire, but on the other hand, the weapon won't be as useful for target shooting. </text>
-</string>
-<string id="st_up_bar_b3_name">
-<text> Barrel with simplified rifling </text>
-</string>
-<string id="st_up_bar_c1_descr">
-<text> Polygonal rifling improves the accuracy of the weapon. </text>
-</string>
-<string id="st_up_bar_c1_name">
-<text> Barrel with polygonal rifling </text>
-</string>
-<string id="st_up_bar_c2_descr">
-<text> Sinusoidal rifling improves barrel cooling, increasing the rate of fire. </text>
-</string>
-<string id="st_up_bar_c2_name">
-<text> Barrel with sinusoidal rifling </text>
-</string>
-<string id="st_up_bar_c3_descr">
-<text> A carefully manufactured, custom made barrel increases accuracy. </text>
-</string>
-<string id="st_up_bar_c3_name">
-<text> Custom made sniper rifle barrel </text>
-</string>
-<string id="st_up_bard_a1_descr">
-<text> Super strong materials increase rifling durability. </text>
-</string>
-<string id="st_up_bard_a1_name">
-<text> Super strong alloy barrel </text>
-</string>
-<string id="st_up_bard_b1_descr">
-<text> Internal cavities of the weapon have been modified, increasing resistance to wear. </text>
-</string>
-<string id="st_up_bard_b1_name">
-<text> Processed barrel </text>
-</string>
-<string id="st_up_bard_b2_descr">
-<text> A synthetic seal in the receiver leads to a marked increase in accuracy. </text>
-</string>
-<string id="st_up_bard_b2_name">
-<text> Synthetic weapon seal</text>
-</string>
-<string id="st_up_bard_b3_descr">
-<text> By replacing the standard barrel with a longer one muzzle velocity has increased. </text>
-</string>
-<string id="st_up_bard_b3_name">
-<text> Longer barrel </text>
-</string>
-<string id="st_up_bard_b4_descr">
-<text> Longitudinal venting lines cut into the barrel improve the weapon's cooling and reduce recoil. </text>
-</string>
-<string id="st_up_bard_b4_name">
-<text> Longitudinal venting lines </text>
-</string>
-<string id="st_up_bard_b5_descr">
-<text> By replacing the standard barrel with a longer one, muzzle velocity has increased. </text>
-</string>
-<string id="st_up_bard_b5_name">
-<text> Longer barrel </text>
-</string>
-<string id="st_up_bard_b6_descr">
-<text> A special spray protects the barrel from overheating, smooths out small factory defects and significantly increases the lifetime of the barrel. </text>
-</string>
-<string id="st_up_bard_b6_name">
-<text> Internal protective coating </text>
-</string>
-<string id="st_up_bard_c1_descr">
-<text> A receiver balancer consists of several mobile elements, stabilizing the weapon when firing. </text>
-</string>
-<string id="st_up_bard_c1_name">
-<text> Receiver balancer </text>
-</string>
-<string id="st_up_bard_c2_descr">
-<text> A rifled barrel precludes firing buckshot, but this is offset by a much higher accuracy. </text>
-</string>
-<string id="st_up_bard_c2_name">
-<text> Rifled barrel </text>
-</string>
-<string id="st_up_bard_c3_descr">
-<text> Polymer seals help increase the pressure inside the barrel, increasing muzzle velocity. </text>
-</string>
-<string id="st_up_bard_c3_name">
-<text> Dynamic weapon seal </text>
-</string>
-<string id="st_up_bard_c4_descr">
-<text> Cylindrical bores help increase the rate of fire without compromising accuracy. </text>
-</string>
-<string id="st_up_bard_c4_name">
-<text> Cylindrical barrel bore </text>
-</string>
-<string id="st_up_bard_c5_descr">
-<text> An active counterbalance shifts towards the muzzle of the barrel when firing and reduces the recoil. </text>
-</string>
-<string id="st_up_bard_c5_name">
-<text> Integral barrel active counterbalance </text>
-</string>
-<string id="st_up_barp_a1_descr">
-<text> By replacing the standard barrel with a longer one, growing flat trajectory bullets. </text>
-</string>
-<string id="st_up_barp_a1_name">
-<text> Longer barrel </text>
-</string>
-<string id="st_up_barp_a2_descr">
-<text> This modification of the frame can reduce recoil: overflow gas exits the barrel through special openings. </text>
-</string>
-<string id="st_up_barp_a2_name">
-<text> Perforated frame</text>
-</string>
-<string id="st_up_barp_a3_descr">
-<text>A shorter barrel with a more sophisticated design allows to increase the rate of fire without losing accuracy. </text>
-</string>
-<string id="st_up_barp_a3_name">
-<text> Short barrel </text>
-</string>
-<string id="st_up_barp_b1_descr">
-<text> Chromium helps improve durability of the barrel of the weapon.</text>
-</string>
-<string id="st_up_barp_b1_name">
-<text> Chromed insides </text>
-</string>
-<string id="st_up_barp_b2_descr">
-<text> Separators assume part of the impact. </text>
-</string>
-<string id="st_up_barp_b2_name">
-<text> Rubber separators </text>
-</string>
-<string id="st_up_barp_b3_descr">
-<text> Simplified, shallow rifling can increase the rate of fire, which is important in close quarters combat with the enemy. </text>
-</string>
-<string id="st_up_barp_b3_name">
-<text> Barrel with simplified rifling </text>
-</string>
-<string id="st_up_barp_b4_descr">
-<text> gun with additional rifling can increase velocity and battlefield accuracy. </text>
-</string>
-<string id="st_up_barp_b4_name">
-<text> Additional channels cut in the gun </text>
-</string>
-<string id="st_up_barp_b5_descr">
-<text> This modification significantly reduces recoil. </text>
-</string>
-<string id="st_up_barp_b5_name">
-<text> Muzzle compensator with a flash suppressor</text>
-</string>
-<string id="st_up_barp_c1_descr">
-<text> Sinusoidal rifling can improve its cooling and increase the rate without losing the muzzle velocity tractors flying bullets. </text>
-</string>
-<string id="st_up_barp_c1_name">
-<text> Sinusoidal rifling </text>
-</string>
-<string id="st_up_barp_c2_descr">
-<text> Polygonal rifling of the barrel is best suited for sniper rifles, as it improve muzzle velocity. </text>
-</string>
-<string id="st_up_barp_c2_name">
-<text> Barrel with polygonal rifling </text>
-</string>
-<string id="st_up_barp_c3_descr">
-<text> A pneumatic mechanism can alter the barrel's mechanism, increasing muzzle velocity. </text>
-</string>
-<string id="st_up_barp_c3_name">
-<text> Pneumatic mechanism </text>
-</string>
-<string id="st_up_exo_a1_descr">
-<text> Amplified servomotors increase the exoskeleton's load bearing capacity. </text>
-</string>
-<string id="st_up_exo_a1_name">
-<text> Servomotor amplification </text>
-</string>
-<string id="st_up_exo_b1_descr">
-<text> Design pioneered by Freedom's engineers, in order to reduce the weight of their first exoskeletons. Carbon fibre parts are just as durable as metal ones. </text>
-</string>
-<string id="st_up_exo_b1_name">
-<text> Replacement of metal parts with carbon fibre</text>
-</string>
-<string id="st_up_exo_b2_descr">
-<text> Reinforcing parts of the exoskeleton protects it from destruction by bullets and shrapnel. </text>
-</string>
-<string id="st_up_exo_b2_name">
-<text> Reinforcing drives </text>
-</string>
-<string id="st_up_exo_c1_descr">
-<text> This system uses powerful springs and hinges, reducing the stress and allowing the wearer to conserve a lot of strength when moving. </text>
-</string>
-<string id="st_up_exo_c1_name">
-<text> "Walker" stress reduction system</text>
-</string>
-<string id="st_up_exo_c2_descr">
-<text> Hydraulic amplifiers which allow you to switch to running mode are the main difference between the fourth and third generations of exoskeletons. </text>
-</string>
-<string id="st_up_exo_c2_name">
-<text> Additional hydraulic servomotor amplifiers </text>
-</string>
-<string id="st_up_kom_a1_descr">
-<text> This thick textile lining helps prevent damage to soft tissues of the body after a direct hit by a bullet or piece of shrapnel. </text>
-</string>
-<string id="st_up_kom_a1_name">
-<text> Padded textile lining </text>
-</string>
-<string id="st_up_kom_a2_descr">
-<text> Silicone sealants are more efficient than rubber at dampening shocks and protecting the carrier. </text>
-</string>
-<string id="st_up_kom_a2_name">
-<text> Absorbing silicone sealants </text>
-</string>
-<string id="st_up_kom_a3_descr">
-<text> To reduce the weight of the armour, fasteners and gaskets are replaced with ones made of lighter synthetic materials. </text>
-</string>
-<string id="st_up_kom_a3_name">
-<text> Lightweight, synthetic polymer materials </text>
-</string>
-<string id="st_up_kom_a4_descr">
-<text> Rubber helps to avoid damage to soft tissues of the body when hit by bullets or shrapnel. </text>
-</string>
-<string id="st_up_kom_a4_name">
-<text> Padded rubber gasket </text>
-</string>
-<string id="st_up_kom_a5_descr">
-<text> This lining will protect the body in the event that the main suit becomes ruptured. </text>
-</string>
-<string id="st_up_kom_a6_descr">
-<text> A mix of polycarbonate, silicone and carbon fibre - in case the main armour cracks. </text>
-</string>
-<string id="st_up_kom_a6_name">
-<text> Protective polymer inserts </text>
-</string>
-<string id="st_up_kom_a7_descr">
-<text> Sealed protective suit created by Freedom, which is designed for artifact search and collection in areas of abnormal activity. </text>
-</string>
-<string id="st_up_kom_a7_name">
-<text> "Expanse" protective suit  </text>
-</string>
-<string id="st_up_kom_a8_descr">
-<text> An airtight layer of synthetic materials helps in the event of damage to the outer layer. </text>
-</string>
-<string id="st_up_kom_a8_name">
-<text> Synthetic airtight layer </text>
-</string>
-<string id="st_up_kom_b10_descr">
-<text> An ergonomic rubber padding increases mobility in bulky armour. </text>
-</string>
-<string id="st_up_kom_b10_name">
-<text> Rubber padded overalls </text>
-</string>
-<string id="st_up_kom_b11_descr">
-<text> Constantan does not conduct electricity and melts only at very high temperatures. </text>
-</string>
-<string id="st_up_kom_b11_name">
-<text> Constantan insulating inserts </text>
-</string>
-<string id="st_up_kom_b12_descr">
-<text> Lead provides reliable protection from radiation, because it absorbs all types of radiation particles. </text>
-</string>
-<string id="st_up_kom_b12_name">
-<text> Reinforced protective suit </text>
-</string>
-<string id="st_up_kom_b1_descr">
-<text> Simple protection from rain and caustic substances. </text>
-</string>
-<string id="st_up_kom_b1_name">
-<text> Canvas overalls  </text>
-</string>
-<string id="st_up_kom_b2_descr">
-<text> Fabric of the costume was treated with a special mixture, protecting it from fire. This modification is especially popular among stalkers who hunt for fire artifacts. </text>
-</string>
-<string id="st_up_kom_b2_name">
-<text> Processed refractory fabric </text>
-</string>
-<string id="st_up_kom_b3_descr">
-<text> Magnesium inserts protect from extremely high temperatures. </text>
-</string>
-<string id="st_up_kom_b3_name">
-<text> Magnesium inserts </text>
-</string>
-<string id="st_up_kom_b4_descr">
-<text> Dense polyethylene lining protects from poisonous substances and electrical shock. </text>
-</string>
-<string id="st_up_kom_b4_name">
-<text> Sealed polyethylene lining </text>
-</string>
-<string id="st_up_kom_b5_descr">
-<text> To reduce the weight of the armour, fasteners and gaskets are made of lighter synthetic materials. </text>
-</string>
-<string id="st_up_kom_b5_name">
-<text> Replacement of textile costume details with synthetic </text>
-</string>
-<string id="st_up_kom_b6_descr">
-<text> Plexiglas absorbs only two types of radioactive particles, but it is much lighter than lead. </text>
-</string>
-<string id="st_up_kom_b6_name">
-<text> Plexiglas anti-radiation lining</text>
-</string>
-<string id="st_up_kom_b7_descr">
-<text> Reliable protection from radioactive materials and electrical discharges. </text>
-</string>
-<string id="st_up_kom_b7_name">
-<text> Sealed, flexible plastic lining </text>
-</string>
-<string id="st_up_kom_b8_descr">
-<text> Even a thin layer of constantan in the suit will provide excellent insulation from electric current. </text>
-</string>
-<string id="st_up_kom_b8_name">
-<text> Constantan insulation layer</text>
-</string>
-<string id="st_up_kom_b9_descr">
-<text> Fibreglass is widely used by Ukrainian Ministry of Emergency workers in their equipment. </text>
-</string>
-<string id="st_up_kom_b9_name">
-<text> Thermal protection fibreglass </text>
-</string>
-<string id="st_up_kom_c1_descr">
-<text> Impregnated fabric prevents the poisoning of the body with harmful chemicals. </text>
-</string>
-<string id="st_up_kom_c1_name">
-<text> Impregnated fabric costume </text>
-</string>
-<string id="st_up_kom_c2_descr">
-<text> Rubber provides basic protection from short-term radiation exposure. </text>
-</string>
-<string id="st_up_kom_c2_name">
-<text> Rubberised fabric suit </text>
-</string>
-<string id="st_up_kom_c3_descr">
-<text> Durable skid plates provide additional protection from bullets. </text>
-</string>
-<string id="st_up_kom_c3_name">
-<text> "Shield" heavy-duty plastic protective inserts </text>
-</string>
-<string id="st_up_kom_c4_descr">
-<text> Nickel is a refracting metal that can be used to protect the body from fire. </text>
-</string>
-<string id="st_up_kom_c4_name">
-<text> Refractory suit with nickel inserts </text>
-</string>
-<string id="st_up_kom_c5_descr">
-<text> An alloy of nickel and magnesium was used for this flak jacket, to protect the wearer from electric shock. </text>
-</string>
-<string id="st_up_kom_c5_name">
-<text> Insulating protective suit with manganin inserts </text>
-</string>
-<string id="st_up_kom_c6_descr">
-<text> A sealed protective suit with corrosion-resistant coating and Kevlar armour plating. </text>
-</string>
-<string id="st_up_kom_c6_name">
-<text> "Second Skin" armoured suit</text>
-</string>
-<string id="st_up_kom_c7_descr">
-<text> A protective suit, created from next generation polymers, with bismuth inserts. </text>
-</string>
-<string id="st_up_kom_c7_name">
-<text> "Environmentalist" polymer overalls with bismuth inserts </text>
-</string>
-<string id="st_up_kom_c8_descr">
-<text> A lead frame forms a completely enclosed protective layer, shielding from radiation and hazardous substances, without restricting the mobility of the owner. </text>
-</string>
-<string id="st_up_kom_c8_name">
-<text> "Rescuer" plexiglas overalls with a flexible lead frame </text>
-</string>
-<string id="st_up_kom_c9_descr">
-<text> A domestic development which appeared after the Chernobyl accident. Used in the exoskeleton to protect the electronics. </text>
-</string>
-<string id="st_up_kom_c9_name">
-<text> "Tow" leaded suit </text>
-</string>
-<string id="st_up_opt_a1_descr">
-<text> Installing an assault sight for close quarters combat. </text>
-</string>
-<string id="st_up_opt_a1_name">
-<text> Collimator 1.6x scope </text>
-</string>
-<string id="st_up_opt_a2_descr">
-<text> A scope for combat on medium and long distances. </text>
-</string>
-<string id="st_up_opt_a2_name">
-<text> 4x scope </text>
-</string>
-<string id="st_up_opt_a3_descr">
-<text> A scope making long range combat easier. </text>
-</string>
-<string id="st_up_opt_a3_name">
-<text> 5x scope </text>
-</string>
-<string id="st_up_opt_a4_descr">
-<text> A scope making long range combat easier. </text>
-</string>
-<string id="st_up_opt_a4_name">
-<text> 6x scope. </text>
-</string>
-<string id="st_up_opt_b1_descr">
-<text> A modification of a standard red-dot sight, increasing contrast of the image with a yellow overlay. Makes fighting in darkness or low light conditions that much easier. </text>
-</string>
-<string id="st_up_opt_b1_name">
-<text> Contrast sight </text>
-</string>
-<string id="st_up_opt_c1_descr">
-<text> A thermal imager allows you to detect and locate sources of heat with characteristics similar to the human body. </text>
-</string>
-<string id="st_up_opt_c1_name">
-<text> Auto-locking optics </text>
-</string>
-<string id="st_up_opt_c2_descr">
-<text> Installing a night vision device will help you save your life - or take away someone else's. </text>
-</string>
-<string id="st_up_opt_c2_name">
-<text> Passive Night Vision </text>
-</string>
-<string id="st_up_opt_c3_descr">
-<text> This modification allows the shooter to freely adjust the scope magnification. </text>
-</string>
-<string id="st_up_opt_c3_name">
-<text> Adjustable range finder sight </text>
-</string>
-<string id="st_up_pri_a1_descr">
-<text> A pneumatic compensator offsets the recoil of automatic firing. </text>
-</string>
-<string id="st_up_pri_a1_name">
-<text> Pneumatic compensator </text>
-</string>
-<string id="st_up_pri_b1_descr">
-<text> A cushioned shoulder stop significantly reduces the recoil. </text>
-</string>
-<string id="st_up_pri_b1_name">
-<text> Cushioned shoulder stop </text>
-</string>
-<string id="st_up_pri_b2_descr">
-<text> A progressive butt, which takes into account the structural features of the human body. </text>
-</string>
-<string id="st_up_pri_b2_name">
-<text> Ergonomic butt </text>
-</string>
-<string id="st_up_pri_c1_descr">
-<text> When firing, the propellant gas is discharged from the barrel into the cavity behind the slide, ensuring smooth rollback. </text>
-</string>
-<string id="st_up_pri_c1_name">
-<text> Gas buffer recoil bolt group </text>
-</string>
-<string id="st_up_pri_c2_descr">
-<text> An elongated bolt with a partially removed rear helps improve the muzzle velocity, which positively affects accuracy. </text>
-</string>
-<string id="st_up_pri_c2_name">
-<text> Increasing the length of the rollback bolt </text>
-</string>
-<string id="st_up_pri_c3_descr">
-<text> Installing a mobile component in the stock reduces recoil. </text>
-</string>
-<string id="st_up_pri_c3_name">
-<text> Sliding counterbalance </text>
-</string>
-<string id="st_up_prih_a1_descr">
-<text> Increased iron sights allow the Shooter to hit the target more accurately. </text>
-</string>
-<string id="st_up_prih_a1_name">
-<text> Iron sights modification </text>
-</string>
-<string id="st_up_prih_b1_descr">
-<text> A spring with damping elements helps to improve the muzzle velocity of the weapon. </text>
-</string>
-<string id="st_up_prih_b1_name">
-<text> Built-in spring dampener </text>
-</string>
-<string id="st_up_prih_c1_descr">
-<text> Located in the stock, a gas dampener recoil bolt group largely reduces the recoil. </text>
-</string>
-<string id="st_up_prih_c1_name">
-<text> Additional rollback dampener </text>
-</string>
-<string id="st_up_pris_a1_descr">
-<text> A rubber butt-cap was initially installed only in large-calibre sniper rifles. </text>
-</string>
-<string id="st_up_pris_a1_name">
-<text> Damping butt </text>
-</string>
-<string id="st_up_pris_b1_descr">
-<text> Adjustable stock, which can help the shooter to hit the target from any position, comfortable or not. </text>
-</string>
-<string id="st_up_pris_b1_name">
-<text> Adjustable stock </text>
-</string>
-<string id="st_up_pris_c1_descr">
-<text> Located in the stock, this part absorbs the powerful recoil of large-calibre weapons. </text>
-</string>
-<string id="st_up_pris_c1_name">
-<text> Hydraulic stock dampener </text>
-</string>
-<string id="st_up_res_a1_descr">
-<text> Active filters can neutralize even the most corrosive chemicals. </text>
-</string>
-<string id="st_up_res_a1_name">
-<text> Active filters </text>
-</string>
-<string id="st_up_res_a2_descr">
-<text> It is well known that a closed steel hoop can partially protect from psi-radiation. </text>
-</string>
-<string id="st_up_res_a2_name">
-<text> Psi-protective hoop</text>
-</string>
-<string id="st_up_res_a3_descr">
-<text> This mask is used in conditions of high air pollution or extreme temperatures. </text>
-</string>
-<string id="st_up_res_b1_descr">
-<text> Application of screening coverage </text>
-</string>
-<string id="st_up_res_b1_name">
-<text> Screening coverage </text>
-</string>
-<string id="st_up_res_b2_descr">
-<text> A filter with a reinforced anti-corrosion coating and an additional safety layer protects the user from hazardous substances. </text>
-</string>
-<string id="st_up_res_b2_name">
-<text> Pollution filter</text>
-</string>
-<string id="st_up_res_b3_descr">
-<text> A plexiglas mask can partially protect against radiation. </text>
-</string>
-<string id="st_up_res_b3_name">
-<text> Plexiglas cover </text>
-</string>
-<string id="st_up_res_b4_descr">
-<text> A plexiglas mask can partially protect against radiation. </text>
-</string>
-<string id="st_up_res_b4_name">
-<text> Plexiglas face mask </text>
-</string>
-<string id="st_up_res_b5_descr">
-<text> Insulating the respirator allows the carrier to avoid inhaling hazardous substances. </text>
-</string>
-<string id="st_up_res_b5_name">
-<text> Insulated face mask </text>
-</string>
-<string id="st_up_res_c1_descr">
-<text> A beryllium-aluminium matrix, despite its low weight, provides the wearer with excellent protection. </text>
-</string>
-<string id="st_up_res_c1_name">
-<text> Beryllium-aluminium plates </text>
-</string>
-<string id="st_up_res_c2_descr">
-<text> A beryllium-titanium matrix provides the most effective protection without increase the weight of the helmet. </text>
-</string>
-<string id="st_up_res_c2_name">
-<text> Beryllium-titanium plates </text>
-</string>
-<string id="st_up_res_c3_descr">
-<text> These filters are designed for scientists, giving them the ability to withstand any degree of pollution of the environment by maximizing the flow of oxygen to the lungs. </text>
-</string>
-<string id="st_up_res_c3_name">
-<text> Scrubbers </text>
-</string>
-<string id="st_up_res_c4_descr">
-<text> High-tech psi-protection, invented by a scientist named Sakharov. </text>
-</string>
-<string id="st_up_res_c4_name">
-<text> "Psi-dome" filter loop </text>
-</string>
-<string id="st_up_res_c5_descr">
-<text> A protective frame made of constantan allows the wearer to survive thermal and electrical anomalies. </text>
-</string>
-<string id="st_up_res_c5_name">
-<text> "Burevestnik" constantan facial armour </text>
-</string>
-<string id="st_up_res_c6_descr">
-<text> Additional reinforcement increases the safety margin. </text>
-</string>
-<string id="st_up_res_c6_name">
-<text> Reinforced helmet structure </text>
-</string>
-<string id="st_up_res_c7_descr">
-<text> A system with reinforced filters and neutralizing segments, that prevents hazardous substances from contaminating the organism. </text>
-</string>
-<string id="st_up_res_c7_name">
-<text> Amplified respirator for extreme conditions </text>
-</string>
-<string id="st_up_resp_a1_descr">
-<text> A night vision device which allows you to operate at night or in low light conditions. </text>
-</string>
-<string id="st_up_resp_a1_name">
-<text> 1st Generation PNV </text>
-</string>
-<string id="st_up_resp_a2_descr">
-<text> This system automatically switches to a filtered breathing mode, in case hazardous air pollution by radioactive or poisonous substances is detected. </text>
-</string>
-<string id="st_up_resp_a2_name">
-<text> Radiation and chemical filters</text>
-</string>
-<string id="st_up_resp_a3_name">
-<text> "Steam" auxiliary respirator </text>
-</string>
-<string id="st_up_resp_b1_descr">
-<text> A better night vision device, designed for operations in complete darkness. </text>
-</string>
-<string id="st_up_resp_b1_name">
-<text> 2nd Generation PNV</text>
-</string>
-<string id="st_up_resp_b2_descr">
-<text> A thermal imager allows you to detect and lock on to sources of heat with a human signature. </text>
-</string>
-<string id="st_up_resp_b2_name">
-<text> Auto lock system</text>
-</string>
-<string id="st_up_resp_b3_descr">
-<text> A wave device, designed to work in areas with high levels of psionic radiation. </text>
-</string>
-<string id="st_up_resp_b3_name">
-<text>"Oracle" psi-stimulator </text>
-</string>
-<string id="st_up_resp_c1_descr">
-<text> A better night vision device, designed for operations in complete darkness. </text>
-</string>
-<string id="st_up_resp_c1_name">
-<text> 3rd Generation PNV </text>
-</string>
-<string id="st_up_resp_c2_descr">
-<text> By extracting ions from air molecules, a so-called ionic wind can be created, which cools the wearer.</text>
-</string>
-<string id="st_up_resp_c2_name">
-<text> "Ion Wind" cooling System </text>
-</string>
-<string id="st_up_resp_c3_descr">
-<text> The infra-red scanner allows you to locate humans in your immediate vicinity, even in complete darkness. </text>
-</string>
-<string id="st_up_resp_c3_name">
-<text> Infra-red scanner </text>
-</string>
-<string id="st_up_resp_c4_descr">
-<text> "SPB - VPZ.m.IV" - "Mental Shielding System - Psi-Radiation Protection Mark Four". </text>
-</string>
-<string id="st_up_resp_c4_name">
-<text> "SPB - VPZ.m.IV" </text>
-</string>
-<string id="st_up_ret_a1_descr">
-<text> Reinforced springs increase the muzzle velocity. </text>
-</string>
-<string id="st_up_ret_a1_name">
-<text> Strong return spring </text>
-</string>
-<string id="st_up_ret_a2_descr">
-<text> Installing seals on the moving parts of machinery will help to maximally stabilize the barrel when firing. </text>
-</string>
-<string id="st_up_ret_a2_name">
-<text> Amortization of return mechanism </text>
-</string>
-<string id="st_up_ret_a3_descr">
-<text> Installing additional springs with a reverse spiral can reduce the recoil without affecting bullet trajectory. </text>
-</string>
-<string id="st_up_ret_a3_name">
-<text> Additional return spring </text>
-</string>
-<string id="st_up_ret_b1_descr">
-<text> A protective coating increases the reliability, and most importantly, further isolates the receiver from the environment. </text>
-</string>
-<string id="st_up_ret_b1_name">
-<text> Return mechanism protective coating </text>
-</string>
-<string id="st_up_ret_b2_descr">
-<text> Titanium springs are much more efficient than steel ones. </text>
-</string>
-<string id="st_up_ret_b2_name">
-<text> Titanium spring return mechanism </text>
-</string>
-<string id="st_up_ret_b3_descr">
-<text> Polymer parts which rigidly fix spring trajectory, reducing the sway. </text>
-</string>
-<string id="st_up_ret_b3_name">
-<text> Balancing parts </text>
-</string>
-<string id="st_up_ret_c1_descr">
-<text> Sealing couplings help increase the pressure in the barrel and the muzzle velocity. </text>
-</string>
-<string id="st_up_ret_c1_name">
-<text> Lock sealing couplings </text>
-</string>
-<string id="st_up_ret_c2_descr">
-<text> The lock's speed is amplified through the use of powder gases and a modified closing mechanism, significantly increasing the rate of fire. </text>
-</string>
-<string id="st_up_ret_c2_name">
-<text> Lock gas amplification</text>
-</string>
-<string id="st_up_ret_c3_descr">
-<text> A replacement of the basic return mechanism with a more powerful one, with two guiding rods and return springs, which grants an increase in the rate of fire. </text>
-</string>
-<string id="st_up_ret_c3_name">
-<text> Duplicated guides and fighting springs </text>
-</string>
-<string id="st_up_roun_a1_descr">
-<text> Special channels and outputs for the powder gases, located in the drum, help reduce recoil. </text>
-</string>
-<string id="st_up_roun_a1_name">
-<text> Recoil reduction via powder gases </text>
-</string>
-<string id="st_up_roun_a2_descr">
-<text> Adding skew shaped groves to the drum's rotation mechanism increases the fire rate, increasing the efficiency of powder gas use. </text>
-</string>
-<string id="st_up_roun_a2_name">
-<text> Skew-shaped drum grooves </text>
-</string>
-<string id="st_up_stk_a1_descr">
-<text> Replacing the base frame with a polymer one can reduce the mass of the weapon without compromising its reliability. </text>
-</string>
-<string id="st_up_stk_a1_name">
-<text> Impact-resistant polymer frame </text>
-</string>
-<string id="st_up_stk_a2_descr">
-<text> A receiver made from super alloys allows the weapon to withstand daily combat stress without compromising reliability. </text>
-</string>
-<string id="st_up_stk_a2_name">
-<text> Super alloy receiver </text>
-</string>
-<string id="st_up_stk_a3_descr">
-<text> An enhancement mounted on the front of the receiver that reduces recoil. </text>
-</string>
-<string id="st_up_stk_a3_name">
-<text> Receiver counterbalance </text>
-</string>
-<string id="st_up_stk_b1_descr">
-<text> Installation of this shroud can increase the weapon's rate of fire overheating the barrel. </text>
-</string>
-<string id="st_up_stk_b1_name">
-<text> Additional cooling jacket </text>
-</string>
-<string id="st_up_stk_b2_descr">
-<text> A more convenient shape of the grip makes handling the weapon more comfortable, especially when firing on the move. </text>
-</string>
-<string id="st_up_stk_b2_name">
-<text> Ergonomically shaped receiver </text>
-</string>
-<string id="st_up_stk_c1_descr">
-<text> A modification of the bull-pup receiver that makes its maintenance easier. </text>
-</string>
-<string id="st_up_stk_c1_name">
-<text> Modular receiver </text>
-</string>
-<string id="st_up_stk_c2_descr">
-<text> The spray smooths out minor flaws in weapon mechanics, significantly increasing muzzle velocity. </text>
-</string>
-<string id="st_up_stk_c2_name">
-<text> Smoothing spray application </text>
-</string>
-<string id="st_up_stk_c3_descr">
-<text> A stabilizer is installed inside the hollow grip, reducing recoil. </text>
-</string>
-<string id="st_up_stk_c3_name">
-<text> Hollow grip with stabilizer </text>
-</string>
-<string id="st_up_stvd_a1_descr">
-<text> A hollow space inside the grip allows you to reduce the weapon's mass. </text>
-</string>
-<string id="st_up_stvd_a1_name">
-<text> Hollow grip </text>
-</string>
-<string id="st_up_stvd_a2_descr">
-<text> A lightened version of the stock. </text>
-</string>
-<string id="st_up_stvd_a2_name">
-<text> Light stock </text>
-</string>
-<string id="st_up_stvd_a3_descr">
-<text> A polymer frame helps reduce the overall mass of weapons. </text>
-</string>
-<string id="st_up_stvd_a3_name">
-<text> Impact-resistant polymer frame </text>
-</string>
-<string id="st_up_stvd_b1_descr">
-<text> Adding several balancing parts, which reduce recoil. </text>
-</string>
-<string id="st_up_stvd_b1_name">
-<text> Counterbalance </text>
-</string>
-<string id="st_up_stvd_b2_descr">
-<text> An ergonomic grip makes the firearm noticeably more comfortable. </text>
-</string>
-<string id="st_up_stvd_b2_name">
-<text> Ergonomic grip </text>
-</string>
-<string id="st_up_stvd_b3_descr">
-<text> A padded grip helps reduce recoil. </text>
-</string>
-<string id="st_up_stvd_b3_name">
-<text> Padded grip </text>
-</string>
-<string id="st_up_stvd_b4_descr">
-<text> A more ergonomic stock simplifies weapon handling. </text>
-</string>
-<string id="st_up_stvd_b4_name">
-<text> Ergonomic stock </text>
-</string>
-<string id="st_up_stvd_b5_descr">
-<text> A special coating protects the weapon from the damaging effects of the environment. </text>
-</string>
-<string id="st_up_stvd_b5_name">
-<text> Anti-corrosive coating </text>
-</string>
-<string id="st_up_stvd_c1_descr">
-<text> Located in the butt of the weapon, a "Mercury" compensator absorbs part of the recoil when shooting. </text>
-</string>
-<string id="st_up_stvd_c1_name">
-<text> "Mercury" recoil compensator </text>
-</string>
-<string id="st_up_stvd_c2_descr">
-<text> Pulsating counterbalance is a weapon that moves in the opposite direction to the slide, compensating recoil. </text>
-</string>
-<string id="st_up_stvd_c2_name">
-<text> Pulsating counterbalance </text>
-</string>
-<string id="st_up_stvh_a1_descr">
-<text> Altering the weapon's material reduces uneven heating, improving the rate of fire. </text>
-</string>
-<string id="st_up_stvh_a1_name">
-<text> Heavy-duty heat-resistant alloys </text>
-</string>
-<string id="st_up_stvh_b1_descr">
-<text> A modification which shields the user from weapon heating. </text>
-</string>
-<string id="st_up_stvh_b1_name">
-<text> Adding thermostatic frame parts</text>
-</string>
-<string id="st_up_stvh_b2_descr">
-<text>  A modification which requires great skill of the technician. Evenly distributes excess heat over the weapon frame. </text>
-</string>
-<string id="st_up_stvh_b2_name">
-<text> External weapon ribbing </text>
-</string>
-<string id="st_up_stvh_c1_descr">
-<text> Changing the base weapon layout to a more modern one significantly increases its accuracy. </text>
-</string>
-<string id="st_up_stvh_c1_name">
-<text> Changing weapon geometry </text>
-</string>
-<string id="st_up_stvp_a1_descr">
-<text> An almost indestructible receiver allows the weapon to serve much longer. </text>
-</string>
-<string id="st_up_stvp_a1_name">
-<text> Titanium receiver </text>
-</string>
-<string id="st_up_stvp_a2_descr">
-<text> More robust when compared to the composite structure. </text>
-</string>
-<string id="st_up_stvp_a2_name">
-<text> All-steel construction </text>
-</string>
-<string id="st_up_stvp_b1_descr">
-<text> Changing the basic framework for a lighter one, but no less firm. </text>
-</string>
-<string id="st_up_stvp_b1_name">
-<text> Polymer frame </text>
-</string>
-<string id="st_up_stvp_b2_descr">
-<text> A more comfortable grip simplifies handling of weapons. </text>
-</string>
-<string id="st_up_stvp_b2_name">
-<text> Ergonomic grip </text>
-</string>
-<string id="st_up_stvp_b3_descr">
-<text> A padded grip makes the recoil less tangible. </text>
-</string>
-<string id="st_up_stvp_b3_name">
-<text> Padded grip </text>
-</string>
-<string id="st_up_stvp_b4_descr">
-<text> Protective curtain-seals shield the weapon from dirt and fall damage. </text>
-</string>
-<string id="st_up_stvp_b4_name">
-<text> Gasket Corps shielding </text>
-</string>
-<string id="st_up_stvp_b5_descr">
-<text> A more ergonomically shaped grip with a modified rear. </text>
-</string>
-<string id="st_up_stvp_b5_name">
-<text> Grip with a straightened rear </text>
-</string>
-<string id="st_up_stvp_b6_descr">
-<text> The size and shape of the grip can be adjusted under the owner's hand weapons. </text>
-</string>
-<string id="st_up_stvp_b6_name">
-<text> Grip tuning </text>
-</string>
-<string id="st_up_stvp_c1_descr">
-<text> A modification of the return spring (for the spring located in the grip). </text>
-</string>
-<string id="st_up_stvp_c1_name">
-<text> Spring return dampener </text>
-</string>
-<string id="st_up_stvp_c2_descr">
-<text> A special grip shape, optimized with a mobile back plate. </text>
-</string>
-<string id="st_up_stvp_c2_name">
-<text> Removable grip back plate </text>
-</string>
-<string id="st_up_stvs_a1_descr">
-<text> This barrel shroud protects the weapon from wear. </text>
-</string>
-<string id="st_up_stvs_a1_name">
-<text> Perforated barrel shroud </text>
-</string>
-<string id="st_up_stvs_b1_descr">
-<text> A more thought out compensator, increasing performance to match even the highest quality weapons. </text>
-</string>
-<string id="st_up_stvs_b1_name">
-<text> Compensating muzzle brake</text>
-</string>
-<string id="st_up_stvs_b2_descr">
-<text> Improved design for the barrel of sniper fire at the limiting distance. </text>
-</string>
-<string id="st_up_stvs_b2_name">
-<text> Installing heavy barrel with polygonal rifling </text>
-</string>
-<string id="st_up_stvs_b3_descr">
-<text> Longitudinal grooves inside the barrel prevent it from clogging and overheating. </text>
-</string>
-<string id="st_up_stvs_b3_name">
-<text> Longitudinal rifling </text>
-</string>
-<string id="st_up_stvs_c1_descr">
-<text> An integrated silencer with a flash suppressor is essential for not giving away your position. </text>
-</string>
-<string id="st_up_stvs_c1_name">
-<text> Integrated silencer </text>
-</string>
-<string id="st_up_stvs_c2_descr">
-<text> Sinusoidal rifling can increase the rate of fire, which is especially important for the assault weapons. </text>
-</string>
-<string id="st_up_stvs_c2_name">
-<text> Sinusoidal rifling the gun </text>
-</string>
-<string id="st_up_tch_a1_descr">
-<text> A first generation injector, developed by one of Kiev's institutes, periodically injects small doses of adrenaline into the bloodstream. On one hand, it's dangerous for the organism, but on another, it can save lives, improving reaction times dramatically. </text>
-</string>
-<string id="st_up_tch_a1_name">
-<text> "Hussey" adrenaline injector </text>
-</string>
-<string id="st_up_tch_a2_descr">
-<text> A special filter condenses and removes poisonous substances through the purifying filter. </text>
-</string>
-<string id="st_up_tch_a2_name">
-<text> Active filtering system </text>
-</string>
-<string id="st_up_tch_a3_descr">
-<text> A short wave emitter - invention of the Clear Sky scientific group - increases blood clotting in open wounds. </text>
-</string>
-<string id="st_up_tch_a3_name">
-<text> "Ray" haemostimulator </text>
-</string>
-<string id="st_up_tch_a4_descr">
-<text> This system temporarily electrifies the surface of the suit, to repulse radioactive and chemical particles. </text>
-</string>
-<string id="st_up_tch_a4_name">
-<text> Built-in repulsion system </text>
-</string>
-<string id="st_up_tch_b1_descr">
-<text>This Beta generation injector acts when it detects a sudden drop in blood pressure. I injects miniature does of blood clotting agents into the bloodstream, to speed up wound closure. </text>
-</string>
-<string id="st_up_tch_b1_name">
-<text> "Hydra" haemoglobin injector</text>
-</string>
-<string id="st_up_tch_b2_descr">
-<text> By maintaining an optimal body temperature, this system allows to avoid fatigue. </text>
-</string>
-<string id="st_up_tch_b2_name">
-<text> Thermoregulation </text>
-</string>
-<string id="st_up_tch_b3_descr">
-<text> A wave generator that noticeably increases wound regeneration and increases immunity levels and pain thresholds. </text>
-</string>
-<string id="st_up_tch_b3_name">
-<text> "Sun" biostimulator </text>
-</string>
-<string id="st_up_tch_b4_descr">
-<text> A wave device, designed to work in anomalous areas with high levels of psi-radiation. </text>
-</string>
-<string id="st_up_tch_b4_name">
-<text> "Oracle" psi-stimulator </text>
-</string>
-<string id="st_up_tch_c1_descr">
-<text> This injector floods the bloodstream with a military cocktail of complex chemicals, which accelerate tissue regeneration and block pain.</text>
-</string>
-<string id="st_up_tch_c1_name">
-<text> "Phoenix" regenerator</text>
-</string>
-<string id="st_up_tch_c2_descr">
-<text> A comprehensive system that monitors vital signs and injects vitamins, epinephrine or anabolics when needed. </text>
-</string>
-<string id="st_up_tch_c2_name">
-<text> Support systems </text>
-</string>
-<string id="st_up_tch_c3_descr">
-<text> While the principles of the psi-radiation remain unknown, this device helps reduce its ill effects. It's distinguishing feature is the calming effect it has on the nervous system. </text>
-</string>
-<string id="st_up_tch_c3_name">
-<text>  "Gleam" neurostimulator </text>
-</string>
-<string id="st_up_usm_a1_descr">
-<text> Adding this part can partially offset recoil, increasing accuracy when firing full auto. </text>
-</string>
-<string id="st_up_usm_a1_name">
-<text> Slide vibration compensator </text>
-</string>
-<string id="st_up_usm_a2_descr">
-<text> This is one of the simplest and most common modifications that reduce the inertia of the trigger. </text>
-</string>
-<string id="st_up_usm_a2_name">
-<text> Soft descent </text>
-</string>
-<string id="st_up_usm_b1_descr">
-<text> Individually selecting composite parts for each weapon model is tedious and expensive, but the weapon's lifespan increases noticeably. </text>
-</string>
-<string id="st_up_usm_b1_name">
-<text> Composite trigger group </text>
-</string>
-<string id="st_up_usm_b2_descr">
-<text> This modification can increase the rate of fire. </text>
-</string>
-<string id="st_up_usm_b2_name">
-<text> Modified trigger moderator </text>
-</string>
-<string id="st_up_usm_b3_descr">
-<text> An automatically retracted spring helps you take the first shot faster. </text>
-</string>
-<string id="st_up_usm_b3_name">
-<text> Springless descent </text>
-</string>
-<string id="st_up_usm_c1_descr">
-<text> A protective coating eliminates the possibility of misfiring due to failure in the trigger group. </text>
-</string>
-<string id="st_up_usm_c1_name">
-<text> Trigger group protective coating </text>
-</string>
-<string id="st_up_usm_c2_descr">
-<text> Axle-free trigger helps to increase machinery automation rate, resulting in a markedly increased rate of fire. </text>
-</string>
-<string id="st_up_usm_c2_name">
-<text> Axle-free trigger group </text>
-</string>
-<string id="st_up_usm_c3_descr">
-<text> This rotary system is well balanced, breaking smoothly, resulting in increased battlefield accuracy. </text>
-</string>
-<string id="st_up_usm_c3_name">
-<text> Unaccented trigger </text>
-</string>
-<string id="st_up_usmp_a1_descr">
-<text> The trigger is automatically cocking the weapon, increasing accuracy. </text>
-</string>
-<string id="st_up_usmp_a1_name">
-<text> Double action trigger </text>
-</string>
-<string id="st_up_usmp_b1_descr">
-<text> One of the simplest and most common modifications of the trigger that reduce its inertia. </text>
-</string>
-<string id="st_up_usmp_b1_name">
-<text> Soft descent </text>
-</string>
-<string id="st_up_usmp_b2_descr">
-<text> Preliminary partial cocked helps to increase the accuracy of battlefield weapons. </text>
-</string>
-<string id="st_up_usmp_b2_name">
-<text> trigger mechanism with partial cocked </text>
-</string>
-<string id="st_up_usmp_b3_descr">
-<text> This modification smooths out trigger functioning, increasing accuracy. </text>
-</string>
-<string id="st_up_usmp_b3_name">
-<text> device safe descent </text>
-</string>
-<string id="st_up_usmp_b4_descr">
-<text> modification, aimed at preventing weapons from the breakdown of the slide. </text>
-</string>
-<string id="st_up_usmp_b4_name">
-<text> large head axis trigger </text>
-</string>
-<string id="st_up_usmp_b5_descr">
-<text> Modular firing mechanism ensures easy maintenance and replacement parts, as well as greater convenience in the use of arms. </text>
-</string>
-<string id="st_up_usmp_b5_name">
-<text> Modular firing mechanism </text>
-</string>
-<string id="st_up_usmp_c1_descr">
-<text> An auxiliary chamber to the main blowback device reduces the amount of force needed to move the slide, increasing accuracy. </text>
-</string>
-<string id="st_up_usmp_c1_name">
-<text> Auxiliary slide chamber </text>
-</string>
-<string id="st_up_usmp_c2_descr">
-<text> next step to maximize ergonomic and easy to use weapons: rapid change mode trigger group. </text>
-</string>
-<string id="st_up_usmp_c2_name">
-<text> «Dual" mode of fire </text>
-</string>
-<string id="st_up_usmp_c3_descr">
-<text> After the first shot is fired, all subsequent shots need the trigger to be pressed just halfway through. </text>
-</string>
-<string id="st_up_usmp_c3_name">
-<text> Short course trigger group </text>
-</string>
-<string id="st_up_uti_a1_descr">
-<text> Amplified servomotors increase the maximum load. </text>
-</string>
-<string id="st_up_uti_a1_name">
-<text> Auxiliary servomotors </text>
-</string>
-<string id="st_up_uti_a2_descr">
-<text> This system is designed to prevent tetanus, inflammation and provide disinfectants. </text>
-</string>
-<string id="st_up_uti_a2_name">
-<text> "Field Medic" integrated system </text>
-</string>
-<string id="st_up_uti_a3_descr">
-<text> "Breathing" overalls with an integrated safety filter, providing you with a degree of safety in polluted environments. </text>
-</string>
-<string id="st_up_uti_a3_name">
-<text> Internal thermoregulation system </text>
-</string>
-<string id="st_up_uti_a4_descr">
-<text> An ergonomic improvement - this special attachment for a protective suit will help you evenly distribute your load. </text>
-</string>
-<string id="st_up_uti_a4_name">
-<text> Load distributing vest</text>
-</string>
-<string id="st_up_uti_a5_descr">
-<text> Without oxygen cylinders, you can't survive for long in a polluted atmosphere, whether radioactive or chemical. </text>
-</string>
-<string id="st_up_uti_a5_name">
-<text> Oxygen cylinders </text>
-</string>
-<string id="st_up_uti_b1_descr">
-<text> Installation of an additional container for artifacts. </text>
-</string>
-<string id="st_up_uti_b1_name">
-<text> Additional artifact container </text>
-</string>
-<string id="st_up_uti_b2_descr">
-<text> This mounting system allows you to evenly distribute the load over the entire body. </text>
-</string>
-<string id="st_up_uti_b2_name">
-<text> Load bearing mounting system </text>
-</string>
-<string id="st_up_uti_b3_descr">
-<text> A dorsal weight distribution frame reduces shoulder fatigue by evenly distributing encumbrance over the entire body, allowing you to pack in more weapons, supplies and equipment. </text>
-</string>
-<string id="st_up_uti_b3_name">
-<text> Dorsal weight distributing frame </text>
-</string>
-<string id="st_up_uti_b4_descr">
-<text>A simple module for decontamination, tetanus prevention and stimulant injection. It is rather primitive, but doesn't leave lasting lacerations from its injections. </text>
-</string>
-<string id="st_up_uti_b4_name">
-<text> "Custody" medical module </text>
-</string>
-<string id="st_up_uti_b5_descr">
-<text> A system with a built-in steel grill, that automatically adjusts its charge to that of the anomaly, reducing its threat to the wearer.</text>
-</string>
-<string id="st_up_uti_b5_name">
-<text> "Stingray" electrostatic grounding system </text>
-</string>
-<string id="st_up_uti_b6_descr">
-<text> Impregnated lining reduces chemical poisoning. </text>
-</string>
-<string id="st_up_uti_b6_name">
-<text> Chemical-proof lining </text>
-</string>
-<string id="st_up_uti_b7_descr">
-<text> An experimental sprint module, in low demand across the Zone only due to its cost. </text>
-</string>
-<string id="st_up_uti_b7_name">
-<text> "Athlete" integrated system </text>
-</string>
-<string id="st_up_uti_b8_descr">
-<text> This system neutralizes poisonous substances inhaled into the respirator filters. </text>
-</string>
-<string id="st_up_uti_b8_name">
-<text> "Antidote" toxin filtering system </text>
-</string>
-<string id="st_up_uti_c1_descr">
-<text> Installation of additional containers for artifacts. </text>
-</string>
-<string id="st_up_uti_c1_name">
-<text> Additional two artifact containers </text>
-</string>
-<string id="st_up_uti_c2_descr">
-<text> A combat support system built into the suit is a rare sight on the battlefield, usually limited just to special forces. This system provides adrenaline and blood coagulant injections. </text>
-</string>
-<string id="st_up_uti_c2_name">
-<text> "Varyag" field support system</text>
-</string>
-<string id="st_up_uti_c3_descr">
-<text> A prototype soldier support system. Designers decided to switch from adrenaline injection to cocktails of military agents, which accelerate wound regeneration. </text>
-</string>
-<string id="st_up_uti_c3_name">
-<text> "Skif" field support system</text>
-</string>
-<string id="st_up_zat_a1_descr">
-<text> This modification is not cheap, but it is certainly a future standard for next generation weapons. </text>
-</string>
-<string id="st_up_zat_a1_name">
-<text> Integral slide </text>
-</string>
-<string id="st_up_zat_a2_descr">
-<text> Sealing the bolt prevents the loss of propellant gases, increasing muzzle velocity. </text>
-</string>
-<string id="st_up_zat_a2_name">
-<text> Synthetic bolt seal</text>
-</string>
-<string id="st_up_zat_a3_descr">
-<text> Despite its name, it replaces the regular bolt with an exposed bolt system: it should provide a higher rate of fire. </text>
-</string>
-<string id="st_up_zat_a3_name">
-<text> Accelerated refire rate </text>
-</string>
-<string id="st_up_zat_b1_descr">
-<text> A gas bleeder with a shifting unit dissipates part of the recoil, which increases accuracy. </text>
-</string>
-<string id="st_up_zat_b1_name">
-<text> Gas bleeder</text>
-</string>
-<string id="st_up_zat_b2_descr">
-<text> A second gas piston affects the slide mechanism, compensating for the recoil, which has a positive effect on accuracy. </text>
-</string>
-<string id="st_up_zat_b2_name">
-<text> Additional gas piston </text>
-</string>
-<string id="st_up_zat_b3_descr">
-<text> A protective coating increases the tightness of the receiver box, which positively affects reliability. </text>
-</string>
-<string id="st_up_zat_b3_name">
-<text> Slide protective coating</text>
-</string>
-<string id="st_up_zat_b4_descr">
-<text> Adding oblique grooves to the frame of the weapon helps reduce friction of moving parts and protects them from dirt, increasing weapon reliability. </text>
-</string>
-<string id="st_up_zat_b4_name">
-<text> Longitudinal grooves </text>
-</string>
-<string id="st_up_zat_b5_descr">
-<text> Reducing the diameter of the gas chamber with synthetic sealants significantly increases the muzzle velocity. </text>
-</string>
-<string id="st_up_zat_b5_name">
-<text> Gas energy redirection </text>
-</string>
-<string id="st_up_zat_b6_descr">
-<text> A slide that directs the flow of air through the rifling to cool the weapon. </text>
-</string>
-<string id="st_up_zat_b6_name">
-<text> Forced cooling </text>
-</string>
-<string id="st_up_zat_c1_descr">
-<text> This slide slides along the stem, preventing the muzzle from climbing when firing. </text>
-</string>
-<string id="st_up_zat_c1_name">
-<text> Incident slide </text>
-</string>
-<string id="st_up_zat_c2_descr">
-<text> With the installation of a gas piston, gases cease to go back directly into the receiver, which noticeably reduces weapon wear. </text>
-</string>
-<string id="st_up_zat_c2_name">
-<text> Gas piston installation</text>
-</string>
-<string id="st_up_zat_c3_descr">
-<text> In this system of gas retained barrier-mechanism to expedite the movement of the latter. </text>
-</string>
-<string id="st_up_zat_c3_name">
-<text> Powder gas redirection </text>
-</string>
-<string id="st_up_zat_c4_descr">
-<text> Optimizing the gas piston increases the rate of fire. </text>
-</string>
-<string id="st_up_zat_c4_name">
-<text> Short stroke gas piston </text>
-</string>
-<string id="st_up_zat_c5_descr">
-<text> A roller locking system increases accuracy. </text>
-</string>
-<string id="st_up_zat_c5_name">
-<text> Semi free roller locking system</text>
-</string>
-<string id="st_up_zath_a1_descr">
-<text> New vents absorb some of the heat from the barrel, helping to avoid overheating during sustained combat. </text>
-</string>
-<string id="st_up_zath_a1_name">
-<text> Heat vents </text>
-</string>
-<string id="st_up_zath_b1_descr">
-<text> Over the course of a long stroke, the gas piston slightly increases the overall length of the weapon, but has a positive effect on the muzzle velocity of the bullet trajectory. </text>
-</string>
-<string id="st_up_zath_b1_name">
-<text> Long course of the gas piston </text>
-</string>
-<string id="st_up_zath_b2_descr">
-<text> A special mobile buffer evenly distributes recoil over the entire weapon, increasing accuracy. </text>
-</string>
-<string id="st_up_zath_b2_name">
-<text> Special mobile buffer</text>
-</string>
-<string id="st_up_zath_c1_descr">
-<text> A symmetrical, forced cooling system for the barrel, passing through the ejector, protects the weapon from overheating. </text>
-</string>
-<string id="st_up_zath_c1_name">
-<text> Uniform system of forced cooling </text>
-</string>
-<string id="st_up_zatp_a1_descr">
-<text> A new slide segment provides increased rate of fire, without overloading other parts of the weapon. </text>
-</string>
-<string id="st_up_zatp_a1_name">
-<text> Mobile slide segment </text>
-</string>
-<string id="st_up_zatp_b1_descr">
-<text> A new locking system, through a more efficient use of energy of powder gases, enhances the muzzle velocity of the bullet trajectory. </text>
-</string>
-<string id="st_up_zatp_b1_name">
-<text> Weapon locking system </text>
-</string>
-<string id="st_up_zatp_b2_descr">
-<text> The new system reduces recoil, slowing down the rollback and return. </text>
-</string>
-<string id="st_up_zatp_b2_name">
-<text> Slow slide rollback system </text>
-</string>
-<string id="st_up_zatp_b3_descr">
-<text> A special spray protects weapon parts from wear. </text>
-</string>
-<string id="st_up_zatp_b3_name">
-<text> Slide protective coating</text>
-</string>
-<string id="st_up_zatp_b4_descr">
-<text> A new locking system with a more complete transfer of energy of powder gases enhances the muzzle velocity of the bullet trajectory. </text>
-</string>
-<string id="st_up_zatp_b4_name">
-<text> Barrel tilt system </text>
-</string>
-<string id="st_up_zatp_b5_descr">
-<text> A bigger internal slide protects the bolt of the gun from breakages. </text>
-</string>
-<string id="st_up_zatp_b5_name">
-<text> Amplified, fully closing slide </text>
-</string>
-<string id="st_up_zatp_b6_descr">
-<text> A small polymer buffer distributes a part of the recoil. </text>
-</string>
-<string id="st_up_zatp_b6_name">
-<text> Polymer buffer compensator </text>
-</string>
-<string id="st_up_zatp_b7_descr">
-<text> A steel liner with spiral grooves helps reduce recoil. </text>
-</string>
-<string id="st_up_zatp_b7_name">
-<text> Locking liner </text>
-</string>
-<string id="st_up_zatp_b8_descr">
-<text> Extending the course of the slide and strengthening the retracting mechanism, makes it possible to positively affect bullet trajectory. </text>
-</string>
-<string id="st_up_zatp_b8_name">
-<text> More mobile slide </text>
-</string>
-<string id="st_up_zatp_c1_descr">
-<text> A short course slide allows you to increase the rate of fire without negatively affecting bullet trajectory. </text>
-</string>
-<string id="st_up_zatp_c1_name">
-<text> Short course slide </text>
-</string>
-<string id="st_up_zatp_c2_descr">
-<text> Using a stroke slide helps reach higher initial bullet velocities. </text>
-</string>
-<string id="st_up_zatp_c2_name">
-<text> Long course slide </text>
-</string>
-<string id="st_up_zatp_c3_descr">
-<text> An optimized design of the gas piston allows for greater accuracy. </text>
-</string>
-<string id="st_up_zatp_c3_name">
-<text> Energy efficient slide </text>
-</string>
-<string id="st_up_zatp_c4_descr">
-<text> Installing a single relapsing module with two springs markedly increases accuracy without loss of performance. </text>
-</string>
-<string id="st_up_zatp_c4_name">
-<text> Single relapsing module </text>
-</string>
-<string id="st_up_zatp_c5_descr">
-<text> Additional compensation holes made in the barrel can markedly reduce recoil. </text>
-</string>
-<string id="st_up_zatp_c5_name">
-<text> Integrated barrel recoil compensator </text>
-</string>
-<string id="st_up_zatp_c6_descr">
-<text> When reassembled and retuned, the weapon can fire full auto.. </text>
-</string>
-<string id="st_up_zatp_c6_name">
-<text> Full auto mode</text>
-</string>
-<string id="st_up_zatp_c7_descr">
-<text> Revamped internal mechanics allow for three round burst mode. </text>
-</string>
-<string id="st_up_zatp_c7_name">
-<text> Three round burst mode </text>
-</string>
-<string id="st_upgr_cost">
-<text> Cost </text>
-</string>
-<string id="st_upgr_disable">
-<text> Modification unavailable</text>
-</string>
-<string id="st_upgr_installed">
-<text> Installed </text>
-</string>
-<string id="st_upgrade_install">
-<text> Do you really want to install: </text>
-</string>
-<string id="st_prop_autolock">
-<text> Automatic lock-on system </text>
-</string>
-<string id="st_prop_autolockscope">
-<text> Automatic lock-on system </text>
-</string>
-<string id="st_prop_scope_5x">
-<text> 5x scope </text>
-</string>
-<string id="st_prop_scope_6x">
-<text> 6x scope </text>
-</string>
-<string id="st_prop_scanner">
-<text> Infra-red scanner </text>
-</string>
-<string id="st_prop_weightoutfit">
-<text> Outfit weight </text>
-</string>
-<string id="st_prop_night_vision_2">
-<text> 2nd generation PNV </text>
-</string>
-<string id="st_prop_night_vision_3">
-<text> 3rd generation PNV </text>
-</string>
-<string id="st_prop_scope_attach">
-<text> Scope mount </text>
-</string>
-<string id="st_int_silencer">
-<text> Integral silencer </text>
-</string>
-<string id="st_prop_grenade_launcher">
-<text> Grenade launcher mount </text>
-</string>
-<string id="st_prop_restore_bleeding">
-<text> Bleeding reduction </text>
-</string>
-<string id="st_prop_restore_health">
-<text> Health regeneration </text>
-</string>
-<string id="st_prop_night_vision">
-<text> 1st generation PNV </text>
-</string>
-<string id="st_prop_scope">
-<text> Adjustable sight </text>
-</string>
-<string id="st_prop_contrast">
-<text> High contrast sight </text>
-</string>
-<string id="st_prop_sprint">
-<text> Servomotor amplifiers </text>
-</string>
-<string id="st_prop_durability">
-<text> Suit durability</text>
-</string>
-<string id="st_gauss_cannot_be_repaired">
-<text> Weapon's internal mechanics are unknown, it cannot be repaired without schematics. </text>
-</string>
-<string id="st_upgr_cant_do">
-<text> The technician does not make such a modification </text>
-</string>
-<string id="st_upgr_group">
-<text> This part has already been modified </text>
-</string>
-<string id="st_upgr_enough_money">
-<text> Not enough money </text>
-</string>
-<string id="st_no_buck">
-<text> No buckshot feed </text>
-</string>
-<string id="st_auto_fire">
-<text> Full auto fire mode </text>
-</string>
-<string id="st_semi_auto_fire">
-<text> 3 round burst mode </text>
-</string>
-<string id="st_prop_artefact">
-<text> Artefact containers</text>
-</string>
-<string id="st_upgr_vodka">
-<text> Technician should drink vodka </text>
-</string>
-<string id="st_upgr_toolkit_1">
-<text> Technician need tools for rough work </text>
-</string>
-<string id="st_upgr_toolkit_2">
-<text> Technician need tools for fine work </text>
-</string>
-<string id="st_upgr_toolkit_3">
-<text> Technician need tools for calibration </text>
-</string>
-<string id="st_upgr_condlist">
-<text> Technician needs more data </text>
-</string>
-<string id="st_upgr_parents">
-<text> Needs previous upgrades </text>
-</string>
-<string id="st_up_arm_c9_name">
-<text> "Battleship" sapphire protective layer </text>
-</string>
-<string id="st_up_arm_c5_name">
-<text> Reinforced titanium-beryllium matrix </text>
-</string>
-<string id="st_up_arm_c7_name">
-<text> Extra carbon fibre covering</text>
-</string>
-<string id="st_up_kom_a5_name">
-<text> Internal rubberised fabric layer</text>
-</string>
-</string_table> 
-
-
+	<string id="st_prop_bullet_speed">
+		<text>Flatness</text>
+	</string>
+	<string id="st_prop_calibre">
+		<text>Caliber</text>
+	</string>
+	<string id="st_prop_recoil">
+		<text>Recoil</text>
+	</string>
+	<string id="st_prop_reliability">
+		<text>Reliability</text>
+	</string>
+	<string id="st_prop_scope_1.6x">
+		<text>1.6x reflex sight</text>
+	</string>
+	<string id="st_prop_scope_4x">
+		<text>4x optical scope</text>
+	</string>
+	<string id="st_prop_silencer">
+		<text>Silencer</text>
+	</string>
+	<string id="st_prop_underbarrel_slot">
+		<text>underbarrel mount</text>
+	</string>
+	<string id="st_prop_weight">
+		<text>Weight</text>
+	</string>
+	<string id="st_up_add_a1_descr">
+		<text>External threading allows a silencer to be installed.</text>
+	</string>
+	<string id="st_up_add_a1_name">
+		<text>External threading of the barrel</text>
+	</string>
+	<string id="st_up_add_a2_descr">
+		<text>Installation of a mount for attachment of an optical scope.</text>
+	</string>
+	<string id="st_up_add_a2_name">
+		<text>Optical mount</text>
+	</string>
+	<string id="st_up_add_a3_descr">
+		<text>Installation of a mount for attachment of an underbarrel grenade launcher.</text>
+	</string>
+	<string id="st_up_add_a3_name">
+		<text>Underbarrel grenade launcher mount</text>
+	</string>
+	<string id="st_up_add_a4_descr">
+		<text>Replacing a standard magazine with a bigger one.</text>
+	</string>
+	<string id="st_up_add_a4_name">
+		<text>Increased magazine capacity</text>
+	</string>
+	<string id="st_up_add_b1_descr">
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+	</string>
+	<string id="st_up_add_b1_name">
+		<text>Change of caliber to 5x45</text>
+	</string>
+	<string id="st_up_add_b2_descr">
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+	</string>
+	<string id="st_up_add_b2_name">
+		<text>Change of caliber to 5x56</text>
+	</string>
+	<string id="st_up_add_b3_descr">
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+	</string>
+	<string id="st_up_add_b3_name">
+		<text>Change of caliber to 9x18</text>
+	</string>
+	<string id="st_up_add_b4_descr">
+		<text>A complex, integrated alteration of the weapon's mechanical and automated parts, which allow its caliber to be changed at the cost of reliability.</text>
+	</string>
+	<string id="st_up_add_b4_name">
+		<text>Change of caliber to 9x19</text>
+	</string>
+	<string id="st_up_addd_a1_descr">
+		<text>Magazine capacity increase without increasing weapon part length</text>
+	</string>
+	<string id="st_up_addd_a1_name">
+		<text>Magazine capacity increase</text>
+	</string>
+	<string id="st_up_addh_a1_descr">
+		<text>A lighter yet higher-capacity polycarbonate box magazine, which offsets some of the weight increase.</text>
+	</string>
+	<string id="st_up_addh_a1_name">
+		<text>Increased box magazine capacity</text>
+	</string>
+	<string id="st_up_arm_a1_descr">
+		<text>Increased number of titanium plates considerably improves body armor durability.</text>
+	</string>
+	<string id="st_up_arm_a1_name">
+		<text>Additional aluminum/titanium plates</text>
+	</string>
+	<string id="st_up_arm_a2_descr">
+		<text>Reinforced plates that last longer, but are not more durable.</text>
+	</string>
+	<string id="st_up_arm_a2_name">
+		<text>Kevlar plates</text>
+	</string>
+	<string id="st_up_arm_a3_descr">
+		<text>An aluminum & titanium alloy allows the weight of titanium to be reduced for use in personal protection equipment.</text>
+	</string>
+	<string id="st_up_arm_a3_name">
+		<text>Aluminum & titanium plates</text>
+	</string>
+	<string id="st_up_arm_a4_descr">
+		<text>Titanium is normally too heavy to be used in personal protection equipment, but is sometimes utilized in exoskeletons.</text>
+	</string>
+	<string id="st_up_arm_a4_name">
+		<text>Solid titanium components</text>
+	</string>
+	<string id="st_up_arm_a5_descr">
+		<text>Replacing metal with carbon fiber allows the weight of body armor to be reduced without sacrificing reliability.</text>
+	</string>
+	<string id="st_up_arm_a5_name">
+		<text>Replacing metal body armor components with carbon fiber</text>
+	</string>
+	<string id="st_up_arm_a6_descr">
+		<text>Kevlar is one of the most commonly used materials in body armor.</text>
+	</string>
+	<string id="st_up_arm_a6_name">
+		<text>Kevlar plates</text>
+	</string>
+	<string id="st_up_arm_a7_descr">
+		<text>Polycarbonate is capable of stopping a pistol bullet, while remaining as light as plastic.</text>
+	</string>
+	<string id="st_up_arm_a7_name">
+		<text>Polycarbonate plates</text>
+	</string>
+	<string id="st_up_arm_a8_descr">
+		<text>Ceramic plates don't last long but they're more reliable than Kevlar thanks to improved bullet impulse negation.</text>
+	</string>
+	<string id="st_up_arm_a8_name">
+		<text>Installation of ceramic plates</text>
+	</string>
+	<string id="st_up_arm_a9_descr">
+		<text>Simple steel plates sewn into a trench coat.</text>
+	</string>
+	<string id="st_up_arm_a9_name">
+		<text>Steel plates</text>
+	</string>
+	<string id="st_up_arm_b1_descr">
+		<text>A ceramic outer layer can deflect armor piercing bullets that impact at an angle and cause armor piercing bullets that make a direct impact to crumble into fine dust.</text>
+	</string>
+	<string id="st_up_arm_b1_name">
+		<text>Ceramic body armor outer layer</text>
+	</string>
+	<string id="st_up_arm_b2_descr">
+		<text>Additional internal armor layer in case the outer layer is damaged.</text>
+	</string>
+	<string id="st_up_arm_b2_name">
+		<text>Duplicate protective plate layer</text>
+	</string>
+	<string id="st_up_arm_b3_descr">
+		<text>Armor with an inner layer that spreads impact over a greater area.</text>
+	</string>
+	<string id="st_up_arm_b3_name">
+		<text>Addition of a compensation element</text>
+	</string>
+	<string id="st_up_arm_b4_descr">
+		<text>The frame is capable of stopping a pistol bullet if the main body armor is damaged.</text>
+	</string>
+	<string id="st_up_arm_b4_name">
+		<text>Additional armored frame</text>
+	</string>
+	<string id="st_up_arm_b5_descr">
+		<text>Thinner sheets of armor are layered to increase the armor's wear-resistance.</text>
+	</string>
+	<string id="st_up_arm_b5_name">
+		<text>Segmented protection</text>
+	</string>
+	<string id="st_up_arm_b6_descr">
+		<text>While more plates don't mean improved protection, they do guarantee better durability.</text>
+	</string>
+	<string id="st_up_arm_b6_name">
+		<text>A second, backup layer</text>
+	</string>
+	<string id="st_up_arm_b7_descr">
+		<text>Mobile plates protect joints from gunshot wounds.</text>
+	</string>
+	<string id="st_up_arm_b7_name">
+		<text>Installation of mobile protective plates for joints</text>
+	</string>
+	<string id="st_up_arm_b8_descr">
+		<text>A lighter aluminum frame for plates to replace the steel frame.</text>
+	</string>
+	<string id="st_up_arm_b8_name">
+		<text>A lighter aluminum frame</text>
+	</string>
+	<string id="st_up_arm_b9_descr">
+		<text>Thickened inserts to reduce the force of bullet impacts felt through body armor.</text>
+	</string>
+	<string id="st_up_arm_b9_name">
+		<text>Thickening leather inserts</text>
+	</string>
+	<string id="st_up_arm_c10_descr">
+		<text>Additional ceramic layer with silicon amortization.</text>
+	</string>
+	<string id="st_up_arm_c10_name">
+		<text>Reinforced ceramic plates</text>
+	</string>
+	<string id="st_up_arm_c11_descr">
+		<text>Use of lighter materials to reduce body armor weight.</text>
+	</string>
+	<string id="st_up_arm_c11_name">
+		<text>Installation of lighter synthetic and plastic components</text>
+	</string>
+	<string id="st_up_arm_c12_descr">
+		<text>While solid titanium plates are much too heavy for an infantry soldier to drag around, an exoskeleton with its powerful servomotors can handle the weight.</text>
+	</string>
+	<string id="st_up_arm_c12_name">
+		<text>Cuirass titanium armor</text>
+	</string>
+	<string id="st_up_arm_c13_descr">
+		<text>SBK-RKhZ.m.II - a special radiochemical protection combat bodysuit, mark two.</text>
+	</string>
+	<string id="st_up_arm_c13_name">
+		<text>SBK-RKhZ.m.II airtight radiation protection bodysuit </text>
+	</string>
+	<string id="st_up_arm_c1_descr">
+		<text>This labor-intensive and time consuming upgrade is not very popular, although it has been known to save lives.</text>
+	</string>
+	<string id="st_up_arm_c1_name">
+		<text>Sewn-in chainmail shirt</text>
+	</string>
+	<string id="st_up_arm_c2_descr">
+		<text>The Scale comprises overlaying ceramic plates that prevent the wearer from being hit in the same place.</text>
+	</string>
+	<string id="st_up_arm_c2_name">
+		<text>Deflective ceramic Scale modification </text>
+	</string>
+	<string id="st_up_arm_c3_descr">
+		<text>Once treated with Sovereign, the bodysuit becomes virtually invulnerable to mechanical damage and fabric splitting.</text>
+	</string>
+	<string id="st_up_arm_c3_name">
+		<text>Treatment with Sovereign holding compound</text>
+	</string>
+	<string id="st_up_arm_c4_descr">
+		<text>Ceramics considerably soften bullet impact by deflecting it onto fragments that break off.</text>
+	</string>
+	<string id="st_up_arm_c4_name">
+		<text>Application of a ceramic layer onto plates</text>
+	</string>
+	<string id="st_up_arm_c5_descr">
+		<text>Reinforced matrix that uses beryllium instead of aluminum is one of the most reliable ways of protecting infantry soldiers.</text>
+	</string>
+	<string id="st_up_arm_c6_descr">
+		<text>Ceramics considerably soften bullet impact by deflecting it onto fragments that break off.</text>
+	</string>
+	<string id="st_up_arm_c6_name">
+		<text>Ceramic layer on plates</text>
+	</string>
+	<string id="st_up_arm_c7_descr">
+		<text>Carbon fiber is one of the most durable and wear-resistant materials that is even used in aviation construction.</text>
+	</string>
+	<string id="st_up_arm_c8_descr">
+		<text>Combined multi-layered polymer and ceramic coating.</text>
+	</string>
+	<string id="st_up_arm_c8_name">
+		<text>Screen combined plate coating</text>
+	</string>
+	<string id="st_up_arm_c9_descr">
+		<text>Domestic technology and one of the latest developments in the field of personal protection - the growing of artificial sapphires.</text>
+	</string>
+	<string id="st_up_autd_a1_descr">
+		<text>Adjustment of components allows the weapon to last longer without jamming.</text>
+	</string>
+	<string id="st_up_autd_a1_name">
+		<text>Component adjustment</text>
+	</string>
+	<string id="st_up_autd_a2_descr">
+		<text>The fashion for plastic components has not only paid off, but it has also become quite a popular upgrade.</text>
+	</string>
+	<string id="st_up_autd_a2_name">
+		<text>Poly-material components</text>
+	</string>
+	<string id="st_up_autd_b1_descr">
+		<text>A low impulse firing mechanism ensures less recoil than older versions.</text>
+	</string>
+	<string id="st_up_autd_b1_name">
+		<text>Low impulse firing mechanism</text>
+	</string>
+	<string id="st_up_autd_b2_descr">
+		<text>Thanks to firm positioning of the round as it is fired, the bullet continues on a straight path and hits the target.</text>
+	</string>
+	<string id="st_up_autd_b2_name">
+		<text>Installation of a round positioning unit</text>
+	</string>
+	<string id="st_up_autd_b3_descr">
+		<text>Often used in weaponry, a roller locking system reduces recoil and improves groupings.</text>
+	</string>
+	<string id="st_up_autd_b3_name">
+		<text>Semifree bolt with a roller system</text>
+	</string>
+	<string id="st_up_autd_b4_descr">
+		<text>Installation of an additional gas cylinder reduces weapon load, which allows the rate of fire to be increased significantly.</text>
+	</string>
+	<string id="st_up_autd_b4_name">
+		<text>Installation of an additional gas cylinder</text>
+	</string>
+	<string id="st_up_autd_b5_descr">
+		<text>A gas motor is used in self-cocking shotguns for semi-automatic fire.</text>
+	</string>
+	<string id="st_up_autd_b5_name">
+		<text>Gas motor installation</text>
+	</string>
+	<string id="st_up_autd_c1_descr">
+		<text>Protective sputter makes misfiring due to mechanism malfunction impossible.</text>
+	</string>
+	<string id="st_up_autd_c1_name">
+		<text>Protective component sputter</text>
+	</string>
+	<string id="st_up_autd_c2_descr">
+		<text>When a shot is fired, a component opens a path into the barrel and returns to the closed position by means of a lengthwise sliding movement of the foregrip.</text>
+	</string>
+	<string id="st_up_autd_c2_name">
+		<text>Barrel closing system</text>
+	</string>
+	<string id="st_up_autd_c3_descr">
+		<text>An inertial automatic system allows the pump-action mechanism on regular shotguns to be converted into a self-cocking one.</text>
+	</string>
+	<string id="st_up_autd_c3_name">
+		<text>Installation of an inertial automatic system</text>
+	</string>
+	<string id="st_up_autd_c4_descr">
+		<text>A unified blowback module is one of the best technological solutions for reducing recoil.</text>
+	</string>
+	<string id="st_up_autd_c4_name">
+		<text>Unified blowback module</text>
+	</string>
+	<string id="st_up_autd_c5_descr">
+		<text>An automatic driving rod improves a weapon's precision.</text>
+	</string>
+	<string id="st_up_autd_c5_name">
+		<text>Installation of an automatic driving rod</text>
+	</string>
+	<string id="st_up_auth_a1_descr">
+		<text>An active counter-weight moves from the bolt frame, partially compensating for recoil.</text>
+	</string>
+	<string id="st_up_auth_a1_name">
+		<text>Addition of an active counter-weight</text>
+	</string>
+	<string id="st_up_auth_b1_descr">
+		<text>Installation of additional roller parts reduces recoil.</text>
+	</string>
+	<string id="st_up_auth_b1_name">
+		<text>Installation of a blowback roller compensation system</text>
+	</string>
+	<string id="st_up_auth_c1_descr">
+		<text>Replacement of the weapon's bolt mechanism with a more suitable design, which improves the rate of fire.</text>
+	</string>
+	<string id="st_up_auth_c1_name">
+		<text>Open bolt firing systems</text>
+	</string>
+	<string id="st_up_auth_c2_descr">
+		<text>When the weapon is fired, the bolt frame counter-weight moves in the opposite direction to the bolt, which allows for more comfortable firing of the machine gun.</text>
+	</string>
+	<string id="st_up_auth_c2_name">
+		<text>Installation of a self-regulating counter-weight</text>
+	</string>
+	<string id="st_up_auto_a1_descr">
+		<text>A counter-weight is installed as an additional component into the receiver to reduce recoil by means of counter force.</text>
+	</string>
+	<string id="st_up_auto_a1_name">
+		<text>Addition of a mobile counter-weight</text>
+	</string>
+	<string id="st_up_auto_a2_descr">
+		<text>The fashion for polymer components has not only paid off, but it has also become quite a popular upgrade.</text>
+	</string>
+	<string id="st_up_auto_a2_name">
+		<text>Impact-resistant polymer components for automatic elements</text>
+	</string>
+	<string id="st_up_auto_b1_descr">
+		<text>Installation of a special mechanism to protect the weapon from dirt.</text>
+	</string>
+	<string id="st_up_auto_b1_name">
+		<text>Automatic two-position gas regulator</text>
+	</string>
+	<string id="st_up_auto_b2_descr">
+		<text>A special component seals the barrel in an airtight manner to increase pressure when a shot is fired.</text>
+	</string>
+	<string id="st_up_auto_b2_name">
+		<text>Installation of a barrel closing device</text>
+	</string>
+	<string id="st_up_auto_b3_descr">
+		<text>Synchronization is achieved by means of a cog, which allows flatness to be increased.</text>
+	</string>
+	<string id="st_up_auto_b3_name">
+		<text>Rod movement synchronization</text>
+	</string>
+	<string id="st_up_auto_b4_descr">
+		<text>A component installed on the rear side of the receiver that reduces bolt speed. Installed to improve effectiveness of aimed fire.</text>
+	</string>
+	<string id="st_up_auto_b4_name">
+		<text>Inertia delay mechanism</text>
+	</string>
+	<string id="st_up_auto_c1_descr">
+		<text>A special component installed into the bolt mechanism to soften bolt movement and reduce recoil.</text>
+	</string>
+	<string id="st_up_auto_c1_name">
+		<text>Addition of a blowback speed reduction device</text>
+	</string>
+	<string id="st_up_auto_c2_descr">
+		<text>An integrated improvement that is normally used for sniper rifles in view of the considerable increase in the weapon's weight.</text>
+	</string>
+	<string id="st_up_auto_c2_name">
+		<text>Built-in recoil amortization system</text>
+	</string>
+	<string id="st_up_auto_c3_descr">
+		<text>Installation of a mechanism with mobile components that increase round feeding speed when the weapon is fired.</text>
+	</string>
+	<string id="st_up_auto_c3_name">
+		<text>Automatic round feeding</text>
+	</string>
+	<string id="st_up_auto_c4_descr">
+		<text>Upgrade of the weapon's automatic components that requires a number of parts to be replaced. Improves accuracy.</text>
+	</string>
+	<string id="st_up_auto_c4_name">
+		<text>Balanced impact-free system</text>
+	</string>
+	<string id="st_up_auto_c5_descr">
+		<text>A synthetic component immediately in front of the bolt movement area, which compresses it significantly to improve firing accuracy.</text>
+	</string>
+	<string id="st_up_auto_c5_name">
+		<text>Addition of a stopping device</text>
+	</string>
+	<string id="st_up_auto_c6_descr">
+		<text>A link fixes the position of the barrel and if the barrel moves, additional compensation holes are opened.</text>
+	</string>
+	<string id="st_up_auto_c6_name">
+		<text>Installation of a "smart compensation" component</text>
+	</string>
+	<string id="st_up_auts_a1_descr">
+		<text>Modernization that allows the trigger mechanism to be smoother, which is important for snipers.</text>
+	</string>
+	<string id="st_up_auts_a1_name">
+		<text>Installation of a trigger release regulation mechanism</text>
+	</string>
+	<string id="st_up_auts_a2_descr">
+		<text>This component allows the shooter to get a feel for the moment at which the shot is fired, improving firing accuracy.</text>
+	</string>
+	<string id="st_up_auts_a2_name">
+		<text>Installation of an advance notice trigger</text>
+	</string>
+	<string id="st_up_auts_b1_descr">
+		<text>Often used in Western weaponry, a roller locking system reduces recoil and improves groupings.</text>
+	</string>
+	<string id="st_up_auts_b1_name">
+		<text>Semifree bolt with a roller system</text>
+	</string>
+	<string id="st_up_auts_b2_descr">
+		<text>A special mechanism takes on some of the impact during firing, which makes shooting the weapon more comfortable.</text>
+	</string>
+	<string id="st_up_auts_b2_name">
+		<text>Firing amortization system</text>
+	</string>
+	<string id="st_up_auts_b3_descr">
+		<text>As sniper rifles are more demanding in terms of maintenance than regular weapons, they can be upgraded with three-positional gas regulation devices.</text>
+	</string>
+	<string id="st_up_auts_b3_name">
+		<text>Installation of an automatic three-position gas regulation device</text>
+	</string>
+	<string id="st_up_auts_c1_descr">
+		<text>Sputter prevents energy from dispersing, which increases bullet impulse.</text>
+	</string>
+	<string id="st_up_auts_c1_name">
+		<text>Tuning of automatic parts using sputter</text>
+	</string>
+	<string id="st_up_auts_c2_descr">
+		<text>Installation of a long firing mechanism rod allows a sniper rifle to be fired in automatic mode.</text>
+	</string>
+	<string id="st_up_auts_c2_name">
+		<text>Long firing mechanism rod system</text>
+	</string>
+	<string id="st_up_auts_c3_descr">
+		<text>A stopping device affects the blowback mechanism, improving firing precision.</text>
+	</string>
+	<string id="st_up_auts_c3_name">
+		<text>Installation of a stopping device</text>
+	</string>
+	<string id="st_up_bar_a1_descr">
+		<text>Replacement of a regular barrel with a longer one improves accuracy and flatness.</text>
+	</string>
+	<string id="st_up_bar_a1_name">
+		<text>Longer barrel</text>
+	</string>
+	<string id="st_up_bar_a2_descr">
+		<text>The lack of big gas chambers and barrel mounting on the foregrip has a positive effect on accuracy.</text>
+	</string>
+	<string id="st_up_bar_a2_name">
+		<text>Installation of a "floating" barrel</text>
+	</string>
+	<string id="st_up_bar_a3_descr">
+		<text>This modification is used to reduce the harm caused by excessive firing rate modifications.</text>
+	</string>
+	<string id="st_up_bar_a3_name">
+		<text>Installation of a barrel with cooling fins</text>
+	</string>
+	<string id="st_up_bar_b1_descr">
+		<text>Replacement of a dated component with a more modern one reduces recoil</text>
+	</string>
+	<string id="st_up_bar_b1_name">
+		<text>Optimized compensation muzzle brake</text>
+	</string>
+	<string id="st_up_bar_b2_descr">
+		<text>Installation of a barrel with additional threaded canals improves bullet speed and weapon accuracy at the cost of a considerable increase in recoil.</text>
+	</string>
+	<string id="st_up_bar_b2_name">
+		<text>Additional threaded canals in the barrel</text>
+	</string>
+	<string id="st_up_bar_b3_descr">
+		<text>This barrel is intended to increase the kill zone in close quarter combat and is therefore not suitable for accurate fire. Improves the rate of fire due to the simplification of the rifled part of the barrel.</text>
+	</string>
+	<string id="st_up_bar_b3_name">
+		<text>Installation of a barrel with a simplified rifled section</text>
+	</string>
+	<string id="st_up_bar_c1_descr">
+		<text>Polygon rifling is usually performed to improve accuracy.</text>
+	</string>
+	<string id="st_up_bar_c1_name">
+		<text>Installation of a barrel with a polygon rifled section</text>
+	</string>
+	<string id="st_up_bar_c2_descr">
+		<text>Allows barrel heat to be reduced and increases the rate of fire.</text>
+	</string>
+	<string id="st_up_bar_c2_name">
+		<text>Sinusoidal rifling of barrel chamber</text>
+	</string>
+	<string id="st_up_bar_c3_descr">
+		<text>A peculiar barrel replacement for weapons with good flatness characteristics that improves their accuracy.</text>
+	</string>
+	<string id="st_up_bar_c3_name">
+		<text>Rifled sniper rifle canals</text>
+	</string>
+	<string id="st_up_bard_a1_descr">
+		<text>High durability materials slow down wear and tear of the weapon's barrel.</text>
+	</string>
+	<string id="st_up_bard_a1_name">
+		<text>High durability alloy barrel</text>
+	</string>
+	<string id="st_up_bard_b1_descr">
+		<text>Treatment of the internal surface of the barrel protects it from mechanical damage.</text>
+	</string>
+	<string id="st_up_bard_b1_name">
+		<text>Treatment of the barrel</text>
+	</string>
+	<string id="st_up_bard_b2_descr">
+		<text>Synthetic thickening of the barrel cavity causes a considerable improvement in groupings.</text>
+	</string>
+	<string id="st_up_bard_b2_name">
+		<text>Synthetic barrel thickener</text>
+	</string>
+	<string id="st_up_bard_b3_descr">
+		<text>Replacement of a regular barrel with a longer one improves flatness.</text>
+	</string>
+	<string id="st_up_bard_b3_name">
+		<text>Longer barrel sections</text>
+	</string>
+	<string id="st_up_bard_b4_descr">
+		<text>The introduction of gas venting canals to the barrel not only prevents it from collecting dirt, but also partially redirects recoil into the barrel itself.</text>
+	</string>
+	<string id="st_up_bard_b4_name">
+		<text>Longitudinal gas venting canals</text>
+	</string>
+	<string id="st_up_bard_b5_descr">
+		<text>Replacement of a regular barrel with a longer one improves flatness.</text>
+	</string>
+	<string id="st_up_bard_b5_name">
+		<text>Longer barrel section</text>
+	</string>
+	<string id="st_up_bard_b6_descr">
+		<text>This sputter prevents the barrel from overheating, removes manufacturing defects and significantly increases the barrel's life cycle.</text>
+	</string>
+	<string id="st_up_bard_b6_name">
+		<text>Application of a protective sputter to the internal part of the barrel</text>
+	</string>
+	<string id="st_up_bard_c1_descr">
+		<text>The barrel balancing system includes several mobile pistons that make a weapon more stable when held.</text>
+	</string>
+	<string id="st_up_bard_c1_name">
+		<text>Barrel balancing system</text>
+	</string>
+	<string id="st_up_bard_c2_descr">
+		<text>The rifled part of the barrel makes it impossible to fire shot, but the accuracy achieved outweighs this drawback.</text>
+	</string>
+	<string id="st_up_bard_c2_name">
+		<text>Rifled barrels</text>
+	</string>
+	<string id="st_up_bard_c3_descr">
+		<text>Thickening with poly-materials allows barrel pressure to be increased, improving bullet speed.</text>
+	</string>
+	<string id="st_up_bard_c3_name">
+		<text>Dynamic barrel thickener</text>
+	</string>
+	<string id="st_up_bard_c4_descr">
+		<text>Cylindrical drilling of barrel helps to improve the weapon's rate of fire without affecting accuracy.</text>
+	</string>
+	<string id="st_up_bard_c4_name">
+		<text>Cylindrical drilling of barrel</text>
+	</string>
+	<string id="st_up_bard_c5_descr">
+		<text>When the weapon is fired, an active counter-weight simultaneously moves to the muzzle section of the barrel, thus compensating for part of the recoil.</text>
+	</string>
+	<string id="st_up_bard_c5_name">
+		<text>Addition of an active counter-weight to the barrel jacket</text>
+	</string>
+	<string id="st_up_barp_a1_descr">
+		<text>Replacement of a regular barrel with a longer one improves accuracy and flatness, but reduces the rate of fire.</text>
+	</string>
+	<string id="st_up_barp_a1_name">
+		<text>Long barrel section</text>
+	</string>
+	<string id="st_up_barp_a2_descr">
+		<text>Barrel perforation causes a reduction in recoil with gas escaping via special holes.</text>
+	</string>
+	<string id="st_up_barp_a2_name">
+		<text>Perforated barrel section</text>
+	</string>
+	<string id="st_up_barp_a3_descr">
+		<text>A more technological shortened barrel improves the weapon's rate of fire without sacrificing flatness and accuracy.</text>
+	</string>
+	<string id="st_up_barp_a3_name">
+		<text>Shortened barrel section</text>
+	</string>
+	<string id="st_up_barp_b1_descr">
+		<text>Chrome plating improves the barrel's life cycle.</text>
+	</string>
+	<string id="st_up_barp_b1_name">
+		<text>Chrome plating of the internal side of the barrel</text>
+	</string>
+	<string id="st_up_barp_b2_descr">
+		<text>Separators take on some of the recoil.</text>
+	</string>
+	<string id="st_up_barp_b2_name">
+		<text>Addition of rubber separators.</text>
+	</string>
+	<string id="st_up_barp_b3_descr">
+		<text>A simplified rifled part is useful for close quarter combat where the emphasis is on the rate of fire rather than accuracy.</text>
+	</string>
+	<string id="st_up_barp_b3_name">
+		<text>Installation of a barrel with a simplified rifled section</text>
+	</string>
+	<string id="st_up_barp_b4_descr">
+		<text>Installation of a barrel with additional threaded canals improves bullet speed and weapon accuracy at the cost of a considerable increase in recoil.</text>
+	</string>
+	<string id="st_up_barp_b4_name">
+		<text>Additional threaded canals in the barrel</text>
+	</string>
+	<string id="st_up_barp_b5_descr">
+		<text>Unloading the barrel allows recoil to be reduced considerably.</text>
+	</string>
+	<string id="st_up_barp_b5_name">
+		<text>Transferring the barrel compensator/flash reducer onto the frame</text>
+	</string>
+	<string id="st_up_barp_c1_descr">
+		<text>Allows barrel heat to be reduced and increases the rate of fire without sacrificing flatness.</text>
+	</string>
+	<string id="st_up_barp_c1_name">
+		<text>Sinusoidal rifling of barrel</text>
+	</string>
+	<string id="st_up_barp_c2_descr">
+		<text>Polygon rifling is usually performed to improve accuracy of sniper rifles.</text>
+	</string>
+	<string id="st_up_barp_c2_name">
+		<text>Installation of a barrel with a polygon rifled section</text>
+	</string>
+	<string id="st_up_barp_c3_descr">
+		<text>A pneumatic booster allows some of the recoil to be converted into higher barrel pressure, increasing muzzle velocity.</text>
+	</string>
+	<string id="st_up_barp_c3_name">
+		<text>Pneumatic booster installation</text>
+	</string>
+	<string id="st_up_exo_a1_descr">
+		<text>Additional movement devices allow maximum carried load to be increased.</text>
+	</string>
+	<string id="st_up_exo_a1_name">
+		<text>Additional servomotors</text>
+	</string>
+	<string id="st_up_exo_b1_descr">
+		<text>A development of Freedom technicians, who were the first to replace metal with carbon fiber in view of exoskeletons' huge weight.</text>
+	</string>
+	<string id="st_up_exo_b1_name">
+		<text>Replacing metal components with carbon fiber</text>
+	</string>
+	<string id="st_up_exo_b2_descr">
+		<text>Armoring protects the exoskeleton's critical components from being damaged by accurate fire.</text>
+	</string>
+	<string id="st_up_exo_b2_name">
+		<text>Drive device armoring</text>
+	</string>
+	<string id="st_up_exo_c1_descr">
+		<text>The easy movement system uses reinforced springs and joints, which allow the wearer to use the exoskeleton's own weight to ease motor functions.</text>
+	</string>
+	<string id="st_up_exo_c1_name">
+		<text>Shagohod easy movement system</text>
+	</string>
+	<string id="st_up_exo_c2_descr">
+		<text>Installation of hydraulic boosters is a modification that separates third generation exoskeletons from the fourth generation. Allows for sprinting in an exoskeleton.</text>
+	</string>
+	<string id="st_up_exo_c2_name">
+		<text>Addition of hydraulic boosters into drive devices</text>
+	</string>
+	<string id="st_up_kom_a1_descr">
+		<text>A fabric insert prevents soft tissue damage in the event of impact against the plate.</text>
+	</string>
+	<string id="st_up_kom_a1_name">
+		<text>Amortization fabric layer</text>
+	</string>
+	<string id="st_up_kom_a2_descr">
+		<text>More effective that their rubber counterparts, silicon thickeners absorb impact with less damage to the wearer.</text>
+	</string>
+	<string id="st_up_kom_a2_name">
+		<text>Amortization silicon thickeners</text>
+	</string>
+	<string id="st_up_kom_a3_descr">
+		<text>Fabric, clips and thickeners are replaced with lighter synthetic materials to reduce armor weight.</text>
+	</string>
+	<string id="st_up_kom_a3_name">
+		<text>Lighter, synthetic and polymer materials</text>
+	</string>
+	<string id="st_up_kom_a4_descr">
+		<text>Rubberizing prevents soft tissue damage in the event of impact against the plate.</text>
+	</string>
+	<string id="st_up_kom_a4_name">
+		<text>Amortization rubberized layer</text>
+	</string>
+	<string id="st_up_kom_a5_descr">
+		<text>The underlayer will help if the main fabric is torn.</text>
+	</string>
+	<string id="st_up_kom_a6_descr">
+		<text>A multi-layered polycarbonate, silicon and carbon fiber insert in case the main armor is penetrated.</text>
+	</string>
+	<string id="st_up_kom_a6_name">
+		<text>Protective polymer inserts</text>
+	</string>
+	<string id="st_up_kom_a7_descr">
+		<text>Freedom's airtight Expanse bodysuit used to locate artifacts in anomalous areas.</text>
+	</string>
+	<string id="st_up_kom_a7_name">
+		<text>Expanse anomalous protection bodysuit</text>
+	</string>
+	<string id="st_up_kom_a8_descr">
+		<text>Airtight layer of synthetic materials in case the external layer is damaged.</text>
+	</string>
+	<string id="st_up_kom_a8_name">
+		<text>Synthetic layer</text>
+	</string>
+	<string id="st_up_kom_b10_descr">
+		<text>A number of ergonomic adjustments that use a rubber construction, which allow mobility to be retained even when wearing bulky armor.</text>
+	</string>
+	<string id="st_up_kom_b10_name">
+		<text>A rubber mobility bodysuit</text>
+	</string>
+	<string id="st_up_kom_b11_descr">
+		<text>Constantan is capable of isolating against electricity and has a very high melting point.</text>
+	</string>
+	<string id="st_up_kom_b11_name">
+		<text>Constantan thermal isolation inserts</text>
+	</string>
+	<string id="st_up_kom_b12_descr">
+		<text>Lead is a reliable defense against radiation because it absorbs all three types thereof.</text>
+	</string>
+	<string id="st_up_kom_b12_name">
+		<text>Addition of lead to bodysuit</text>
+	</string>
+	<string id="st_up_kom_b1_descr">
+		<text>Basic protection against rain and caustic substances coming into contact with the skin</text>
+	</string>
+	<string id="st_up_kom_b1_name">
+		<text>Canvas bodysuit</text>
+	</string>
+	<string id="st_up_kom_b2_descr">
+		<text>Fabric treated with a fire-resistant substance is popular among stalkers searching for fire artifacts.</text>
+	</string>
+	<string id="st_up_kom_b2_name">
+		<text>Fabric treated with a fire-resistant substance</text>
+	</string>
+	<string id="st_up_kom_b3_descr">
+		<text>Magnesium inserts protect the wearer from thermal dangers.</text>
+	</string>
+	<string id="st_up_kom_b3_name">
+		<text>Magnesium plate inserts</text>
+	</string>
+	<string id="st_up_kom_b4_descr">
+		<text>Even a simple plastic inner layer can protect the wearer from chemical and electrical hazard.</text>
+	</string>
+	<string id="st_up_kom_b4_name">
+		<text>Airtight plastic inner layer</text>
+	</string>
+	<string id="st_up_kom_b5_descr">
+		<text>Fabric, clips and thickeners are replaced with lighter synthetic materials to reduce armor weight.</text>
+	</string>
+	<string id="st_up_kom_b5_name">
+		<text>Replacement of fabric with synthetic materials</text>
+	</string>
+	<string id="st_up_kom_b6_descr">
+		<text>Plexiglass absorbs two types of radiation while being a lot lighter than lead.</text>
+	</string>
+	<string id="st_up_kom_b6_name">
+		<text>Plexiglass inner layer for radiation protection</text>
+	</string>
+	<string id="st_up_kom_b7_descr">
+		<text>Reliable protection from chemical and electrical hazard.</text>
+	</string>
+	<string id="st_up_kom_b7_name">
+		<text>An elastic airtight plastic inner layer</text>
+	</string>
+	<string id="st_up_kom_b8_descr">
+		<text>A thin layer of constantan is capable of isolating against electricity.</text>
+	</string>
+	<string id="st_up_kom_b8_name">
+		<text>Constantan-based inner layer for isolation</text>
+	</string>
+	<string id="st_up_kom_b9_descr">
+		<text>Fiberglass is used in bodysuits worn by natural disasters response teams.</text>
+	</string>
+	<string id="st_up_kom_b9_name">
+		<text>Thermal fiberglass protection </text>
+	</string>
+	<string id="st_up_kom_c1_descr">
+		<text>Impregnated fabric should prevent chemical poisoning.</text>
+	</string>
+	<string id="st_up_kom_c1_name">
+		<text>Impregnated bodysuit fabric</text>
+	</string>
+	<string id="st_up_kom_c2_descr">
+		<text>Rubber is a basic way of protecting yourself from brief radiation exposure.</text>
+	</string>
+	<string id="st_up_kom_c2_name">
+		<text>Rubberized bodysuit fabric</text>
+	</string>
+	<string id="st_up_kom_c3_descr">
+		<text>Used in stalker suits to improve durability.</text>
+	</string>
+	<string id="st_up_kom_c3_name">
+		<text>Shield high durability protective frame</text>
+	</string>
+	<string id="st_up_kom_c4_descr">
+		<text>Nickel is sufficiently fire-resistant to be used for body armor inserts</text>
+	</string>
+	<string id="st_up_kom_c4_name">
+		<text>Fire-resistant bodysuit with nickel inserts</text>
+	</string>
+	<string id="st_up_kom_c5_descr">
+		<text>This nickel and magnesium alloy is used in armor to prevent electric shocks.</text>
+	</string>
+	<string id="st_up_kom_c5_name">
+		<text>An isolation bodysuit with manganin inserts</text>
+	</string>
+	<string id="st_up_kom_c6_descr">
+		<text>Airtight bodysuit with an anti-corrosion layer and Kevlar armor.</text>
+	</string>
+	<string id="st_up_kom_c6_name">
+		<text>Second Skin integrated armored bodysuit</text>
+	</string>
+	<string id="st_up_kom_c7_descr">
+		<text>A bodysuit made using new unspecified polymers previously used by the Kiev research institute in developing the Ecologist suit with cavities filled with bismuth.</text>
+	</string>
+	<string id="st_up_kom_c7_name">
+		<text>Ecologist polymer bodysuit with bismuth inserts</text>
+	</string>
+	<string id="st_up_kom_c8_descr">
+		<text>The lead mesh creates unbreachable radiation and chemical protection without sacrificing mobility.</text>
+	</string>
+	<string id="st_up_kom_c8_name">
+		<text>Lifesaver plexiglass bodysuit with flexible lead mesh</text>
+	</string>
+	<string id="st_up_kom_c9_descr">
+		<text>A domestic development which appeared after the Chernobyl disaster. Used in exoskeletons to prevent electronic malfunctions.</text>
+	</string>
+	<string id="st_up_kom_c9_name">
+		<text>Evacuator bodysuit with lead inserts</text>
+	</string>
+	<string id="st_up_opt_a1_descr">
+		<text>Mounting of an assault scope for close range combat.</text>
+	</string>
+	<string id="st_up_opt_a1_name">
+		<text>1.6x reflex sight</text>
+	</string>
+	<string id="st_up_opt_a2_descr">
+		<text>Mounting of an optical scope for medium and long range combat.</text>
+	</string>
+	<string id="st_up_opt_a2_name">
+		<text>4.0x optical scope</text>
+	</string>
+	<string id="st_up_opt_a3_descr">
+		<text>Mounting of an optical scope for long range combat.</text>
+	</string>
+	<string id="st_up_opt_a3_name">
+		<text>5.0x optical scope</text>
+	</string>
+	<string id="st_up_opt_a4_descr">
+		<text>Mounting of an optical scope for long range combat.</text>
+	</string>
+	<string id="st_up_opt_a4_name">
+		<text>6.0x optical scope</text>
+	</string>
+	<string id="st_up_opt_b1_descr">
+		<text>A modification made to assault weapons with reflex sights by means of a simple improvement in sight contrast in the yellow range. Important for combat in twilight conditions and dim buildings.</text>
+	</string>
+	<string id="st_up_opt_b1_name">
+		<text>Improvement of sight contrast</text>
+	</string>
+	<string id="st_up_opt_c1_descr">
+		<text>A heat visor allows the wearer to detect and identify matching heat sources.</text>
+	</string>
+	<string id="st_up_opt_c1_name">
+		<text>Automatic optical target acquisition</text>
+	</string>
+	<string id="st_up_opt_c2_descr">
+		<text>Night vision devices have saved many a sniper since their inception.</text>
+	</string>
+	<string id="st_up_opt_c2_name">
+		<text>Night vision device installation</text>
+	</string>
+	<string id="st_up_opt_c3_descr">
+		<text>This modification allows the sight to be easily adjusted to the firing distance.</text>
+	</string>
+	<string id="st_up_opt_c3_name">
+		<text>Adjustable range-finder sight</text>
+	</string>
+	<string id="st_up_pri_a1_descr">
+		<text>A pneumatic stock is used to reduce recoil during burst fire.</text>
+	</string>
+	<string id="st_up_pri_a1_name">
+		<text>Pneumatic stock</text>
+	</string>
+	<string id="st_up_pri_b1_descr">
+		<text>A mobile shoulder rest considerably reduces recoil impact on the body.</text>
+	</string>
+	<string id="st_up_pri_b1_name">
+		<text>Installation of an amortization shoulder rest</text>
+	</string>
+	<string id="st_up_pri_b2_descr">
+		<text>A more modern stock, which takes account of the specific nature of human physiology.</text>
+	</string>
+	<string id="st_up_pri_b2_name">
+		<text>Ergonomic stock</text>
+	</string>
+	<string id="st_up_pri_c1_descr">
+		<text>When the weapon is fired, some of the powder gases are removed from the barrel into the cavity behind the bolt, ensuring that it stops smoothly on the way back.</text>
+	</string>
+	<string id="st_up_pri_c1_name">
+		<text>Installation of a bolt assembly gas buffer</text>
+	</string>
+	<string id="st_up_pri_c2_descr">
+		<text>Partial lengthening of the bolt frame into the stock allows flatness to be increased at the cost of more recoil.</text>
+	</string>
+	<string id="st_up_pri_c2_name">
+		<text>Lengthening the bolt frame shock buffer</text>
+	</string>
+	<string id="st_up_pri_c3_descr">
+		<text>Installation of a mobile component into the stock, which creates a counter-effect when the weapon is fired.</text>
+	</string>
+	<string id="st_up_pri_c3_name">
+		<text>Mobile counter-weight</text>
+	</string>
+	<string id="st_up_prih_a1_descr">
+		<text>A larger rest allows for accurate fire.</text>
+	</string>
+	<string id="st_up_prih_a1_name">
+		<text>Increased rest size</text>
+	</string>
+	<string id="st_up_prih_b1_descr">
+		<text>An amortization spring recoil buffer partially removes the discomfort experienced when firing a hand-held machine gun.</text>
+	</string>
+	<string id="st_up_prih_b1_name">
+		<text>Built-in spring-based recoil buffer</text>
+	</string>
+	<string id="st_up_prih_c1_descr">
+		<text>A bolt assembly buffer position in the stock takes on and absorbs most of the recoil.</text>
+	</string>
+	<string id="st_up_prih_c1_name">
+		<text>Additional bolt assembly gas buffer</text>
+	</string>
+	<string id="st_up_pris_a1_descr">
+		<text>A rubberized recoil-softening part is often used on factory-made stocks for large caliber sniper rifles.</text>
+	</string>
+	<string id="st_up_pris_a1_name">
+		<text>Amortization stock component</text>
+	</string>
+	<string id="st_up_pris_b1_descr">
+		<text>An adjustable stock with a cheek pad is useful for firing from both convenient and inconvenient positions.</text>
+	</string>
+	<string id="st_up_pris_b1_name">
+		<text>Adjustable stock with a cheek pad</text>
+	</string>
+	<string id="st_up_pris_c1_descr">
+		<text>A component for large caliber weapons with powerful recoil installed in the stock.</text>
+	</string>
+	<string id="st_up_pris_c1_name">
+		<text>Hydraulic stock recoil buffer</text>
+	</string>
+	<string id="st_up_res_a1_descr">
+		<text>Active filters can resist even corrosive chemicals.</text>
+	</string>
+	<string id="st_up_res_a1_name">
+		<text>Active filters</text>
+	</string>
+	<string id="st_up_res_a2_descr">
+		<text>The closed band has been demonstrated to provide partial protection against direct psy-emissions.</text>
+	</string>
+	<string id="st_up_res_a2_name">
+		<text>A psy-protection band made of paired steel grills</text>
+	</string>
+	<string id="st_up_res_a3_descr">
+		<text>A mask used in contaminated air or critical air temperature conditions, which are too low or too high for breathing.</text>
+	</string>
+	<string id="st_up_res_b1_descr">
+		<text>Application of a screening coating</text>
+	</string>
+	<string id="st_up_res_b1_name">
+		<text>Application of a screening coating</text>
+	</string>
+	<string id="st_up_res_b2_descr">
+		<text>A filter with a reinforced anti-corrosive coating with an additional preventing layer for removal of poisons</text>
+	</string>
+	<string id="st_up_res_b2_name">
+		<text>Filter for work in contaminated areas</text>
+	</string>
+	<string id="st_up_res_b3_descr">
+		<text>A plexiglass mask can provide partial protection from radiation</text>
+	</string>
+	<string id="st_up_res_b3_name">
+		<text>Plexiglass coating</text>
+	</string>
+	<string id="st_up_res_b4_descr">
+		<text>A plexiglass mask can provide partial protection from radiation</text>
+	</string>
+	<string id="st_up_res_b4_name">
+		<text>Plexiglass breathing mask</text>
+	</string>
+	<string id="st_up_res_b5_descr">
+		<text>Respirator for total blocking of poisons</text>
+	</string>
+	<string id="st_up_res_b5_name">
+		<text>Impregnated breathing mask</text>
+	</string>
+	<string id="st_up_res_c1_descr">
+		<text>This beryllium & aluminum matrix provides excellent protection without a significant increase in the helmet's weight.</text>
+	</string>
+	<string id="st_up_res_c1_name">
+		<text>Beryllium & aluminum plates</text>
+	</string>
+	<string id="st_up_res_c2_descr">
+		<text>A beryllium & titanium matrix ensures more effective protection without a significant weight increase.</text>
+	</string>
+	<string id="st_up_res_c2_name">
+		<text>Beryllium & titanium plates</text>
+	</string>
+	<string id="st_up_res_c3_descr">
+		<text>Improved filters maintain the same level of oxygen supply regardless of how contaminated the area is.</text>
+	</string>
+	<string id="st_up_res_c3_name">
+		<text>Installation of improved filters for scientific work</text>
+	</string>
+	<string id="st_up_res_c4_descr">
+		<text>Hi-tech psy-protection that is said to have been invented by a scientist called Sakharov.</text>
+	</string>
+	<string id="st_up_res_c4_name">
+		<text>Installation of the Psy-Dome band</text>
+	</string>
+	<string id="st_up_res_c5_descr">
+		<text>Protective alloy frame to prevent thermal and electrical damage.</text>
+	</string>
+	<string id="st_up_res_c5_name">
+		<text>Thunderbird constantan face armor</text>
+	</string>
+	<string id="st_up_res_c6_descr">
+		<text>Additional armor to improve helmet durability.</text>
+	</string>
+	<string id="st_up_res_c6_name">
+		<text>Reinforced armored helmet body</text>
+	</string>
+	<string id="st_up_res_c7_descr">
+		<text>A filter with an additional purification coating and a system for removal of poisons.</text>
+	</string>
+	<string id="st_up_res_c7_name">
+		<text>Reinforced respirator for extreme conditions</text>
+	</string>
+	<string id="st_up_resp_a1_descr">
+		<text>Standard-issue 1PN93-1 Russian Military Forces night vision device modified for mounting on combat helmet. Offers generation 2+ image intensifying for operations at night or in reduced lightning conditions. After removal of battery compartment and replacing it with UPD imput, total weight has been established at usable ~1,5 kg. Purchased and delivered as complete isntallation kit it also features mounting interface, allowing easy updating to better device in future. Device depletes UPD at medium rate.</text>
+	</string>
+	<string id="st_up_resp_a1_name">
+		<text>1PN93-1 night vision device</text>
+	</string>
+	<string id="st_up_resp_a2_descr">
+		<text>A system for switching to closed cycle breathing in the event of critical air contamination with radioactive or chemical particles.</text>
+	</string>
+	<string id="st_up_resp_a2_name">
+		<text>Radioactive and chemical threat prevention system</text>
+	</string>
+	<string id="st_up_resp_a3_name">
+		<text>Steam purification & respiration mask</text>
+	</string>
+	<string id="st_up_resp_b1_descr">
+		<text>Modern-day, IIT generation 3 PN21KL night-vision device produced by Novosibirsk Instrument-Making Plant. It's specifically desinged to be head-mounted. Installation on combat helmet greatly enhances possibilities of operations in complete darkness. It features an advanced image processing software which transforms typical green night-vision view to more convenient greyscale one. Requires base mounting grid to be present on helmet to allow integration. Weighting about 270 grams it is lighter than 1PN58 nvd giving back about 400 grams on installation. There is a upgrade kit present on the market which replaces lens to better ones and contains an update to image-processing software. Device depletes UPD at medium rate.</text>
+	</string>
+	<string id="st_up_resp_b1_name">
+		<text>PN21KL night vision device</text>
+	</string>
+	<string id="st_up_resp_b2_descr">
+		<text>A heat visor allows the wearer to detect and identify matching heat sources.</text>
+	</string>
+	<string id="st_up_resp_b2_name">
+		<text>Automatic target acquisition system</text>
+	</string>
+	<string id="st_up_resp_b3_descr">
+		<text>Scientific wave-based device developed for work in anomalous areas with psy-emissions.</text>
+	</string>
+	<string id="st_up_resp_b3_name">
+		<text>Oracle psy-stimulator</text>
+	</string>
+	<string id="st_up_resp_c1_descr">
+		<text>Lenses and image processing software update cleares the vision of artifacts and enhances the image intensifying capabilities of PN21K unit and thus making it a full-fledged IIT generation 3+ night vision device. Does not affect the weight of helmet or UPD depletion rate.</text>
+	</string>
+	<string id="st_up_resp_c1_name">
+		<text>Improved lenses and image processing software update for PN21K night vision device</text>
+	</string>
+	<string id="st_up_resp_c2_descr">
+		<text>Ionized air particles move between the system's electrodes in reverse to the movement of electrons using electricity, creating an ion wind.</text>
+	</string>
+	<string id="st_up_resp_c2_name">
+		<text>Ion Wind cooling system</text>
+	</string>
+	<string id="st_up_resp_c3_descr">
+		<text>An infrared scanner allows for detection of nearby humans.</text>
+	</string>
+	<string id="st_up_resp_c3_name">
+		<text>Infrared scanner</text>
+	</string>
+	<string id="st_up_resp_c4_descr">
+		<text>SPB - VPZ.m.IV Psychological Security Wave Psy Protection System, mark four.</text>
+	</string>
+	<string id="st_up_resp_c4_name">
+		<text>SPB - VPZ.m.IV combat system</text>
+	</string>
+	<string id="st_up_ret_a1_descr">
+		<text>The reinforced spring is used to increase bullet speed.</text>
+	</string>
+	<string id="st_up_ret_a1_name">
+		<text>Reinforced return spring</text>
+	</string>
+	<string id="st_up_ret_a2_descr">
+		<text>Installation of thickeners onto mobile parts of the mechanism ensure that the barrel deviates from the target less during firing.</text>
+	</string>
+	<string id="st_up_ret_a2_name">
+		<text>Amortization of the return mechanism</text>
+	</string>
+	<string id="st_up_ret_a3_descr">
+		<text>Installation of an additional spring with a reverse coil to reduce recoil without sacrificing flatness.</text>
+	</string>
+	<string id="st_up_ret_a3_name">
+		<text>Additional return spring</text>
+	</string>
+	<string id="st_up_ret_b1_descr">
+		<text>Protective sputter increases reliability and, more importantly, ensures airtightness, which prevents energy dissipation.</text>
+	</string>
+	<string id="st_up_ret_b1_name">
+		<text>Protective return mechanism component sputter</text>
+	</string>
+	<string id="st_up_ret_b2_descr">
+		<text>Titanium rods can endure a much higher rate of fire than regular rods.</text>
+	</string>
+	<string id="st_up_ret_b2_name">
+		<text>Titanium return mechanism rods</text>
+	</string>
+	<string id="st_up_ret_b3_descr">
+		<text>A synthetic element installed onto rods ensures that they move strictly as intended, increasing accuracy.</text>
+	</string>
+	<string id="st_up_ret_b3_name">
+		<text>Addition of a balancing element</text>
+	</string>
+	<string id="st_up_ret_c1_descr">
+		<text>Thickening of the sleeve allows barrel pressure to be increased, improving bullet speed.</text>
+	</string>
+	<string id="st_up_ret_c1_name">
+		<text>Return mechanism sleeve thickener</text>
+	</string>
+	<string id="st_up_ret_c2_descr">
+		<text>A link that is opened by gases and closed by the return mechanism itself, which allows part of the gas energy to be used to operate the return mechanism.</text>
+	</string>
+	<string id="st_up_ret_c2_name">
+		<text>Installation of a distribution link</text>
+	</string>
+	<string id="st_up_ret_c3_descr">
+		<text>Replacement of the return mechanism with a more powerful version comprising two guiding rods and return springs. Increases the weapon's rate of fire.</text>
+	</string>
+	<string id="st_up_ret_c3_name">
+		<text>Conversion to a two rod system</text>
+	</string>
+	<string id="st_up_roun_a1_descr">
+		<text>Special gas exit canals around the drum part of the weapon that reduce recoil.</text>
+	</string>
+	<string id="st_up_roun_a1_name">
+		<text>Use of gas energy</text>
+	</string>
+	<string id="st_up_roun_a2_descr">
+		<text>Addition of diagonal cam slots onto the drum, which speed up rotation of the mechanism which uses gas energy.</text>
+	</string>
+	<string id="st_up_roun_a2_name">
+		<text>Addition of diagonal cam slots onto the drum</text>
+	</string>
+	<string id="st_up_stk_a1_descr">
+		<text>The advantage of this European standard modification is reduced weight without a fall in reliability.</text>
+	</string>
+	<string id="st_up_stk_a1_name">
+		<text>Impact-resistant polymer stock</text>
+	</string>
+	<string id="st_up_stk_a2_descr">
+		<text>A high durability receiver helps assault rifles endure combat conditions on a daily basis.</text>
+	</string>
+	<string id="st_up_stk_a2_name">
+		<text>High durability alloy receiver</text>
+	</string>
+	<string id="st_up_stk_a3_descr">
+		<text>A simple addition of weight to the front of the receiver to reduce recoil.</text>
+	</string>
+	<string id="st_up_stk_a3_name">
+		<text>Addition of counter-weight to the steel box</text>
+	</string>
+	<string id="st_up_stk_b1_descr">
+		<text>Installation of jackets helps to address increases in the weapon's rate of fire, which produce additional heat that must be controlled.</text>
+	</string>
+	<string id="st_up_stk_b1_name">
+		<text>Additional cooling jacket</text>
+	</string>
+	<string id="st_up_stk_b2_descr">
+		<text>A more convenient handle shape, which allows for better handling of the weapon when firing on the move.</text>
+	</string>
+	<string id="st_up_stk_b2_name">
+		<text>Ergonomic receiver shape</text>
+	</string>
+	<string id="st_up_stk_c1_descr">
+		<text>A modification used exclusively for barrels with solid bullpup receivers, which simplifies maintenance of the weapon.</text>
+	</string>
+	<string id="st_up_stk_c1_name">
+		<text>Modular receiver</text>
+	</string>
+	<string id="st_up_stk_c2_descr">
+		<text>This sputter prevents the barrel from overheating, removes manufacturing defects and significantly increases the barrel's life cycle.</text>
+	</string>
+	<string id="st_up_stk_c2_name">
+		<text>Smoothing receiver groove and indent sputter</text>
+	</string>
+	<string id="st_up_stk_c3_descr">
+		<text>A light mobile component is installed in the inclined handle to stabilize the weapon by creating a counter-effect to recoil when the weapon is fired.</text>
+	</string>
+	<string id="st_up_stk_c3_name">
+		<text>Inclined handle</text>
+	</string>
+	<string id="st_up_stvd_a1_descr">
+		<text>The cavity inside the handle allows the weapon's weight to be reduced.</text>
+	</string>
+	<string id="st_up_stvd_a1_name">
+		<text>Inclined handle</text>
+	</string>
+	<string id="st_up_stvd_a2_descr">
+		<text>Lighter version of the standard stock.</text>
+	</string>
+	<string id="st_up_stvd_a2_name">
+		<text>Lighter stock</text>
+	</string>
+	<string id="st_up_stvd_a3_descr">
+		<text>A lighter poly-material allows the weapon's weight to be reduced.</text>
+	</string>
+	<string id="st_up_stvd_a3_name">
+		<text>Impact-resistant polymer stock</text>
+	</string>
+	<string id="st_up_stvd_b1_descr">
+		<text>Addition of a mass component to the weapon to reduce recoil.</text>
+	</string>
+	<string id="st_up_stvd_b1_name">
+		<text>Addition of a counter-weight</text>
+	</string>
+	<string id="st_up_stvd_b2_descr">
+		<text>A more modern and comfortable handle simplifies weapon handling.</text>
+	</string>
+	<string id="st_up_stvd_b2_name">
+		<text>Ergonomic handle</text>
+	</string>
+	<string id="st_up_stvd_b3_descr">
+		<text>An amortization handle reduces recoil.</text>
+	</string>
+	<string id="st_up_stvd_b3_name">
+		<text>Amortization handle</text>
+	</string>
+	<string id="st_up_stvd_b4_descr">
+		<text>A more modern and comfortable stock simplifies weapon handling.</text>
+	</string>
+	<string id="st_up_stvd_b4_name">
+		<text>Ergonomic stock</text>
+	</string>
+	<string id="st_up_stvd_b5_descr">
+		<text>A special coating protects the weapon from the elements.</text>
+	</string>
+	<string id="st_up_stvd_b5_name">
+		<text>Anti-corrosive coating</text>
+	</string>
+	<string id="st_up_stvd_c1_descr">
+		<text>A mercury recoil absorber is located in the weapon's stock, partially consuming some of the recoil when the weapon is fired.</text>
+	</string>
+	<string id="st_up_stvd_c1_name">
+		<text>Mercury recoil absorber</text>
+	</string>
+	<string id="st_up_stvd_c2_descr">
+		<text>A free-moving impulse counter-weight component, which moves from the bolt when the weapon is fired and absorbs some of the recoil.</text>
+	</string>
+	<string id="st_up_stvd_c2_name">
+		<text>Addition of an impulse counter-weight</text>
+	</string>
+	<string id="st_up_stvh_a1_descr">
+		<text>A change of material reduces barrel damage from uneven heating during firing, which allows the weapon's rate of fire to be increased.</text>
+	</string>
+	<string id="st_up_stvh_a1_name">
+		<text>High-durability, thermal resistant alloys</text>
+	</string>
+	<string id="st_up_stvh_b1_descr">
+		<text>An important modification that protects the weapon from air temperature effects during firing</text>
+	</string>
+	<string id="st_up_stvh_b1_name">
+		<text>Addition of thermal regulation jackets</text>
+	</string>
+	<string id="st_up_stvh_b2_descr">
+		<text>A technological improvement, finning requires extreme precision to prevent the formation of overheating points on the barrel.</text>
+	</string>
+	<string id="st_up_stvh_b2_name">
+		<text>External barrel finning</text>
+	</string>
+	<string id="st_up_stvh_c1_descr">
+		<text>Replacement of the barrel with a more modern version allows for a considerable increase in accuracy.</text>
+	</string>
+	<string id="st_up_stvh_c1_name">
+		<text>Changing barrel geometry</text>
+	</string>
+	<string id="st_up_stvp_a1_descr">
+		<text>An expensive frame for a weapon that will serve a long time.</text>
+	</string>
+	<string id="st_up_stvp_a1_name">
+		<text>Titanium frame</text>
+	</string>
+	<string id="st_up_stvp_a2_descr">
+		<text>In this case the frame is more reliable than composite.</text>
+	</string>
+	<string id="st_up_stvp_a2_name">
+		<text>Solid steel frame</text>
+	</string>
+	<string id="st_up_stvp_b1_descr">
+		<text>A technical replacement of the pistol frame with a lighter one does not affect the weapon's reliability.</text>
+	</string>
+	<string id="st_up_stvp_b1_name">
+		<text>Polymer pistol frame</text>
+	</string>
+	<string id="st_up_stvp_b2_descr">
+		<text>A more modern and comfortable handle simplifies weapon handling.</text>
+	</string>
+	<string id="st_up_stvp_b2_name">
+		<text>Ergonomic handle</text>
+	</string>
+	<string id="st_up_stvp_b3_descr">
+		<text>An amortization handle reduces recoil.</text>
+	</string>
+	<string id="st_up_stvp_b3_name">
+		<text>Amortization handle</text>
+	</string>
+	<string id="st_up_stvp_b4_descr">
+		<text>Protective thickening flaps should protect the weapon from dirt and impact.</text>
+	</string>
+	<string id="st_up_stvp_b4_name">
+		<text>Protective body thickeners</text>
+	</string>
+	<string id="st_up_stvp_b5_descr">
+		<text>A change in the rear section makes for a more ergonomic handle shape.</text>
+	</string>
+	<string id="st_up_stvp_b5_name">
+		<text>Changing handle shape with a straight rear section</text>
+	</string>
+	<string id="st_up_stvp_b6_descr">
+		<text>The possibility of choosing a suitable handle length makes for a more ergonomic handle shape.</text>
+	</string>
+	<string id="st_up_stvp_b6_name">
+		<text>Adjustable handle</text>
+	</string>
+	<string id="st_up_stvp_c1_descr">
+		<text>This modification is only possible if a return spring has been installed into the handle.</text>
+	</string>
+	<string id="st_up_stvp_c1_name">
+		<text>Installation of a return spring amortization component</text>
+	</string>
+	<string id="st_up_stvp_c2_descr">
+		<text>The possibility of choosing a suitable plate makes for a more ergonomic handle shape.</text>
+	</string>
+	<string id="st_up_stvp_c2_name">
+		<text>A handle with a changed shape with replaceable plates</text>
+	</string>
+	<string id="st_up_stvs_a1_descr">
+		<text>Intended for weapons that are used often, the jacket protects them from early wear.</text>
+	</string>
+	<string id="st_up_stvs_a1_name">
+		<text>Installation of a perforated steel jacket</text>
+	</string>
+	<string id="st_up_stvs_b1_descr">
+		<text>A more technological and more recoil dampening component than used in regular automatic weapons.</text>
+	</string>
+	<string id="st_up_stvs_b1_name">
+		<text>Effective compensation muzzle brake</text>
+	</string>
+	<string id="st_up_stvs_b2_descr">
+		<text>A more modern and suitable barrel for sniper fire at very long range.</text>
+	</string>
+	<string id="st_up_stvs_b2_name">
+		<text>Installation of a heavy barrel section with polygon rifling</text>
+	</string>
+	<string id="st_up_stvs_b3_descr">
+		<text>Longitudinal fullers of the barrel section prevent the barrel from overheating and dirt contamination.</text>
+	</string>
+	<string id="st_up_stvs_b3_name">
+		<text>Longitudinal fullers of the barrel section </text>
+	</string>
+	<string id="st_up_stvs_c1_descr">
+		<text>Integrated silencer and flash suppressor, essential for stealth fire.</text>
+	</string>
+	<string id="st_up_stvs_c1_name">
+		<text>Installation of an integrated silencer</text>
+	</string>
+	<string id="st_up_stvs_c2_descr">
+		<text>Sinusoidal rifling of the barrel chamber is usually performed on assault weapons to increase their rate of fire.</text>
+	</string>
+	<string id="st_up_stvs_c2_name">
+		<text>Sinusoidal rifling of barrel chamber</text>
+	</string>
+	<string id="st_up_tch_a1_descr">
+		<text>Generation A injector, developed by one of Kiev's research institutes, regularly injects the bloodstream with tiny doses of adrenalin, which may be dangerous but may also save your life in an emergency.</text>
+	</string>
+	<string id="st_up_tch_a1_name">
+		<text>Fury adrenalin injector</text>
+	</string>
+	<string id="st_up_tch_a2_descr">
+		<text>A system for removal of condensate with poisons from the purification filter.</text>
+	</string>
+	<string id="st_up_tch_a2_name">
+		<text>A system for removal of poisons</text>
+	</string>
+	<string id="st_up_tch_a3_descr">
+		<text>A Clear Sky development, this small wave emitter is mounted on the back, effectively increasing blood clotting speed when worn constantly.</text>
+	</string>
+	<string id="st_up_tch_a3_name">
+		<text>Ray hemostimulator</text>
+	</string>
+	<string id="st_up_tch_a4_descr">
+		<text>A system that supplies electricity to the suit's exterior, repelling radioactive and chemical particles.</text>
+	</string>
+	<string id="st_up_tch_a4_name">
+		<text>A built-in dust repellant system</text>
+	</string>
+	<string id="st_up_tch_b1_descr">
+		<text>Generation B injector, which regularly introduces a coagulation agent into the bloodstream when blood pressure drops significantly.</text>
+	</string>
+	<string id="st_up_tch_b1_name">
+		<text>Hydra hemoglobin injector</text>
+	</string>
+	<string id="st_up_tch_b2_descr">
+		<text>By maintaining optimal body temperature, this system prevents exhaustion.</text>
+	</string>
+	<string id="st_up_tch_b2_name">
+		<text>Installation of a thermal regulation system</text>
+	</string>
+	<string id="st_up_tch_b3_descr">
+		<text>This wave emitter is mounted on the chest and considerably increases wound healing speed, immune system strength and the wearer's pain barrier when in constant use.</text>
+	</string>
+	<string id="st_up_tch_b3_name">
+		<text>Sun biostimulator</text>
+	</string>
+	<string id="st_up_tch_b4_descr">
+		<text>Scientific wave-based device developed for work in anomalous areas with psy-emissions.</text>
+	</string>
+	<string id="st_up_tch_b4_name">
+		<text>Oracle psy-stimulator</text>
+	</string>
+	<string id="st_up_tch_c1_descr">
+		<text>Generation C injector that introduces a combat mix of dubious content into the bloodstream, improving tissue regeneration and removing pain.</text>
+	</string>
+	<string id="st_up_tch_c1_name">
+		<text>Phoenix restoration system</text>
+	</string>
+	<string id="st_up_tch_c2_descr">
+		<text>An integrated system that monitors the wearer's health and supplies vitamins, adrenalin or anabolic substances as required.</text>
+	</string>
+	<string id="st_up_tch_c2_name">
+		<text>Installation of a life support system</text>
+	</string>
+	<string id="st_up_tch_c3_descr">
+		<text>This wave emitter is mounted on the neck, and while its mechanism and method of operation are unclear, it has a strong calming effect.</text>
+	</string>
+	<string id="st_up_tch_c3_name">
+		<text>Reflection neurostimulator</text>
+	</string>
+	<string id="st_up_usm_a1_descr">
+		<text>The purpose of the bolt hammer compensator is to absorb some of the recoil, improving groupings when firing in bursts.</text>
+	</string>
+	<string id="st_up_usm_a1_name">
+		<text>Bolt hammer compensator</text>
+	</string>
+	<string id="st_up_usm_a2_descr">
+		<text>One of the simplest and most popular modifications, which allows trigger resistance to be reduced. Simple and handy.</text>
+	</string>
+	<string id="st_up_usm_a2_name">
+		<text>Soft release</text>
+	</string>
+	<string id="st_up_usm_b1_descr">
+		<text>A special selection of components made from various materials specific to that weapon. It may not be cheap, but it increases the life cycle of your firearm.</text>
+	</string>
+	<string id="st_up_usm_b1_name">
+		<text>Composite firing mechanism components</text>
+	</string>
+	<string id="st_up_usm_b2_descr">
+		<text>Allows the rate of fire to be increased at the cost of accuracy and reliability.</text>
+	</string>
+	<string id="st_up_usm_b2_name">
+		<text>Forcing trigger delay device</text>
+	</string>
+	<string id="st_up_usm_b3_descr">
+		<text>Removal of the combat spring allows the first shot to be made half a second earlier. It may not be much, but it can save your life.</text>
+	</string>
+	<string id="st_up_usm_b3_name">
+		<text>Springless release</text>
+	</string>
+	<string id="st_up_usm_c1_descr">
+		<text>Protective sputter makes misfiring due to firing mechanism malfunction impossible.</text>
+	</string>
+	<string id="st_up_usm_c1_name">
+		<text>Protective firing mechanism component sputter</text>
+	</string>
+	<string id="st_up_usm_c2_descr">
+		<text>Boltless fixing allows for automatic load to be increased, considerably improving the weapon's rate of fire.</text>
+	</string>
+	<string id="st_up_usm_c2_name">
+		<text>Boltless fixing of the firing mechanism</text>
+	</string>
+	<string id="st_up_usm_c3_descr">
+		<text>The impactless system pierces the round instead of striking it by means of a special hammer, which makes the firing process considerably softer.</text>
+	</string>
+	<string id="st_up_usm_c3_name">
+		<text>Installation of an impactless firing mechanism system</text>
+	</string>
+	<string id="st_up_usmp_a1_descr">
+		<text>The trigger is armed by the first shot, with all other shots occurring during automatic trigger arming.</text>
+	</string>
+	<string id="st_up_usmp_a1_name">
+		<text>Double trigger firing mechanism</text>
+	</string>
+	<string id="st_up_usmp_b1_descr">
+		<text>One of the simplest and most popular modifications, which allows for trigger resistance to be reduced. Simple and handy.</text>
+	</string>
+	<string id="st_up_usmp_b1_name">
+		<text>Soft release</text>
+	</string>
+	<string id="st_up_usmp_b2_descr">
+		<text>Partial arming allows firing accuracy to be improved.</text>
+	</string>
+	<string id="st_up_usmp_b2_name">
+		<text>Firing mechanism with partial pre-arming</text>
+	</string>
+	<string id="st_up_usmp_b3_descr">
+		<text>Allows the same pressure to be applied to the trigger from the first to the last shot, which has a positive effect on ease of use.</text>
+	</string>
+	<string id="st_up_usmp_b3_name">
+		<text>Safe release device</text>
+	</string>
+	<string id="st_up_usmp_b4_descr">
+		<text>A modern modification which prevents the weapon from bolt section detachment.</text>
+	</string>
+	<string id="st_up_usmp_b4_name">
+		<text>Increased trigger bolt head</text>
+	</string>
+	<string id="st_up_usmp_b5_descr">
+		<text>A modular firing mechanism provides easier maintenance and parts replacement, as well as certain improvements in ease of use.</text>
+	</string>
+	<string id="st_up_usmp_b5_name">
+		<text>Modular firing mechanism</text>
+	</string>
+	<string id="st_up_usmp_c1_descr">
+		<text>The arming component considerably reduces the amount of pressure required on the trigger, improving accuracy.</text>
+	</string>
+	<string id="st_up_usmp_c1_name">
+		<text>Installation of an arming component</text>
+	</string>
+	<string id="st_up_usmp_c2_descr">
+		<text>A new technological development that allows a simple adjustment to change the firing mechanism mode - another step towards better ergonomics and easy weapon adjustment.</text>
+	</string>
+	<string id="st_up_usmp_c2_name">
+		<text>"Double" firing mode</text>
+	</string>
+	<string id="st_up_usmp_c3_descr">
+		<text>Once the first shot is fired, half the trigger movement is required to make subsequent shots.</text>
+	</string>
+	<string id="st_up_usmp_c3_name">
+		<text>Short movement firing mechanism</text>
+	</string>
+	<string id="st_up_uti_a1_descr">
+		<text>Additional movement devices allow for maximum carried load to be increased.</text>
+	</string>
+	<string id="st_up_uti_a1_name">
+		<text>Additional servomotors</text>
+	</string>
+	<string id="st_up_uti_a2_descr">
+		<text>The system supplies anti-tetanic, anti-inflammatory and streptocide substances.</text>
+	</string>
+	<string id="st_up_uti_a2_name">
+		<text>Field Doctor built-in system</text>
+	</string>
+	<string id="st_up_uti_a3_descr">
+		<text>A bodysuit ventilation system with a prevention filter for work in contaminated areas.</text>
+	</string>
+	<string id="st_up_uti_a3_name">
+		<text>Internal thermal regulation system</text>
+	</string>
+	<string id="st_up_uti_a4_descr">
+		<text>An ergonomic improvement: special mounts attached to the bodysuit allow for carried weight to feel lighter.</text>
+	</string>
+	<string id="st_up_uti_a4_name">
+		<text>Weight distribution vest</text>
+	</string>
+	<string id="st_up_uti_a5_descr">
+		<text>An oxygen tank is required in areas with air contaminated by chemicals or radioactive particles.</text>
+	</string>
+	<string id="st_up_uti_a5_name">
+		<text>Installation of an oxygen tank</text>
+	</string>
+	<string id="st_up_uti_b1_descr">
+		<text>Installation of an additional armour attachment module.</text>
+	</string>
+	<string id="st_up_uti_b1_name">
+		<text>Additional armour attachment module</text>
+	</string>
+	<string id="st_up_uti_b2_descr">
+		<text>A system of mounts allows for weight to be distributed onto the whole body more evenly.</text>
+	</string>
+	<string id="st_up_uti_b2_name">
+		<text>A mount system for weight distribution</text>
+	</string>
+	<string id="st_up_uti_b3_descr">
+		<text>A back frame relieves focused shoulder load from carried weight by distributing it over the body, which increases maximum load.</text>
+	</string>
+	<string id="st_up_uti_b3_name">
+		<text>A weight distribution back frame </text>
+	</string>
+	<string id="st_up_uti_b4_descr">
+		<text>A system used to supply antiseptic, anti-tetanic and stimulating substances. Homemade, but doesn't seem to do any harm to the body.</text>
+	</string>
+	<string id="st_up_uti_b4_name">
+		<text>Care built-in system</text>
+	</string>
+	<string id="st_up_uti_b5_descr">
+		<text>This system charges a special grate with an identical charge to that of the anomaly so as to reduce the threat.</text>
+	</string>
+	<string id="st_up_uti_b5_name">
+		<text>Stingray electrostatic countermeasure system</text>
+	</string>
+	<string id="st_up_uti_b6_descr">
+		<text>Impregnated inner layer should prevent chemical poisoning.</text>
+	</string>
+	<string id="st_up_uti_b6_name">
+		<text>Impregnated inner layer for chemical protection</text>
+	</string>
+	<string id="st_up_uti_b7_descr">
+		<text>An experimental model of a marathon running system, which is not used outside the Zone due to its high price and dubious application.</text>
+	</string>
+	<string id="st_up_uti_b7_name">
+		<text>Athlete built-in system</text>
+	</string>
+	<string id="st_up_uti_b8_descr">
+		<text>This system removes poisons together with condensate from respirator cavities.</text>
+	</string>
+	<string id="st_up_uti_b8_name">
+		<text>Antidote poison removal system</text>
+	</string>
+	<string id="st_up_uti_c1_descr">
+		<text>Installation of an additional armour attachment module.</text>
+	</string>
+	<string id="st_up_uti_c1_name">
+		<text>Additional two-compartment armour attachment module</text>
+	</string>
+	<string id="st_up_uti_c2_descr">
+		<text>A combat support system built into the whole suit. Used rarely, primarily by the Spetsnaz. Comes preinstalled with adrenaline and blood clotting systems.</text>
+	</string>
+	<string id="st_up_uti_c2_name">
+		<text>Varyag field support system</text>
+	</string>
+	<string id="st_up_uti_c3_descr">
+		<text>In this combat support system prototype, the designers opted against harmful adrenaline injections, instead including healing substances into the blood clotting system.</text>
+	</string>
+	<string id="st_up_uti_c3_name">
+		<text>Skif field support system</text>
+	</string>
+	<string id="st_up_zat_a1_descr">
+		<text>This fairly expensive modification is actually common for new generation weapons.</text>
+	</string>
+	<string id="st_up_zat_a1_name">
+		<text>Solid bolt installation</text>
+	</string>
+	<string id="st_up_zat_a2_descr">
+		<text>Thickening of the bolt section prevents energy dissipation, which improves flatness.</text>
+	</string>
+	<string id="st_up_zat_a2_name">
+		<text>Bolt section thickening with synthetic inserts</text>
+	</string>
+	<string id="st_up_zat_a3_descr">
+		<text>Despite the name, it is the bolt that is replaced, as it has to endure the consequences of an improved rate of fire.</text>
+	</string>
+	<string id="st_up_zat_a3_name">
+		<text>Rapid automatic release</text>
+	</string>
+	<string id="st_up_zat_b1_descr">
+		<text>Gas vent comes with a block that moves at the same speed, taking on part of the recoil.</text>
+	</string>
+	<string id="st_up_zat_b1_name">
+		<text>Installation of a gas vent with a moving block</text>
+	</string>
+	<string id="st_up_zat_b2_descr">
+		<text>A second piston moves the counter-weight, compensating for the bolt mechanism movement impulse.</text>
+	</string>
+	<string id="st_up_zat_b2_name">
+		<text>Installation of an additional gas piston</text>
+	</string>
+	<string id="st_up_zat_b3_descr">
+		<text>Protective sputter increases reliability and, more importantly, ensures airtightness, which prevents excessive energy dissipation.</text>
+	</string>
+	<string id="st_up_zat_b3_name">
+		<text>Protective bolt section sputter</text>
+	</string>
+	<string id="st_up_zat_b4_descr">
+		<text>The purpose of titled grooves on the receiver is to reduce friction and catch small particles, preventing contamination of the bolt section.</text>
+	</string>
+	<string id="st_up_zat_b4_name">
+		<text>Addition of a longitudinal grooves</text>
+	</string>
+	<string id="st_up_zat_b5_descr">
+		<text>Reducing the gas chamber diameter by means of synthetic thickeners considerable increases bullet speed.</text>
+	</string>
+	<string id="st_up_zat_b5_name">
+		<text>Directed gas energy</text>
+	</string>
+	<string id="st_up_zat_b6_descr">
+		<text>On its way back to its starting position, the bolt redirects the air flow via the barrel chamber, cooling it.</text>
+	</string>
+	<string id="st_up_zat_b6_name">
+		<text>Forced cooling</text>
+	</string>
+	<string id="st_up_zat_c1_descr">
+		<text>The weapon's bolt slides along the barrel, preventing upward movement of the muzzle section.</text>
+	</string>
+	<string id="st_up_zat_c1_name">
+		<text>Creeping bolt installation</text>
+	</string>
+	<string id="st_up_zat_c2_descr">
+		<text>Installation of a gas pistol stops gases from entering the bolt frame, which considerably reduces weapon dirtiness.</text>
+	</string>
+	<string id="st_up_zat_c2_name">
+		<text>Gas piston installation</text>
+	</string>
+	<string id="st_up_zat_c3_descr">
+		<text>This system collects some of the gases using the bolt section to improve its movement.</text>
+	</string>
+	<string id="st_up_zat_c3_name">
+		<text>Gas energy collection system</text>
+	</string>
+	<string id="st_up_zat_c4_descr">
+		<text>A replacement of the automatic parts is more of an optimization than improvement of the gas piston. Provides a considerable increase in the weapon's rate of fire.</text>
+	</string>
+	<string id="st_up_zat_c4_name">
+		<text>Short movement gas piston</text>
+	</string>
+	<string id="st_up_zat_c5_descr">
+		<text>Often used in modern weaponry, a roller locking system reduces recoil and improves groupings.</text>
+	</string>
+	<string id="st_up_zat_c5_name">
+		<text>Change to a roller system with a semifree bolt</text>
+	</string>
+	<string id="st_up_zath_a1_descr">
+		<text>In absorbing some of the heat, the components reduce weapon temperature changes during firing.</text>
+	</string>
+	<string id="st_up_zath_a1_name">
+		<text>Heat absorbing components</text>
+	</string>
+	<string id="st_up_zath_b1_descr">
+		<text>A longer movement of the gas piston slightly increases weapon length, with a serious improvement in flatness.</text>
+	</string>
+	<string id="st_up_zath_b1_name">
+		<text>Long gas piston movement</text>
+	</string>
+	<string id="st_up_zath_b2_descr">
+		<text>A moving parts buffer evenly distributes recoil throughout the weapon when it is fired, making it less pronounced.</text>
+	</string>
+	<string id="st_up_zath_b2_name">
+		<text>Installation of a special moving parts buffer</text>
+	</string>
+	<string id="st_up_zath_c1_descr">
+		<text>Symmetrical force cooling of a part of the barrel happens due to the work of an ejector and prevents weapon overheating.</text>
+	</string>
+	<string id="st_up_zath_c1_name">
+		<text>Even forced cooling system</text>
+	</string>
+	<string id="st_up_zatp_a1_descr">
+		<text>Provides an increase in rate of fire without overloading other parts through additional recoil.</text>
+	</string>
+	<string id="st_up_zatp_a1_name">
+		<text>Moving bolt section</text>
+	</string>
+	<string id="st_up_zatp_b1_descr">
+		<text>Provides an increase in flatness thanks to improved transfer of impulse to the bullet.</text>
+	</string>
+	<string id="st_up_zatp_b1_name">
+		<text>Bolt section barrel closing system</text>
+	</string>
+	<string id="st_up_zatp_b2_descr">
+		<text>Softens recoil by slowing down bolt section movement.</text>
+	</string>
+	<string id="st_up_zatp_b2_name">
+		<text>Slow bolt backward movement system</text>
+	</string>
+	<string id="st_up_zatp_b3_descr">
+		<text>Sputter protects weapons from early wear.</text>
+	</string>
+	<string id="st_up_zatp_b3_name">
+		<text>Protective bolt section sputter</text>
+	</string>
+	<string id="st_up_zatp_b4_descr">
+		<text>Improves flatness thanks to improved transfer of impulse to the bullet.</text>
+	</string>
+	<string id="st_up_zatp_b4_name">
+		<text>Barrel skew closing system</text>
+	</string>
+	<string id="st_up_zatp_b5_descr">
+		<text>A heavier and closed bolt prevents the pistol's bolt section from malfunctioning.</text>
+	</string>
+	<string id="st_up_zatp_b5_name">
+		<text>Reinforced and fully closed bolt</text>
+	</string>
+	<string id="st_up_zatp_b6_descr">
+		<text>A small buffer that takes on some of the recoil.</text>
+	</string>
+	<string id="st_up_zatp_b6_name">
+		<text>Polymer recoil buffer</text>
+	</string>
+	<string id="st_up_zatp_b7_descr">
+		<text>Installation of a steel insert helps to reduce recoil.</text>
+	</string>
+	<string id="st_up_zatp_b7_name">
+		<text>Installation of a closing insert with a shaped spiral groove</text>
+	</string>
+	<string id="st_up_zatp_b8_descr">
+		<text>By increasing bolt movement and reinforcing the return mechanism appropriately, you can improve flatness.</text>
+	</string>
+	<string id="st_up_zatp_b8_name">
+		<text>Increased bolt movement</text>
+	</string>
+	<string id="st_up_zatp_c1_descr">
+		<text>Short movement considerably increases the weapon's rate of fire without sacrificing flatness.</text>
+	</string>
+	<string id="st_up_zatp_c1_name">
+		<text>Installation of a short bolt movement arrangement</text>
+	</string>
+	<string id="st_up_zatp_c2_descr">
+		<text>Long bolt movement gives a bullet greater energy.</text>
+	</string>
+	<string id="st_up_zatp_c2_name">
+		<text>Installation of a long barrel movement arrangement</text>
+	</string>
+	<string id="st_up_zatp_c3_descr">
+		<text>A replacement of the automatic parts is more of an optimization than improvement of the gas piston. This considerably improves the weapon's rate of fire.</text>
+	</string>
+	<string id="st_up_zatp_c3_name">
+		<text>Installation of a short movement recoil energy use arrangement</text>
+	</string>
+	<string id="st_up_zatp_c4_descr">
+		<text>Installation of this module considerably improves groupings without sacrificing firing speed.</text>
+	</string>
+	<string id="st_up_zatp_c4_name">
+		<text>Combined two spring return module </text>
+	</string>
+	<string id="st_up_zatp_c5_descr">
+		<text>Introduction of additional compensation holes brings about a significant reduction in recoil.</text>
+	</string>
+	<string id="st_up_zatp_c5_name">
+		<text>Integrated barrel lifting compensator</text>
+	</string>
+	<string id="st_up_zatp_c6_descr">
+		<text>Modernization of the pistol's automatic parts suitable for automatic fire.</text>
+	</string>
+	<string id="st_up_zatp_c6_name">
+		<text>Fully automatic firing mode</text>
+	</string>
+	<string id="st_up_zatp_c7_descr">
+		<text>Improvement of the pistol's automatic parts suitable for three round burst fire.</text>
+	</string>
+	<string id="st_up_zatp_c7_name">
+		<text>Three round burst firing mode</text>
+	</string>
+	<string id="st_upgr_cost">
+		<text>Cost</text>
+	</string>
+	<string id="st_upgr_disable">
+		<text>Cannot be installed</text>
+	</string>
+	<string id="st_upgr_installed">
+		<text>Installed</text>
+	</string>
+	<string id="st_upgrade_install">
+		<text>Are you sure you want to install:</text>
+	</string>
+	<string id="st_prop_autolock">
+		<text>Automatic target acquisition system</text>
+	</string>
+	<string id="st_prop_autolockscope">
+		<text>Automatic target acquisition system</text>
+	</string>
+	<string id="st_prop_scope_5x">
+		<text>x5 optical scope</text>
+	</string>
+	<string id="st_prop_scope_6x">
+		<text>x6 optical scope</text>
+	</string>
+	<string id="st_prop_scanner">
+		<text>Infrared scanner</text>
+	</string>
+	<string id="st_prop_weightoutfit">
+		<text>Body armor weight</text>
+	</string>
+	<string id="st_prop_night_vision_2">
+		<text>PN21KL night vision device</text>
+	</string>
+	<string id="st_prop_night_vision_3">
+		<text>Upgrade of PN21KL nvd</text>
+	</string>
+	<string id="st_prop_scope_attach">
+		<text>Optical scope mount</text>
+	</string>
+	<string id="st_int_silencer">
+		<text>Integrated silencer</text>
+	</string>
+	<string id="st_prop_grenade_launcher">
+		<text>Underbarrel grenade launcher</text>
+	</string>
+	<string id="st_prop_restore_bleeding">
+		<text>Wound healing</text>
+	</string>
+	<string id="st_prop_restore_health">
+		<text>Health restoration</text>
+	</string>
+	<string id="st_prop_night_vision">
+		<text>1PN93-1 night vision device</text>
+	</string>
+	<string id="st_prop_scope">
+		<text>Adjustable sight</text>
+	</string>
+	<string id="st_prop_contrast">
+		<text>High contrast sight</text>
+	</string>
+	<string id="st_prop_sprint">
+		<text>Servomotor boosters </text>
+	</string>
+	<string id="st_prop_durability">
+		<text>Suit durability</text>
+	</string>
+	<string id="st_gauss_cannot_be_repaired">
+		<text>It’s not clear how the weapon works. It can’t be repaired without additional information about its design.</text>
+	</string>
+	<string id="st_upgr_cant_do">
+		<text>The technician cannot perform this modification</text>
+	</string>
+	<string id="st_upgr_group">
+		<text>This part has already been modified</text>
+	</string>
+	<string id="st_upgr_enough_money">
+		<text>Not enough money</text>
+	</string>
+	<string id="st_no_buck">
+		<text>Does not use shot</text>
+	</string>
+	<string id="st_auto_fire">
+		<text>Automatic fire mode</text>
+	</string>
+	<string id="st_semi_auto_fire">
+		<text>3-round burst mode</text>
+	</string>
+	<string id="st_prop_artefact">
+		<text>Number of armour attachment modules</text>
+	</string>
+	<string id="st_upgr_vodka">
+		<text>the technician needs vodka</text>
+	</string>
+	<string id="st_upgr_toolkit_1">
+		<text>the technician needs tools for basic work</text>
+	</string>
+	<string id="st_upgr_toolkit_2">
+		<text>the technician needs tools for fine work</text>
+	</string>
+	<string id="st_upgr_toolkit_3">
+		<text>the technician needs tools for calibration</text>
+	</string>
+	<string id="st_upgr_condlist">
+		<text>the technician needs additional information</text>
+	</string>
+	<string id="st_upgr_parents">
+		<text>preceding modifications required</text>
+	</string>
+	<string id="st_up_arm_c9_name">
+		<text>Armadillo protective coating based on sapphire crystals</text>
+	</string>
+	<string id="st_up_arm_c5_name">
+		<text>Reinforced titanium & beryllium matrix</text>
+	</string>
+	<string id="st_up_arm_c7_name">
+		<text>Extra carbon fiber coating</text>
+	</string>
+	<string id="st_up_kom_a5_name">
+		<text>Rubberized cloth underlayer</text>
+	</string>
+</string_table>

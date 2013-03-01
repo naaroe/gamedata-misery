@@ -333,4 +333,7 @@
 	<string id="zat_b100_army_3">
 		<text>Snr. Sgt. Shveiko</text>
 	</string>
+	<string id="zat_stalker_medic">
+		<text>Ima Medik</text>
+	</string>
 </string_table>

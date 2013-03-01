@@ -125,6 +125,13 @@ function options_dialog:SetCurrentValues()
 		self.check_closedcaptions:Show(false)
 	end
 
+	if (axr_misery) then
+		self.ck_hud_helm:SetCheck(axr_misery.Config:GetValue("settings","dynamic_helmet_hud",1,true))
+		self.ck_upd_drain:SetCheck(axr_misery.Config:GetValue("settings","upd_battery_drain",1,true))
+		self.ck_inf_ammo:SetCheck(axr_misery.Config:GetValue("settings","infinite_npc_primary_ammo",1,true))
+		self.ck_ai_aim:SetCheck(axr_misery.Config:GetValue("settings","hardcore_ai_aim",1,true))
+		self.ck_safe_cover:SetCheck(axr_misery.Config:GetValue("settings","surge_cover_notification",1,false))
+	end
 end
 
 function options_dialog:UpdateDependControls()
@@ -172,7 +179,7 @@ function options_dialog:InitCallBacks()
 	self:AddCallback("combo_preset",		ui_events.LIST_ITEM_SELECT,	self.OnPresetChanged,		self)
 	self:AddCallback("btn_simply_graphic",	ui_events.BUTTON_CLICKED,	self.OnSimplyGraphic,		self)
 	self:AddCallback("btn_keyb_default",	ui_events.BUTTON_CLICKED,	self.OnBtnKeybDefault,		self)
-	self:AddCallback("btn_check_updates",	ui_events.BUTTON_CLICKED,	self.OnBtnCheckUpdates,		self)
+	--self:AddCallback("btn_check_updates",	ui_events.BUTTON_CLICKED,	self.OnBtnCheckUpdates,		self)
 	self:AddCallback("combo_renderer",		ui_events.LIST_ITEM_SELECT,	self.UpdateDependControls,	self)
 	self:AddCallback("btn_cancel_download",	ui_events.BUTTON_CLICKED,	self.OnBtn_CancelDownload,	self)
 	self:AddCallback("tab_captioning",	ui_events.TAB_CHANGED,		self.OnCCOptionChange,			self)
@@ -253,6 +260,27 @@ function options_dialog:OnBtnAccept()
 	end
 
 	opt:OptionsPostAccept()
+
+	if (axr_misery) then
+		axr_misery.Config:SetValue("settings","dynamic_helmet_hud",self.ck_hud_helm:GetCheck() or false)
+		axr_misery.Config:SetValue("settings","upd_battery_drain",self.ck_upd_drain:GetCheck() or false)
+		axr_misery.Config:SetValue("settings","infinite_npc_primary_ammo",self.ck_inf_ammo:GetCheck() or false)
+		axr_misery.Config:SetValue("settings","hardcore_ai_aim",self.ck_ai_aim:GetCheck() or false)
+		axr_misery.Config:SetValue("settings","surge_cover_notification",self.ck_safe_cover:GetCheck() or false)
+		axr_misery.Config:SaveExt()
+
+		if not (self.ck_ai_aim:GetCheck()) then
+			console:execute("ai_aim_max_angle 0.7854")
+			console:execute("ai_aim_min_angle 0.19635")
+			console:execute("ai_aim_min_speed 0.19635")
+			console:execute("ai_aim_predict_time 0.44")
+		else
+			console:execute("ai_aim_max_angle 25.0")
+			console:execute("ai_aim_min_angle 20.0")
+			console:execute("ai_aim_min_speed 2.50")
+			console:execute("ai_aim_predict_time 0.28")
+		end
+	end
 
 	console:execute("cfg_save")
 end

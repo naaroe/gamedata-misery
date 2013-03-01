@@ -1,6 +1,10 @@
 ----------------------
 -- AI Tweaks
 -- Alundaio
+--[[
+	Copyright (C) 2012 Alundaio
+	This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License
+-]]
 
 local ini = ini_file("ai_tweaks\\ai_tweaks.ltx")
 local InfiniteAmmoPrimary = alun_utils.read_from_ini(ini,"weapon_reload","infinite_ammo_primary","bool",true)
@@ -34,11 +38,39 @@ local silencer_flags = { 	[4] = true,
 -- on_game_start()
 ------------------
 function on_game_start()
+	callback_register("npc_on_net_destroy",npc_on_net_destroy)
 	callback_register("npc_on_weapon_sight",npc_on_weapon_sight)
 	callback_register("npc_on_weapon_unsight",npc_on_weapon_unsight)
 	callback_register("npc_on_weapon_no_ammo",npc_on_weapon_no_ammo)
 	callback_register("npc_on_weapon_unstrapped",npc_on_weapon_unstrapped)
 	callback_register("squad_can_help_actor",squad_can_help_actor)
+	callback_register("npc_on_hit_callback",npc_on_hit_callback)
+end
+
+function npc_on_hit_callback(npc,who)
+	local reset_states = {
+							["search_corpse"] 	= true,
+							["pickup_crouch"] 	= true,
+							["help_wounded"] 	= true,
+							["help_victim_1"] 	= true,
+							["help_victim_2"] 	= true,
+							["search"]			= true
+	}
+	local state = state_mgr.get_state(npc)
+	if (state and reset_states[state]) then
+		npc:clear_animations()
+	end
+end
+
+
+function npc_on_net_destroy(npc)
+	local st = db.storage[npc:id()]
+	if (st and st.range and st.fov) then
+		npc:set_range(st.range)
+		npc:set_fov(st.fov)
+		st.range = nil
+		st.fov = nil
+	end
 end
 
 -------------------
@@ -102,14 +134,14 @@ end
 function npc_on_weapon_no_ammo(npc,wpn,st)
 
 	local isPistol = alun_utils.isPistol(wpn)
-	if (isPistol and InfiniteAmmoSecondary) or (not isPistol and InfiniteAmmoPrimary) then
+	if (isPistol and InfiniteAmmoSecondary) or (not isPistol and axr_misery.Config:GetValue("settings","infinite_npc_primary_ammo",1)) then
 		return
 	end
 
 	local ini = system_ini()
 	local sec = wpn:section()
 	local se_wpn = alife():object(wpn:id())
-	local data = alun_utils.get_weapon_data(se_wpn)
+	local data = stpk_utils.get_weapon_data(se_wpn)
 	local ammos = alun_utils.parse_list(ini,sec,"ammo_class")
 
 	local box = data.ammo_type+1 == 1 and npc:object(ammos[1]) or npc:object(ammos[2])
@@ -183,7 +215,7 @@ end
 -- squad_can_help_actor(squad)
 -------------------
 function squad_can_help_actor(squad)
-	if (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) == "friend") then
+	if (game_relations.get_squad_goodwill_to_actor_by_id(squad.id) == "friend" and db.actor:position():distance_to_sqr(squad.position) <= 22500) then
 		return true
 	end
 end

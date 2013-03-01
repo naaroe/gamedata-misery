@@ -474,6 +474,16 @@ visual                        = dynamics\box\box_wood_02.ogf
 $spawn                        = "dynamic_objects\box\box_paper"
 visual                        = dynamics\box\box_paper.ogf
 
+[box_sit_low]:physic_object
+$spawn                       	= "dynamic_objects\box\box_1a"
+visual                        	= dynamics\box\box_1a.ogf
+fixed_bones		      			= link
+
+[box_sit_high]:physic_object
+$spawn                       	= "dynamic_objects\box\box_wood_01"
+visual                       	= dynamics\box\box_wood_01.ogf
+fixed_bones		      			= link
+
 ;*******************************************************************************
 
 ;***medical_object**************************************************************
@@ -639,22 +649,3 @@ fixed_bones							= link
 $spawn                      = "dynamic_objects\museum_weapons\balloon_poison_gas"
 visual                      = dynamics\equipments\quest\balloon_poison_gas.ogf
 fixed_bones					= link
-
-;*******************************************************************************
-;Музыкальные штуки
-;*******************************************************************************
-
-[priemnik_gorizont_azot]:physic_destroyable_object
-$spawn                        = "dynamic_objects\el_tehnika\priemnik_gorizont_azot"
-visual                        = dynamics\el_tehnika\priemnik_gorizont.ogf
-custom_data 		      = scripts\sounds\music\priemnik_azot_music.ltx
-
-[krujka_boroda_music]:physic_destroyable_object
-$spawn                        = "dynamic_objects\kitchen_room\krujka_boroda_music"
-visual                        = dynamics\kitchen_room\kitchen_krujka.ogf
-custom_data 		      = scripts\sounds\music\krujka_boroda_music.ltx
-
-[krujka_jupiter_music]:physic_destroyable_object
-$spawn                        = "dynamic_objects\kitchen_room\krujka_jupiter_music"
-visual                        = dynamics\kitchen_room\kitchen_krujka.ogf
-custom_data 		      = scripts\sounds\music\krujka_jupiter_music.ltx

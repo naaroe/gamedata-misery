@@ -45,6 +45,7 @@ function choose_look_point(patrol_look, path_look_info, search_for)
 	local pt_chosen_idx = nil -- индекс выбранной точки
 	local r
 	local num_equal_pts = 0
+	local point_look_weight
 	for look_idx = 0, patrol_look:count() - 1 do
 		this_val = path_look_info[look_idx].flags
 		if this_val:equal(search_for) then
@@ -52,7 +53,7 @@ function choose_look_point(patrol_look, path_look_info, search_for)
 			-- Ќашли точку с нужными флагами, но поскольку в пути могут быть еще такие-же
 			-- точки, возьмем текущую только с некоторой веро€тностью:
 			-- Ўанс, с которым на точку посмотрит персонаж:
-			local point_look_weight = path_look_info[look_idx]["p"]
+			point_look_weight = path_look_info[look_idx]["p"]
 			if point_look_weight then
 				point_look_weight = tonumber(point_look_weight)
 			else
@@ -280,9 +281,9 @@ function move_mgr:sync_ok()
 	if self.team then
 		local s = sync[self.team]
 		local self_id = self.object:id()
-
+		local obj
 		for k, v in pairs(s) do
-			local obj = level.object_by_id(k)
+			obj = level.object_by_id(k)
 			if obj and obj:alive() then
 				if v ~= true then
 					return false
@@ -299,13 +300,15 @@ function move_mgr:update()
 	--printf("move_mgr:update(self.state == %s)", utils.to_str(self.state))
 	--printf("move_mgr:update(self.object:anims == %d)", self.object:animation_count())
 
+	--[[
 	local tg = time_global()
 	if (self.play_sound and self.play_sound_idle and tg > self.play_sound_idle) then
 		--alun_utils.printf("move_mgr: Playing sound")
-		xr_sound.set_sound_play(id,self.play_sound)
+		xr_sound.set_sound_play(self.object:id(),self.play_sound)
 		self.play_sound = nil
 		self.play_sound_idle = nil
 	end
+	--]]
 
 	if self.syn_signal and time_global() >= self.syn_signal_set_tm then
 		if self:sync_ok() then
@@ -371,7 +374,7 @@ end
 
 function move_mgr:time_callback()
 	--printf("_bp [%s]: time_callback", self.object:name())
-	local sigtm = self.path_look_info[self.last_look_index]["sigtm"]
+	local sigtm = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["sigtm"]
 	if sigtm then
 		self:scheme_set_signal(sigtm)
 	end
@@ -399,7 +402,7 @@ function move_mgr:time_callback()
 			self.no_validation)
 	else
 		self:update_movement_state() -- идти дальше
-		local syn = self.path_look_info[self.last_look_index]["syn"]
+		local syn = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["syn"]
 		if syn then
 			abort("object '%s': path_walk '%s': syn flag used on non-terminal waypoint",
 				self.object:name(), self.path_walk)
@@ -421,7 +424,7 @@ function move_mgr:scheme_set_signal(sig)
 end
 
 function move_mgr:turn_end_callback()
-	local syn = self.path_look_info[self.last_look_index]["syn"]
+	local syn = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["syn"]
 	if syn then
 		self.syn_signal = self.path_look_info[self.last_look_index]["sig"]
 		if not self.syn_signal then
@@ -434,7 +437,7 @@ function move_mgr:turn_end_callback()
 		end
 
 	else
-		local sig = self.path_look_info[self.last_look_index]["sig"]
+		local sig = self.path_look_info and self.path_look_info[self.last_look_index] and self.path_look_info[self.last_look_index]["sig"]
 		if sig then
 			self:scheme_set_signal(sig)
 		else
@@ -563,23 +566,25 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 
 		if (Enable and character_community(self.object) ~= "zombied") and (self.cur_state_standing == "sit" or self.cur_state_standing == "sit_knee" or self.cur_state_standing == "sit_ass") then
 			local squad = get_object_squad(self.object)
-			local comm = squad and squad.player_id or character_community(self.object)
+			local comm = squad and SleepChanceBySquadID[squad.player_id] and squad.player_id or character_community(self.object)
 
 			-- Set default sleeping habits
 			local sleepchance = comm and tonumber(SleepChanceBySquadID[comm]) or 0.7
 			local sleephours = comm and SleepHoursBySquadID[comm] and alun_utils.str_explode(SleepHoursBySquadID[comm],",") or {3,22}
 
 			if (AllowSleepState and math.random() < sleepchance) then
-				if ((AllowSleepAnytime == true and level.get_time_hours() < tonumber(sleephours[1]) or level.get_time_hours() > tonumber(sleephours[2])) or AllowSleepAnytime == false) then
+				if ((AllowSleepAnytime == false and level.get_time_hours() < tonumber(sleephours[1]) or level.get_time_hours() > tonumber(sleephours[2])) or AllowSleepAnytime == true) then
 					if ((not Only_sleep_in_camp) or (db.storage[obj:id()] and db.storage[obj:id()].walker and db.storage[obj:id()].walker.use_camp)) then
 						self.cur_state_standing = "sleep"
-						suggested_wait_time = SuggestedWaitTimes["sleep"] or "45000"
+
+						suggested_wait_time = SuggestedWaitTimes["sleep"] and SuggestedWaitTimes["sleep"] ~= "*" and tonumber(SuggestedWaitTimes["sleep"]) or 45000
+
 						--alun_utils.printf("%s set state to sleep with a %s wait time",self.object:name(),suggested_wait_time)
 						if (SoundSets["sleep"]) then
 							local t = alun_utils.str_explode(SoundSets["sleep"],",")
 							if (t[2] and math.random() < tonumber(t[2])) then
 								self.play_sound = t[1]
-								self.play_sound_idle = time_global() + math.random(1000,tonumber(suggested_wait_time))
+								self.play_sound_idle = time_global() + math.random(1000,suggested_wait_time)
 							end
 						end
 					end
@@ -595,7 +600,7 @@ function move_mgr:waypoint_callback(obj, action_type, index)
 				local new_state = _t[math.random(#_t)]
 
 				self.cur_state_standing = new_state
-				suggested_wait_time = SuggestedWaitTimes[new_state] or default_wait_time
+				suggested_wait_time = SuggestedWaitTimes[new_state] and SuggestedWaitTimes[new_state] ~= "*" and tonumber(SuggestedWaitTimes[new_state]) or default_wait_time
 				if (SoundSets[new_state]) then
 					local t = alun_utils.str_explode(SoundSets[new_state],",")
 					if (t[2] and math.random() < tonumber(t[2])) then

@@ -498,4 +498,20 @@
 	<string id="st_save_pri_a28_evacuation_heli">
 		<text>evacuation helicopter take-off</text>
 	</string>
+
+	<string id="st_travel_lost">
+		<text>I don't know the way yet.</text>
+	</string>
+	<string id="st_travel_jupiter">
+		<text>Travel to Jupiter?</text>
+	</string>
+	<string id="st_travel_zaton">
+		<text>Travel to Zaton?</text>
+	</string>
+	<string id="st_travel_underpass">
+		<text>Travel to Underpass?</text>
+	</string>
+	<string id="st_travel_pripyat">
+		<text>Travel to Pripyat?</text>
+	</string>
 </string_table>

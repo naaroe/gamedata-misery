@@ -208,7 +208,7 @@
 		<text>Due to the Zone’s environment, many mutants are radioactive. Approaching them without adequate radiation protection is extremely dangerous.</text>
 	</string>
 	<string id="ls_tip_8">
-		<text>If the condition of your equipment drops below 50% it is often cheaper to buy new gear instead of having it undergo an extreme repair.</text>
+		<text>If the condition of your equipment drops below 50 percent it is often cheaper to buy new gear instead of having it undergo an extreme repair.</text>
 	</string>
 	<string id="ls_tip_80">
 		<text>Listen for the sound of anomalies - The volume of their presence is often a better indicator of their distance than your eyes could offer.</text>

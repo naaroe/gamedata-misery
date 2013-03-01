@@ -37,7 +37,7 @@
 		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment</text>
 	</string>
 	<string id="st_joint">
-		<text>Canabis joint</text>
+		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
 		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.</text>
@@ -83,6 +83,12 @@
 	</string>
 	<string id="st_meat_dog_descr">
 		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.</text>
+	</string>
+		<string id="st_meat_pseudodog">
+		<text>Pseudodog meat</text>
+	</string>
+	<string id="st_meat_pseudodog_descr">
+		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.</text>
 	</string>
 		<string id="st_meat_flesh">
 		<text>Fat bacon</text>
@@ -136,10 +142,10 @@
 		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.</text>
 	</string>
 	<string id="st_device_torch_descr">
-		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
+		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely. Relatively low power consumption.</text>
 	</string>
 	<string id="st_device_torch_name">
-		<text>Flashlight</text>
+		<text>Head lamp</text>
 	</string>
 	<string id="st_drug_anabiotic">
 		<text>Anabiotics</text>
@@ -195,20 +201,38 @@
 	<string id="st_medkit">
 		<text>First-aid kit</text>
 	</string>
+	<string id="st_medkit_descr">
+		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical and thermal burns and various types of poisoning.</text>
+	</string>
 	<string id="st_medkit_army">
 		<text>Army medkit</text>
 	</string>
 	<string id="st_medkit_army_descr">
 		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued to army personnel as standard and is sometimes used by Duty forces.</text>
 	</string>
-	<string id="st_medkit_descr">
-		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical and thermal burns and various types of poisoning.</text>
-	</string>
 	<string id="st_medkit_science">
 		<text>Scientific medkit</text>
 	</string>
 	<string id="st_medkit_science_descr">
 		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.</text>
+	</string>
+	<string id="st_stim_impro">
+		<text>Improvised stimpack (zone produced)</text>
+	</string>
+	<string id="st_stim_impro_descr">
+		<text>Improvised stimpacks are popular among novice Zone Men as they are easly attainable and withing reach in therms of costs. They are produced from commonly available contents, locally in the Zone often without proper composition and purification of the mixture. This leads to many side effects when they are infected intramusculary into the thigh. These include headache, paraesthesia and considerable increase in nutrition demand.</text>
+	</string>
+	<string id="st_stim_military">
+		<text>Military stimpack</text>
+	</string>
+	<string id="st_stim_military_descr">
+		<text>Military stims are part of a standard issue soldier equipment for field operation within the Zone. Easly attainable on the market, but not chaep they are prefered by experienced Stalkers. They are siginificantly more potent and faster working than improvised conterparts, allowing for much more rapid and often life-saving stabilization. Army specifications did not include user's pleasure thou, thus extremely high density and raw nature of healing agents often cause shock, extreme dizziness and extensive hunger.</text>
+	</string>
+	<string id="st_stim_scientic">
+		<text>Scientific stimpack</text>
+	</string>
+	<string id="st_stim_scientic_descr">
+		<text>Created by chemical department of the same Kiev defence research institute wich developed SEVA, this state-of-art mixture constitutes the highest level of rapidly-working health stabilizers available in the Zone. Best quality ingredients and perfected formula allow for almost instant health restorative effect and high rate radiation cleansing. Side effects are minimized. Extremely high cost practically limits regular users of this grade of medicaments to a small group of the most skillfull and succesfull Zone explorers.</text>
 	</string>
 	<string id="st_sleepingpills_descr">
 		<text>A package of small white sleeping pills that imediately will slow and ease your stressed mind. Eat 5 min before you want to rest and use water in combination for maximum effect.</text>
@@ -530,7 +554,7 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 
 	<string id="st_crowbar">
-		<text>Leather boots</text>
+		<text>Crowbar</text>
 	</string>
 	<string id="st_crowbar_descr">
 		<text>The best tool for opening locked doors and entering buildings. A common find in the industrial areas but some stalkers are keeping a crowbar in their inventories in spite of its weight. Little value.</text>
@@ -556,15 +580,12 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	<string id="st_marijuana_descr">
 		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.</text>
 	</string>
-
 	<string id="st_flashlight_old">
-		<text>Old flashlight</text>
+		<text>Wind-up flashlight</text>
 	</string>
 	<string id="st_flashlight_old_descr">
-		<text>The light bulb is removed and the flashlight makes strange noises when being handled.
-There is little chance that this item is ever going to function again.</text>
+		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.</text>
 	</string>
-
 	<string id="st_flashlight_broken">
 		<text>Broken flashlight</text>
 	</string>
@@ -645,7 +666,7 @@ Many stalkers carry such tool so it may be of little value when traded.</text>
 	</string>
 
 	<string id="st_headlamp">
-		<text>Head lamp</text>
+		<text>Old head lamp</text>
 	</string>
 	<string id="st_headlamp_descr">
 		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.</text>
@@ -793,5 +814,106 @@ remain equipped so you are ready for fighting. Retrieve your backpack afterwards
 	</string>
 	<string id="st_salicidic_acid_descr">
 		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Salicylic acid. Salicylic acid is known for its ability to ease aches and pains and reduce fevers. These medicinal properties, particularly fever relief, have been known since ancient times, and it is used as an anti-inflammatory drug.Some researchers believe that salicylate is an essential micronutrient in the human diet, potentially qualifying as a vitamin, namely Vitamin S. Injected to arm or thigh.</text>
+	</string>
+	<string id="st_tomato">
+		<text>Canned tomatoes (imported)</text>
+	</string>
+	<string id="st_tomato_descr">
+		<text>Canned sliced and diced tomatoes are brought to the Zone on regular basis. The date on the bottom tells you that this should be alright to eat.</text>
+	</string>
+	<string id="st_sausage">
+		<text>Smoked sausage (imported)</text>
+	</string>
+	<string id="st_sausage_descr">
+		<text>Made of beef and pork. Smoked and vacuum packaged it can be preserved for a long periods.</text>
+	</string>
+        <string id="st_corn">
+		<text>Canned corn (imported)</text>
+	</string>
+	<string id="st_corn_descr">
+		<text>Canned sweet corn brought from the outside. Can be eaten as it is, but there are some who cook soup with it.</text>
+	</string>
+        <string id="st_mineral_water">
+		<text>Mineral water (imported)</text>
+	</string>
+	<string id="st_mineral_water_descr">
+		<text>Spring water from the Ukrainian mountains with added carbohydrates and calcium.</text>
+	</string>
+        <string id="st_hand_rolling_tobacco">
+		<text>Hand rolling tobacco (imported)</text>
+	</string>
+	<string id="st_hand_rolling_tobacco_descr">
+		<text>Precious hand rolling tobacco which was brought from the west side. Since there are no additives with this brand, it is posible to enjoy the original taste of tobacco leaf itself.</text>	</string>
+	<string id="st_beer">
+		<text>Beer (imported)</text>
+	</string>
+	<string id="st_beer_descr">
+		<text>Ukrainian beer. Not only vodka, but also beer is popular within every faction.</text>
+	</string>
+	<string id="st_beans">
+		<text>Baked beans (imported)</text>
+	</string>
+	<string id="st_beans_descr">
+		<text>Canned baked beans brought from west. The kidney beans with tomato sauce may bring back some memories for some people in certain areas.</text>
+	</string>
+	<string id="st_chili">
+		<text>Chili beans (imported)</text>
+	</string>
+	<string id="st_chili_descr">
+		<text>Canned chili beans brought from the outside are popular as incredients in cooked mutant meals.</text>
+	</string>
+	<string id="st_salmon">
+		<text>Smoked salmon (imported)</text>
+	</string>
+	<string id="st_salmon_descr">
+		<text>Ukrainian smoked salmon. These valuable packages are often traded and consumed within a few days after they've been brought to the Zone.</text>
+	</string>
+	<string id="st_raisins">
+		<text>Raisins (imported)</text>
+	</string>
+	<string id="st_raisins_descr">
+		<text>A pack of raisins are a rich and instant nutrition source for balancing the sugar balance in the blood.</text>
+	</string>
+	<string id="st_chocolate">
+		<text>Chocolate (imported)</text>
+	</string>
+	<string id="st_chocolate_descr">
+		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone.</text>
+	</string>
+	<string id="st_mint">
+		<text>Mint gum (imported)</text>
+	</string>
+	<string id="st_mint_descr">
+		<text>Strong mint gum brough from the west. It is refreshing and seems to have a nice ability to fight off sleepiness for a short while.</text>
+	</string>
+	<string id="st_caffeine">
+		<text>Caffeine tablets (imported)</text>
+	</string>
+	<string id="st_caffeine_descr">
+		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.</text>
+	</string>
+	<string id="st_cigar">
+		<text>Cigar (imported)</text>
+	</string>
+	<string id="st_cigar_descr">
+		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco.</text>
+	</string>
+	<string id="st_cigarettes_lucky">
+		<text>Lucky Strike (imported)</text>
+	</string>
+	<string id="st_cigarettes_lucky_descr">
+		<text>Cigarettes brought from the west. Some Stalkers use these packages to trade a few rounds of ammo within their faction.</text>
+	</string>
+	<string id="st_cigarettes_russian">
+		<text>Russian Cigarettes (imported)</text>
+	</string>
+	<string id="st_cigarettes_russian_descr">
+		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.</text>
+	</string>
+	<string id="st_nuts">
+		<text>Mixed Nuts (imported)</text>
+	</string>
+	<string id="st_nuts_descr">
+		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high.</text>
 	</string>
 </string_table>

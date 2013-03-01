@@ -1,6 +1,9 @@
 -- ui_itm_repair
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 -------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
 function load_item:__init(height) super(height)

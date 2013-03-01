@@ -933,4 +933,23 @@
 	<string id="ui_mm_confirm_changes">
 		<text>Apply changes? All changes will be reverted in</text>
 	</string>
+
+
+	<string id="ui_mm_hud_helm">
+		<text>Show helmet HUD</text>
+	</string>
+	<string id="ui_mm_upd_drain">
+		<text>Battery drain</text>
+	</string>
+	<string id="ui_mm_inf_ammo">
+		<text>Infinite NPC ammo</text>
+	</string>
+	<string id="ui_mm_ai_aim">
+		<text>Hardcore AI aim</text>
+	</string>
+	<string id="ui_mm_safe_cover">
+		<text>Surge cover notification</text>
+	</string>
+
+
 </string_table>

@@ -1,13 +1,17 @@
 ----------------------------------------------------------------------------------------------------------------------
 -- xrs_kill_wounded
 -- by Alundaio
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ----------------------------------------------------------------------------------------------------------------------
 
 local ini = ini_file("ai_tweaks\\xrs_kill_wounded.ltx")
 local Enable = alun_utils.read_from_ini(ini,"settings","enable","bool",false)
 local ActorKillWoundedEnable = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender","string","true")
 local ActorKillWoundedChance = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_chance","float",0.25)
-local ActorKillWoundedMaxDist = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_max_dist","float",50)
+local ActorKillWoundedMaxDist = Enable and alun_utils.read_from_ini(ini,"settings","actor_cause_surrender_max_dist","float",7)
 local OnlyUsePistols = Enable and alun_utils.read_from_ini(ini,"settings","only_use_pistols","bool",false)
 local RandomStateRun = Enable and alun_utils.read_from_ini(ini,"settings","random_state_run","bool",true)
 local RandomStateWalk = Enable and alun_utils.read_from_ini(ini,"settings","random_state_walk","bool",false)
@@ -68,6 +72,7 @@ function eva_kill_wounded:evaluate()
 
 	local st = self.st
 
+	--alun_utils.printf("stage = %s",st.stage)
 	if (st.stage == 0) then
 		local tg = time_global()
 
@@ -122,7 +127,7 @@ function eva_kill_wounded:evaluate()
 					if (CauseSurrenderCommunities[comm] and SurrenderChance > math.random() ) then
 						db.storage[vo:id()].victim_surrender = npc:id()
 					else
-						db.storage[vo:id()].victim_surrender = false
+						db.storage[vo:id()].victim_surrender = 65535
 					end
 				end
 			end
@@ -193,7 +198,6 @@ function act_kill_wounded:execute()
 		npc:set_item(object.fire1,st.weapon,1,1)
 		local look_pos = vo:bone_position("bip01_neck")
 		npc:set_sight(look.fire_point,look_pos)
-		db.storage[vo:id()].victim_surrender = nil
 		return
 	end
 
@@ -286,11 +290,13 @@ function add_to_binder(npc, ini, scheme, section, st)
 
 	action:add_precondition( wp(evaid,true) )
 	action:add_precondition( wp(stalker_ids.property_alive,true) )
-	action:add_precondition( wp(stalker_ids.property_enemy,true) )
 
 	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
 	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base,false) )
-	--action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
+
+	if (rx_ff) then
+		action:add_precondition( wp(rx_ff.evid_dont_shoot,false) )
+	end
 
 	action:add_effect( wp(evaid,false) )
 
@@ -377,12 +383,13 @@ function npc_on_update(npc,st)
 			return
 		end
 
-		if not (npc_in_actor_frustrum(npc)) then
+		if (not npc_in_actor_frustrum(npc) or npc:position():distance_to(db.actor:position()) >  ActorKillWoundedMaxDist) then
+		--if (alun_utils.angle_diff(db.actor:direction(), db.actor:position():sub(npc:position())) < 90 or npc:position():distance_to(db.actor:position()) >  7) then
 			return
 		end
 
-		if (math.random() > ActorKillWoundedChance) then
-			st.victim_surrender = false
+		if (math.random() >= ActorKillWoundedChance) then
+			st.victim_surrender = 65535
 			return
 		end
 

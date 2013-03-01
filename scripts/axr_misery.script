@@ -1,10 +1,14 @@
 ----------------------
 -- Misery Main Content
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ActorClass = alun_utils.read_from_ini(nil,"actor","actor_class","string","assaulter")
 MiseryBlackRoad = false
 MiseryBlackRoadEnableReducedRewards = true
+Config = alun_utils.cfg_file("misery_options.ini")
 
 local REPAIR_TEST = false
 
@@ -16,7 +20,32 @@ end
 
 local class_ui
 function main_menu_on_init(menu)
+	if not (Config:SectionExist("settings")) then
+		Config:SetValue("settings","dynamic_helmet_hud",true)
+		Config:SetValue("settings","upd_battery_drain",true)
+		Config:SetValue("settings","infinite_npc_primary_ammo",true)
+		Config:SetValue("settings","hardcore_ai_aim",true)
+		Config:SetValue("settings","safe_cover_notification",false)
+		Config:Save()
+	end
+
+	local fsgame = io.open("fsgame.ltx","a+")
+	local data = fsgame:read("*all")
+	local restart
+	if not (string.find(data,"game_class_assaulter")) then
+		fsgame:write([[$game_class_assaulter$  = true|  false| $game_data$|          class_diversity\assaulter\
+$game_class_recon$      = true|  false| $game_data$|          class_diversity\recon\
+$game_class_sniper$     = true|  false| $game_data$|          class_diversity\sniper\]])
+		restart = true
+	end
+	fsgame:close()
 	local function OnButton_select_class()
+		if (restart) then
+			menu.mbox_mode = 2
+			menu.message_box:InitMessageBox("message_box_edit_fsgame")
+			menu.message_box:ShowDialog(true)
+			return
+		end
 		if not (class_ui) then
 			class_ui = ui_class_selector and ui_class_selector.class_ui(menu)
 		end
@@ -31,7 +60,7 @@ function main_menu_on_init(menu)
 end
 
 function on_update()
-	-- medic_wow
+	-- medic
 	if (has_alife_info("zat_b22_stalker_medic_death") and level.name() =="zaton" and not has_alife_info("zat_stalker_medic_spawn")) then
 		alife():create("zat_stalker_medic",vector():set(110.023,-3.936,185.844),1155265,316)
         give_info("zat_stalker_medic_spawn")
@@ -86,13 +115,19 @@ function on_update()
 		if (timer and time_global() > timer) then
 			set_stage(nil)
 
+			local classes = { "assaulter","sniper","recon" }
+			local has_card
+			for i=1,3 do
+				has_card = db.actor:object("identity_card_"..classes[i]) and classes[i]
+			end
+
 			if not (db.actor:object("identity_card_"..ActorClass)) then
 				if (ui_dyn_msg_box) then
 					local function game_quit()
 						local console = get_console()
 						console:execute("disconnect")
 					end
-					ui_dyn_msg_box.msg_box_ui("message_box_ok",true,"This save game requires the "..ActorClass..". Your game will be forced to quit.",game_quit)
+					ui_dyn_msg_box.msg_box_ui("message_box_ok",true,"This save game requires the "..has_card.." class. Your game will be forced to quit.",game_quit)
 				end
 			end
 		end
@@ -100,6 +135,17 @@ function on_update()
 end
 
 function on_game_load()
+
+	if (Config.GetValue("settings","hardcore_ai_aim",1)) then
+		local con = get_console()
+		con:execute("ai_aim_max_angle 25.0")
+		con:execute("ai_aim_min_angle 20.0")
+		con:execute("ai_aim_min_speed 2.50")
+		con:execute("ai_aim_predict_time 0.28")
+	end
+
+	--alun_utils.printf("test config = %s",Config.GetValue("settings","test"))
+
 	if (has_alife_info("misery_info_black_road")) then
 		MiseryBlackRoad = true
 	end
@@ -118,23 +164,18 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
 			pos = vector():set(472.95452880859,36.698554992676,-69.10285949707)
 			dir = -1.3
-
-			local box1_pos = vector():set(460,37,-66.66)
-			local box2_pos = vector():set(460,37.8,-66.66)
-			local box3_pos = vector():set(461,37,-67.7)
-			alife():create("box_wood_01",box1_pos,1716749,222)
-			alife():create("box_wood_01",box2_pos,1716749,222)
-			alife():create("box_wood_01",box3_pos,1716749,222)
 		end
 	elseif (ActorClass == "sniper") then
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
@@ -145,21 +186,12 @@ function dynamic_actor_spawn()
 		if (MiseryBlackRoad) then
 			level.change_game_time(0,18,0)
 			level_weathers.get_weather_manager():forced_weather_change()
+			level.set_weather("af3_dark_storm",true)
 			pos = vector():set(-316.45,11.44,426.26)
 			dir = 3.2
 		else
 			pos = vector():set(260.97579956055,27.684192657471,-461.89776611328)
-			--pos = vector():set(275.23883056641,27.686254501343,-468.93121337891)
 			dir = -1.3
-
-			--[[
-			local box1_pos = vector():set(257,27,-476)
-			local box2_pos = vector():set(257,27.8,-476)
-			local box3_pos = vector():set(258,27,-474)
-			alife():create("box_wood_01",box1_pos,1400133,17)
-			alife():create("box_wood_01",box2_pos,1400133,17)
-			alife():create("box_wood_01",box3_pos,1400133,17)
-			--]]
 		end
 	end
 
@@ -176,26 +208,29 @@ function dynamic_actor_loadout()
 		create_items("itm_gunsmith_toolkit",4)
 	end
 
+	-- Items all classes should have
+	create_items("device_flashlight")
+	create_items("device_torch")
+	create_items("wpn_binoc_inv")
+	create_items("wpn_binoc")
+
+	-- Class specific items
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
-			create_items("wpn_knife_inv_5")
+			create_items("wpn_knife_inv")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
-			create_items("roubles")
+			create_items("wpn_upd")
+			create_items("roubles",7)
 			create_items("novice_outfit")
-			create_items("wpn_knife_inv_5")
+			create_items("wpn_knife_inv")
 
 			create_items("flask",3)
 			create_items("breadold",2)
-			create_items("conserva")
+			create_items("conserva",2)
+			create_items("beans",1)
 
-			create_items("bandage",2)
+			create_items("bandage",3)
 			create_items("antirad")
 			create_items("drug_coagulant")
 			create_items("medkit_army")
@@ -203,92 +238,85 @@ function dynamic_actor_loadout()
 
 			create_items("wpn_stg44")
 			create_items("wpn_aps")
-            create_ammunition("ammo_9x18_fmj",2)
+            create_ammunition("ammo_9x18_fmj",3)
             create_ammunition("ammo_9x18_pmm",2)
-			create_ammunition("ammo_7.92x33_fmj",2)
-			create_ammunition("ammo_7.92x33_ap")
+			create_ammunition("ammo_7.92x33_fmj",5)
+			create_ammunition("ammo_7.92x33_ap",3)
 
 			create_items("helm_hardhat")
 			create_items("af_kevlar")
 			create_items("grenade_f1")
-			create_items("grenade_rgd5")
+			create_items("grenade_rgd5",2)
 		end
 	elseif (ActorClass == "sniper") then
 		create_items("identity_card_sniper")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
-			create_items("wpn_knife_inv_3")
+			create_items("wpn_knife_inv_5")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
-			create_items("roubles")
+			create_items("wpn_upd")
+			create_items("roubles",3)
 			create_items("novice_outfit")
 			create_items("wpn_knife_inv_3")
 
 			create_items("flask",3)
-			create_items("bread",2)
+			create_items("breadold",3)
+			create_items("kolbasa")
 			create_items("conserva",2)
 
-			create_items("bandage",2)
+			create_items("bandage",3)
 			create_items("tetanus")
 			create_items("drug_coagulant")
-			create_items("medkit")
-			create_items("stimpack")
+			create_items("caffeine")
+			create_items("drug_sleepingpills",2)
+			create_items("medkit_army",2)
+			create_items("stimpack_army")
 
 			create_items("wpn_m1891")
-			create_items("wpn_fort")
-           	create_ammunition("ammo_9x18_fmj")
-            create_ammunition("ammo_9x18_pmm")
-			create_ammunition("ammo_7.62x39_fmj")
+			create_items("wpn_bm16")
+           	create_ammunition("ammo_12x70_buck",5)
+			create_ammunition("ammo_7.62x39_fmj",3)
 
 			create_items("itm_sleepbag")
-			create_items("itm_backpack")
 			create_items("wpn_addon_scope_ww2")
-			create_items("detector_simple")
 		end
 	elseif (ActorClass == "recon") then
 		create_items("identity_card_recon")
 		if (MiseryBlackRoad) then
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
 			create_items("wpn_knife_inv_4")
 		else
-			create_items("wpn_binoc_inv")
-			create_items("wpn_binoc")
-			create_items("device_torch")
-			create_items("roubles")
+			create_items("wpn_upd")
+			create_items("roubles",2)
 			create_items("novice_outfit")
-			create_items("wpn_knife_inv_4")
+			create_items("wpn_knife_inv_3")
 
-			create_items("flask",2)
-			create_items("breadold",2)
-			create_items("kolbasa")
+			create_items("flask",3)
+			create_items("breadold",4)
+			create_items("cigar2")
+			create_items("sausage")
 
-			create_items("bandage",2)
+			create_items("bandage",4)
 			create_items("antirad",2)
 			create_items("drug_coagulant",2)
+			create_items("drug_psy_blockade")
+			create_items("morphine")
 			create_items("medkit_army",2)
 			create_items("stimpack_army",2)
 
-			create_items("wpn_scorpion")
-			create_items("wpn_pm_actor")
-            create_ammunition("ammo_9x18_fmj",2)
-           	create_ammunition("ammo_9x18_pmm")
+			create_items("wpn_mp5_worn")
+         	create_ammunition("ammo_9x19_fmj",5)
+           	create_ammunition("ammo_9x19_pbp",2)
+			create_ammunition("ammo_9x19_ap",4)
 
-			create_items("wpn_addon_silencer_9x18")
+			create_items("wpn_addon_silencer_9x19")
 			create_items("helm_respirator")
-			create_items("detector_advanced")
+			create_items("detector_simple")
 		end
 	end
 end
 
 function create_items(sec,amt,id)
 	if not (system_ini():section_exist(sec)) then
-		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist",sec)
 		return
 	end
 	local se_obj = id and alife():object(id) or alife():object(db.actor:id())
@@ -302,7 +330,7 @@ end
 
 function create_ammunition(sec,amt)
 	if not (system_ini():section_exist(sec)) then
-		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist")
+		alun_utils.printf("axr_misery.script: trying to spawn %s which doesn't exist",sec)
 		return
 	end
 	local num_in_box = system_ini():r_u32(sec, "box_size")

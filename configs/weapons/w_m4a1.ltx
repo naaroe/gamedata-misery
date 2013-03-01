@@ -15,16 +15,16 @@ default_to_ruck         = false
 sprint_allowed          = true
 
 ;-------------------------------------------------------------------------------
-cost                 	= 13890
+cost                 	= 27780
 weapon_class            = assault_rifle
-inv_weight              = 3.1
+inv_weight              = 3.113
 
 upgrades                = up_gr_firstab_sig550, up_gr_seconab_sig550, up_gr_thirdab_sig550, up_gr_fourtab_sig550, up_gr_fifthab_sig550
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_sig550
 
 ;--TTX----------------------------------------------------------------------------
-hit_power         = 0.41, 0.41, 0.41, 0.41
+hit_power         = 0.415, 0.415, 0.415, 0.415
 hit_impulse       = 30 ;50 ;100
 hit_type                = fire_wound
 fire_distance           = 820
@@ -148,10 +148,10 @@ kill_msg_height		= 28
 position                = -0.02, -0.0, -0.0
 orientation             = 0.0, 0.0, 0.0
 
-fire_point              = 0.0, 0.070, 0.620  
+fire_point              = 0.0, 0.070, 0.620
 fire_point2             = 0.0, 0.070, 0.620
 
-flame_particles         = weapons\generic_weapon05
+;flame_particles         = weapons\generic_weapon05
 smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
@@ -180,18 +180,18 @@ ph_mass                 = 3
 ;cost                   = 2100
 
 ;addons
-scope_status                = 2                
-silencer_status             = 2                 
-grenade_launcher_status     = 2	; 1    
+scope_status                = 2
+silencer_status             = 2
+grenade_launcher_status     = 2	; 1
 
 zoom_enabled                = true                                                ; (on,off)zoom mode (right mouse button)
 zoom_rotate_time            = 0.25
-scope_zoom_factor       = 58.6 ;            = 85  
-                                           
-scope_texture	            = wpn_crosshair_modern1
-scope_name 		    = wpn_addon_scope_susat
-scope_x 	            = 95
-scope_y 	            = -20
+scope_zoom_factor       = 58.6 ;            = 85
+
+scope_texture	            = wpn_crosshair_acog
+scope_name 		    = wpn_addon_scope_acog
+scope_x 	            = 80
+scope_y 	            = -12
 silencer_name               = wpn_addon_silencer_556x45         ; section name for the attachable silencer
 silencer_x                  = 210                               ; offset in inventory icon
 silencer_y                  = -1
@@ -230,11 +230,11 @@ item_visual             = dynamics\weapons\wpn_m4a1\wpn_m4a1_hud.ogf
 
 hands_position	    	= -0.065,-0.192,0.14
 hands_orientation   	= 0.55,2.4,0.15
-hands_position_16x9 	= -0.044,-0.192,0.14  
-hands_orientation_16x9	= 0.55,2.4,0.15          
+hands_position_16x9 	= -0.044,-0.192,0.14
+hands_orientation_16x9	= 0.55,2.4,0.15
 
-item_position	    	= 0.006,0.0,-0.0046  
-item_orientation     	= 1.27,-0.97,0.24       
+item_position	    	= 0.006,0.0,-0.0046
+item_orientation     	= 1.27,-0.97,0.24
 
 aim_hud_offset_pos_16x9 = -0.124400,0.045900,0.029000
 aim_hud_offset_rot_16x9 = 0.026000,0.030500,-0.007500
@@ -257,31 +257,31 @@ anm_idle                = lr300_idle
 anm_idle_sprint         = svu_idle_sprint_2
 anm_idle_moving         = lr300_idle_moving
 anm_shots               = lr300_shoot
-anm_reload              = lr300_reload
+anm_reload              = lr300_reload, m4_reload
 anm_idle_aim            = lr300_idle_aim
 
-anm_switch              = lr300_switch_off 				
-anm_switch_g            = lr300_switch_on 				
+anm_switch              = lr300_switch_off
+anm_switch_g            = lr300_switch_on
 anm_bore                = lr300_idle_bore
 
 anm_hide_w_gl           = lr300_holster_w_gl
 anm_show_w_gl           = lr300_draw_w_gl
 anm_idle_w_gl           = lr300_idle_w_gl
 anm_shots_w_gl          = lr300_shoot_w_gl
-anm_reload_w_gl         = lr300_reload_w_gl
+anm_reload_w_gl         = lr300_reload_w_gl, m4_reload_w_gl
 anm_idle_w_gl_aim       = lr300_idle_aim_w_gl
 anm_idle_sprint_w_gl    = lr300_idle_sprint_w_gl
 anm_idle_moving_w_gl    = lr300_idle_moving_w_gl
 anm_bore_w_gl           = lr300_idle_bore_w_gl
 
-anm_show_g              = lr300_draw_grenade					
-anm_hide_g              = lr300_holster_grenade				
-anm_idle_g              = lr300_idle_grenade					
+anm_show_g              = lr300_draw_grenade
+anm_hide_g              = lr300_holster_grenade
+anm_idle_g              = lr300_idle_grenade
 anm_reload_g            = lr300_reload_grenade
-anm_idle_g_aim          = lr300_idle_grenade					
+anm_idle_g_aim          = lr300_idle_grenade
 anm_shots_g             = lr300_shoot_grenade
-anm_idle_sprint_g       = lr300_idle_sprint_grenade		
-anm_idle_moving_g       = lr300_idle_moving_grenade		
+anm_idle_sprint_g       = lr300_idle_sprint_grenade
+anm_idle_moving_g       = lr300_idle_moving_grenade
 anm_bore_g              = lr300_idle_bore_grenade
 
 gl_hud_offset_pos       = 0,0,0

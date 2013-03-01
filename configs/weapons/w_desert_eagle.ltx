@@ -12,8 +12,8 @@ description					= st_wpn_eagle_descr
 ef_weapon_type					= 5
 
 ;-----------------------------------------------------------------------------
-cost					= 7240
-inv_weight				= 1.98
+cost					= 14480
+inv_weight				= 1.986
 
 upgrades                = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
 installed_upgrades      =
@@ -134,8 +134,8 @@ fire_point              	= 0.0, 0.133, 0.22
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = amik\weapons\smoke_particles\smoke_particles_pump_01
 
 shell_point		 				= 0.0, 0.133, 0.047
 shell_dir		 				= 0.0, 0.0, 0.4
@@ -252,15 +252,15 @@ $spawn                  	= "weapons\wpn_desert_eagle_nimble"
 inv_name				= st_wpn_desert_eagle_nimble
 description					= st_wpn_desert_eagle_nimble_descr
 
-cost					= 4660
+cost					= 18240
 
-inv_grid_width			= 2	 
-inv_grid_height			= 1	  
-inv_grid_x				= 6  
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 6
 inv_grid_y				= 28
 
 upgrades                = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
-installed_upgrades      =
+installed_upgrades      = up_secona_desert_eagle, up_thirda_desert_eagle
 upgrade_scheme          = upgrade_scheme_desert_eagle
 
 ;--TTX----------------------------------------------------------------------------
@@ -279,7 +279,7 @@ visual                  	= dynamics\weapons\wpn_desert_eagl1\wpn_desert_eagl1.og
 position                	= -0.021, -0.085, 0.0
 orientation             	= 0, 0, 0
 
-silencer_x 						= 78						
+silencer_x 						= 78
 silencer_y 						= -19
 
 [wpn_desert_eagl1_hud]:hud_base
@@ -346,7 +346,7 @@ aim_hud_offset_rot_16x9			= -0.019200,-0.010000,-0.010000
 
 [wpn_desert_eagle_hydro]:wpn_desert_eagle
 
-ammo_class		 		= ammo_11.43x23_hydro, ammo_11.43x23_fmj
+ammo_class		 		= ammo_11.43x23_hydro, ammo_11.43x23_fmj, ammo_11.43x23_ap
 
 ;---------------------------
 ;End of AP section
@@ -355,3 +355,173 @@ ammo_class		 		= ammo_11.43x23_hydro, ammo_11.43x23_fmj
 upgrades                = up_gr_firstab_desert_eagle, up_gr_seconab_desert_eagle, up_gr_thirdab_desert_eagle, up_gr_fourtab_desert_eagle, up_gr_fifthab_desert_eagle
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_desert_eagle
+
+;============================================================================================
+[wpn_desert_eagle_custom]:wpn_desert_eagle
+
+cost					= 17660
+inv_weight				= 1.926
+
+installed_upgrades      = up_secona_desert_eagle, up_thirda_desert_eagle
+
+hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_impulse	 		 	= 45
+fire_distance           = 650
+bullet_speed		 	= 420
+rpm                     = 190
+
+hud                     	= wpn_desert_eagle_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.01
+misfire_end_prob	     	= 0.1
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0017
+
+ammo_mag_size		 	= 7
+ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base		= 0.65
+
+inv_name				= st_wpn_eagle_custom
+inv_name_short			= st_wpn_eagle_custom
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 67
+
+visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl1.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_desert_eagle_custom_hud]:wpn_desert_eagle_hud
+
+item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl1_hud.ogf
+;============================================================================================
+[wpn_desert_eagle_alt]:wpn_desert_eagle
+
+cost					= 15540
+inv_weight				= 1.884
+
+hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_impulse	 		 	= 45
+fire_distance           = 650
+bullet_speed		 	= 420
+rpm                     = 190
+
+hud                     	= wpn_desert_eagle_alt_hud
+
+misfire_start_condition		= 0.55
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.01
+misfire_end_prob	     	= 0.1
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0017
+
+ammo_mag_size		 	= 7
+ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base		= 0.66
+
+inv_name				= st_wpn_eagle_alt
+inv_name_short			= st_wpn_eagle_alt
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 70
+
+visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl2.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_desert_eagle_alt_hud]:wpn_desert_eagle_hud
+
+item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl2_hud.ogf
+;============================================================================================
+[wpn_desert_eagle_camo]:wpn_desert_eagle
+
+cost					= 18460
+inv_weight				= 1.827
+
+installed_upgrades      = up_firsta_desert_eagle, up_fiftha_desert_eagle, up_secona_desert_eagle, up_thirda_desert_eagle
+
+hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_impulse	 		 	= 45
+fire_distance           = 650
+bullet_speed		 	= 420
+rpm                     = 190
+
+hud                     	= wpn_desert_eagle_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.01
+misfire_end_prob	     	= 0.1
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0017
+
+ammo_mag_size		 	= 7
+ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base		= 0.65
+
+inv_name			= st_wpn_eagle_camo
+inv_name_short			= st_wpn_eagle_camo
+description			= st_wpn_eagle_camo_descr
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 69
+
+visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_desert_eagle_camo_hud]:wpn_desert_eagle_hud
+
+item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl3_hud.ogf
+;============================================================================================
+[wpn_desert_eagle_worn]:wpn_desert_eagle
+
+cost					= 12740
+inv_weight				= 2.0
+
+hit_power           	= 0.455, 0.455, 0.455, 0.455
+hit_impulse	 		 	= 45
+fire_distance           = 650
+bullet_speed		 	= 420
+rpm                     = 190
+
+hud                     	= wpn_desert_eagle_worn_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.01
+misfire_end_prob	     	= 0.1
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0017
+
+ammo_mag_size		 	= 7
+ammo_class		 	= ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base		= 0.7
+
+inv_name				= st_wpn_eagle_worn
+inv_name_short			= st_wpn_eagle_worn
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 5
+inv_grid_y				= 68
+
+visual                  	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_desert_eagle_worn_hud]:wpn_desert_eagle_hud
+
+item_visual             	= dynamics\weapons\wpn_desert_eagle\wpn_desert_eagl4_hud.ogf

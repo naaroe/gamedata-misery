@@ -1,5 +1,9 @@
 ---- Rulix aka Bak --- 22.6.2009
 -- Modified by Alundaio 2011
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 function printf(s, ...)
 	--alun_utils.printf(s,...)
@@ -418,7 +422,7 @@ end
 function add_to_binder(npc,ini,scheme,section,storage)
 	local manager = npc:motivation_action_manager()
 
-	if (facer_sets.forbiddens.factions[npc:character_community()]) or not(facer_sets.ranks[ranks.get_obj_rank_name(npc)]) then
+	if (facer_sets.forbiddens.factions and facer_sets.forbiddens.factions[npc:character_community()]) or (facer_sets.ranks and not facer_sets.ranks[ranks.get_obj_rank_name(npc)]) then
 		manager:add_evaluator(evid_facer,property_evaluator_const(false))
 		manager:add_evaluator(evid_steal_up_facer,property_evaluator_const(false))
 		return

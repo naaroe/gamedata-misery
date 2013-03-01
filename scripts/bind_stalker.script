@@ -65,8 +65,6 @@ function actor_binder:net_spawn(data)
 	-- alundaio
 	if (axr_main) then axr_main.on_game_load() end
 	if (xrs_debug_tools) then xrs_debug_tools.on_game_load() end
-	if (itms_manager) then itms_manager.on_game_load() end
-	if (spawn_manager) then spawn_manager.on_game_load() end
 	-- end alundaio
 
 	return true
@@ -87,7 +85,6 @@ function actor_binder:net_destroy()
 	db.del_actor(self.object)
 
 	self.object:set_callback(callback.inventory_info, nil)
-	self.object:set_callback(callback.article_info, nil)
 	self.object:set_callback(callback.on_item_take, nil)
 	self.object:set_callback(callback.on_item_drop, nil)
 	self.object:set_callback(callback.task_state, nil)
@@ -134,19 +131,18 @@ function actor_binder:reinit()
 	self.object:set_callback(callback.use_object, self.use_inventory_item, self)
 end
 ----------------------------------------------------------------------------------------------------------------------
+
 function actor_binder:take_item_from_box(box, item)
 	local box_name = box:name()
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_take_from_box(box,item) end
-	if (itms_manager) then itms_manager.actor_take_item_from_box(box,item) end
 	-- End Alundaio
 end
-
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:info_callback(npc, info_id)
-	printf("*INFO*: npc='%s' id='%s'", npc:name(), info_id)
-	--' Сюжет
-	-- Отметки на карте
+	-- Alundaio
+	if (axr_main) then axr_main.actor_on_info_callback(npc,info_id) end
+	-- Alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_trade (item, sell_bye, money)
@@ -158,9 +154,6 @@ function actor_binder:on_trade (item, sell_bye, money)
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_trade(item,sell_bye,money) end
 	-- End Alundaio
-end
-----------------------------------------------------------------------------------------------------------------------
-function actor_binder:article_callback(npc, group, name)
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_take (obj)
@@ -188,37 +181,23 @@ function actor_binder:on_item_take (obj)
 
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_take(obj) end
-	if (itms_manager) then itms_manager.actor_item_take(obj) end
 	-- End Alundaio
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:on_item_drop (obj)
 	-- Alundaio
 	if (axr_main) then axr_main.actor_on_item_drop(obj) end
-	if (itms_manager) then itms_manager.actor_item_drop(obj) end
 	-- End Alundaio
 end
 
 function actor_binder:use_inventory_item(obj)
 	if(obj) then
 		actor_effects.use_item(alife():object(obj:id()):section_name())
---		if(s_obj) and (s_obj:section_name()=="drug_anabiotic") then
---			xr_effects.disable_ui_only(db.actor, nil)
---			level.add_cam_effector("camera_effects\\surge_02.anm", 10, false, "bind_stalker.anabiotic_callback")
---			level.add_pp_effector("surge_fade.ppe", 11, false)
---			give_info("anabiotic_in_process")
---			_G.mus_vol = get_console():get_float("snd_volume_music")
---			_G.amb_vol = get_console():get_float("snd_volume_eff")
---			get_console():execute("snd_volume_music 0")
---			get_console():execute("snd_volume_eff 0")
---		end
-
 		if postproces_mod then
 			postproces_mod.use_obj(obj)
 		end
 		-- Alundaio
 		if (axr_main) then axr_main.actor_on_item_use(obj) end
-		if (itms_manager) then itms_manager.actor_item_use(obj) end
 		-- End Alundaio
 	end
 end
@@ -237,7 +216,7 @@ function anabiotic_callback()
 			m:end_surge()
 		end
 	end
-	local m = psi_storm_manager.get_psi_storm_manager()
+	local m = psi_storm_manager and psi_storm_manager.get_psi_storm_manager()
 	if(m.started) then
 		local tf = level.get_time_factor()
 		local diff_sec = math.ceil(game.get_game_time():diffSec(m.inited_time)/tf)
@@ -423,14 +402,7 @@ function actor_binder:update(delta)
 	-- alundaio
 	if (axr_main) then axr_main.actor_on_update(self,delta) end
 	if (xrs_debug_tools) then xrs_debug_tools.on_actor_update(self,delta) end
-	if (itms_manager) then itms_manager.on_actor_update(self,delta) end
-	if (spawn_manager) then spawn_manager.on_actor_update() end
 	-- alundaio
-
-	if spawn_music.load_variable("spawn_music_p_",false)==false then
-	spawn_music.spawn_music_01()
-	spawn_music.save_variable("spawn_music_p_",true)
-	end
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)
@@ -443,7 +415,7 @@ function actor_binder:save(packet)
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.st.disable_input_time)
+		utils.w_CTime(packet, self.st.disable_input_time,"bind_stalker")
 	end
 	xr_logic.pstor_save_all(self.object, packet)
 	self.weather_manager:save(packet)
@@ -489,13 +461,13 @@ function actor_binder:save(packet)
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.last_detective_achievement_spawn_time)
+		utils.w_CTime(packet, self.last_detective_achievement_spawn_time,"bind_stalker")
 	end
 	if self.last_mutant_hunter_achievement_spawn_time == nil then
 		packet:w_bool(false)
 	else
 		packet:w_bool(true)
-		utils.w_CTime(packet, self.last_mutant_hunter_achievement_spawn_time)
+		utils.w_CTime(packet, self.last_mutant_hunter_achievement_spawn_time,"bind_stalker")
 	end
 
 	--alundaio
@@ -514,7 +486,7 @@ function actor_binder:load(reader)
 	get_console():execute("g_game_difficulty "..game_difficulty_by_num[game_difficulty])
 	local stored_input_time = reader:r_u8()
 	if stored_input_time == true then
-		self.st.disable_input_time = utils.r_CTime(reader)
+		self.st.disable_input_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	xr_logic.pstor_load_all(self.object, reader)
 	self.weather_manager:load(reader)
@@ -552,11 +524,11 @@ function actor_binder:load(reader)
 
 	local stored_achievement_time = reader:r_bool()
 	if stored_achievement_time == true then
-		self.last_detective_achievement_spawn_time = utils.r_CTime(reader)
+		self.last_detective_achievement_spawn_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	stored_achievement_time = reader:r_bool()
 	if stored_achievement_time == true then
-		self.last_mutant_hunter_achievement_spawn_time = utils.r_CTime(reader)
+		self.last_mutant_hunter_achievement_spawn_time = utils.r_CTime(reader,"bind_stalker")
 	end
 	--alundaio
 	if (axr_main) then axr_main.actor_on_load(self,reader) end
@@ -568,14 +540,11 @@ end
 --*					Подспаун вещей в ящики					  *
 --*************************************************************
 local detective_achievement_items 		= {	"medkit",
-											"antirad",
 											"bandage"}
 
-local mutant_hunter_achievement_items	= {	"ammo_5.45x39_ap",
-											"ammo_5.56x45_ap",
-											"ammo_9x39_ap",
-											"ammo_5.56x45_ap",
-											"ammo_12x76_zhekan"}
+local mutant_hunter_achievement_items	= {	"ammo_9x18_fmj",
+											"ammo_9x19_fmj",
+											"ammo_12x70_buck"}
 
 local function spawn_achivement_items(items_table, count, inv_box_story_id)
 	local inv_box = alife():object(get_story_object_id(inv_box_story_id))
@@ -595,7 +564,7 @@ function actor_binder:check_detective_achievement()
 	if self.last_detective_achievement_spawn_time == nil then
 		self.last_detective_achievement_spawn_time = game.get_game_time()
 	end
-	if game.get_game_time():diffSec(self.last_detective_achievement_spawn_time) > 43200 then
+	if game.get_game_time():diffSec(self.last_detective_achievement_spawn_time) > 432000000 then
 		spawn_achivement_items(detective_achievement_items, 4, "zat_a2_actor_treasure")
 		xr_effects.send_tip(db.actor, nil, {"st_detective_news","got_medicine"})
 		self.last_detective_achievement_spawn_time = game.get_game_time()
@@ -609,7 +578,7 @@ function actor_binder:check_mutant_hunter_achievement()
 	if self.last_mutant_hunter_achievement_spawn_time == nil then
 		self.last_mutant_hunter_achievement_spawn_time = game.get_game_time()
 	end
-	if game.get_game_time():diffSec(self.last_mutant_hunter_achievement_spawn_time) > 43200 then
+	if game.get_game_time():diffSec(self.last_mutant_hunter_achievement_spawn_time) > 432000000 then
 		spawn_achivement_items(mutant_hunter_achievement_items, 5, "jup_b202_actor_treasure")
 		xr_effects.send_tip(db.actor, nil, {"st_mutant_hunter_news","got_ammo"})
 		self.last_mutant_hunter_achievement_spawn_time = game.get_game_time()

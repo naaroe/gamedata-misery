@@ -229,7 +229,7 @@
 		<rank>65</rank>
 		<reputation>0</reputation>
 		<money min="1000"  max="5000"  infinitive="0"/>
-		<visual>actors\stalker_neutral\stalker_mercen2b_mask</visual>
+		<visual>actors\stalker_neutral\stalker_neutral2b_mask</visual>
 
 		<supplies>
 
@@ -1603,6 +1603,7 @@
 
 		<start_dialog>jup_b6_scientist_medic_start</start_dialog>
 
+		<actor_dialog>dm_tech_repair</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_soldier_outfit</actor_dialog>
 		<actor_dialog>jup_b6_scientist_tech_b1_psi_emission_dialog</actor_dialog>
 		<actor_dialog>jup_b6_scientist_medic_b32_give_scanner</actor_dialog>
@@ -1664,10 +1665,12 @@
 		<actor_dialog>jup_b1_stalker_about_scrutiny_2</actor_dialog>
 		<actor_dialog>jup_b1_stalker_about_scrutiny_3</actor_dialog>
 		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
+		<actor_dialog>dm_universal_dialog</actor_dialog>
 
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
+
   	</specific_character>
 
 	<!-- Сталкер 2 -->
@@ -1829,6 +1832,7 @@
 		<actor_dialog>jup_b1_stalker_squad_thanks</actor_dialog>
 		<actor_dialog>jup_b1_stalker_lead_info</actor_dialog>
 		<actor_dialog>jup_b47_ask_topol_about_guard</actor_dialog>
+		<actor_dialog>dm_universal_dialog</actor_dialog>
 		<actor_dialog>jup_b1_stalker_1_come_with_me</actor_dialog>
 		<actor_dialog>actor_break_dialog</actor_dialog>
 
@@ -2520,7 +2524,7 @@
 
 	<specific_character id="jup_a6_stalker_medik" team_default = "1">
 		<name>jup_a6_stalker_medik</name>
-		<icon>ui_inGame2_neutral_2</icon>
+		<icon>ui_inGame2_Kostoprav</icon>
 		<map_icon x="1" y="0">
 		</map_icon>
 		<bio>Опытный сталкер. Детальная информация отсутствует.</bio>

@@ -313,7 +313,7 @@
 		<text>Connect gas tank ($$ACTION_USE$$)</text>
 	</string>
 	<string id="zat_b57_gas_warning">
-		<text>Warning! Chemical hazard!</text>
+		<text>Warning! Toxic hazard!</text>
 	</string>
 	<string id="zat_b57_vintil_press">
 		<text>Turn valve ($$ACTION_USE$$)</text>

@@ -1,4 +1,95 @@
+function npc_is_surrendered(a,b)
+	local npc = who_is_npc(a, b)
+	local st = db.storage[npc:id()]
+	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
+	if (po and po:id() == db.actor:id()) then
+		return true
+	end
+	return false
+end
 
+function npc_is_not_surrendered(a,b)
+	local npc = who_is_npc(a, b)
+	local st = db.storage[npc:id()]
+	local po = st and st.victim_surrender and level.object_by_id(st.victim_surrender)
+	if not (po) then
+		return false
+	end
+	return po:id() ~= db.actor:id()
+end
+
+function victim_surrender(a,b)
+	local npc = dialogs.who_is_npc(a,b)
+	return alun_utils.load_var(npc,"victim_surrender",false) == true
+end
+
+function victim_no_surrender(a,b)
+	local npc = dialogs.who_is_npc(a,b)
+	return alun_utils.load_var(npc,"victim_surrender",false) == false
+end
+
+function surrender_victim_answers_1(a,b)
+	local npc = dialogs.who_is_npc(a,b)
+
+	local r = math.random(4)
+	if ( alun_utils.load_var(npc,"victim_surrender",nil) == true ) then
+		r = 3
+	else
+		alun_utils.save_var(npc,"victim_surrender",true)
+	end
+
+	if (axr_dynamic_spawn and r <= 2) then
+		axr_dynamic_spawn.random_secret()
+
+		local function itr(npc,itm)
+			if (alun_utils.item_is_fa(itm)) then
+				npc:transfer_item(itm,db.actor)
+			end
+		end
+
+		npc:iterate_inventory(itr,npc)
+
+		if (axr_dynamic_spawn.last_secret) then
+			local hint = alun_utils.read_from_ini(axr_dynamic_spawn.ini,axr_dynamic_spawn.last_secret,"hint","string",nil)
+			hint = hint and " -- " .. game.translate_string(hint) or ""
+			return game.translate_string("st_surrender_victim_answer_"..math.random(3)) .. hint
+		else
+			return game.translate_string("st_surrender_victim_answer_4")
+		end
+	elseif (r == 3) then
+		return game.translate_string("st_surrender_victim_answer_4")
+	elseif (r == 4) then
+		npc:set_relation(game_object.enemy,db.actor)
+		alife():create("medkit_script",npc:position(),0,0,npc:id())
+		xr_wounded.unlock_medkit(npc)
+		return game.translate_string("st_surrender_victim_answer_4")
+	end
+end
+
+function surrender_victim_answers_2(a,b)
+	local npc = dialogs.who_is_npc(a,b)
+	alife():create("medkit_script",npc:position(),0,0,npc:id())
+	xr_wounded.unlock_medkit(npc)
+	--npc:set_relation(game_object.enemy,db.actor)
+	local function itr(npc,itm)
+		if (alun_utils.item_is_fa(itm)) then
+			npc:transfer_item(itm,db.actor)
+		end
+	end
+
+	if (db.actor:character_reputation()+2 < 10000) then
+		db.actor:change_character_reputation(2)
+	end
+
+	npc:iterate_inventory(itr,npc)
+	return game.translate_string("actor_break_dialog_2")
+end
+
+function set_enemy(a,b)
+	local npc = dialogs.who_is_npc(a,b)
+	npc:set_relation(game_object.enemy,db.actor)
+end
+--End Alundaio
 function is_npc_in_current_smart(first_speaker, second_speaker, smart_name)
 	local npc = who_is_npc(first_speaker, second_speaker)
 	local smart = xr_gulag.get_npc_smart(npc)
@@ -394,6 +485,11 @@ function npc_freedom(first_speaker, second_speaker)
 	return character_community(npc) == "freedom"
 end
 
+function npc_killer(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return character_community(npc) == "killer"
+end
+
 function npc_dolg(first_speaker, second_speaker)
 	local npc = who_is_npc(first_speaker, second_speaker)
 	return character_community(npc) == "dolg"
@@ -402,6 +498,11 @@ end
 function npc_army(first_speaker, second_speaker)
 	local npc = who_is_npc(first_speaker, second_speaker)
 	return character_community(npc) == "army"
+end
+
+function npc_ecolog(first_speaker, second_speaker)
+	local npc = who_is_npc(first_speaker, second_speaker)
+	return character_community(npc) == "ecolog"
 end
 -----------------------------------------------------------------------------------
 -- Money functions
@@ -911,7 +1012,7 @@ end
 function medic_magic_potion(first_speaker, second_speaker)
 	db.actor.health = 1
 	db.actor.power = 1
-	db.actor.radiation = -1
+--	db.actor.radiation = -1
 	db.actor.bleeding = 1
 end
 function medic_rad_potion(first_speaker, second_speaker)
@@ -919,11 +1020,11 @@ function medic_rad_potion(first_speaker, second_speaker)
 end
 
 function health_care_actor_has_money(first_speaker, second_speaker)
-	return db.actor:money() >= 3500
+	return db.actor:money() >= 1850
 end
 
 function health_care_actor_has_rad_money(first_speaker, second_speaker)
-	return db.actor:money() >= 500
+	return db.actor:money() >= 1480
 end
 
 function health_care_actor_hasnt_money(first_speaker, second_speaker)
@@ -935,11 +1036,11 @@ function health_care_actor_hasnt_rad_money(first_speaker, second_speaker)
 end
 
 function health_care_actor_transfer_money(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 3500)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 1850)
 end
 
 function health_care_actor_transfer_rad_money(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 500)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 1480)
 end
 
 function actor_needs_bless(first_speaker, second_speaker)

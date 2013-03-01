@@ -1,6 +1,11 @@
 -- ui_loot
 -- Alundaio
+--[[
+   Copyright (C) 2012 Alundaio
 
+   This program is free software; you can redistribute and/or modify
+   it under the terms of the Open S.T.A.L.K.E.R. Mod License version 1.0.
+-]]
 -------------------------------------------------------------------
 class "load_item" (CUIListBoxItem)
 function load_item:__init(height) super(height)
@@ -87,9 +92,6 @@ function loot_ui:FillList()
 
 	self.loot = {}
 	itms_manager.loot_mutant(nil,self.clsid,self.loot)
-	local se_obj = alife():object(self.id)
-	se_obj.looted = true
-	xr_corpse_detection.set_valuable_loot(se_obj.id,false)
 
 	local is_there_loot
 	for sec,t in pairs(self.loot) do

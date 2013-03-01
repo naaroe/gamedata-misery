@@ -45,6 +45,9 @@
 	<character id="sim_default_duty_hunter_night">
 		<class>sim_default_duty_hunter_night</class>
 	</character>
+	<character id="sim_default_duty_commando_sniper">
+		<class>sim_default_duty_commando_sniper</class>
+	</character>
 	<character id="sim_default_duty_commando_1">
 		<class>sim_default_duty_commando_1</class>
 	</character>
@@ -73,7 +76,7 @@
 	<character id="sim_default_monolith_sci_2">
 		<class>sim_default_monolith_sci_2</class>
 	</character>
-	
+
 
 	<!-- sim freedom -->
 	<character id="sim_default_freedom_0">
@@ -198,165 +201,6 @@
 		<class>sim_default_zombied_4</class>
 	</character>
 
-
-
-	<!--- TEST PROFILES -->
-	<character id="test_npc_1">
-		<class>test_npc_1</class>
-	</character>
-	<character id="test_npc_2">
-		<class>test_npc_2</class>
-	</character>
-	<character id="test_npc_3">
-		<class>test_npc_3</class>
-	</character>
-	<character id="test_npc_4">
-		<class>test_npc_4</class>
-	</character>
-	<character id="test_npc_5">
-		<class>test_npc_5</class>
-	</character>
-	<character id="test_npc_6">
-		<class>test_npc_6</class>
-	</character>
-	<character id="test_npc_7">
-		<class>test_npc_7</class>
-	</character>
-	<character id="test_npc_8">
-		<class>test_npc_8</class>
-	</character>
-	<character id="test_npc_9">
-		<class>test_npc_9</class>
-	</character>
-	<character id="test_npc_10">
-		<class>test_npc_10</class>
-	</character>
-	<character id="test_npc_11">
-		<class>test_npc_11</class>
-	</character>
-	<character id="test_npc_12">
-		<class>test_npc_12</class>
-	</character>
-	<character id="test_npc_13">
-		<class>test_npc_13</class>
-	</character>
-	<character id="test_npc_14">
-		<class>test_npc_14</class>
-	</character>
-	<character id="test_npc_15">
-		<class>test_npc_15</class>
-	</character>
-	<character id="test_npc_16">
-		<class>test_npc_16</class>
-	</character>
-	<character id="test_npc_17">
-		<class>test_npc_17</class>
-	</character>
-	<character id="test_npc_18">
-		<class>test_npc_18</class>
-	</character>
-	<character id="test_npc_19">
-		<class>test_npc_19</class>
-	</character>
-	<character id="test_npc_20">
-		<class>test_npc_20</class>
-	</character>
-	<character id="test_npc_21">
-		<class>test_npc_21</class>
-	</character>
-	<character id="test_npc_22">
-		<class>test_npc_22</class>
-	</character>
-	<character id="test_npc_23">
-		<class>test_npc_23</class>
-	</character>
-	<character id="test_npc_24">
-		<class>test_npc_24</class>
-	</character>
-	<character id="test_npc_25">
-		<class>test_npc_25</class>
-	</character>
-	<character id="test_npc_26">
-		<class>test_npc_26</class>
-	</character>
-	<character id="test_npc_27">
-		<class>test_npc_27</class>
-	</character>
-	<character id="test_npc_28">
-		<class>test_npc_28</class>
-	</character>
-	<character id="test_npc_29">
-		<class>test_npc_29</class>
-	</character>
-	<character id="test_npc_30">
-		<class>test_npc_30</class>
-	</character>
-	<character id="test_npc_31">
-		<class>test_npc_31</class>
-	</character>
-	<character id="test_npc_32">
-		<class>test_npc_32</class>
-	</character>
-	<character id="test_npc_33">
-		<class>test_npc_33</class>
-	</character>
-	<character id="test_npc_34">
-		<class>test_npc_34</class>
-	</character>
-	<character id="test_npc_35">
-		<class>test_npc_35</class>
-	</character>
-	<character id="test_npc_36">
-		<class>test_npc_36</class>
-	</character>
-	<character id="test_npc_37">
-		<class>test_npc_37</class>
-	</character>
-	<character id="test_npc_38">
-		<class>test_npc_38</class>
-	</character>
-	<character id="test_npc_39">
-		<class>test_npc_39</class>
-	</character>
-	<character id="test_npc_40">
-		<class>test_npc_40</class>
-	</character>
-	<character id="test_npc_41">
-		<class>test_npc_41</class>
-	</character>
-	<character id="test_npc_42">
-		<class>test_npc_42</class>
-	</character>
-	<character id="test_npc_43">
-		<class>test_npc_43</class>
-	</character>
-	<character id="test_npc_44">
-		<class>test_npc_44</class>
-	</character>
-	<character id="test_npc_45">
-		<class>test_npc_45</class>
-	</character>
-	<character id="test_npc_46">
-		<class>test_npc_46</class>
-	</character>
-	<character id="test_npc_47">
-		<class>test_npc_47</class>
-	</character>
-	<character id="test_npc_48">
-		<class>test_npc_48</class>
-	</character>
-	<character id="test_npc_49">
-		<class>test_npc_49</class>
-	</character>
-	<character id="test_npc_50">
-		<class>test_npc_50</class>
-	</character>
-
-
-
-
-
-
 	<!--  ZATON -->
   <!-- Zaton B106 -->
 
@@ -418,7 +262,7 @@
 		<class>zat_b5_stalker_commander</class>
 	</character>
 	<character id="zat_b5_stalker_commander_b7">
-    <class>zat_b5_stalker_commander_b7</class> 
+    <class>zat_b5_stalker_commander_b7</class>
     </character>
 	<character id="zat_b5_stalker_1">
 		<class>zat_b5_stalker_1</class>
@@ -447,7 +291,7 @@
    <character id="zat_b18_noah">
 		<class>zat_b18_noah</class>
    </character>
-   
+
 
 	<!--- Pripyat a17 -->
 	<character id="pri_a17_military_captain_tarasov">
@@ -507,7 +351,7 @@
 	<character id="pri_a21_sentry_lieutenant_stecenko">
 		<class>pri_a21_sentry_lieutenant_stecenko</class>
 	</character>
-	
+
 	<!--- Jupiter A12 -->
 	<character id="jup_a12_stalker_assaulter">
 		<class>jup_a12_stalker_assaulter</class>
@@ -767,7 +611,7 @@
 	</character>
 
         <!--- Zaton A2 -->
-        
+
    	<character id="zat_a2_stalker_barmen">
 		<class>zat_a2_stalker_barmen</class>
 	</character>
@@ -1027,7 +871,7 @@
    <character id="jup_a6_duty_leader">
 		<class>jup_a6_duty_leader</class>
    </character>
- 
+
 	<!-- Zaton B40 -->
    <character id="zat_b40_merc_squad_leader_1">
 		<class>zat_b40_merc_squad_leader_1</class>
@@ -1082,10 +926,10 @@
 
   <!-- Zaton b106 -->
 - <character id="zat_b106_stalker_garmata">
-  <class>zat_b106_stalker_garmata</class> 
+  <class>zat_b106_stalker_garmata</class>
   </character>
 - <character id="zat_b106_stalker_crab">
-  <class>zat_b106_stalker_crab</class> 
+  <class>zat_b106_stalker_crab</class>
   </character>
 
   <!-- Jupiter b47 -->
@@ -1148,21 +992,4 @@
 	<character id="sim_default_stalker_pri_a16">
 		<class>sim_default_stalker_pri_a16</class>
 	</character>
-
-   <!-- test_killer -->
-
-   <character id="test_killer">
-		<class>test_killer</class>
-   </character>
-	<character id="test_silencer_character">
-		<class>test_silencer_character</class>
-	</character>
-   <character id="conrack_selo_stalker">
-		<class>jup_b6_freedom_stalker_1</class>
-   </character>
-
- 	<character id="zat_stalker_medic">
-		<class>zat_stalker_medic</class>
-	</character>  
-   
 </xml>

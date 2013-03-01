@@ -181,7 +181,7 @@ surge = 2
 lair_night = 1
 territory = 1
 hunting_ground 	= 2
-sim_avail = {+zat_b42_controller_dead} true, false 
+sim_avail = {+zat_b42_controller_dead} true, false
 
 [zat_b18]:default
 surge = 2
@@ -217,7 +217,7 @@ base_hostile = 2
 base_hostile_safe = 2
 lair_night = 1
 territory_hostile = 1
-sim_avail = {+zat_b5_task_start +zat_b5_task_end} true, {-zat_b5_task_start -zat_b5_task_end} true, false 
+sim_avail = {+zat_b5_task_start +zat_b5_task_end} true, {-zat_b5_task_start -zat_b5_task_end} true, false
 
 [zat_b106_smart_terrain]:default
 territory = 2
@@ -263,7 +263,7 @@ sim_avail = {+zat_b20_plateau_way_done} true, {-zat_b20_plateau_way_started} tru
 
 [zat_b53]:default_resource_hard
 lair_night = 2
-sim_avail = {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false 
+sim_avail = {+zat_b53_go_nil} true, {+zat_b53_actor_enemy} true, {+zat_b53_thanks_dialog} true, false
 
 [zat_b12]:default
 territory = 2
@@ -504,13 +504,15 @@ lair_night = 2
 lair = 2
 
 [zaton_smrter_sim_1]:default
-lair_night = 2
-lair = 2
-base_hostile = 1
-territory_hostile = 1
-territory_monolith = 1
-base_monolith = 2
-sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
+lair = 1
+;lair_night = 2
+;lair = 2
+;base_hostile = 1
+;territory_hostile = 1
+;territory_monolith = 1
+;base_monolith = 2
+;sim_avail = {+zat_b40_merc_gone} true, {+zat_b40_find_information_complete} true, false
+sim_avail = true
 
 [zaton_smrter_sim_2]:default
 lair = 2
@@ -595,6 +597,9 @@ sim_avail = false
 sim_avail = false
 
 [zat_b38_bloodsucker_2_lair]:default_squad
+sim_avail = false
+
+[zat_b38_bloodsucker_3_lair]:default_squad
 sim_avail = false
 
 [zat_b38_bloodsuckers_sleepers]:default_squad
@@ -745,7 +750,7 @@ sim_avail = false
 
 ;---------	JUPITER UNIQUE SQUADS	--------
 [jup_b208_burers_squad]:default_squad
-sim_avail = false 
+sim_avail = false
 
 [jup_b212_jupiter_chimera_lair]:default_squad
 sim_avail = false
@@ -879,9 +884,9 @@ sim_avail = {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
 
 [jup_b6_zombie_squad_5]:default_squad
 sim_avail = {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
- 
+
 [jup_b43_stalker_assistant_squad_sq]:default_squad
-sim_avail = false 
+sim_avail = false
 
 [jup_b202_stalker_snag_squad]:default_squad
 sim_avail = false
@@ -896,13 +901,13 @@ sim_avail = false
 sim_avail = false
 
 ;[jup_b202_snag_wounded]:default_squad
-;sim_avail = false 
+;sim_avail = false
 
 [jup_b202_bandit_squad]:default_squad
 sim_avail = {+jup_b202_bandit_go_away} true, false
 
 [jup_b19_freedom_yar_squad]:default_squad
-sim_avail = false 
+sim_avail = false
 
 [jup_b19_kopatci_zombied_squad]:default_squad
 sim_avail = {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
@@ -1001,7 +1006,7 @@ sim_avail = false
 sim_avail = false
 
 [jup_b221_duty_squad]:default_squad
-sim_avail = false 
+sim_avail = false
 
 [jup_b221_freedom_squad]:default_squad
 sim_avail = false
@@ -1766,9 +1771,6 @@ base_safe = 1
 
 [jup_b19]:default
 sim_avail = {-jup_b19_agreed_to_go} true, {+jup_b19_complete} true, {+jup_b19_yar_enemy_or_dead} true, false
-;hunting_ground 	= 1
-;lair_night = 2
-;territory_zombied = 2
 base_duty = 1
 base_safe = 1
 
@@ -1876,12 +1878,9 @@ surge		= 1
 sim_avail = true
 
 [jup_b47]:default
-sim_avail = true ; {+jup_b47_all_merc_dead} true, false ; {jup_b47_actor_pick_docs} true, false ; {+jup_b47_products_info_complite} true, false ; {+jup_b47_task_end} true, false ; , {+jup_b47_all_merc_dead} true, false
-lair = 1
-lair_night = 1
+sim_avail = {+jup_b47_products_info_complite} true, {+jup_b47_all_merc_dead} true, false
 base_monolith = 2
 territory_hostile = 1
-territory_zombied = 2
 
 [jup_b6_anom_2]:default_resource_hard
 sim_avail = {-jup_b6_give_task} true, {+jup_b6_task_fail} true, {+jup_b6_anom_2_count_end} true, false
@@ -1912,9 +1911,9 @@ sim_avail = false
 sim_avail = false
 
 [jup_a9]:default_base_monolith
-sim_avail = true ; {jup_b47_actor_pick_docs} true, false ; {+jup_a9_tech_way_info +jup_a9_conservation_info +jup_a9_way_info +jup_a9_power_info} true, false
+sim_avail = {+jup_a9_tech_way_info +jup_a9_conservation_info +jup_a9_way_info +jup_a9_power_info} true, false
 territory_hostile = 1
-territory_zombied = 2
+base_monolith = 2
 
 ;---------	SIMULATION	--------
 
@@ -1976,7 +1975,7 @@ sim_avail =  false
 sim_avail =  true
 lair_night = 1
 lair = 1
-territory_zombied = 2
+territory_zombied = 1
 
 [jup_sim_11]:default_lair
 sim_avail =  true
@@ -2027,10 +2026,10 @@ lair = 2
 [jup_sim_19]:default
 base_monolith = 2
 territory_hostile = 1
-territory_zombied = 2
-lair_night = 2
+lair_night = 1
 lair = 1
 sim_avail = true
+
 
 [jup_sim_20]:default
 sim_avail =  true
@@ -2043,11 +2042,7 @@ lair = 1
 lair_night = 1
 
 [jupiter_smrter_sim_1]:default
-lair = 1
-lair_night = 2
-base_monolith = 2
-territory_monolith = 2
-territory_zombied = 2
+base_monolith = 1
 sim_avail = true
 
 [jupiter_smrter_sim_2]:default
@@ -2064,14 +2059,11 @@ sim_avail = true
 sim_avail = true
 lair_night = 1
 lair = 1
-territory_zombied = 2
-;base_monolith = 2
-;territory_hostile = 1
 
 [jupiter_smrter_sim_5]:default
 lair_night = 1
 lair = 1
-territory_zombied = 2
+territory_zombied = 1
 sim_avail = true
 
 [jupiter_smrter_sim_6]:default
@@ -2092,14 +2084,15 @@ hunting_ground = 2
 sim_avail = true
 
 [jupiter_smrter_sim_9]:default
-lair = 2
-lair_night = 2
+lair = 1
+lair_night = 1
 territory_zombied = 2
 sim_avail = true
 
 [jupiter_smrter_sim_10]:default
 lair = 1
 lair_night = 1
+base_monolith = 1
 sim_avail = true
 
 [jupiter_smrter_sim_11]:default
@@ -2126,7 +2119,7 @@ sim_avail = true
 ; --------------------------------------------------------------------------
 
 [pri_a15]:default
-sim_avail = true ; {+pri_a15_cutscene_end} true, false
+sim_avail = {+pri_a15_cutscene_end} true, false
 territory = 1
 base = 1
 lair_night = 1
@@ -2412,7 +2405,7 @@ lair = 2
 territory_zombied = 1
 
 [pri_b304_monsters_smart_terrain]:default_base
-sim_avail = true ; {+zat_b103_toolkit_2_second} true, false
+sim_avail = {+zat_b103_toolkit_2_second} true, false
 territory_monolith = 2
 territory_hostile = 2
 territory = 2

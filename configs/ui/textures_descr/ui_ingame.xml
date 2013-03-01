@@ -43,4 +43,31 @@
    <file name="wpn\wpn_crosshair_ww2">
     <texture id="wpn_crosshair_ww2" x="0" y="0" width="1024" height="1024" />
    </file>
+    <file name="wpn\wpn_crosshair_gauss">
+    <texture id="wpn_crosshair_gauss" x="0" y="0" width="1024" height="1024" />
+   </file>
+    <file name="wpn\wpn_crosshair_modern1">
+    <texture id="wpn_crosshair_modern1" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_pso1">
+    <texture id="wpn_crosshair_pso1" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_pu9130">
+    <texture id="wpn_crosshair_pu9130" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_pu9130_scratched">
+    <texture id="wpn_crosshair_pu9130_scratched" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_susat">
+    <texture id="wpn_crosshair_susat" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_susat_moist">
+    <texture id="wpn_crosshair_susat_moist" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_vsk">
+    <texture id="wpn_crosshair_vsk" x="0" y="0" width="1024" height="1024" />
+   </file>
+   <file name="wpn\wpn_crosshair_zf9">
+    <texture id="wpn_crosshair_zf9" x="0" y="0" width="1024" height="1024" />
+   </file>
 </w>

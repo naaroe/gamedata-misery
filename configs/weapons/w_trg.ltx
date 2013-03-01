@@ -15,16 +15,16 @@ default_to_ruck         = false
 sprint_allowed       	= true
 
 ;-------------------------------------------------------------------------------
-cost					= 28600
+cost					= 61840
 weapon_class			= sniper_rifle
-inv_weight				= 5.1
+inv_weight				= 5.103
 
 upgrades                = up_gr_firstab_svd, up_gr_seconab_svd, up_gr_thirdab_svd, up_gr_fourtab_svd, up_gr_fourtcd_svd, up_gr_fourtef_svd
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_svd
 
 ;------TTX------------------------------------------------------------------------
-hit_power           	= 0.575, 0.575, 0.575, 0.575
+hit_power           	= 0.615, 0.615, 0.615, 0.615
 hit_impulse		= 20
 hit_type 		= fire_wound
 fire_distance           = 1050
@@ -139,8 +139,8 @@ fire_point           	= 0.0, 0.169, 0.902
 ;fire_point2             = 0.0, 0.129, 0.942
 fire_point2          	= 0.0, 0.169, 0.902
 
-flame_particles			= weapons\generic_weapon06
-smoke_particles			= weapons\generic_shoot_00
+;flame_particles			= weapons\generic_weapon06
+smoke_particles         = weapons\generic_shoot_00
 rpm_empty_click 		= 200
 
 shell_point		 	= 0.0, 0.129, 0.192
@@ -175,18 +175,17 @@ zoom_enabled				= true
 zoom_rotate_time			= 0.25
 scope_zoom_factor			= 14	;œ—Œ-1 4X
 
-scope_texture				= wpn_crosshair_ww2
+scope_texture				= wpn_crosshair_m24
 scope_name 					= wpn_addon_scope
 scope_x 						= 60
 scope_y 						= -2
 
-silencer_name           = wpn_addon_silencer    ; section name for the attachable silencer
-silencer_x              = 269                ; offset in inventory icon
-silencer_y              = 29
+silencer_name           = wpn_addon_silencer_1143x23    ; section name for the attachable silencer
+silencer_x              = 270                ; offset in inventory icon
+silencer_y              = -12
 
 silencer_smoke_particles 	= weapons\generic_shoot_00
-snd_silncer_shot			= weapons\trg42_silent
-snd_silncer_shot1			= weapons\trg42_silent_1
+snd_silncer_shot			= weapons\trg\trg42_shoot_sil
 
 silencer_light_color			= 0.6,0.5,0.3
 silencer_light_range			= 0.01
@@ -195,15 +194,11 @@ silencer_light_var_range	= 0.5
 silencer_light_time 			= 0.2
 
 ;Á‚ÛÍË
-snd_draw				= weapons\rpk_draw
-snd_holster				= weapons\big_holster
-snd_shoot				= weapons\trg42_shoot
-snd_shoot1				= weapons\trg42_shoot_1
-snd_shoot2				= weapons\trg42_shoot_1
-snd_shoot3				= weapons\trg42_shoot
-snd_shoot4				= weapons\trg42_shoot_1
-snd_empty				= weapons\gen_empty, 0.5
-snd_reload				= weapons\trg42_reload
+snd_draw				= weapons\trg\trg42_draw
+snd_holster				= weapons\generic\rifle_holster
+snd_shoot				= weapons\trg\trg42_shoot
+snd_empty				= weapons\generic\rifle_modern_empty, 0.5
+snd_reload				= weapons\trg\trg42_reload
 snd_close				= weapons\generic_close
 snd_bore				= weapons\draw_silent
 snd_bore1				= weapons\mp5_bore

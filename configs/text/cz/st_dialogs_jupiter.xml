@@ -43,7 +43,7 @@
 		<text>We'll need a suit with a closed-cycle respiratory module to get to Pripyat. </text>
 	</string>
 	<string id="jup_a10_stalker_vano_need_outfit_1">
-		<text>Man, that sucks! My suit has one - you can stick your head into an oven and breathe just fine, but I pawned it at Hawaiian's. If only we could get it back - I'm broke and we'll need 26,000...</text>
+		<text>Man, that sucks! My suit has one - you can stick your head into an oven and breathe just fine, but I pawned it at Hawaiian's. If only we could get it back - I'm broke and we'll need 34,000...</text>
 	</string>
 	<string id="jup_a10_stalker_vano_outfit_money_yes_0">
 		<text>I could give you money for the suit.</text>
@@ -52,13 +52,13 @@
 		<text>Just like that? Are you serious?</text>
 	</string>
 	<string id="jup_a10_stalker_vano_outfit_money_yes_11">
-		<text>Here, take your 26,000.</text>
+		<text>Here, take your 34,000.</text>
 	</string>
 	<string id="jup_a10_stalker_vano_outfit_money_yes_111">
 		<text>You're really saving my ass here, friend. Let me follow you and help where I can!</text>
 	</string>
 	<string id="jup_a10_stalker_vano_outfit_money_yes_12">
-		<text>I'd give you the money but I don't have 26,000.</text>
+		<text>I'd give you the money but I don't have 34,000.</text>
 	</string>
 	<string id="jup_a10_stalker_vano_outfit_money_yes_121">
 		<text>It happens to the best of us, friend... Believe me, I know.</text>
@@ -1075,10 +1075,10 @@
 		<text>Let’s have a look... Well, your liver is bigger than I'd expect, but that's an occupational hazard, right? Apart from that, you’re as healthy as a burer.</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_111">
-		<text>Well, definitely you need a treatment. But I won't do anything for free. 3500 for a full treatment, and 500 for irradiation removing only.</text>
+		<text>Well, definitely you need a treatment. But I won't do anything for free. I take 1850 for full health treatment regardless of your problems, this does not include irradiation removing which will cost you separetly 1480 RU.</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_11">
-		<text> And what do you think? Am I dead already?</text>
+		<text>And what do you think? Am I dead already?</text>
 	</string>
 	<string id="jup_a6_stalker_medik_need_health_care_1111">
 		<text>Alright, I'll pay. After all I won't take money to the grave.</text>
@@ -2260,7 +2260,7 @@
 		<text>You got any other work for me?</text>
 	</string>
 	<string id="jup_b220_trapper_burers_hunt_1">
-		<text>Sure. A stalker squad went into the tunnels to the north of the plant the other day and ran into a mutant lair. They were all so shocked that none of them can even explain what kind of mutants they were, but two of the stalkers didn't make it out of there alive. After that the folks at Yanov got real scared about the whole thing, so they put together a 5,000 reward for anyone who's willing to deal with this lair. It's a dangerous job, so you decide for yourself... Will you do it?</text>
+		<text>Sure. A stalker squad went into the tunnels to the north of the plant the other day and ran into a mutant lair. They were all so shocked that none of them can even explain what kind of mutants they were, but two of the stalkers didn't make it out of there alive. After that the folks at Yanov got real scared about the whole thing, so they put together a 6,600 reward for anyone who's willing to deal with this lair. It's a dangerous job, so you decide for yourself... Will you do it?</text>
 	</string>
 	<string id="jup_b220_trapper_burers_hunt_11">
 		<text>I'll do it.</text>
@@ -2275,7 +2275,7 @@
 		<text>I don't blame you... I doubt anyone will have the balls to take on a whole lair of mutants.</text>
 	</string>
 	<string id="jup_b220_trapper_burers_hunt_2">
-		<text>Same as before. Unidentified mutants in the tunnels to the north of the Jupiter plant. 15,000 reward... Will you do it after all?</text>
+		<text>Same as before. Unidentified mutants in the tunnels to the north of the Jupiter plant. 6,600 reward... Will you do it after all?</text>
 	</string>
 	<string id="jup_b220_trapper_burers_hunt_3">
 		<text>Stalkers are worried about the mutants in the tunnels at the moment...</text>
@@ -2338,7 +2338,7 @@
 		<text>Up to you... There's still time to change your mind before other hunters take the job.</text>
 	</string>
 	<string id="jup_b220_trapper_swamp_bloodsuckers_hunt_2">
-		<text>Same as before... The group of swamp bloodsuckers in Fen, behind the cement factory. The reward is 10,500... You game?</text>
+		<text>Same as before... The group of swamp bloodsuckers in Fen, behind the cement factory. The reward is 4,500... You game?</text>
 	</string>
 	<string id="jup_b220_trapper_swamp_bloodsuckers_hunt_3">
 		<text>Nothing other than the bloodsuckers in Fen at the moment...</text>
@@ -2350,7 +2350,7 @@
 		<text>Now stalkers can relax a little. Here's your fee as agreed.</text>
 	</string>
 	<string id="jup_b220_trapper_swamp_bloodsuckers_hunted_2">
-		<text>Yeah, the local stalkers will be happy to be rid of those neighbors. They even put together reward money for it, 10,500 to be precise... Here, take it.</text>
+		<text>Yeah, the local stalkers will be happy to be rid of those neighbors. They even put together reward money for it, 4,500 to be precise... Here, take it.</text>
 	</string>
 	<string id="jup_b220_trapper_zaton_chimera_hunted_0">
 		<text>Me and Gonta killed the chimera at Zaton.</text>

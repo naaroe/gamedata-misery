@@ -1,102 +1,96 @@
----------------------------------
------------------------
-To Czech language translated by: seeZ
---------------------------
----------------------------------
-
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="hide_from_surge_message">
-		<text>Pozor! Hrozн nebezpeин blowoutu!</text>
+		<text>Attention! Blowout imminent!</text>
 	</string>
 	<string id="hide_from_surge_descr_1_a">
-		<text>Hrozн nebezpeин blowoutu, rychle si najdмte ъkryt!</text>
+		<text>Blowout imminent, proceed to shelter immediately!</text>
 	</string>
 	<string id="hide_from_surge_descr_2_a">
-		<text>V prщbмhu blowoutu nemщћete vyjнt z krytu</text>
+		<text>You are not allowed to leave the shelter during a blowout.</text>
 	</string>
 	<string id="hide_from_surge_name_1">
-		<text>Blowout: Najdмte Kryt</text>
+		<text>Blowout: Find Shelter</text>
 	</string>
 	<string id="hide_from_surge_name_2">
-		<text>Blowout: Zщstaтte v Krytu</text>
+		<text>Blowout: Stay sheltered</text>
 	</string>
 
 	<!-- AtmosFear Fallout -->
 	<string id="hide_from_fallout_rad_message_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_rad_message">
-		<text>Radioaktivnн fallout zaинnб.</text>
+		<text>Radioactive fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_1_a">
-		<text>Vysokэ level radiace. Mмli by jste se schovat pшed radioativnнm falloutem.</text>
+		<text>The level of radiation is dangerous. You should hide from the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_2_a">
-		<text>Nemмli by jste opouљtмt kryt v prщbмhu radioaktivnнho falloutu.</text>
+		<text>You shouldn't leave the shelter during the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_1">
-		<text>Radioaktivnн fallout: Najdмte kryt</text>
+		<text>Radioactive fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_2">
-		<text>Radioaktivnн fallout: Zщstaтte v krytu</text>
+		<text>Radioactive fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_rad_message_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_rad_message">
-		<text>Radioaktivnн fallout skonиil</text>
+		<text>Radioactive fallout has ended</text>
 	</string>
 	
 	<string id="hide_from_fallout_acid_message_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_acid_message">
-		<text>Chemickэ fallout zaинnб.</text>
+		<text>Chemical fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_1_a">
-		<text>Vysokэ level kontaminace. Mмli by jste se schovat pшed chemickэm falloutem.</text>
+		<text>The level of contamination is dangerous. You should hide from the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_2_a">
-		<text>Nemмli by jste opouљtмt kryt v prщbмhu chemickйho falloutu.</text>
+		<text>You shouldn't leave the shelter during the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_1">
-		<text>Chemickэ fallout: Najdмte kryt</text>
+		<text>Chemical fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_2">
-		<text>Chemickэ fallout: Zщstaтte v krytu</text>
+		<text>Chemical fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_acid_message_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_acid_message">
-		<text>Chemickэ fallout skonиil</text>
+		<text>Chemical fallout has ended</text>
 	</string>
 
 	<!-- AtmosFear Psi Storm -->
 	<string id="hide_from_psi_storm_message_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_psi_storm_message">
-		<text>Psi bouшe zaинnб.</text>
+		<text>Psi storm begins.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_1_a">
-		<text>Mмli by jste se schovat pшed psi bouшн.</text>
+		<text>You should hide from the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_2_a">
-		<text>Nemмli by jste opouљtмt kryt v prщbмhu psi bouшe.</text>
+		<text>You shouldn't leave the shelter during the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_name_1">
-		<text>Psi bouшe: Najdмte kryt</text>
+		<text>Psi storm: Find shelter</text>
 	</string>
 	<string id="hide_from_psi_storm_name_2">
-		<text>Psi bouшe: Zщstaтte v krytu</text>
+		<text>Psi storm: Stay sheltered</text>
 	</string>
 	<string id="end_psi_storm_caption">
-		<text>Pozor!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_psi_storm_message">
-		<text>Psi bouшe skonиila</text>
+		<text>Psi storm has ended</text>
 	</string>
 
 </string_table>

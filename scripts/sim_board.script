@@ -590,7 +590,7 @@ function sim_board:__init()
 	self.tmp_assigned_squad = {}
 	self.tmp_entered_squad = {}
 
-	printf("CREATE NEW SIM BOARD [%s]", tostring(self.sid))
+	--printf("CREATE NEW SIM BOARD [%s]", tostring(self.sid))
 end
 function sim_board:start_sim()
 	self.simulation_started = true
@@ -605,9 +605,10 @@ function sim_board:set_actor_community(community)
 end
 --' Регистрация нового смарта.
 function sim_board:register_smart(obj)
-	printf("register_smart %s", obj:name())
+	--printf("register_smart %s", obj:name())
 	if self.smarts[obj.id] ~= nil then
 		abort("Smart already exist in list [%s]", obj:name())
+		return
 	end
 
 	self.smarts[obj.id] = {smrt = obj, squads = {}, stayed_squad_quan = 0}
@@ -632,16 +633,16 @@ function sim_board:init_smart(obj)
 end
 --' АнРегистрация смарта.
 function sim_board:unregister_smart(obj)
-	if self.smarts[obj.id] == nil then
-		abort("Trying to unregister nil smart [%s]", obj:name())
-	end
+	--if self.smarts[obj.id] == nil then
+		--abort("Trying to unregister nil smart [%s]", obj:name())
+	--end
 
 	self.smarts[obj.id] = nil
 end
 
 --' Создание нового отряда
 function sim_board:create_squad(spawn_smart, sq_id)
-	printf("create squad called")
+	--printf("create squad called")
 	local squad_id = tostring(sq_id)
 
 	local squad = alife():create(squad_id,spawn_smart.position,
@@ -649,7 +650,7 @@ function sim_board:create_squad(spawn_smart, sq_id)
 							spawn_smart.m_game_vertex_id)
 	--local squad = squad_class(self, squad_id, faction_name, settings_id)
 	--squad:init_squad(spawn_smart)
-	printf("Creating squad[%s] in smart[%s]", squad_id, spawn_smart:name())
+	--printf("Creating squad[%s] in smart[%s]", squad_id, spawn_smart:name())
 	--' Определяем в каком смарте создать новый отряд
 	squad:create_npc(spawn_smart)
 	squad:set_squad_relation()
@@ -667,7 +668,7 @@ function sim_board:create_squad(spawn_smart, sq_id)
 end
 --' Удалить отряд
 function sim_board:remove_squad(squad)
-	printf("Remove squad %s", tostring(squad.id))
+	--printf("Remove squad %s", tostring(squad.id))
 	if squad.current_action == nil or
  		squad.current_action.dest_smrt == nil
 	then
@@ -733,6 +734,7 @@ function sim_board:exit_smart(squad, smart_id)
 
 	if smart == nil then
 		abort("Smart nil while smart_id not nil [%s]", tostring(smart_id))
+		return
 	end
 
 	printf("Squad %s exit smart %s. Quan = %s", tostring(squad.id), smart.smrt:name(), tostring(smart.stayed_squad_quan))
@@ -743,7 +745,7 @@ function sim_board:exit_smart(squad, smart_id)
 end
 --' Отряд занимает смарт (увеличиваются ресурсы)
 function sim_board:enter_smart(squad, smart_id, after_load)
-	callstack()
+	--callstack()
 	if self.smarts[smart_id] == nil then
 		printf("   to tmp")
 		if self.tmp_entered_squad[smart_id] == nil then
@@ -757,9 +759,10 @@ function sim_board:enter_smart(squad, smart_id, after_load)
 
 	if squad.entered_smart ~= nil then
 		abort("Couldn enter to smart, becouse i'm not leave old one. Squad [%s]", squad.id)
+		return
 	end
 	squad.entered_smart = smart_id
-	printf("Squad %s enter smart %s. Quan = %s", tostring(squad.id), smart.smrt:name(), tostring(smart.stayed_squad_quan))
+	--printf("Squad %s enter smart %s. Quan = %s", tostring(squad.id), smart.smrt:name(), tostring(smart.stayed_squad_quan))
 
 	--smart.smrt:refresh()
 
@@ -862,14 +865,16 @@ function sim_board:get_squad_target(squad)
 	local available_targets = {}
 	local most_priority_task = nil
 	local max_prior = 0
+	local curr_prior = 0
+	local target_tbl
 	for k,v in pairs(simulation_objects.get_sim_obj_registry().objects)	do
-		local curr_prior = 0
+		curr_prior = 0
 		-- Проверка против выдачи таска на себя.
 		if v.id ~= squad.id then
 			curr_prior = v:evaluate_prior(squad)
 		end
 		if curr_prior > 0 then
-			local target_tbl = {prior = curr_prior, target = v}
+			target_tbl = {prior = curr_prior, target = v}
 			table.insert(available_targets, target_tbl)
 		end
 	end

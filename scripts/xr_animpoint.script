@@ -72,17 +72,14 @@ end
 function action_animpoint:execute()
 	action_base.execute(self)
 
-	local pos, dir = self.st.animpoint:get_animation_params()
 	if not(self.st.animpoint.started) then
 		self.st.animpoint:start() -- zatychka
 	end
 
 --	printf("%s animpoint action %s", self.object:name(), tostring(self.st.animpoint:get_action()))
 --	state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, nil,
-	state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, {look_position = self.st.animpoint.look_position},
-						{animation_position = pos, animation_direction = dir} )
 
-
+	state_mgr.set_state(self.object, self.st.animpoint:get_action(), nil, nil, {look_position = self.st.animpoint.look_position},{animation_position = self.st.animpoint.position, animation_direction = self.st.animpoint.smart_direction} )
 end
 function action_animpoint:net_destroy(npc)
 	self.st.animpoint:stop()
@@ -159,7 +156,10 @@ function animpoint:calculate_position()
 	self.position_vertex = level.vertex_id(self.position)
 	self.vertex_position = level.vertex_position(self.position_vertex)
 
-	self.smart_direction = angle_to_direction(smartcover.angle)
+	self.smart_direction = self.st.direction or angle_to_direction(smartcover.angle)
+
+	self.st.smart_direction = self.smart_direction
+	--alun_utils.printf("self.st.direction = %s || self.smart_direction = %s",self.st.direction and alun_utils.vector_to_string(self.st.direction),self.smart_direction and alun_utils.vector_to_string(self.smart_direction))
 	--printf("%s pos %s", self.st.cover_name, vec_to_str(self.position))
 	--printf("%s dir %s", self.st.cover_name, vec_to_str(self.smart_direction))
 
@@ -205,10 +205,6 @@ function animpoint:calculate_position()
 		abort("There is no approved actions for stalker[%s] in animpoint[%s]", db.storage[self.npc_id].object:name(), self.object:name())
 	end
 	]]
-end
--- ¬озвращает позицию и направление смарткавера (чтобы отыграть анимацию с прив€зкой к точке)
-function animpoint:get_animation_params()
-	return self.position, self.smart_direction
 end
 --' ¬озвращает достиг ли персонаж точки начала работы схемы
 function animpoint:position_riched()
@@ -267,9 +263,9 @@ function animpoint:fill_approved_actions()
 		end
 	end
 
-	if(#self.st.approved_actions==0) then
+	--if(#self.st.approved_actions==0) then
 		--abort("There is no approved actions for stalker[%s] in animpoint[%s]", db.storage[self.npc_id].object:name(), self.object:name())
-	end
+	--end
 end
 -- „увак дошел до точки и может начинать работать
 function animpoint:start()
@@ -466,6 +462,9 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 	--st.reach_movement	= utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk")
 	st.reach_movement = xr_logic.parse_condlist(db.actor, "animpoint", "reach_movement", utils.cfg_get_string(ini, section, "reach_movement", npc, false, "", "walk"))
 	st.reach_distance = st.reach_distance*st.reach_distance
+
+	st.direction = alun_utils.read_from_ini(ini,section,"direction","string",nil)
+	st.direction = st.direction and alun_utils.string_to_vector(st.direction)
 
 	local tmp = utils.cfg_get_string(ini, section, "avail_animations", npc, false, "", nil)
 

@@ -10,8 +10,8 @@ description					= st_wpn_fort_descr
 ef_weapon_type			  	= 5
 
 ;-----------------------------------------------------------------------------
-cost					= 3560
-inv_weight				= 0.83
+cost					= 7120
+inv_weight				= 0.832
 
 upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
 installed_upgrades      =
@@ -131,8 +131,8 @@ fire_point              	= 0.0, 0.148, 0.161
 ;strap_bone0					= bip01_spine2
 ;strap_bone1					= bip01_spine1
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 
 shell_point		 				= 0.0, 0.133, 0.047
 shell_dir		 				= 0.0, 0.0, 0.4
@@ -226,8 +226,8 @@ anm_reload_empty			= fort_reload,    fort_close
 anm_idle_moving 			= fort_idle_moving
 anm_idle_moving_empty 		= fort_idle_moving, fort_opened
 
-anm_idle_sprint					= 1911_sprint
-anm_idle_sprint_empty			= 1911_sprint, 1911_opened
+anm_idle_sprint					= colt1911_idle_sprint
+anm_idle_sprint_empty			= colt1911_idle_sprint, colt1911_opened
 
 anm_bore					= fort_idle_bore
 anm_bore_empty				= fort_idle_bore, fort_opened
@@ -241,23 +241,6 @@ aim_hud_offset_rot_16x9			=  0.034000, 0.057500, 0.010000
 ;-----------------------------------------------------------------------------
 ; ”никальные
 ;-----------------------------------------------------------------------------
-[wpn_fort_snag]:wpn_fort
-$spawn                  	= "weapons\wpn_fort_snag"		; option for Level Editor
-
-cost					= 700
-
-upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
-installed_upgrades      = up_firsta_fort, up_thirda_fort
-upgrade_scheme          = upgrade_scheme_fort
-
-;--TTX----------------------------------------------------------------------------
-hit_power           		= 0.25, 0.25, 0.25, 0.25
-hit_impulse	 		 		= 45
-hit_type 					= fire_wound
-fire_distance           	= 620
-bullet_speed		 		= 690
-rpm                     	= 265
-rpm_empty_click 	 		= 120
 
 ;---------------------------
 ;AP Weapon Section for NPCs
@@ -274,3 +257,193 @@ ammo_class		 		=  ammo_9x18_ap, ammo_9x18_pmm, ammo_9x18_fmj
 upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_fort
+
+;===================================================================================================
+[wpn_fort_custom]:wpn_fort
+
+cost					= 8760
+inv_weight				= 0.845
+
+installed_upgrades      = up_fiftha_fort
+
+hit_power           		= 0.23, 0.23, 0.23, 0.23
+hit_impulse	 		 		= 45
+fire_distance           	= 580
+bullet_speed		 		= 650
+rpm                     	= 240
+
+hud                      	= wpn_fort_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.075
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
+
+ammo_mag_size		 	= 12
+ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
+
+fire_dispersion_base	= 0.53
+
+inv_name				= st_wpn_fort_custom
+inv_name_short			= st_wpn_fort_custom
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 63
+
+visual                   	= dynamics\weapons\wpn_fort\wpn_for1.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_fort_custom_hud]:wpn_fort_hud
+
+item_visual						= dynamics\weapons\wpn_fort\wpn_for1_hud
+;===================================================================================================
+[wpn_fort_camo]:wpn_fort
+
+cost					= 9920
+inv_weight				= 0.726
+
+installed_upgrades      = up_firsta_fort, up_fiftha_fort
+
+hit_power           		= 0.23, 0.23, 0.23, 0.23
+hit_impulse	 		 		= 45
+fire_distance           	= 580
+bullet_speed		 		= 650
+rpm                     	= 235
+
+hud                      	= wpn_fort_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.075
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
+
+ammo_mag_size		 	= 12
+ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
+
+fire_dispersion_base	= 0.53
+
+inv_name			= st_wpn_fort_camo
+inv_name_short			= st_wpn_fort_camo
+description			= st_wpn_fort_camo_descr
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 66
+
+visual                   	= dynamics\weapons\wpn_fort\wpn_for2.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_fort_camo_hud]:wpn_fort_hud
+
+item_visual						= dynamics\weapons\wpn_fort\wpn_for2_hud
+;===================================================================================================
+[wpn_fort_rusty]:wpn_fort
+
+cost					= 5080
+inv_weight				= 0.848
+
+hit_power           		= 0.23, 0.23, 0.23, 0.23
+hit_impulse	 		 		= 45
+fire_distance           	= 580
+bullet_speed		 		= 640
+rpm                     	= 230
+
+hud                      	= wpn_fort_rusty_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.075
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
+
+ammo_mag_size		 	= 12
+ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
+
+fire_dispersion_base	= 0.6
+
+inv_name				= st_wpn_fort_rusty
+inv_name_short			= st_wpn_fort_rusty
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 65
+
+visual                   	= dynamics\weapons\wpn_fort\wpn_for3.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_fort_rusty_hud]:wpn_fort_hud
+
+item_visual						= dynamics\weapons\wpn_fort\wpn_for3_hud
+;===================================================================================================
+[wpn_fort_worn]:wpn_fort
+
+cost					= 7368
+inv_weight				= 0.836
+
+hit_power           		= 0.23, 0.23, 0.23, 0.23
+hit_impulse	 		 		= 45
+fire_distance           	= 580
+bullet_speed		 		= 650
+rpm                     	= 235
+
+hud                      	= wpn_fort_worn_hud
+
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0075
+misfire_end_prob	     	= 0.075
+condition_shot_dec      	= 0.0016
+condition_queue_shot_dec	= 0.0016
+
+ammo_mag_size		 	= 12
+ammo_class		 	= ammo_9x18_fmj, ammo_9x18_pmm, ammo_9x18_ap
+
+fire_dispersion_base	= 0.58
+
+inv_name				= st_wpn_fort_worn
+inv_name_short			= st_wpn_fort_worn
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 6
+inv_grid_y				= 64
+
+visual                   	= dynamics\weapons\wpn_fort\wpn_for4.ogf
+
+snd_reload					= weapons\generic\pistol2_reload, 0.8
+
+[wpn_fort_worn_hud]:wpn_fort_hud
+
+item_visual						= dynamics\weapons\wpn_fort\wpn_for4_hud
+
+[wpn_fort_snag]:wpn_fort_custom
+$spawn                  	= "weapons\wpn_fort_snag"		; option for Level Editor
+
+cost					= 9520
+
+inv_weight				= 0.807
+
+upgrades                = up_gr_firstab_fort, up_gr_seconab_fort, up_gr_thirdab_fort, up_gr_fourtab_fort, up_gr_fifthab_fort, up_gr_fifthcd_fort
+installed_upgrades      = up_firsta_fort, up_thirda_fort, up_fiftha_fort
+upgrade_scheme          = upgrade_scheme_fort
+
+;--TTX----------------------------------------------------------------------------
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 45
+hit_type 					= fire_wound
+fire_distance           	= 620
+bullet_speed		 		= 690
+rpm                     	= 265
+rpm_empty_click 	 		= 120

@@ -1,22 +1,15 @@
 -- axr_quest_master
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 function on_game_start()
 	callback_register("actor_on_item_take",on_item_take)
 end
 
 function alun_stashes()
-	-- Stash 1
-	local pos = vector():set(434.29071044922,42.37015914917,1.3976941108704)
-	local box1_pos = vector():set(412.80319213867,43.936130523682,1.6001467704773)
-	local stash = alife():create("inv_backpack",pos,1677080,293)
-	alife():create("box_wood_01",box1_pos,1642352,293)
-	create_items("medkit",2,stash.id)
-	create_items("stimpack",2,stash.id)
-	create_items("water_drink",1,stash.id)
-	create_items("itm_alun_journal_1",1,stash.id)
-
 	--[[
 	-- scare 1
 	-- create animpoint
@@ -40,20 +33,6 @@ function on_item_take(item)
 
 			alife():create("itm_alun_journal_2",vector():set(62.007720947266,-1.5662006139755,452.41647338867),1069958,41)
 			alife():create("itm_alun_journal_2",vector():set(118.51746368408,-3.8533968925476,191.03785705566),1169348,316)
-
-			local se_cover = alife():create("test_sc",vector():set(469.06042480469,37.1,41.552244567871),1729876,293)
-			se_cover.last_description = "animpoint_sit_high"
-			se_cover.loopholes["animpoint_sit_high"] = 1
-			local data = alun_utils.get_smart_cover_data(se_cover)
-			data.description = "animpoint_sit_high"
-			data.last_description = "animpoint_sit_high"
-			data.loopholes["animpoint_sit_high"] = 1
-			alun_utils.set_smart_cover_data(data,se_cover)
-
-			local se_npc = alife():create("sim_default_stalker_1",vector():set(469.44943237305,36.999774932861,41.651809692383),1730886,293)
-			data = alun_utils.get_stalker_data(se_npc)
-			data.custom_data = "[logic]\n cfg = scripts\\alun\\zaton\\zat_test_sc.ltx"
-			alun_utils.set_stalker_data(data,se_npc)
 		end
 	elseif (item:section() == "itm_alun_journal_2") then--river
 		if not (has_alife_info("alun_riddle_1")) then
@@ -93,16 +72,21 @@ function on_item_take(item)
 			create_items("itm_alun_journal_6",1,stash.id)
 			create_items("bread",1,stash.id)
 
+			if (axr_misery.ActorClass == "sniper") then
+				local se_wpn = alife():create("wpn_m1891_alun",stash.position,0,0,stash.id)
+				local data = stpk_utils.get_weapon_data(se_wpn)
+				--table.insert(data.upgrades,"up_gr_firstab_svd")
+				stpk_utils.set_weapon_data(data,se_wpn)
 
-			if (axr_misery.ActorClass == "assaulter") then
-				create_items("wpn_ak47m_alun",1,stash.id)
-				create_ammunition("ammo_7.62x39_ap",2,stash.id)
-			elseif (axr_misery.ActorClass == "sniper") then
-				create_items("wpn_m1891_alun",1,stash.id)
-				create_ammunition("ammo_7.62x39_ap",2,stash.id)
+				create_ammunition("ammo_7.62x39_ap",3,stash.id)
 			else
-				create_items("wpn_ak47m_alun",1,stash.id)
-				create_ammunition("ammo_7.62x39_ap",2,stash.id)
+				local se_wpn = alife():create("wpn_ak47m_alun",stash.position,0,0,stash.id)
+				local data = stpk_utils.get_weapon_data(se_wpn)
+				--table.insert(data.upgrades,"up_gr_firstab_ak74")
+				data.addon_flags = 1
+				stpk_utils.set_weapon_data(data,se_wpn)
+
+				create_ammunition("ammo_7.62x39_ap",4,stash.id)
 			end
 		end
 	elseif (item:section() == "itm_alun_journal_6") then --electricity
@@ -112,6 +96,8 @@ function on_item_take(item)
 
 			local stash = alife():create("inv_backpack",vector():set(-336.76156616211,40.072235107422,-398.68731689453),278578,29)
 			create_items("itm_alun_journal_7",1,stash.id)
+			create_ammunition("ammo_7.62x39_ap",2,stash.id)
+			create_items("grenade_f1",1,stash.id)
 		end
 	elseif (item:section() == "itm_alun_journal_7") then--bloodsuckerlair
 		if not (has_alife_info("alun_riddle_6")) then
@@ -132,18 +118,18 @@ function on_item_take(item)
 			local se_cover = alife():create("axr_sc_zat_b38_stalker_1",vector():set(-440.99615478516,4.99871301651,47.874130249023),122126,14)
 			se_cover.last_description = "animpoint_sit_low"
 			se_cover.loopholes["animpoint_sit_low"] = 1
-			local data = alun_utils.get_smart_cover_data(se_cover)
+			local data = stpk_utils.get_smart_cover_data(se_cover)
 			data.description = "animpoint_sit_low"
 			data.last_description = "animpoint_sit_low"
 			data.loopholes["animpoint_sit_low"] = 1
-			alun_utils.set_smart_cover_data(data,se_cover)
+			stpk_utils.set_smart_cover_data(data,se_cover)
 
 
 			-- create NPC and give logic
 			local se_npc = alife():create("sim_default_stalker_1",vector():set(-440.99615478516,4.99871301651,47.874130249023),122126,14)
-			data = alun_utils.get_stalker_data(se_npc)
+			data = stpk_utils.get_stalker_data(se_npc)
 			data.custom_data = "[logic]\n cfg = scripts\\alun\\zaton\\zat_riddle_b38.ltx"
-			alun_utils.set_stalker_data(data,se_npc)
+			stpk_utils.set_stalker_data(data,se_npc)
 
 			create_items("itm_alun_journal_8",1,se_npc.id)
 		end
@@ -171,7 +157,7 @@ function on_item_take(item)
 		if not (has_alife_info("alun_riddle_9")) then
 			give_info("alun_riddle_9")
 			give_info("riddle_master_zaton")
-			news_manager.send_tip(db.actor, "st_sp_achievement_22_descr", nil, "riddle_master_zaton", nil, nil)
+			news_manager.send_tip(db.actor, "st_sp_achievement_22_hint", nil, "riddle_master_zaton", nil, nil)
 		end
 	end
 end

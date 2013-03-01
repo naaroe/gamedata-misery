@@ -93,11 +93,12 @@ function main_menu:InitCallBacks()
 
 	self:Register(self, "self")
 	self:AddCallback("self",	ui_events.MAIN_MENU_RELOADED, self.OnMenuReloaded, self)
-	-- Alundaio
-	if (axr_main) then axr_main.main_menu_on_init_callbacks(self) end
-	-- End Alundaio
 end
 function main_menu:OnMsgOk()
+	if (self.mbox_mode == 2) then
+		local console = get_console()
+		console:execute("quit")
+	end
 	self.mbox_mode = 0
 end
 

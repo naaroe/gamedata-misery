@@ -29,7 +29,7 @@
 	</string>
 		<string id="st_breadold_descr">
 		<text>A bread loaf baked outside the Zone.</text>
-	</string>	
+	</string>
 	<string id="st_porn">
 		<text>Porn magazine</text>
 	</string>
@@ -37,7 +37,7 @@
 		<text>100 pages of prime russian girls. A popular way of mentally getting away from The Zone for a moment</text>
 	</string>
 	<string id="st_joint">
-		<text>Canabis joint</text>
+		<text>Cannabis joint (zone produced)</text>
 	</string>
 	<string id="st_joint_descr">
 		<text>A joint calms and relaxes your mind in a very pleasant way with a soothing effect if you have alcohol in your blood. It also makes you hungry very fast. Joints are valuable in The Zone.</text>
@@ -84,6 +84,12 @@
 	<string id="st_meat_dog_descr">
 		<text>A small but hot meal of cooked dog chops blended with garlic, peppers and mushrooms. Served in an old tin box. A cheap alternative to the more popular boar beef.</text>
 	</string>
+		<string id="st_meat_pseudodog">
+		<text>Pseudodog meat</text>
+	</string>
+	<string id="st_meat_pseudodog_descr">
+		<text>Portion of cooked psuedodog meat chops. Good nutrition value due to dense muscle mass of the animal.</text>
+	</string>
 		<string id="st_meat_flesh">
 		<text>Fat bacon</text>
 	</string>
@@ -101,7 +107,7 @@
 	</string>
 	<string id="st_meat_bloodsucker_descr">
 		<text>A small but hot meal made from bloodsucker flesh and chilis with added mushrooms. Served in a tin box.</text>
-	</string>	
+	</string>
 	<string id="st_meat_snork">
 		<text>Roasted Snork hand.</text>
 	</string>
@@ -136,10 +142,10 @@
 		<text>A prototype of an expanded functionality anomalous frequency scanner. This device comes with a program used to identify static areas of anomalous activity stored in its database, while retaining the ability to locate artifacts. The position of anomalous areas and artifacts is displayed on a special screen. The artifact search mode, which can be activated by opening the front LED display, has been modified to detect anomalous formations currently unknown to science.</text>
 	</string>
 	<string id="st_device_torch_descr">
-		<text>A standard head-mounted flashlight. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely.</text>
+		<text>A standard head-mounted flashlight in fully working order. Useful for stalkers who find themselves out and about after dark, but may attract trouble if used unwisely. Relatively low power consumption.</text>
 	</string>
 	<string id="st_device_torch_name">
-		<text>Flashlight</text>
+		<text>Head lamp</text>
 	</string>
 	<string id="st_drug_anabiotic">
 		<text>Anabiotics</text>
@@ -195,14 +201,14 @@
 	<string id="st_medkit">
 		<text>First-aid kit</text>
 	</string>
+	<string id="st_medkit_descr">
+		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical and thermal burns and various types of poisoning.</text>
+	</string>
 	<string id="st_medkit_army">
 		<text>Army medkit</text>
 	</string>
 	<string id="st_medkit_army_descr">
 		<text>A specialized medical kit for providing first aid to combat casualties. The kit includes blood coagulants based on menadione, painkillers, antibiotics and immunostimulants, as well as a kit for removing bullets and fragments from the body. This medkit is issued to army personnel as standard and is sometimes used by Duty forces.</text>
-	</string>
-	<string id="st_medkit_descr">
-		<text>A general purpose single-use medical kit. Handy for treating injuries, wounds, chemical burns and various types of poisoning.</text>
 	</string>
 	<string id="st_medkit_science">
 		<text>Scientific medkit</text>
@@ -210,11 +216,29 @@
 	<string id="st_medkit_science_descr">
 		<text>A medical kit designed specifically for use in the Zone. The kit contains products for handling wounds, as well as preventing the development of radiation poisoning and reducing accumulated radiation in the body. Contains Vikasolum, Batilolum and Naphazoline, unlike other medkits.</text>
 	</string>
+	<string id="st_stim_impro">
+		<text>Improvised stimpack (zone produced)</text>
+	</string>
+	<string id="st_stim_impro_descr">
+		<text>Improvised stimpacks are popular among novice Zone Men as they are easly attainable and withing reach in therms of costs. They are produced from commonly available contents, locally in the Zone often without proper composition and purification of the mixture. This leads to many side effects when they are infected intramusculary into the thigh. These include headache, paraesthesia and considerable increase in nutrition demand.</text>
+	</string>
+	<string id="st_stim_military">
+		<text>Military stimpack</text>
+	</string>
+	<string id="st_stim_military_descr">
+		<text>Military stims are part of a standard issue soldier equipment for field operation within the Zone. Easly attainable on the market, but not chaep they are prefered by experienced Stalkers. They are siginificantly more potent and faster working than improvised conterparts, allowing for much more rapid and often life-saving stabilization. Army specifications did not include user's pleasure thou, thus extremely high density and raw nature of healing agents often cause shock, extreme dizziness and extensive hunger.</text>
+	</string>
+	<string id="st_stim_scientic">
+		<text>Scientific stimpack</text>
+	</string>
+	<string id="st_stim_scientic_descr">
+		<text>Created by chemical department of the same Kiev defence research institute wich developed SEVA, this state-of-art mixture constitutes the highest level of rapidly-working health stabilizers available in the Zone. Best quality ingredients and perfected formula allow for almost instant health restorative effect and high rate radiation cleansing. Side effects are minimized. Extremely high cost practically limits regular users of this grade of medicaments to a small group of the most skillfull and succesfull Zone explorers.</text>
+	</string>
 	<string id="st_sleepingpills_descr">
 		<text>A package of small white sleeping pills that imediately will slow and ease your stressed mind. Eat 5 min before you want to rest and use water in combination for maximum effect.</text>
 	</string>
 	<string id="st_pda_descr">
-		<text>My PDA with vital information about the Zone, it also contains a detailed military map over the Zone and it's anomaly's.</text>
+		<text>PDA with information about the Zone, digital logs and detailed maps over the Zone and it's anomaly's. Trading value could be high for this if you find the right person.</text>
 	</string>
 	<string id="st_pda_name">
 		<text>PDA</text>
@@ -324,7 +348,7 @@ For this reason it can be extremely dangerous to display a patch to the wrong pe
 They are proof that you are ready to take a life in achieving your goals.
 For this reason it can be extremely dangerous to display a patch to the wrong people but they might as well open important doors for you.</text>
 	</string>
-	<string id="st_monlith_fp">
+	<string id="st_monolith_fp">
 		<text>Monolith faction patch</text>
 	</string>
 	<string id="st_monolith_fp_descr">
@@ -352,7 +376,7 @@ For this reason it can be extremely dangerous to display a patch to the wrong pe
 		<text>Cleansed zone water</text>
 	</string>
 	<string id="st_flask_descr">
-		<text>Military flasks are used for small zips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. But the water is impossible to clean perfectly so a slight radiation and fatigue slowly generates a grainy vision and a decrease in stamina. 
+		<text>Military flasks are used for small zips of water. Medics and scientist are boiling portions of zone water with a special type of alcohol at very high temperatures. After that it is cooled down for a refreshing spark. This process results in a limited supply offered to each stalker at a price. The water is a little more expensive at medics since they pay for using other peoples primitive or improvised power supplies. But the water is impossible to clean perfectly so a slight radiation and fatigue slowly generates a grainy vision and a decrease in stamina.
 Unless you throw a disinfecting Akvatab into the flask with every zip of water that you take in to neutralize this effect.</text>
 	</string>
 	<string id="st_akvatab">
@@ -463,11 +487,11 @@ Unless you throw a disinfecting Akvatab into the flask with every zip of water t
 	<string id="st_book2_descr">
 		<text>Book about industrial engineering. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.</text>
 	</string>
-	<string id="st_book3">
-		<text>Book of industry</text>
+	<string id="st_drugnotes">
+		<text>Drug distribution notes</text>
 	</string>
-	<string id="st_book3_descr">
-		<text>Book about industrial business. Some people use these to investigate and learn more about the facilities and factories in The Zone. Not of much tradeable value.</text>
+	<string id="st_drugnotes_descr">
+		<text>This notebook describes various drug deals in detail. Specific nick names, locations and time of meeting. Some deals are executed through equipment exchanges and some deals are payed in large amounts of rubles. When running through the pages it becomes clear that Freedom faction are the main distributors of natural drugs like marihuana and plant substances. Bandits are producers and distributors of the more powerful (and dangerous) synthetic drugs like salicidic acid and cocaine. Apparently these drugs are being traded with every faction to some extent. Especially Monolith faction seems to be taking in large amounts drugs in exhange for the more expensive types of ammunition and equipment.</text>
 	</string>
 	<string id="st_picture_woman">
 		<text>Picture of a woman</text>
@@ -486,5 +510,410 @@ Unless you throw a disinfecting Akvatab into the flask with every zip of water t
 	</string>
 	<string id="st_cigar_descr">
 		<text>A pack of strong cigarettes with only a few left.</text>
+	</string>
+
+	<string id="st_itm_sleepbag_name">
+		<text>Sleeping Bag</text>
+	</string>
+	<string id="st_itm_sleepbag_desc">
+		<text>A light sleeping bag, that will keep you warm when you need to rest. Be sure to pick a safe spot with a possible escape route.</text>
+	</string>
+	<string id="sleep_itm_warning_blowout">
+		<text>It's not safe to sleep!</text>
+	</string>
+	<string id="st_itm_actor_backpack_name">
+		<text>Quick Release System</text>
+	</string>
+	<string id="st_itm_backpack_desc">
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
+With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
+Push the hotkey to activate the emergency release that instantly drops your
+backpack (and everything inside it) to free yourself from its weight.
+Your equipped weapon(s), ammunition, armour and armour attachments
+remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
+	</string>
+	<string id="st_kit_hunt">
+		<text>Hunters kit</text>
+	</string>
+	<string id="st_kit_hunt_descr">
+		<text>A whole bag full of hooks, knives and equipment for handling animals hides and meat. Few stalkers are carrying professional equipment for mutant hunting. That is probably the reason why most stalkers become sick after eating cooked mutant meals</text>
+	</string>
+
+	<string id="st_porn2">
+		<text>Porn magazine</text>
+	</string>
+	<string id="st_porn2_descr">
+		<text>A magazine full of glossy spreads of tattooed girls. A popular find among zone men that need a psychological espace on a daily basis.</text>
+	</string>
+
+	<string id="st_boots">
+		<text>Leather boots</text>
+	</string>
+	<string id="st_boots_descr">
+		<text>Everyone knows about the importance of good gear. Having an extra set of boots is an extremely satisfying thing is a place like this. But many are lacking good gear so it is important to keep such items in the dark or at the bottom of your backpack.</text>
+	</string>
+
+	<string id="st_crowbar">
+		<text>Crowbar</text>
+	</string>
+	<string id="st_crowbar_descr">
+		<text>The best tool for opening locked doors and entering buildings. A common find in the industrial areas but some stalkers are keeping a crowbar in their inventories in spite of its weight. Little value.</text>
+	</string>
+
+	<string id="st_tobacco">
+		<text>Sovjet tobacco</text>
+	</string>
+	<string id="st_tobacco_descr">
+		<text>Cigarrettes are expensive and rare in The Zone. So having raw tobacco enables you to generate your own at a lower cost. But in these conditions it is almost impossible to ensure its quality for more than a few days. This box smells rotten.</text>
+	</string>
+
+	<string id="st_batteries_dead">
+		<text>Dead batteries</text>
+	</string>
+	<string id="st_batteries_dead_descr">
+		<text>One out of ten batteries found in Zaton and Jupiter still carry some juice. Stalkers seem to throw them everywhere when they run dead. It is almost impossible to find a battery recharger as some men would kill for such equipment.</text>
+	</string>
+
+	<string id="st_marijuana">
+		<text>Marijuana (Zone-produced)</text>
+	</string>
+	<string id="st_marijuana_descr">
+		<text>Self-grown cannabis smoking is popular in this place and especially within the Freedom fighter faction. Such marijuana bags are traded here and there by the Freedom faction as they believe that the drug is a helpful tool for mind struggling to find its balance.</text>
+	</string>
+	<string id="st_flashlight_old">
+		<text>Wind-up flashlight</text>
+	</string>
+	<string id="st_flashlight_old_descr">
+		<text>An old-school and very durable flashlight showing sings of intense usage. By twisting the back part of the flashlight for a few seconds the power is winded and stored in its internal cells. It is an essential tool for Zone exploration for extended periods of time, unfortunately it allows for simultaneus usage of only a single-handed equipment.</text>
+	</string>
+	<string id="st_flashlight_broken">
+		<text>Broken flashlight</text>
+	</string>
+	<string id="st_flashlight_broken_descr">
+		<text>The handle is broken and not even duck tape would be able to keep the batteries in place.
+This is no longer of any value.</text>
+	</string>
+
+	<string id="st_underwear">
+		<text>Soaked underwear</text>
+	</string>
+	<string id="st_underwear_descr">
+		<text>An extra pair of socks, shirt and underwear might work wonders. But not is this soaked and bloody condition. There is little chance that any stalker would pay for such spare clothes.</text>
+	</string>
+
+	<string id="st_wpn_spareparts">
+		<text>Weapon spare parts</text>
+	</string>
+	<string id="st_wpn_spareparts_descr">
+		<text>Spare parts for what looks to be an AKM assault rifle. The wooden parts are not in a very good condition and only novices would be interested in buying such weapon parts. There are stalkers who replace certain weapon parts when finding a new weapon out in the open. They do this to avoid the possibility of being hunted down for stash theft.</text>
+	</string>
+
+	<string id="st_beadspread">
+		<text>Bed spread</text>
+	</string>
+	<string id="st_beadspread_descr">
+		<text>A comforting item that gives you that extra 10 percent chance of a night sleep.
+Few actual beds are found in the areas of Zaton and Jupiter so having a bed spread and a sleeping bag in your inventory is almost obligatory according to many stalker.</text>
+	</string>
+
+	<string id="st_walkie">
+		<text>Walkie talkie</text>
+	</string>
+	<string id="st_walkie_descr">
+		<text>The display is dead and there is a constant hiss from the speaker indicating that this is of no use.</text>
+	</string>
+
+	<string id="st_cards">
+		<text>Deck of cards</text>
+	</string>
+	<string id="st_cards_descr">
+		<text>It is important to have your mindset focus on other things than the Chernobyl disaster and its consequenses. So a deck of cards are popular for killing time but also used for sorting special trades and other unsual matters. Moscow is depicted on these cards as a proud architectural design.</text>
+	</string>
+
+	<string id="st_vodka_quality">
+		<text>Vodka (imported)</text>
+	</string>
+	<string id="st_vodka_quality_descr">
+		<text>The smells of strong alcohol does not deceive the sovjet mind. This is russian vodka of high quality.
+It is often seen that drinks and liquids are carried in military containers to avoid a glass bottle from being destroyed.</text>
+	</string>
+
+	<string id="st_ammo_bad">
+		<text>Bad ammo</text>
+	</string>
+	<string id="st_ammo_bad_descr">
+		<text>Every stalker knows about the importance of reliable weaponry.
+That is the reason why a daily and thorough analysis of your ammunition is important also.
+Stalkers often count their ammo and clean it to perfection as a weapon jam in the heat of battle may cost your life.
+This ammo has a bad standard and should be discarded.</text>
+	</string>
+
+	<string id="st_mili_maps">
+		<text>Military maps</text>
+	</string>
+	<string id="st_mili_maps_descr">
+		<text>These maps indicate the location of military camps around the Zone.
+But everyone with a PDA has already marked these well known locations.
+So this is of little use to anyone with a functioning PDA.</text>
+	</string>
+
+	<string id="st_swiss">
+		<text>Swiss knife</text>
+	</string>
+	<string id="st_swiss_descr">
+		<text>Opening cans of food, keeping your mechanical gear tightened, cutting ropes and sparpening your best bullets. The swiss knife serves many purposes and it a powerful tool packed in a very little container.
+Many stalkers carry such tool so it may be of little value when traded.</text>
+	</string>
+
+	<string id="st_headlamp">
+		<text>Old head lamp</text>
+	</string>
+	<string id="st_headlamp_descr">
+		<text>Although few men dare to explore The Zone during the night there are circumstances where a head lamp is crucial. Everyone keeps some sort of light source close to him. You never know if you have to move from one place to another during the night if faction assaults are executed.</text>
+	</string>
+
+	<string id="st_mirror">
+		<text>Mirror</text>
+	</string>
+	<string id="st_mirror_descr">
+		<text>Small mirror mounted on a telescopic iron tube. A handy item used by those skilled in the arts of urban combat as it allows to peek around corners without getting shot.</text>
+	</string>
+
+	<string id="st_batteries_ccell">
+		<text>Batteries</text>
+	</string>
+	<string id="st_batteries_ccell_descr">
+		<text>A pack of C-cell batteries. Their outer layer of corrotion and dirt is a strong indication that these are dead.</text>
+	</string>
+
+	<string id="st_cocaine">
+		<text>Cocaine (zone produced)</text>
+	</string>
+	<string id="st_cocaine_descr">
+		<text>Small aluminium case containing cocaine and the tools for its use.
+Cocaine is a powerful nervous system stimulant. Its effects can last from 15–30 minutes to an hour, depending on the route of administration. Cocaine increases alertness, feelings of well-being and euphoria, energy and motor activity, feelings of competence and sexuality. Athletic performance may be enhanced in sports where sustained attention and endurance is required. Anxiety, paranoia and restlessness are also frequent. With excessive dosage, tremors, convulsions and increased body temperature are observed. Occasional cocaine use does not typically lead to severe or even minor physical or social problems.
+Bandits are know for making use of such drugs right before launching an assault or ambush.</text>
+	</string>
+
+	<string id="st_hammer">
+		<text>Old hammer</text>
+	</string>
+	<string id="st_hammer_descr">
+		<text>These wooden and iron hammers are a common sight in the industrial areas of The Zone. Although, they are counted for as heavy items for a backpack they are often saved in a stalkers inventory for their versatile use.</text>
+	</string>
+
+	<string id="st_tetanus">
+		<text>Tetanus vaccine</text>
+	</string>
+	<string id="st_tetanus_descr">
+		<text>Tetanus vaccine is composed of inactivated tetanus toxin and is used to prevent an individual from contracting tetanus. Tetanus, also known as lockjaw, is a disease caused by the bacteria Clostridium tetani which enters the body through open wounds and releases a poison called tetanospasmin. This is a potentially deadly disease because the poison attacks the nervous system blocking nerve signals from the spinal cord to and from the muscles. Animals of the Zone have a high likehood of carrying the Teranus disease and it spreads easily through bites.
+As injection of inactivated toxin overally boosts users organism activity, there are several positive side-effects of usage can be experienced. Morever in this particular case the mixture has been enhanced by several additional anti-toxins making the vaccine usable beyond its original purpose.</text>
+	</string>
+
+	<string id="st_tarpaulin">
+		<text>Camouflaged tarpaulin</text>
+	</string>
+	<string id="st_tarpaulin_descr">
+		<text>A tarpauling (or hootch) is a large sheet of strong, flexible, water-resistant or waterproof material, often cloth such as canvas or polyester coated with urethane. Or made of plastics such as polyethylene. They often have reinforced grommets at the corners and along the sides to form attachment points for rope, allowing them to tied down or suspended between trees. A good tool for several purposes. It is mainly used for creating small and simple tent like hideouts for resting. Trading value is low as alternatives are found many places in industrial areas.</text>
+	</string>
+
+	<string id="st_rope">
+		<text>Rope</text>
+	</string>
+	<string id="st_rope_descr">
+		<text>A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of this is about 10 meters.</text>
+	</string>
+
+	<string id="st_synthrope">
+		<text>2 Synthetic ropes</text>
+	</string>
+	<string id="st_synthrope_descr">
+		<text>Synthetic ropes are common items of military inventories. But for some reason few military stalkers actually carry them. A good rope serves many purposes in a place such as this. Many stalkers can put this to good use which generates a rather high trading value. The length of these ropes is about 5 meters each.</text>
+	</string>
+
+	<string id="st_cutlery">
+		<text>Field cutlery</text>
+	</string>
+	<string id="st_cutlery_descr">
+		<text>Spoon, knife and fork made of heavy steel form a robust and reasonably light cutlery set ideal for backpacking and field exploration trips. The cutlery is held together by a cord and stopper. If corrotion and dirt were to be cleaned off this set it could be safe to use.</text>
+	</string>
+
+	<string id="st_adrenalin">
+		<text>Epinephrine shot</text>
+	</string>
+	<string id="st_adrenalin_descr">
+		<text>Epinephrine (also known as adrenalin) is a hormone and a neurotransmitter. Epinephrine has many functions in the body, instantly regulating heart rate, blood vessel and air passage diameters, and metabolic shifts; epinephrine release is a crucial component of the fight-or-flight response of the sympathetic nervous system. The effects lead to increased blood glucose and fatty acids, providing substrates for instant energy production within cells throughout the body.</text>
+	</string>
+
+	<string id="st_radio">
+		<text>Small radio</text>
+	</string>
+	<string id="st_radio_descr">
+		<text>Music is a good way to calm your nerves. But with a broken antenna such as this there is little use of a radio such as this. Moisture and dirt has also damaged this item.</text>
+	</string>
+
+	<string id="st_radio2">
+		<text>Broken radio</text>
+	</string>
+	<string id="st_radio2_descr">
+		<text>A small radio in poor condition with signs of moisture and dirt everywhere. The interiors seem to be damaged as the radio rattle when moved around. Little or no value.</text>
+	</string>
+
+	<string id="st_fieldcooker">
+		<text>Hexamine field cooker</text>
+	</string>
+	<string id="st_fieldcooker_descr">
+		<text>A lightweight, strong and compact solid fuel stove supplied with two small Hexene fuel tabs. Hexi solid fuel tablets burn without odour and ignite easily with a match - 4 small fuel tablets will bring to the boil 2.5 cups of water in approximately 5 minutes. On opening the cooker, it can be used in several ways. The hinged openers can be angled to concentrate the heat to a pinpointed area, for direct heat, or, used at 90 deg angle for regular cooking, or the cooker can be inverted, (Spikes down) placing the fuel blocks closer to the mess tin. Whichever way you use it, the Hexi Cooker is a reliable field cooker that will never let you down. It will work in all weathers, and heat water and food quickly.</text>
+	</string>
+	<string id="st_itm_sleepbag_name">
+		<text>Sleeping Bag</text>
+	</string>
+	<string id="st_itm_sleepbag_desc">
+		<text>A light sleeping bag, that will keep you warm when you need to rest. Be sure to pick a safe spot with a possible escape route.</text>
+	</string>
+	<string id="sleep_itm_warning_blowout">
+		<text>It's not safe to sleep!</text>
+	</string>
+	<string id="st_itm_actor_backpack_name">
+		<text>Quick Release System</text>
+	</string>
+	<string id="st_itm_backpack_desc">
+		<text>In The Zone you are most likely to be caught by surprise in terrible situations.
+With a QR-system you can unburden yourself in a matter of seconds and grant yourself the freedom of movement with low weight. The system is for your backpack. Place it as a hotkey item.
+Push the hotkey to activate the emergency release that instantly drops your
+backpack (and everything inside it) to free yourself from its weight.
+Your equipped weapon(s), ammunition, armour and armour attachments
+remain equipped so you are ready for fighting. Retrieve your backpack afterwards.</text>
+	</string>
+	<string id="st_itm_backpack_stash_name">
+		<text>PDA marked backpack</text>
+	</string>
+	<string id="st_itm_backpack_stash_desc">
+		<text>An extremely durable backpack with implemented GPS electronical devices. You will synchronize this device with your PDA once dropped to generate a stash that is marked on your PDA. The backpack is made of strong and durable materials that will keep your equipment safe and dry even in very humid environments. The camouflaged design makes sure that it doesn't stand out from the surroundings.</text>
+	</string>
+	<string id="st_identity_card">
+		<text>Personal USS identity card</text>
+	</string>
+	<string id="st_identity_card_assaulter_descr">
+		<text>As a USS Assaulter you have unique strengths and weaknesses.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]C\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]High recoils\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]Heavy weapons\n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]C\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]very high\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]slow\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Base stamina: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]high\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]high\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol:%c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]C</text>
+	</string>
+    <string id="st_identity_card_recon_descr">
+        <text>As a USS Recon you have unique strengths and weaknesses.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]A+\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]SMG's\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]SMG's\n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]A\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]low\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Base stamina: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]low\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]slow\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]medium\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]C\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]A\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]A</text>
+    </string>
+    <string id="st_identity_card_sniper_descr">
+        <text>As a USS Sniper your attributes are extremely well balanced.\n\n%c[255,238,153,26]EQUIPMENT\n%c[default]Heavy armour agility: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Closed breathing agility: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Artifact handling: %c[255,230,150,30]B\n\n%c[255,238,153,26]WEAPONS\n%c[255,238,153,26]%c[default]Knife fighting: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Handling speciality: %c[255,230,150,30]sniper rifles\n%c[255,238,153,26]%c[default]Maintenance speciality: %c[255,230,150,30]sniper rifles \n\n%c[255,238,153,26]MEDICINE\n%c[255,238,153,26]%c[default]Bandages/medkits dexterity: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Medic skills: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Drug handling skills: %c[255,230,150,30]B+\n\n%c[255,238,153,26]ATHLETICS\n%c[255,238,153,26]%c[default]Endurance: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Sprinting speed: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Jump height: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Fall/jump agility: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Stamina running: %c[255,230,150,30]high\n%c[255,238,153,26]%c[default]Stamina sprinting: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Maximum carry weight: %c[255,230,150,30]medium\n\n%c[255,238,153,26]HEALTH PROFILE\n%c[255,238,153,26]%c[default]Food consumption rate: %c[255,230,150,30]medium\n%c[255,238,153,26]%c[default]Need for sleep: %c[255,230,150,30]low\n\n%c[255,238,153,26]IMMMUNE SYSTEM RESISTANCE\n%c[255,238,153,26]%c[default]Drugs/alcohol: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Unhealthy food: %c[255,230,150,30]A+\n%c[255,238,153,26]%c[default]Artifacts: %c[255,230,150,30]B\n%c[255,238,153,26]%c[default]Radiation: %c[255,230,150,30]B</text>
+    </string>
+	<string id="st_morphine">
+		<text>Morphine ampoule (imported)</text>
+	</string>
+	<string id="st_morphine_descr">
+		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Morphine. In clinical medicine, morphine is regarded as the gold standard, or benchmark, of opioid analgesics used to relieve severe or agonizing pain and suffering. Like other opioids, such as oxycodone, hydromorphone, and diacetylmorphine (heroin), morphine acts directly on the central nervous system (CNS) to relieve pain. Injected to arm or thigh.</text>
+	</string>
+	<string id="st_salicidic_acid">
+		<text>Salicidic Acid ampoule (zone produced)</text>
+	</string>
+	<string id="st_salicidic_acid_descr">
+		<text>An iron ampoule designed as field equipment for military field personel for instant pain reduction. This ampoule contains a powerful dosis of Salicylic acid. Salicylic acid is known for its ability to ease aches and pains and reduce fevers. These medicinal properties, particularly fever relief, have been known since ancient times, and it is used as an anti-inflammatory drug.Some researchers believe that salicylate is an essential micronutrient in the human diet, potentially qualifying as a vitamin, namely Vitamin S. Injected to arm or thigh.</text>
+	</string>
+	<string id="st_tomato">
+		<text>Canned tomatoes (imported)</text>
+	</string>
+	<string id="st_tomato_descr">
+		<text>Canned sliced and diced tomatoes are brought to the Zone on regular basis. The date on the bottom tells you that this should be alright to eat.</text>
+	</string>
+	<string id="st_sausage">
+		<text>Smoked sausage (imported)</text>
+	</string>
+	<string id="st_sausage_descr">
+		<text>Made of beef and pork. Smoked and vacuum packaged it can be preserved for a long periods.</text>
+	</string>
+        <string id="st_corn">
+		<text>Canned corn (imported)</text>
+	</string>
+	<string id="st_corn_descr">
+		<text>Canned sweet corn brought from the outside. Can be eaten as it is, but there are some who cook soup with it.</text>
+	</string>
+        <string id="st_mineral_water">
+		<text>Mineral water (imported)</text>
+	</string>
+	<string id="st_mineral_water_descr">
+		<text>Spring water from the Ukrainian mountains with added carbohydrates and calcium.</text>
+	</string>
+        <string id="st_hand_rolling_tobacco">
+		<text>Hand rolling tobacco (imported)</text>
+	</string>
+	<string id="st_hand_rolling_tobacco_descr">
+		<text>Precious hand rolling tobacco which was brought from the west side. Since there are no additives with this brand, it is posible to enjoy the original taste of tobacco leaf itself.</text>	</string>
+	<string id="st_beer">
+		<text>Beer (imported)</text>
+	</string>
+	<string id="st_beer_descr">
+		<text>Ukrainian beer. Not only vodka, but also beer is popular within every faction.</text>
+	</string>
+	<string id="st_beans">
+		<text>Baked beans (imported)</text>
+	</string>
+	<string id="st_beans_descr">
+		<text>Canned baked beans brought from west. The kidney beans with tomato sauce may bring back some memories for some people in certain areas.</text>
+	</string>
+	<string id="st_chili">
+		<text>Chili beans (imported)</text>
+	</string>
+	<string id="st_chili_descr">
+		<text>Canned chili beans brought from the outside are popular as incredients in cooked mutant meals.</text>
+	</string>
+	<string id="st_salmon">
+		<text>Smoked salmon (imported)</text>
+	</string>
+	<string id="st_salmon_descr">
+		<text>Ukrainian smoked salmon. These valuable packages are often traded and consumed within a few days after they've been brought to the Zone.</text>
+	</string>
+	<string id="st_raisins">
+		<text>Raisins (imported)</text>
+	</string>
+	<string id="st_raisins_descr">
+		<text>A pack of raisins are a rich and instant nutrition source for balancing the sugar balance in the blood.</text>
+	</string>
+	<string id="st_chocolate">
+		<text>Chocolate (imported)</text>
+	</string>
+	<string id="st_chocolate_descr">
+		<text>Russian chocolate. It is quite hard to obtain in the Zone though it is nothing special outside of the Zone.</text>
+	</string>
+	<string id="st_mint">
+		<text>Mint gum (imported)</text>
+	</string>
+	<string id="st_mint_descr">
+		<text>Strong mint gum brough from the west. It is refreshing and seems to have a nice ability to fight off sleepiness for a short while.</text>
+	</string>
+	<string id="st_caffeine">
+		<text>Caffeine tablets (imported)</text>
+	</string>
+	<string id="st_caffeine_descr">
+		<text>Caffeine and sodium benzonate which cause action to occur central nervous excitation to get rid of sleepiness for a while.</text>
+	</string>
+	<string id="st_cigar">
+		<text>Cigar (imported)</text>
+	</string>
+	<string id="st_cigar_descr">
+		<text>The valuable Cuban cigar can assure a blissful moment during a nice sunset. Some Stalkers talk about the joy of not having mosquitos around you when smoking strong tobacco.</text>
+	</string>
+	<string id="st_cigarettes_lucky">
+		<text>Lucky Strike (imported)</text>
+	</string>
+	<string id="st_cigarettes_lucky_descr">
+		<text>Cigarettes brought from the west. Some Stalkers use these packages to trade a few rounds of ammo within their faction.</text>
+	</string>
+	<string id="st_cigarettes_russian">
+		<text>Russian Cigarettes (imported)</text>
+	</string>
+	<string id="st_cigarettes_russian_descr">
+		<text>The cheapest pack of cigarettes in the Zone. A russian budget brand.</text>
+	</string>
+	<string id="st_nuts">
+		<text>Mixed Nuts (imported)</text>
+	</string>
+	<string id="st_nuts_descr">
+		<text>Assorted peanuts, hazelnuts, cashews and almonds in a nice and popular blend. Nutrition value is quite high.</text>
 	</string>
 </string_table>

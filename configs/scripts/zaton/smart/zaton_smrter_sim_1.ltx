@@ -5,10 +5,23 @@ max_population = 1
 respawn_params = respawn@zaton_smrter_sim_1
 
 [respawn@zaton_smrter_sim_1]
+duty_zat_b40_assault
 spawn_snork
+
+[duty_zat_b40_assault]
+spawn_squads = duty_sim_squad_veteran_zat_b40_assault
+spawn_num = {+zat_b40_find_information_complete} 1, 0
 
 [spawn_snork]
 spawn_squads = simulation_pseudodog, simulation_dog, simulation_dog, simulation_flesh, simulation_boar, simulation_flesh, simulation_boar, simulation_snork, simulation_cat_strong
 spawn_num = {+zat_b40_merc_gone} 1, {+zat_b40_find_information_complete}  1, 0
 
 ;active = nil
+
+
+[exclusive]
+
+assault_job_1 = zaton\zaton_smrter_sim_1.ltx
+assault_job_2 = zaton\zaton_smrter_sim_1.ltx
+assault_job_3 = zaton\zaton_smrter_sim_1.ltx
+assault_job_4 = zaton\zaton_smrter_sim_1.ltx

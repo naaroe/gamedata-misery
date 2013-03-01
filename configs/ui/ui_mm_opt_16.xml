@@ -522,11 +522,11 @@
         </check_closed_captions>
     </tab_sound>
     <tab_gameplay>
-        <cap_difficulty x="72" y="3" width="108" height="24">
+        <cap_difficulty x="0" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_difficulty</text>
         </cap_difficulty>
 
-        <list_difficulty x="200" y="5" width="188" height="20">
+        <list_difficulty x="128" y="5" width="88" height="20">
             <options_item entry="g_game_difficulty" group="mm_opt_gameplay"/>
             <list_font r="170" g="170" b="170" font="letterica16"/>
 		    <text_color>
@@ -535,78 +535,106 @@
 		    </text_color>
         </list_difficulty>
 
-        <cap_check_crosshair x="72" y="33" width="108" height="24">
+        <cap_check_crosshair x="0" y="33" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_show_crosshair</text>
         </cap_check_crosshair>
-        <check_crosshair x="189" y="30" width="35" stretch="1" height="29">
+        <check_crosshair x="117" y="30" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="hud_crosshair" group="mm_opt_gameplay"/>
         </check_crosshair>
 
-        <cap_check_dyn_crosshair x="72" y="63" width="108" height="24">
+        <cap_check_dyn_crosshair x="0" y="63" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_dyn_crosshair</text>
         </cap_check_dyn_crosshair>
-        <check_dyn_crosshair x="189" y="60" width="35" stretch="1" height="29">
+        <check_dyn_crosshair x="117" y="60" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="cl_dynamiccrosshair" group="mm_opt_gameplay"/>
         </check_dyn_crosshair>
 
-        <cap_check_show_weapon x="72" y="93" width="108" height="24">
+        <cap_check_show_weapon x="0" y="93" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_show_weapon</text>
         </cap_check_show_weapon>
-        <check_show_weapon x="189" y="90" width="35" stretch="1" height="29">
+        <check_show_weapon x="117" y="90" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="hud_weapon" group="mm_opt_gameplay"/>
         </check_show_weapon>
 
-        <cap_check_dist x="72" y="123" width="108" height="24">
+        <cap_check_dist x="0" y="123" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_crosshair_distance</text>
         </cap_check_dist>
-        <check_dist x="189" y="120" width="35" stretch="1" height="29">
+        <check_dist x="117" y="120" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="hud_crosshair_dist" group="mm_opt_gameplay"/>
         </check_dist>
 
-        <cap_check_tips x="72" y="153" width="108" height="24">
+        <cap_check_tips x="0" y="153" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_tips</text>
         </cap_check_tips>
-        <check_tips x="189" y="150" width="35" stretch="1" height="29">
+        <check_tips x="117" y="150" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="hud_info" group="mm_opt_gameplay"/>
         </check_tips>
 
-        <cap_check_crouch_toggle x="72" y="183" width="108" height="24">
+        <cap_check_crouch_toggle x="0" y="183" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_crouch_toggle</text>
         </cap_check_crouch_toggle>
-        <check_crouch_toggle x="189" y="180" width="35" stretch="1" height="29">
+        <check_crouch_toggle x="117" y="180" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="g_crouch_toggle" group="mm_opt_gameplay"/>
         </check_crouch_toggle>
 
-        <cap_check_important_save x="72" y="213" width="108" height="24">
+        <cap_check_important_save x="0" y="213" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_important_save</text>
         </cap_check_important_save>
-        <check_important_save x="189" y="210" width="35" stretch="1" height="29">
+        <check_important_save x="117" y="210" width="35" stretch="1" height="29">
 	        <texture>ui_inGame2_checkbox</texture>
             <options_item entry="g_important_save" group="mm_opt_gameplay"/>
         </check_important_save>
 
-      <cap_check_hud_draw x="72" y="243" width="108" height="24">
+      <cap_check_hud_draw x="0" y="243" width="108" height="24">
         <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_st_disable_hud</text>
       </cap_check_hud_draw>
-      <check_hud_draw x="189" y="240" width="35" height="29" stretch="1">
+      <check_hud_draw x="117" y="240" width="35" height="29" stretch="1">
         <texture>ui_inGame2_checkbox</texture>
         <options_item entry="hud_draw" group="mm_opt_gameplay"/>
       </check_hud_draw>
 
-      <btn_check_updates x="310" y="322" width="126" height="24" stretch="1">
-            <text align="c" font="letterica16">ui_mm_check_updates</text>
-            <texture>ui_button_main01</texture>
-			<text_color>
-				<e r="210" g="210" b="210"/>
-			</text_color>
-        </btn_check_updates>
-    </tab_gameplay>
+		<cap_check_hud_helm x="200" y="33" width="108" height="24">
+			<text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_hud_helm</text>
+		</cap_check_hud_helm>
+		<check_hud_helm x="317" y="30" width="35" stretch="1" height="29">
+			<texture>ui_inGame2_checkbox</texture>
+		</check_hud_helm>
+
+		<cap_check_upd_drain x="200" y="63" width="108" height="24">
+			<text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_upd_drain</text>
+		</cap_check_upd_drain>
+		<check_upd_drain x="317" y="60" width="35" stretch="1" height="29">
+			<texture>ui_inGame2_checkbox</texture>
+		</check_upd_drain>
+
+		<cap_check_inf_ammo x="200" y="93" width="108" height="24">
+			<text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_inf_ammo</text>
+		</cap_check_inf_ammo>
+		<check_inf_ammo x="317" y="90" width="35" stretch="1" height="29">
+			<texture>ui_inGame2_checkbox</texture>
+		</check_inf_ammo>
+
+		<cap_check_ai_aim x="200" y="123" width="108" height="24">
+			<text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_ai_aim</text>
+		</cap_check_ai_aim>
+		<check_ai_aim x="317" y="120" width="35" stretch="1" height="29">
+			<texture>ui_inGame2_checkbox</texture>
+		</check_ai_aim>
+
+		<cap_check_safe_cover x="200" y="153" width="108" height="24">
+			<text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_safe_cover</text>
+		</cap_check_safe_cover>
+		<check_safe_cover x="317" y="150" width="35" stretch="1" height="29">
+			<texture>ui_inGame2_checkbox</texture>
+		</check_safe_cover>
+	</tab_gameplay>
+
     <tab_controls>
         <cap_mousesens x="72" y="3" width="108" height="24">
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_mouse_sense</text>

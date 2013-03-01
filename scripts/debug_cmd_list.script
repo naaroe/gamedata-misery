@@ -36,10 +36,12 @@ end
 
 function first_word(caller,txt,owner,msg)
 	local wrd = ""
+	local rest = ""
 	local _strt, _end = string.find(txt,".%S+")
 	if (_strt and _end) then
 		wrd = string.sub(txt,_strt, _end)
-		wrd = string.lower(wrd)
+		wrd = trim(string.lower(wrd))
+		rest = trim(string.sub(txt,_end+1))
 	else
 		owner:SendOutput("For usage type %s help",caller)
 		return
@@ -49,7 +51,7 @@ function first_word(caller,txt,owner,msg)
 		owner:SendOutput("%s %s",caller,msg)
 		return
 	end
-	return wrd
+	return wrd,rest
 end
 
 -- HELP
@@ -79,10 +81,11 @@ function cmd.help(me,txt,owner,p)
 	local a = {}
     for n in pairs(commands) do table.insert(a, n) end
     table.sort(a)
+	local ind,k,out
 	for i=1,sz do
-		local ind = (page*sz - sz) + i
-		local k = ind > 0 and a[ind]
-		local out = " "
+		ind = (page*sz - sz) + i
+		k = ind > 0 and a[ind]
+		out = " "
 
 		if (k == "help") then
 			out = ""
@@ -124,6 +127,19 @@ function cmd.spawn(me,txt,owner,p)
 		owner.spawn_lvid = nil
 		owner.spawn_gvid = nil
 		return "spawn:= position reset to always actor"
+	end
+
+	if (wrd == "items") then
+		if not (system_ini():section_exist("inv_backpack")) then
+			return "spawn:= requires inv_backpack from items_minimod"
+		end
+		local sim = alife()
+		local stash = sim:create("inv_backpack",db.actor:position(),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+		local itm
+		for k,v in pairs(se_item.registered_items) do
+			sim:create(k,stash.position,0,0,stash.id)
+		end
+		return "spawn:= all registered items in game spawned in a stash near you"
 	end
 
 	local sec
@@ -222,6 +238,45 @@ function cmd.surge(me,txt,owner,p)
 		return "surge:= wrong argument passed."
 	end
 end
+
+-- PsiStorm
+function cmd.psi_storm(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[start|stop]")
+	if not (wrd) then return end
+
+	local sm = psi_storm_manager and psi_storm_manager.get_psi_storm_manager()
+	if not (sm) then return "No psi_storm manager!" end
+
+	if (wrd == "start") then
+		sm:start(true)
+		return "psi_storm:= started"
+	elseif (wrd == "stop") then
+		sm:end_surge(true)
+		return "psi_storm:= ended"
+	else
+		return "psi_storm:= wrong argument passed."
+	end
+end
+
+-- Fallout
+function cmd.fallout(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[start|stop]")
+	if not (wrd) then return end
+
+	local sm = fallout_manager and fallout_manager.get_fallout_manager()
+	if not (sm) then return "No fallout manager!" end
+
+	if (wrd == "start") then
+		sm:start(true)
+		return "fallout:= started"
+	elseif (wrd == "stop") then
+		sm:end_surge(true)
+		return "fallout:= ended"
+	else
+		return "fallout:= wrong argument passed."
+	end
+end
+
 
 -- Find
 function cmd.find(me,txt,owner,p)
@@ -430,11 +485,12 @@ function cmd.wound(me,txt,owner,p)
 
 	if (vo) then
 		local h = hit()
-		h.type = hit.fire_wound
-		h.power = (1 - vo.health) + vo.health - 0.09
-		h.impulse = 0.0
-		h.direction = vector():set(0,0,1)
-		h.draftsman = vo
+		h.power = 0
+		h.direction = vo:direction()
+		h.bone = "bip01_spine"
+		h.draftsman = db.actor
+		h.impulse = 0
+		h.type = hit.wound
 		vo:hit(h)
 		return "wound:= %s has been hit for %s.",vo:name(),h.power
 	end
@@ -458,25 +514,23 @@ function cmd.var(me,txt,owner,p)
 	end
 
 	if (wrd == "list") then
-		local _strt, _end = string.find(txt,"list")
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
 		if (_strt and _end) then
 			wrd = string.sub(txt,_strt, _end)
 			wrd = string.lower(wrd)
 		end
 
-		local page = wrd and wrd ~= "" and tonumber(wrd) or 1
-		local sz = owner.console_size
+		local page = wrd ~= "" and tonumber(wrd) or 1
+		local sz = owner.console_size-1
 
 		if not (sz) or (sz == 0) then return "var:= error" end
 
 		local list_sz = 0
-		local list_count = function()
-			for k,v in pairs(var_list) do
-				list_sz = list_sz + 1
-			end
+		for k,v in pairs(var_list) do
+			list_sz = list_sz + 1
 		end
 
-		list_count()
 		local page_count = math.ceil(list_sz/sz)
 
 		if (page > page_count) then
@@ -488,10 +542,12 @@ function cmd.var(me,txt,owner,p)
 		local a = {}
 		for n in pairs(var_list) do table.insert(a, n) end
 		table.sort(a)
+
+		local ind, out, k
 		for i=1,sz do
-			local ind = (page*sz - sz) + i
-			local k = ind > 0 and a[ind]
-			local out = " "
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			out = " "
 
 			if (k) then
 				local v = var_list[k]
@@ -577,9 +633,6 @@ function cmd.vector(me,txt,owner,p)
 	end
 end
 
---level.object_by_id():bone_position("bip01_l_hand")
---level.object_by_id():bone_position("bip01_root")
-
 -- Offset
 function cmd.offset(me,txt,owner,p)
 	local wrd = first_word(me,txt,owner,"{get}")
@@ -649,12 +702,12 @@ function cmd.hud(me,txt,owner,p)
 	if not (wrd) then return end
 
 	if (wrd == "on") then
-		xrs_debug_tools.set_draw_debug_hud(true)
+		alun_utils.save_var(db.actor,"disable_debug_draw",false)
 		return "hud:= debug hud enabled"
 	end
 
 	if (wrd == "off") then
-		xrs_debug_tools.set_draw_debug_hud(false)
+		alun_utils.save_var(db.actor,"disable_debug_draw",true)
 		return "hud:= debug hud disabled"
 	end
 
@@ -668,15 +721,55 @@ function cmd.god(me,txt,owner,p)
 
 	if (wrd == "on") then
 		xrs_debug_tools.debug_god = true
+		--get_console():execute("g_god on")
 		return "god:= invincibility enabled"
 	end
 
 	if (wrd == "off") then
 		xrs_debug_tools.debug_god = nil
+		--get_console():execute("g_god off")
 		return "god:= invincibility disabled"
 	end
 
 	return "god:= type god help for list of sub commands"
+end
+
+-- No Clip
+--[[
+function cmd.noclip(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on|off]")
+	if not (wrd) then return end
+
+	if (wrd == "on") then
+		get_console():execute("g_no_clip on")
+		return "noclip:= no clip enabled"
+	end
+
+	if (wrd == "off") then
+		get_console():execute("g_no_clip off")
+		return "noclip:= no clip disabled"
+	end
+
+	return "noclip:= type noclip help for list of sub commands"
+end
+--]]
+
+-- Invisible
+function cmd.invisible(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on|off]")
+	if not (wrd) then return end
+
+	if (wrd == "on") then
+		xrs_debug_tools.debug_invis = true
+		return "invisible:= invisibility enabled"
+	end
+
+	if (wrd == "off") then
+		xrs_debug_tools.debug_invis = nil
+		return "invisible:= invisibility disabled"
+	end
+
+	return "invisible:= type invisible help for list of sub commands"
 end
 
 function cmd.crow(me,txt,owner,p)
@@ -743,4 +836,260 @@ function cmd.heli(me,txt,owner,p)
 
 	end
 	return "heli:= type heli help for list of sub commands"
+end
+
+-- weather
+local weather_list
+function cmd.weather(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[list <page> | <weather_name> ]")
+	if not (wrd) then return end
+
+	if (wrd == "list") then
+		if not (weather_list) then
+			weather_list = {}
+			local f = getFS()
+			local flist = f:file_list_open("$game_weathers$",1)
+			local f_cnt = flist:Size()
+
+			for	it=0, f_cnt-1 do
+				local file = flist:GetAt(it)
+				table.insert(weather_list,file)
+			end
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+
+		local sz = owner.console_size
+
+		if not (sz) or (sz == 0) then return "weather:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(weather_list) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+
+		if (page > page_count) then
+			return "weather:= Invaild page"
+		end
+
+		owner:SendOutput("weather:= Weathers List [%s of %s]",page,page_count)
+
+		table.sort(weather_list)
+
+		local ind, out
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			out = ind > 0 and weather_list[ind] or " "
+			owner:SendOutput(out)
+		end
+		return
+	end
+
+	level.set_weather(txt,true)
+
+	return "weather:= weather set"
+end
+
+-- time
+function cmd.time(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[day,hour,minute]")
+	if not (wrd) then return end
+
+	local t = alun_utils.str_explode(txt,",")
+	if (t) then
+		level.change_game_time( tonumber(t[1]),tonumber(t[2]),tonumber(t[3]) )
+		level_weathers.get_weather_manager():forced_weather_change()
+	end
+end
+
+-- money
+function cmd.money(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"<amount>")
+	if not (wrd) then return end
+	local amt = tonumber(wrd) or 1000
+	db.actor:give_money(amt)
+	return "money:= gave actor "..amt.." RU."
+end
+
+-- time
+function cmd.dev_debug(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on | off]")
+	if not (wrd) then return end
+	if (wrd == "on") then
+		_G.dev_debug = true
+	elseif (wrd == "off") then
+		_G.dev_debug = false
+	end
+	return "dev_debug:= type dev_debug help for list of sub commands."
+end
+
+function cmd.game_graph(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[show | near]")
+	if not (wrd) then return end
+
+	if (wrd == "show") then
+		local gg = game_graph()
+		local vertex, level_name, lvid, pos, se_obj
+		local sim = alife()
+		for gvid=0, 1033 do
+			if (gg:valid_vertex_id(gvid)) then
+				vertex = gg:vertex(gvid)
+				level_name = alife():level_name(vertex:level_id())
+				lvid = vertex:level_vertex_id()
+				pos = vertex:level_point()
+
+				se_obj = sim:create("medkit", pos, lvid, gvid)
+				level.map_add_object_spot_ser(se_obj.id, "treasure", level_name.." Gvid:"..gvid)
+			end
+		end
+	elseif (wrd == "near") then
+		local gg = game_graph()
+		local vertex, level_name, lvid, pos
+		local near_lvid, near_dist, near_gvid, dist
+		for gvid=0, 1033 do
+			if (gg:valid_vertex_id(gvid)) then
+				vertex = gg:vertex(gvid)
+				level_name = alife():level_name(vertex:level_id())
+				if (level_name == level.name()) then
+					pos = vertex:level_point()
+
+					dist = db.actor:position():distance_to_sqr(pos)
+
+					if not (near_dist) then
+						near_gvid = gvid
+						near_dist = dist
+					end
+
+					if (dist < near_dist) then
+						near_gvid = gvid
+						near_dist = dist
+					end
+				end
+			end
+		end
+		return "game_graph:= nearest gvid = " .. near_gvid .. " [dist = " .. near_dist .. "]"
+	end
+	return "game_graph:= spots created"
+end
+
+-- item
+function cmd.item(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[list <page> ]")
+	if not (wrd) then return end
+
+	if (wrd == "list") then
+		if not (se_item.registered_items) then
+			return "item:= error no registered_items list"
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(txt,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+		local sz = owner.console_size - 1
+
+		if not (sz) or (sz == 0) then return "item:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(se_item.registered_items) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+
+		if (page > page_count) then
+			return "item:= Invaild page"
+		end
+
+		owner:SendOutput("item:= Registered Item List [%s of %s]",page,page_count)
+
+		local a = {}
+		for n in pairs(se_item.registered_items) do table.insert(a, n) end
+		table.sort(a)
+
+		local ind, out, k
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			out = " "
+			if (k) then
+				out = string.format("%s [count: %s]",k,se_item.registered_items[k])
+			end
+			owner:SendOutput(out)
+		end
+		return
+	end
+	return "item:= type item help for a list of subcommands"
+end
+
+-- info
+function cmd.info(me,txt,owner,p)
+	local wrd,rest = first_word(me,txt,owner,"[list <page> | give | take ]")
+	if not (wrd) then return end
+
+	if (wrd == "give") then
+		give_info(rest)
+		return "info:= info given"
+	elseif (wrd == "take") then
+		disable_info(rest)
+		return "info:= disabled"
+	end
+
+
+	if (wrd == "list") then
+		if not (xrs_debug_tools.actor_info) then
+			return "info:= actor_info empty"
+		end
+
+		wrd = ""
+		local _strt, _end = string.find(rest,"%d+")
+		if (_strt and _end) then
+			wrd = string.sub(txt,_strt, _end)
+			wrd = string.lower(wrd)
+		end
+
+		local page = wrd ~= "" and tonumber(wrd) or 1
+
+		local sz = owner.console_size-1
+
+		if not (sz) or (sz == 0) then return "info:= error" end
+
+		local list_sz = 0
+		for k,v in pairs(xrs_debug_tools.actor_info) do
+			list_sz = list_sz + 1
+		end
+
+		local page_count = math.ceil(list_sz/sz)
+		if (page > page_count) then
+			return list_sz > 0 and "info: nothing in list" or "info:= Invaild page"
+		end
+
+		owner:SendOutput("info:= Infoportions [%s of %s]",page,page_count)
+
+		local a = {}
+		for n in pairs(xrs_debug_tools.actor_info) do table.insert(a, n) end
+		table.sort(a)
+
+		local ind, out, k
+		for i=1,sz do
+			ind = (page*sz - sz) + i
+			k = ind > 0 and a[ind]
+			owner:SendOutput(k or " ")
+		end
+		return
+	end
+	return "info:= type info help for a list of subcommands"
 end

@@ -1,6 +1,7 @@
---[[ xr_visual
-Alundaio
-]]
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
 
 local UseDeathDrop
@@ -17,7 +18,7 @@ function on_game_start()
 	callback_register("npc_on_death_callback",death_callback)
 	callback_register("npc_on_item_take",try_to_equip)
 	callback_register("npc_on_update",npc_on_update)
-	callback_register("npc_on_get_all_from_corpse",npc_loot_dead)
+	--callback_register("npc_on_get_all_from_corpse",npc_loot_dead)
 end
 
 -- This is used as default rating if no rating can be calculated from an outfit item
@@ -139,7 +140,7 @@ end
 
 
 function update_vis(se_npc,p)
-	local data = alun_utils.get_stalker_data(se_npc)
+	local data = stpk_utils.get_stalker_data(se_npc)
 	data.visual_name = p[1]
-	alun_utils.set_stalker_data(data,se_npc)
+	stpk_utils.set_stalker_data(data,se_npc)
 end

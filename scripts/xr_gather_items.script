@@ -1,3 +1,8 @@
+-- modified by Alundaio (original: ??? GSC)
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 ----------------------------------------------------------------------------------------------------------------------
 -- EVALUATORS
 ----------------------------------------------------------------------------------------------------------------------
@@ -6,7 +11,7 @@ function evaluator_gather_items:__init(name, storage, npc) super (nil, name)
 	self.a = storage
 end
 function evaluator_gather_items:evaluate()
-	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.a.gather_items_enabled)
+	local enabled = xr_logic.pick_section_from_condlist(db.actor, self.object, self.st.gather_items_enabled)
 	if (enabled ~= "true") then
 		return false
 	end
@@ -78,7 +83,11 @@ function eva_gather_itm:evaluate()
 		return false
 	end
 
-	if (npc:best_enemy()) then
+	--if (npc:best_enemy()) then
+		--return false
+	--end
+
+	if (xr_help_wounded.is_under_help_wounded(npc)) then
 		return false
 	end
 
@@ -110,6 +119,7 @@ function eva_gather_itm:evaluate()
 		local nearest_pos
 		local se_itm
 		local id = npc:id()
+		local class
 
 		local squad = get_object_squad(self.object)
 		local squad_community
@@ -131,16 +141,20 @@ function eva_gather_itm:evaluate()
 			return
 		end
 
+		local be = npc:best_enemy()
+		local wpn = npc:best_weapon()
+
 		self.st.started = true
 		for o in npc:memory_visible_objects() do
 			itm = o:object()
-			itm_id = itm  and loot_table[itm:section()] and itm:id()
+
+			itm_id = itm and loot_table[itm:section()] and itm:id()
 			se_itm = itm_id and Items[itm_id] == nil and alife():object(itm_id)
 
 
-			if (se_itm and se_itm.parent_id == 65535 and itm_id ~= 0) then
+			if (se_itm and se_itm.parent_id == 65535 and itm_id ~= 0 and not treasure_manager.get_treasure_manager().items_from_secrets[itm_id] and not get_object_story_id(itm_id)) then
 
-				if (isArtefact(itm) ~= true) or (xr_logic.pick_section_from_condlist(db.actor, npc, self.st.gather_artefact_items_enabled) == "true" and ArtifactDectection and ArtifactCommunities[squad_community] and has_detector) then
+				if (alun_utils.item_is_fa(itm) and be and not wpn) or (isArtefact(itm) ~= true) or (xr_logic.pick_section_from_condlist(db.actor, npc, self.st.gather_artefact_items_enabled) == "true" and ArtifactDectection and ArtifactCommunities[squad_community] and has_detector) then
 					itm_pos = itm:position()
 					dist = pos:distance_to_sqr(itm_pos)
 
@@ -162,11 +176,11 @@ function eva_gather_itm:evaluate()
 							selected_id = itm_id
 						end
 					end
-
 				end
 
 			end
 		end
+
 		self.st.started = nil
 
 		if (selected_id) then
@@ -219,6 +233,7 @@ function act_gather_itm:initialize()
 	npc:set_desired_direction()
 	npc:set_path_type(game_object.level_path)
 	npc:set_dest_level_vertex_id(self.st.vid)
+	--utils.send_to_nearest_accessible_vertex(npc,self.st.vid)
 	local dist = self.object:position():distance_to(self.st.vid_pos)
 	if (dist < RunDist)  then
 		state_mgr.set_state(self.object,StateWalk)
@@ -238,6 +253,17 @@ function act_gather_itm:execute()
 	end
 
 	local dist = self.object:position():distance_to(self.st.vid_pos)
+
+	if (dist < 7 and self.st.stage ~= 2) then
+		if not (self.hang_time) then
+			self.hang_time = time_global() + 12000
+		end
+
+		if (time_global() > self.hang_time) then
+			self.st.stage = 2
+			self.hang_time = nil
+		end
+	end
 
 	if (isArtefact(itm) and dist < 1500) then
 		local tg = time_global()
@@ -306,6 +332,7 @@ function act_gather_itm:execute()
 		if (state_mgr.get_state(self.object) == "pickup_crouch") then
 			state_mgr.set_state(self.object, StateRun)
 			self.object:set_dest_level_vertex_id(self.st.vid)
+			--utils.send_to_nearest_accessible_vertex(self.object,self.st.vid)
 		end
 	end
 end
@@ -404,13 +431,14 @@ function add_to_binder(npc, ini, scheme, section, storage)
 		manager:add_action(actid,action)
 
 		local p = {
+					xr_actions_id.alife,
 					xr_actions_id.state_mgr + 1,
 					xr_actions_id.state_mgr + 2,
 					xr_actions_id.state_mgr + 3,
-					--stalker_ids.action_combat_planner,
-					stalker_ids.action_alife_planner
+					stalker_ids.action_combat_planner,
+					--stalker_ids.action_alife_planner
 		}
-		for i=1,#p,1 do
+		for i=1,5 do
 			action = manager:action(p[i])
 			action:add_precondition( wp(evaid,false) )
 		end
@@ -436,4 +464,15 @@ end
 
 function npc_add_precondition(action)
 	action:add_precondition(world_property(evaid,false))
+end
+
+function is_under_gather_items(npc)
+	local mgr = npc:motivation_action_manager()
+
+	if not mgr:initialized() then
+		return false
+	end
+
+	local current_action_id = mgr:current_action_id()
+	return  current_action_id == actid
 end

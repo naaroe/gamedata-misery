@@ -1,0 +1,484 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;; MEDICAL ITEMS ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+[bandage]:booster
+$spawn 				= "food and drugs\bandage"
+visual				= dynamics\devices\dev_bandage\dev_bandage.ogf
+description			= st_bandage_descr
+
+inv_name			= st_bandage
+inv_name_short		= st_bandage
+inv_weight			= 0.038	;0.2
+cost				= 560
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 3
+inv_grid_y			= 18
+
+eat_bleeding	= -0.33
+
+eat_satiety 			= -0.038
+eat_alcohol			= 0.012
+
+eat_sleepiness				= 0.009
+
+use_sound			= interface\inv_bandage_3p7
+
+[survival_kit]:booster
+$spawn 				= "food and drugs\bandage"
+visual				= dynamics\equipments\dev_med_bag.ogf
+description			= st_survival_kit_descr
+
+inv_name			= st_survival_kit
+inv_name_short			= st_survival_kit
+inv_weight			= 0.18
+cost				= 3360
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 1
+inv_grid_y			= 45
+
+boost_time				= 42.6
+boost_health_restore	= 0.0021
+boost_radiation_restore	= 0.0022
+
+eat_bleeding	= -0.68
+
+eat_satiety 			= 0.346
+
+use_sound			= interface\inv_medkit
+
+[medkit_script]:booster ;Do not use! Used in xr_wounded
+;$spawn 				= "food and drugs\medkit_script"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+inv_name			= st_medkit
+inv_name_short		= st_medkit
+description			= st_medkit_descr
+inv_weight			= 0.3
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 6
+inv_grid_y			= 14
+cost				= 850
+
+;eatable item
+eat_health			= 0.75
+eat_max_power		= 0.0
+eat_radiation		= 0.0
+wounds_heal_perc	= 0.1
+eat_portions_num	= 1
+
+use_sound			= interface\inv_medkit
+
+eat_sleepiness				= 0.0
+
+eat_alcohol				= 0.0
+eat_satiety 			= 0.0
+
+;AI Tweaks xr_help_wounded
+attach_angle_offset		= -2.6,2.3,0
+attach_position_offset	= 0.156, -0.035081, 0.05
+attach_bone_name    = bip01_l_hand
+auto_attach       = false
+
+[stimpack]:booster	; will be stimpack
+$spawn 				= "food and drugs\medkit"
+visual				= dynamics\equipments\medical\stim1.ogf
+inv_name			= st_stim_impro
+inv_name_short			= st_stim_impro
+description			= st_stim_impro_descr
+inv_weight			= 0.088
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 0
+inv_grid_y         = 46
+cost				= 1320 ; 850
+
+boost_time				= 12.75
+boost_health_restore	= 0.0028
+boost_radiation_restore	= 0.0
+
+use_sound			= interface\inv_stim_4p3
+
+eat_alcohol				= 0.045
+eat_satiety 			= -0.174
+eat_sleepiness				= 0.028
+
+[stimpack_army]:booster
+$spawn 				= "food and drugs\medkit_army"
+visual				= dynamics\equipments\medical\stim2.ogf
+inv_name			= st_stim_military
+inv_name_short			= st_stim_military
+description			= st_stim_military_descr
+inv_weight			= 0.094
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 1
+inv_grid_y         = 46
+cost				= 2250 ; 1650
+
+boost_time				= 10.65
+boost_health_restore	= 0.0047
+boost_radiation_restore	= 0.0
+
+use_sound			= interface\inv_stim_4p3
+
+eat_alcohol				= 0.05
+eat_satiety 			= -0.26
+
+eat_sleepiness				= 0.054
+
+[stimpack_scientic]:booster
+$spawn 				= "food and drugs\medkit_scientic"
+visual				= dynamics\equipments\medical\stim3.ogf
+inv_name			= st_stim_scientic
+inv_name_short			= st_stim_scientic
+description			= st_stim_scientic_descr
+inv_weight			= 0.115
+
+inv_grid_width     = 1
+inv_grid_height    = 1
+inv_grid_x         = 2
+inv_grid_y         = 46
+cost				= 3450 ; 2260
+
+boost_time				= 9.3
+boost_health_restore	= 0.0099
+boost_radiation_restore	= 0.0021
+
+eat_alcohol				= 0.016
+eat_satiety 			= -0.12
+eat_sleepiness				= 0.039
+
+use_sound			= interface\inv_stim_4p3
+
+[medkit]:booster
+$spawn 				= "food and drugs\medkit"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_low.ogf
+inv_name			= st_medkit
+inv_name_short			= st_medkit
+description			= st_medkit_descr
+inv_weight			= 0.426
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 6
+inv_grid_y			= 14
+cost				= 950
+
+boost_time				= 42.6
+boost_health_restore	= 0.0010
+boost_radiation_restore	= 0.0
+boost_bleeding_restore	= 0.0 ;0.005
+
+use_sound			= interface\inv_medkit
+
+eat_alcohol				= 0.0
+eat_satiety 			= 0.0
+eat_sleepiness				= 0.0
+
+[medkit_army]:booster
+$spawn 				= "food and drugs\medkit_army"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_high.ogf
+inv_name			= st_medkit_army
+inv_name_short			= st_medkit_army
+description			= st_medkit_army_descr
+inv_weight			= 0.483
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 10
+inv_grid_y			= 10
+cost				= 1530
+
+boost_time				= 42.6
+boost_health_restore	= 0.0014
+boost_radiation_restore	= 0.0
+boost_bleeding_restore	= 0.0 ;0.02
+
+use_sound			= interface\inv_medkit
+
+eat_alcohol				= 0.0
+eat_satiety 			= 0.0
+
+eat_sleepiness				= 0.0
+
+[medkit_scientic]:booster
+$spawn 				= "food and drugs\medkit_scientic"
+visual				= dynamics\devices\dev_aptechka\dev_aptechka_mid.ogf
+inv_name			= st_medkit_science
+inv_name_short			= st_medkit_science
+description			= st_medkit_science_descr
+inv_weight			= 0.347
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 12
+inv_grid_y			= 9
+cost				= 2260
+
+boost_time				= 42.6
+boost_health_restore	= 0.0018
+boost_radiation_restore	= 0.0061
+
+eat_alcohol				= 0.0
+eat_satiety 			= 0.0
+eat_sleepiness				= 0.0
+
+use_sound			= interface\inv_medkit
+
+[rebirth]:booster
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\equipments\medical\rebirth.ogf
+inv_name			= st_rebirth
+inv_name_short			= st_rebirth
+description			= st_rebirth_descr
+inv_weight			= 0.076
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 19
+inv_grid_y			= 4
+cost				= 4690
+
+;eatable item
+;eat_radiation 			= 0.9
+
+boost_time				= 8.51
+boost_health_restore	= 0.0164
+boost_radiation_restore	= 0.019
+
+eat_alcohol				= 0.38
+eat_satiety 			= 0.54
+
+eat_sleepiness				= -0.041
+
+use_sound			= interface\inv_syringe
+[caffeine]:booster
+$spawn 				= "food and drugs\drug_psy_blockade"
+visual				= dynamics\devices\dev_caffeine\dev_caffeine.ogf
+inv_name			= st_caffeine
+inv_name_short		= st_caffeine
+description			= st_caffeine_descr
+
+inv_weight			= 0.01
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x		= 10
+inv_grid_y		= 47
+cost			= 510
+
+boost_time			= 348
+boost_max_weight	= 1.012
+
+boost_power_restore		= 0.00094
+
+eat_alcohol 			= -0.216
+eat_satiety 			= 0.014
+eat_sleepiness				= -0.034
+
+use_sound			= interface\inv_eat_pills
+
+[tetanus]:booster
+$spawn 				= "food and drugs\antirad"
+visual				= dynamics\equipments\medical\rebirth.ogf
+inv_name			= st_tetanus
+inv_name_short			= st_tetanus
+description			= st_tetanus_descr
+inv_weight			= 0.046
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 10
+inv_grid_y			= 48
+cost				= 1940
+
+boost_time				= 388
+boost_health_restore	= 0.000085
+boost_radiation_restore	= 0.000075
+;boost_bleeding_restore	= 0.000070
+
+boost_chemburn_protection 	= 0.00495
+
+eat_satiety 			= -0.139
+eat_sleepiness			= 0.071
+
+use_sound			= interface\inv_syringe
+
+[cocaine]:booster
+$spawn 				= "devices\pda"
+visual				= dynamics\drink\drink_cocaine.ogf
+description			= st_cocaine_descr
+
+inv_name			= st_cocaine
+inv_name_short			= st_cocaine
+
+inv_weight			= 0.033	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 8
+inv_grid_y			= 52
+cost				= 1780
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+boost_time				= 1352
+boost_power_restore		= 0.0038
+boost_max_weight	= 5.271
+boost_bleeding_restore	= 0.0002
+
+boost_wound_immunity		= 0.046
+boost_fire_wound_immunity	= 0.032
+boost_explosion_immunity	= 0.040
+boost_strike_immunity		= 0.027
+
+eat_alcohol				= -0.22
+eat_satiety				= 0.212
+eat_sleepiness				= -0.431
+
+eat_health				= -0.054
+
+use_sound			= interface\inv_sniff
+
+[salicidic_acid]:booster
+$spawn 				= "devices\pda"
+visual				= dynamics\equipments\medical\rebirth.ogf
+description			= st_salicidic_acid_descr
+
+inv_name			= st_salicidic_acid
+inv_name_short			= st_salicidic_acid
+
+inv_weight			= 0.076	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 4
+inv_grid_y			= 46
+cost				= 980
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+boost_time				= 938
+;boost_power_restore		= -0.0028 ;0.005
+;boost_max_weight	= -5.409
+boost_bleeding_restore	= 0.00032
+
+boost_wound_immunity		= 0.195
+boost_fire_wound_immunity	= 0.085
+boost_explosion_immunity	= 0.165
+boost_strike_immunity		= 0.105
+
+eat_alcohol				= 0.26
+eat_satiety				= -0.431
+eat_sleepiness				= 0.101
+
+eat_health				= -0.053
+
+use_sound			= interface\inv_syringe
+
+[morphine]:booster
+$spawn 				= "devices\pda"
+visual				= dynamics\equipments\medical\stim3.ogf
+description			= st_morphine_descr
+
+inv_name			= st_morphine
+inv_name_short			= st_morphine
+
+inv_weight			= 0.074	;0.2
+
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x			= 3
+inv_grid_y			= 46
+cost				= 1640
+
+attach_angle_offset		= -0.287979, 1.560923, 1.544060
+attach_position_offset	= 0.096910, -0.013594, 0.107925
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+// should be deleted after update
+bone_name				= bip01_r_hand
+position_offset			 = 0.0,0.0,0.0
+angle_offset			 = 1.570790,1.570790,3.92699
+
+boost_time				= 1328
+;boost_power_restore		= -0.0021 ;0.005
+;boost_max_weight	= -3.294
+boost_bleeding_restore	= 0.00058
+
+boost_wound_immunity		= 0.292
+boost_fire_wound_immunity	= 0.131
+boost_explosion_immunity	= 0.222
+boost_strike_immunity		= 0.185
+
+eat_alcohol				= 0.48
+eat_satiety				= -0.626
+eat_sleepiness				= 0.136
+
+eat_health				= -0.039
+
+use_sound			= interface\inv_syringe
+
+[adrenalin]:vodka
+$spawn 				= "food and drugs\energy_drink"
+inv_name			= st_adrenalin
+inv_name_short			= st_adrenalin
+visual				= dynamics\equipments\medical\stim3.ogf
+description			= st_adrenalin_descr
+cost				= 2780
+
+inv_grid_width		= 1
+inv_grid_height		= 1
+inv_grid_x			= 5
+inv_grid_y			= 52
+inv_weight			= 0.052
+
+attach_angle_offset		= 0.000000, 0.000000, 0.000000
+attach_position_offset	= 0.087266, -0.078540, 0.052360
+attach_bone_name		= bip01_r_hand
+auto_attach				= false
+
+boost_time				= 2012
+boost_power_restore		= 0.0052
+boost_max_weight	= 9.222
+boost_bleeding_restore	= 0.00037
+
+boost_wound_immunity		= 0.072
+boost_fire_wound_immunity	= 0.052
+boost_explosion_immunity	= 0.083
+boost_strike_immunity		= 0.058
+
+eat_alcohol				= -0.36
+eat_satiety				= 0.418
+eat_sleepiness				= -0.446
+
+eat_health				= -0.022
+
+use_sound			= interface\inv_syringe
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

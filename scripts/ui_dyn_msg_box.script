@@ -1,6 +1,9 @@
 -- basic dynamic msg_box
 -- alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 class "msg_box_ui" (CUIScriptWnd)
 
 function msg_box_ui:__init(typ,show,txt,func_ok,func_cancel,...) super()

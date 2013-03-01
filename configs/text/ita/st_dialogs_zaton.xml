@@ -349,13 +349,13 @@
 		<text>That kind of work ain't for us. Better ask the stalkers.</text>
 	</string>
 	<string id="zat_b103_lost_merc_leader_employ_stalkers_2">
-		<text>Listen, stalker. My empty stomach is already killing me and your nagging only makes it worse...</text>
+		<text>Listen, stalker. We cannot eat any more of this contaminated stuff as we're already dealing with serious radiation poisoning here. W cannot afford to spend any more supplies on this healing it. Soon will need resupplying, until then thou - could you bring us some clean food to ease our waiting?</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_supplies_0">
-		<text>I know. We really have a lack of good food here. But what if I could provide lots of it?</text>
+		<text>I know what you mean. We really have a lack of good food here and I want to vomit when I thing about another mutated piggu sausage. How much of it would you need?</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_supplies_1">
-		<text>Hah! 'Kay, you do that. 2 different kinds of canned meat and some fresh bread... Six of each. Make sure to bring enough to go around, 'cause we're hungry as shit.</text>
+		<text>Hah! 'Kay, you do that. 2 different kinds of canned meat and some fresh bread... Six of each. Make sure to bring enough to go around, so that can we move on. And if smell any of that radiated crap in anything you ring, I swear to God that I'll put a bullet thru you brain.</text>
 	</string>
 	<string id="zat_b103_merc_dialog_about_toolkit_0">
 		<text>Someone told me that tools are to be found around here.</text>
@@ -715,7 +715,7 @@
 		<text>Can you lead me there somehow right now?</text>
 	</string>
 	<string id="zat_b18_noah_plateau_way_111">
-		<text>Want to gun down some snorks, too, eh? Props...I can lead you there.</text>
+		<text>Want to gun down some snorks, too, eh? Props...I can lead you there. But know that before you meet your destiny, our way will lead us thru the place full of flames. Zone will not let you thru easly as She never has and never will tolerate those unpreapared and ungratefull for the wonder She is... If you want to survire there with me you'll need proper protection around your fragile flesh. Go see trading people on Skadovsk - as this this proud vessel was once proudly called - if you don't understand what I am talking about.</text>
 	</string>
 	<string id="zat_b18_noah_plateau_way_1111">
 		<text>Let's go.</text>
@@ -1066,10 +1066,10 @@
 		<text>Let's have a look... With your health? Well, if you’re doing badly, I must be dead or something...</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_111">
-	<text>I'll be honest with you - it is not good. Although I can cure you from all ailments for 3500. I can alternatively remove your irradiating only - this will cost 500.</text>
+		<text>I'll be honest with you - you could use a patch or two. I can remove most of your physical issues for 1850 RU. I have this sweet little serum here that will get you on your feet in no time. It will not remove those little, shiny particles from your system thou. No, no for this you need another type of shit. 1480 RU and you'll be leaking those isotopes from every hole of your body for the next few hours. So what's it gonna be son?</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_11">
-		<text> And what? How bad does it look?</text>
+		<text>And what? How bad does it look?</text>
 	</string>
 	<string id="zat_b22_stalker_medic_need_health_care_1111">
 		<text>Ok, take the cash and get to work, health is more important than money.</text>
@@ -1198,7 +1198,7 @@
 		<text>I'm looking for Snag. Do you know where I can find him?</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_buy_info_131">
-		<text>I'll tell you for 4,000.</text>
+		<text>I'll tell you for 2,800.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_buy_info_1311">
 		<text>Here.</text>
@@ -1342,7 +1342,7 @@
 		<text>A mercenary's PDA, nickname is Hook. Found it at the waste processing station.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_121">
-		<text>I'll give you 4,500.</text>
+		<text>I'll give you 2,260.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1211">
 		<text>Deal.</text>
@@ -1354,7 +1354,7 @@
 		<text>A mercenary's PDA, nickname is Ridge. Found it at the waste processing station.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_131">
-		<text>I'll give you 4,500.</text>
+		<text>I'll give you 1,880.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1311">
 		<text>Deal.</text>
@@ -1363,7 +1363,7 @@
 		<text>PDA with information on the Monolith's caches.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_141">
-		<text>I'll give you 4,500.</text>
+		<text>I'll give you 3,850.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1411">
 		<text>Deal.</text>
@@ -1372,7 +1372,7 @@
 		<text>PDA of a man connected with the mercenaries' client.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_151">
-		<text>I'll give you 3,000.</text>
+		<text>I'll give you 2,100.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1511">
 		<text>Deal.</text>
@@ -1390,7 +1390,7 @@
 		<text>A mercenary's PDA.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_171">
-		<text>I'll give you 2,500.</text>
+		<text>I'll give you 1,760.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1711">
 		<text>Deal.</text>
@@ -1408,7 +1408,7 @@
 		<text>A note from Strelok's group stash. Addressed to Ghost.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_191">
-		<text>I'll give you 2,500.</text>
+		<text>I'll give you 1,680.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_1911">
 		<text>Deal.</text>
@@ -1417,7 +1417,7 @@
 		<text>A note from Strelok's group stash. Addressed to Strelok.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_201">
-		<text>I'll give you 2,500.</text>
+		<text>I'll give you 1,530.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2011">
 		<text>Deal.</text>
@@ -1426,7 +1426,7 @@
 		<text>A note from Strelok's group stash. Addressed to Fang.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_211">
-		<text>I'll give you 2,500.</text>
+		<text>I'll give you 1,750.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2111">
 		<text>Deal.</text>
@@ -1435,7 +1435,7 @@
 		<text>Documents from the Jupiter plant, a folder containing the general evacuation order.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_221">
-		<text>I'll give you 3,500.</text>
+		<text>I'll give you 2,260.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2211">
 		<text>Deal.</text>
@@ -1444,7 +1444,7 @@
 		<text>Documents from the Jupiter plant, a notebook entry.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_231">
-		<text>I'll give you 3,500.</text>
+		<text>I'll give you 1,480.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2311">
 		<text>Deal.</text>
@@ -1453,7 +1453,7 @@
 		<text>Documents from the Jupiter plant, a delivery schedule.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_241">
-		<text>I'll give you 3,500.</text>
+		<text>I'll give you 1,530.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2411">
 		<text>Deal.</text>
@@ -1462,7 +1462,7 @@
 		<text>Documents from the Jupiter plant, a letter with the decree to transport item 62 only through the underpass.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_251">
-		<text>I'll give you 3,500.</text>
+		<text>I'll give you 1,890.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2511">
 		<text>Deal.</text>
@@ -1480,7 +1480,7 @@
 		<text>Notebook from the mercenary camp at the waste processing station.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_301">
-		<text>I'm offering you 15,500.</text>
+		<text>I'm offering you 7,590.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_3011">
 		<text>Deal.</text>
@@ -1498,7 +1498,7 @@
 		<text>Snag's PDA.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_341">
-		<text>Let's have a look. Hrm... Nothing special. You've probably already cleared out that stash, so my price is 2000.</text>
+		<text>Let's have a look. Hrm... Nothing special. You've probably already cleared out that stash, so my price is 1510.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_3411">
 		<text>I agree.</text>
@@ -1507,7 +1507,7 @@
 		<text>PDA of one of the Sultan's crew.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_351">
-		<text>Interesting... Could be of use. I'll give you 3,500.</text>
+		<text>Interesting... Could be of use. I'll give you 3,790.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_3511">
 		<text>I agree.</text>
@@ -1516,7 +1516,7 @@
 		<text>Memory module from an unmanned aerial vehicle.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_361">
-		<text>A very interesting find... But it won't make you rich. Who knows if I'm the first one to read the information on it? My price is 6,400.</text>
+		<text>A very interesting find... But it won't make you rich. Who knows if I'm the first one to read the information on it? My price is 8,280.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_3611">
 		<text>Done.</text>
@@ -1708,7 +1708,7 @@
 		<text>Let's.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_111">
-		<text>Let's see what we got here... My old but lethal Fora. A long time ago my uncle modified it with his own hands. Almost like a family heirloom, yeah... so, let me hold on to that.</text>
+		<text>Let's see what we got here... A set of kevlar plates. Can save ones life more than once, so let me keep it.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1111">
 		<text>No, give it to me!</text>
@@ -1729,10 +1729,10 @@
 		<text>all right, take it. What else is there?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_112">
-		<text>Okay... Let's see. An excellent medical kit. Good enough to go up against a bear or even a controller. That's mine...</text>
+		<text>Okay... Let's see. An excellent set of medical supplies. Good enough to go up against a bear or even a controller or even to get high when feeling to miserable. That's mine...</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1121">
-		<text>Actually, I could use a medical kit!</text>
+		<text>Actually, I could use a medical supplies!</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_11211">
 		<text>Hrm... okay.</text>
@@ -1750,13 +1750,13 @@
 		<text>You can keep that. What else is there?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_113">
-		<text>Okay... Wow. I doubt you've ever held this kinda shooter in your hands... An enhanced AKM-74/2U. I gave this Duty fella a ton of first aid kits to get my hands on this beauty. That was when Freedom pounded a Duty squad so bad that they actually ran out of meds. Three times this baby saved my life since then... This is definitely for me.</text>
+		<text>Okay... Wow. An improvised explosive device made from RPG grenade. Very handy in scilfull hands but you would never know how to use it, so this is definitely for me.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1131">
 		<text>Maybe I can have it?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_11311">
-		<text>Hrm... It really breaks my heart. But a deal's a deal. Take it.</text>
+		<text>Hrm... It really breaks my heart that I wont see it rip apart a bandit or teo. But a deal's a deal. Take it.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_113111">
 		<text>See what's next.</text>
@@ -1771,7 +1771,7 @@
 		<text>Okay, keep it for yourself. What's next?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_114">
-		<text>Oh-h-h... A beautiful and valuable piece. This artifact is worth a mountain of gold! I got it myself from an anomaly, mind you. I shat my pants more than once as I did, too. It's my trophy, earned with blood and tears.</text>
+		<text>Oh-h-h... Military grade map-making kit. Used by all those poor scouts who venture to these parts. Have some reselling value so traders might be interested in it. I'd like to keep it.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1141">
 		<text>I think I need it more than you do.</text>
@@ -1792,10 +1792,10 @@
 		<text>Keep it. What's next?</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_115">
-		<text>And last but not least... An excellent helmet, handmade. A while ago we got this new stalker at the Cordon, a real handyman. Made a bunch of real cool stuff before he croaked. This helmet is one of them. You won't find one like it anywhere!... I'm keeping it.</text>
+		<text>And last but not least... Two folded sheets of military maps presenting some of the parts of the Zone in an in-depth way. I have some connections to explorers who mith be interested, so I'm keeping them.</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_1151">
-		<text>Look here, I'm the one who put my life on the line against that horde of snorks... I deserve that helmet.</text>
+		<text>Look here, I'm getting robbed here by you and this was my case in the first place! Remember - I also took some damage from those damn snorks!</text>
 	</string>
 	<string id="zat_b33_stalker_snag_share_package_dialog_11511">
 		<text>Well... okay, fine. Enjoy it.</text>
@@ -2518,13 +2518,13 @@
 		<text>Take this medkit.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_1_gathering_artefacts_1111">
-		<text>Whew! Thank you, buddy. I was this close to buying it in a Boiler. The mutant dogs would've had a field day... Here, take my detector. Might come in handy one day... Thanks for saving my life, really. I think I'll take a breather at the base now.</text>
+		<text>Whew! Thank you, buddy. I was this close to buying it in a Boiler, I guess my fuckin SSP has leakeges again. All those damn hot fumes made me completely dizzy inside this thing. i guess the mutant dogs would've had a field day if it wasn't for you... Here, take part of our income from this trip. I'm sure you'll put them to good use. Remember - proper equipment is your best friend in the Zone. Thanks for saving my life, really. I think I'll take a breather at the base now.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_1_gathering_artefacts_11111">
 		<text>Good luck.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_1_gathering_artefacts_1112">
-		<text>Whew! Thank you, buddy. I was this close to buying it . The mutant dogs would've had a field day... Here, take this artifact. Might come in handy one day... Thanks for saving my life, really. I think I'll take a breather at the base now.</text>
+		<text>Whew! Thank you, buddy. I was this close to buying it in a Boiler, I guess my fuckin SSP has leakeges again, only probles with this piece of shit. All those damn hot fumes leaking in made me completely dizzy inside this thing, I guess the mutant dogs would've had a field day if it wasn't for you... Here, take part of what is left from our savings. I'm sure you'll put them to good use. Remember - proper equipment is your best friend in the Zone. Thanks for saving my life, really. I think I'll take a breather at the base now.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_1_gathering_artefacts_112">
 		<text>I can't, I need it myself.</text>
@@ -2536,7 +2536,7 @@
 		<text>Thanks again! Without you I'd be pushing up daisies right now...</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_11">
-		<text>Stalker! Quick, come help Petrukha! Look over there, at the edge of the crevice! He got whacked by an anomaly! Even his suit didn't help one bit! And me, I don't have one. Petrukha and I pooled all our money together to buy that one... If I take another step, I'm done for! Help us, please!!</text>
+		<text>Stalker! Quick, come help Petruha! Look over there, at the edge of the crevice! He got whacked by an anomaly! His closed respiratory system must have decompressed again and he must have fainted from toxic and heated fumes. This fuckin SSP is only causing troubles for us and we've been saving for months to buy one! I tried to help him but my SEVA is almost completely destroyed from dog bites and now I am so badly burned that I feel that I'm done for if I take another step! Help us, please!!</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_111">
 		<text>OK, stay where you are. I'll give it a try.</text>
@@ -2545,7 +2545,7 @@
 		<text>Deal with it yourselves.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_12">
-		<text>Thanks for saving Petrukha. Damn, why didn't we save up for a better suit!</text>
+		<text>Thanks for saving Petruha. Damn, I knew we shouldn't have bought the used one! Now all we saved is going to go into repairs.</text>
 	</string>
 	<string id="zat_b53_artefact_hunter_2_gathering_artefacts_13">
 		<text>Get out of my sight. You let Petruha die... He was twice the man you'll ever be!</text>
@@ -3043,7 +3043,7 @@
 		<text>I have major customers outside the Zone who regularly order specific artifacts, which must be delivered within a specific period of time. You bring me what I ask and I pay you good money for it. Keep in mind that these orders are very important for me, which is why I try to commission several agents at a time... You get the full fee only if you deliver first.</text>
 	</string>
 	<string id="zat_b18_noah_plateau_way_112">
-		<text>Via the burnt farmstead. Hrm... Who are you, anyway?</text>
+		<text>Via the burnt farmstead. But you'll need one of those fancy scientific suits to get thru there. Hrm... Who are you, anyway?</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_buy_info_15311">
 		<text>They also call that place the Iron Forest. The chopper crashed slap bang into the power pylons. None of the jarheads survived... Even if they did, they'd never make it out alive. Those poltergeists just love chasing people into electric anomalies... Those scumbags respond to the tiniest movement, as I’m sure you know.</text>
@@ -3076,7 +3076,7 @@
 		<text>Sultan’s messenger’s PDA.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_281">
-		<text>It’s not that interesting. I'll give you 2,200 for it.</text>
+		<text>It’s not that interesting. I can pay you for the device only and its of not very high quality. I'll give you 720 roubles for it.</text>
 	</string>
 	<string id="zat_b30_owl_stalker_trader_sell_items_2811">
 		<text>OK.</text>

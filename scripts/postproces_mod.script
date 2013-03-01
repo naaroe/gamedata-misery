@@ -3,7 +3,8 @@
 --[[------ идея такая - при недосыпе в 12 часов начинаеться двоиться в глазах, при 18 - заблуривание, при 24 отруб с анимацией. Правда я не доконца разобрался с таблицами времени, ну ты уж сам напишешь как правильно. кстати, нужно бы расписать по часам ведь Пысовский сон ранжируется по часам а не по 3 этапам. нужно еще правда сделать подъем с анимацие так используй эту анимацию sleep.anm, а лучше такую surge_02.anm или surge_01, не помню точно. нужно будет потом еще звук зевка прописать на проигрывание, но пока нужного не нашел. сгенерирую из архивов игры потом, как экзамены сдам --]]
 
 local upd_time
-local max_wake_time = 55*60*60 -- сколько может продержаться без сна. часы*минуты*секунды
+local max_wake_time = axr_misery.ActorClass == "assaulter" and 73 or axr_misery.ActorClass == "recon" and 88 or axr_misery.ActorClass == "sniper" and 106
+max_wake_time = max_wake_time*60*60 -- сколько может продержаться без сна. часы*минуты*секунды
 local drst = game.get_game_time()
 local sleep_ppe1,sleep_ppe2
 local sleepd = nil
@@ -27,7 +28,7 @@ function sleep_update()
 	val = val+add
 --	rx_ai.printf("drowse:add %s, val = %s",add,val)
 	xr_logic.pstor_store(db.actor,"drowse",val)
-    if val > 1 and (not xr_conditions.surge_started() or surge_manager.actor_in_cover()) then -- отруб
+    if val > 1 and (not surge_manager.is_started() or surge_manager.actor_in_cover()) then -- отруб
 		sleepsnd:play(db.actor,0,sound_object.s2d)
 		if val > 1.1 then                      --- если вы поставили на предметах (водка , в основном) большое значение сонливости, то можно увеличить предел на значение дельты изменения
 			ui_sleep_dialog.sleep_forced(4*val)  --- нажрались водяры? Спим дольше
@@ -82,7 +83,7 @@ local obj_table = {}
 function use_obj(obj)
 	local s = obj:section()
 	if not obj_table[s] then
-		obj_table[s] = rx_utils.read_from_ini(nil,s,"eat_sleepiness",0)
+		obj_table[s] = alun_utils.read_from_ini(nil,s,"eat_sleepiness","float",0)
 	end
 	if obj_table[s] ~= 0 then
 --		rx_ai.printf("sleep:use %s = %s",s,obj_table[s])
@@ -121,7 +122,7 @@ function wounded_pp_update()
         level.add_cam_effector("camera_effects\\fusker.anm", 999, false, "")
         if math.random() < drop_item_on_crit_prob then
           local active_item = db.actor:active_item()
-          if active_item and active_item:section() ~= "bolt" and active_item:section()~= "wpn_knife" then
+          if active_item and active_item:section() ~= "bolt" and not string.find(active_item:section(),"knife") then
             db.actor:drop_item(active_item)
           end
         end

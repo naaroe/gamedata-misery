@@ -1,41 +1,36 @@
 ---- Rulix aka Bak --- 29.7.2009
+-- modifed by Alundaio
+--Copyright (C) 2012 Alundaio
+--This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
 
 function printf(s,...)
---	ai_tweaks.printf("ff:"..s,...)
+	--ai_tweaks.printf("ff:"..s,...)
 --	get_console():execute("flush")
 end
 
 --------------------------------------
-evid_dont_shoot = 18825
+evid_dont_shoot = 18803
 actid_dont_shoot = evid_dont_shoot
 --------------------------------------
 
-local ff_sets = nil
 local good_acts = {[xr_actions_id.smartcover_action] = true,[xr_actions_id.smartcover_action+2] = true}
-local Enable
 function on_game_start()
-	local ff_ini = ini_file("ai_tweaks\\rx_ff.ltx")
-	Enable = alun_utils.read_from_ini(ff_ini,"main","enabled","bool",false)
-	if not (Enable) then return end
-
 	load_scheme("rx_ff","rx_ff",0)
-
 	callback_register("scheme_set",set_scheme)
+	--callback_register("scheme_reset",reset_scheme)
 	callback_register("npc_add_precondition",npc_add_precondition)
-
-	ff_sets = {forbiddens = {factions = {},npcs = {}},
-				check_prd = alun_utils.read_from_ini(ff_ini,"main","check_period","float",200)}
-	ff_sets.forbiddens.factions = alun_utils.parse_list(ff_ini,"main","forbidden_factions",true)
-	ff_sets.forbiddens.npcs = alun_utils.parse_list(ff_ini,"main","forbidden_npcs",true)
 end
+
 
 class "evaluator_dont_shoot" (property_evaluator)
-function evaluator_dont_shoot:__init(npc,name,storage) super (nil,name)
+function evaluator_dont_shoot:__init(storage, name) super (nil, name)
 	self.st = storage
 end
+
 function evaluator_dont_shoot:evaluate()
 	local npc = self.object
 	if good_acts[npc:motivation_action_manager():current_action_id()] then
+		--alun_utils.printf("smartcover_action")
 		return false
 	end
 	local enemy = npc:best_enemy()
@@ -53,18 +48,18 @@ function evaluator_dont_shoot:evaluate()
 				end
 			end
 		else
-			local f,d = friends_on_fire_line(npc)
---			printf("eva[%s]:%s",npc:character_name(),tostring(f))
+			local f,d = friends_on_fire_line(npc,self.st)
+			--printf("eva[%s]:%s",npc:character_name(),tostring(f))
 			res = f
 			self.st.vdist = d
 		end
 	end
---	printf("enemy[%s]: %s",npc:character_name(),tostring(enemy~=nil))
+	--printf("enemy[%s]: %s",npc:character_name(),tostring(enemy~=nil))
 	return res
 end
 
 class "action_verso" (action_base)
-function action_verso:__init (npc,action_name,storage) super (nil,action_name)
+function action_verso:__init (storage,name) super (nil,name)
 	self.st = storage
 end
 function action_verso:initialize()
@@ -80,7 +75,7 @@ function action_verso:initialize()
 	end
 	self.vertex = get_vertex(npc,self.st.vdist)
 	self.timer = time_global()+800*self.st.vdist
-	printf("act2[%s]:init vertex = %s, vdist = %s",npc:character_name(),tostring(self.vertex),self.st.vdist)
+	--printf("act2[%s]:init vertex = %s, vdist = %s",npc:character_name(),tostring(self.vertex),self.st.vdist)
 	state_mgr.set_state(npc,"assault")
 end
 function action_verso:execute()
@@ -95,43 +90,40 @@ function action_verso:execute()
 		npc:set_dest_level_vertex_id(self.vertex)
 	end
 	if not self.vertex or npc:level_vertex_id() == self.vertex or self.timer < tg then
-		printf("act2[%s]:vertex re",npc:character_name())
+		--printf("act2[%s]:vertex re",npc:character_name())
 		self.vertex = get_vertex(npc,self.st.vdist)
 		self.timer = tg+700*self.st.vdist
 	end
 end
 function action_verso:finalize()
     action_base.finalize(self)
-	printf("act2[%s]:fin",self.object:character_name())
+	--printf("act2[%s]:fin",self.object:character_name())
+end
+
+function npc_add_precondition(action)
+	action:add_precondition(world_property(evid_dont_shoot,false))
 end
 
 function add_to_binder(npc,ini,scheme,section,storage)
-	if not (Enable) then return end
 	local manager = npc:motivation_action_manager()
-	if (ff_sets.forbiddens.factions[npc:character_community()] or ff_sets.forbiddens.npcs[npc:name()]) then
-		manager:add_evaluator(evid_dont_shoot,property_evaluator_const(false))
-		return
-	else
-		manager:add_evaluator(evid_dont_shoot,evaluator_dont_shoot(npc,"eva_dont_shoot",storage))
-	end
-	local action = action_verso(npc,"act_dont_shoot",storage)
+	manager:add_evaluator(evid_dont_shoot,evaluator_dont_shoot(storage,"eva_dont_shoot"))
+
+	local action = action_verso(storage,"act_dont_shoot")
 	action:add_precondition(world_property(stalker_ids.property_alive,true))
 	action:add_precondition(world_property(xr_evaluators_id.sidor_wounded_base,false))
-	if rx_bandage then
-		action:add_precondition(world_property(rx_bandage.evid_bandage,false))
-	end
+	action:add_precondition(world_property(xr_evaluators_id.state_mgr+1,true))
+	action:add_precondition(world_property(evid_dont_shoot,true))
+	action:add_effect(world_property(evid_dont_shoot,false))
+
 	if rx_gl then
 		action:add_precondition(world_property(rx_gl.evid_gl_reload,false))
 	end
-	if rx_facer then
-		action:add_precondition(world_property(rx_facer.evid_facer,false))
+	if xrs_facer then
+		action:add_precondition(world_property(xrs_facer.evid_facer,false))
 	end
-	if rx_knife then
-		action:add_precondition(world_property(rx_knife.evid_knife_attack,false))
-	end
-	action:add_precondition(world_property(evid_dont_shoot,true))
-	action:add_effect(world_property(evid_dont_shoot,false))
+
 	manager:add_action(actid_dont_shoot,action)
+
 	action = manager:action(stalker_ids.action_combat_planner)
 	action:add_precondition(world_property(evid_dont_shoot,false))
 --	action = manager:action(xr_actions_id.alife)
@@ -152,7 +144,7 @@ function get_vertex(npc,dist)
 end
 
 function set_scheme(npc,ini,scheme,section)
-	local st = xr_logic.assign_storage_and_bind(npc,ini,"rx_ff","rx_ff")
+	local st = xr_logic.assign_storage_and_bind(npc,ini,"rx_ff",section)
 end
 
 function disable_scheme(npc, scheme)
@@ -162,14 +154,14 @@ function disable_scheme(npc, scheme)
 	end
 end
 
-function friends_on_fire_line(npc)
+function friends_on_fire_line(npc,st)
 	local sid = npc:id()
-	local st = alun_utils.get_storage(sid,"friends_on_fire_line")
+	--local st = alun_utils.get_storage(sid,"friends_on_fire_line")
 	local tg = time_global()
 	if (st.wait or 0) >= tg then
 		return st.f,st.d
 	end
-	st.wait = tg+ff_sets.check_prd
+	st.wait = tg+100
 	st.f = false
 	st.d = 4
 	local friends = {}
@@ -183,9 +175,9 @@ function friends_on_fire_line(npc)
 	for o in npc:memory_visible_objects() do
 		check_object(o:object())
 	end
-	for o in npc:memory_sound_objects() do
+	--for o in npc:memory_sound_objects() do
 --		check_object(o:object())
-	end
+	--end
 	if #friends ~= 0 then
 		local npc_pos = npc:bone_position("bip01_l_finger02")
 		local be = npc:best_enemy()

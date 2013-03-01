@@ -1,113 +1,618 @@
--- Credits: xStreme, Bak and Barin
 -- stpk_utils
--- Alundaio
+-- Alundaio          (Credits: xStream, Bak, Barin)
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 
+local stpk = net_packet()
+local uppk = net_packet()
 
+function get_abstract_data(stpk)
+    if (stpk:w_tell() <= 2) then
+        return
+    end
 
-function data_left(stpk)
-	return (stpk:r_elapsed() ~= 0)
+    local t = {}
+
+    stpk:r_seek(0)
+    t.dummy16 = stpk:r_u16()
+    t.section_name = stpk:r_stringZ()
+    t.name = stpk:r_stringZ()
+    t.s_gameid = stpk:r_u8()
+    t.s_rp = stpk:r_u8()
+    t.position = stpk:r_vec3()
+    t.direction = stpk:r_vec3()
+    t.respawn_time = stpk:r_u16()
+    t.object_id = stpk:r_u16()
+    t.parent_id = stpk:r_u16()
+    t.phantom_id = stpk:r_u16()
+    t.s_flags = stpk:r_u16()
+    t.version = stpk:r_u16()
+    t.cse_abstract__unk1_h16 = stpk:r_u16()
+    t.script_version = stpk:r_u16()
+    t.unused = stpk:r_u16()
+    if t.unused > 0 then
+        t.extra = {}
+        for i = 1, t.unused do
+            t.extra[i] = stpk:r_u8()
+        end
+    end
+    t.spawn_id = stpk:r_u16()
+    t.extended_size = stpk:r_u16()
+    return t
 end
 
-function read_chunk(stpk, length, c_type)
-	local tab = {}
-	for i = 1, length do
-		if c_type == "u8" then
-			tab[i] = stpk:r_u8()
-		elseif c_type == "u16" then
-			tab[i] = stpk:r_u16()
-		elseif c_type == "u32" then
-			tab[i] = stpk:r_u32()
-		elseif c_type == "s32" then
-			tab[i] = stpk:r_s32()
-		elseif c_type == "float" then
-			tab[i] = stpk:r_float()
-		elseif c_type == "string" then
-			tab[i] = stpk:r_stringZ()
-		elseif c_type == "bool" then
-			tab[i] = stpk:r_bool()
+function set_abstract_data(t,stpk)
+    stpk:w_begin(t.dummy16)
+    stpk:w_stringZ(t.section_name)
+    stpk:w_stringZ(t.name)
+    stpk:w_u8(t.s_gameid)
+    stpk:w_u8(t.s_rp)
+    stpk:w_vec3(t.position)
+    stpk:w_vec3(t.direction)
+    stpk:w_u16(t.respawn_time)
+    stpk:w_u16(t.object_id)
+    stpk:w_u16(t.parent_id)
+    stpk:w_u16(t.phantom_id)
+    stpk:w_u16(t.s_flags)
+    stpk:w_u16(t.version)
+    stpk:w_u16(t.cse_abstract__unk1_h16)
+    stpk:w_u16(t.script_version)
+    stpk:w_u16(t.unused)
+    if t.unused > 0 and t.extra ~= nil then
+        for i = 1, t.unused do
+            stpk:w_u8(t.extra[i])
+        end
+    end
+    stpk:w_u16(t.spawn_id)
+    stpk:w_u16(t.extended_size)
+end
+
+function get_weapon_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_weapon_properties_packet(t,stpk)
+	return t
+end
+
+function set_weapon_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_weapon_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_item_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	return t
+end
+
+function set_item_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function get_inv_box_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_inventory_box_properties_packet(t,stpk)
+	return t
+end
+
+function set_inv_box_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_inventory_box_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_item_document_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	t.info_portion = stpk:r_stringZ()
+	return t
+end
+
+function set_item_document_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk:w_stringZ(t.info_portion)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_item_pda_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_item_properties_packet(t,stpk)
+	t.original_owner = stpk:r_u16()
+	t.specific_character = stpk:r_stringZ()
+	t.info_portion = stpk:r_stringZ()
+	return t
+end
+
+function set_item_pda_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_item_properties_packet(t,stpk)
+		stpk:w_u16(t.original_owner)
+		stpk:w_stringZ(t.specific_character)
+		stpk:w_stringZ(t.info_portion)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function get_stalker_data(sobj)
+	if not (sobj) then return {} end
+	stpk:w_begin(0)
+	uppk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	sobj:UPDATE_Write(uppk)
+	stpk:r_seek(2)
+	uppk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_trader_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_creature_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_monster_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_human_abstract_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_se_stalker_properties_packet(t,stpk)
+	return t
+end
+
+function set_stalker_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		uppk:w_begin(0)
+		stpk_utils.fill_cse_alife_trader_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_creature_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_monster_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_human_abstract_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_se_stalker_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		uppk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+		sobj:UPDATE_Read(uppk)
+	end
+end
+
+
+function get_smart_cover_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_smart_cover_properties_packet(t,stpk)
+	stpk_utils.parse_se_smart_cover_properties_packet(t,stpk)
+	return t
+end
+
+function set_smart_cover_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_smart_cover_properties_packet(t,stpk)
+		stpk_utils.fill_se_smart_cover_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function spawn_smart_cover(anim,sec,pos,lvid,gvid)
+	local se_cover = alife():create(sec,pos,lvid,gvid)
+	se_cover.last_description = anim
+	se_cover.loopholes[anim] = 1
+	local data = alun_utils.get_smart_cover_data(se_cover)
+	data.description = anim
+	data.last_description = anim
+	data.loopholes[anim] = 1
+	alun_utils.set_smart_cover_data(data,se_cover)
+	return se_cover
+end
+
+function get_climable_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_climable_properties_packet(t,stpk)
+	return t
+end
+
+function set_climable_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_climable_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_heli_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_motion_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_helicopter_properties_packet(t,stpk)
+	return t
+end
+
+function set_heli_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_motion_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_helicopter_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function spawn_heli()
+	local pos = db.actor:position()
+	local se_obj = alife():create("helicopter",vector():set(pos.x,pos.y,pos.z),db.actor:level_vertex_id(),db.actor:game_vertex_id())
+	local data = get_heli_data(se_obj)
+	data.visual_name = [[dynamics\vehicles\mi24\veh_mi24_u_01]]
+	data.motion_name = [[helicopter\aaa.anm]]
+	data.startup_animation = "idle"
+	data.skeleton_name = "idle"
+	data.engine_sound = [[vehicles\helicopter\helicopter]]
+	data.custom_data = "[logic]\n cfg = scripts\\heli_test.ltx"
+	set_heli_data(data,se_obj)
+	return se_obj
+end
+
+function get_lamp_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_hanging_lamp_properties_packet(t,stpk)
+	return t
+end
+
+function set_lamp_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_hanging_lamp_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_physic_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_visual_properties_packet(t,stpk)
+	stpk_utils.parse_cse_ph_skeleton_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_object_physic_properties_packet(t,stpk)
+	return t
+end
+
+function set_physic_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_visual_properties_packet(t,stpk)
+		stpk_utils.fill_cse_ph_skeleton_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_object_physic_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+function get_space_restrictor_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_space_restrictor_properties_packet(t,stpk)
+	return t
+end
+
+function set_space_restrictor_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_space_restrictor_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function get_anom_zone_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_space_restrictor_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_custom_zone_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_anomalous_zone_properties_packet(t,stpk)
+	stpk_utils.parse_se_zone_anom_properties_packet(t,stpk)
+	return t
+end
+
+function set_anom_zone_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_space_restrictor_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_custom_zone_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_anomalous_zone_properties_packet(t,stpk)
+		stpk_utils.fill_se_zone_anom_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+
+function get_level_changer_data(sobj)
+	if not sobj then
+		return {}
+	end
+	stpk:w_begin(0)
+	sobj:STATE_Write(stpk)
+	stpk:r_seek(2)
+	local t = {}
+	stpk_utils.parse_cse_alife_object_properties_packet(t,stpk)
+	stpk_utils.parse_cse_shape_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_space_restrictor_properties_packet(t,stpk)
+	stpk_utils.parse_cse_alife_level_changer_properties_packet(t,stpk)
+	stpk_utils.parse_se_level_changer_properties_packet(t,stpk)
+	return t
+end
+
+function set_level_changer_data(t,sobj)
+	if sobj then
+		stpk:w_begin(0)
+		stpk_utils.fill_cse_alife_object_properties_packet(t,stpk)
+		stpk_utils.fill_cse_shape_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_space_restrictor_properties_packet(t,stpk)
+		stpk_utils.fill_cse_alife_level_changer_properties_packet(t,stpk)
+		stpk_utils.fill_se_level_changer_properties_packet(t,stpk)
+		local size = stpk:w_tell()
+		stpk:r_seek(2)
+		sobj:STATE_Read(stpk,size)
+	end
+end
+
+
+function get_item_update_data(sobj)
+	if not sobj then
+		return {}
+	end
+	uppk:w_begin(0)
+	sobj:UPDATE_Write(uppk)
+	uppk:r_seek(2)
+	local t = {}
+	if data_left(uppk) then
+		t.upd_num_items = uppk:r_u8()
+		if (t.upd_num_items > 0) then
+			t.upd_ph_force = read_chunk(uppk, 3, "s32")
+			t.upd_ph_torque = read_chunk(uppk, 3, "s32")
+			t.upd_ph_position = read_chunk(uppk, 3, "float")
+			t.upd_ph_rotation = read_chunk(uppk, 4, "float")
+			if bit_and(t.upd_num_items, 64) == 0 then
+				if uppk:r_elapsed() >= 12 then
+					t.upd_ph_angular_vel = read_chunk(uppk, 3, "float")
+				else
+					abort("cse_alife_item::update_read => cannot read 'upd:ph_angular_vel'")
+					return
+				end
+			end
+			if bit_and(t.upd_num_items, 128) == 0 then
+				if uppk:r_elapsed() >= 12 then
+					t.upd_ph_linear_vel = read_chunk(uppk, 3, "float")
+				else
+					abort("cse_alife_item::update_read => cannot read 'upd:ph_linear_vel'")
+					return
+				end
+			end
+			if data_left(uppk) then
+				t.upd_cse_alife_item__marker_one = uppk:r_u8()
+			end
+		end
+		if data_left(uppk) then
+			t.upd_torch_flags = uppk:r_u8()
 		end
 	end
-	return tab
+	return t
 end
-function write_chunk(stpk, tab, c_type)
-	if tab == nil then
-		return
-	end
-	for k, v in ipairs(tab) do
-		if c_type == "u8" then
-			stpk:w_u8(v)
-		elseif c_type == "u16" then
-			stpk:w_u16(v)
-		elseif c_type == "u32" then
-			stpk:w_u32(v)
-		elseif c_type == "s32" then
-			stpk:w_s32(v)
-		elseif c_type == "float" then
-			stpk:w_float(v)
-		elseif c_type == "string" then
-			stpk:w_stringZ(v)
-		elseif c_type == "bool" then
-			stpk:w_bool(v)
+
+function set_item_update_data(t,sobj)
+	if sobj then
+		uppk:w_begin(0)
+		if t.upd_num_items ~= nil then
+			uppk:w_u8(t.upd_num_items)
+			if t.upd_num_items ~= 0 then
+				write_chunk(uppk, t.upd_ph_force, "s32")
+				write_chunk(uppk, t.upd_ph_torque, "s32")
+				write_chunk(uppk, t.upd_ph_position, "float")
+				write_chunk(uppk, t.upd_ph_rotation, "float")
+				write_chunk(uppk, t.upd_ph_angular_vel, "float")
+				write_chunk(uppk, t.upd_ph_linear_vel, "float")
+				if t.upd_cse_alife_item__marker_one ~= nil then
+					uppk:w_u8(t.upd_cse_alife_item__marker_one)
+				end
+			end
 		end
+		if (t.upd_torch_flags) then
+			uppk:w_u8(t.upd_torch_flags)
+		end
+		local size = uppk:w_tell()
+		uppk:r_seek(2)
+		sobj:UPDATE_Read(uppk,size)
 	end
 end
-function readvu8uN(stpk,n)
-	local v = {}
-	for i=1,n,1 do
-		table.insert(v,stpk:r_u8())
-	end
-	return v
-end
-function writevu8uN(stpk,v)
-	local len = table.getn(v)
-	for i=1,len,1 do
-		stpk:w_u8(v[i])
-	end
-end
-function readvu32stringZ(stpk)
-	local v = {}
-	local len = stpk:r_s32()
-	for i=1,len,1 do
-		table.insert(v,stpk:r_stringZ())
-	end
-	return v
-end
-function writevu32stringZ(pk,v)
-	if v == nil then
-		v = {}
-	end
-	local len = #v
-	pk:w_s32(len)
-	for i=1,len,1 do
-		pk:w_stringZ(v[i])
-	end
-end
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 -- cse_abstract_properties
 function parse_cse_abstract_properties_packet(ret,stpk)
-	ret.cse_abstract__unk1_u16 = stpk:r_u16()
-	ret.section_name = stpk:r_stringZ()
-	ret.name = stpk:r_stringZ()
-	ret.s_gameid = stpk:r_u8()
-	ret.s_rp = stpk:r_u8()
-	ret.position = stpk:r_vec3()
-	ret.direction = stpk:r_vec3()
-	ret.respawn_time = stpk:r_u16()
-	ret.cse_abstract__unk2_u16 = stpk:r_u16()
-	ret.parent_id = stpk:r_u16()
-	ret.phantom_id = stpk:r_u16()
-	ret.s_flags = stpk:r_u16()
-	ret.version = stpk:r_u16()
-	ret.cse_abstract__unk3_u16 = stpk:r_u16()
-	ret.script_version = stpk:r_u16()
-	ret.unused = stpk:r_u16()
-	ret.spawn_id = stpk:r_u16()
-	ret.extended_size = stpk:r_u16()
-	return ret
+    t.dummy16 = stpk:r_u16()
+    t.section_name = stpk:r_stringZ()
+    t.name = stpk:r_stringZ()
+    t.s_gameid = stpk:r_u8()
+    t.s_rp = stpk:r_u8()
+    t.position = stpk:r_vec3()
+    t.direction = stpk:r_vec3()
+    t.respawn_time = stpk:r_u16()
+    t.object_id = stpk:r_u16()
+    t.parent_id = stpk:r_u16()
+    t.phantom_id = stpk:r_u16()
+    t.s_flags = stpk:r_u16()
+    t.version = stpk:r_u16()
+    t.cse_abstract__unk1_h16 = stpk:r_u16()
+    t.script_version = stpk:r_u16()
+    t.unused = stpk:r_u16()
+    if t.unused > 0 then
+        t.extra = {}
+        for i = 1, t.unused do
+            t.extra[i] = stpk:r_u8()
+        end
+    end
+    t.spawn_id = stpk:r_u16()
+    t.extended_size = stpk:r_u16()
+    return t
 end
 
 function fill_cse_abstract_properties_packet(ret,stpk)
-	stpk:w_u16(ret.cse_abstract__unk1_u16)
+	stpk:w_u16(ret.dummy16)
 	stpk:w_stringZ(ret.section_name)
 	stpk:w_stringZ(ret.name)
 	stpk:w_u8(ret.s_gameid)
@@ -115,7 +620,7 @@ function fill_cse_abstract_properties_packet(ret,stpk)
 	stpk:w_vec3(ret.position)
 	stpk:w_vec3(ret.direction)
 	stpk:w_u16(ret.respawn_time)
-	stpk:w_u16(ret.cse_abstract__unk2_u16)
+	stpk:w_u16(ret.object_id)
 	stpk:w_u16(ret.parent_id)
 	stpk:w_u16(ret.phantom_id)
 	stpk:w_u16(ret.s_flags)
@@ -123,6 +628,11 @@ function fill_cse_abstract_properties_packet(ret,stpk)
 	stpk:w_u16(ret.cse_abstract__unk3_u16)
 	stpk:w_u16(ret.script_version)
 	stpk:w_u16(ret.unused)
+	if (ret.unused > 0 and ret.extra ~= nil) then
+        for i = 1, ret.unused do
+            stpk:w_u8(ret.extra[i])
+        end
+    end
 	stpk:w_u16(ret.spawn_id)
 	stpk:w_u16(ret.extended_size)
 end
@@ -150,35 +660,43 @@ end
 -- cse_shape_properties
 function parse_cse_shape_properties_packet(ret,stpk)
 	ret.shape_count = stpk:r_u8()
+	ret.shape_type = {}
+	ret.center = {}
+	ret.radius = {}
+	ret.v1 = {}
+	ret.v2 = {}
+	ret.v3 = {}
+	ret.v4 = {}
 	for i = 1, ret.shape_count do
-		ret.shape_type = stpk:r_u8()
-		if (ret.shape_type == 0) then
+		ret.shape_type[i] = stpk:r_u8()
+		if (ret.shape_type[i] == 0) then
 			-- sphere
-			ret.center = stpk:r_vec3()
-			ret.radius = stpk:r_float()
+			ret.center[i] = stpk:r_vec3()
+			ret.radius[i] = stpk:r_float()
 		else
 			-- box
-			ret.v1 = stpk:r_vec3()
-			ret.v2 = stpk:r_vec3()
-			ret.v3 = stpk:r_vec3()
-			ret.v4 = stpk:r_vec3()
+			ret.v1[i] = stpk:r_vec3()
+			ret.v2[i] = stpk:r_vec3()
+			ret.v3[i] = stpk:r_vec3()
+			ret.v4[i] = stpk:r_vec3()
 		end
 	end
+	ret.restrictor_type = stpk:r_u8()
 	return ret
 end
 
 function fill_cse_shape_properties_packet(ret,stpk)
 	stpk:w_u8(ret.shape_count)
 	for i=1,ret.shape_count do
-		stpk:w_u8(ret.shape_type)
-		if (ret.shape_type == 0) then
-			stpk:w_vec3(ret.center)
-			stpk:w_float(ret.radius)
+		stpk:w_u8(ret.shape_type[i])
+		if (ret.shape_type[i] == 0) then
+			stpk:w_vec3(ret.center[i])
+			stpk:w_float(ret.radius[i])
 		else
-			stpk:w_vec3(ret.v1)
-			stpk:w_vec3(ret.v2)
-			stpk:w_vec3(ret.v3)
-			stpk:w_vec3(ret.v4)
+			stpk:w_vec3(ret.v1[i])
+			stpk:w_vec3(ret.v2[i])
+			stpk:w_vec3(ret.v3[i])
+			stpk:w_vec3(ret.v4[i])
 		end
 	end
 end
@@ -256,7 +774,7 @@ end
 -- cse_smart_cover_properties
 function parse_cse_smart_cover_properties_packet(ret,stpk)
 	ret.description = stpk:r_stringZ()
-	ret.cse_smart_cover__unk2_f32 = stpk:r_float()
+	ret.unk2_f32 = stpk:r_float()
 	ret.enter_min_enemy_distance = stpk:r_float()
 	ret.exit_min_enemy_distance = stpk:r_float()
 	ret.is_combat_cover = stpk:r_u8()
@@ -265,7 +783,7 @@ end
 
 function fill_cse_smart_cover_properties_packet(ret,stpk)
 	stpk:w_stringZ(ret.description)
-	stpk:w_float(ret.cse_smart_cover__unk2_f32)
+	stpk:w_float(ret.unk2_f32)
 	stpk:w_float(ret.enter_min_enemy_distance)
 	stpk:w_float(ret.exit_min_enemy_distance)
 	stpk:w_u8(ret.is_combat_cover)
@@ -367,15 +885,15 @@ end
 
 -- cse_alife_inventory_box_properties
 function parse_cse_alife_inventory_box_properties_packet(ret,stpk)
-	ret.cse_alive_inventory_box__unk1_u8 = stpk:r_u8()
-	ret.cse_alive_inventory_box__unk2_u8 = stpk:r_u8()
+	ret.unk1_u8 = stpk:r_u8()
+	ret.unk2_u8 = stpk:r_u8()
 	ret.tip = stpk:r_stringZ()
 	return ret
 end
 
 function fill_cse_alife_inventory_box_properties_packet(ret,stpk)
-	stpk:w_u8(ret.cse_alive_inventory_box__unk1_u8)
-	stpk:w_u8(ret.cse_alive_inventory_box__unk2_u8)
+	stpk:w_u8(ret.unk1_u8)
+	stpk:w_u8(ret.unk2_u8)
 	stpk:w_stringZ(ret.tip)
 end
 
@@ -655,7 +1173,6 @@ function parse_cse_alife_level_changer_properties_packet(ret,stpk)
 end
 
 function fill_cse_alife_level_changer_properties_packet(ret,stpk)
-	stpk:w_u8(ret.restrictor_type)
 	stpk:w_u16(ret.dest_game_vertex_id)
 	stpk:w_s32(ret.dest_level_vertex_id)
 	stpk:w_vec3(ret.dest_position)
@@ -881,7 +1398,6 @@ function parse_se_sim_faction_properties_packet(ret,stpk)
 				local squad_id = stpk:r_stringZ()
 				local settings_id = stpk:r_stringZ()
 				local flag = stpk:r_bool()
-				-- create squad, read squad data
 			end
 		end
 
@@ -921,6 +1437,86 @@ function fill_se_sim_faction_properties_packet(ret,stpk)
 		end
 
 		stpk:w_u16(ret.squads_count)
-		-- save squad data
+	end
+end
+
+------------------------------------------------------------------
+------------------------------------------------------------------
+function data_left(stpk)
+	return (stpk:r_elapsed() ~= 0)
+end
+
+function read_chunk(stpk, length, c_type)
+	local tab = {}
+	for i = 1, length do
+		if c_type == "u8" then
+			tab[i] = stpk:r_u8()
+		elseif c_type == "u16" then
+			tab[i] = stpk:r_u16()
+		elseif c_type == "u32" then
+			tab[i] = stpk:r_u32()
+		elseif c_type == "s32" then
+			tab[i] = stpk:r_s32()
+		elseif c_type == "float" then
+			tab[i] = stpk:r_float()
+		elseif c_type == "string" then
+			tab[i] = stpk:r_stringZ()
+		elseif c_type == "bool" then
+			tab[i] = stpk:r_bool()
+		end
+	end
+	return tab
+end
+function write_chunk(stpk, tab, c_type)
+	if tab == nil then
+		return
+	end
+	for k, v in ipairs(tab) do
+		if c_type == "u8" then
+			stpk:w_u8(v)
+		elseif c_type == "u16" then
+			stpk:w_u16(v)
+		elseif c_type == "u32" then
+			stpk:w_u32(v)
+		elseif c_type == "s32" then
+			stpk:w_s32(v)
+		elseif c_type == "float" then
+			stpk:w_float(v)
+		elseif c_type == "string" then
+			stpk:w_stringZ(v)
+		elseif c_type == "bool" then
+			stpk:w_bool(v)
+		end
+	end
+end
+function readvu8uN(stpk,n)
+	local v = {}
+	for i=1,n,1 do
+		table.insert(v,stpk:r_u8())
+	end
+	return v
+end
+function writevu8uN(stpk,v)
+	local len = table.getn(v)
+	for i=1,len,1 do
+		stpk:w_u8(v[i])
+	end
+end
+function readvu32stringZ(stpk)
+	local v = {}
+	local len = stpk:r_s32()
+	for i=1,len,1 do
+		table.insert(v,stpk:r_stringZ())
+	end
+	return v
+end
+function writevu32stringZ(pk,v)
+	if v == nil then
+		v = {}
+	end
+	local len = #v
+	pk:w_s32(len)
+	for i=1,len,1 do
+		pk:w_stringZ(v[i])
 	end
 end

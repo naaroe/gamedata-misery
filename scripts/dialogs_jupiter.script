@@ -1,7 +1,7 @@
 -- b208
 
 function jup_b208_give_reward(first_speaker, second_speaker)
-	local amount = 15000
+	local amount = 6600
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, amount)
 	treasure_manager.get_treasure_manager():give_treasure("jup_hiding_place_18")
 	treasure_manager.get_treasure_manager():give_treasure("jup_hiding_place_35")
@@ -50,61 +50,61 @@ end
 
 
 function jupiter_a9_freedom_leader_jupiter_delivery(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3450)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2450)
 end
 
 function jupiter_a9_freedom_leader_jupiter_evacuation(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2920)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1820)
 end
 
 function jupiter_a9_freedom_leader_jupiter_losses(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3120)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1420)
 end
 
 function jupiter_a9_freedom_leader_jupiter_meeting(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3360)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1360)
 end
 
 ---------------------------------------------
 
 function jupiter_a9_dolg_leader_jupiter_delivery(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3120)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2120)
 end
 
 function jupiter_a9_dolg_leader_jupiter_evacuation(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2680)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1580)
 end
 
 function jupiter_a9_dolg_leader_jupiter_losses(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2780)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1280)
 end
 
 function jupiter_a9_dolg_leader_jupiter_meeting(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2890)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1390)
 end
 
 
 function jup_a9_owl_stalker_trader_sell_jup_a9_evacuation_info(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_a9_evacuation_info")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3720)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2220)
 	db.actor:give_info_portion("jup_a9_evacuation_info_sold")
 end
 
 function jup_a9_owl_stalker_trader_sell_jup_a9_meeting_info(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_a9_meeting_info")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3360)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1560)
 	db.actor:give_info_portion("jup_a9_meeting_info_sold")
 end
 
 function jup_a9_owl_stalker_trader_sell_jup_a9_losses_info(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_a9_losses_info")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3560)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1460)
 	db.actor:give_info_portion("jup_a9_losses_info_sold")
 end
 
 function jup_a9_owl_stalker_trader_sell_jup_a9_delivery_info(first_speaker, second_speaker)
 	dialogs.relocate_item_section_from_actor(first_speaker, second_speaker, "jup_a9_delivery_info")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3520)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 1280)
  	db.actor:give_info_portion("jup_a9_delivery_info_sold")
 end
 
@@ -259,9 +259,9 @@ end
 
 function zat_b106_trapper_reward(first_speaker, second_speaker)
 	if has_alife_info("zat_b106_one_hit") then
-		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 7620)
+		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 5220)
 	else
-		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 9880)
+		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 6880)
 	end
 end
 
@@ -269,31 +269,95 @@ end
 
 function jup_a10_proverka_wpn(first_speaker, second_speaker)
 	local table = {
-					"wpn_desert_eagle",
-					"wpn_desert_eagle_nimble",
-					"wpn_sig550",
-					"wpn_g36",
-					"wpn_g36_nimble",
-					"wpn_fn2000",
-					"wpn_fn2000_nimble",
-					"wpn_groza",
-					"wpn_groza_nimble",
-					"wpn_val",
-					"wpn_vintorez",
-					"wpn_vintorez_nimble",
-					"wpn_svd",
-					"wpn_svu",
-					"wpn_pkm",
-					"wpn_spas12",
-					"wpn_spas12_nimble",
-					"wpn_protecta",
-					"wpn_protecta_nimble",
-					"wpn_gauss",
-					"wpn_rpg7",
-					"wpn_rg-6",
-					"wpn_pkm_zulus",
-
-					}
+		"wpn_sig550",	
+		"wpn_g36",	
+		"wpn_val",	
+		"wpn_groza",	
+		"wpn_vintorez",	
+		"wpn_fn2000",	
+		"wpn_abakan_custom",	
+		"wpn_abakan_alt",	
+		"wpn_abakan_camo",	
+		"wpn_abakan",	
+		"wpn_ak74_custom1",	
+		"wpn_ak74_custom2",	
+		"wpn_ak74_alt",	
+		"wpn_ak74_camo",	
+		"wpn_ak74u_custom",	
+		"wpn_ak74u_camo",	
+		"wpn_bm16_silver",	
+		"wpn_bm16_gold",	
+		"wpn_colt1911_alt2",	
+		"wpn_colt1911_camo",	
+		"wpn_desert_eagle",	
+		"wpn_desert_eagle_custom",	
+		"wpn_desert_eagle_alt",	
+		"wpn_desert_eagle_camo",	
+		"wpn_fn2000_custom",	
+		"wpn_fn2000_alt1",	
+		"wpn_fn2000_alt2",	
+		"wpn_fn2000_alt3",	
+		"wpn_fn2000_worn",	
+		"wpn_fort_custom",	
+		"wpn_fort_camo",	
+		"wpn_g36_custom",	
+		"wpn_hpsa_custom",	
+		"wpn_hpsa_camo",	
+		"wpn_l85_custom",	
+		"wpn_l85_camo",	
+		"wpn_lr300_custom",	
+		"wpn_lr300_camo",	
+		"wpn_mp5_custom",	
+		"wpn_mp5_alt",	
+		"wpn_pm_custom",	
+		"wpn_protecta_custom",	
+		"wpn_protecta_camo",	
+		"wpn_protecta",	
+		"wpn_ppsh41_rednew",	
+		"wpn_ppsh41_woodnew",	
+		"wpn_sig220_custom",	
+		"wpn_sig220_camo",	
+		"wpn_sig550_sniper",	
+		"wpn_sig550_custom",	
+		"wpn_sig550_alt",	
+		"wpn_sig550",	
+		"wpn_sks_modern",	
+		"wpn_spas12_custom",	
+		"wpn_spas12_alt",	
+		"wpn_stg44_alt",	
+		"wpn_toz34_decor",	
+		"wpn_toz34_new",	
+		"wpn_usp_custom",	
+		"wpn_usp_alt1",	
+		"wpn_usp_alt2",	
+		"wpn_walther_custom",	
+		"wpn_walther_alt2",	
+		"wpn_wincheaster1300_camo",	
+		"wpn_wincheaster1300_alt",	
+		"wpn_svd",	
+		"wpn_svu",	
+		"wpn_m21",	
+		"wpn_m24",	
+		"wpn_trg",	
+		"wpn_ump45",	
+		"wpn_g43",	
+		"wpn_sig550_luckygun",	
+		"wpn_pkm_zulus",	
+		"wpn_wincheaster1300_trapper",	
+		"wpn_gauss",	
+		"wpn_groza_nimble",	
+		"wpn_desert_eagle_nimble",	
+		"wpn_fn2000_nimble",	
+		"wpn_g36_nimble",	
+		"wpn_protecta_nimble",	
+		"wpn_mp5_nimble",	
+		"wpn_sig220_nimble",	
+		"wpn_spas12_nimble",	
+		"wpn_usp_nimble",	
+		"wpn_vintorez_nimble",	
+		"wpn_svu_nimble",	
+		"wpn_svd_nimble",
+		}
 
 	for k,v in pairs(table) do
 		if db.actor:item_in_slot(2)~= nil and db.actor:item_in_slot(2):section() == v then
@@ -312,9 +376,9 @@ end
 
 function jup_a10_actor_has_money(first_speaker, second_speaker)
 	if has_alife_info("jup_a10_debt_wo_percent") then
-		return db.actor:money() >= 4650
+		return db.actor:money() >= 5000
 	else
-		return db.actor:money() >= 7300
+		return db.actor:money() >= 7000
 	end
 end
 
@@ -337,11 +401,11 @@ function jup_a10_vano_give_money(first_speaker, second_speaker)
 end
 
 function jup_a10_actor_give_outfit_money(first_speaker, second_speaker)
-	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 33680)
+	dialogs.relocate_money_from_actor(first_speaker, second_speaker, 34000)
 end
 
 function jup_a10_actor_has_outfit_money(first_speaker, second_speaker)
-	return db.actor:money() >= 33680
+	return db.actor:money() >= 34000
 end
 
 function jup_a10_actor_has_not_outfit_money(first_speaker, second_speaker)
@@ -358,7 +422,7 @@ function if_actor_hasnt_jup_b16_oasis_artifact(first_speaker, second_speaker)
 end
 
 function jupiter_b16_reward(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 11500)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 12500)
 end
 
 function give_jup_b16_oasis_artifact(first_speaker, second_speaker)
@@ -696,10 +760,12 @@ function jup_b1_actor_have_good_suit(first_speaker, second_speaker)
 	local actor_true = false
 	local suits_tbl = {
 						["scientific_outfit"] = true,
+						["specops_outfit"] = true,
 						["military_outfit"] = true,
 						["dolg_heavy_outfit"] = true,
 						["exo_outfit"] = true,
-						["svoboda_light_outfit"] = true,
+						["ecologist_red_outfit"] = true,
+						["ecologist_green_outfit"] = true,
 						["svoboda_heavy_outfit"] = true,
 						["cs_heavy_outfit"] = true,
 						}
@@ -814,8 +880,8 @@ function jup_b6_stalker_dialog_precond(first_speaker, second_speaker)
 end
 
 function jup_b1_stalker_squad_thanks(first_speaker, second_speaker)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit_scientic", 1)
-	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "stimpak_scientic", 3)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "medkit_scientic", 2)
+	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "stimpack_scientic", 1)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "antirad", 2)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "morphine", 1)
 	dialogs.relocate_item_section_to_actor(first_speaker, second_speaker, "adrenalin", 1)
@@ -1099,11 +1165,9 @@ function jup_b46_sell_duty_founder_pda(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
 	if has_alife_info("jup_b46_duty_founder_pda_to_freedom") then
 		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 12680)
---		dialogs.relocate_item_section(actor,"wpn_sig550","in",1)
 		dialogs.relocate_item_section(actor,"ammo_5.56x45_ap","in",6)
 	elseif has_alife_info("jup_b46_duty_founder_pda_to_duty") then
 		dialogs.relocate_money_to_actor(first_speaker, second_speaker, 15950)
---		dialogs.relocate_item_section(actor,"wpn_groza","in",1)
 		dialogs.relocate_item_section(actor,"ammo_9x39_ap","in",6)
 		dialogs.relocate_item_section(actor,"ammo_vog-25","in",2)
 	end
@@ -1223,14 +1287,11 @@ function jup_b47_jupiter_products_info_revard(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
 	dialogs.relocate_item_section(npc,"jup_b47_jupiter_products_info","out")
 	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 7650)
-	dialogs.relocate_item_section(actor,"medkit_scientic","in",1)
-	dialogs.relocate_item_section(actor,"stimpack_scientic","in",3)
+	dialogs.relocate_item_section(actor,"medkit_army","in",2)
+	dialogs.relocate_item_section(actor,"stimpack_army","in",1)
 	dialogs.relocate_item_section(actor,"adrenalin","in",1)
-	dialogs.relocate_item_section(actor,"morphine","in",1)
 	dialogs.relocate_item_section(actor,"antirad","in",1)
 	dialogs.relocate_item_section(actor,"drug_psy_blockade","in",1)
-	dialogs.relocate_item_section(actor,"drug_antidot","in",1)
-	dialogs.relocate_item_section(actor,"drug_radioprotector","in",1)
 end
 
 function jup_b47_actor_has_merc_pda(first_speaker, second_speaker)
@@ -1244,7 +1305,7 @@ end
 function jup_b47_merc_pda_revard(first_speaker, second_speaker)
 	local npc = dialogs.who_is_npc(first_speaker, second_speaker)
 	dialogs.relocate_item_section(npc,"jup_b47_merc_pda","out")
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 4220)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 2520)
 end
 
 function jup_b47_actor_can_take_task(first_speaker, second_speaker)
@@ -1261,10 +1322,10 @@ end
 
 function jup_b47_bunker_guard_revard(first_speaker, second_speaker)
 	local actor = dialogs.who_is_actor(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 7310)
-	dialogs.relocate_item_section(actor,"drug_psy_blockade","in",2)
-	dialogs.relocate_item_section(actor,"drug_antidot","in",3)
-	dialogs.relocate_item_section(actor,"drug_radioprotector","in",3)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 3310)
+	dialogs.relocate_item_section(actor,"drug_psy_blockade","in",1)
+	dialogs.relocate_item_section(actor,"drug_antidot","in",1)
+	dialogs.relocate_item_section(actor,"drug_radioprotector","in",1)
 end
 
 function jup_b47_gauss_rifle_revard(first_speaker, second_speaker)
@@ -1320,7 +1381,7 @@ end
 -------------- jup_b211 ---------------------
 
 function jup_b211_kill_bludsuckers_reward(first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 7880)
+	dialogs.relocate_money_to_actor(second_speaker, first_speaker, 4500)
 end
 
 function jup_b19_transfer_conserva_to_actor(first_speaker, second_speaker)
@@ -1328,7 +1389,7 @@ function jup_b19_transfer_conserva_to_actor(first_speaker, second_speaker)
 end
 ----------------------------------
 function jupiter_b6_sell_halfartefact (first_speaker, second_speaker)
-	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 12680)
+	dialogs.relocate_money_to_actor(first_speaker, second_speaker, 8680)
 end
 -----------------------------------
 

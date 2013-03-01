@@ -15,7 +15,7 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost              = 4560            ; the price of the item
+cost              = 9120            ; the price of the item
 inv_weight        = 0.9
 
 upgrades                = up_gr_firstab_beretta, up_gr_seconab_beretta, up_gr_thirdab_beretta, up_gr_fourtab_beretta, up_gr_fifthab_beretta, up_gr_fifthcd_beretta
@@ -112,7 +112,7 @@ hit_probability_gd_master = 1.00 ;  = 0.80
 ;-------------------------------------------------------------------------------
 slot              = 1                ; // secondary
 animation_slot    = 1                ; type of the animation that will be used
-inv_name          = st_wpn_beretta               ; name in inventory
+inv_name          = st_wpn_beretta
 inv_name_short    = st_wpn_beretta
 
 inv_grid_width			= 2
@@ -137,8 +137,8 @@ orientation             	= 0, 0, 0
 fire_point              = 0.0, 0.133, 0.161
 fire_point2             = 0.0, 0.133, 0.161
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 		= 0.0, 0.133, 0.047
@@ -242,8 +242,8 @@ anm_reload				= beretta_reload
 anm_reload_empty		= beretta_reload, beretta_close
 anm_idle_moving			= beretta_idle_moving
 anm_idle_moving_empty	= beretta_idle_moving, beretta_opened
-anm_idle_sprint					= 1911_sprint
-anm_idle_sprint_empty			= 1911_sprint, 1911_opened
+anm_idle_sprint					= colt1911_idle_sprint
+anm_idle_sprint_empty			= colt1911_idle_sprint, colt1911_opened
 anm_bore				= beretta_idle_bore
 anm_bore_empty			= beretta_idle_bore, beretta_opened
 
@@ -270,7 +270,7 @@ aim_hud_offset_rot_16x9			=  0.037500, 0.056000, 0.002500
 
 [wpn_beretta_pbp]:wpn_beretta
 
-ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
+ammo_class		 		= ammo_9x19_pbp, ammo_9x19_fmj, ammo_9x19_ap
 
 ;---------------------------
 ;End of AP section
@@ -279,3 +279,175 @@ ammo_class		 		= ammo_9x19_ap, ammo_9x19_pbp, ammo_9x19_fmj
 upgrades                = up_gr_firstab_beretta, up_gr_seconab_beretta, up_gr_thirdab_beretta, up_gr_fourtab_beretta, up_gr_fifthab_beretta, up_gr_fifthcd_beretta
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_beretta
+
+;=====================================================================================================================================================
+[wpn_beretta_custom]:wpn_beretta
+
+cost              = 11260
+inv_weight        = 0.962
+inv_name          = st_wpn_beretta_custom
+inv_name_short    = st_wpn_beretta_custom
+
+installed_upgrades      = up_firsta_beretta, up_fiftha_beretta
+
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 20
+fire_distance           	= 460
+bullet_speed		 		= 380
+rpm                     	= 270
+
+hud                     	= wpn_beretta_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0085
+misfire_end_prob	     	= 0.085
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0019
+
+ammo_mag_size		 	= 15
+fire_modes		  = 1;, -1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.51
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 59
+
+visual                  = dynamics\weapons\wpn_beretta92fs\wpn_beretta92f1.ogf
+
+snd_reload		= weapons\beretta\beretta_reload, 0.8
+
+[wpn_beretta_custom_hud]:wpn_beretta_hud
+
+item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f1_hud
+;=====================================================================================================================================================
+[wpn_beretta_alt]:wpn_beretta
+
+cost              = 9780
+inv_weight        = 0.918
+inv_name          = st_wpn_beretta_alt
+inv_name_short    = st_wpn_beretta_alt
+
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 20
+fire_distance           	= 460
+bullet_speed		 		= 380
+rpm                     	= 270
+
+hud                     	= wpn_beretta_alt_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0085
+misfire_end_prob	     	= 0.085
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0019
+
+ammo_mag_size		 	= 15
+fire_modes		  = 1;, -1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.5
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 62
+
+visual                  = dynamics\weapons\wpn_beretta92fs\wpn_beretta92f2.ogf
+
+snd_reload		= weapons\beretta\beretta_reload, 0.8
+
+[wpn_beretta_alt_hud]:wpn_beretta_hud
+
+item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f2_hud
+
+;=====================================================================================================================================================
+[wpn_beretta_camo]:wpn_beretta
+
+cost              = 11980
+inv_weight        = 0.924
+inv_name          = st_wpn_beretta_camo
+inv_name_short    = st_wpn_beretta_camo
+description       = st_wpn_beretta_camo_descr
+
+installed_upgrades      = up_thirda_beretta, up_fourta_beretta, up_secona_beretta, up_fiftha_beretta
+
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 20
+fire_distance           	= 460
+bullet_speed		 		= 380
+rpm                     	= 270
+
+hud                     	= wpn_beretta_camo_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0085
+misfire_end_prob	     	= 0.085
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0019
+
+ammo_mag_size		 	= 15
+fire_modes		  = 1;, -1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.52
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 61
+
+visual                  = dynamics\weapons\wpn_beretta92fs\wpn_beretta92f3.ogf
+
+snd_reload		= weapons\beretta\beretta_reload, 0.8
+
+[wpn_beretta_camo_hud]:wpn_beretta_hud
+
+item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f3_hud
+
+;=====================================================================================================================================================
+[wpn_beretta_worn]:wpn_beretta
+
+cost              = 7960
+inv_weight        = 0.904
+inv_name          = st_wpn_beretta_worn
+inv_name_short    = st_wpn_beretta_worn
+
+hit_power           		= 0.25, 0.25, 0.25, 0.25
+hit_impulse	 		 		= 20
+fire_distance           	= 460
+bullet_speed		 		= 380
+rpm                     	= 270
+
+hud                     	= wpn_beretta_worn_hud
+
+misfire_start_condition		= 0.7
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0085
+misfire_end_prob	     	= 0.085
+condition_shot_dec      	= 0.0021
+condition_queue_shot_dec	= 0.0019
+
+ammo_mag_size		 	= 15
+fire_modes		  = 1;, -1
+ammo_class		  = ammo_9x19_fmj, ammo_9x19_pbp, ammo_9x19_ap
+
+fire_dispersion_base	= 0.55
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 0
+inv_grid_y				= 60
+
+visual                  = dynamics\weapons\wpn_beretta92fs\wpn_beretta92f4.ogf
+
+snd_reload		= weapons\beretta\beretta_reload, 0.8
+
+[wpn_beretta_worn_hud]:wpn_beretta_hud
+
+item_visual						= dynamics\weapons\wpn_beretta92fs\wpn_beretta92f4_hud

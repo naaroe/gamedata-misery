@@ -1,0 +1,77 @@
+;==================================
+; Misc.
+;==================================
+
+[radio_jupiter_base]
+section 			= krujka
+position			= -58.112621307373,5.932647228241,203.24978942871
+level_vertex_id		= 623866
+game_vertex_id		= 333
+custom_data			= scripts\sounds\music\playlist_2.ltx
+
+[radio_jupiter_base_mechanic]
+section 			= priemnik_gorizont
+position			= -41.096576690674,4.3756904602051,180.61373901367
+level_vertex_id		= 649909
+game_vertex_id		= 348
+custom_data			= scripts\sounds\music\playlist_1.ltx
+
+;==========================================
+; Level Changers
+;==========================================
+
+[jup_to_zat_sr]
+section					= space_restrictor
+position 				= 427.28216552734,0.32352921366692,471.7571105957
+level_vertex_id 		= 1386611
+game_vertex_id 			= 562
+custom_data				= scripts\sr_teleport_logic.ltx
+shape_type 				= 1
+v1 						= 3,0,0
+v2 						= 0,5,0
+v3 						= 0,0,3
+v4 						= 0,0,0
+
+[jup_to_zat_lc]
+section					= level_changer
+position 				= 434.94833374023,42.7668921947479,472.92590332031
+level_vertex_id 		= 1399869
+game_vertex_id 			= 562
+dest_position			= -453.89434814453,41.009944915771,-431.79183959961
+dest_level_vertex_id 	= 147944
+dest_game_vertex_id 	= 306
+dest_direction			= 0,0,0
+dest_level_name			= zaton
+shape_type 				= 1
+v1 						= 3,0,0
+v2 						= 0,2,0
+v3 						= 0,0,3
+v4 						= 0,0,0
+
+[jup_to_pas_sr]
+section					= space_restrictor
+position 				= 330.24130249023,20.387516021729,-329.41137695313
+level_vertex_id 		= 1240203
+game_vertex_id 			= 369
+custom_data				= scripts\sr_teleport_logic.ltx
+shape_type 				= 1
+v1 						= 2,0,0
+v2 						= 0,2,0
+v3 						= 0,0,2
+v4 						= 0,0,0
+
+[jup_to_pas_lc]
+section					= level_changer
+position 				= 327.29675292969,33.992305755615,-329.89562988281
+level_vertex_id 		= 1241202
+game_vertex_id 			= 369
+dest_position 			= -47.20384979248,8.0078773498535,445.93075561523
+dest_level_vertex_id 	= 1225
+dest_game_vertex_id 	= 882
+dest_direction			= 0,3,0
+dest_level_name			= jupiter_underground
+shape_type 				= 1
+v1 						= 3,0,0
+v2 						= 0,2,0
+v3 						= 0,0,3
+v4 						= 0,0,0

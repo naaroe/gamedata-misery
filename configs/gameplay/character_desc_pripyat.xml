@@ -279,7 +279,7 @@
 #include "gameplay\character_drugs_mil.xml"
     </supplies>
 #include "gameplay\character_criticals_4.xml"
-
+		
 		<start_dialog>pri_a15_sokolov_start_dialog</start_dialog>
 		<actor_dialog>pri_a15_sokolov_where_from</actor_dialog>
 		<actor_dialog>pri_a15_sokolov_jupiter</actor_dialog>
@@ -455,7 +455,7 @@
 #include "gameplay\character_items_4_army.xml"
 #include "gameplay\character_drugs_mil.xml"
     </supplies>
-
+	
 	<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -493,7 +493,7 @@
 #include "gameplay\character_items_4_army.xml"
 #include "gameplay\character_drugs_mil.xml"
     </supplies>
-
+	
 	<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -532,7 +532,7 @@
 #include "gameplay\character_food_army.xml"
 #include "gameplay\character_drugs_mil.xml"
     </supplies>
-
+	
 	<actor_dialog>actor_break_dialog</actor_dialog>
 
 #include "gameplay\character_criticals_4.xml"
@@ -723,7 +723,7 @@
 #include "gameplay\character_criticals_4.xml"
 		<start_dialog>pri_a25_army_medic_start_dialog</start_dialog>
 
-		<actor_dialog>pri_a25_army_medic_rescued</actor_dialog>
+		<actor_dialog>pri_a25_army_medic_rescued</actor_dialog>	
 		<actor_dialog>pri_a25_army_medic_supply_medicine</actor_dialog>
 		<actor_dialog>pri_a25_army_medic_need_health_care</actor_dialog>
 
@@ -1064,7 +1064,7 @@
 	  	wpn_abakan_ap = 1 \n
         ammo_5.45x39_ap = 2 \n
         wpn_pm \n
-        ammo_9x18_pmm = 2 \n
+        ammo_9x18_pmm = 2 \n		
 		grenade_f1 = 2 \n
 
 #include "gameplay\character_items.xml"
@@ -1114,7 +1114,7 @@
     			</supplies>
 #include "gameplay\character_criticals_4.xml"
 	<start_dialog>pri_a22_army_signaller_start_dialog</start_dialog>
-
+	
 	<actor_dialog>dm_tech_repair</actor_dialog>
 	<actor_dialog>pri_a22_army_signaller_about_rfi_source</actor_dialog>
 	<actor_dialog>pri_a22_army_signaller_about_signal</actor_dialog>
@@ -1393,7 +1393,7 @@
         wpn_usp_hydro \n
         ammo_11.43x23_hydro = 2 \n
       grenade_f1 = 1 \n
-
+	  
 	  pri_b36_monolith_hiding_place_pda = 1 \n
 
 #include "gameplay\character_items_nd.xml"
@@ -1440,7 +1440,7 @@
 #include "gameplay\character_criticals_4.xml"
   </specific_character>
 
-<!-- ----------------------- Стрелок !!! ------------------------------->
+<!-- ----------------------- Стрелок !!! -------------------------------> 
 	<specific_character id="pri_b305_strelok" team_default = "1">
 		<name>pri_b305_strelok_name</name>
 		<icon>ui_inGame2_Strelok</icon>
@@ -1487,7 +1487,7 @@
   </specific_character>
 
 
-<!-- ----------------------- Командир группы эвакуации Лейтенант Смирнов    ------------------------------->
+<!-- ----------------------- Командир группы эвакуации Лейтенант Смирнов    -------------------------------> 
   <specific_character id="pri_a28_evac_com" team_default = "1">
     <name>pri_a28_evac_com_name</name>
     <icon>ui_inGame2_Soldier_2</icon>

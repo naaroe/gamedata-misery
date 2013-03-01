@@ -1,7 +1,10 @@
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
 ----------------------
 -- Callback manager
 -- Alundaio
-
+--]]
 local intercepts = {
 	-- _g.script
 	on_game_start				= {},
@@ -25,6 +28,8 @@ local intercepts = {
 	npc_on_death_callback		= {},
 	npc_on_fighting_actor		= {},
 	npc_add_precondition		= {},
+	npc_on_item_take_from_box	= {},
+	npc_on_weapon_state_change	= {},
 
 	-- state_mgr_weapon.script
 	npc_on_weapon_strapped		= {},
@@ -36,6 +41,9 @@ local intercepts = {
 
 	-- se_stalker.script
 	se_stalker_on_spawn			= {},
+
+	-- se_actor.script
+	se_actor_on_register		= {},
 
 	-- xr_corpse_detection.script
 	npc_on_get_all_from_corpse 	= {},
@@ -71,10 +79,10 @@ local intercepts = {
 	actor_on_init				= {},
 	actor_on_torch_enabled		= {},
 	actor_on_torch_disabled		= {},
+	actor_on_info_callback		= {},
 
 	-- bind_monster.script
 	monster_on_hit_callback			= {},
-	monster_on_hear_callback        = {},
 	monster_on_net_spawn			= {},
 	monster_on_death_callback		= {},
 	monster_on_actor_use_callback   = {},
@@ -82,7 +90,49 @@ local intercepts = {
 	-- bind_physic_object
 	physic_object_on_hit_callback 	= {},
 	physic_object_on_use_callback 	= {}
+
 }
+
+-------------------
+-- on_game_start()
+-------------------
+function on_game_start()
+	-- AI Tweaks
+	if (xr_danger and xr_danger.on_game_start) then xr_danger.on_game_start() end
+	if (xr_gather_items and xr_gather_items.on_game_start) then xr_gather_items.on_game_start() end
+	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
+	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
+	if (ai_tweaks) then ai_tweaks.on_game_start() end
+	--if (xr_visual) then xr_visual.on_game_start() end
+	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
+	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
+
+	-- item mini-mod
+	if (itms_manager) then itms_manager.on_game_start() end
+
+	-- SCHEMES
+	if (axr_beh) then axr_beh.on_game_start() end
+	if (axr_companions) then axr_companions.on_game_start() end
+	if (xrs_facer) then xrs_facer.on_game_start() end
+	if (xrs_kill_wounded) then xrs_kill_wounded.on_game_start() end
+	if (rx_gl) then rx_gl.on_game_start() end
+	if (rx_ff) then rx_ff.on_game_start() end
+
+	-- Atmosfear
+	if (atmosfear) then atmosfear.on_game_start() end
+
+	-- Misery
+	if (axr_misery) then axr_misery.on_game_start() end
+	if (axr_quest_master) then axr_quest_master.on_game_start() end
+	if (axr_battery) then axr_battery.on_game_start() end
+
+	-- Dynamic Spawn
+	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
+
+	-- TEST
+	--if (axr_overheat) then axr_overheat.on_game_start() end
+end
+
 
 function _G.callback_register(name,func)
 	if (intercepts[name]) then
@@ -101,37 +151,63 @@ function _G.callback_unregister(name,func)
 	end
 end
 
+local ev_queue = {}
+local ev_object_queue = {}
+function event_queue()
+	local data
+	for i=#ev_queue, 1, -1 do
+		data = ev_queue[i]
+		if (game.get_game_time():diffSec(data.game_time) >= data.timer) then
+			data.f(data.p)
+			table.remove(ev_queue,i)
+		end
+	end
 
+	local se_obj
+	local sim = alife()
+	for k,v in pairs(ev_object_queue) do
+		se_obj = sim:object(k)
+		if (se_obj) then
+			if (game.get_game_time():diffSec(v.game_time) >= v.timer) then
+				--alun_utils.printf("delayed ev")
+				v.f(se_obj,v.p)
+				ev_object_queue[k] = nil
+			end
+		end
+	end
+end
+
+function _G.create_delayed_event(timer,f,...)
+	local t = {}
+	t.game_time = game.get_game_time()
+	t.timer = timer
+	t.f = f
+	t.p = {...}
+	table.insert(ev_queue,t)
+end
+
+function _G.create_delayed_object_event(id,timer,f,...)
+	ev_object_queue[id] = {}
+	ev_object_queue[id].game_time = game.get_game_time()
+	ev_object_queue[id].timer = timer
+	ev_object_queue[id].f = f
+	ev_object_queue[id].p = {...}
+end
+
+local ShowMessageTime
+function _G.SetHudMsg(msg,tim)
+	local hud = get_hud()
+	hud:AddCustomStatic("not_enough_money_mine", true)
+	hud:GetCustomStatic("not_enough_money_mine"):wnd():TextControl():SetTextST(msg)
+	ShowMessageTime = time_global() + tim*1000
+end
 -------------------
--- on_game_start()
+-- se_actor_on_register()
 -------------------
-function on_game_start()
-	-- AI Tweaks
-	if (xr_danger and xr_danger.on_game_start) then xr_danger.on_game_start() end
-	if (xr_gather_items) then xr_gather_items.on_game_start() end
-	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
-	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
-	if (ai_tweaks) then ai_tweaks.on_game_start() end
-	if (xr_visual) then xr_visual.on_game_start() end
-	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
-	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
-
-	-- SCHEMES
-	if (axr_beh) then axr_beh.on_game_start() end
-	if (axr_companions) then axr_companions.on_game_start() end
-	if (xrs_facer) then xrs_facer.on_game_start() end
-	if (xrs_kill_wounded) then xrs_kill_wounded.on_game_start() end
-	if (rx_gl) then rx_gl.on_game_start() end
-	if (rx_ff) then rx_ff.on_game_start() end
-
-	-- Atmosfear
-	if (atmosfear) then atmosfear.on_game_start() end
-
-	-- Misery
-	if (axr_misery) then axr_misery.on_game_start() end
-
-	-- Alundaio's Quest Master
-	if (axr_quest_master) then axr_quest_master.on_game_start() end
+function se_actor_on_register(actor)
+	for i=1, #intercepts.se_actor_on_register do
+		intercepts.se_actor_on_register[i](actor)
+	end
 end
 
 -------------------
@@ -158,6 +234,197 @@ end
 function actor_on_init(se_actor)
 	for i=1, #intercepts.actor_on_init do
 		intercepts.actor_on_init[i](se_actor)
+	end
+end
+
+-------------------
+-- actor_on_info_callback(npc,info_id)
+-------------------
+function actor_on_info_callback(npc,info_id)
+	for i=1, #intercepts.actor_on_info_callback do
+		intercepts.actor_on_info_callback[i](npc,info_id)
+	end
+end
+
+-------------------
+-- actor_on_update()
+-------------------
+local actor_reload
+local actor_scope
+actor_light = nil
+function actor_on_update(se_actor,delta)
+	for i=1, #intercepts.actor_on_update do
+		intercepts.actor_on_update[i](se_actor,delta)
+	end
+
+	if (ShowMessageTime) then
+		local hud = get_hud()
+		local custom_static = hud:GetCustomStatic("not_enough_money_mine")
+		local tg = time_global()
+		if custom_static ~= nil and tg > ShowMessageTime then
+			hud:RemoveCustomStatic("not_enough_money_mine")
+			ShowMessageTime = nil
+		end
+	end
+
+	local wpn = db.actor:active_item()
+	if (wpn) then
+		if (alun_utils.item_is_fa(wpn)) then
+			local inmag = wpn:get_ammo_in_magazine()
+			if (inmag == 0) then
+				if not (actor_reload) then
+					actor_reload = true
+					actor_on_weapon_no_ammo(wpn)
+				end
+			else
+				actor_reload = nil
+			end
+		end
+
+		if (wpn:section() == "wpn_binoc" or alun_utils.addon_attached(wpn,"sc")) then
+			if (device().fov < 50) then
+				if not (actor_scope) then
+					actor_scope = true
+					actor_on_weapon_zoom_in(wpn)
+				end
+			else
+				if (actor_scope) then
+					actor_scope = nil
+					actor_on_weapon_zoom_out(wpn)
+				end
+			end
+		else
+			if (actor_scope) then
+				actor_scope = nil
+				actor_on_weapon_zoom_out(wpn)
+			end
+		end
+	end
+
+	local torch = db.actor:object("device_torch")
+	if (torch and not actor_light and torch:torch_enabled()) then
+		actor_light = true
+		actor_on_torch_enabled()
+	elseif (torch and not torch:torch_enabled()) then
+		if (actor_light) then
+			actor_light = false
+			actor_on_torch_disabled()
+		end
+	end
+
+	--alun_utils.execute_queue()
+	event_queue()
+end
+
+-------------------
+-- actor_on_weapon_no_ammo(wpn)
+-------------------
+function actor_on_weapon_no_ammo(wpn)
+	for i=1, #intercepts.actor_on_weapon_no_ammo do
+		intercepts.actor_on_weapon_no_ammo[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_weapon_zoom_in(wpn)
+-------------------
+function actor_on_weapon_zoom_in(wpn)
+	for i=1, #intercepts.actor_on_weapon_zoom_in do
+		intercepts.actor_on_weapon_zoom_in[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_weapon_zoom_out(wpn)
+-------------------
+function actor_on_weapon_zoom_out(wpn)
+	for i=1, #intercepts.actor_on_weapon_zoom_out do
+		intercepts.actor_on_weapon_zoom_out[i](wpn)
+	end
+end
+
+-------------------
+-- actor_on_torch_enabled()
+-------------------
+function actor_on_torch_enabled()
+	for i=1, #intercepts.actor_on_torch_enabled do
+		intercepts.actor_on_torch_enabled[i]()
+	end
+end
+
+-------------------
+-- actor_on_torch_disabled()
+-------------------
+function actor_on_torch_disabled()
+	for i=1, #intercepts.actor_on_torch_disabled do
+		intercepts.actor_on_torch_disabled[i]()
+	end
+end
+
+-------------------
+-- actor_on_item_take(item)
+-------------------
+function actor_on_item_take(item)
+	for i=1, #intercepts.actor_on_item_take do
+		intercepts.actor_on_item_take[i](item)
+	end
+end
+
+-------------------
+-- actor_on_item_take_from_box(box,item)
+-------------------
+function actor_on_item_take_from_box(box,item)
+	for i=1, #intercepts.actor_on_item_take_from_box do
+		intercepts.actor_on_item_take_from_box[i](box,item)
+	end
+end
+
+-------------------
+-- actor_on_item_drop(item)
+-------------------
+function actor_on_item_drop(item)
+	for i=1, #intercepts.actor_on_item_drop do
+		intercepts.actor_on_item_drop[i](item)
+	end
+end
+
+-------------------
+-- actor_on_item_use(item)
+-------------------
+function actor_on_item_use(item)
+	for i=1, #intercepts.actor_on_item_use do
+		intercepts.actor_on_item_use[i](item)
+	end
+end
+
+-------------------
+-- actor_on_trade(item)
+-------------------
+function actor_on_trade(item,sell_bye,money)
+	for i=1, #intercepts.actor_on_trade do
+		intercepts.actor_on_trade[i](item,sell_bye,money)
+	end
+end
+
+-------------------
+-- actor_on_save(actor,packet)
+-------------------
+function actor_on_save(se_actor,packet)
+	if (atmosfear) then atmosfear.actor_on_save(se_actor,packet) end
+	if (axr_dynamic_spawn) then
+		axr_dynamic_spawn.actor_on_save(se_actor,packet)
+		--story_objects.get_story_objects_registry():save(packet)
+	end
+end
+
+-------------------
+-- actor_on_load(actor,packet)
+-------------------
+function actor_on_load(se_actor,packet)
+	if (atmosfear) then atmosfear.actor_on_load(se_actor,packet) end
+	if (axr_dynamic_spawn) then
+		axr_dynamic_spawn.actor_on_load(se_actor,packet)
+		--story_objects.get_story_objects_registry():load(packet)
 	end
 end
 
@@ -240,17 +507,34 @@ function npc_on_update(npc,st)
 
 			local sight_type = npc:sight_params().m_sight_type
 			if (sight_type) and (sight_type == 4 or sight_type == 9 or sight_type == 10) then
-				if not (st.look_in_sights) then
+				if not (st.sight_type) then
 					npc_on_weapon_sight(npc,wpn,st,sight_type)
-					st.look_in_sights = true
+					st.sight_type = sight_type
 				end
 			else
-				if (st.look_in_sights) then
-					st.look_in_sights = nil
+				if (st.sight_type) then
+					st.sight_type = nil
 					npc_on_weapon_unsight(npc,wpn,st,sight_type)
 				end
 			end
+
+			local sobj = alife():object(wpn:id())
+			local data = stpk_utils.get_weapon_data(sobj)
+
+			if (st.weapon_state ~= data.weapon_state) then
+				npc_on_weapon_state_change(npc,wpn,st,data.weapon_state)
+				st.weapon_state = data.weapon_state
+			end
 		end
+	end
+end
+
+------------------
+-- npc_on_weapon_state_change(npc,weapon,storage)
+-------------------
+function npc_on_weapon_state_change(npc,wpn,st,state)
+	for i=1, #intercepts.npc_on_weapon_state_change do
+		intercepts.npc_on_weapon_state_change[i](npc,wpn,st,state)
 	end
 end
 
@@ -373,6 +657,15 @@ function npc_on_fighting_actor(npc)
 	end
 end
 
+--------------------
+-- npc_on_item_take_from_box(npc,box,item)
+--------------------
+function npc_on_item_take_from_box(npc,box_item)
+	for i=1, #intercepts.npc_on_item_take_from_box do
+		intercepts.npc_on_item_take_from_box[i](npc,box,item)
+	end
+end
+
 -------------------
 -- squad_on_npc_creation(squad,npc,smart)
 -------------------
@@ -456,170 +749,6 @@ function scheme_disable(npc,stype)
 end
 
 -------------------
--- actor_on_update()
--------------------
-local actor_reload
-local actor_scope
-local actor_light
-function actor_on_update(se_actor,delta)
-	for i=1, #intercepts.actor_on_update do
-		intercepts.actor_on_update[i](se_actor,delta)
-	end
-
-	local wpn = db.actor:active_item()
-	if (wpn) then
-		if (alun_utils.item_is_fa(wpn)) then
-			local inmag = wpn:get_ammo_in_magazine()
-			if (inmag == 0) then
-				if not (actor_reload) then
-					actor_reload = true
-					actor_on_weapon_no_ammo(wpn)
-				end
-			else
-				actor_reload = nil
-			end
-		end
-
-		if (wpn:section() == "wpn_binoc" or alun_utils.addon_attached(wpn,"sc")) then
-			if (device().fov < 50) then
-				if not (actor_scope) then
-					actor_scope = true
-					actor_on_weapon_zoom_in(wpn)
-				end
-			else
-				if (actor_scope) then
-					actor_scope = nil
-					actor_on_weapon_zoom_out(wpn)
-				end
-			end
-		else
-			if (actor_scope) then
-				actor_scope = nil
-				actor_on_weapon_zoom_out(wpn)
-			end
-		end
-	end
-
-	local torch = db.actor:object("device_torch")
-	if (torch and not actor_light and torch:torch_enabled()) then
-		actor_light = true
-		actor_on_torch_enabled()
-	elseif (torch and not torch:torch_enabled()) then
-		if (actor_light) then
-			actor_light = false
-			actor_on_torch_disabled()
-		end
-	end
-	alun_utils.execute_queue()
-end
-
--------------------
--- actor_on_weapon_no_ammo(wpn)
--------------------
-function actor_on_weapon_no_ammo(wpn)
-	for i=1, #intercepts.actor_on_weapon_no_ammo do
-		intercepts.actor_on_weapon_no_ammo[i](wpn)
-	end
-end
-
--------------------
--- actor_on_weapon_zoom_in(wpn)
--------------------
-function actor_on_weapon_zoom_in(wpn)
-	for i=1, #intercepts.actor_on_weapon_zoom_in do
-		intercepts.actor_on_weapon_zoom_in[i](wpn)
-	end
-end
-
--------------------
--- actor_on_weapon_zoom_out(wpn)
--------------------
-function actor_on_weapon_zoom_out(wpn)
-	for i=1, #intercepts.actor_on_weapon_zoom_out do
-		intercepts.actor_on_weapon_zoom_out[i](wpn)
-	end
-end
-
--------------------
--- actor_on_torch_enabled()
--------------------
-function actor_on_torch_enabled()
-	for i=1, #intercepts.actor_on_torch_enabled do
-		intercepts.actor_on_torch_enabled[i]()
-	end
-end
-
--------------------
--- actor_on_torch_disabled()
--------------------
-function actor_on_torch_disabled()
-	for i=1, #intercepts.actor_on_torch_disabled do
-		intercepts.actor_on_torch_disabled[i](wpn)
-	end
-end
-
--------------------
--- actor_on_item_take(item)
--------------------
-function actor_on_item_take(item)
-	for i=1, #intercepts.actor_on_item_take do
-		intercepts.actor_on_item_take[i](item)
-	end
-end
-
--------------------
--- actor_on_item_take_from_box(box,item)
--------------------
-function actor_on_item_take_from_box(box,item)
-	for i=1, #intercepts.actor_on_item_take_from_box do
-		intercepts.actor_on_item_take_from_box[i](box,item)
-	end
-end
-
--------------------
--- actor_on_item_drop(item)
--------------------
-function actor_on_item_drop(item)
-	for i=1, #intercepts.actor_on_item_drop do
-		intercepts.actor_on_item_drop[i](item)
-	end
-end
-
--------------------
--- actor_on_item_use(item)
--------------------
-function actor_on_item_use(item)
-	for i=1, #intercepts.actor_on_item_use do
-		intercepts.actor_on_item_use[i](item)
-	end
-end
-
--------------------
--- actor_on_trade(item)
--------------------
-function actor_on_trade(item,sell_bye,money)
-	for i=1, #intercepts.actor_on_trade do
-		intercepts.actor_on_trade[i](item,sell_bye,money)
-	end
-end
-
--------------------
--- actor_on_save(actor,packet)
--------------------
-function actor_on_save(se_actor,packet)
-	if (atmosfear) then atmosfear.actor_on_save(se_actor,packet) end
-	if (inventory_upgrades.actor_on_save) then inventory_upgrades.actor_on_save(se_actor,packet) end
-end
-
--------------------
--- actor_on_load(actor,packet)
--------------------
-function actor_on_load(se_actor,packet)
-	if (atmosfear) then atmosfear.actor_on_load(se_actor,packet) end
-	if (inventory_upgrades.actor_on_load) then inventory_upgrades.actor_on_load(se_actor,packet) end
-end
-
--------------------
 -- monster_on_hit_callback(obj,amount,local_direction,who,bone_index)
 -------------------
 function monster_on_hit_callback(obj,amount,local_direction,who,bone_index)
@@ -656,15 +785,6 @@ function monster_on_actor_use_callback(obj,who)
 end
 
 ------------------
--- monster_on_hear_callback(obj, who_id, sound_type, sound_position, sound_power)
-------------------
-function monster_on_hear_callback(obj, who_id, sound_type, sound_position, sound_power)
-	for i=1, #intercepts.monster_on_hear_callback do
-		intercepts.monster_on_hear_callback[i](obj, who_id, sound_type, sound_position, sound_power)
-	end
-end
-
-------------------
 -- main_menu_on_init()
 ------------------
 function main_menu_on_init(menu)
@@ -679,15 +799,6 @@ end
 function main_menu_on_keyboard(dik,keyboard_action,menu)
 	for i=1, #intercepts.main_menu_on_keyboard do
 		intercepts.main_menu_on_keyboard[i](dik,keyboard_action,menu)
-	end
-end
-
-------------------
--- main_menu_on_init()
-------------------
-function main_menu_on_init_callbacks(menu)
-	for i=1, #intercepts.main_menu_on_init_callbacks do
-		intercepts.main_menu_on_init_callbacks[i](menu)
 	end
 end
 

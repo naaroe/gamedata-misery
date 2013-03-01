@@ -1,16 +1,19 @@
 -- axr_debug_tools UI script
 -- Alundaio
-
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
 class "debug_ui" (CUIScriptWnd)
 function debug_ui:__init(owner,binds) super()
 	self.owner = owner
 	self.binds = binds
 	self.txt_console = {}
-	self.console_size = 11
+	self.console_size = 27
 	self:InitControls()
 	self:InitCallBacks()
 	self.tab:SetActiveTab("spawner")
-	self:SendOutput("xrs_debug_tools version 1.6.2      [Type help for a list of commands]")
+	self:SendOutput("xrs_debug_tools version 1.7      [Type help for a list of commands]")
 	self.console_relay = false
 end
 
@@ -29,6 +32,10 @@ function debug_ui:InitControls()
 	-- Menu Quit
 	local btn = xml:Init3tButton("main_dialog:btn_quit", self.dialog)
 	self:Register(btn,"btn_quit")
+
+	-- Teleport Button
+	btn = xml:Init3tButton("main_dialog:btn_tp", self.dialog)
+	self:Register(btn,"btn_tp")
 
 	-- Console
 	self.console = xml:InitStatic("console",self)
@@ -58,28 +65,28 @@ function debug_ui:InitControls()
 	self.txt_near = xml:InitTextWnd("main_dialog:form:txt_near", self.form)
 
 	-- Tab Spawner
-	self.dlg_spawner = ui_debug_spawner.debug_spawner_ui(self,binds)
+	self.dlg_spawner = debug_spawner_ui(self,binds)
 	self.dlg_spawner:InitControls(0,0, xml, self)
 	self.dlg_spawner:Show(false)
 	self.dialog:AttachChild(self.dlg_spawner)
 	xml:InitWindow("tab_size", 0, self.dlg_spawner)
 
 	-- Tab HUD options
-	self.dlg_hud = ui_debug_hud.debug_hud_ui(self,binds)
+	self.dlg_hud = debug_hud_ui(self,binds)
 	self.dlg_hud:InitControls(0,0, xml, self)
 	self.dlg_hud:Show(false)
 	self.dialog:AttachChild(self.dlg_hud)
 	xml:InitWindow("tab_size", 0, self.dlg_hud)
 
 	-- Tab Object Info
-	self.dlg_object = ui_debug_object.debug_object_ui(self,binds)
+	self.dlg_object = debug_object_ui(self,binds)
 	self.dlg_object:InitControls(0,0, xml, self)
 	self.dlg_object:Show(false)
 	self.dialog:AttachChild(self.dlg_object)
 	xml:InitWindow("tab_size", 0, self.dlg_object)
 
 	-- Tab Advanced
-	self.dlg_advanced = ui_debug_advanced.debug_advanced_ui(self,binds)
+	self.dlg_advanced = debug_advanced_ui(self,binds)
 	self.dlg_advanced:InitControls(0,0, xml, self)
 	self.dlg_advanced:Show(false)
 	self.dialog:AttachChild(self.dlg_advanced)
@@ -102,6 +109,7 @@ end
 function debug_ui:InitCallBacks()
 	self:AddCallback("tab", ui_events.TAB_CHANGED, self.OnTabChange, self)
 	self:AddCallback("btn_quit", ui_events.BUTTON_CLICKED, self.OnQuit, self)
+	self:AddCallback("btn_tp", ui_events.BUTTON_CLICKED, self.OnBtnTeleport, self)
 	self:AddCallback("btn_spawn", ui_events.BUTTON_CLICKED, self.OnBtnSpawn, self)
 	self:AddCallback("btn_spawn_squad", ui_events.BUTTON_CLICKED, self.OnBtnSpawnSquad, self)
 	self:AddCallback("btn_focus", ui_events.BUTTON_CLICKED, self.OnBtnFocus, self)
@@ -175,6 +183,14 @@ function debug_ui:OnConsoleInput()
 
 	-- Send Output
 	self:SendOutput(debug_cmd_list.command_give(wrd,output,self,p))
+end
+
+function debug_ui:OnBtnTeleport()
+	local pos = xrs_debug_tools.LastCameraPos
+	if (pos) then
+		db.actor:set_actor_position(pos)
+		self:OnQuit()
+	end
 end
 
 function debug_ui:OnBtnSpawn()
@@ -409,3 +425,143 @@ function debug_ui:FindNearest(txt)
 	end
 end
 
+-- HUD UI
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+class "debug_hud_ui" (CUIWindow)
+function debug_hud_ui:__init(owner, binds) super()
+	self.owner = owner
+	self.binds = binds
+end
+function debug_hud_ui:__finalize()
+
+end
+function debug_hud_ui:InitControls(x, y, xml, owner)
+	self:SetWndPos(vector2():set(x,y))
+	self:SetWndSize(vector2():set(800,416))
+	self:SetAutoDelete(true)
+
+	xml:InitStatic("tab_hud:cap_focus", self)
+	owner.fld_focus = xml:InitEditBox("tab_hud:fld_focus", self)
+
+	local btn = xml:Init3tButton("tab_hud:btn_focus",self)
+	owner:Register(btn, "btn_focus")
+end
+
+-- object UI
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+class "debug_object_ui" (CUIWindow)
+function debug_object_ui:__init(owner, binds) super()
+	self.owner = owner
+	self.binds = binds
+end
+function debug_object_ui:__finalize()
+
+end
+function debug_object_ui:InitControls(x, y, xml, owner)
+	self:SetWndPos(vector2():set(x,y))
+	self:SetWndSize(vector2():set(800,416))
+	self:SetAutoDelete(true)
+
+	xml:InitStatic("tab_object:cap_find", self)
+	owner.fld_find = xml:InitEditBox("tab_object:fld_find", self)
+
+	local btn
+	btn = xml:Init3tButton("tab_object:btn_find",self)
+	owner:Register(btn, "btn_find")
+
+	xml:InitStatic("tab_object:cap_id", self)
+	owner.fld_id = xml:InitEditBox("tab_object:fld_id", self)
+
+	xml:InitStatic("tab_object:cap_section", self)
+	owner.fld_section = xml:InitEditBox("tab_object:fld_section", self)
+
+	xml:InitStatic("tab_object:cap_logic", self)
+	owner.fld_logic = xml:InitEditBox("tab_object:fld_logic", self)
+
+	xml:InitStatic("tab_object:cap_filename", self)
+	owner.fld_filename = xml:InitEditBox("tab_object:fld_filename", self)
+
+	btn = xml:Init3tButton("tab_object:btn_set",self)
+	owner:Register(btn, "btn_set")
+
+	btn = xml:Init3tButton("tab_object:btn_revert",self)
+	owner:Register(btn, "btn_revert")
+
+	xml:InitStatic("tab_object:cap_reload", self)
+	owner.fld_reload = xml:InitEditBox("tab_object:fld_reload", self)
+
+	btn = xml:Init3tButton("tab_object:btn_reload",self)
+	owner:Register(btn, "btn_reload")
+end
+
+-- SPAWNER UI
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+class "debug_spawner_ui" (CUIWindow)
+function debug_spawner_ui:__init(owner, binds) super()
+	self.owner = owner
+	self.binds = binds
+end
+function debug_spawner_ui:__finalize()
+
+end
+
+function debug_spawner_ui:InitControls(x, y, xml, owner)
+	self:SetWndPos(vector2():set(x,y))
+	self:SetWndSize(vector2():set(800,416))
+	self:SetAutoDelete(true)
+
+	xml:InitStatic("tab_spawner:cap_spawn", self)
+	owner.fld_spawn = xml:InitEditBox("tab_spawner:fld_spawn", self)
+
+	local btn = xml:Init3tButton("tab_spawner:btn_spawn",self)
+	owner:Register(btn, "btn_spawn")
+
+	xml:InitStatic("tab_spawner:cap_spawn_squad", self)
+	owner.fld_spawn_squad = xml:InitEditBox("tab_spawner:fld_spawn_squad", self)
+
+	xml:InitStatic("tab_spawner:cap_spawn_smart", self)
+	owner.fld_spawn_smart = xml:InitEditBox("tab_spawner:fld_spawn_smart", self)
+
+	btn = xml:Init3tButton("tab_spawner:btn_spawn_squad",self)
+	owner:Register(btn, "btn_spawn_squad")
+end
+
+-- ADVANCED UI
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+class "debug_advanced_ui" (CUIWindow)
+function debug_advanced_ui:__init(owner, binds) super()
+	self.owner = owner
+	self.binds = binds
+end
+function debug_advanced_ui:__finalize()
+
+end
+function debug_advanced_ui:InitControls(x, y, xml, owner)
+	self:SetWndPos(vector2():set(x,y))
+	self:SetWndSize(vector2():set(800,416))
+	self:SetAutoDelete(true)
+
+	xml:InitStatic("tab_advanced:cap_execute_string", self)
+	owner.fld_execute_string = xml:InitEditBox("tab_advanced:fld_execute_string", self)
+
+	local btn = xml:Init3tButton("tab_advanced:btn_execute_string",self)
+	owner:Register(btn, "btn_execute_string")
+
+	--xml:InitStatic("tab_advanced:cap_switch_distance", self)
+	--owner.fld_switch_distance = xml:InitEditBox("tab_advanced:fld_switch_distance", self)
+
+	--btn = xml:Init3tButton("tab_advanced:btn_switch_distance",self)
+	--owner:Register(btn, "btn_switch_distance")
+end

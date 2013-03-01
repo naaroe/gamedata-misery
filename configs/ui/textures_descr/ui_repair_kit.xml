@@ -1,13 +1,11 @@
 <w>
     <file name="ui\ui_repair_interface">
 		<texture id="ui_repair_window" x="0" y="0" width="563" height="509" />
-		<texture id="ui_repair_window_2" x="600" y="250" width="175" height="125" />
-
 		<texture id="ui_condition_bad" x="757" y="54" width="184" height="7" />
 		<texture id="ui_condition_good" x="757" y="88" width="184" height="7" />
 		<texture id="ui_condition_bad1" x="757" y="54" width="150" height="6" />
 		<texture id="ui_condition_good1" x="757" y="88" width="150" height="6" />
-
+		
 		<texture id="ui_repair_button_d" x="600" y="50" width="150" height="50" />
 		<texture id="ui_repair_button_e" x="600" y="100" width="150" height="50" />
 		<texture id="ui_repair_button_h" x="600" y="150" width="150" height="50" />

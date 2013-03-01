@@ -1,0 +1,25 @@
+[main] ;Drain amount every 1 second of use
+pda_drain_speed = 0.00001
+nv_drain_speed	= 0.00002
+fl_drain_speed	= 0.00001
+
+[battery_sections]
+batteries_ccell
+batteries
+batteries_dead
+batteries_empty
+
+
+[batteries_ccell]
+power = 0.99									; 0.99 because condition is never 1.0, it's 0.999e+
+
+[batteries]
+power = 0.6
+
+[batteries_dead]
+power = 0.15
+
+[batteries_empty]
+power = 0
+
+

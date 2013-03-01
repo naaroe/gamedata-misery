@@ -15,25 +15,22 @@ function smart_cover_binder:net_spawn(server_object)
 		return false
 	end
 	local name = self.object:name()
-	local a = string.len(self.object:id())
-	local b = string.len(name)
-	if (string.sub(name,b-a+1,b) == tostring(self.object:id())) then
-		name = string.sub(name,0,b-a)
+	if (string.find(name,self.object:id())) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(self.object:id())
+		name = story_name or name
 	end
 	registered_smartcovers[name] = self.object
-	printf("smart_cover_binder.net_spawn() smart_cover [%s] is registered %s", self.object:name(), vec_to_str(self.object:direction()))
+	--printf("smart_cover_binder.net_spawn() smart_cover [%s] is registered %s", self.object:name(), vec_to_str(self.object:direction()))
 	return true
 end
 function smart_cover_binder:net_destroy()
 	local name = self.object:name()
-	local a = string.len(self.object:id())
-	local b = string.len(name)
-	if (string.sub(name,b-a+1,b) == tostring(self.object:id())) then
-		alun_utils.printf("register smart_cover %s",name)
-		name = string.sub(name,0,b-a)
+	if (string.find(name,self.object:id())) then
+		local story_name = story_objects.get_story_objects_registry():get_story_id(self.object:id())
+		name = story_name or name
 	end
 	registered_smartcovers[name] = nil
-	printf("smart_cover_binder.net_destroy() smart_cover [%s] is unregistered", self.object:name())
+	--printf("smart_cover_binder.net_destroy() smart_cover [%s] is unregistered", self.object:name())
 	object_binder.net_destroy(self)
 end
 

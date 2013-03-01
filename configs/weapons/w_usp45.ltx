@@ -16,7 +16,7 @@ sprint_allowed          = true
 control_inertion_factor = 1.0 ; = 1.0
 
 ;-------------------------------------------------------------------------------
-cost					= 6380         ; the price of the item
+cost					= 12760         ; the price of the item
 inv_weight				= 0.726
 
 upgrades                = up_gr_firstab_usp, up_gr_seconab_usp, up_gr_thirdab_usp, up_gr_fourtab_usp, up_gr_fifthab_usp
@@ -138,8 +138,8 @@ orientation             	= 0, 0, 0
 fire_point              = 0.0, 0.133, 0.161
 fire_point2             = 0.0, 0.133, 0.161
 
-flame_particles		   	= weapons\generic_weapon03
-smoke_particles		   	= weapons\generic_shoot_00
+;flame_particles		   	= weapons\generic_weapon03
+smoke_particles         = weapons\generic_shoot_00
 grenade_flame_particles = weapons\generic_weapon01
 
 shell_point		 				= 0.0, 0.133, 0.047
@@ -274,7 +274,8 @@ $spawn               = "weapons\wpn_usp_nimble"   ; name and section in level ed
 inv_name				= st_wpn_usp_nimble
 description					= st_wpn_usp_nimble_descr
 
-cost					= 5220
+cost					= 6930
+inv_weight				= 0.716
 
 inv_grid_width			= 2	 
 inv_grid_height			= 1	  
@@ -282,7 +283,7 @@ inv_grid_x				= 8
 inv_grid_y				= 26
 
 upgrades                = up_gr_firstab_usp, up_gr_seconab_usp, up_gr_thirdab_usp, up_gr_fourtab_usp, up_gr_fifthab_usp
-installed_upgrades      = 
+installed_upgrades      = up_fiftha_usp
 upgrade_scheme          = upgrade_scheme_usp
 
 ;----TTX--------------------------------------------------------------------------
@@ -374,3 +375,176 @@ ammo_class		 		= ammo_11.43x23_ap, ammo_11.43x23_hydro, ammo_11.43x23_fmj
 upgrades                = up_gr_firstab_usp, up_gr_seconab_usp, up_gr_thirdab_usp, up_gr_fourtab_usp, up_gr_fifthab_usp
 installed_upgrades      =
 upgrade_scheme          = upgrade_scheme_usp
+
+;=============================================================================================================================
+[wpn_usp_custom]:wpn_usp
+
+cost					= 14320
+inv_weight				= 0.702
+
+installed_upgrades      = up_secona_usp, up_fiftha_usp, up_thirda_usp
+
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse	 		 		= 40
+fire_distance           	= 620
+bullet_speed		 		= 640
+rpm                     	= 200
+
+hud                     	= wpn_usp_custom_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0018
+
+ammo_mag_size		 	= 12 
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.51
+
+inv_name          = st_wpn_usp_custom              ; name in inventory
+inv_name_short    = st_wpn_usp_custom
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 2
+inv_grid_y				= 63
+
+visual                  = dynamics\weapons\wpn_usp45\wpn_usp4a.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_usp_custom_hud]:wpn_usp_hud
+
+item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4a_hud.ogf
+;=============================================================================================================================
+[wpn_usp_alt1]:wpn_usp
+
+cost					= 13100
+inv_weight				= 0.716
+
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse	 		 		= 40
+fire_distance           	= 620
+bullet_speed		 		= 640
+rpm                     	= 200
+
+hud                     	= wpn_usp_alt1_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0018
+
+ammo_mag_size		 	= 12 
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.5
+
+inv_name          = st_wpn_usp_alt             ; name in inventory
+inv_name_short    = st_wpn_usp_alt
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 2
+inv_grid_y				= 66
+
+visual                  = dynamics\weapons\wpn_usp45\wpn_usp4b.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_usp_alt1_hud]:wpn_usp_hud
+
+item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4b_hud.ogf
+;=============================================================================================================================
+[wpn_usp_alt2]:wpn_usp
+
+cost					= 13720
+inv_weight				= 0.769
+
+installed_upgrades      = up_firsta_usp
+
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse	 		 		= 40
+fire_distance           	= 620
+bullet_speed		 		= 640
+rpm                     	= 200
+
+hud                     	= wpn_usp_alt2_hud
+
+misfire_start_condition		= 0.6
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0018
+
+ammo_mag_size		 	= 12 
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.5
+
+inv_name          = st_wpn_usp_alt               ; name in inventory
+inv_name_short    = st_wpn_usp_alt
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 2
+inv_grid_y				= 65
+
+visual                  = dynamics\weapons\wpn_usp45\wpn_usp4c.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_usp_alt2_hud]:wpn_usp_hud
+
+item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4c_hud.ogf
+;=============================================================================================================================
+[wpn_usp_worn]:wpn_usp
+
+cost					= 10280
+inv_weight				= 0.801
+
+hit_power           		= 0.4, 0.4, 0.4, 0.4
+hit_impulse	 		 		= 40
+fire_distance           	= 620
+bullet_speed		 		= 640
+rpm                     	= 200
+
+hud                     	= wpn_usp_worn_hud
+
+misfire_start_condition		= 0.8
+misfire_end_condition		= 0.1
+misfire_start_prob	     	= 0.0055
+misfire_end_prob	     	= 0.055
+condition_shot_dec      	= 0.0018
+condition_queue_shot_dec	= 0.0018
+
+ammo_mag_size		 	= 12 
+fire_modes		  = 1
+ammo_class		  = ammo_11.43x23_fmj, ammo_11.43x23_hydro, ammo_11.43x23_ap
+
+fire_dispersion_base	= 0.55
+
+inv_name          = st_wpn_usp_worn              ; name in inventory
+inv_name_short    = st_wpn_usp_worn
+
+inv_grid_width			= 2
+inv_grid_height			= 1
+inv_grid_x				= 2
+inv_grid_y				= 64
+
+visual                  = dynamics\weapons\wpn_usp45\wpn_usp4d.ogf
+
+snd_reload		= weapons\generic\pistol_reload, 0.8
+
+[wpn_usp_worn_hud]:wpn_usp_hud
+
+item_visual             	= dynamics\weapons\wpn_usp45\wpn_usp4d_hud.ogf

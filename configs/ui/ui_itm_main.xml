@@ -69,8 +69,6 @@
 		</form>
 	</itm_repair>
 
-<!-- ui_frame_error -->
-
 	<loot>
 		<file_item>
 			<main width="490" height="18"/>
@@ -78,11 +76,9 @@
 			<fd width="50" height="18"/>
 		</file_item>
 		<form x="100" y="150" width="450" height="460" stretch="1">
-
 			<icon x="90" y="135" width="128" height="128" stretch="1">
 			</icon>
 			<list_frame x="0" y="215" width="200" height="175">
-				<texture>ui_cb_listbox</texture>
 				<texture>ui_inGame2_servers_list_frame</texture>
 			</list_frame>
 			<list x="3" y="215" width="197" height="173" item_height="18" can_select="1">

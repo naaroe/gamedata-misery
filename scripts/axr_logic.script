@@ -1,10 +1,13 @@
-local m = alun_plugin_manager
+--[[
+Copyright (C) 2012 Alundaio
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License-]]
+--]]
+
 function set_new_scheme_and_logic(npc,scheme,section,logic,gulag,ini_filename)
 	local st = db.storage[npc:id()]
 	xr_logic.pstor_store(npc,"old_active_section", st.active_section)
 	xr_logic.pstor_store(npc,"old_section_logic", st.section_logic)
 	xr_logic.pstor_store(npc,"old_ini_filename", st.ini_filename)
-	--m.debug_write("%s[%s]: ini=%s scheme=%s section=%s active_section=%s gulag=%s",npc:name(),npc:character_name(),st.ini_filename,st.scheme,st.section,st.active_section,st.gulag)
 
 	-- Store new ini
 	db.storage[npc:id()].ini_filename = ini_filename
@@ -20,7 +23,6 @@ function set_new_scheme_and_logic(npc,scheme,section,logic,gulag,ini_filename)
 	xr_logic.switch_to_section(npc, st.ini, new_section)
 	db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, new_section, npc)
 
-	--m.debug_write("%s[%s]: ini=%s scheme=%s section=%s active_section=%s gulag=%s",npc:name(),npc:character_name(),st.ini_filename,st.scheme,st.section,st.active_section,st.gulag)
 end
 
 function restore_scheme_and_logic(npc)
@@ -48,7 +50,6 @@ function restore_scheme_and_logic(npc)
 		db.storage[npc:id()].overrides = xr_logic.cfg_get_overrides(st.ini, section, npc)
 	end
 
-	--m.debug_write("Active Section: %s Active Scheme: %s section logic: %s Filename: %s Section: %s Scheme: %s",st.active_section,st.active_scheme,st.section_logic,st.ini_filename,st.section,st.scheme)
 end
 
 function str_from_condlist(obj,ini,section,field)

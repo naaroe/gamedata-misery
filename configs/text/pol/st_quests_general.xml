@@ -1,96 +1,96 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="hide_from_surge_message">
-		<text>Uwaga! Emisja rozpocznie siк za:</text>
+		<text>Attention! Blowout imminent!</text>
 	</string>
 	<string id="hide_from_surge_descr_1_a">
-		<text>Musisz natychmiast biec do najbliїszego schronienia i ukryж siк przed emisj№.</text>
+		<text>Blowout imminent, proceed to shelter immediately!</text>
 	</string>
 	<string id="hide_from_surge_descr_2_a">
-		<text>Nie moїesz wychodziж ze schronienia w trakcie emisji.</text>
+		<text>You are not allowed to leave the shelter during a blowout.</text>
 	</string>
 	<string id="hide_from_surge_name_1">
-		<text>Emisja: znajdџ schronienie</text>
+		<text>Blowout: Find Shelter</text>
 	</string>
 	<string id="hide_from_surge_name_2">
-		<text>Emisja: czekaj w schronieniu</text>
+		<text>Blowout: Stay sheltered</text>
 	</string>
 
 	<!-- AtmosFear Fallout -->
 	<string id="hide_from_fallout_rad_message_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_rad_message">
-		<text>Rozpoczyna siк opad radioaktywny.</text>
+		<text>Radioactive fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_1_a">
-		<text>Poziom promieniowania jest niebezpieczny. Powinieneњ ukryж siк przed opadem radioaktywnym.</text>
+		<text>The level of radiation is dangerous. You should hide from the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_descr_2_a">
-		<text>Nie powinieneњ wychodziж ze schronienia w trakcie opadu radioaktywnego.</text>
+		<text>You shouldn't leave the shelter during the radioactive fallout.</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_1">
-		<text>Opad radioaktywny: znajdџ schronienie</text>
+		<text>Radioactive fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_rad_name_2">
-		<text>Opad radioaktywny: czekaj w schronieniu</text>
+		<text>Radioactive fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_rad_message_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_rad_message">
-		<text>Opad radioaktywny zakoсczyі siк.</text>
+		<text>Radioactive fallout has ended</text>
 	</string>
 	
 	<string id="hide_from_fallout_acid_message_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_fallout_acid_message">
-		<text>Rozpoczyna siк toksyczny opad.</text>
+		<text>Chemical fallout begins.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_1_a">
-		<text>Poziom skaїenia jest niebezpieczny. Powinieneњ ukryж siк przed toksycznym opadem.</text>
+		<text>The level of contamination is dangerous. You should hide from the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_descr_2_a">
-		<text>Nie powinieneњ wychodziж ze schronienia w trakcie toksycznego opadu.</text>
+		<text>You shouldn't leave the shelter during the chemical fallout.</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_1">
-		<text>Toksyczny opad: znajdџ schronienie</text>
+		<text>Chemical fallout: Find shelter</text>
 	</string>
 	<string id="hide_from_fallout_acid_name_2">
-		<text>Toksyczny opad: czekaj w schronieniu</text>
+		<text>Chemical fallout: Stay sheltered</text>
 	</string>
 	<string id="end_fallout_acid_message_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_fallout_acid_message">
-		<text>Toksyczny opad zakoсczyі siк.</text>
+		<text>Chemical fallout has ended</text>
 	</string>
 
 	<!-- AtmosFear Psi Storm -->
 	<string id="hide_from_psi_storm_message_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="hide_from_psi_storm_message">
-		<text>Rozpoczyna siк psioniczny sztorm.</text>
+		<text>Psi storm begins.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_1_a">
-		<text>Powinieneњ ukryж siк przed psionicznym sztormem.</text>
+		<text>You should hide from the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_descr_2_a">
-		<text>Nie powinieneњ wychodziж ze schronienia w trakcie psionicznego sztormu.</text>
+		<text>You shouldn't leave the shelter during the psi storm.</text>
 	</string>
 	<string id="hide_from_psi_storm_name_1">
-		<text>Psioniczny sztorm: znajdџ schronienie</text>
+		<text>Psi storm: Find shelter</text>
 	</string>
 	<string id="hide_from_psi_storm_name_2">
-		<text>Psioniczny sztorm: czekaj w schronieniu</text>
+		<text>Psi storm: Stay sheltered</text>
 	</string>
 	<string id="end_psi_storm_caption">
-		<text>Uwaga!</text>
+		<text>Attention!</text>
 	</string>
 	<string id="end_psi_storm_message">
-		<text>Psioniczny sztorm zakoсczyі siк.</text>
+		<text>Psi storm has ended</text>
 	</string>
 
 </string_table>

@@ -526,7 +526,7 @@
 		<text>Quit profile</text>
 	</string>
 	<string id="ui_mm_master">
-		<text>Enter The Zone</text>
+		<text>Enter The Zone (Black Road)</text>
 	</string>
 	<string id="ui_mm_master_volume">
 		<text>SFX Volume</text>
@@ -559,7 +559,7 @@
 		<text>Start</text>
 	</string>
 	<string id="ui_mm_novice">
-		<text>Disabled</text>
+		<text>Select Class</text>
 	</string>
 	<string id="ui_mm_npc_torch">
 		<text>NPC flashlights</text>
@@ -682,7 +682,7 @@
 		<text>NPC identification</text>
 	</string>
 	<string id="ui_mm_veteran">
-		<text>USS Assaulter</text>
+		<text>Enter The Zone</text>
 	</string>
 	<string id="ui_mm_video">
 		<text>Video</text>

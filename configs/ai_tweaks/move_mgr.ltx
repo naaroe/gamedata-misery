@@ -7,26 +7,26 @@ allow_sleep_anytime	= false					;Enable to ignore sleep time and only do it by c
 
 ;It's possible to add your own states here if you want
 [random_states]; Randomly selected state to replace default state
-eat_kolbasa
-eat_energy
-eat_bread
-eat_vodka
+sit_ass_eat_kolbasa
+sit_ass_drink_energy
+sit_ass_eat_bread
+sit_ass_drink_vodka
 ;sleep_sit
 
 
 [suggested_wait_times]; * or number interval[1000 thru 45000] is expected. Time before state get's updated
-eat_kolbasa		= 45000
-eat_energy 		= 45000
-eat_bread 		= 45000
-eat_vodka 		= 45000
-;sleep_sit 		= 45000
-sleep 			= 45000
+sit_ass_eat_kolbasa		= *
+sit_ass_drink_energy	= *
+sit_ass_eat_bread		= *
+sit_ass_drink_vodka		= *
+;sleep_sit 				= *
+sleep 					= *
 
 [object_for_state]; If a state requires NPC to have item link it here
-eat_kolbasa = kolbasa
-eat_bread = bread
-eat_vodka = vodka
-eat_energy = energy_drink
+sit_ass_eat_kolbasa	 	= kolbasa
+sit_ass_eat_bread 		= bread
+sit_ass_drink_vodka 	= vodka
+sit_ass_drink_energy 	= energy_drink
 
 
 [sound_sets]; Must be setup in misc\script_sound.ltx (Currently not working)
@@ -42,6 +42,8 @@ army							= 0.4
 ecolog							= 0.8
 killer							= 0.2
 monolith						= 0.0
+monolith_sci					= 0.0
+monolith_pripyat				= 0.0
 
 stalker_sci 					= 0.7			;MSO behavior type
 stalker_hunter_day 				= 0.5			;MSO behavior type
@@ -63,6 +65,8 @@ army							= 1,22
 ecolog							= 1,22
 killer							= 1,22
 monolith						= 1,22
+monolith_sci					= 1,22
+monolith_pripyat				= 1,22
 
 stalker_sci 					= 3,22			;MSO behavior type
 stalker_hunter_day 				= 3,22			;MSO behavior type

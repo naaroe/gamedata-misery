@@ -67,10 +67,24 @@ value		= +25
 
 power_restore_speed				= 0.0005
 
+[up_sect_thirdc_helm_protective]
+value		= +2
+inv_weight 				= -0.041
+cost 		= 8280
+
+nightvision_sect 				= effector_nightvision_2
+
+[up_sect_thirde_helm_protective]
+value		= +3
+inv_weight 				= +0.01
+cost 		= 4840
+
+nightvision_sect 				= effector_nightvision_3
+
 [up_firsta_helm_protective]
 scheme_index            = 0, 0
 known                   = 1
-effects                 = up_gr_firstcd_helm_protective
+effects                 = ;  up_gr_firstcd_helm_protective
 section                 = up_sect_firsta_helm_protective
 property                = prop_psy
 
@@ -91,7 +105,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_1
 [up_firstc_helm_protective]
 scheme_index            = 1, 0
 known                   = 1
-effects                 = up_gr_firstef_helm_protective
+effects                 = ;  up_gr_firstef_helm_protective
 section                 = up_sect_firstc_helm_protective
 property                = prop_chem
 
@@ -111,7 +125,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_2
 [up_firstd_helm_protective]
 scheme_index            = 1, 1
 known                   = 1
-effects                 = up_gr_firstef_helm_protective
+effects                 = ;  up_gr_firstef_helm_protective
 section                 = up_sect_firstd_helm_protective
 property                = prop_radio
 
@@ -131,7 +145,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_4
 [up_firste_helm_protective]
 scheme_index            = 2, 0
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firste_helm_protective
 property                = prop_psy
 
@@ -151,7 +165,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_3
 [up_firstf_helm_protective]
 scheme_index            = 2, 1
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_firstf_helm_protective
 property                = prop_thermo, prop_electro
 
@@ -171,7 +185,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_5
 [up_secona_helm_protective]
 scheme_index            = 0, 1
 known                   = 1
-effects                 = up_gr_seconcd_helm_protective
+effects                 = ;  up_gr_seconcd_helm_protective
 section                 = up_sect_secona_helm_protective
 property                = prop_radio, prop_chem
 
@@ -192,7 +206,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_6
 [up_seconc_helm_protective]
 scheme_index            = 1, 2
 known                   = 1
-effects                 = up_gr_seconef_helm_protective
+effects                 = ;  up_gr_seconef_helm_protective
 section                 = up_sect_seconc_helm_protective
 property                = prop_psy
 
@@ -212,7 +226,7 @@ icon                    = ui_inGame2_upgrade_helm_protective_7
 [up_secone_helm_protective]
 scheme_index            = 2, 2
 known                   = 1
-effects                 = 
+effects                 = ;  
 section                 = up_sect_secone_helm_protective
 property                = prop_power
 
@@ -228,6 +242,26 @@ prereq_params           =
 name                    = st_up_resp_c2_name
 description             = st_up_resp_c2_descr
 icon                    = ui_inGame2_upgrade_helm_protective_8
+
+[up_thirde_helm_protective]
+scheme_index            = 2, 3
+known                   = 1
+effects                 = ; 
+section                 = up_sect_secone_helm_respirator
+property                = prop_night_vision
+
+precondition_functor    = inventory_upgrades.precondition_functor_a
+precondition_parameter  = a & b
+
+effect_functor          = inventory_upgrades.effect_functor_a
+effect_parameter        = something_here
+
+prereq_functor          = inventory_upgrades.prereq_functor_a
+prereq_tooltip_functor  = inventory_upgrades.prereq_tooltip_functor_a
+prereq_params           =
+name                    = st_up_resp_c1_name
+description             = st_up_resp_c1_descr
+icon                    = ui_inGame2_upgrade_helm_battle_9
 
 
 [up_gr_firstab_helm_protective]
@@ -247,3 +281,6 @@ elements                = up_seconc_helm_protective
 
 [up_gr_seconef_helm_protective]
 elements                = up_secone_helm_protective
+
+[up_gr_thirdef_helm_protective]
+elements                = up_thirde_helm_protective
