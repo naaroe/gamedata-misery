@@ -8,6 +8,7 @@ This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAl
 ActorClass = alun_utils.read_from_ini(nil,"actor","actor_class","string","assaulter")
 MiseryBlackRoad = false
 MiseryBlackRoadEnableReducedRewards = true
+Config = alun_utils.cfg_file("misery_options.ini")
 
 local REPAIR_TEST = false
 
@@ -19,6 +20,15 @@ end
 
 local class_ui
 function main_menu_on_init(menu)
+	if not (Config:SectionExist("settings")) then
+		Config:SetValue("settings","dynamic_helmet_hud",true)
+		Config:SetValue("settings","upd_battery_drain",true)
+		Config:SetValue("settings","infinite_npc_primary_ammo",true)
+		Config:SetValue("settings","hardcore_ai_aim",true)
+		Config:SetValue("settings","safe_cover_notification",false)
+		Config:Save()
+	end
+
 	local fsgame = io.open("fsgame.ltx","a+")
 	local data = fsgame:read("*all")
 	local restart
@@ -125,6 +135,17 @@ function on_update()
 end
 
 function on_game_load()
+
+	if (Config.GetValue("settings","hardcore_ai_aim",1)) then
+		local con = get_console()
+		con:execute("ai_aim_max_angle 25.0")
+		con:execute("ai_aim_min_angle 20.0")
+		con:execute("ai_aim_min_speed 2.50")
+		con:execute("ai_aim_predict_time 0.28")
+	end
+
+	--alun_utils.printf("test config = %s",Config.GetValue("settings","test"))
+
 	if (has_alife_info("misery_info_black_road")) then
 		MiseryBlackRoad = true
 	end
@@ -188,6 +209,7 @@ function dynamic_actor_loadout()
 	end
 
 	-- Items all classes should have
+	create_items("device_flashlight")
 	create_items("device_torch")
 	create_items("wpn_binoc_inv")
 	create_items("wpn_binoc")
@@ -196,7 +218,6 @@ function dynamic_actor_loadout()
 	if (ActorClass == "assaulter") then
 		create_items("identity_card_assaulter")
 		if (MiseryBlackRoad) then
-			create_items("device_flashlight")
 			create_items("wpn_knife_inv")
 		else
 			create_items("wpn_upd")
@@ -230,7 +251,6 @@ function dynamic_actor_loadout()
 	elseif (ActorClass == "sniper") then
 		create_items("identity_card_sniper")
 		if (MiseryBlackRoad) then
-			create_items("device_flashlight")
 			create_items("wpn_knife_inv_5")
 		else
 			create_items("wpn_upd")
@@ -256,14 +276,12 @@ function dynamic_actor_loadout()
            	create_ammunition("ammo_12x70_buck",5)
 			create_ammunition("ammo_7.62x39_fmj",3)
 
-			create_items("device_flashlight")
 			create_items("itm_sleepbag")
 			create_items("wpn_addon_scope_ww2")
 		end
 	elseif (ActorClass == "recon") then
 		create_items("identity_card_recon")
 		if (MiseryBlackRoad) then
-			create_items("device_flashlight")
 			create_items("wpn_knife_inv_4")
 		else
 			create_items("wpn_upd")

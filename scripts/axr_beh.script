@@ -336,6 +336,7 @@ function action_beh:beh_path()
 	local new_state = self.st.desired_target.delay_animation or self.st.delay_animation
 
 	if (self.st.use_camp and camp_states[new_state]) then
+		--[[
 		self:fill_approved_actions(new_state)
 
 		self.camp = sr_camp.get_current_camp(self.object:position())
@@ -374,6 +375,7 @@ function action_beh:beh_path()
 				end
 			end
 		end
+		--]]
 	elseif (self.in_camp) then
 		self.camp:unregister_npc(self.object:id())
 		self.in_camp = nil

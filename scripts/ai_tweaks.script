@@ -134,7 +134,7 @@ end
 function npc_on_weapon_no_ammo(npc,wpn,st)
 
 	local isPistol = alun_utils.isPistol(wpn)
-	if (isPistol and InfiniteAmmoSecondary) or (not isPistol and InfiniteAmmoPrimary) then
+	if (isPistol and InfiniteAmmoSecondary) or (not isPistol and axr_misery.Config:GetValue("settings","infinite_npc_primary_ammo",1)) then
 		return
 	end
 

@@ -93,6 +93,47 @@ local intercepts = {
 
 }
 
+-------------------
+-- on_game_start()
+-------------------
+function on_game_start()
+	-- AI Tweaks
+	if (xr_danger and xr_danger.on_game_start) then xr_danger.on_game_start() end
+	if (xr_gather_items and xr_gather_items.on_game_start) then xr_gather_items.on_game_start() end
+	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
+	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
+	if (ai_tweaks) then ai_tweaks.on_game_start() end
+	--if (xr_visual) then xr_visual.on_game_start() end
+	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
+	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
+
+	-- item mini-mod
+	if (itms_manager) then itms_manager.on_game_start() end
+
+	-- SCHEMES
+	if (axr_beh) then axr_beh.on_game_start() end
+	if (axr_companions) then axr_companions.on_game_start() end
+	if (xrs_facer) then xrs_facer.on_game_start() end
+	if (xrs_kill_wounded) then xrs_kill_wounded.on_game_start() end
+	if (rx_gl) then rx_gl.on_game_start() end
+	if (rx_ff) then rx_ff.on_game_start() end
+
+	-- Atmosfear
+	if (atmosfear) then atmosfear.on_game_start() end
+
+	-- Misery
+	if (axr_misery) then axr_misery.on_game_start() end
+	if (axr_quest_master) then axr_quest_master.on_game_start() end
+	if (axr_battery) then axr_battery.on_game_start() end
+
+	-- Dynamic Spawn
+	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
+
+	-- TEST
+	--if (axr_overheat) then axr_overheat.on_game_start() end
+end
+
+
 function _G.callback_register(name,func)
 	if (intercepts[name]) then
 		table.insert(intercepts[name],func)
@@ -152,46 +193,14 @@ function _G.create_delayed_object_event(id,timer,f,...)
 	ev_object_queue[id].f = f
 	ev_object_queue[id].p = {...}
 end
--------------------
--- on_game_start()
--------------------
-function on_game_start()
-	-- AI Tweaks
-	if (xr_danger and xr_danger.on_game_start) then xr_danger.on_game_start() end
-	if (xr_gather_items and xr_gather_items.on_game_start) then xr_gather_items.on_game_start() end
-	if (xr_corpse_detection.on_game_start) then xr_corpse_detection.on_game_start() end
-	if (xr_combat_ignore and xr_combat_ignore.on_game_start) then xr_combat_ignore.on_game_start() end
-	if (ai_tweaks) then ai_tweaks.on_game_start() end
-	--if (xr_visual) then xr_visual.on_game_start() end
-	if (xrs_rnd_npc_loadout) then xrs_rnd_npc_loadout.on_game_start() end
-	if (xr_eat_medkit) then xr_eat_medkit.on_game_start() end
 
-	-- item mini-mod
-	if (itms_manager) then itms_manager.on_game_start() end
-
-	-- SCHEMES
-	if (axr_beh) then axr_beh.on_game_start() end
-	if (axr_companions) then axr_companions.on_game_start() end
-	if (xrs_facer) then xrs_facer.on_game_start() end
-	if (xrs_kill_wounded) then xrs_kill_wounded.on_game_start() end
-	if (rx_gl) then rx_gl.on_game_start() end
-	if (rx_ff) then rx_ff.on_game_start() end
-
-	-- Atmosfear
-	if (atmosfear) then atmosfear.on_game_start() end
-
-	-- Misery
-	if (axr_misery) then axr_misery.on_game_start() end
-	if (axr_quest_master) then axr_quest_master.on_game_start() end
-	if (axr_battery) then axr_battery.on_game_start() end
-
-	-- Dynamic Spawn
-	if (axr_dynamic_spawn) then axr_dynamic_spawn.on_game_start() end
-
-	-- TEST
-	--if (axr_overheat) then axr_overheat.on_game_start() end
+local ShowMessageTime
+function _G.SetHudMsg(msg,tim)
+	local hud = get_hud()
+	hud:AddCustomStatic("not_enough_money_mine", true)
+	hud:GetCustomStatic("not_enough_money_mine"):wnd():TextControl():SetTextST(msg)
+	ShowMessageTime = time_global() + tim*1000
 end
-
 -------------------
 -- se_actor_on_register()
 -------------------
@@ -246,6 +255,16 @@ actor_light = nil
 function actor_on_update(se_actor,delta)
 	for i=1, #intercepts.actor_on_update do
 		intercepts.actor_on_update[i](se_actor,delta)
+	end
+
+	if (ShowMessageTime) then
+		local hud = get_hud()
+		local custom_static = hud:GetCustomStatic("not_enough_money_mine")
+		local tg = time_global()
+		if custom_static ~= nil and tg > ShowMessageTime then
+			hud:RemoveCustomStatic("not_enough_money_mine")
+			ShowMessageTime = nil
+		end
 	end
 
 	local wpn = db.actor:active_item()

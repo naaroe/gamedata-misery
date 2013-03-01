@@ -50,6 +50,10 @@ end
 -- add this function to bind_stalker use_inventory_item function
 -- battery.use_battery(obj)
 function use_battery(obj)
+	if (axr_misery.Config:GetValue("settings","upd_battery_drain",1) ~= true) then
+		return
+	end
+
 	local name = obj:section()
 	local upd = db.actor:object("wpn_upd")
 
@@ -90,6 +94,9 @@ end
 -- add this function to bind_stalker update function
 -- battery.update()
 function update()
+	if (axr_misery.Config:GetValue("settings","upd_battery_drain",1) ~= true) then
+		return
+	end
 	local battery = db.actor:object("wpn_upd")
 	updateLight(battery)
 	updateNV(battery)
@@ -128,6 +135,7 @@ function updateNV(battery)
 		-- battery check
 		if not (battery) then
 			if (itms_manager) then itms_manager.show_message("You don't have a Universal Power Device (UPD)",35) end
+			nv:enable_night_vision(false)
 			return
 		end
 

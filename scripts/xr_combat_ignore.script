@@ -127,8 +127,11 @@ function is_enemy(obj,enemy,no_memory)
 			--	obj:enable_memory_object(enemy,false)
 			xr_logic.pstor_store(obj,"mem_time_offset",tg)
 
-			if (db.actor:id() == ene_id and not st.enabled) then
-				st.enabled = true
+			if (db.actor:id() == ene_id) then
+				if (not st.enabled) then
+					st.enabled = true
+				end
+				fighting_with_actor_npcs[obj:id()] = nil
 			end
 
 			return false
@@ -142,7 +145,7 @@ function is_enemy(obj,enemy,no_memory)
 	end
 
 	-- Ignore enemies with the safe_zone flag
-	if (IsStalker(obj) and character_community(obj) ~= "zombied" and character_community(enemy) ~= "zombied") then
+	if (IsStalker(obj) and character_community(obj) ~= "zombied" and character_community(enemy) ~= "zombied" and not IsMonster(enemy)) then
 		local se_obj = alife():object(id)
 		if (not se_obj) then
 			alun_utils.printf("xr_combat_ignore: Critical Error dial 911 se_obj is nil!")

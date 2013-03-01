@@ -88,14 +88,8 @@ function is_on_the_same_level(obj1, obj2)
 end
 
 function evaluate_prior(target, squad)
-	if (target:clsid() == clsid.online_offline_group_s) then
-		if (not is_on_the_same_level(target, squad)) then
-			return 0
-		end
-
-		if (target:npc_count() < 1) then
-			return 0
-		end
+	if (target:clsid() == clsid.online_offline_group_s and not is_on_the_same_level(target, squad)) then
+		return 0
 	end
 
 	local prior = 0
@@ -111,12 +105,12 @@ function evaluate_prior(target, squad)
 		local target_level_name = alife():level_name(game_graph():vertex(target.m_game_vertex_id):level_id())
 
 		local enable = EnterLevels[target_level_name] and xr_logic.pick_section_from_condlist(db.actor,squad,xr_logic.parse_condlist(squad,"enter_levels",target_level_name,EnterLevels[target_level_name]))
-		if not (enable) then
+		if (enable  ~= "true") then
 			return 0
 		end
 
-		enable = level_name,ExitLevels[level_name] and xr_logic.pick_section_from_condlist(db.actor,squad,xr_logic.parse_condlist(squad,"exit_levels",level_name,ExitLevels[level_name]))
-		if not (enable) then
+		enable = ExitLevels[level_name] and xr_logic.pick_section_from_condlist(db.actor,squad,xr_logic.parse_condlist(squad,"exit_levels",level_name,ExitLevels[level_name]))
+		if (enable  ~= "true") then
 			return 0
 		end
 	end

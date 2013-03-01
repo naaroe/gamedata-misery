@@ -318,6 +318,10 @@ function on_actor_update()
 
 	if (debug_god) then
 		db.actor.health = 1
+		db.actor.bleeding = 0
+		db.actor.psy_health = 1
+		db.actor.radiation = 0
+		db.actor.power = 1
 	end
 
 	if (crow_fun) then
@@ -580,6 +584,10 @@ function position_hud_show(hud)
 	hud:add_msg("Angle",se_actor and se_actor.angle and string.format("%0.3f, %0.3f, %0.3f", se_actor.angle.x, se_actor.angle.y, se_actor.angle.z))
 	hud:add_msg("Valid",valid)
 	hud:add_msg("FOV",math.floor(device().fov))
+
+	local Y, M, D, h, m, s, ms
+	Y, M, D, h, m, s, ms = game.get_game_time():get( Y, M, D, h, m, s, ms )
+	hud:add_msg("GameTime",string.format("Y:%d M:%d D:%d h:%d m:%d s:%d ms:%d",Y, M, D, h, m, s, ms))
 	hud:display()
 end
 

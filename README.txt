@@ -12,73 +12,82 @@
 
 
 Misery 2.0 Development Team:
-N.Aaroe
-Trojanuch
-Cromm Cruac
-r_populik
-Alundaio
-[TZP] LoNer1
-BioShocker
-David.m.e.
-Simbalime
-mark009vn
-_xXxTWiST3D_xXx_
 0800
+[TZP] LoNer1
+_xXxTWiST3D_xXx_
+Alundaio
+BioShocker
+Cromm Cruac
+Damjan Cvetkov-Dimitrov
+David.m.e.
+mark009vn
+N.Aaroe
+r_populik
 ScarabParamit
 Setakat
-Damjan Cvetkov-Dimitrov
+Simbalime
+Trojanuch
+
 
 Credits:
-
-N.Aaroe
-Trojanuch
-Cromm Cruac
-r_populik
-Alundaio
-[TZP] LoNer1
-BioShocker
-David.m.e.
-Simbalime
-mark009vn
-_xXxTWiST3D_xXx_
 0800
-Setakat
-Smrtphoneuser
-ScarabParamit
-Pmase01
-Gannebam
-Smurth
-Rulix a.k.a. Bak
-xStream
-Ceano
-Kaplan994
-Rvsty
-Derranged
-imperialreign
+[TZP] LoNer1
+_xXxTWiST3D_xXx_
+Alundaio
 Angrydog
-Spetznaz_Reaper
-rickpnick
-Darkenneko
-Gtzz FeLa
-Vandrerer
-Smurth
-timnwells
+BioShocker
 Blakluma
-Xero350
-DrHaggiz
-Nerfwaffle
-JPJ5624
-Mr Jackal
-Sowexly
+Ceano
+Cromm Cruac
+Damjan
+Darkenneko
+David.m.e.
+Derranged
 Dorian23Grey
+DrHaggiz
+Gannebam
+Gtzz FeLa
+imperialreign
+JPJ5624
+Kaplan994
+mark009vn
+Mr Jackal
+Mr. Fusion
+N.Aaroe
+Nerfwaffle
+Pmase01
+r_populik
+rickpnick
+Rulix a.k.a. Bak
+Rvsty
+ScarabParamit
+Setakat
+Simbalime
+Smrtphoneuser
+Smurth
+Sowexly
+Spetznaz_Reaper
+timnwells
+Trojanuch
+Vandrerer
+Wuut
+Xero350
+xStream
+
 
 Testers:
-Kyle_K_ski
 _xXxTWiST3D_xXx_
+Kyle_K_ski
 rickpnick
+Sowexly
 Spetznaz_Reaper
 
+
 Special Thanks:
+DarkStarMarineCorps
 Jketinyu a.k.a. Swartz
 MacBradley
-DarkStarMarineCorps
+
+
+For:
+All the lovely and beautiful hamsters in the world

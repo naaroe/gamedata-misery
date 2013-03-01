@@ -42,7 +42,7 @@ b_discard_settings_shown = false
 ----------------------------------------------------------------------
 function printf(fmt,...)
 	if (dev_debug) then
-		alun_utils.printf(fmt,...)
+		--alun_utils.printf(fmt,...)
 	end
 end
 

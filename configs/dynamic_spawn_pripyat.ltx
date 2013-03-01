@@ -3,9 +3,35 @@
 ;==================================
 
 
-[radio_pripyat_01]
-section 			= priemnik_gorizont
-position			= -41.096576690674,4.3756904602051,180.61373901367
-level_vertex_id		= 649909
-game_vertex_id		= 348
-custom_data			= scripts\sounds\music\playlist_1.ltx
+
+;==================================
+; Level Changers
+;==================================
+
+[pri_to_pas_sr]
+section					= space_restrictor
+position 				= 185.53942871094,-4.2401390075684,-259.77066040039
+level_vertex_id		 	= 411437
+game_vertex_id 			= 695
+custom_data				= scripts\sr_teleport_logic.ltx
+shape_type 				= 1
+v1 						= 3,0,0
+v2 						= 0,1,0
+v3 						= 0,0,3
+v4 						= 0,0,0
+
+[pri_to_pas_lc]
+section					= level_changer
+position 				= 185.53942871094,-24.2401390075684,-259.77066040039
+level_vertex_id		 	= 411437
+game_vertex_id 			= 695
+dest_position 			= 82.41902923584,4.0210518836975,-222.65602111816
+dest_level_vertex_id 	= 1244194
+dest_game_vertex_id 	= 932
+dest_direction			= 0,1.5,0
+dest_level_name			= jupiter_underground
+shape_type 				= 1
+v1 						= 3,0,0
+v2 						= 0,2,0
+v3 						= 0,0,3
+v4 						= 0,0,0

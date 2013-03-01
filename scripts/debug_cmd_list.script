@@ -36,10 +36,12 @@ end
 
 function first_word(caller,txt,owner,msg)
 	local wrd = ""
+	local rest = ""
 	local _strt, _end = string.find(txt,".%S+")
 	if (_strt and _end) then
 		wrd = string.sub(txt,_strt, _end)
-		wrd = string.lower(wrd)
+		wrd = trim(string.lower(wrd))
+		rest = trim(string.sub(txt,_end+1))
 	else
 		owner:SendOutput("For usage type %s help",caller)
 		return
@@ -49,7 +51,7 @@ function first_word(caller,txt,owner,msg)
 		owner:SendOutput("%s %s",caller,msg)
 		return
 	end
-	return wrd
+	return wrd,rest
 end
 
 -- HELP
@@ -719,16 +721,38 @@ function cmd.god(me,txt,owner,p)
 
 	if (wrd == "on") then
 		xrs_debug_tools.debug_god = true
+		--get_console():execute("g_god on")
 		return "god:= invincibility enabled"
 	end
 
 	if (wrd == "off") then
 		xrs_debug_tools.debug_god = nil
+		--get_console():execute("g_god off")
 		return "god:= invincibility disabled"
 	end
 
 	return "god:= type god help for list of sub commands"
 end
+
+-- No Clip
+--[[
+function cmd.noclip(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on|off]")
+	if not (wrd) then return end
+
+	if (wrd == "on") then
+		get_console():execute("g_no_clip on")
+		return "noclip:= no clip enabled"
+	end
+
+	if (wrd == "off") then
+		get_console():execute("g_no_clip off")
+		return "noclip:= no clip disabled"
+	end
+
+	return "noclip:= type noclip help for list of sub commands"
+end
+--]]
 
 -- Invisible
 function cmd.invisible(me,txt,owner,p)
@@ -887,6 +911,76 @@ function cmd.time(me,txt,owner,p)
 	end
 end
 
+-- money
+function cmd.money(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"<amount>")
+	if not (wrd) then return end
+	local amt = tonumber(wrd) or 1000
+	db.actor:give_money(amt)
+	return "money:= gave actor "..amt.." RU."
+end
+
+-- time
+function cmd.dev_debug(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[on | off]")
+	if not (wrd) then return end
+	if (wrd == "on") then
+		_G.dev_debug = true
+	elseif (wrd == "off") then
+		_G.dev_debug = false
+	end
+	return "dev_debug:= type dev_debug help for list of sub commands."
+end
+
+function cmd.game_graph(me,txt,owner,p)
+	local wrd = first_word(me,txt,owner,"[show | near]")
+	if not (wrd) then return end
+
+	if (wrd == "show") then
+		local gg = game_graph()
+		local vertex, level_name, lvid, pos, se_obj
+		local sim = alife()
+		for gvid=0, 1033 do
+			if (gg:valid_vertex_id(gvid)) then
+				vertex = gg:vertex(gvid)
+				level_name = alife():level_name(vertex:level_id())
+				lvid = vertex:level_vertex_id()
+				pos = vertex:level_point()
+
+				se_obj = sim:create("medkit", pos, lvid, gvid)
+				level.map_add_object_spot_ser(se_obj.id, "treasure", level_name.." Gvid:"..gvid)
+			end
+		end
+	elseif (wrd == "near") then
+		local gg = game_graph()
+		local vertex, level_name, lvid, pos
+		local near_lvid, near_dist, near_gvid, dist
+		for gvid=0, 1033 do
+			if (gg:valid_vertex_id(gvid)) then
+				vertex = gg:vertex(gvid)
+				level_name = alife():level_name(vertex:level_id())
+				if (level_name == level.name()) then
+					pos = vertex:level_point()
+
+					dist = db.actor:position():distance_to_sqr(pos)
+
+					if not (near_dist) then
+						near_gvid = gvid
+						near_dist = dist
+					end
+
+					if (dist < near_dist) then
+						near_gvid = gvid
+						near_dist = dist
+					end
+				end
+			end
+		end
+		return "game_graph:= nearest gvid = " .. near_gvid .. " [dist = " .. near_dist .. "]"
+	end
+	return "game_graph:= spots created"
+end
+
 -- item
 function cmd.item(me,txt,owner,p)
 	local wrd = first_word(me,txt,owner,"[list <page> ]")
@@ -943,14 +1037,14 @@ end
 
 -- info
 function cmd.info(me,txt,owner,p)
-	local wrd = first_word(me,txt,owner,"[list <page> | give | take ]")
+	local wrd,rest = first_word(me,txt,owner,"[list <page> | give | take ]")
 	if not (wrd) then return end
 
 	if (wrd == "give") then
-		give_info(txt)
+		give_info(rest)
 		return "info:= info given"
 	elseif (wrd == "take") then
-		disable_info(txt)
+		disable_info(rest)
 		return "info:= disabled"
 	end
 
@@ -961,7 +1055,7 @@ function cmd.info(me,txt,owner,p)
 		end
 
 		wrd = ""
-		local _strt, _end = string.find(txt,"%d+")
+		local _strt, _end = string.find(rest,"%d+")
 		if (_strt and _end) then
 			wrd = string.sub(txt,_strt, _end)
 			wrd = string.lower(wrd)

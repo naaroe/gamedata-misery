@@ -83,9 +83,9 @@ function eva_gather_itm:evaluate()
 		return false
 	end
 
-	if (npc:best_enemy()) then
-		return false
-	end
+	--if (npc:best_enemy()) then
+		--return false
+	--end
 
 	if (xr_help_wounded.is_under_help_wounded(npc)) then
 		return false
@@ -141,6 +141,9 @@ function eva_gather_itm:evaluate()
 			return
 		end
 
+		local be = npc:best_enemy()
+		local wpn = npc:best_weapon()
+
 		self.st.started = true
 		for o in npc:memory_visible_objects() do
 			itm = o:object()
@@ -151,7 +154,7 @@ function eva_gather_itm:evaluate()
 
 			if (se_itm and se_itm.parent_id == 65535 and itm_id ~= 0 and not treasure_manager.get_treasure_manager().items_from_secrets[itm_id] and not get_object_story_id(itm_id)) then
 
-				if (isArtefact(itm) ~= true) or (xr_logic.pick_section_from_condlist(db.actor, npc, self.st.gather_artefact_items_enabled) == "true" and ArtifactDectection and ArtifactCommunities[squad_community] and has_detector) then
+				if (alun_utils.item_is_fa(itm) and be and not wpn) or (isArtefact(itm) ~= true) or (xr_logic.pick_section_from_condlist(db.actor, npc, self.st.gather_artefact_items_enabled) == "true" and ArtifactDectection and ArtifactCommunities[squad_community] and has_detector) then
 					itm_pos = itm:position()
 					dist = pos:distance_to_sqr(itm_pos)
 
@@ -432,10 +435,10 @@ function add_to_binder(npc, ini, scheme, section, storage)
 					xr_actions_id.state_mgr + 1,
 					xr_actions_id.state_mgr + 2,
 					xr_actions_id.state_mgr + 3,
-					--stalker_ids.action_combat_planner,
+					stalker_ids.action_combat_planner,
 					--stalker_ids.action_alife_planner
 		}
-		for i=1,4 do
+		for i=1,5 do
 			action = manager:action(p[i])
 			action:add_precondition( wp(evaid,false) )
 		end

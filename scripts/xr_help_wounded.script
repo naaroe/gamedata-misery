@@ -136,6 +136,7 @@ function eval_stage_1(st,npc,vis)
 		end
 
 		st.selected_id = selected_id
+		db.storage[st.selected_id].wounded_already_selected = true
 
 		st.stage = 2
 		--alun_utils.printf("%s Found victim to help.",npc:name())

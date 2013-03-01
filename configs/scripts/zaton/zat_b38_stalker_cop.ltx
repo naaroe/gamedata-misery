@@ -135,12 +135,12 @@ combat_ignore_cond = true
 meet = no_meet
 on_signal = sound_end | {-zat_b38_disappearance_stalkers_clean_den_of_the_bloodsucker_give} %+zat_b38_disappearance_stalkers_clean_den_of_the_bloodsucker_give =play_sound(zat_b38_stalker_cop_notice)%
 on_actor_dist_le_nvis = 7 |  {-zat_b38_stalker_cop_about_lair_bloodsucker_done} %=play_sound(zat_b38_stalker_cop_about_lair_bloodsucker) +zat_b38_stalker_cop_about_lair_bloodsucker_done%
-on_info = {!npc_in_zone(zat_b38_quest_line) -zat_b38_cop_on_job} %=teleport_npc_lvid(211976) +zat_b38_cop_on_job%
+on_info = {-zat_b38_cop_on_job} %=teleport_npc_lvid(202679) +zat_b38_cop_on_job%
 on_info2 = {+zat_b38_disappearance_stalkers_clean_den_of_the_bloodsucker_give -zat_b38_met_with_grouse_saved} %+zat_b38_met_with_grouse_saved =scenario_autosave(st_save_zat_b38_met_with_grouse)%
 on_info3 = {+zat_b38_met_with_grouse_saved} camper@research_first_hall
 on_info4 = {+zat_b38_cop_hit_1 -zat_b38_cop_hit_1_done} %=inc_counter(zat_b38_cop_abuse) =actor_neutral +zat_b38_cop_hit_1_done%
 on_info5 = {+zat_b38_cop_hit_2 -zat_b38_cop_hit_2_done} %=inc_counter(zat_b38_cop_abuse) =actor_neutral +zat_b38_cop_hit_2_done%on_game_timer = 86400 | {=actor_enemy =dist_to_actor_ge(50)} %=destroy_object +zat_b38_quest_failed%
-pt1 = 211976,0,guard look_object:actor
+pt1 = 202679,0,guard look_object:actor
 
 [camper@research_first_hall]:camper
 out_restr = zat_b38_vnz_out_restr

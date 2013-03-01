@@ -424,8 +424,16 @@ function CSurgeManager:update()
 					end
 				end
 				self:launch_rockets()
-				if self.atmosfear.opt_blowout_task=="give" then
-					self:give_surge_hide_task()
+
+				if (axr_misery) then
+					local task_given = axr_misery.Config.GetValue("settings","safe_cover_notification",1)
+					if not (task_given) then
+						self:give_surge_hide_task()
+					end
+				else
+					if self.atmosfear.opt_blowout_task=="give" then
+						self:give_surge_hide_task()
+					end
 				end
 				self.task_given = true
 				--self.debugMessages[2]:SetText("task given at: "..tostring(diff_sec))

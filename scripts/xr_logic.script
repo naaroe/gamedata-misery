@@ -583,8 +583,6 @@ function pick_section_from_condlist(actor, npc, condlist, p)
 	local newsect = nil
 	local infop_conditions_met
 
-	-- Used to create dynamic custom data logic for one script to be used with multiple npcs (info must have npcx_ as prefix)
-	-- I found it useful to have multiple squads as companions that have their own info for their current action.
 	local is_npc_info
 
 	if not( condlist ) then
@@ -597,6 +595,8 @@ function pick_section_from_condlist(actor, npc, condlist, p)
 		for inum, infop in pairs(cond.infop_check) do
 			if ( infop.name and string.find(infop.name,"npcx_") ) then
 				is_npc_info = true
+			else
+				is_npc_info = nil
 			end
 
 			if infop.prob then

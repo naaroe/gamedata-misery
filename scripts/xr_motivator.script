@@ -60,10 +60,12 @@ function motivator_binder:reinit()
 
 	--memusage.collect_info(self.object, "after_statemgr")
 	--memusage.collect_info(self.object, "reinit_end")
+	--alun_utils.printf("%s binder reinit",self.object:name())
 end
 ----------------------------------------------------------------------------------------------------------------------
 function motivator_binder:net_spawn(sobject)
-	printf("motivator_binder:net_spawn(): self.object:name()='%s'", self.object:name())
+	--printf("motivator_binder:net_spawn(): self.object:name()='%s'", self.object:name())
+	--alun_utils.printf("%s [start] net_spawn",self.object:name())
 	local visual = utils.cfg_get_string(system_ini(), self.object:section(), "set_visual", obj, false, "")
 	if visual ~= nil and visual ~= "" then
 		if visual == "actor_visual" then
@@ -73,7 +75,7 @@ function motivator_binder:net_spawn(sobject)
 		end
 	end
 
-	xrs_dyn_music.npc_table[self.object:id()] = self.object:id()
+	--xrs_dyn_music.npc_table[self.object:id()] = self.object:id()
 	--memusage.collect_info(self.object, "netspawn_start")
 	if not object_binder.net_spawn(self, sobject) then
 		return false
@@ -105,7 +107,7 @@ function motivator_binder:net_spawn(sobject)
 		local filename = nil
 		if spawn_ini then
 			filename = utils.cfg_get_string(spawn_ini, "logic", "cfg", self.object, false, "")
-			printf("filename is [%s]", tostring(filename))
+			--printf("filename is [%s]", tostring(filename))
 		end
 		if filename ~= nil then
 			char_ini = ini_file(filename)
@@ -113,7 +115,7 @@ function motivator_binder:net_spawn(sobject)
 			char_ini = self.object:spawn_ini() or ini_file("scripts\\dummy.ltx")
 		end
 
-		printf("xr_info loaded!!!")
+		--printf("xr_info loaded!!!")
 		xr_info.loadInfo(self.object, char_ini)
 	end
 
@@ -184,9 +186,12 @@ function motivator_binder:net_spawn(sobject)
 	-- start [Alundaio]
 	if (axr_main) then axr_main.npc_on_net_spawn(self.object,sobject) end
 	-- End [Alundaio]
+
+	--alun_utils.printf("%s [end] net_spawn",self.object:name())
 	return true
 end
 function motivator_binder:on_item_take(item)
+	--alun_utils.printf("%s item take %s",self.object:name(),item:section())
 	-- Alundaio
 	if (axr_main) then axr_main.npc_on_item_take(self.object,item) end
 	-- End Alundaio
@@ -208,7 +213,7 @@ function motivator_binder:net_destroy()
 	if (axr_main) then axr_main.npc_on_net_destroy(self.object) end
 	-- end [Alundaio]
 	--printf("motivator_binder:net_destroy(): self.object:name()='%s'", self.object:name())
-	xrs_dyn_music.npc_table[self.object:id()] = nil
+	--xrs_dyn_music.npc_table[self.object:id()] = nil
 
 	xr_combat_ignore.fighting_with_actor_npcs[self.object:id()] = nil
 --	xrs_dyn_music.stop_combat(self.object:id())
@@ -304,7 +309,7 @@ function motivator_binder:hit_callback(obj, amount, local_direction, who, bone_i
 	end
 
 	if amount > 0 then
-		printf("HIT_CALLBACK: %s amount=%s bone=%s", obj:name(), amount, tostring(bone_index))
+		--printf("HIT_CALLBACK: %s amount=%s bone=%s", obj:name(), amount, tostring(bone_index))
 --		self.need_relation_update = who:id() == db.actor:id()
 		xr_wounded.hit_callback(obj:id())
 	end
@@ -332,7 +337,7 @@ function motivator_binder:death_callback(victim, who)
 
 	--' Загрузка историй для лагеря.
 	local known_info = utils.cfg_get_string(st.ini,st.section_logic , "known_info", self.object, false, "", nil)
-	printf("xr_info from death loaded!!!")
+	--printf("xr_info from death loaded!!!")
 	xr_info.loadInfo(self.object, st.ini, known_info)
 
 	--' Принудительно обнуляем анимейшн менеджер чтобы отдетачились приатаченные объекты
@@ -373,7 +378,7 @@ function motivator_binder:death_callback(victim, who)
 end
 
 function motivator_binder:use_callback(obj, who)
-	printf("motivator_binder:use_callback(obj, who)")
+	--printf("motivator_binder:use_callback(obj, who)")
 	if self.object:alive() then
 		inventory_upgrades.need_victim(obj)
 		xr_meet.notify_on_use(obj, who)
@@ -388,6 +393,7 @@ function motivator_binder:use_callback(obj, who)
 end
 
 function motivator_binder:update(delta)
+	--alun_utils.printf("%s [start] update",self.object:name())
 	object_binder.update(self, delta)
 
 	local object = self.object
@@ -464,9 +470,15 @@ function motivator_binder:update(delta)
 		self.upd_stage = 1
 	end
 
+	--local mgr = self.object:motivation_action_manager()
+	--local caid = mgr and mgr:initialized() and mgr:current_action_id()
+	--alun_utils.printf("%s [before axr_main] update %s [action_id = %s]",self.object:name(),self.upd_stage, caid)
+
 	-- Start [Alundaio]
 	if (axr_main) then axr_main.npc_on_update(object,db.storage[object:id()]) end
 	-- End [Alundaio]
+
+	--alun_utils.printf("%s [end] update [action_id = %s]",self.object:name(), caid)
 end
 
 function motivator_binder:reload(section)

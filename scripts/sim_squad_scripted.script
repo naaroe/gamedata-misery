@@ -10,12 +10,10 @@ local locations_ini			= ini_file("misc\\smart_terrain_masks.ltx")
 --function printf()
 --end
 
-class "sim_squad_scripted" (cse_alife_online_offline_group)
-
 --***********************************************************************************************
 --*										INITIALIZATION											*
 --***********************************************************************************************
-
+class "sim_squad_scripted" (cse_alife_online_offline_group)
 function sim_squad_scripted:__init(section) super (section)
 	--' смарт, в котором сейчас находится отряд.
 	self.smart_id 			= nil
@@ -57,7 +55,7 @@ end
 -- Инициализация отряда на загрузке
 function sim_squad_scripted:init_squad_on_load()
 	-- Прописываем сквад в нужные смарты
-	printf("Init squad %s on load", self.id)
+	--printf("Init squad %s on load", self.id)
 	self:set_squad_sympathy()
 	self.board:assign_squad_to_smart(self, self.smart_id)
 
@@ -75,8 +73,9 @@ function sim_squad_scripted:set_squad_behaviour()
 		abort("There is no section ["..behaviour_section.."] in 'misc\\squad_behaviours.ltx'")
 	end
 	local n = squad_behaviour_ini:line_count(behaviour_section)
+	local result, prop_name, prop_condlist
 	for j=0,n-1 do
-		local result, prop_name, prop_condlist = squad_behaviour_ini:r_line(behaviour_section,j,"","")
+		result, prop_name, prop_condlist = squad_behaviour_ini:r_line(behaviour_section,j,"","")
 		self.behaviour[prop_name] = prop_condlist
 	end
 end
@@ -300,18 +299,17 @@ local function get_help_target_id(squad)
 	if not can_help_actor(squad) then
 		return nil
 	end
-	local enemy_squad_id,target_squad
+
+	local enemy_squad_id
+	local target_squad
 	for k,v in pairs (xr_combat_ignore.fighting_with_actor_npcs) do
-		enemy_squad_id = alife():object(k)
-		enemy_squad_id = enemy_squad_id and enemy_squad_id:alive() and enemy_squad_id.group_id
-		if enemy_squad_id then
+		enemy_squad_id = alife():object(k).group_id
+		if enemy_squad_id ~= nil then
 			target_squad = alife():object(enemy_squad_id)
-			if target_squad and squad.position:distance_to_sqr(target_squad.position) < 22500 and
+			if target_squad and squad.position:distance_to_sqr(target_squad.position) < 150^2 and
 				game_relations.is_factions_enemies(squad:get_squad_community(), target_squad:get_squad_community()) then
 				return enemy_squad_id
 			end
-		else
-			xr_combat_ignore.fighting_with_actor_npcs[k] = nil
 		end
 	end
 	return nil
@@ -404,7 +402,7 @@ function sim_squad_scripted:remove_squad()
 	for k in self:squad_members() do
 		squad_npcs[k.id] = true
 	end
---
+
 	local obj
 	for j,v in pairs(squad_npcs) do
 		obj = alife():object(j)
@@ -428,13 +426,13 @@ function sim_squad_scripted:remove_npc(npc_id)
 end
 --' Убийство НПС
 function sim_squad_scripted:on_npc_death(npc)
-	printf("Squad %s. Killed member %s", tostring(self.id), npc.id)
+	--printf("Squad %s. Killed member %s", tostring(self.id), npc.id)
 
 	self.sound_manager:unregister_npc(npc.id)
 	self:unregister_member(npc.id)
 
 	if self:npc_count() == 0 then
-		printf("REMOVING DEAD SQUAD %s", tostring(self.id))
+		--printf("REMOVING DEAD SQUAD %s", tostring(self.id))
 		if self.current_action ~= nil then
 			self.current_action:finalize()
 			self.current_action = nil
@@ -481,9 +479,9 @@ function sim_squad_scripted:check_invulnerability()
 		return
 	end
 	local invulnerability = xr_logic.pick_section_from_condlist(db.actor, self, self.invulnerability) == "true"
-
+	local npc_st
 	for k in self:squad_members() do
-		local npc_st = db.storage[k.id]
+		npc_st = db.storage[k.id]
 		if npc_st ~= nil then
 			local npc = npc_st.object
 			if npc:invulnerable() ~= invulnerabilty and utils.cfg_get_string(npc_st.ini, npc_st.active_section, "invulnerable", npc, false, "", nil) == nil  then
@@ -503,13 +501,8 @@ function sim_squad_scripted:set_location_types_section (section)
 end
 function sim_squad_scripted:set_location_types(new_smart_name)
 	local default_location = "stalker_terrain"
-	printf("set_location_types for squad [%s]", self:name())
+	--printf("set_location_types for squad [%s]", self:name())
 	self:clear_location_types()
-	--[[for k,v in pairs(simulation_objects.get_sim_obj_registry().objects) do
-		if alife():object(k):clsid() == clsid.smart_terrain then
-			self:set_location_types_section(alife():object(k):name())
-		end
-	end]]--
 
 	if alife():object(self.assigned_target_id):clsid() == clsid.smart_terrain then
 		self:set_location_types_section(default_location)
@@ -536,24 +529,21 @@ function sim_squad_scripted:set_location_types(new_smart_name)
 	end
 end
 
-function sim_squad_scripted:add_squad_member(spawn_section, spawn_position, lv_id, gv_id, sect_number)
+function sim_squad_scripted:add_squad_member(spawn_section, spawn_position, lv_id, gv_id)
 	local spawn_sections_ltx = system_ini()
 	local custom_data = utils.cfg_get_string(spawn_sections_ltx, spawn_section, "custom_data", self, false, "", "default_custom_data.ltx")
 	if custom_data ~= "default_custom_data.ltx" then
 		printf("INCORRECT npc_spawn_section USED [%s]. You cannot use npc with custom_data in squads", spawn_section)
 	end
 
-	local position = spawn_position
-
-	local obj =  alife():create(spawn_section,
-								position,
-								lv_id,
-								gv_id)
+	local sim = alife()
+	local obj = sim:create(spawn_section,spawn_position,lv_id,gv_id)
 
 	self:register_member(obj.id)
 	self.sound_manager:register_npc(obj.id)
 
-	if simulation_objects.is_on_the_same_level(obj, alife():actor()) and position:distance_to_sqr(alife():actor().position) <= alife():switch_distance()^2 then
+	local actor = sim:actor()
+	if simulation_objects.is_on_the_same_level(obj, actor) and spawn_position:distance_to_sqr(actor.position) <= alife():switch_distance()^2 then
 		db.spawned_vertex_by_id[obj.id] = lv_id
 	end
 	-- Alundaio
@@ -573,26 +563,39 @@ function sim_squad_scripted:create_npc(spawn_smart)
 	spawn_point = xr_logic.pick_section_from_condlist(db.actor, self, spawn_point)
 
 	--print_table(debug.getinfo(1))
-	printf("SPAWN SMART %s", spawn_smart:name())
+	--printf("SPAWN SMART %s", spawn_smart:name())
 	--' Высчитываем базовую позицию спауна
 	local base_spawn_position = spawn_smart.position
 	local base_lvi = spawn_smart.m_level_vertex_id
 	local base_gvi = spawn_smart.m_game_vertex_id
-	if spawn_point ~= nil then
-		if spawn_point == "self" then
-			base_spawn_position = spawn_smart.position
-			base_lvi = spawn_smart.m_level_vertex_id
-			base_gvi = spawn_smart.m_game_vertex_id
-		else
-			base_spawn_position = patrol(spawn_point):point(0)
-			base_lvi = patrol(spawn_point):level_vertex_id(0)
-			base_gvi = patrol(spawn_point):game_vertex_id(0)
+
+
+	local spawn_vid = alun_utils.read_from_ini(ini,self.settings_id,"spawn_vid","string",nil) or alun_utils.read_from_ini(spawn_smart.ini,smart_terrain.SMART_TERRAIN_SECT,"spawn_vid","string",nil)
+	spawn_vid = spawn_vid and xr_logic.pick_section_from_condlist(db.actor,self, xr_logic.parse_condlist(self,"spawn_vid","spawn_vid",spawn_vid))
+
+	if (spawn_vid) then
+		local vid = alun_utils.str_explode(spawn_vid,":")
+		base_lvi = tonumber(vid[1])
+		base_spawn_position = level.vertex_position(base_lvi)
+		base_gvi = tonumber(vid[2])
+	else
+		if spawn_point ~= nil then
+			if spawn_point == "self" then
+				base_spawn_position = spawn_smart.position
+				base_lvi = spawn_smart.m_level_vertex_id
+				base_gvi = spawn_smart.m_game_vertex_id
+			else
+				base_spawn_position = patrol(spawn_point):point(0)
+				base_lvi = patrol(spawn_point):level_vertex_id(0)
+				base_gvi = patrol(spawn_point):game_vertex_id(0)
+			end
+		elseif spawn_smart.spawn_point ~= nil then
+			base_spawn_position = patrol(spawn_smart.spawn_point):point(0)
+			base_lvi = patrol(spawn_smart.spawn_point):level_vertex_id(0)
+			base_gvi = patrol(spawn_smart.spawn_point):game_vertex_id(0)
 		end
-	elseif spawn_smart.spawn_point ~= nil then
-		base_spawn_position = patrol(spawn_smart.spawn_point):point(0)
-		base_lvi = patrol(spawn_smart.spawn_point):level_vertex_id(0)
-		base_gvi = patrol(spawn_smart.spawn_point):game_vertex_id(0)
 	end
+
 	if #spawn_sections ~= 0 then
 		for k,v in pairs(spawn_sections) do
 			self:add_squad_member(v, base_spawn_position, base_lvi, base_gvi,k)
@@ -603,14 +606,17 @@ function sim_squad_scripted:create_npc(spawn_smart)
 	local random_spawn = utils.cfg_get_string(ini, self.settings_id, "npc_random", self, false, "",nil)
 	if random_spawn ~= nil then
 		random_spawn 				= 	utils.parse_names(random_spawn)
-		local count_min, count_max 	= utils.r_2nums( ini,  self.settings_id, "npc_in_squad", 1, 2 )
-		if count_min > count_max then
-			abort("min_count can't be greater then max_count [%s]!!!!!", self.settings_id)
-		end
-		local random_count	 		= math.random(count_min, count_max)
+
+		local count = alun_utils.read_from_ini(ini,self.settings_id,"npc_in_squad","string","1,2")
+		count = alun_utils.str_explode(count,",")
+		count[1] = count[1] and tonumber(count[1])
+		count[2] = count[2] and tonumber(count[2]) or count[1]
+
+		local random_count = count[1] and count[2] and math.random(count[1],count[2]) or math.random(1,2)
+		local random_id
 		for i = 1,random_count do
-			local random_id = math.random(1, #random_spawn)
-			self:add_squad_member(random_spawn[random_id], base_spawn_position, base_lvi, base_gvi,random_id)
+			random_id = math.random(1, #random_spawn)
+			self:add_squad_member(random_spawn[random_id], base_spawn_position, base_lvi, base_gvi)
 		end
 	elseif #spawn_sections == 0 then
 		abort("You are trying to spawn an empty squad [%s]!!!", self.settings_id)
@@ -701,14 +707,15 @@ function sim_squad_scripted:set_squad_position(position)
 		self:force_change_position(position)
 	end
 
+	local cl_object
 	for k in self:squad_members() do
-		local cl_object = level.object_by_id(k.id)
+		cl_object = level.object_by_id(k.id)
 		db.offline_objects[k.id].level_vertex_id = level.vertex_id(position)
 		if cl_object then
 			reset_animation(cl_object)
-			printf("teleporting npc [%s]", k.id)
+			--printf("teleporting npc [%s]", k.id)
 			cl_object:set_npc_position(position)
-			printf("end of teleporting npc [%s]", k.id)
+			--printf("end of teleporting npc [%s]", k.id)
 		else
 			k.object.position = position
 		end
@@ -984,6 +991,8 @@ local smarts_by_no_assault_zones = {
 }
 
 function sim_squad_scripted:sim_available()
+
+	--[[
 	for k,v in pairs (smarts_by_no_assault_zones) do
 		local zone = db.zone_by_name[k]
 		if zone and zone:inside(self.position) then
@@ -993,6 +1002,7 @@ function sim_squad_scripted:sim_available()
 			end
 		end
 	end
+	--]]
 
 	if self.smart_id == nil then
 		return true
@@ -1025,60 +1035,6 @@ function sim_squad_scripted:target_precondition(squad)
 		return false
 	end
 	return true
-
---[[
-	if squad.player_id == "dolg" and
-		(is_squad_monster[self.player_id] or self.player_id == "freedom") and
-		in_time_interval(8,22) then
-		return true
-	end
-
-
-	if squad.player_id == "bandit" and self.player_id == "stalker" then
-		return true
-	end
-	if squad.player_id == "freedom" and self.player_id == "dolg" and in_time_interval(8,22) then
-		return true
-	end
-
-	-- Травоядные днем атакуют проходящих мимо сталкеров.(плоть, кабан)
-	if squad.player_id == "monster_vegetarian" and in_time_interval(8,22) and not is_squad_monster[self.player_id] then
-		return true
-	end
-
-	-- Хищники днем атакуют сталкеров и травоядных(собаки, псевдособаки, пси собаки)
-	if squad.player_id == "monster_predatory_day" and
-		in_time_interval(8,22) and
-		(self.player_id == "monster_vegetarian" or not is_squad_monster[self.player_id]) then
-		return true
-	end
-	-- Хищники ночью атакуют сталкеров и травоядных(тушканы,кровосос, химера)
-	if squad.player_id == "monster_predatory_night" and
-		in_time_interval( 22 , 8) and
-		(self.player_id == "monster_vegetarian" or not is_squad_monster[self.player_id]) then
-		return true
-	end
-	-- Зомбиобразные днем атакуют проходящих мимо сталкеров.
-	if squad.player_id == "monster_zombied_day" and
-		in_time_interval(8,22) and
-		(not is_squad_monster[self.player_id]) then
-		return true
-	end
-	-- Зомбиобразные днем атакуют проходящих мимо сталкеров.
-	if squad.player_id == "monster_zombied_night" and
-		in_time_interval(22,8) and
-		(not is_squad_monster[self.player_id]) then
-		return true
-	end
-	-- Особенные днем атакуют проходящих мимо сталкеров.
-	if squad.player_id == "monster_special" and
-		in_time_interval(8,22) and
-		(not is_squad_monster[self.player_id]) then
-		return true
-	end
-
-	return false
-	]]
 end
 
 -- Посчитать мой приоритет для отряда.

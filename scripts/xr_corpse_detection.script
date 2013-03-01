@@ -274,15 +274,13 @@ function action_search_corpse:execute()
 		state_mgr.set_state(self.object,"rush")
 	end
 
-	if (dist < 5 and not state_mgr.get_state(npc) == "search_corpse") then
+	if (dist < 8 and not state_mgr.get_state(npc) == "search_corpse") then
 		if not (self.a.timer) then
 			self.a.timer = tg + 10000
 		end
 
 		if (self.a.timer and tg > self.a.timer) then
-			--alun_utils.printf("%s Looting corpse due to hang time.",npc:name())
-			get_all_from_corpse(npc)
-			return
+			self.a.vertex_id = utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
 		end
 	end
 
@@ -344,7 +342,6 @@ function action_search_corpse:execute()
 		if state_mgr.get_state(npc) == "search_corpse" then
 			state_mgr.set_state(npc,"rush")
 			npc:set_dest_level_vertex_id(self.a.vertex_id)
-			--utils.send_to_nearest_accessible_vertex(npc,self.a.vertex_id)
 		end
 	end
 end
@@ -451,9 +448,9 @@ function add_to_binder(npc, char_ini, scheme, section, st)
 	local p = {
 				stalker_ids.action_smart_terrain_task,
 				xr_actions_id.alife,
-				xr_actions_id.state_mgr + 1,
+				--xr_actions_id.state_mgr + 1,
 				xr_actions_id.state_mgr + 2,
-				xr_actions_id.state_mgr + 3,
+				--xr_actions_id.state_mgr + 3,
 				--stalker_ids.action_alife_planner
 	}
 	for i=1,#p,1 do

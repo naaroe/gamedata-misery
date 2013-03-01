@@ -127,7 +127,7 @@ function eva_kill_wounded:evaluate()
 					if (CauseSurrenderCommunities[comm] and SurrenderChance > math.random() ) then
 						db.storage[vo:id()].victim_surrender = npc:id()
 					else
-						db.storage[vo:id()].victim_surrender = false
+						db.storage[vo:id()].victim_surrender = 65535
 					end
 				end
 			end
@@ -198,7 +198,6 @@ function act_kill_wounded:execute()
 		npc:set_item(object.fire1,st.weapon,1,1)
 		local look_pos = vo:bone_position("bip01_neck")
 		npc:set_sight(look.fire_point,look_pos)
-		db.storage[vo:id()].victim_surrender = nil
 		return
 	end
 
@@ -291,11 +290,13 @@ function add_to_binder(npc, ini, scheme, section, st)
 
 	action:add_precondition( wp(evaid,true) )
 	action:add_precondition( wp(stalker_ids.property_alive,true) )
-	--action:add_precondition( wp(stalker_ids.property_enemy,true) )
 
 	action:add_precondition( wp(stalker_ids.property_anomaly,false) )
 	action:add_precondition( wp(xr_evaluators_id.sidor_wounded_base,false) )
-	--action:add_precondition( wp(xr_evaluators_id.wounded_exist,false) )
+
+	if (rx_ff) then
+		action:add_precondition( wp(rx_ff.evid_dont_shoot,false) )
+	end
 
 	action:add_effect( wp(evaid,false) )
 

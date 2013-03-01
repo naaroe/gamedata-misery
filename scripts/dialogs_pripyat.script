@@ -88,7 +88,6 @@ local medic_items_table = {
 									["drug_coagulant"] 		= 1,
 									["drug_radioprotector"]	= 1,
 									["salicidic_acid"]	= 1,
-									["amphetamine"]	= 1,
 									["marijuana"]	= 1,
 									},
 
@@ -104,7 +103,6 @@ local medic_items_table = {
 									["drug_antidot"] 		= 1,
 									["drug_psy_blockade"]	= 1,
 									["salicidic_acid"]	= 2,
-									["amphetamine"]	= 1,
 									["marijuana"]	= 1,
 									},
 
@@ -123,7 +121,6 @@ local medic_items_table = {
 									["drug_psy_blockade"]	= 2,
 									["salicidic_acid"]	= 1,
 									["morphine"]	= 1,
-									["amphetamine"]	= 1,
 									["adrenalin"]	= 1,
 									["marijuana"]	= 2,
 									},

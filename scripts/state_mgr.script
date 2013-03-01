@@ -82,6 +82,12 @@ function evaluator_state_mgr_idle_items:__init(name, state_manager) super (nil, 
 	self.st = state_manager
 end
 function evaluator_state_mgr_idle_items:evaluate()
+	local mgr = self.object:motivation_action_manager()
+
+	if (not mgr or not mgr:initialized()) then
+		return false
+	end
+
 	if not self.object:alive() then
 		return true
 	end
@@ -188,7 +194,8 @@ function eva_state_mgr_locked:__init(name, st) super (nil, name)
 	self.st = st
 end
 function eva_state_mgr_locked:evaluate()
-	return self.st.planner:initialized() and (weapon_locked(self.object) or self.object:is_body_turning())
+	--return self.st.planner:initialized() and (weapon_locked(self.object) or self.object:is_body_turning())
+	return self.st.planner:initialized() and self.object:is_body_turning()
 end
 
 class "eva_state_mgr_locked_external" (property_evaluator)
@@ -406,8 +413,7 @@ end
 
 
 function bind_manager(object)
-	local manager = object:motivation_action_manager()
-
+	--[[
 	local properties	= {}
 	properties["state_mgr_idle_combat"] 	= xr_evaluators_id.state_mgr + 1
 	properties["state_mgr_idle_alife"]	 	= xr_evaluators_id.state_mgr + 2
@@ -419,55 +425,59 @@ function bind_manager(object)
 	operators["state_mgr_to_idle_combat"]	= xr_actions_id.state_mgr + 1
 	operators["state_mgr_to_idle_alife"]	= xr_actions_id.state_mgr + 2
 	operators["state_mgr_to_idle_items"]	= xr_actions_id.state_mgr + 3
+	--]]
 
+	local manager = object:motivation_action_manager()
 	local state_manager = state_mgr.state_manager(object)
 
-	manager:add_evaluator(properties["state_mgr_idle_combat"], 		evaluator_state_mgr_idle("state_mgr_idle_combat", state_manager))
-	manager:add_evaluator(properties["state_mgr_idle_alife"], 		evaluator_state_mgr_idle_alife("state_mgr_idle_alife", state_manager))
-	manager:add_evaluator(properties["state_mgr_idle_items"], 		evaluator_state_mgr_idle_items("state_mgr_idle_items", state_manager))
-	manager:add_evaluator(properties["state_mgr_logic_active"], 	evaluator_state_mgr_logic_active("state_mgr_logic_active", state_manager))
+	manager:add_evaluator(xr_evaluators_id.state_mgr + 1, 		evaluator_state_mgr_idle("state_mgr_idle_combat", state_manager))
+	manager:add_evaluator(xr_evaluators_id.state_mgr + 2, 		evaluator_state_mgr_idle_alife("state_mgr_idle_alife", state_manager))
+
+	manager:add_evaluator(xr_evaluators_id.state_mgr + 4, 		evaluator_state_mgr_logic_active("state_mgr_logic_active", state_manager))
+	manager:add_evaluator(xr_evaluators_id.state_mgr + 5, 		evaluator_state_mgr_idle_items("state_mgr_idle_items", state_manager))
+
 
 	local wp = world_property
 
 	local action = this.act_state_mgr_to_idle("state_mgr_to_idle_combat", state_manager)
-	action:add_precondition		(wp(properties["state_mgr_idle_combat"],	false))
-	action:add_effect 			(wp(properties["state_mgr_idle_combat"],	true))
-	manager:add_action(operators["state_mgr_to_idle_combat"], action)
+	action:add_precondition		(wp(xr_evaluators_id.state_mgr + 1,	false))
+	action:add_effect 			(wp(xr_evaluators_id.state_mgr + 1,	true))
+	manager:add_action(xr_actions_id.state_mgr + 1, action)
 
 
 	action = this.act_state_mgr_to_idle("state_mgr_to_idle_items", state_manager)
-	action:add_precondition		(wp(properties["state_mgr_idle_items"],	false))
+	action:add_precondition		(wp(xr_evaluators_id.state_mgr + 5,	false))
 	action:add_precondition		(wp(stalker_ids.property_items, true))
 	action:add_precondition		(wp(stalker_ids.property_enemy, false))
-	action:add_effect 			(wp(properties["state_mgr_idle_items"],	true))
-	manager:add_action(operators["state_mgr_to_idle_items"], action)
+	action:add_effect 			(wp(xr_evaluators_id.state_mgr + 5,	true))
+	manager:add_action(xr_actions_id.state_mgr + 3, action)
 
 
 	action = this.act_state_mgr_to_idle("state_mgr_to_idle_alife", state_manager)
 	action:add_precondition		(wp(stalker_ids.property_enemy,	false))
 	action:add_precondition		(wp(stalker_ids.property_danger,false))
 
-	action:add_precondition		(wp(properties["state_mgr_logic_active"], false))
+	action:add_precondition		(wp(xr_evaluators_id.state_mgr + 4, false))
 
-	action:add_precondition		(wp(properties["state_mgr_idle_alife"],	false))
-	action:add_effect 			(wp(properties["state_mgr_idle_alife"],	true))
-	manager:add_action(operators["state_mgr_to_idle_alife"], action)
+	action:add_precondition		(wp(xr_evaluators_id.state_mgr + 2,	false))
+	action:add_effect 			(wp(xr_evaluators_id.state_mgr + 2,	true))
+	manager:add_action(xr_actions_id.state_mgr + 2, action)
 
 
 	action = manager:action(xr_actions_id.alife)
-	action:add_precondition(wp(properties["state_mgr_idle_alife"],true))
+	action:add_precondition(wp(xr_evaluators_id.state_mgr + 2,true))
 
 	action = manager:action(stalker_ids.action_gather_items)
-	action:add_precondition(wp(properties["state_mgr_idle_items"],true))
+	action:add_precondition(wp(xr_evaluators_id.state_mgr + 5,true))
 
 	action = manager:action(stalker_ids.action_combat_planner)
-	action:add_precondition(wp(properties["state_mgr_idle_combat"],true))
+	action:add_precondition(wp(xr_evaluators_id.state_mgr + 1,true))
 
 	action = manager:action(stalker_ids.action_anomaly_planner)
-	action:add_precondition(wp(properties["state_mgr_idle_combat"],true))
+	action:add_precondition(wp(xr_evaluators_id.state_mgr + 1,true))
 
 	action = manager:action(stalker_ids.action_danger_planner)
-	action:add_precondition(wp(properties["state_mgr_idle_combat"],true))
+	action:add_precondition(wp(xr_evaluators_id.state_mgr + 1,true))
 
 
 	return state_manager

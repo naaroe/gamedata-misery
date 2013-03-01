@@ -521,7 +521,7 @@
             <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_difficulty</text>
         </cap_difficulty>
 
-        <list_difficulty x="175" y="5" width="235" height="20">
+        <list_difficulty x="175" y="5" width="135" height="20">
             <options_item entry="g_game_difficulty" group="mm_opt_gameplay"/>
             <list_font r="170" g="170" b="170" font="letterica16"/>
             <text_color>
@@ -594,13 +594,40 @@
         <options_item entry="hud_draw" group="mm_opt_gameplay"/>
       </check_hud_draw>
 
-      <btn_check_updates x="338" y="322" width="108" height="24">
-            <text align="c" font="letterica16">ui_mm_check_updates</text>
-            <texture>ui_inGame2_button</texture>
-			<text_color>
-				<e r="210" g="210" b="210"/>
-			</text_color>
-        </btn_check_updates>
+	  <cap_check_hud_helm x="215" y="33" width="135" height="24">
+        <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_hud_helm</text>
+      </cap_check_hud_helm>
+      <check_hud_helm x="362" y="33" width="44" height="29">
+        <texture>ui_inGame2_checkbox</texture>
+      </check_hud_helm>
+
+	  <cap_check_upd_drain x="215" y="63" width="135" height="24">
+        <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_upd_drain</text>
+      </cap_check_upd_drain>
+      <check_upd_drain x="362" y="63" width="44" height="29">
+        <texture>ui_inGame2_checkbox</texture>
+      </check_upd_drain>
+
+	  <cap_check_inf_ammo x="215" y="93" width="135" height="24">
+        <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_inf_ammo</text>
+      </cap_check_inf_ammo>
+      <check_inf_ammo x="362" y="93" width="44" height="29">
+        <texture>ui_inGame2_checkbox</texture>
+      </check_inf_ammo>
+
+	  <cap_check_ai_aim x="215" y="123" width="135" height="24">
+        <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_ai_aim</text>
+      </cap_check_ai_aim>
+      <check_ai_aim x="362" y="123" width="44" height="29">
+        <texture>ui_inGame2_checkbox</texture>
+      </check_ai_aim>
+
+	  <cap_check_safe_cover x="215" y="153" width="135" height="24">
+        <text r="170" g="170" b="170" font="letterica16" align="r" vert_align="c">ui_mm_safe_cover</text>
+      </cap_check_safe_cover>
+      <check_safe_cover x="362" y="153" width="44" height="29">
+        <texture>ui_inGame2_checkbox</texture>
+      </check_safe_cover>
     </tab_gameplay>
     <tab_controls>
         <cap_mousesens x="15" y="3" width="135" height="24">

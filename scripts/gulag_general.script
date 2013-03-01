@@ -1074,5 +1074,8 @@ end
 -- Dynamic ltx
 --------------------------------------------------------------------------
 function load_ltx(gname)
-		return ltx
+	--local cfg = io.open("gulag.ltx","a+")
+	--cfg:write(ltx)
+	--cfg:close()
+	return ltx
 end

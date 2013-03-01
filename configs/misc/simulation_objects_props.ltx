@@ -599,6 +599,9 @@ sim_avail = false
 [zat_b38_bloodsucker_2_lair]:default_squad
 sim_avail = false
 
+[zat_b38_bloodsucker_3_lair]:default_squad
+sim_avail = false
+
 [zat_b38_bloodsuckers_sleepers]:default_squad
 sim_avail = false
 
@@ -2116,7 +2119,7 @@ sim_avail = true
 ; --------------------------------------------------------------------------
 
 [pri_a15]:default
-sim_avail = true ; {+pri_a15_cutscene_end} true, false
+sim_avail = {+pri_a15_cutscene_end} true, false
 territory = 1
 base = 1
 lair_night = 1
@@ -2402,7 +2405,7 @@ lair = 2
 territory_zombied = 1
 
 [pri_b304_monsters_smart_terrain]:default_base
-sim_avail = true ; {+zat_b103_toolkit_2_second} true, false
+sim_avail = {+zat_b103_toolkit_2_second} true, false
 territory_monolith = 2
 territory_hostile = 2
 territory = 2

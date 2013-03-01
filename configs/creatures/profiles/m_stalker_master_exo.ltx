@@ -95,7 +95,7 @@ visibility_threshold	 	= 125.0				; значение, при достижении суммой которого объ
 always_visible_distance 	= 0.02
 time_quant					= 0.0009
 decrease_value				= 0.0011 ;0.004		; значение, на которое уменьшается вес, если объект попал в фрустум, но отсёкся по каким-то причинам
-velocity_factor		     	= 2.12				
+velocity_factor		     	= 2.12
 luminocity_factor			= 0.36				; фактор освещения (только для Актёра)
 transparency_threshold	 	= 0.96
 
@@ -178,88 +178,88 @@ step_params						= stalker_master_exo_step_manager
 ;--------------------------------------------------------------------------
 
 [fire_queue_params_master_exo]  ; min < 15 < medium < 30 < max
-pstl_min_queue_size_far			= 0
+pstl_min_queue_size_far			= 1
 pstl_max_queue_size_far			= 1
-pstl_min_queue_interval_far		= 720
-pstl_max_queue_interval_far		= 990
+pstl_min_queue_interval_far		= 1000
+pstl_max_queue_interval_far		= 2000
 
 pstl_min_queue_size_medium		= 1
 pstl_max_queue_size_medium		= 1
 pstl_min_queue_interval_medium	= 300
-pstl_max_queue_interval_medium	= 470
+pstl_max_queue_interval_medium	= 500
 
 pstl_min_queue_size_close		= 1
 pstl_max_queue_size_close		= 1
-pstl_min_queue_interval_close	= 190
-pstl_max_queue_interval_close	= 220
+pstl_min_queue_interval_close	= 300
+pstl_max_queue_interval_close	= 400
 
 ;-------------------------------
 
-shtg_min_queue_size_far			= 0
+shtg_min_queue_size_far			= 1
 shtg_max_queue_size_far			= 1
-shtg_min_queue_interval_far		= 560
-shtg_max_queue_interval_far		= 810
+shtg_min_queue_interval_far		= 1000
+shtg_max_queue_interval_far		= 2000
 
 shtg_min_queue_size_medium		= 1
 shtg_max_queue_size_medium		= 2
-shtg_min_queue_interval_medium	= 240
-shtg_max_queue_interval_medium	= 225
+shtg_min_queue_interval_medium	= 400
+shtg_max_queue_interval_medium	= 600
 
 shtg_min_queue_size_close		= 1
-shtg_max_queue_size_close		= 6
-shtg_min_queue_interval_close	= 210
-shtg_max_queue_interval_close	= 200
+shtg_max_queue_size_close		= 8
+shtg_min_queue_interval_close	= 200
+shtg_max_queue_interval_close	= 300
 
 ;-------------------------------
 
 snp_min_queue_size_far			= 1
 snp_max_queue_size_far			= 1
-snp_min_queue_interval_far		= 500
-snp_max_queue_interval_far		= 650
+snp_min_queue_interval_far		= 4000
+snp_max_queue_interval_far		= 6000
 
 snp_min_queue_size_medium		= 1
 snp_max_queue_size_medium		= 1
-snp_min_queue_interval_medium	= 400
-snp_max_queue_interval_medium	= 550
+snp_min_queue_interval_medium	= 3000
+snp_max_queue_interval_medium	= 4000
 
 snp_min_queue_size_close		= 1
 snp_max_queue_size_close		= 1
 snp_min_queue_interval_close	= 300
-snp_max_queue_interval_close	= 500
+snp_max_queue_interval_close	= 4000
 
 ;-------------------------------
 
-auto_min_queue_size_far			= 3
-auto_max_queue_size_far			= 7
-auto_min_queue_interval_far		= 260
-auto_max_queue_interval_far		= 450
+auto_min_queue_size_far			= 2
+auto_max_queue_size_far			= 2
+auto_min_queue_interval_far		= 600
+auto_max_queue_interval_far		= 1500
 
-auto_min_queue_size_medium		= 4
-auto_max_queue_size_medium		= 8
-auto_min_queue_interval_medium	= 210
-auto_max_queue_interval_medium	= 300
+auto_min_queue_size_medium		= 2
+auto_max_queue_size_medium		= 2
+auto_min_queue_interval_medium	= 300
+auto_max_queue_interval_medium	= 1500
 
-auto_min_queue_size_close		= 5
-auto_max_queue_size_close		= 10
-auto_min_queue_interval_close	= 190
-auto_max_queue_interval_close	= 220
+auto_min_queue_size_close		= 4
+auto_max_queue_size_close		= 8
+auto_min_queue_interval_close	= 500
+auto_max_queue_interval_close	= 1500
 
 ;-------------------------------
 
-mchg_min_queue_size_far			= 3
-mchg_max_queue_size_far			= 9
-mchg_min_queue_interval_far		= 260
-mchg_max_queue_interval_far		= 450
+mchg_min_queue_size_far			= 4
+mchg_max_queue_size_far			= 8
+mchg_min_queue_interval_far		= 300
+mchg_max_queue_interval_far		= 600
 
-mchg_min_queue_size_medium		= 6
-mchg_max_queue_size_medium		= 20
-mchg_min_queue_interval_medium	= 210
-mchg_max_queue_interval_medium	= 300
+mchg_min_queue_size_medium		= 4
+mchg_max_queue_size_medium		= 12
+mchg_min_queue_interval_medium	= 300
+mchg_max_queue_interval_medium	= 500
 
-mchg_min_queue_size_close		= 8
-mchg_max_queue_size_close		= 25
-mchg_min_queue_interval_close	= 190
-mchg_max_queue_interval_close	= 220
+mchg_min_queue_size_close		= 7
+mchg_max_queue_size_close		= 16
+mchg_min_queue_interval_close	= 300
+mchg_max_queue_interval_close	= 500
 
 ;-------------------------------
 

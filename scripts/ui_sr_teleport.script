@@ -12,6 +12,7 @@ function msg_box_ui:__init(obj,disable_msg,item) super()
 	self.disable_msg = disable_msg
 	self.item = item
 
+
 	if (string.find(self.name,obj:id())) then
 		local story_name = story_objects.get_story_objects_registry():get_story_id(obj:id())
 		self.name = story_name or self.name
@@ -26,6 +27,15 @@ function msg_box_ui:__init(obj,disable_msg,item) super()
 	enable = enable and xr_logic.pick_section_from_condlist(db.actor,obj,xr_logic.parse_condlist(obj,"enable",self.name,enable))
 
 	if (enable ~= "true") then
+		local reject_on_disable = alun_utils.read_from_ini(ini,self.name,"reject_on_disabled","bool",nil)
+		if (reject_on_disable) then
+			local warning = alun_utils.read_from_ini(ini,self.name,"warning","string",nil)
+			if (warning) then
+				SetHudMsg(game.translate_string(warning),5)
+			end
+			self:InitCallBacks()
+			self:OnMsgCancel()
+		end
 		return
 	end
 
@@ -56,9 +66,17 @@ function msg_box_ui:OnMsgOk()
 		return
 	end
 
-	pos = alun_utils.string_to_vector(pos)
+	local p = pos and alun_utils.str_explode(pos,",")
+	pos = p and vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
+
 	db.actor:set_actor_position(pos or point)
-	--level.add_pp_effector("sleep_fade.ppe",2,false)
+	if (pos and p[4]) then
+		db.actor:set_actor_direction(tonumber(p[4]))
+	end
+
+	if not (self.disable_msg) then
+		level.add_pp_effector("black.ppe", 1313, false)
+	end
 end
 
 function msg_box_ui:OnMsgCancel()
@@ -71,8 +89,14 @@ function msg_box_ui:OnMsgCancel()
 	end
 
 	local dir = point and look:point(0):sub(point:point(0)) or device().cam_dir:getH()
-	pos = alun_utils.string_to_vector(pos)
-	db.actor:set_actor_position(pos)
+	local p = pos and alun_utils.str_explode(pos,",")
+	pos = p and vector():set(tonumber(p[1]),tonumber(p[2]),tonumber(p[3]))
+
+	db.actor:set_actor_position(pos or point)
+	if (pos and p[4]) then
+		db.actor:set_actor_direction(tonumber(p[4]))
+		return
+	end
 	db.actor:set_actor_direction(-dir)
 end
 

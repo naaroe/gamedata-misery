@@ -96,14 +96,7 @@ function action_wounded:execute()
 	local id = npc:id()
 	local po = db.storage[id].victim_surrender and level.object_by_id(db.storage[id].victim_surrender)
 	if (po and po:alive() and not alun_utils.load_var(npc,"victim_surrender",nil)) then
-		if (state_mgr.get_state(npc) ~= "prisoner") then
-			local mgr = db.storage[npc:id()].state_mgr
-			if (mgr) then
-				mgr.animation:set_state("prisoner")
-				mgr.animation:set_control()
-			end
-		end
-		self.a.reset = nil
+		state_mgr.set_state(npc,"prisoner")
 		if (po:id() == db.actor:id()) then
 			xr_effects.actor_neutral(db.actor,npc)
 			if (npc:relation(db.actor) ~= game_object.neutral) then
@@ -135,16 +128,12 @@ function action_wounded:execute()
 		db.storage[id].victim_surrender = nil
 	end
 
-	local state = state_mgr.get_state(npc)
-	if (state ~= wound_manager_state) then
-		npc:clear_animations()
-		state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,{fast_set = true})
-		local mgr = db.storage[npc:id()].state_mgr
-		if (mgr) then
-			mgr.animation:set_state(nil,true)
-			mgr.animation:set_control()
-		end
-	end
+	state_mgr.set_state(npc,wound_manager_state,nil,nil,nil,{fast_set = true})
+	--local mgr = db.storage[npc:id()].state_mgr
+	--if (mgr) then
+	--	mgr.animation:set_state(nil,true)
+	--	mgr.animation:set_control()
+	--end
 end
 function action_wounded:finalize ()
 		action_base.finalize (self)

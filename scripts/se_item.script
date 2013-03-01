@@ -326,7 +326,6 @@ function se_item:STATE_Write(stpk)
 	cse_alife_item.STATE_Write(self, stpk)
 end
 function se_item:switch_online()
-	alun_utils.printf("item %s switch online",self:name())
 	cse_alife_item.switch_online(self)
 end
 

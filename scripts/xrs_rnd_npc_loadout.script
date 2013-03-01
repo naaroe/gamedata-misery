@@ -16,7 +16,10 @@ function on_game_start()
 end
 
 function on_creation(se_npc)
-	local squad = se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
+	if not (se_npc) then
+		return
+	end
+	local squad = se_npc.group_id and se_npc.group_id ~= 65535 and alife():object(se_npc.group_id)
 	local player_id = squad and squad.player_id
 	local comm = se_npc:community()
 	local rank = ranks.get_obj_rank_name(se_npc)
@@ -81,8 +84,10 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 	local weapon = alun_utils.str_explode(info,":")
 
 	if (system_ini():section_exist(weapon[1])) then
-		local se_wpn = alife():create(weapon[1],se_npc.position,0,0,se_npc.id)
 
+		--alun_utils.printf("xrs_rnd_npc_loadout: before create %s",weapon[1])
+		local se_wpn = alife():create(weapon[1],se_npc.position,0,0,se_npc.id)
+		--alun_utils.printf("xrs_rnd_npc_loadout: after create %s",weapon[1])
 		if (se_wpn) then
 
 			--alun_utils.printf("xrs_rnd_npc_loadout: spawn weapon [start] = %s",se_wpn:section_name())
@@ -148,7 +153,7 @@ function create_weapon_on_npc(se_npc,comm,rank,player_id,slot)
 			if (system_ini():section_exist(ammo_section)) then
 				create_ammo(ammo_section,se_npc.position,0,0,se_npc.id,ammo_count)
 			else
-				alun_utils.printf("xrs_rnd_npc_loadout: Section %s does not exist",ammo_section)
+				--alun_utils.printf("xrs_rnd_npc_loadout: Section %s does not exist",ammo_section)
 			end
 
 			--alun_utils.printf("xrs_rnd_npc_loadout: spawn weapon [END] = %s",se_wpn:section_name())

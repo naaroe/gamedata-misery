@@ -333,7 +333,6 @@ local current_helmet
 local current_outfit
 --local current_visual = ""
 function hud_condition()
-
 	local tg = time_global()
 	local radiation = db.actor.radiation
 	local cam_dist = db.actor:bone_position("bip01_head"):distance_to_sqr(device().cam_pos)
@@ -353,7 +352,7 @@ function hud_condition()
 --	end
 
 	local cond = (current_helmet and current_helmet:condition()) or (current_outfit and current_outfit:condition())
-	current_helmet = db.actor:alive() and (current_helmet and opt.helmets[current_helmet:section()]) or (current_outfit and opt.outfits[current_outfit:section()])
+	current_helmet = axr_misery.Config:GetValue("settings","dynamic_helmet_hud",1) and (db.actor:alive() and (current_helmet and opt.helmets[current_helmet:section()]) or (current_outfit and opt.outfits[current_outfit:section()]))
 
 	if radiation > 0 then
 		if radiation > opt.radiation_ppe_threshold then

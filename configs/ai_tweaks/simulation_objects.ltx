@@ -1,7 +1,11 @@
 [exit_levels]  ;Levels that allow Squads to take jobs outside of the level
-;zaton
-;jupiter
+zaton = {!is_squad_monster +jup_first_meet_made} true, false
+jupiter = {!is_squad_monster +jup_first_meet_made} true, false
+jupiter_underground = {!is_squad_monster +pas_b400_canalisation_done +pas_b400_done} true, false
+pripyat = {+pri_a28_actor_in_zone_stay} true, false
 
 [enter_levels] ;Levels that allow Squads to take jobs inside of the level
-;zaton
-;jupiter
+zaton = {!is_squad_monster +jup_first_meet_made} true, false
+jupiter = {!is_squad_monster +jup_first_meet_made} true, false
+jupiter_underground = {!is_squad_monster +pas_b400_canalisation_done +pas_b400_done} true, false
+pripyat = {+pri_a28_actor_in_zone_stay} true, false

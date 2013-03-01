@@ -2072,3 +2072,11 @@ function actor_look_away(actor,npc)
 	end
 	return false
 end
+
+function between_time(actor,npc,p)
+	return in_time_interval(tonumber(p[1]),tonumber(p[2]))
+end
+
+function is_squad_monster(actor,squad,p)
+	return sim_squad_scripted.is_squad_monster[squad.player_id] == true
+end

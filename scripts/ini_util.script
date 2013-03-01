@@ -1,0 +1,110 @@
+---------------------------------------------------------------------------------------------------
+--------------------The Function below originally written By PsuFan -------------------------------
+---------------was modified by Desty1978 to be used in Read OR Write mode--------------------------
+---------------------------------------------------------------------------------------------------
+
+
+function read_ini(file,sec,key)
+	return rw_ini(file,0,sec,key,
+end
+
+function write_ini(file,sec,key,val)
+	return
+end
+
+function rw_ini(file,mode,sec,key,val)
+
+	ini = io.open(file, "r")
+	if not (ini) then
+		if (mode ~= 0) then
+			ini = io.open(file, "w")
+			ini:write("[" .. sec .. "]" .. "\n" .. key .. " = " .. val)
+			ini:close()
+			return true
+		end
+		return
+	end
+
+	local intAct = 0
+	local save, found, blnSection
+
+	while true do
+		local ln = i:read()   -- Reads a line
+		if not (ln) then
+			break
+		end
+
+		if (intAct == 0) then
+			if not (blnSection) then
+				found = string.sub(ln,0,1)
+				if (found == "[") then -- found header
+					header = string.sub(ln,2,-2)
+					if (header == sec) then
+						blnSection = true
+					end
+				end
+			else
+				header = string.sub(ln,0,1)
+				if (header == "[") then
+					blnSection = nil
+					ln = key .. " = " .. val .. "\n" .. ln
+					intAct = 1
+				elseif (header == ";") or (ln == "") then
+					-- ignore
+				else
+					strFindEqual = string.find(ln,"=")
+					if (strFindEqual) then
+						strKeyname = string.sub(ln,0,strFindEqual - 1)
+						if (strKeyname == key) then
+							if (mode == 0) then
+								found = str_explode(string.sub(ln,strFindEqual+1),";")
+								return trim(found[1])
+							end
+							ln = key .. " = " .. val
+							intAct = 1
+						end
+					end
+				end
+			end
+		end
+		save = save .. ln .. "\n"
+	end
+
+	ini:close()
+
+	if (inAct ~= 1) then
+		if not (blnSection) then
+			save = save .. "[" .. sec .. "]" .. "\n" .. key .. " = " .. val
+		else
+			save = save .. key .. " = " .. val
+		end
+
+		if (mode ~= 0) then
+			ini = io.open(file, "w")
+			ini:write(save)
+			ini:close()
+			return true
+		end
+
+		if (mode == 0) then
+			return -- key not found in section
+		end
+	end
+end
+
+function trim(s)
+	return string.gsub(s, "^%s*(.-)%s*$", "%1")
+end
+
+function str_explode(str,pattern)
+	local t = {}
+	if (type(str) ~= "string") then return end
+	for word, pat, start in str:split(pattern) do
+		t[#t+1] = trim(word)
+		if (start and pat == pattern) then
+		    t[#t+1] = trim(str:sub(start))
+			break
+		end
+	end
+	return t
+end

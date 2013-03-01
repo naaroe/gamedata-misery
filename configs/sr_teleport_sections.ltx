@@ -3,7 +3,72 @@ enable 		= true
 position 	= 227.60195922852,53.26993560791,11.523203849792
 reject 		= 117,253.26993560791,11
 
-[zat_anom_zone_teleport_02_sr]
+[zat_anom_zone_teleport_02_sr] ;Teleporter to LC area
+enable		= true
+position	= -349.61740112305,41.926334381104,-419.82223510742,0
+
+[zat_anom_zone_teleport_03_sr] ;Teleporter from LC area
 enable 		= true
-position 	= -160.96208190918,23.829624176025,-168.99053955078
-reject 		= 88.792419433594,-4.5116386413574,-211.3360748291
+position	= -252.22090148926,35.701934814453,-486.43334960938,0
+
+;=============================================
+; Path Blockers
+;=============================================
+
+[zat_block_way_2]
+enable 		= true
+position	= -439.30908203125,40.530117034912,-326.75579833984,3
+
+;=============================================
+; Teleporters for Level Changers
+;=============================================
+
+[zat_to_jup_sr]
+enable 				= {+jup_first_meet_made} true, false
+position 			= -377.50015258789,66.542518615723,-432.15859985352
+reject				= -453.80810546875,41.010269165039,-432.94934082031,0
+reject_on_disabled 	= true
+warning				= st_travel_lost
+spot 				= level_changer_down
+text				= st_travel_jupiter
+hint				= st_travel_jupiter
+
+[jup_to_zat_sr]
+enable 				= false ;{+jup_first_meet_made} true, false
+position 			= -377.50015258789,66.542518615723,-432.15859985352
+reject				= 425.2151184082,-0.92193555831909,469.37518310547,3
+spot 				= level_changer_up
+text				= st_travel_zaton
+hint				= st_travel_zaton
+
+[jup_to_pas_sr]
+enable 				= {+pas_b400_canalisation_done +pas_b400_done} true, false
+position			= 327.29675292969,33.992305755615,-329.89562988281
+reject				= 334.46942138672,20.841920852661,-329.67962646484,4
+spot				= level_changer_right
+text				= st_travel_underpass
+hint				= st_travel_underpass
+
+[pas_to_jup_sr]
+enable 				= {+pas_b400_canalisation_done +pas_b400_done} true, false
+position			= -47.000480651855,38.006739616394,452.18865966797
+reject				= -47.20384979248,8.0078773498535,445.93075561523,3
+spot				= level_changer_left
+text				= st_travel_jupiter
+hint				= st_travel_jupiter
+
+[pas_to_pri_sr]
+enable 				= {+pas_b400_canalisation_done +pas_b400_done} true, false
+position			= 82.617126464844,30.879205703735,-222.54699707031
+reject				= 82.41902923584,4.0210518836975,-222.65602111816,3
+spot				= level_changer_right
+text				= st_travel_pripyat
+hint				= st_travel_pripyat
+
+[pri_to_pas_sr]
+enable 				= {+pas_b400_canalisation_done +pas_b400_done} true, false
+position			= 185.53942871094,-24.2401390075684,-259.77066040039
+reject				= 185.47514343262,-0.51357442140579,-258.38479614258,4
+spot				= level_changer_left
+text				= st_travel_underpass
+hint				= st_travel_underpass

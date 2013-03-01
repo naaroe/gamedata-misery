@@ -1509,13 +1509,13 @@ function destroy_object(actor, obj, p)
 		sobj:switch_offline()
 		sim:set_switch_online(sobj.id,false)
 		sim:set_switch_offline(sobj.id,true)
-		alun_utils.printf("xr_effects:destroy_object: switch offline")
+		--alun_utils.printf("xr_effects:destroy_object: switch offline")
 
 		if (IsStalker(sobj)) then
 			local npc = level.object_by_id(sobj.id)
 			local st = npc and db.storage[sobj.id]
 			if (st) then
-				alun_utils.printf("xr_effects:destroy_object: npc switch_to_section nil")
+				--alun_utils.printf("xr_effects:destroy_object: npc switch_to_section nil")
 				xr_logic.switch_to_section(npc, st.ini, "nil")
 			end
 		end

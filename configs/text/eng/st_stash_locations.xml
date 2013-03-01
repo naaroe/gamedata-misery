@@ -130,7 +130,9 @@
 	<string id="st_zat_hiding_place_105">
 		<text>Stash, you want my stash, everyone wants my stash, but you have the gun now, so you are getting my stash. It's well hidden in an elevator shaft that is locked up in Zaton. Do your worst.</text>
 	</string>
-
+	<string id="st_zat_hiding_place_106">
+		<text>I left my rucksack behind the building near the teleporter anomaly on the way from Zaton to Jupiter. I don't have much, so please, at least leave my photo of my wife. It's all I have left of her...</text>
+	</string>
 	<!-- JUPITER STASHES -->
 <string id="st_jup_hiding_place_51">
 		<text>How about I give you something, and you give me my life back? There is a little something for you inside the wheel of that monstrous quarry machine in Jupiter. We have a deal?</text>
@@ -255,7 +257,7 @@
 	<string id="st_jup_hiding_place_87">
 		<text>Keep your finger off the trigger, you can't use me if I'm dead. Take my stash, it's next to the giant old tree in the bushes.</text>
 	</string>
-	
+
 	<!-- PRIPYAT STASHES -->
 	<string id="st_pri_hiding_place_32">
 		<text>I've got nothing man, I'm cool now, I won't shoot. I heard about a stash in Pripyat, behind the storage houses in the backyard of Laundromat. But that's all I got man. Can I leave now, is that it?</text>
@@ -274,7 +276,7 @@
 	</string>
 		<string id="st_pri_hiding_place_37">
 		<text>I intercepted a transmission back when I fiddled with DIY radio, it was strangely from Pripyat. It was of a dying Stalker broadcasting to anyone that is listening to take his stash. Probably because he was breathing through his last moments. You could take it, just go to the top floor of the Apartment Complex. Climb the stairs, it's right there.</text>
-	</string> 
+	</string>
 		<string id="st_pri_hiding_place_38">
 		<text>I have nothing of worth for you. But I do know of a stash in the back room at the gas station in Pripyat, although who the hell would be so suicidal to go there?.</text>
 	</string>

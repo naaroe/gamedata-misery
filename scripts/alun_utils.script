@@ -57,15 +57,16 @@ function trim(s)
 end
 
 function string:split(pat)
-  local st, g = 1, self:gmatch("()("..pat..")")
-  local function getter(self, segs, seps, sep, cap1, ...)
-    st = sep and seps + #sep
-    return self:sub(segs, (seps or 0) - 1), cap1 or sep, ...
-  end
-  local function splitter(self)
-    if st then return getter(self, st, g()) end
-  end
-  return splitter, self
+	pat = pat or '%s+'
+	local st, g = 1, self:gmatch("()("..pat..")")
+	local function getter(self, segs, seps, sep, cap1, ...)
+		st = sep and seps + #sep
+		return self:sub(segs, (seps or 0) - 1), cap1 or sep, ...
+	end
+	local function splitter(self)
+		if st then return getter(self, st, g()) end
+	end
+	return splitter, self
 end
 
 function str_explode(str,pattern)
@@ -847,36 +848,6 @@ function isRifle(wpn,clsid)
 	return weapon_types_clslist.rifle[clsid]
 end
 
-function create_container()
-	if (db.actor) then
-		local pos = vector():set(db.actor:position().x,db.actor:position().y+1,db.actor:position().z)
-		local obj = alife():create("inventory_box",pos,db.actor:level_vertex_id(),db.actor:game_vertex_id())
-		if obj then
-			save_var(db.actor,"container",obj.id)
-			return level.object_by_id(obj.id)
-		end
-	end
-end
-
-function get_container()
-	if (db.actor) then
-		local id = load_var(db.actor,"container")
-		local con
-		if (id) then
-			con = level.object_by_id(id)
-			if (con) then
-				local sim = alife()
-				alife():object(id):can_switch_offline(false)
-				sim:set_switch_online(id,true)
-				sim:set_switch_offline(id,false)
-				return con
-			end
-		end
-		return create_container()
-	end
-end
-
-
 --***************************************
 --* save_var(game_object,name,value)
 --* load_var(game_object,name,def_value)
@@ -1010,25 +981,6 @@ function execute_queue()
 	end
 end
 
-function try_switch_squad_offline(squad)
-	local visible
-	local actor = db.actor
-	for k in squad:squad_members() do
-		local npc = db.storage[k.id] and db.storage[k.id].object
-		if (npc and npc:alive()) then
-			if (not actor:see(npc) or (alun_utils.angle_diff(actor:direction(), actor:position():sub(npc:position()))<90 and npc:position():distance_to(actor:position()) > 2.5) or npc:position():distance_to(actor:position())>100) then
-
-			else
-				visible = true
-			end
-		end
-	end
-
-	if not (visible) then
-		squad:switch_offline()
-	end
-end
-
 function switch_offline_execute(id,func,...)
 	if not (exec_data[id]) then
 		exec_data[id] = {}
@@ -1056,6 +1008,7 @@ end
 
 --local loadstring = memoize(loadstring)
 
+----------------------------------------- Path Nodes
 class "position_node"
 function position_node:__init(amt)
 	self.node = {}
@@ -1088,4 +1041,283 @@ function position_node:select_best_vertex_id(object,dir,lvid,distance)
 		end
 	end
 	return closest and closest ~= -1 and closest
+end
+
+-------------------------------------------- INI utils
+function read_ini(file,sec,key,typ,def)
+	local val = rw_ini(file,0,sec,key)
+	if not (val) then
+		return def
+	end
+
+	if (typ == 2) then
+		return val == "true"
+	elseif (typ == 1) then
+		return tonumber(val)
+	end
+end
+
+function write_ini(file,sec,key,val)
+	val = tostring(val)
+	return rw_ini(file,1,sec,key,val)
+end
+
+function rw_ini(file,mode,sec,key,val)
+
+	local ini = io.open(file, "r")
+	if not (ini) then
+		if (mode ~= 0) then
+			ini = io.open(file, "w")
+			ini:write("[" .. sec .. "]" .. "\n" .. key .. " = " .. val)
+			ini:close()
+			return true
+		end
+		return
+	end
+
+	local intAct = 0
+	local save = ""
+	local found, blnSection
+
+	while true do
+		local ln = ini:read()   -- Reads a line
+		if not (ln) then
+			break
+		end
+
+		if (intAct == 0) then
+			if not (blnSection) then
+				found = string.sub(ln,0,1)
+				if (found == "[") then -- found header
+					header = string.sub(ln,2,-2)
+					if (header == sec) then
+						blnSection = true
+					end
+				end
+			else
+				header = string.sub(ln,0,1)
+				if (header == "[") then
+					blnSection = nil
+					ln = key .. " = " .. val .. "\n" .. ln
+					intAct = 1
+				elseif (header == ";") or (ln == "") then
+					-- ignore
+				else
+					strFindEqual = string.find(ln,"=")
+					if (strFindEqual) then
+						strKeyname = string.sub(ln,0,strFindEqual - 1)
+						if (strKeyname == key) then
+							if (mode == 0) then
+								found = str_explode(string.sub(ln,strFindEqual+1),";")
+								return trim(found[1])
+							end
+							ln = key .. " = " .. val
+							intAct = 1
+						end
+					end
+				end
+			end
+		end
+		save = save .. ln .. "\n"
+	end
+
+	ini:close()
+
+	if (inAct ~= 1) then
+		if not (blnSection) then
+			save = save .. "[" .. sec .. "]" .. "\n" .. key .. " = " .. val
+		else
+			save = save .. key .. " = " .. val
+		end
+
+		if (mode ~= 0) then
+			ini = io.open(file, "w")
+			ini:write(save)
+			ini:close()
+			return true
+		end
+
+		if (mode == 0) then
+			return -- key not found in section
+		end
+	end
+end
+
+function cfg_file(name)
+
+end
+
+
+
+
+-- INI Reader
+function file_to_table(fname)
+	local root = {}
+	local links
+	local includes
+	local sec, t,_root,_links
+	for line in io.lines(fname) do
+		if not (line == "" or line == "\n") then
+			if (startsWith(line, "#include")) then
+				t = str_explode(line,";")
+				t = str_explode(t[1],[["]])
+
+				if not (includes) then
+					includes = {}
+				end
+
+				table.insert(includes,t[2])
+				_root,_links = file_to_table(t[2])
+				for k,v in pairs(_root) do root[k] = v end
+
+				if (_links) then
+					if not (links) then
+						links = {}
+					end
+					for k,v in pairs(_links) do links[k] = v end
+				end
+			elseif (startsWith(line, "[")) then
+				t = str_explode(line,";")
+				t = str_explode(t[1],":")
+
+				sec = string.sub(t[1],2,-2)
+				root[sec] = {}
+
+				t = t[2] and str_explode(t[2],",")
+				if (t) then
+					for k, v in ipairs(t) do
+						if not (links) then
+							links = {}
+						end
+
+						links[sec] = v
+					end
+				end
+			elseif (not startsWith(line, ";") and sec) then
+				t = str_explode(line,";")
+				t = str_explode(t[1],"=")
+				root[sec] = root[sec] or {}
+				root[sec][t[1]] = t[2] or ""
+			end
+		end
+	end
+	return root,links,includes
+end
+
+class "cfg_file"
+function cfg_file:__init(fname)
+	local cfg = io.open(fname,"a+")
+	cfg:close()
+	self.fname = fname
+	self.root,self.links,self.includes = file_to_table(fname)
+end
+
+function cfg_file:GetValue(sec,key,typ,def)
+	local val = self.root and self.root[sec] and self.root[sec][key] or self.links and self.links[sec] and self.root[self.links[sec]] and self.root[self.links[sec]][key]
+	if (val == nil) then
+		return def
+	end
+
+	if (typ == 1) then
+		return val == "true"
+	elseif (typ == 2) then
+		return tonumber(val)
+	end
+	return val
+end
+
+function cfg_file:GetKeys(sec)
+	return self.root and self.root[sec]
+end
+
+function cfg_file:SetValue(sec,key,val)
+	if not (self.root) then
+		self.root = {}
+	end
+
+	if not (self.root[sec]) then
+		self.root[sec] = {}
+	end
+
+	self.root[sec][key] = val == nil and "" or tostring(val)
+end
+
+function cfg_file:SectionExist(sec)
+	return self.root and self.root[sec] ~= nil
+end
+
+function cfg_file:KeyExist(sec,key)
+	return self.root and self.root[sec] and self.root[sec][key] ~= nil
+end
+
+function cfg_file:SaveExt()
+	local t,sec,comment
+	local str = ""
+	for ln in io.lines(self.fname) do
+		ln = trim(ln)
+		if (startsWith(ln,"[")) then
+			t = str_explode(ln,";")
+			t = str_explode(t[1],":")
+
+			sec = string.sub(t[1],2,-2)
+		elseif (not startsWith(ln,";") and self.root[sec]) then
+			comment = string.find(ln,";")
+			comment = comment and string.sub(ln,comment) or ""
+
+			t = str_explode(ln,"=")
+			if (self.root[sec][t[1]] ~= nil) then
+				if (self.root[sec][t[1]] == "") then
+					ln = t[1] .. "\t" .. comment
+				else
+					ln = t[1] .. " = " .. tostring(self.root[sec][t[1]]) .. "\t" .. comment
+				end
+			end
+		end
+		str = str .. ln .. "\n"
+	end
+	local cfg = io.open(self.fname,"w+")
+	cfg:write(str)
+	cfg:close()
+end
+
+function cfg_file:Save()
+	local str = "",count
+
+	if (self.includes) then
+		for i=1,#self.includes do
+			str = str .. self.includes[i] .. "\n"
+		end
+	end
+
+	for section,tbl in pairs(self.root) do
+		str = str .. "[" .. section .. "]\n"
+
+		if (self.links and self.links[section]) then
+			str = str .. ":"
+			count = #self.links[section]
+			for i=1,count do
+				if (count > 1 and i ~= count) then
+					str = str .. self.links[section][i] .. ","
+				else
+					str = str .. self.links[section][i]
+				end
+			end
+		end
+
+		for key,val in pairs(self.root[section]) do
+			if (val == nil or val == "") then
+				str = str .. key .. "\n"
+			else
+				str = str .. key .. " = " .. val .. "\n"
+			end
+		end
+	end
+
+	local cfg = io.open(self.fname,"w+")
+	cfg:write(str)
+	cfg:close()
+end
+
+function startsWith(text,prefix)
+	return string.sub(text, 1, string.len(prefix)) == prefix
 end
